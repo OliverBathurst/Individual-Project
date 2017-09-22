@@ -4,10 +4,6 @@
         "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_cloud_upload_black_24dp.png"
     },
     {
-        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_mark.png",
-        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable-xhdpi\\ic_mark.png"
-    },
-    {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_battery_20_black_24dp.png",
         "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_battery_20_black_24dp.png"
     },
@@ -74,6 +70,10 @@
     {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_lock_black_24dp.png",
         "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_lock_black_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_marker.png",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable-xhdpi\\ic_marker.png"
     },
     {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_open_with_black_24dp.png",

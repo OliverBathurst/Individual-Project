@@ -3399,7 +3399,7 @@ containing a value of this type.
         public static final int ic_location_searching_black_24dp=0x7f020077;
         public static final int ic_lock_black_24dp=0x7f020078;
         public static final int ic_map_black_24dp=0x7f020079;
-        public static final int ic_mark=0x7f02007a;
+        public static final int ic_marker=0x7f02007a;
         public static final int ic_open_with_black_24dp=0x7f02007b;
         public static final int ic_phone_android_black_24dp=0x7f02007c;
         public static final int ic_phone_in_talk_black_24dp=0x7f02007d;

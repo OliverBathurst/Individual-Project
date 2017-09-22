@@ -32,6 +32,10 @@
         "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_location_searching_black_24dp.png"
     },
     {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\ic_marker.png",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_marker.png"
+    },
+    {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\ic_email_black_24dp.png",
         "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_email_black_24dp.png"
     },

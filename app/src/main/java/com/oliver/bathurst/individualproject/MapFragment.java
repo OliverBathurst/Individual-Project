@@ -118,7 +118,7 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
 
 
             marker = gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
-                    .title("Device Location: " + loc.getLatitude() + loc.getLongitude()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_mark)));
+                    .title("Device Location: " + loc.getLatitude() + loc.getLongitude()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true));
             CameraPosition cam = CameraPosition.builder().target(new LatLng(loc.getLatitude(), loc.getLongitude())).zoom(16).bearing(0).tilt(45).build();
             gMap.moveCamera(CameraUpdateFactory.newCameraPosition(cam));
         }catch(Exception e){
@@ -130,7 +130,7 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
         try {
             marker.remove();
             marker = gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
-                    .title("Device Location: " + loc.getLatitude() + loc.getLongitude()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_mark)));
+                    .title("Device Location: " + loc.getLatitude() + loc.getLongitude()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true));
             CameraPosition cam = CameraPosition.builder().target(new LatLng(loc.getLatitude(), loc.getLongitude())).zoom(13).bearing(0).build();
             gMap.moveCamera(CameraUpdateFactory.newCameraPosition(cam));
         }catch(Exception ignored){}

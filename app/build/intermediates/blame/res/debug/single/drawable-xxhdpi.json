@@ -48,10 +48,6 @@
         "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_location_searching_black_24dp.png"
     },
     {
-        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_mark.png",
-        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable-xxhdpi\\ic_mark.png"
-    },
-    {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_account_circle_black_24dp.png",
         "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_account_circle_black_24dp.png"
     },
@@ -64,12 +60,12 @@
         "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_textsms_black_24dp.png"
     },
     {
-        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_warning_black_24dp.png",
-        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_warning_black_24dp.png"
-    },
-    {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_email_black_24dp.png",
         "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_email_black_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_warning_black_24dp.png",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_warning_black_24dp.png"
     },
     {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_smartphone_black_24dp.png",
@@ -82,5 +78,9 @@
     {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_do_not_disturb_on_black_24dp.png",
         "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_do_not_disturb_on_black_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_marker.png",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable-xxhdpi\\ic_marker.png"
     }
 ]
