@@ -1,0 +1,90 @@
+[
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_phone_android_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_phone_android_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_battery_20_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_battery_20_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\design_ic_visibility_off.xml",
+        "source": "C:\\Users\\Oliver\\.android\\build-cache\\1a8a694240b8ed9d7b17b78df9c3709ea4fed259\\output\\res\\drawable-anydpi-v21\\design_ic_visibility_off.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_warning_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_warning_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_smartphone_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_smartphone_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_textsms_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_textsms_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_do_not_disturb_on_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_do_not_disturb_on_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_settings_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_settings_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_info_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_info_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_sim_card_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_sim_card_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_lock_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_lock_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_account_circle_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_account_circle_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_format_list_numbered_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_format_list_numbered_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_cloud_upload_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_cloud_upload_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_timer_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_timer_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_email_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_email_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_open_with_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_open_with_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\design_ic_visibility.xml",
+        "source": "C:\\Users\\Oliver\\.android\\build-cache\\1a8a694240b8ed9d7b17b78df9c3709ea4fed259\\output\\res\\drawable-anydpi-v21\\design_ic_visibility.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_location_searching_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_location_searching_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_view_list_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_view_list_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_phone_in_talk_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_phone_in_talk_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_map_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_map_black_24dp.xml"
+    }
+]

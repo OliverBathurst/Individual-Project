@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\xml\\fragment_settings.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\xml\\fragment_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\xml\\fragment_device.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\xml\\fragment_device.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\xml\\device_admin.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\xml\\device_admin.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\xml\\backup_descriptor.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\xml\\backup_descriptor.xml"
+    }
+]

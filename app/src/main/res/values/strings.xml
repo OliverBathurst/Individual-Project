@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Individual Project</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Map</string>
+    <string name="title_dashboard">Settings</string>
+    <string name="title_device">Device</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="scale">Scale: 1</string>
+    <string name="radius">Radius: 0</string>
+    <string name="scalenozero">Scale:</string>
+    <string name="scalewithone">Scale: 1</string>
+    <string name="radiuscolon">Radius: </string>
+    <string name="declaration">Position declared by: </string>
+    <string name="please_select_volume">Please select volume: (%)</string>
+    <string name="please_select_battery_percent">Please select battery percent: (%)</string>
+    <string name="start">S T A R T</string>
+    <string name="information">I N F O R M A T I O N</string>
+</resources>

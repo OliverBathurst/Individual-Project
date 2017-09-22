@@ -1,0 +1,74 @@
+package com.oliver.bathurst.individualproject;
+
+import android.annotation.SuppressLint;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.BatteryManager;
+import android.os.StrictMode;
+import android.preference.PreferenceManager;
+
+/**
+ * Created by Oliver on 17/06/2017.
+ * All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Written by Oliver Bathurst <oliverbathurst12345@gmail.com>
+ */
+
+
+public class BatteryReceiver extends BroadcastReceiver {
+    private boolean hasSent = false;
+
+    @SuppressLint("UnsafeProtectedBroadcastReceiver")
+    @Override
+    public void onReceive(Context c, Intent arg1) {
+
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
+        boolean triggersByEmail = settings.getBoolean("sms_by_email", false);
+
+        if(triggersByEmail){
+            String user = settings.getString("gmail_username", null);
+            String pass = settings.getString("gmail_password", null);
+            if((user!=null && user.trim().length()!=0 && user.contains("@")) && (pass!=null && pass.trim().length()!=0)){
+                EmailReceiver bean = new EmailReceiver(c, user, pass);
+                bean.getNewEmails();
+            }
+        }
+
+        try {
+            boolean isEmailEnabled = settings.getBoolean("battery_flare", false);
+
+            if(isEmailEnabled) {
+                int battPercent = settings.getInt("seek_bar_battery",5);
+                String emailToSendTo = settings.getString("email_string", null);
+                int batteryLevel = arg1.getIntExtra(BatteryManager.EXTRA_LEVEL, 0);
+                int maxLevel = arg1.getIntExtra(BatteryManager.EXTRA_SCALE, 0);
+
+                float batteryPercentage = ((float) batteryLevel / (float) maxLevel) * 100;
+
+                if (batteryPercentage <= battPercent) {
+                    if (!hasSent && emailToSendTo!=null && emailToSendTo.trim().length()!=0
+                            && emailToSendTo.contains("@")){
+                        sendEmailLowBatteryAlert(c,emailToSendTo.trim());
+                    }
+                }
+            }
+        }catch(Exception ignored){}
+    }
+    private void sendEmailLowBatteryAlert(Context c, String email){
+        try {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+            EmailAttachmentHelper help = new EmailAttachmentHelper(c);
+
+            GMailSender sender = new GMailSender("locator.findmydevice.service@gmail.com", "TheWatchful2");
+            help.attachFiles(sender);
+
+            sender.sendMail("locator.findmydevice.service@gmail.com",
+                    "Low Battery Alert", help.getEmailString(), email);
+            hasSent = true;
+        }catch(Exception ignored){}
+    }
+}

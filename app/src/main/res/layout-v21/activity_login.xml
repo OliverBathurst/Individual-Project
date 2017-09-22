@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryLight"
+    tools:context="com.oliver.bathurst.individualproject.Login"
+    tools:ignore="Overdraw">
+
+    <Button
+        android:id="@+id/email_sign_in_button"
+        style="@android:style/Widget.Holo.Light.Button.Small"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:layout_above="@+id/info_login"
+        android:layout_alignParentStart="true"
+        android:background="@android:color/holo_blue_bright"
+        android:elevation="0dp"
+        android:text="@string/start"
+        android:textColor="@color/colorIcon"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/info_login"
+        android:layout_width="375dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:background="@android:color/holo_orange_light"
+        android:elevation="0dp"
+        android:text="@string/information"
+        android:textColor="@color/colorIcon"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <WebView
+        android:id="@+id/web"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/email_sign_in_button"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+</RelativeLayout>

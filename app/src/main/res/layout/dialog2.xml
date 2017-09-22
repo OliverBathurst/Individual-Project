@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center" >
+
+    <TextView
+        android:id="@+id/set_size_help_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/please_select_battery_percent" />
+
+    <SeekBar
+        android:id="@+id/size_seekbar2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:key="seek_bar_battery" />
+
+</LinearLayout>

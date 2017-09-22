@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3a9a02c7ccef0c339b27635f7a6af2db5a7d2c4d">
+        <dex dex="C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_494d8f6d4fadefd90b5b48e42241629701b73194\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\libs\activation.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d1257cbff6faa44c1f325ae0d9413522d4644383">
+        <dex dex="C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\build\intermediates\transforms\dex\debug\folders\1000\2\activation_1a880f47cdde8a03f168af988801d3e847547112\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\libs\mail.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="428e267abff0d10802ccde86b915da2c20471160">
+        <dex dex="C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\build\intermediates\transforms\dex\debug\folders\1000\2\mail_e0269b6093ca2d9555ce7d51a3b498f7229ef496\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_5b60ad2d412ed5ee521b10d25021531c5b7e6fe3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\libs\additionnal.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bd9e8dc422bb8c8405359947fe9f4282b49f57f4">
+        <dex dex="C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\build\intermediates\transforms\dex\debug\folders\1000\2\additionnal_c7b1cfc1e113b93b3cb20d3ac8c943578d691aa9\classes.dex" />
+    </item>
+
+</items>

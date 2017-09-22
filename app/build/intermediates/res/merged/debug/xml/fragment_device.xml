@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <PreferenceCategory
+            android:title="Android Information">
+            <ListPreference
+                android:key="androidInfo"
+                android:summary="default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:selectable="false"/>
+        </PreferenceCategory>
+        <PreferenceCategory
+            android:layout="@layout/divider_preference">
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:title="Device Information">
+            <Preference
+                android:key="deviceInfo"
+                android:summary="default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:selectable= "false"/>
+        </PreferenceCategory>
+        <PreferenceCategory
+            android:layout="@layout/divider_preference">
+        </PreferenceCategory>
+
+
+    <PreferenceCategory
+            android:title="Screen Lock Settings">
+            <Preference
+                android:title="Manage Screen Lock"
+                android:key="screen_lock_settings"
+                android:summary="Find My Android recommends a screen lock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:selectable= "true"/>
+        </PreferenceCategory>
+        <PreferenceCategory
+            android:layout="@layout/divider_preference">
+        </PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:title="Location Settings">
+        <Preference
+            android:title="Manage Location Settings"
+            android:key="settings_location_settings"
+            android:summary="Find My Android recommends 'High Accuracy'"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:selectable= "true"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:layout="@layout/divider_preference">
+    </PreferenceCategory>
+</PreferenceScreen>
