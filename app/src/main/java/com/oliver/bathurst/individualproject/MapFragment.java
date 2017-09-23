@@ -2,6 +2,10 @@ package com.oliver.bathurst.individualproject;
 
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
@@ -24,6 +28,7 @@ import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import static android.content.Context.SENSOR_SERVICE;
 
 /**
  * Created by Oliver on 17/06/2017.
@@ -33,11 +38,14 @@ import com.google.android.gms.maps.model.MarkerOptions;
  * Written by Oliver Bathurst <oliverbathurst12345@gmail.com>
  */
 
-public class MapFragment extends android.support.v4.app.Fragment implements OnMapReadyCallback, LocationListener {
+@SuppressWarnings("deprecation")
+public class MapFragment extends android.support.v4.app.Fragment implements OnMapReadyCallback, LocationListener, SensorEventListener {
     private View mView;
     private Circle circle, circle_margin;
     private TextView marginOfError;
     private GoogleMap gMap;
+    private SensorManager sensorManager;
+    private Sensor gyro;
     private Marker marker;
 
     public MapFragment(){}
@@ -45,6 +53,13 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mView =  inflater.inflate(R.layout.fragment_map, container, false);
         marginOfError = (TextView) mView.findViewById(R.id.margin_of_error);
+
+        sensorManager = (SensorManager) getActivity().getSystemService(SENSOR_SERVICE);
+        if (sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION) != null) {
+            gyro = sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
+            sensorManager.registerListener(this, gyro, SensorManager.SENSOR_DELAY_NORMAL);
+        }
+
         return mView;
     }
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState){
@@ -55,6 +70,18 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
             mMapView.onResume();
             mMapView.getMapAsync(this);
         }
+    }
+    public void onResume() {
+        super.onResume();
+        try {
+            sensorManager.registerListener(this, gyro, SensorManager.SENSOR_DELAY_NORMAL);
+        }catch(Exception ignored){}
+    }
+    public void onPause() {
+        super.onPause();
+        try {
+            sensorManager.unregisterListener(this);
+        }catch(Exception ignored){}
     }
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -118,7 +145,7 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
 
 
             marker = gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
-                    .title("Device Location: " + loc.getLatitude() + loc.getLongitude()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true));
+                    .title("Device Location: " + loc.getLatitude() + loc.getLongitude()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f));
             CameraPosition cam = CameraPosition.builder().target(new LatLng(loc.getLatitude(), loc.getLongitude())).zoom(16).bearing(0).tilt(45).build();
             gMap.moveCamera(CameraUpdateFactory.newCameraPosition(cam));
         }catch(Exception e){
@@ -127,27 +154,30 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
     }
     @Override
     public void onLocationChanged(Location loc) {
-        try {
-            marker.remove();
+        if(gMap!=null) {
+            gMap.clear();
             marker = gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
                     .title("Device Location: " + loc.getLatitude() + loc.getLongitude()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true));
             CameraPosition cam = CameraPosition.builder().target(new LatLng(loc.getLatitude(), loc.getLongitude())).zoom(13).bearing(0).build();
             gMap.moveCamera(CameraUpdateFactory.newCameraPosition(cam));
-        }catch(Exception ignored){}
+        }
     }
-
     @Override
-    public void onStatusChanged(String provider, int status, Bundle extras) {
-
+    public void onSensorChanged(SensorEvent event) {
+        if (event.sensor.getType() == Sensor.TYPE_ORIENTATION) {
+            TextView rotation = (TextView) mView.findViewById(R.id.degrees);
+            rotation.setText(String.format("%s%s%s", Float.toString(Math.round(event.values[0])), " ", getString(R.string.degrees)));
+            if(marker != null) {
+                marker.setRotation(Math.round(event.values[0]));
+            }
+        }
     }
-
     @Override
-    public void onProviderEnabled(String provider) {
-
-    }
-
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {}
     @Override
-    public void onProviderDisabled(String provider) {
-
-    }
+    public void onStatusChanged(String provider, int status, Bundle extras) {}
+    @Override
+    public void onProviderEnabled(String provider) {}
+    @Override
+    public void onProviderDisabled(String provider) {}
 }
