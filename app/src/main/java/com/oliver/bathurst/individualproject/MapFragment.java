@@ -8,6 +8,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.location.Location;
 import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
@@ -28,6 +29,7 @@ import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import static android.content.Context.LOCATION_SERVICE;
 import static android.content.Context.SENSOR_SERVICE;
 
 /**
@@ -45,6 +47,7 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
     private TextView marginOfError;
     private GoogleMap gMap;
     private SensorManager sensorManager;
+    private LocationManager locationManager;
     private Sensor gyro;
     private Marker marker;
 
@@ -59,6 +62,7 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
             gyro = sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
             sensorManager.registerListener(this, gyro, SensorManager.SENSOR_DELAY_NORMAL);
         }
+        locationManager = (LocationManager) getActivity().getSystemService(LOCATION_SERVICE);
 
         return mView;
     }
@@ -76,12 +80,25 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
         try {
             sensorManager.registerListener(this, gyro, SensorManager.SENSOR_DELAY_NORMAL);
         }catch(Exception ignored){}
+
+        if(locationManager != null) {
+            try {
+                ///choose best provider here
+                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 0, this);
+            }catch(SecurityException ignored){}
+        }
     }
     public void onPause() {
         super.onPause();
         try {
             sensorManager.unregisterListener(this);
         }catch(Exception ignored){}
+
+        if(locationManager != null) {
+            try {
+                locationManager.removeUpdates(this);
+            } catch (Exception ignored) {}
+        }
     }
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -153,16 +170,6 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
         }
     }
     @Override
-    public void onLocationChanged(Location loc) {
-        if(gMap!=null) {
-            gMap.clear();
-            marker = gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
-                    .title("Device Location: " + loc.getLatitude() + loc.getLongitude()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true));
-            CameraPosition cam = CameraPosition.builder().target(new LatLng(loc.getLatitude(), loc.getLongitude())).zoom(13).bearing(0).build();
-            gMap.moveCamera(CameraUpdateFactory.newCameraPosition(cam));
-        }
-    }
-    @Override
     public void onSensorChanged(SensorEvent event) {
         if (event.sensor.getType() == Sensor.TYPE_ORIENTATION) {
             TextView rotation = (TextView) mView.findViewById(R.id.degrees);
@@ -173,11 +180,19 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
         }
     }
     @Override
-    public void onAccuracyChanged(Sensor sensor, int accuracy) {}
+    public void onLocationChanged(Location loc) {
+        if(gMap != null) {
+            gMap.clear();
+            marker = gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
+                    .title("Device Location: " + loc.getLatitude() + loc.getLongitude()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f));
+        }
+    }
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {}
     @Override
     public void onProviderEnabled(String provider) {}
     @Override
     public void onProviderDisabled(String provider) {}
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {}
 }
