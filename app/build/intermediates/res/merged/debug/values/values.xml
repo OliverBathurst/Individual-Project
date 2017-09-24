@@ -820,6 +820,7 @@
     <string name="path_password_strike_through" translatable="false">M3.27,4.27 L19.74,20.74</string>
     <string name="please_select_battery_percent">Please select battery percent: (%)</string>
     <string name="please_select_volume">Please select volume: (%)</string>
+    <string name="pressure">Pressure: </string>
     <string name="radius">Radius: 0</string>
     <string name="radiuscolon">Radius: </string>
     <string name="save">Save</string>

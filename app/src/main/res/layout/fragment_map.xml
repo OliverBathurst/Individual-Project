@@ -48,4 +48,11 @@
         android:layout_below="@+id/degrees"
         android:layout_centerHorizontal="true" />
 
+    <TextView
+        android:id="@+id/pressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/locationAcc"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
