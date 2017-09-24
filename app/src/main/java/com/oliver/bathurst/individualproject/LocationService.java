@@ -40,17 +40,17 @@ public class LocationService extends Service implements LocationListener {
         Location gps = getLocationByGPS();
         if (gps != null) {
             loc = gps;
-            DECLARED_BY = "GPS";
+            DECLARED_BY = "gps";
         } else {
             Location wifi = getLocationByWIFI();
             if (wifi != null) {
                 loc = wifi;
-                DECLARED_BY = "WIFI";
+                DECLARED_BY = "wifi";
             } else {
                 Location pass = getLocationByPassive();
                 if (pass != null) {
                     loc = pass;
-                    DECLARED_BY = "Passive";
+                    DECLARED_BY = "passive";
                 } else {
                     loc = new Location("Device Location");
                     DECLARED_BY = "ERROR!";

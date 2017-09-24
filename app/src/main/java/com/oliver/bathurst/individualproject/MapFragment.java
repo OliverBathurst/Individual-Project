@@ -85,7 +85,7 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
         if(locationManager != null) {
             try {
                 ///choose best provider here
-                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 0, this);
+                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 0, this);
             }catch(SecurityException ignored){}
         }
     }
@@ -159,8 +159,10 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
             }
             TextView txtView = (TextView) mView.findViewById(R.id.declare);
             txtView.setText(getString(R.string.declaration).concat(" " + locService.DECLARED_BY));
-            MapsInitializer.initialize(getContext());
+            TextView acc = (TextView) mView.findViewById(R.id.locationAcc);
+            acc.setText(String.format("%s%s", getString(R.string.accuracy), Float.toString(loc.getAccuracy())));
 
+            MapsInitializer.initialize(getContext());
 
             marker = gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
                     .title("Device Location: " + loc.getLatitude() + loc.getLongitude()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f));
@@ -185,10 +187,13 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
     public void onLocationChanged(Location loc) {
         if(gMap != null) {
             gMap.clear();
-            TextView acc = (TextView) mView.findViewById(R.id.locationAcc);
-            acc.setText(String.format("%s%s", getString(R.string.accuracy), Float.toString(loc.getAccuracy())));
             marker = gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
                     .title("Device Location: " + loc.getLatitude() + loc.getLongitude()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f).rotation(ORIENTATION));
+
+            TextView txtView = (TextView) mView.findViewById(R.id.declare);
+            txtView.setText(getString(R.string.declaration).concat(" " + loc.getProvider()));
+            TextView acc = (TextView) mView.findViewById(R.id.locationAcc);
+            acc.setText(String.format("%s%s", getString(R.string.accuracy), Float.toString(loc.getAccuracy())));
         }
     }
     @Override
