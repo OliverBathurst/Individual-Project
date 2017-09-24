@@ -16,5 +16,6 @@
     <string name="please_select_battery_percent">Please select battery percent: (%)</string>
     <string name="start">S T A R T</string>
     <string name="information">I N F O R M A T I O N</string>
-    <string name="degrees"> Degrees</string>
+    <string name="degrees">Degrees: </string>
+    <string name="accuracy">Accuracy: </string>
 </resources>

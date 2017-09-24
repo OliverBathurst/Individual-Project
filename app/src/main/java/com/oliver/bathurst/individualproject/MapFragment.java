@@ -42,6 +42,7 @@ import static android.content.Context.SENSOR_SERVICE;
 
 @SuppressWarnings("deprecation")
 public class MapFragment extends android.support.v4.app.Fragment implements OnMapReadyCallback, LocationListener, SensorEventListener {
+    private float ORIENTATION = 0.0f;
     private View mView;
     private Circle circle, circle_margin;
     private TextView marginOfError;
@@ -173,8 +174,9 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
     public void onSensorChanged(SensorEvent event) {
         if (event.sensor.getType() == Sensor.TYPE_ORIENTATION) {
             TextView rotation = (TextView) mView.findViewById(R.id.degrees);
-            rotation.setText(String.format("%s%s%s", Float.toString(Math.round(event.values[0])), " ", getString(R.string.degrees)));
+            rotation.setText(String.format("%s%s", getString(R.string.degrees), Float.toString(Math.round(event.values[0]))));
             if(marker != null) {
+                ORIENTATION = Math.round(event.values[0]);
                 marker.setRotation(Math.round(event.values[0]));
             }
         }
@@ -183,8 +185,10 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
     public void onLocationChanged(Location loc) {
         if(gMap != null) {
             gMap.clear();
+            TextView acc = (TextView) mView.findViewById(R.id.locationAcc);
+            acc.setText(String.format("%s%s", getString(R.string.accuracy), Float.toString(loc.getAccuracy())));
             marker = gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
-                    .title("Device Location: " + loc.getLatitude() + loc.getLongitude()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f));
+                    .title("Device Location: " + loc.getLatitude() + loc.getLongitude()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f).rotation(ORIENTATION));
         }
     }
     @Override

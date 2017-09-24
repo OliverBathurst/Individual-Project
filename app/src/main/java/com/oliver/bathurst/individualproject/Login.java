@@ -134,6 +134,6 @@ public class Login extends AppCompatActivity{
     }
     protected void onDestroy(){
         super.onDestroy();
-
+        webView = null;
     }
 }
