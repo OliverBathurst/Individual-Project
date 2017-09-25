@@ -42,7 +42,7 @@ import static android.content.Context.SENSOR_SERVICE;
 
 @SuppressWarnings("deprecation")
 public class MapFragment extends android.support.v4.app.Fragment implements OnMapReadyCallback, LocationListener, SensorEventListener {
-    private float ORIENTATION = 0.0f, currentAccuracy = 0.0f;
+    private float ORIENTATION = 0.0f, currentAccuracy = 100.0f;
     private View mView;
     private Circle circle, circle_margin;
     private TextView marginOfError;
@@ -84,7 +84,7 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
     }
     public void onResume() {
         super.onResume();
-        if(gyro!=null) {
+        if(gyro != null) {
             try {
                 sensorManager.registerListener(this, gyro, SensorManager.SENSOR_DELAY_NORMAL);
             } catch (Exception ignored) {}
@@ -97,10 +97,10 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
         }
 
         try {
-            if(locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)){
-                locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 2000, 1, this);
-            }else if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
+            if(locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
                 locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 1, this);
+            }else if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)){
+                locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 2000, 1, this);
             }else if (locationManager.isProviderEnabled(LocationManager.PASSIVE_PROVIDER)){
                 locationManager.requestLocationUpdates(LocationManager.PASSIVE_PROVIDER, 2000, 1, this);
             }else{
@@ -210,7 +210,7 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
     }
     @Override
     public void onLocationChanged(Location loc) {
-        if (loc.getAccuracy() < currentAccuracy) {
+        if (currentAccuracy >= loc.getAccuracy() ) {
             if (gMap != null) {
                 gMap.clear();
                 marker = gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
