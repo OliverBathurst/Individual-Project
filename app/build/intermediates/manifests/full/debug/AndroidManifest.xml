@@ -111,6 +111,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.oliver.bathurst.individualproject.CalibBarometer"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        </activity>
 
         <!-- suppress AndroidDomInspection -->
         <service
@@ -124,7 +130,7 @@
 
         <activity
             android:name="com.oliver.bathurst.individualproject.MainActivity"
-            android:label="@string/title_activity_main"
+            android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name="com.oliver.bathurst.individualproject.GeoFencing" />

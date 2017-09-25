@@ -10,6 +10,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -28,6 +30,8 @@ import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.util.HashMap;
 import java.util.Map;
+
+import static android.content.Context.SENSOR_SERVICE;
 
 /**
  * Created by Oliver on 17/06/2017.
@@ -290,6 +294,16 @@ public class SettingsFragment extends PreferenceFragment {
             battPref.setSummary("Current percentage: " + settingsView.getInt("seek_bar_battery", 5) + "%");
 
 
+            Preference baro = findPreference("baro");
+            baro.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    checkBarometer();
+                    return false;
+                }
+            });
+
+
             Preference backupPrefs = findPreference("backup_shared_pref");
             backupPrefs.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
@@ -427,4 +441,13 @@ public class SettingsFragment extends PreferenceFragment {
             super.onActivityResult(requestCode, resultCode, data);
         }
     }
+    private void checkBarometer(){
+        SensorManager baro = (SensorManager) getActivity().getSystemService(SENSOR_SERVICE);
+        if (baro.getDefaultSensor(Sensor.TYPE_PRESSURE) != null) {
+            startActivity(new Intent(SettingsFragment.super.getActivity(), CalibBarometer.class));
+        }else{
+            Toast.makeText(getActivity(), "Barometer not available", Toast.LENGTH_LONG).show();
+        }
+    }
+
 }

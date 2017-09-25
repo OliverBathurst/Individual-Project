@@ -87,13 +87,13 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
         if(gyro != null) {
             try {
                 sensorManager.registerListener(this, gyro, SensorManager.SENSOR_DELAY_NORMAL);
-            } catch (Exception ignored) {}
+            } catch (SecurityException ignored) {}
         }
 
         if (barometer != null){
             try {
                 baro.registerListener(this, barometer, SensorManager.SENSOR_DELAY_NORMAL);
-            }catch(SecurityException ignored){}
+            } catch (SecurityException ignored){}
         }
 
         try {
@@ -152,6 +152,8 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
             txtView.setText(getString(R.string.declaration).concat(" " + locService.DECLARED_BY));
             TextView acc = (TextView) mView.findViewById(R.id.locationAcc);
             acc.setText(String.format("%s%s", getString(R.string.accuracy), Float.toString(loc.getAccuracy())));
+            TextView gpsElevation = (TextView) mView.findViewById(R.id.gpsElevation);
+            gpsElevation.setText(String.format("%s%s", getString(R.string.gpsElev), Double.toString(loc.getAltitude())));
 
             MapsInitializer.initialize(getContext());
 
@@ -211,6 +213,7 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
     @Override
     public void onLocationChanged(Location loc) {
         if (currentAccuracy >= loc.getAccuracy() ) {
+            currentAccuracy = loc.getAccuracy();
             if (gMap != null) {
                 gMap.clear();
                 marker = gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
@@ -220,6 +223,8 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
                 txtView.setText(getString(R.string.declaration).concat(" " + loc.getProvider()));
                 TextView acc = (TextView) mView.findViewById(R.id.locationAcc);
                 acc.setText(String.format("%s%s", getString(R.string.accuracy), Float.toString(loc.getAccuracy())));
+                TextView gpsElevation = (TextView) mView.findViewById(R.id.gpsElevation);
+                gpsElevation.setText(String.format("%s%s", getString(R.string.gpsElev), Double.toString(loc.getAltitude())));
             }
         }
     }

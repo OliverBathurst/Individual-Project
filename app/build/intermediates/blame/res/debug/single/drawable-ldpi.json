@@ -44,6 +44,10 @@
         "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_warning_black_24dp.png"
     },
     {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\ic_business_black_24dp.png",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_business_black_24dp.png"
+    },
+    {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\ic_cloud_upload_black_24dp.png",
         "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_cloud_upload_black_24dp.png"
     },
