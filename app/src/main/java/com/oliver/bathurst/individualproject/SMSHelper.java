@@ -28,7 +28,7 @@ class SMSHelper {
         LocationService locationService = new LocationService(c);
         Location newLocReturn = locationService.getLoc();
 
-        return "This is Find My Android Device, SIM Change Alert, your device location is: " + newLocReturn.getLatitude()
+        return "This is a location alert, SIM Change Alert, your device location is: " + newLocReturn.getLatitude()
                 + "," + newLocReturn.getLongitude()
                 + "\nGoogleMaps link: http://maps.google.com/?q=" + newLocReturn.getLatitude()
                 + "," + newLocReturn.getLongitude()
@@ -39,7 +39,4 @@ class SMSHelper {
                 + "\nPhone number: " + telephonyManager.getLine1Number()
                 + "\nSIM Serial: " + telephonyManager.getSimSerialNumber();
     }
-
-
-
 }

@@ -831,7 +831,6 @@
     <string name="search_menu_title">Search</string>
     <string name="start">S T A R T</string>
     <string name="status_bar_notification_info_overflow">999+</string>
-    <string name="title_activity_main">MainActivity</string>
     <string name="title_dashboard">Settings</string>
     <string name="title_device">Device</string>
     <string name="title_home">Map</string>

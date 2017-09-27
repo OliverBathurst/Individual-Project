@@ -35,7 +35,7 @@
             <Preference
                 android:title="Manage Screen Lock"
                 android:key="screen_lock_settings"
-                android:summary="Find My Android recommends a screen lock"
+                android:summary="A screen lock is recommended"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:selectable= "true"/>
@@ -50,7 +50,7 @@
         <Preference
             android:title="Manage Location Settings"
             android:key="settings_location_settings"
-            android:summary="Find My Android recommends 'High Accuracy'"
+            android:summary="'High Accuracy' is recommended"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:selectable= "true"/>

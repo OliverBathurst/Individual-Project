@@ -153,7 +153,7 @@ class EmailAttachmentHelper {
             Location loc = locationService.getLoc();
 
 
-            emailBody = "This is Find My Android Device, your device location is: " + loc.getLatitude()
+            emailBody = "This is a location alert, your device location is: " + loc.getLatitude()
                     + "," + loc.getLongitude()
                     + "\nGoogleMaps link: http://maps.google.com/?q=" + loc.getLatitude()
                     + "," + loc.getLongitude()

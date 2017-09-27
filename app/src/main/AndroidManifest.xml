@@ -93,13 +93,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name="com.oliver.bathurst.individualproject.CalibBarometer"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        </activity>
-
         <!--suppress AndroidDomInspection -->
         <service android:name="com.oliver.bathurst.individualproject.LocationService" android:exported="true" android:enabled="true"
             tools:ignore="ExportedService"/>

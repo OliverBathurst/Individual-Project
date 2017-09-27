@@ -26,5 +26,4 @@ public class DeviceAdmin extends DeviceAdminReceiver {
         super.onEnabled(context, intent);
         Toast.makeText(context, "Enabled", Toast.LENGTH_SHORT).show();
     }
-
 }

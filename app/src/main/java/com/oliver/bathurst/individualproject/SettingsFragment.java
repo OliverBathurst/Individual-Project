@@ -293,17 +293,6 @@ public class SettingsFragment extends PreferenceFragment {
             Preference battPref = findPreference("battery_percent");
             battPref.setSummary("Current percentage: " + settingsView.getInt("seek_bar_battery", 5) + "%");
 
-
-            Preference baro = findPreference("baro");
-            baro.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    checkBarometer();
-                    return false;
-                }
-            });
-
-
             Preference backupPrefs = findPreference("backup_shared_pref");
             backupPrefs.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
@@ -441,13 +430,4 @@ public class SettingsFragment extends PreferenceFragment {
             super.onActivityResult(requestCode, resultCode, data);
         }
     }
-    private void checkBarometer(){
-        SensorManager baro = (SensorManager) getActivity().getSystemService(SENSOR_SERVICE);
-        if (baro.getDefaultSensor(Sensor.TYPE_PRESSURE) != null) {
-            startActivity(new Intent(SettingsFragment.super.getActivity(), CalibBarometer.class));
-        }else{
-            Toast.makeText(getActivity(), "Barometer not available", Toast.LENGTH_LONG).show();
-        }
-    }
-
 }

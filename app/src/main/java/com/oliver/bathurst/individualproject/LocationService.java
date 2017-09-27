@@ -1,6 +1,7 @@
 package com.oliver.bathurst.individualproject;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -14,6 +15,9 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
+import android.telephony.TelephonyManager;
+import android.telephony.gsm.GsmCellLocation;
+import android.text.TextUtils;
 import android.widget.Toast;
 
 /**
@@ -68,7 +72,24 @@ public class LocationService extends Service implements LocationListener {
         }
         return life;
     }
-
+    @SuppressLint("HardwareIds")
+    String IMEI(){
+        return ((TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
+    }
+    int LAC(){
+        return ((GsmCellLocation) ((TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE)).getCellLocation()).getLac();
+    }
+    int CID(){
+        return ((GsmCellLocation) ((TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE)).getCellLocation()).getCid();
+    }
+    int MCC(){
+        String networkOperator = ((TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE)).getNetworkOperator();
+        return !TextUtils.isEmpty(networkOperator) ? Integer.parseInt(networkOperator.substring(0, 3)) : 0;
+    }
+    int MNC(){
+        String networkOperator = ((TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE)).getNetworkOperator();
+        return !TextUtils.isEmpty(networkOperator) ? Integer.parseInt(networkOperator.substring(3)) : 0;
+    }
     private Location getLocationByGPS() {
         Location loc = null;
         if (getFine()) {
