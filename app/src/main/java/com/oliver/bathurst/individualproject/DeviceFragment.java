@@ -18,6 +18,7 @@ import android.provider.Settings;
 public class DeviceFragment extends PreferenceFragment {
     private static final String ANDROID_INFO = "androidInfo";
     private static final String DEVICE_INFO = "deviceInfo";
+    private static final String CELL_INFO = "cellInfo";
 
     public DeviceFragment() {}
     @Override
@@ -27,6 +28,7 @@ public class DeviceFragment extends PreferenceFragment {
         PermissionsManager permMan = new PermissionsManager(getActivity());
         findPreference(ANDROID_INFO).setSummary(permMan.getAndroidVersion());
         findPreference(DEVICE_INFO).setSummary(permMan.getDeviceAttributes());
+        findPreference(CELL_INFO).setSummary(permMan.getCellInfo());
 
         Preference locationIntent = findPreference("settings_location_settings");
         locationIntent.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {

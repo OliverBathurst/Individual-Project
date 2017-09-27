@@ -30,10 +30,15 @@ class PermissionsManager {
         Location lastLoc = locationService.getLoc();
         return "Model: " + android.os.Build.MODEL +"\nBrand: "+ Build.BRAND +"\nDevice: "+ Build.DEVICE +"\nDisplay: "+ Build.DISPLAY
                 +"\nManufacturer: "+ Build.MANUFACTURER +"\nModel: "+ Build.MODEL + "\nLast Known Coordinates: " + lastLoc.getLatitude()
-                + " , " + lastLoc.getLongitude() + "\nAccuracy: " + lastLoc.getAccuracy() + "\nIMEI: " + locationService.IMEI()
+                + " , " + lastLoc.getLongitude() + "\nAccuracy: " + lastLoc.getAccuracy();
+    }
+    String getCellInfo(){
+        LocationService locationService = new LocationService(c);
+        return "IMEI: " + locationService.IMEI()
                 + "\nLAC: " + locationService.LAC() + "\nCID: " + locationService.CID() + "\nMCC: " + locationService.MCC()
                 + "\nMNC: " + locationService.MNC();
     }
+
     String getAndroidVersion(){
         return "Release Version: " + Build.VERSION.RELEASE + "\nVersion Name: "
                 + Build.VERSION_CODES.class.getFields()[android.os.Build.VERSION.SDK_INT].getName();

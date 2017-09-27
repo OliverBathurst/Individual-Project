@@ -29,6 +29,20 @@
             android:layout="@layout/divider_preference">
         </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="Cell Information">
+        <Preference
+            android:key="cellInfo"
+            android:summary="default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:selectable= "false"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout="@layout/divider_preference">
+    </PreferenceCategory>
+
 
     <PreferenceCategory
             android:title="Screen Lock Settings">
