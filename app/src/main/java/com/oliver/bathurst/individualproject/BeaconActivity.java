@@ -17,6 +17,7 @@ import android.view.MenuItem;
 public class BeaconActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    @SuppressWarnings("deprecation")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

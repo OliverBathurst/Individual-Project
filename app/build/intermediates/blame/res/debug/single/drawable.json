@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
-        "source": "C:\\Users\\Oliver\\.android\\build-cache\\c54b80eb5f3f7615bb6a3129712d33e7a38ab93d\\output\\res\\drawable\\abc_cab_background_top_material.xml"
-    },
-    {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_dark_normal.xml",
         "source": "C:\\Users\\Oliver\\.android\\build-cache\\e8909dbf7613e33d41193759c7288e8a2cc7fe9d\\output\\res\\drawable\\common_google_signin_btn_text_dark_normal.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
+        "source": "C:\\Users\\Oliver\\.android\\build-cache\\c54b80eb5f3f7615bb6a3129712d33e7a38ab93d\\output\\res\\drawable\\abc_cab_background_top_material.xml"
     },
     {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_light_focused.xml",
@@ -32,6 +32,10 @@
         "source": "C:\\Users\\Oliver\\.android\\build-cache\\c54b80eb5f3f7615bb6a3129712d33e7a38ab93d\\output\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
     },
     {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_phone_android_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable\\ic_phone_android_black_24dp.xml"
+    },
+    {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_menu_overflow_material.xml",
         "source": "C:\\Users\\Oliver\\.android\\build-cache\\c54b80eb5f3f7615bb6a3129712d33e7a38ab93d\\output\\res\\drawable\\abc_ic_menu_overflow_material.xml"
     },
@@ -42,6 +46,18 @@
     {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light_focused.xml",
         "source": "C:\\Users\\Oliver\\.android\\build-cache\\e8909dbf7613e33d41193759c7288e8a2cc7fe9d\\output\\res\\drawable\\common_google_signin_btn_icon_light_focused.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_arrow_upward_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable\\ic_arrow_upward_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_brightness_1_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable\\ic_brightness_1_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_email_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable\\ic_email_black_24dp.xml"
     },
     {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",
@@ -56,8 +72,16 @@
         "source": "C:\\Users\\Oliver\\.android\\build-cache\\e8909dbf7613e33d41193759c7288e8a2cc7fe9d\\output\\res\\drawable\\common_google_signin_btn_text_disabled.xml"
     },
     {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_timer_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable\\ic_timer_black_24dp.xml"
+    },
+    {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
         "source": "C:\\Users\\Oliver\\.android\\build-cache\\c54b80eb5f3f7615bb6a3129712d33e7a38ab93d\\output\\res\\drawable\\abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_map_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable\\ic_map_black_24dp.xml"
     },
     {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark_focused.xml",
@@ -88,12 +112,20 @@
         "source": "C:\\Users\\Oliver\\.android\\build-cache\\1a8a694240b8ed9d7b17b78df9c3709ea4fed259\\output\\res\\drawable\\design_fab_background.xml"
     },
     {
-        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\side_nav_bar.xml",
-        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable\\side_nav_bar.xml"
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_arrow_downward_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable\\ic_arrow_downward_black_24dp.xml"
     },
     {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background.xml",
         "source": "C:\\Users\\Oliver\\.android\\build-cache\\c54b80eb5f3f7615bb6a3129712d33e7a38ab93d\\output\\res\\drawable\\abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\side_nav_bar.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable\\side_nav_bar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_sim_card_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable\\ic_sim_card_black_24dp.xml"
     },
     {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
@@ -104,20 +136,40 @@
         "source": "C:\\Users\\Oliver\\.android\\build-cache\\c54b80eb5f3f7615bb6a3129712d33e7a38ab93d\\output\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
     },
     {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light.xml",
+        "source": "C:\\Users\\Oliver\\.android\\build-cache\\e8909dbf7613e33d41193759c7288e8a2cc7fe9d\\output\\res\\drawable\\common_google_signin_btn_icon_light.xml"
+    },
+    {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_password_eye.xml",
         "source": "C:\\Users\\Oliver\\.android\\build-cache\\1a8a694240b8ed9d7b17b78df9c3709ea4fed259\\output\\res\\drawable\\design_password_eye.xml"
     },
     {
-        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light.xml",
-        "source": "C:\\Users\\Oliver\\.android\\build-cache\\e8909dbf7613e33d41193759c7288e8a2cc7fe9d\\output\\res\\drawable\\common_google_signin_btn_icon_light.xml"
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_info_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable\\ic_info_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_cloud_upload_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable\\ic_cloud_upload_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_warning_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable\\ic_warning_black_24dp.xml"
     },
     {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
         "source": "C:\\Users\\Oliver\\.android\\build-cache\\c54b80eb5f3f7615bb6a3129712d33e7a38ab93d\\output\\res\\drawable\\abc_tab_indicator_material.xml"
     },
     {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_save_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable\\ic_save_black_24dp.xml"
+    },
+    {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",
         "source": "C:\\Users\\Oliver\\.android\\build-cache\\c54b80eb5f3f7615bb6a3129712d33e7a38ab93d\\output\\res\\drawable\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_do_not_disturb_on_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable\\ic_do_not_disturb_on_black_24dp.xml"
     },
     {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
@@ -144,16 +196,32 @@
         "source": "C:\\Users\\Oliver\\.android\\build-cache\\c54b80eb5f3f7615bb6a3129712d33e7a38ab93d\\output\\res\\drawable\\abc_list_selector_holo_dark.xml"
     },
     {
-        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg_low.xml",
-        "source": "C:\\Users\\Oliver\\.android\\build-cache\\c54b80eb5f3f7615bb6a3129712d33e7a38ab93d\\output\\res\\drawable\\notification_bg_low.xml"
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_account_circle_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable\\ic_account_circle_black_24dp.xml"
     },
     {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_search_api_material.xml",
         "source": "C:\\Users\\Oliver\\.android\\build-cache\\c54b80eb5f3f7615bb6a3129712d33e7a38ab93d\\output\\res\\drawable\\abc_ic_search_api_material.xml"
     },
     {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg_low.xml",
+        "source": "C:\\Users\\Oliver\\.android\\build-cache\\c54b80eb5f3f7615bb6a3129712d33e7a38ab93d\\output\\res\\drawable\\notification_bg_low.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_smartphone_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable\\ic_smartphone_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_battery_20_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable\\ic_battery_20_black_24dp.xml"
+    },
+    {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
         "source": "C:\\Users\\Oliver\\.android\\build-cache\\c54b80eb5f3f7615bb6a3129712d33e7a38ab93d\\output\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_settings_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable\\ic_settings_black_24dp.xml"
     },
     {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_tile_bg.xml",
@@ -176,12 +244,36 @@
         "source": "C:\\Users\\Oliver\\.android\\build-cache\\c54b80eb5f3f7615bb6a3129712d33e7a38ab93d\\output\\res\\drawable\\abc_edit_text_material.xml"
     },
     {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_format_list_numbered_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable\\ic_format_list_numbered_black_24dp.xml"
+    },
+    {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
         "source": "C:\\Users\\Oliver\\.android\\build-cache\\c54b80eb5f3f7615bb6a3129712d33e7a38ab93d\\output\\res\\drawable\\abc_list_selector_holo_light.xml"
     },
     {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_textsms_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable\\ic_textsms_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_phone_in_talk_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable\\ic_phone_in_talk_black_24dp.xml"
+    },
+    {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_ab_back_material.xml",
         "source": "C:\\Users\\Oliver\\.android\\build-cache\\c54b80eb5f3f7615bb6a3129712d33e7a38ab93d\\output\\res\\drawable\\abc_ic_ab_back_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_open_with_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable\\ic_open_with_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_view_list_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable\\ic_view_list_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_location_searching_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable\\ic_location_searching_black_24dp.xml"
     },
     {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_dark.xml",
@@ -230,5 +322,9 @@
     {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_thumb_material.xml",
         "source": "C:\\Users\\Oliver\\.android\\build-cache\\c54b80eb5f3f7615bb6a3129712d33e7a38ab93d\\output\\res\\drawable\\abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_lock_black_24dp.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable\\ic_lock_black_24dp.xml"
     }
 ]

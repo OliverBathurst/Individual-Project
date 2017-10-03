@@ -20,9 +20,8 @@
     <string name="pressure">Pressure: </string>
     <string name="gpsElev">Reported Elevation: </string>
     <string name="title_activity_beacon">BeaconActivity</string>
-
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
     <string name="action_settings">Settings</string>
+    <string name="title_activity_reorder">Reorder</string>
 </resources>

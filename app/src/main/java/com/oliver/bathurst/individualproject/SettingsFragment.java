@@ -32,7 +32,7 @@ import java.util.Map;
 /**
  * Created by Oliver on 17/06/2017.
  * All Rights Reserved
- * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Unauthorized copying of this file via any medium is strictly prohibited
  * Proprietary and confidential
  * Written by Oliver Bathurst <oliverbathurst12345@gmail.com>
  */
@@ -330,6 +330,16 @@ public class SettingsFragment extends PreferenceFragment {
                     return false;
                 }
             });
+
+            Preference sort_loc = findPreference("sort_loc");
+            sort_loc.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    startActivity(new Intent(SettingsFragment.super.getActivity(), Reorder.class));
+                    return false;
+                }
+            });
+
 
             Preference.OnPreferenceChangeListener simpleList = new Preference.OnPreferenceChangeListener() {
                 @Override

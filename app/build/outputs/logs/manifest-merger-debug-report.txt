@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:2:1-138:12
+ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:2:1-142:12
 	package
 		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:4:5-52
 		INJECTED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml
@@ -112,7 +112,7 @@ ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\
 	android:anyDensity
 		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:37:9-34
 application
-ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:43:5-136:19
+ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:43:5-140:19
 MERGED from [com.android.support:design:25.3.1] C:\Users\Oliver\.android\build-cache\1a8a694240b8ed9d7b17b78df9c3709ea4fed259\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Oliver\.android\build-cache\c54b80eb5f3f7615bb6a3129712d33e7a38ab93d\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\Oliver\.android\build-cache\9b627bd2a31652fbec5440360989c2e9c84a8083\output\AndroidManifest.xml:26:5-20
@@ -305,13 +305,21 @@ ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\
 	android:name
 		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:127:13-44
 activity#com.oliver.bathurst.individualproject.BeaconActivity
-ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:132:9-135:68
+ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:132:9-135:59
 	android:label
 		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:134:13-58
 	android:theme
 		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:135:13-56
 	android:name
 		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:133:13-43
+activity#com.oliver.bathurst.individualproject.Reorder
+ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:136:9-139:59
+	android:label
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:138:13-59
+	android:theme
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:139:13-56
+	android:name
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:137:13-36
 uses-sdk
 INJECTED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:design:25.3.1] C:\Users\Oliver\.android\build-cache\1a8a694240b8ed9d7b17b78df9c3709ea4fed259\output\AndroidManifest.xml:21:5-23:62

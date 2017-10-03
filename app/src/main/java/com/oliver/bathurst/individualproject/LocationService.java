@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -13,6 +14,7 @@ import android.os.BatteryManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
@@ -23,7 +25,7 @@ import android.widget.Toast;
 /**
  * Created by Oliver on 17/06/2017.
  * All Rights Reserved
- * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Unauthorized copying of this file via any medium is strictly prohibited
  * Proprietary and confidential
  * Written by Oliver Bathurst <oliverbathurst12345@gmail.com>
  */
@@ -39,22 +41,23 @@ public class LocationService extends Service implements LocationListener {
     }
 
     Location getLoc() {
+        final SharedPreferences settingsView = PreferenceManager.getDefaultSharedPreferences(c);
         Location loc;
-
-        Location gps = getLocationByGPS();
+        
+        Location gps = switchPref(settingsView.getString("first", "GPS"));
         if (gps != null) {
             loc = gps;
-            DECLARED_BY = "gps";
+            DECLARED_BY = "GPS";
         } else {
-            Location wifi = getLocationByWIFI();
+            Location wifi = switchPref(settingsView.getString("second", "Wi-Fi"));
             if (wifi != null) {
                 loc = wifi;
-                DECLARED_BY = "wifi";
+                DECLARED_BY = "Wi-Fi";
             } else {
-                Location pass = getLocationByPassive();
+                Location pass = switchPref(settingsView.getString("third", "Passive"));
                 if (pass != null) {
                     loc = pass;
-                    DECLARED_BY = "passive";
+                    DECLARED_BY = "Passive";
                 } else {
                     loc = new Location("Device Location");
                     DECLARED_BY = "ERROR!";
@@ -63,7 +66,21 @@ public class LocationService extends Service implements LocationListener {
         }
         return loc;
     }
-
+    private Location switchPref(String provider){
+        Location loc = null;
+        switch (provider) {
+            case "GPS":
+                loc = getLocationByGPS();
+                break;
+            case "Wi-Fi":
+                loc = getLocationByWIFI();
+                break;
+            case "Passive":
+                loc = getLocationByPassive();
+                break;
+        }
+        return loc;
+    }
     String batteryLife() {
         String life = "Build number low";
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {

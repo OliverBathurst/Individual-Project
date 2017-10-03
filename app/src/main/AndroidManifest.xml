@@ -132,7 +132,11 @@
         <activity
             android:name=".BeaconActivity"
             android:label="@string/title_activity_beacon"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Reorder"
+            android:label="@string/title_activity_reorder"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

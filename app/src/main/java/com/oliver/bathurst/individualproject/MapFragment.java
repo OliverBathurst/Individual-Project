@@ -35,14 +35,14 @@ import static android.content.Context.SENSOR_SERVICE;
 /**
  * Created by Oliver on 17/06/2017.
  * All Rights Reserved
- * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Unauthorized copying of this file via any medium is strictly prohibited
  * Proprietary and confidential
  * Written by Oliver Bathurst <oliverbathurst12345@gmail.com>
  */
 
 @SuppressWarnings("deprecation")
 public class MapFragment extends android.support.v4.app.Fragment implements OnMapReadyCallback, LocationListener, SensorEventListener {
-    private float ORIENTATION = 0.0f, currentAccuracy = 100.0f;
+    private float ORIENTATION = 0.0f;
     private View mView;
     private Circle circle, circle_margin;
     private TextView marginOfError;
@@ -121,7 +121,6 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
             gMap = googleMap;
             LocationService locService = new LocationService(getActivity());
             Location loc = locService.getLoc();
-            currentAccuracy = loc.getAccuracy();
 
             SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getActivity());
 
@@ -212,21 +211,18 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
     }
     @Override
     public void onLocationChanged(Location loc) {
-        //if (currentAccuracy >= loc.getAccuracy() ) {
-            currentAccuracy = loc.getAccuracy();
-            if (gMap != null) {
-                gMap.clear();
-                marker = gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
-                        .title("Device Location: " + loc.getLatitude() + loc.getLongitude()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f, 0.5f).rotation(ORIENTATION));
-                showExtras(loc);
-                TextView txtView = (TextView) mView.findViewById(R.id.declare);
-                txtView.setText(getString(R.string.declaration).concat(" " + loc.getProvider()));
-                TextView acc = (TextView) mView.findViewById(R.id.locationAcc);
-                acc.setText(String.format("%s%s", getString(R.string.accuracy), Float.toString(loc.getAccuracy())));
-                TextView gpsElevation = (TextView) mView.findViewById(R.id.gpsElevation);
-                gpsElevation.setText(String.format("%s%s", getString(R.string.gpsElev), Double.toString(loc.getAltitude())));
-            }
-        //}
+        if (gMap != null) {
+            gMap.clear();
+            marker = gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
+                    .title("Device Location: " + loc.getLatitude() + loc.getLongitude()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f, 0.5f).rotation(ORIENTATION));
+            showExtras(loc);
+            TextView txtView = (TextView) mView.findViewById(R.id.declare);
+            txtView.setText(getString(R.string.declaration).concat(" " + loc.getProvider()));
+            TextView acc = (TextView) mView.findViewById(R.id.locationAcc);
+            acc.setText(String.format("%s%s", getString(R.string.accuracy), Float.toString(loc.getAccuracy())));
+            TextView gpsElevation = (TextView) mView.findViewById(R.id.gpsElevation);
+            gpsElevation.setText(String.format("%s%s", getString(R.string.gpsElev), Double.toString(loc.getAltitude())));
+        }
     }
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {}

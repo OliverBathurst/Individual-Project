@@ -8,6 +8,10 @@
         "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\layout\\nav_header_beacon.xml"
     },
     {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_view.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\layout\\list_view.xml"
+    },
+    {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines_media.xml",
         "source": "C:\\Users\\Oliver\\.android\\build-cache\\c54b80eb5f3f7615bb6a3129712d33e7a38ab93d\\output\\res\\layout\\notification_template_lines_media.xml"
     },
@@ -20,12 +24,12 @@
         "source": "C:\\Users\\Oliver\\.android\\build-cache\\c54b80eb5f3f7615bb6a3129712d33e7a38ab93d\\output\\res\\layout\\abc_action_bar_title_item.xml"
     },
     {
-        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
-        "source": "C:\\Users\\Oliver\\.android\\build-cache\\c54b80eb5f3f7615bb6a3129712d33e7a38ab93d\\output\\res\\layout\\abc_select_dialog_material.xml"
-    },
-    {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\layout\\divider_preference.xml",
         "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\layout\\divider_preference.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "C:\\Users\\Oliver\\.android\\build-cache\\c54b80eb5f3f7615bb6a3129712d33e7a38ab93d\\output\\res\\layout\\abc_select_dialog_material.xml"
     },
     {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\layout\\app_bar_beacon.xml",
@@ -54,6 +58,10 @@
     {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog2.xml",
         "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\layout\\dialog2.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_reorder.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\layout\\content_reorder.xml"
     },
     {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_icon_group.xml",
@@ -90,6 +98,10 @@
     {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
         "source": "C:\\Users\\Oliver\\.android\\build-cache\\c54b80eb5f3f7615bb6a3129712d33e7a38ab93d\\output\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_reorder.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\layout\\activity_reorder.xml"
     },
     {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
