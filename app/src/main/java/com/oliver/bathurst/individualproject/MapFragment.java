@@ -159,7 +159,7 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
 
             marker = gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
                     .title("Device Location: " + loc.getLatitude() + loc.getLongitude()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f));
-            CameraPosition cam = CameraPosition.builder().target(new LatLng(loc.getLatitude(), loc.getLongitude())).zoom(16).bearing(0).tilt(45).build();
+            CameraPosition cam = CameraPosition.builder().target(new LatLng(loc.getLatitude(), loc.getLongitude())).zoom(19).bearing(0).tilt(45).build();
             gMap.moveCamera(CameraUpdateFactory.newCameraPosition(cam));
 
             showExtras(loc);
@@ -176,7 +176,7 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
                 circle_margin.remove();
             }
             if(gMap != null) {
-                circle_margin = gMap.addCircle(new CircleOptions().strokeColor(Color.RED)
+                circle_margin = gMap.addCircle(new CircleOptions().strokeColor(Color.GREEN).fillColor(0x5500ff00)
                         .center(new LatLng(loc.getLatitude(), loc.getLongitude()))
                         .radius(loc.getAccuracy()));
             }
@@ -212,7 +212,7 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
     }
     @Override
     public void onLocationChanged(Location loc) {
-        if (currentAccuracy >= loc.getAccuracy() ) {
+        //if (currentAccuracy >= loc.getAccuracy() ) {
             currentAccuracy = loc.getAccuracy();
             if (gMap != null) {
                 gMap.clear();
@@ -226,7 +226,7 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
                 TextView gpsElevation = (TextView) mView.findViewById(R.id.gpsElevation);
                 gpsElevation.setText(String.format("%s%s", getString(R.string.gpsElev), Double.toString(loc.getAltitude())));
             }
-        }
+        //}
     }
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {}

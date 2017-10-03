@@ -1,6 +1,14 @@
 [
     {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\menu\\activity_beacon_drawer.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\menu\\activity_beacon_drawer.xml"
+    },
+    {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\menu\\navigation.xml",
         "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\menu\\navigation.xml"
+    },
+    {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\menu\\beacon.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\menu\\beacon.xml"
     }
 ]

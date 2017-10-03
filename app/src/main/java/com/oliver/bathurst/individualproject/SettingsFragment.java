@@ -322,6 +322,14 @@ public class SettingsFragment extends PreferenceFragment {
                     return false;
                 }
             });
+            Preference beacon = findPreference("beacon");
+            beacon.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    startActivity(new Intent(SettingsFragment.super.getActivity(), BeaconActivity.class));
+                    return false;
+                }
+            });
 
             Preference.OnPreferenceChangeListener simpleList = new Preference.OnPreferenceChangeListener() {
                 @Override

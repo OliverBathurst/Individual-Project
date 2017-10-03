@@ -88,6 +88,10 @@
         "source": "C:\\Users\\Oliver\\.android\\build-cache\\1a8a694240b8ed9d7b17b78df9c3709ea4fed259\\output\\res\\drawable\\design_fab_background.xml"
     },
     {
+        "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\side_nav_bar.xml",
+        "source": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\src\\main\\res\\drawable\\side_nav_bar.xml"
+    },
+    {
         "merged": "C:\\Users\\Oliver\\AndroidStudioProjects\\IndividualProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background.xml",
         "source": "C:\\Users\\Oliver\\.android\\build-cache\\c54b80eb5f3f7615bb6a3129712d33e7a38ab93d\\output\\res\\drawable\\abc_dialog_material_background.xml"
     },

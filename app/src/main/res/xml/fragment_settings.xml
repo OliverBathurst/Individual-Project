@@ -347,6 +347,22 @@
         android:layout="@layout/divider_preference">
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="Beacons (Beta)">
+        <Preference
+            android:key="beacon"
+            android:icon="@drawable/ic_brightness_1_black_24dp"
+            android:title="Beacons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout="@layout/divider_preference">
+    </PreferenceCategory>
+
+
+
         <PreferenceCategory
             android:title="Misc">
             <CheckBoxPreference
@@ -404,6 +420,19 @@
             android:layout="@layout/divider_preference">
         </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="Locator Precedence">
+        <Preference
+            android:key="sort_loc"
+            android:icon="@drawable/ic_format_list_numbered_black_24dp"
+            android:title="Sort Location Methods"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout="@layout/divider_preference">
+    </PreferenceCategory>
 
         <PreferenceCategory
             android:title="Account">

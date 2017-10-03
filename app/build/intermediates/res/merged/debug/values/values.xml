@@ -664,6 +664,8 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="design_appbar_elevation">4dp</dimen>
     <dimen name="design_bottom_navigation_active_item_max_width">168dp</dimen>
     <dimen name="design_bottom_navigation_active_text_size">14sp</dimen>
@@ -704,6 +706,7 @@
     <dimen name="design_tab_text_size_2line">12sp</dimen>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
+    <dimen name="fab_margin">16dp</dimen>
     <item format="float" name="highlight_alpha_material_colored" type="dimen">0.26</item>
     <item format="float" name="highlight_alpha_material_dark" type="dimen">0.20</item>
     <item format="float" name="highlight_alpha_material_light" type="dimen">0.12</item>
@@ -714,6 +717,8 @@
     <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_max_velocity">800dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_velocity">120dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="notification_action_icon_size">32dp</dimen>
     <dimen name="notification_action_text_size">13sp</dimen>
     <dimen name="notification_big_circle_margin">12dp</dimen>
@@ -729,6 +734,12 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
+    <item name="ic_menu_camera" type="drawable">@android:drawable/ic_menu_camera</item>
+    <item name="ic_menu_gallery" type="drawable">@android:drawable/ic_menu_gallery</item>
+    <item name="ic_menu_manage" type="drawable">@android:drawable/ic_menu_manage</item>
+    <item name="ic_menu_send" type="drawable">@android:drawable/ic_menu_send</item>
+    <item name="ic_menu_share" type="drawable">@android:drawable/ic_menu_share</item>
+    <item name="ic_menu_slideshow" type="drawable">@android:drawable/ic_menu_slideshow</item>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <drawable name="notification_template_icon_low_bg">#0cffffff</drawable>
     <item name="action_bar_activity_content" type="id"/>
@@ -788,6 +799,7 @@
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="accuracy">Accuracy: </string>
+    <string name="action_settings">Settings</string>
     <string name="app_name">Individual Project</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
@@ -814,6 +826,8 @@
     <string name="degrees">Degrees: </string>
     <string name="gpsElev">Reported Elevation: </string>
     <string name="information">I N F O R M A T I O N</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="password_toggle_content_description">Toggle password visibility</string>
     <string name="path_password_eye" translatable="false">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
     <string name="path_password_eye_mask_strike_through" translatable="false">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
@@ -831,6 +845,7 @@
     <string name="search_menu_title">Search</string>
     <string name="start">S T A R T</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="title_activity_beacon">BeaconActivity</string>
     <string name="title_dashboard">Settings</string>
     <string name="title_device">Device</string>
     <string name="title_home">Map</string>

@@ -138,6 +138,10 @@
             android:exported="true" />
 
         <activity
+            android:name="com.oliver.bathurst.individualproject.BeaconActivity"
+            android:label="@string/title_activity_beacon"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
