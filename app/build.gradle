@@ -4,7 +4,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion '25.0.3'
     defaultConfig {
-        applicationId "com.oliver.bathurst.findmyandroiddevice"
+        applicationId "com.oliver.bathurst.individualproject"
         android.defaultConfig.vectorDrawables.useSupportLibrary = "true"
         minSdkVersion 14
         //noinspection OldTargetApi
@@ -34,3 +34,4 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.google.android.gms:play-services-location:11.0.4'
 }
+apply plugin: 'com.google.gms.google-services'

@@ -3361,13 +3361,13 @@ containing a value of this type.
         public static final int abc_textfield_search_material=0x7f020051;
         public static final int abc_vector_test=0x7f020052;
         public static final int avd_hide_password=0x7f020053;
-        public static final int avd_hide_password_1=0x7f02009e;
-        public static final int avd_hide_password_2=0x7f02009f;
-        public static final int avd_hide_password_3=0x7f0200a0;
+        public static final int avd_hide_password_1=0x7f0200a0;
+        public static final int avd_hide_password_2=0x7f0200a1;
+        public static final int avd_hide_password_3=0x7f0200a2;
         public static final int avd_show_password=0x7f020054;
-        public static final int avd_show_password_1=0x7f0200a1;
-        public static final int avd_show_password_2=0x7f0200a2;
-        public static final int avd_show_password_3=0x7f0200a3;
+        public static final int avd_show_password_1=0x7f0200a3;
+        public static final int avd_show_password_2=0x7f0200a4;
+        public static final int avd_show_password_3=0x7f0200a5;
         public static final int common_full_open_on_phone=0x7f020055;
         public static final int common_google_signin_btn_icon_dark=0x7f020056;
         public static final int common_google_signin_btn_icon_dark_focused=0x7f020057;
@@ -3396,51 +3396,53 @@ containing a value of this type.
         public static final int googleg_disabled_color_18=0x7f02006e;
         public static final int googleg_standard_color_18=0x7f02006f;
         public static final int ic_account_circle_black_24dp=0x7f020070;
-        public static final int ic_arrow_downward_black_24dp=0x7f020071;
-        public static final int ic_arrow_upward_black_24dp=0x7f020072;
-        public static final int ic_battery_20_black_24dp=0x7f020073;
-        public static final int ic_brightness_1_black_24dp=0x7f020074;
-        public static final int ic_cloud_upload_black_24dp=0x7f020075;
-        public static final int ic_do_not_disturb_on_black_24dp=0x7f020076;
-        public static final int ic_email_black_24dp=0x7f020077;
-        public static final int ic_format_list_numbered_black_24dp=0x7f020078;
-        public static final int ic_info_black_24dp=0x7f020079;
-        public static final int ic_location_searching_black_24dp=0x7f02007a;
-        public static final int ic_lock_black_24dp=0x7f02007b;
-        public static final int ic_map_black_24dp=0x7f02007c;
-        public static final int ic_marker=0x7f02007d;
-        public static final int ic_menu_camera=0x7f02007e;
-        public static final int ic_menu_gallery=0x7f02007f;
-        public static final int ic_menu_manage=0x7f020080;
-        public static final int ic_menu_send=0x7f020081;
-        public static final int ic_menu_share=0x7f020082;
-        public static final int ic_menu_slideshow=0x7f020083;
-        public static final int ic_open_with_black_24dp=0x7f020084;
-        public static final int ic_phone_android_black_24dp=0x7f020085;
-        public static final int ic_phone_in_talk_black_24dp=0x7f020086;
-        public static final int ic_save_black_24dp=0x7f020087;
-        public static final int ic_settings_black_24dp=0x7f020088;
-        public static final int ic_sim_card_black_24dp=0x7f020089;
-        public static final int ic_smartphone_black_24dp=0x7f02008a;
-        public static final int ic_textsms_black_24dp=0x7f02008b;
-        public static final int ic_timer_black_24dp=0x7f02008c;
-        public static final int ic_view_list_black_24dp=0x7f02008d;
-        public static final int ic_warning_black_24dp=0x7f02008e;
-        public static final int logo=0x7f02008f;
-        public static final int navigation_empty_icon=0x7f020090;
-        public static final int notification_action_background=0x7f020091;
-        public static final int notification_bg=0x7f020092;
-        public static final int notification_bg_low=0x7f020093;
-        public static final int notification_bg_low_normal=0x7f020094;
-        public static final int notification_bg_low_pressed=0x7f020095;
-        public static final int notification_bg_normal=0x7f020096;
-        public static final int notification_bg_normal_pressed=0x7f020097;
-        public static final int notification_icon_background=0x7f020098;
-        public static final int notification_template_icon_bg=0x7f02009c;
-        public static final int notification_template_icon_low_bg=0x7f02009d;
-        public static final int notification_tile_bg=0x7f020099;
-        public static final int notify_panel_notification_icon_bg=0x7f02009a;
-        public static final int side_nav_bar=0x7f02009b;
+        public static final int ic_add_black_24dp=0x7f020071;
+        public static final int ic_arrow_downward_black_24dp=0x7f020072;
+        public static final int ic_arrow_upward_black_24dp=0x7f020073;
+        public static final int ic_battery_20_black_24dp=0x7f020074;
+        public static final int ic_brightness_1_black_24dp=0x7f020075;
+        public static final int ic_cloud_upload_black_24dp=0x7f020076;
+        public static final int ic_do_not_disturb_on_black_24dp=0x7f020077;
+        public static final int ic_email_black_24dp=0x7f020078;
+        public static final int ic_format_list_numbered_black_24dp=0x7f020079;
+        public static final int ic_info_black_24dp=0x7f02007a;
+        public static final int ic_location_searching_black_24dp=0x7f02007b;
+        public static final int ic_lock_black_24dp=0x7f02007c;
+        public static final int ic_map_black_24dp=0x7f02007d;
+        public static final int ic_marker=0x7f02007e;
+        public static final int ic_menu_camera=0x7f02007f;
+        public static final int ic_menu_gallery=0x7f020080;
+        public static final int ic_menu_manage=0x7f020081;
+        public static final int ic_menu_send=0x7f020082;
+        public static final int ic_menu_share=0x7f020083;
+        public static final int ic_menu_slideshow=0x7f020084;
+        public static final int ic_open_with_black_24dp=0x7f020085;
+        public static final int ic_phone_android_black_24dp=0x7f020086;
+        public static final int ic_phone_in_talk_black_24dp=0x7f020087;
+        public static final int ic_remove_black_24dp=0x7f020088;
+        public static final int ic_save_black_24dp=0x7f020089;
+        public static final int ic_settings_black_24dp=0x7f02008a;
+        public static final int ic_sim_card_black_24dp=0x7f02008b;
+        public static final int ic_smartphone_black_24dp=0x7f02008c;
+        public static final int ic_textsms_black_24dp=0x7f02008d;
+        public static final int ic_timer_black_24dp=0x7f02008e;
+        public static final int ic_view_list_black_24dp=0x7f02008f;
+        public static final int ic_warning_black_24dp=0x7f020090;
+        public static final int logo=0x7f020091;
+        public static final int navigation_empty_icon=0x7f020092;
+        public static final int notification_action_background=0x7f020093;
+        public static final int notification_bg=0x7f020094;
+        public static final int notification_bg_low=0x7f020095;
+        public static final int notification_bg_low_normal=0x7f020096;
+        public static final int notification_bg_low_pressed=0x7f020097;
+        public static final int notification_bg_normal=0x7f020098;
+        public static final int notification_bg_normal_pressed=0x7f020099;
+        public static final int notification_icon_background=0x7f02009a;
+        public static final int notification_template_icon_bg=0x7f02009e;
+        public static final int notification_template_icon_low_bg=0x7f02009f;
+        public static final int notification_tile_bg=0x7f02009b;
+        public static final int notify_panel_notification_icon_bg=0x7f02009c;
+        public static final int side_nav_bar=0x7f02009d;
     }
     public static final class id {
         public static final int action0=0x7f0e00b5;
@@ -3808,33 +3810,41 @@ containing a value of this type.
         public static final int common_signin_button_text=0x7f070022;
         public static final int common_signin_button_text_long=0x7f070023;
         public static final int declaration=0x7f070039;
-        public static final int degrees=0x7f07003a;
-        public static final int gpsElev=0x7f07003b;
-        public static final int information=0x7f07003c;
-        public static final int navigation_drawer_close=0x7f07003d;
-        public static final int navigation_drawer_open=0x7f07003e;
-        public static final int password_toggle_content_description=0x7f07003f;
-        public static final int path_password_eye=0x7f070040;
-        public static final int path_password_eye_mask_strike_through=0x7f070041;
-        public static final int path_password_eye_mask_visible=0x7f070042;
-        public static final int path_password_strike_through=0x7f070043;
-        public static final int please_select_battery_percent=0x7f070044;
-        public static final int please_select_volume=0x7f070045;
-        public static final int pressure=0x7f070046;
-        public static final int radius=0x7f070047;
-        public static final int radiuscolon=0x7f070048;
-        public static final int save=0x7f070049;
-        public static final int scale=0x7f07004a;
-        public static final int scalenozero=0x7f07004b;
-        public static final int scalewithone=0x7f07004c;
+        public static final int default_web_client_id=0x7f07003a;
+        public static final int degrees=0x7f07003b;
+        public static final int firebase_database_url=0x7f07003c;
+        public static final int gcm_defaultSenderId=0x7f07003d;
+        public static final int google_api_key=0x7f07003e;
+        public static final int google_app_id=0x7f07003f;
+        public static final int google_crash_reporting_api_key=0x7f070040;
+        public static final int google_storage_bucket=0x7f070041;
+        public static final int gpsElev=0x7f070042;
+        public static final int information=0x7f070043;
+        public static final int navigation_drawer_close=0x7f070044;
+        public static final int navigation_drawer_open=0x7f070045;
+        public static final int password_toggle_content_description=0x7f070046;
+        public static final int path_password_eye=0x7f070047;
+        public static final int path_password_eye_mask_strike_through=0x7f070048;
+        public static final int path_password_eye_mask_visible=0x7f070049;
+        public static final int path_password_strike_through=0x7f07004a;
+        public static final int please_select_battery_percent=0x7f07004b;
+        public static final int please_select_volume=0x7f07004c;
+        public static final int pressure=0x7f07004d;
+        public static final int project_id=0x7f07004e;
+        public static final int radius=0x7f07004f;
+        public static final int radiuscolon=0x7f070050;
+        public static final int save=0x7f070051;
+        public static final int scale=0x7f070052;
+        public static final int scalenozero=0x7f070053;
+        public static final int scalewithone=0x7f070054;
         public static final int search_menu_title=0x7f070024;
-        public static final int start=0x7f07004d;
+        public static final int start=0x7f070055;
         public static final int status_bar_notification_info_overflow=0x7f070025;
-        public static final int title_activity_beacon=0x7f07004e;
-        public static final int title_activity_reorder=0x7f07004f;
-        public static final int title_dashboard=0x7f070050;
-        public static final int title_device=0x7f070051;
-        public static final int title_home=0x7f070052;
+        public static final int title_activity_beacon=0x7f070056;
+        public static final int title_activity_reorder=0x7f070057;
+        public static final int title_dashboard=0x7f070058;
+        public static final int title_device=0x7f070059;
+        public static final int title_home=0x7f07005a;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f0900a1;
@@ -4233,35 +4243,35 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ActionBar_background com.oliver.bathurst.findmyandroiddevice:background}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_backgroundSplit com.oliver.bathurst.findmyandroiddevice:backgroundSplit}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_backgroundStacked com.oliver.bathurst.findmyandroiddevice:backgroundStacked}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_contentInsetEnd com.oliver.bathurst.findmyandroiddevice:contentInsetEnd}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_contentInsetEndWithActions com.oliver.bathurst.findmyandroiddevice:contentInsetEndWithActions}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_contentInsetLeft com.oliver.bathurst.findmyandroiddevice:contentInsetLeft}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_contentInsetRight com.oliver.bathurst.findmyandroiddevice:contentInsetRight}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_contentInsetStart com.oliver.bathurst.findmyandroiddevice:contentInsetStart}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_contentInsetStartWithNavigation com.oliver.bathurst.findmyandroiddevice:contentInsetStartWithNavigation}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_customNavigationLayout com.oliver.bathurst.findmyandroiddevice:customNavigationLayout}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_displayOptions com.oliver.bathurst.findmyandroiddevice:displayOptions}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_divider com.oliver.bathurst.findmyandroiddevice:divider}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_elevation com.oliver.bathurst.findmyandroiddevice:elevation}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_height com.oliver.bathurst.findmyandroiddevice:height}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_hideOnContentScroll com.oliver.bathurst.findmyandroiddevice:hideOnContentScroll}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_homeAsUpIndicator com.oliver.bathurst.findmyandroiddevice:homeAsUpIndicator}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_homeLayout com.oliver.bathurst.findmyandroiddevice:homeLayout}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_icon com.oliver.bathurst.findmyandroiddevice:icon}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_indeterminateProgressStyle com.oliver.bathurst.findmyandroiddevice:indeterminateProgressStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_itemPadding com.oliver.bathurst.findmyandroiddevice:itemPadding}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_logo com.oliver.bathurst.findmyandroiddevice:logo}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_navigationMode com.oliver.bathurst.findmyandroiddevice:navigationMode}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_popupTheme com.oliver.bathurst.findmyandroiddevice:popupTheme}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_progressBarPadding com.oliver.bathurst.findmyandroiddevice:progressBarPadding}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_progressBarStyle com.oliver.bathurst.findmyandroiddevice:progressBarStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_subtitle com.oliver.bathurst.findmyandroiddevice:subtitle}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_subtitleTextStyle com.oliver.bathurst.findmyandroiddevice:subtitleTextStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_title com.oliver.bathurst.findmyandroiddevice:title}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_titleTextStyle com.oliver.bathurst.findmyandroiddevice:titleTextStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_background com.oliver.bathurst.individualproject:background}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_backgroundSplit com.oliver.bathurst.individualproject:backgroundSplit}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_backgroundStacked com.oliver.bathurst.individualproject:backgroundStacked}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_contentInsetEnd com.oliver.bathurst.individualproject:contentInsetEnd}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_contentInsetEndWithActions com.oliver.bathurst.individualproject:contentInsetEndWithActions}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_contentInsetLeft com.oliver.bathurst.individualproject:contentInsetLeft}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_contentInsetRight com.oliver.bathurst.individualproject:contentInsetRight}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_contentInsetStart com.oliver.bathurst.individualproject:contentInsetStart}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_contentInsetStartWithNavigation com.oliver.bathurst.individualproject:contentInsetStartWithNavigation}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_customNavigationLayout com.oliver.bathurst.individualproject:customNavigationLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_displayOptions com.oliver.bathurst.individualproject:displayOptions}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_divider com.oliver.bathurst.individualproject:divider}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_elevation com.oliver.bathurst.individualproject:elevation}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_height com.oliver.bathurst.individualproject:height}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_hideOnContentScroll com.oliver.bathurst.individualproject:hideOnContentScroll}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_homeAsUpIndicator com.oliver.bathurst.individualproject:homeAsUpIndicator}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_homeLayout com.oliver.bathurst.individualproject:homeLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_icon com.oliver.bathurst.individualproject:icon}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_indeterminateProgressStyle com.oliver.bathurst.individualproject:indeterminateProgressStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_itemPadding com.oliver.bathurst.individualproject:itemPadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_logo com.oliver.bathurst.individualproject:logo}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_navigationMode com.oliver.bathurst.individualproject:navigationMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_popupTheme com.oliver.bathurst.individualproject:popupTheme}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_progressBarPadding com.oliver.bathurst.individualproject:progressBarPadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_progressBarStyle com.oliver.bathurst.individualproject:progressBarStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_subtitle com.oliver.bathurst.individualproject:subtitle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_subtitleTextStyle com.oliver.bathurst.individualproject:subtitleTextStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_title com.oliver.bathurst.individualproject:title}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_titleTextStyle com.oliver.bathurst.individualproject:titleTextStyle}</code></td><td></td></tr>
            </table>
            @see #ActionBar_background
            @see #ActionBar_backgroundSplit
@@ -4304,17 +4314,17 @@ containing a value of this type.
             0x7f01008c
         };
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#background}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#background}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:background
+          @attr name com.oliver.bathurst.individualproject:background
         */
         public static final int ActionBar_background = 10;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#backgroundSplit}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#backgroundSplit}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -4322,11 +4332,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:backgroundSplit
+          @attr name com.oliver.bathurst.individualproject:backgroundSplit
         */
         public static final int ActionBar_backgroundSplit = 12;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#backgroundStacked}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#backgroundStacked}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -4334,11 +4344,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:backgroundStacked
+          @attr name com.oliver.bathurst.individualproject:backgroundStacked
         */
         public static final int ActionBar_backgroundStacked = 11;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#contentInsetEnd}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#contentInsetEnd}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -4350,11 +4360,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:contentInsetEnd
+          @attr name com.oliver.bathurst.individualproject:contentInsetEnd
         */
         public static final int ActionBar_contentInsetEnd = 21;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#contentInsetEndWithActions}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#contentInsetEndWithActions}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -4366,11 +4376,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:contentInsetEndWithActions
+          @attr name com.oliver.bathurst.individualproject:contentInsetEndWithActions
         */
         public static final int ActionBar_contentInsetEndWithActions = 25;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#contentInsetLeft}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#contentInsetLeft}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -4382,11 +4392,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:contentInsetLeft
+          @attr name com.oliver.bathurst.individualproject:contentInsetLeft
         */
         public static final int ActionBar_contentInsetLeft = 22;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#contentInsetRight}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#contentInsetRight}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -4398,11 +4408,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:contentInsetRight
+          @attr name com.oliver.bathurst.individualproject:contentInsetRight
         */
         public static final int ActionBar_contentInsetRight = 23;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#contentInsetStart}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#contentInsetStart}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -4414,11 +4424,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:contentInsetStart
+          @attr name com.oliver.bathurst.individualproject:contentInsetStart
         */
         public static final int ActionBar_contentInsetStart = 20;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#contentInsetStartWithNavigation}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#contentInsetStartWithNavigation}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -4430,21 +4440,21 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:contentInsetStartWithNavigation
+          @attr name com.oliver.bathurst.individualproject:contentInsetStartWithNavigation
         */
         public static final int ActionBar_contentInsetStartWithNavigation = 24;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#customNavigationLayout}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#customNavigationLayout}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:customNavigationLayout
+          @attr name com.oliver.bathurst.individualproject:customNavigationLayout
         */
         public static final int ActionBar_customNavigationLayout = 13;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#displayOptions}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#displayOptions}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -4462,21 +4472,21 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>showCustom</code></td><td>0x10</td><td></td></tr>
 <tr><td><code>disableHome</code></td><td>0x20</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:displayOptions
+          @attr name com.oliver.bathurst.individualproject:displayOptions
         */
         public static final int ActionBar_displayOptions = 3;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#divider}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#divider}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:divider
+          @attr name com.oliver.bathurst.individualproject:divider
         */
         public static final int ActionBar_divider = 9;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#elevation}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#elevation}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -4488,11 +4498,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:elevation
+          @attr name com.oliver.bathurst.individualproject:elevation
         */
         public static final int ActionBar_elevation = 26;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#height}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#height}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -4504,11 +4514,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:height
+          @attr name com.oliver.bathurst.individualproject:height
         */
         public static final int ActionBar_height = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#hideOnContentScroll}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#hideOnContentScroll}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -4518,51 +4528,51 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:hideOnContentScroll
+          @attr name com.oliver.bathurst.individualproject:hideOnContentScroll
         */
         public static final int ActionBar_hideOnContentScroll = 19;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#homeAsUpIndicator}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#homeAsUpIndicator}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:homeAsUpIndicator
+          @attr name com.oliver.bathurst.individualproject:homeAsUpIndicator
         */
         public static final int ActionBar_homeAsUpIndicator = 28;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#homeLayout}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#homeLayout}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:homeLayout
+          @attr name com.oliver.bathurst.individualproject:homeLayout
         */
         public static final int ActionBar_homeLayout = 14;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#icon}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#icon}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:icon
+          @attr name com.oliver.bathurst.individualproject:icon
         */
         public static final int ActionBar_icon = 7;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#indeterminateProgressStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#indeterminateProgressStyle}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:indeterminateProgressStyle
+          @attr name com.oliver.bathurst.individualproject:indeterminateProgressStyle
         */
         public static final int ActionBar_indeterminateProgressStyle = 16;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#itemPadding}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#itemPadding}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -4574,21 +4584,21 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:itemPadding
+          @attr name com.oliver.bathurst.individualproject:itemPadding
         */
         public static final int ActionBar_itemPadding = 18;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#logo}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#logo}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:logo
+          @attr name com.oliver.bathurst.individualproject:logo
         */
         public static final int ActionBar_logo = 8;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#navigationMode}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#navigationMode}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -4602,21 +4612,21 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>listMode</code></td><td>1</td><td></td></tr>
 <tr><td><code>tabMode</code></td><td>2</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:navigationMode
+          @attr name com.oliver.bathurst.individualproject:navigationMode
         */
         public static final int ActionBar_navigationMode = 2;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#popupTheme}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#popupTheme}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:popupTheme
+          @attr name com.oliver.bathurst.individualproject:popupTheme
         */
         public static final int ActionBar_popupTheme = 27;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#progressBarPadding}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#progressBarPadding}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -4628,21 +4638,21 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:progressBarPadding
+          @attr name com.oliver.bathurst.individualproject:progressBarPadding
         */
         public static final int ActionBar_progressBarPadding = 17;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#progressBarStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#progressBarStyle}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:progressBarStyle
+          @attr name com.oliver.bathurst.individualproject:progressBarStyle
         */
         public static final int ActionBar_progressBarStyle = 15;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#subtitle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#subtitle}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -4652,21 +4662,21 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:subtitle
+          @attr name com.oliver.bathurst.individualproject:subtitle
         */
         public static final int ActionBar_subtitle = 4;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#subtitleTextStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#subtitleTextStyle}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:subtitleTextStyle
+          @attr name com.oliver.bathurst.individualproject:subtitleTextStyle
         */
         public static final int ActionBar_subtitleTextStyle = 6;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#title}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#title}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -4676,17 +4686,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:title
+          @attr name com.oliver.bathurst.individualproject:title
         */
         public static final int ActionBar_title = 1;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#titleTextStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#titleTextStyle}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:titleTextStyle
+          @attr name com.oliver.bathurst.individualproject:titleTextStyle
         */
         public static final int ActionBar_titleTextStyle = 5;
         /** Attributes that can be used with a ActionBarLayout.
@@ -4738,12 +4748,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ActionMode_background com.oliver.bathurst.findmyandroiddevice:background}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionMode_backgroundSplit com.oliver.bathurst.findmyandroiddevice:backgroundSplit}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionMode_closeItemLayout com.oliver.bathurst.findmyandroiddevice:closeItemLayout}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionMode_height com.oliver.bathurst.findmyandroiddevice:height}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionMode_subtitleTextStyle com.oliver.bathurst.findmyandroiddevice:subtitleTextStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionMode_titleTextStyle com.oliver.bathurst.findmyandroiddevice:titleTextStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionMode_background com.oliver.bathurst.individualproject:background}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionMode_backgroundSplit com.oliver.bathurst.individualproject:backgroundSplit}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionMode_closeItemLayout com.oliver.bathurst.individualproject:closeItemLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionMode_height com.oliver.bathurst.individualproject:height}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionMode_subtitleTextStyle com.oliver.bathurst.individualproject:subtitleTextStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionMode_titleTextStyle com.oliver.bathurst.individualproject:titleTextStyle}</code></td><td></td></tr>
            </table>
            @see #ActionMode_background
            @see #ActionMode_backgroundSplit
@@ -4757,17 +4767,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f01003a, 0x7f01004a
         };
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#background}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#background}
           attribute's value can be found in the {@link #ActionMode} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:background
+          @attr name com.oliver.bathurst.individualproject:background
         */
         public static final int ActionMode_background = 3;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#backgroundSplit}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#backgroundSplit}
           attribute's value can be found in the {@link #ActionMode} array.
 
 
@@ -4775,21 +4785,21 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:backgroundSplit
+          @attr name com.oliver.bathurst.individualproject:backgroundSplit
         */
         public static final int ActionMode_backgroundSplit = 4;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#closeItemLayout}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#closeItemLayout}
           attribute's value can be found in the {@link #ActionMode} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:closeItemLayout
+          @attr name com.oliver.bathurst.individualproject:closeItemLayout
         */
         public static final int ActionMode_closeItemLayout = 5;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#height}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#height}
           attribute's value can be found in the {@link #ActionMode} array.
 
 
@@ -4801,27 +4811,27 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:height
+          @attr name com.oliver.bathurst.individualproject:height
         */
         public static final int ActionMode_height = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#subtitleTextStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#subtitleTextStyle}
           attribute's value can be found in the {@link #ActionMode} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:subtitleTextStyle
+          @attr name com.oliver.bathurst.individualproject:subtitleTextStyle
         */
         public static final int ActionMode_subtitleTextStyle = 2;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#titleTextStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#titleTextStyle}
           attribute's value can be found in the {@link #ActionMode} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:titleTextStyle
+          @attr name com.oliver.bathurst.individualproject:titleTextStyle
         */
         public static final int ActionMode_titleTextStyle = 1;
         /** Attributes that can be used with a ActivityChooserView.
@@ -4830,8 +4840,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ActivityChooserView_expandActivityOverflowButtonDrawable com.oliver.bathurst.findmyandroiddevice:expandActivityOverflowButtonDrawable}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActivityChooserView_initialActivityCount com.oliver.bathurst.findmyandroiddevice:initialActivityCount}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActivityChooserView_expandActivityOverflowButtonDrawable com.oliver.bathurst.individualproject:expandActivityOverflowButtonDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActivityChooserView_initialActivityCount com.oliver.bathurst.individualproject:initialActivityCount}</code></td><td></td></tr>
            </table>
            @see #ActivityChooserView_expandActivityOverflowButtonDrawable
            @see #ActivityChooserView_initialActivityCount
@@ -4840,17 +4850,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f01004b, 0x7f01004c
         };
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#expandActivityOverflowButtonDrawable}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#expandActivityOverflowButtonDrawable}
           attribute's value can be found in the {@link #ActivityChooserView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:expandActivityOverflowButtonDrawable
+          @attr name com.oliver.bathurst.individualproject:expandActivityOverflowButtonDrawable
         */
         public static final int ActivityChooserView_expandActivityOverflowButtonDrawable = 1;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#initialActivityCount}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#initialActivityCount}
           attribute's value can be found in the {@link #ActivityChooserView} array.
 
 
@@ -4860,7 +4870,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:initialActivityCount
+          @attr name com.oliver.bathurst.individualproject:initialActivityCount
         */
         public static final int ActivityChooserView_initialActivityCount = 0;
         /** Attributes that can be used with a AlertDialog.
@@ -4870,12 +4880,12 @@ containing a value of this type.
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #AlertDialog_android_layout android:layout}</code></td><td></td></tr>
-           <tr><td><code>{@link #AlertDialog_buttonPanelSideLayout com.oliver.bathurst.findmyandroiddevice:buttonPanelSideLayout}</code></td><td></td></tr>
-           <tr><td><code>{@link #AlertDialog_listItemLayout com.oliver.bathurst.findmyandroiddevice:listItemLayout}</code></td><td></td></tr>
-           <tr><td><code>{@link #AlertDialog_listLayout com.oliver.bathurst.findmyandroiddevice:listLayout}</code></td><td></td></tr>
-           <tr><td><code>{@link #AlertDialog_multiChoiceItemLayout com.oliver.bathurst.findmyandroiddevice:multiChoiceItemLayout}</code></td><td></td></tr>
-           <tr><td><code>{@link #AlertDialog_showTitle com.oliver.bathurst.findmyandroiddevice:showTitle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AlertDialog_singleChoiceItemLayout com.oliver.bathurst.findmyandroiddevice:singleChoiceItemLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_buttonPanelSideLayout com.oliver.bathurst.individualproject:buttonPanelSideLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_listItemLayout com.oliver.bathurst.individualproject:listItemLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_listLayout com.oliver.bathurst.individualproject:listLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_multiChoiceItemLayout com.oliver.bathurst.individualproject:multiChoiceItemLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_showTitle com.oliver.bathurst.individualproject:showTitle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_singleChoiceItemLayout com.oliver.bathurst.individualproject:singleChoiceItemLayout}</code></td><td></td></tr>
            </table>
            @see #AlertDialog_android_layout
            @see #AlertDialog_buttonPanelSideLayout
@@ -4896,47 +4906,47 @@ containing a value of this type.
         */
         public static final int AlertDialog_android_layout = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#buttonPanelSideLayout}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#buttonPanelSideLayout}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:buttonPanelSideLayout
+          @attr name com.oliver.bathurst.individualproject:buttonPanelSideLayout
         */
         public static final int AlertDialog_buttonPanelSideLayout = 1;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#listItemLayout}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#listItemLayout}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:listItemLayout
+          @attr name com.oliver.bathurst.individualproject:listItemLayout
         */
         public static final int AlertDialog_listItemLayout = 5;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#listLayout}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#listLayout}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:listLayout
+          @attr name com.oliver.bathurst.individualproject:listLayout
         */
         public static final int AlertDialog_listLayout = 2;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#multiChoiceItemLayout}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#multiChoiceItemLayout}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:multiChoiceItemLayout
+          @attr name com.oliver.bathurst.individualproject:multiChoiceItemLayout
         */
         public static final int AlertDialog_multiChoiceItemLayout = 3;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#showTitle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#showTitle}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
@@ -4946,17 +4956,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:showTitle
+          @attr name com.oliver.bathurst.individualproject:showTitle
         */
         public static final int AlertDialog_showTitle = 6;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#singleChoiceItemLayout}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#singleChoiceItemLayout}
           attribute's value can be found in the {@link #AlertDialog} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:singleChoiceItemLayout
+          @attr name com.oliver.bathurst.individualproject:singleChoiceItemLayout
         */
         public static final int AlertDialog_singleChoiceItemLayout = 4;
         /** Attributes that can be used with a AppBarLayout.
@@ -4966,8 +4976,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #AppBarLayout_android_background android:background}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppBarLayout_elevation com.oliver.bathurst.findmyandroiddevice:elevation}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppBarLayout_expanded com.oliver.bathurst.findmyandroiddevice:expanded}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppBarLayout_elevation com.oliver.bathurst.individualproject:elevation}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppBarLayout_expanded com.oliver.bathurst.individualproject:expanded}</code></td><td></td></tr>
            </table>
            @see #AppBarLayout_android_background
            @see #AppBarLayout_elevation
@@ -4983,7 +4993,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int AppBarLayout_android_background = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#elevation}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#elevation}
           attribute's value can be found in the {@link #AppBarLayout} array.
 
 
@@ -4995,11 +5005,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:elevation
+          @attr name com.oliver.bathurst.individualproject:elevation
         */
         public static final int AppBarLayout_elevation = 1;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#expanded}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#expanded}
           attribute's value can be found in the {@link #AppBarLayout} array.
 
 
@@ -5009,7 +5019,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:expanded
+          @attr name com.oliver.bathurst.individualproject:expanded
         */
         public static final int AppBarLayout_expanded = 2;
         /** Attributes that can be used with a AppBarLayoutStates.
@@ -5018,8 +5028,8 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #AppBarLayoutStates_state_collapsed com.oliver.bathurst.findmyandroiddevice:state_collapsed}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppBarLayoutStates_state_collapsible com.oliver.bathurst.findmyandroiddevice:state_collapsible}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppBarLayoutStates_state_collapsed com.oliver.bathurst.individualproject:state_collapsed}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppBarLayoutStates_state_collapsible com.oliver.bathurst.individualproject:state_collapsible}</code></td><td></td></tr>
            </table>
            @see #AppBarLayoutStates_state_collapsed
            @see #AppBarLayoutStates_state_collapsible
@@ -5028,7 +5038,7 @@ containing a value of this type.
             0x7f010054, 0x7f010055
         };
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#state_collapsed}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#state_collapsed}
           attribute's value can be found in the {@link #AppBarLayoutStates} array.
 
 
@@ -5038,11 +5048,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:state_collapsed
+          @attr name com.oliver.bathurst.individualproject:state_collapsed
         */
         public static final int AppBarLayoutStates_state_collapsed = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#state_collapsible}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#state_collapsible}
           attribute's value can be found in the {@link #AppBarLayoutStates} array.
 
 
@@ -5052,7 +5062,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:state_collapsible
+          @attr name com.oliver.bathurst.individualproject:state_collapsible
         */
         public static final int AppBarLayoutStates_state_collapsible = 1;
         /** Attributes that can be used with a AppBarLayout_Layout.
@@ -5061,8 +5071,8 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #AppBarLayout_Layout_layout_scrollFlags com.oliver.bathurst.findmyandroiddevice:layout_scrollFlags}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppBarLayout_Layout_layout_scrollInterpolator com.oliver.bathurst.findmyandroiddevice:layout_scrollInterpolator}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppBarLayout_Layout_layout_scrollFlags com.oliver.bathurst.individualproject:layout_scrollFlags}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppBarLayout_Layout_layout_scrollInterpolator com.oliver.bathurst.individualproject:layout_scrollInterpolator}</code></td><td></td></tr>
            </table>
            @see #AppBarLayout_Layout_layout_scrollFlags
            @see #AppBarLayout_Layout_layout_scrollInterpolator
@@ -5071,7 +5081,7 @@ containing a value of this type.
             0x7f010056, 0x7f010057
         };
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_scrollFlags}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_scrollFlags}
           attribute's value can be found in the {@link #AppBarLayout_Layout} array.
 
 
@@ -5087,17 +5097,17 @@ containing a value of this type.
 <tr><td><code>enterAlwaysCollapsed</code></td><td>0x8</td><td></td></tr>
 <tr><td><code>snap</code></td><td>0x10</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_scrollFlags
+          @attr name com.oliver.bathurst.individualproject:layout_scrollFlags
         */
         public static final int AppBarLayout_Layout_layout_scrollFlags = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_scrollInterpolator}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_scrollInterpolator}
           attribute's value can be found in the {@link #AppBarLayout_Layout} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_scrollInterpolator
+          @attr name com.oliver.bathurst.individualproject:layout_scrollInterpolator
         */
         public static final int AppBarLayout_Layout_layout_scrollInterpolator = 1;
         /** Attributes that can be used with a AppCompatImageView.
@@ -5107,7 +5117,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #AppCompatImageView_android_src android:src}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatImageView_srcCompat com.oliver.bathurst.findmyandroiddevice:srcCompat}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatImageView_srcCompat com.oliver.bathurst.individualproject:srcCompat}</code></td><td></td></tr>
            </table>
            @see #AppCompatImageView_android_src
            @see #AppCompatImageView_srcCompat
@@ -5122,13 +5132,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int AppCompatImageView_android_src = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#srcCompat}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#srcCompat}
           attribute's value can be found in the {@link #AppCompatImageView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:srcCompat
+          @attr name com.oliver.bathurst.individualproject:srcCompat
         */
         public static final int AppCompatImageView_srcCompat = 1;
         /** Attributes that can be used with a AppCompatSeekBar.
@@ -5138,9 +5148,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #AppCompatSeekBar_android_thumb android:thumb}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatSeekBar_tickMark com.oliver.bathurst.findmyandroiddevice:tickMark}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatSeekBar_tickMarkTint com.oliver.bathurst.findmyandroiddevice:tickMarkTint}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatSeekBar_tickMarkTintMode com.oliver.bathurst.findmyandroiddevice:tickMarkTintMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatSeekBar_tickMark com.oliver.bathurst.individualproject:tickMark}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatSeekBar_tickMarkTint com.oliver.bathurst.individualproject:tickMarkTint}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatSeekBar_tickMarkTintMode com.oliver.bathurst.individualproject:tickMarkTintMode}</code></td><td></td></tr>
            </table>
            @see #AppCompatSeekBar_android_thumb
            @see #AppCompatSeekBar_tickMark
@@ -5157,17 +5167,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int AppCompatSeekBar_android_thumb = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#tickMark}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#tickMark}
           attribute's value can be found in the {@link #AppCompatSeekBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:tickMark
+          @attr name com.oliver.bathurst.individualproject:tickMark
         */
         public static final int AppCompatSeekBar_tickMark = 1;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#tickMarkTint}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#tickMarkTint}
           attribute's value can be found in the {@link #AppCompatSeekBar} array.
 
 
@@ -5178,11 +5188,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:tickMarkTint
+          @attr name com.oliver.bathurst.individualproject:tickMarkTint
         */
         public static final int AppCompatSeekBar_tickMarkTint = 2;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#tickMarkTintMode}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#tickMarkTintMode}
           attribute's value can be found in the {@link #AppCompatSeekBar} array.
 
 
@@ -5199,7 +5209,7 @@ containing a value of this type.
 <tr><td><code>screen</code></td><td>15</td><td></td></tr>
 <tr><td><code>add</code></td><td>16</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:tickMarkTintMode
+          @attr name com.oliver.bathurst.individualproject:tickMarkTintMode
         */
         public static final int AppCompatSeekBar_tickMarkTintMode = 3;
         /** Attributes that can be used with a AppCompatTextHelper.
@@ -5277,7 +5287,7 @@ containing a value of this type.
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #AppCompatTextView_android_textAppearance android:textAppearance}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTextView_textAllCaps com.oliver.bathurst.findmyandroiddevice:textAllCaps}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTextView_textAllCaps com.oliver.bathurst.individualproject:textAllCaps}</code></td><td></td></tr>
            </table>
            @see #AppCompatTextView_android_textAppearance
            @see #AppCompatTextView_textAllCaps
@@ -5292,14 +5302,14 @@ containing a value of this type.
         */
         public static final int AppCompatTextView_android_textAppearance = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#textAllCaps}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#textAllCaps}
           attribute's value can be found in the {@link #AppCompatTextView} array.
 
 
           <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:textAllCaps
+          @attr name com.oliver.bathurst.individualproject:textAllCaps
         */
         public static final int AppCompatTextView_textAllCaps = 1;
         /** Attributes that can be used with a AppCompatTheme.
@@ -5308,121 +5318,121 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionBarDivider com.oliver.bathurst.findmyandroiddevice:actionBarDivider}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionBarItemBackground com.oliver.bathurst.findmyandroiddevice:actionBarItemBackground}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionBarPopupTheme com.oliver.bathurst.findmyandroiddevice:actionBarPopupTheme}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionBarSize com.oliver.bathurst.findmyandroiddevice:actionBarSize}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionBarSplitStyle com.oliver.bathurst.findmyandroiddevice:actionBarSplitStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionBarStyle com.oliver.bathurst.findmyandroiddevice:actionBarStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionBarTabBarStyle com.oliver.bathurst.findmyandroiddevice:actionBarTabBarStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionBarTabStyle com.oliver.bathurst.findmyandroiddevice:actionBarTabStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionBarTabTextStyle com.oliver.bathurst.findmyandroiddevice:actionBarTabTextStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionBarTheme com.oliver.bathurst.findmyandroiddevice:actionBarTheme}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionBarWidgetTheme com.oliver.bathurst.findmyandroiddevice:actionBarWidgetTheme}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionButtonStyle com.oliver.bathurst.findmyandroiddevice:actionButtonStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionDropDownStyle com.oliver.bathurst.findmyandroiddevice:actionDropDownStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionMenuTextAppearance com.oliver.bathurst.findmyandroiddevice:actionMenuTextAppearance}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionMenuTextColor com.oliver.bathurst.findmyandroiddevice:actionMenuTextColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionModeBackground com.oliver.bathurst.findmyandroiddevice:actionModeBackground}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionModeCloseButtonStyle com.oliver.bathurst.findmyandroiddevice:actionModeCloseButtonStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionModeCloseDrawable com.oliver.bathurst.findmyandroiddevice:actionModeCloseDrawable}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionModeCopyDrawable com.oliver.bathurst.findmyandroiddevice:actionModeCopyDrawable}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionModeCutDrawable com.oliver.bathurst.findmyandroiddevice:actionModeCutDrawable}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionModeFindDrawable com.oliver.bathurst.findmyandroiddevice:actionModeFindDrawable}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionModePasteDrawable com.oliver.bathurst.findmyandroiddevice:actionModePasteDrawable}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionModePopupWindowStyle com.oliver.bathurst.findmyandroiddevice:actionModePopupWindowStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionModeSelectAllDrawable com.oliver.bathurst.findmyandroiddevice:actionModeSelectAllDrawable}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionModeShareDrawable com.oliver.bathurst.findmyandroiddevice:actionModeShareDrawable}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionModeSplitBackground com.oliver.bathurst.findmyandroiddevice:actionModeSplitBackground}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionModeStyle com.oliver.bathurst.findmyandroiddevice:actionModeStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionModeWebSearchDrawable com.oliver.bathurst.findmyandroiddevice:actionModeWebSearchDrawable}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionOverflowButtonStyle com.oliver.bathurst.findmyandroiddevice:actionOverflowButtonStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_actionOverflowMenuStyle com.oliver.bathurst.findmyandroiddevice:actionOverflowMenuStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_activityChooserViewStyle com.oliver.bathurst.findmyandroiddevice:activityChooserViewStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_alertDialogButtonGroupStyle com.oliver.bathurst.findmyandroiddevice:alertDialogButtonGroupStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_alertDialogCenterButtons com.oliver.bathurst.findmyandroiddevice:alertDialogCenterButtons}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_alertDialogStyle com.oliver.bathurst.findmyandroiddevice:alertDialogStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_alertDialogTheme com.oliver.bathurst.findmyandroiddevice:alertDialogTheme}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionBarDivider com.oliver.bathurst.individualproject:actionBarDivider}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionBarItemBackground com.oliver.bathurst.individualproject:actionBarItemBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionBarPopupTheme com.oliver.bathurst.individualproject:actionBarPopupTheme}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionBarSize com.oliver.bathurst.individualproject:actionBarSize}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionBarSplitStyle com.oliver.bathurst.individualproject:actionBarSplitStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionBarStyle com.oliver.bathurst.individualproject:actionBarStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionBarTabBarStyle com.oliver.bathurst.individualproject:actionBarTabBarStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionBarTabStyle com.oliver.bathurst.individualproject:actionBarTabStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionBarTabTextStyle com.oliver.bathurst.individualproject:actionBarTabTextStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionBarTheme com.oliver.bathurst.individualproject:actionBarTheme}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionBarWidgetTheme com.oliver.bathurst.individualproject:actionBarWidgetTheme}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionButtonStyle com.oliver.bathurst.individualproject:actionButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionDropDownStyle com.oliver.bathurst.individualproject:actionDropDownStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionMenuTextAppearance com.oliver.bathurst.individualproject:actionMenuTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionMenuTextColor com.oliver.bathurst.individualproject:actionMenuTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionModeBackground com.oliver.bathurst.individualproject:actionModeBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionModeCloseButtonStyle com.oliver.bathurst.individualproject:actionModeCloseButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionModeCloseDrawable com.oliver.bathurst.individualproject:actionModeCloseDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionModeCopyDrawable com.oliver.bathurst.individualproject:actionModeCopyDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionModeCutDrawable com.oliver.bathurst.individualproject:actionModeCutDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionModeFindDrawable com.oliver.bathurst.individualproject:actionModeFindDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionModePasteDrawable com.oliver.bathurst.individualproject:actionModePasteDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionModePopupWindowStyle com.oliver.bathurst.individualproject:actionModePopupWindowStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionModeSelectAllDrawable com.oliver.bathurst.individualproject:actionModeSelectAllDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionModeShareDrawable com.oliver.bathurst.individualproject:actionModeShareDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionModeSplitBackground com.oliver.bathurst.individualproject:actionModeSplitBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionModeStyle com.oliver.bathurst.individualproject:actionModeStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionModeWebSearchDrawable com.oliver.bathurst.individualproject:actionModeWebSearchDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionOverflowButtonStyle com.oliver.bathurst.individualproject:actionOverflowButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_actionOverflowMenuStyle com.oliver.bathurst.individualproject:actionOverflowMenuStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_activityChooserViewStyle com.oliver.bathurst.individualproject:activityChooserViewStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_alertDialogButtonGroupStyle com.oliver.bathurst.individualproject:alertDialogButtonGroupStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_alertDialogCenterButtons com.oliver.bathurst.individualproject:alertDialogCenterButtons}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_alertDialogStyle com.oliver.bathurst.individualproject:alertDialogStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_alertDialogTheme com.oliver.bathurst.individualproject:alertDialogTheme}</code></td><td></td></tr>
            <tr><td><code>{@link #AppCompatTheme_android_windowAnimationStyle android:windowAnimationStyle}</code></td><td></td></tr>
            <tr><td><code>{@link #AppCompatTheme_android_windowIsFloating android:windowIsFloating}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_autoCompleteTextViewStyle com.oliver.bathurst.findmyandroiddevice:autoCompleteTextViewStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_borderlessButtonStyle com.oliver.bathurst.findmyandroiddevice:borderlessButtonStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_buttonBarButtonStyle com.oliver.bathurst.findmyandroiddevice:buttonBarButtonStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_buttonBarNegativeButtonStyle com.oliver.bathurst.findmyandroiddevice:buttonBarNegativeButtonStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_buttonBarNeutralButtonStyle com.oliver.bathurst.findmyandroiddevice:buttonBarNeutralButtonStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_buttonBarPositiveButtonStyle com.oliver.bathurst.findmyandroiddevice:buttonBarPositiveButtonStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_buttonBarStyle com.oliver.bathurst.findmyandroiddevice:buttonBarStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_buttonStyle com.oliver.bathurst.findmyandroiddevice:buttonStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_buttonStyleSmall com.oliver.bathurst.findmyandroiddevice:buttonStyleSmall}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_checkboxStyle com.oliver.bathurst.findmyandroiddevice:checkboxStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_checkedTextViewStyle com.oliver.bathurst.findmyandroiddevice:checkedTextViewStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_colorAccent com.oliver.bathurst.findmyandroiddevice:colorAccent}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_colorBackgroundFloating com.oliver.bathurst.findmyandroiddevice:colorBackgroundFloating}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_colorButtonNormal com.oliver.bathurst.findmyandroiddevice:colorButtonNormal}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_colorControlActivated com.oliver.bathurst.findmyandroiddevice:colorControlActivated}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_colorControlHighlight com.oliver.bathurst.findmyandroiddevice:colorControlHighlight}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_colorControlNormal com.oliver.bathurst.findmyandroiddevice:colorControlNormal}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_colorPrimary com.oliver.bathurst.findmyandroiddevice:colorPrimary}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_colorPrimaryDark com.oliver.bathurst.findmyandroiddevice:colorPrimaryDark}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_colorSwitchThumbNormal com.oliver.bathurst.findmyandroiddevice:colorSwitchThumbNormal}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_controlBackground com.oliver.bathurst.findmyandroiddevice:controlBackground}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_dialogPreferredPadding com.oliver.bathurst.findmyandroiddevice:dialogPreferredPadding}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_dialogTheme com.oliver.bathurst.findmyandroiddevice:dialogTheme}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_dividerHorizontal com.oliver.bathurst.findmyandroiddevice:dividerHorizontal}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_dividerVertical com.oliver.bathurst.findmyandroiddevice:dividerVertical}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_dropDownListViewStyle com.oliver.bathurst.findmyandroiddevice:dropDownListViewStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_dropdownListPreferredItemHeight com.oliver.bathurst.findmyandroiddevice:dropdownListPreferredItemHeight}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_editTextBackground com.oliver.bathurst.findmyandroiddevice:editTextBackground}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_editTextColor com.oliver.bathurst.findmyandroiddevice:editTextColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_editTextStyle com.oliver.bathurst.findmyandroiddevice:editTextStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_homeAsUpIndicator com.oliver.bathurst.findmyandroiddevice:homeAsUpIndicator}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_imageButtonStyle com.oliver.bathurst.findmyandroiddevice:imageButtonStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_listChoiceBackgroundIndicator com.oliver.bathurst.findmyandroiddevice:listChoiceBackgroundIndicator}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_listDividerAlertDialog com.oliver.bathurst.findmyandroiddevice:listDividerAlertDialog}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_listMenuViewStyle com.oliver.bathurst.findmyandroiddevice:listMenuViewStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_listPopupWindowStyle com.oliver.bathurst.findmyandroiddevice:listPopupWindowStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_listPreferredItemHeight com.oliver.bathurst.findmyandroiddevice:listPreferredItemHeight}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_listPreferredItemHeightLarge com.oliver.bathurst.findmyandroiddevice:listPreferredItemHeightLarge}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_listPreferredItemHeightSmall com.oliver.bathurst.findmyandroiddevice:listPreferredItemHeightSmall}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_listPreferredItemPaddingLeft com.oliver.bathurst.findmyandroiddevice:listPreferredItemPaddingLeft}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_listPreferredItemPaddingRight com.oliver.bathurst.findmyandroiddevice:listPreferredItemPaddingRight}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_panelBackground com.oliver.bathurst.findmyandroiddevice:panelBackground}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_panelMenuListTheme com.oliver.bathurst.findmyandroiddevice:panelMenuListTheme}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_panelMenuListWidth com.oliver.bathurst.findmyandroiddevice:panelMenuListWidth}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_popupMenuStyle com.oliver.bathurst.findmyandroiddevice:popupMenuStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_popupWindowStyle com.oliver.bathurst.findmyandroiddevice:popupWindowStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_radioButtonStyle com.oliver.bathurst.findmyandroiddevice:radioButtonStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_ratingBarStyle com.oliver.bathurst.findmyandroiddevice:ratingBarStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_ratingBarStyleIndicator com.oliver.bathurst.findmyandroiddevice:ratingBarStyleIndicator}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_ratingBarStyleSmall com.oliver.bathurst.findmyandroiddevice:ratingBarStyleSmall}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_searchViewStyle com.oliver.bathurst.findmyandroiddevice:searchViewStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_seekBarStyle com.oliver.bathurst.findmyandroiddevice:seekBarStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_selectableItemBackground com.oliver.bathurst.findmyandroiddevice:selectableItemBackground}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_selectableItemBackgroundBorderless com.oliver.bathurst.findmyandroiddevice:selectableItemBackgroundBorderless}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_spinnerDropDownItemStyle com.oliver.bathurst.findmyandroiddevice:spinnerDropDownItemStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_spinnerStyle com.oliver.bathurst.findmyandroiddevice:spinnerStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_switchStyle com.oliver.bathurst.findmyandroiddevice:switchStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_textAppearanceLargePopupMenu com.oliver.bathurst.findmyandroiddevice:textAppearanceLargePopupMenu}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_textAppearanceListItem com.oliver.bathurst.findmyandroiddevice:textAppearanceListItem}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_textAppearanceListItemSmall com.oliver.bathurst.findmyandroiddevice:textAppearanceListItemSmall}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_textAppearancePopupMenuHeader com.oliver.bathurst.findmyandroiddevice:textAppearancePopupMenuHeader}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_textAppearanceSearchResultSubtitle com.oliver.bathurst.findmyandroiddevice:textAppearanceSearchResultSubtitle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_textAppearanceSearchResultTitle com.oliver.bathurst.findmyandroiddevice:textAppearanceSearchResultTitle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_textAppearanceSmallPopupMenu com.oliver.bathurst.findmyandroiddevice:textAppearanceSmallPopupMenu}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_textColorAlertDialogListItem com.oliver.bathurst.findmyandroiddevice:textColorAlertDialogListItem}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_textColorSearchUrl com.oliver.bathurst.findmyandroiddevice:textColorSearchUrl}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_toolbarNavigationButtonStyle com.oliver.bathurst.findmyandroiddevice:toolbarNavigationButtonStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_toolbarStyle com.oliver.bathurst.findmyandroiddevice:toolbarStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_windowActionBar com.oliver.bathurst.findmyandroiddevice:windowActionBar}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_windowActionBarOverlay com.oliver.bathurst.findmyandroiddevice:windowActionBarOverlay}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_windowActionModeOverlay com.oliver.bathurst.findmyandroiddevice:windowActionModeOverlay}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_windowFixedHeightMajor com.oliver.bathurst.findmyandroiddevice:windowFixedHeightMajor}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_windowFixedHeightMinor com.oliver.bathurst.findmyandroiddevice:windowFixedHeightMinor}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_windowFixedWidthMajor com.oliver.bathurst.findmyandroiddevice:windowFixedWidthMajor}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_windowFixedWidthMinor com.oliver.bathurst.findmyandroiddevice:windowFixedWidthMinor}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_windowMinWidthMajor com.oliver.bathurst.findmyandroiddevice:windowMinWidthMajor}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_windowMinWidthMinor com.oliver.bathurst.findmyandroiddevice:windowMinWidthMinor}</code></td><td></td></tr>
-           <tr><td><code>{@link #AppCompatTheme_windowNoTitle com.oliver.bathurst.findmyandroiddevice:windowNoTitle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_autoCompleteTextViewStyle com.oliver.bathurst.individualproject:autoCompleteTextViewStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_borderlessButtonStyle com.oliver.bathurst.individualproject:borderlessButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_buttonBarButtonStyle com.oliver.bathurst.individualproject:buttonBarButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_buttonBarNegativeButtonStyle com.oliver.bathurst.individualproject:buttonBarNegativeButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_buttonBarNeutralButtonStyle com.oliver.bathurst.individualproject:buttonBarNeutralButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_buttonBarPositiveButtonStyle com.oliver.bathurst.individualproject:buttonBarPositiveButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_buttonBarStyle com.oliver.bathurst.individualproject:buttonBarStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_buttonStyle com.oliver.bathurst.individualproject:buttonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_buttonStyleSmall com.oliver.bathurst.individualproject:buttonStyleSmall}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_checkboxStyle com.oliver.bathurst.individualproject:checkboxStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_checkedTextViewStyle com.oliver.bathurst.individualproject:checkedTextViewStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_colorAccent com.oliver.bathurst.individualproject:colorAccent}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_colorBackgroundFloating com.oliver.bathurst.individualproject:colorBackgroundFloating}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_colorButtonNormal com.oliver.bathurst.individualproject:colorButtonNormal}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_colorControlActivated com.oliver.bathurst.individualproject:colorControlActivated}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_colorControlHighlight com.oliver.bathurst.individualproject:colorControlHighlight}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_colorControlNormal com.oliver.bathurst.individualproject:colorControlNormal}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_colorPrimary com.oliver.bathurst.individualproject:colorPrimary}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_colorPrimaryDark com.oliver.bathurst.individualproject:colorPrimaryDark}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_colorSwitchThumbNormal com.oliver.bathurst.individualproject:colorSwitchThumbNormal}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_controlBackground com.oliver.bathurst.individualproject:controlBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_dialogPreferredPadding com.oliver.bathurst.individualproject:dialogPreferredPadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_dialogTheme com.oliver.bathurst.individualproject:dialogTheme}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_dividerHorizontal com.oliver.bathurst.individualproject:dividerHorizontal}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_dividerVertical com.oliver.bathurst.individualproject:dividerVertical}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_dropDownListViewStyle com.oliver.bathurst.individualproject:dropDownListViewStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_dropdownListPreferredItemHeight com.oliver.bathurst.individualproject:dropdownListPreferredItemHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_editTextBackground com.oliver.bathurst.individualproject:editTextBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_editTextColor com.oliver.bathurst.individualproject:editTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_editTextStyle com.oliver.bathurst.individualproject:editTextStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_homeAsUpIndicator com.oliver.bathurst.individualproject:homeAsUpIndicator}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_imageButtonStyle com.oliver.bathurst.individualproject:imageButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_listChoiceBackgroundIndicator com.oliver.bathurst.individualproject:listChoiceBackgroundIndicator}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_listDividerAlertDialog com.oliver.bathurst.individualproject:listDividerAlertDialog}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_listMenuViewStyle com.oliver.bathurst.individualproject:listMenuViewStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_listPopupWindowStyle com.oliver.bathurst.individualproject:listPopupWindowStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_listPreferredItemHeight com.oliver.bathurst.individualproject:listPreferredItemHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_listPreferredItemHeightLarge com.oliver.bathurst.individualproject:listPreferredItemHeightLarge}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_listPreferredItemHeightSmall com.oliver.bathurst.individualproject:listPreferredItemHeightSmall}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_listPreferredItemPaddingLeft com.oliver.bathurst.individualproject:listPreferredItemPaddingLeft}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_listPreferredItemPaddingRight com.oliver.bathurst.individualproject:listPreferredItemPaddingRight}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_panelBackground com.oliver.bathurst.individualproject:panelBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_panelMenuListTheme com.oliver.bathurst.individualproject:panelMenuListTheme}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_panelMenuListWidth com.oliver.bathurst.individualproject:panelMenuListWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_popupMenuStyle com.oliver.bathurst.individualproject:popupMenuStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_popupWindowStyle com.oliver.bathurst.individualproject:popupWindowStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_radioButtonStyle com.oliver.bathurst.individualproject:radioButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_ratingBarStyle com.oliver.bathurst.individualproject:ratingBarStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_ratingBarStyleIndicator com.oliver.bathurst.individualproject:ratingBarStyleIndicator}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_ratingBarStyleSmall com.oliver.bathurst.individualproject:ratingBarStyleSmall}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_searchViewStyle com.oliver.bathurst.individualproject:searchViewStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_seekBarStyle com.oliver.bathurst.individualproject:seekBarStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_selectableItemBackground com.oliver.bathurst.individualproject:selectableItemBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_selectableItemBackgroundBorderless com.oliver.bathurst.individualproject:selectableItemBackgroundBorderless}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_spinnerDropDownItemStyle com.oliver.bathurst.individualproject:spinnerDropDownItemStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_spinnerStyle com.oliver.bathurst.individualproject:spinnerStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_switchStyle com.oliver.bathurst.individualproject:switchStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_textAppearanceLargePopupMenu com.oliver.bathurst.individualproject:textAppearanceLargePopupMenu}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_textAppearanceListItem com.oliver.bathurst.individualproject:textAppearanceListItem}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_textAppearanceListItemSmall com.oliver.bathurst.individualproject:textAppearanceListItemSmall}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_textAppearancePopupMenuHeader com.oliver.bathurst.individualproject:textAppearancePopupMenuHeader}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_textAppearanceSearchResultSubtitle com.oliver.bathurst.individualproject:textAppearanceSearchResultSubtitle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_textAppearanceSearchResultTitle com.oliver.bathurst.individualproject:textAppearanceSearchResultTitle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_textAppearanceSmallPopupMenu com.oliver.bathurst.individualproject:textAppearanceSmallPopupMenu}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_textColorAlertDialogListItem com.oliver.bathurst.individualproject:textColorAlertDialogListItem}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_textColorSearchUrl com.oliver.bathurst.individualproject:textColorSearchUrl}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_toolbarNavigationButtonStyle com.oliver.bathurst.individualproject:toolbarNavigationButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_toolbarStyle com.oliver.bathurst.individualproject:toolbarStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_windowActionBar com.oliver.bathurst.individualproject:windowActionBar}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_windowActionBarOverlay com.oliver.bathurst.individualproject:windowActionBarOverlay}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_windowActionModeOverlay com.oliver.bathurst.individualproject:windowActionModeOverlay}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_windowFixedHeightMajor com.oliver.bathurst.individualproject:windowFixedHeightMajor}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_windowFixedHeightMinor com.oliver.bathurst.individualproject:windowFixedHeightMinor}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_windowFixedWidthMajor com.oliver.bathurst.individualproject:windowFixedWidthMajor}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_windowFixedWidthMinor com.oliver.bathurst.individualproject:windowFixedWidthMinor}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_windowMinWidthMajor com.oliver.bathurst.individualproject:windowMinWidthMajor}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_windowMinWidthMinor com.oliver.bathurst.individualproject:windowMinWidthMinor}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppCompatTheme_windowNoTitle com.oliver.bathurst.individualproject:windowNoTitle}</code></td><td></td></tr>
            </table>
            @see #AppCompatTheme_actionBarDivider
            @see #AppCompatTheme_actionBarItemBackground
@@ -5572,37 +5582,37 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f0100cb, 0x7f0100cc, 0x7f0100cd
         };
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionBarDivider}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionBarDivider}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionBarDivider
+          @attr name com.oliver.bathurst.individualproject:actionBarDivider
         */
         public static final int AppCompatTheme_actionBarDivider = 23;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionBarItemBackground}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionBarItemBackground}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionBarItemBackground
+          @attr name com.oliver.bathurst.individualproject:actionBarItemBackground
         */
         public static final int AppCompatTheme_actionBarItemBackground = 24;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionBarPopupTheme}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionBarPopupTheme}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionBarPopupTheme
+          @attr name com.oliver.bathurst.individualproject:actionBarPopupTheme
         */
         public static final int AppCompatTheme_actionBarPopupTheme = 17;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionBarSize}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionBarSize}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -5622,111 +5632,111 @@ containing a value of this type.
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>wrap_content</code></td><td>0</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionBarSize
+          @attr name com.oliver.bathurst.individualproject:actionBarSize
         */
         public static final int AppCompatTheme_actionBarSize = 22;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionBarSplitStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionBarSplitStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionBarSplitStyle
+          @attr name com.oliver.bathurst.individualproject:actionBarSplitStyle
         */
         public static final int AppCompatTheme_actionBarSplitStyle = 19;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionBarStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionBarStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionBarStyle
+          @attr name com.oliver.bathurst.individualproject:actionBarStyle
         */
         public static final int AppCompatTheme_actionBarStyle = 18;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionBarTabBarStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionBarTabBarStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionBarTabBarStyle
+          @attr name com.oliver.bathurst.individualproject:actionBarTabBarStyle
         */
         public static final int AppCompatTheme_actionBarTabBarStyle = 13;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionBarTabStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionBarTabStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionBarTabStyle
+          @attr name com.oliver.bathurst.individualproject:actionBarTabStyle
         */
         public static final int AppCompatTheme_actionBarTabStyle = 12;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionBarTabTextStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionBarTabTextStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionBarTabTextStyle
+          @attr name com.oliver.bathurst.individualproject:actionBarTabTextStyle
         */
         public static final int AppCompatTheme_actionBarTabTextStyle = 14;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionBarTheme}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionBarTheme}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionBarTheme
+          @attr name com.oliver.bathurst.individualproject:actionBarTheme
         */
         public static final int AppCompatTheme_actionBarTheme = 20;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionBarWidgetTheme}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionBarWidgetTheme}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionBarWidgetTheme
+          @attr name com.oliver.bathurst.individualproject:actionBarWidgetTheme
         */
         public static final int AppCompatTheme_actionBarWidgetTheme = 21;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionButtonStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionButtonStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionButtonStyle
+          @attr name com.oliver.bathurst.individualproject:actionButtonStyle
         */
         public static final int AppCompatTheme_actionButtonStyle = 50;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionDropDownStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionDropDownStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionDropDownStyle
+          @attr name com.oliver.bathurst.individualproject:actionDropDownStyle
         */
         public static final int AppCompatTheme_actionDropDownStyle = 46;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionMenuTextAppearance}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionMenuTextAppearance}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionMenuTextAppearance
+          @attr name com.oliver.bathurst.individualproject:actionMenuTextAppearance
         */
         public static final int AppCompatTheme_actionMenuTextAppearance = 25;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionMenuTextColor}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionMenuTextColor}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -5734,181 +5744,181 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionMenuTextColor
+          @attr name com.oliver.bathurst.individualproject:actionMenuTextColor
         */
         public static final int AppCompatTheme_actionMenuTextColor = 26;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionModeBackground}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionModeBackground}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionModeBackground
+          @attr name com.oliver.bathurst.individualproject:actionModeBackground
         */
         public static final int AppCompatTheme_actionModeBackground = 29;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionModeCloseButtonStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionModeCloseButtonStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionModeCloseButtonStyle
+          @attr name com.oliver.bathurst.individualproject:actionModeCloseButtonStyle
         */
         public static final int AppCompatTheme_actionModeCloseButtonStyle = 28;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionModeCloseDrawable}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionModeCloseDrawable}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionModeCloseDrawable
+          @attr name com.oliver.bathurst.individualproject:actionModeCloseDrawable
         */
         public static final int AppCompatTheme_actionModeCloseDrawable = 31;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionModeCopyDrawable}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionModeCopyDrawable}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionModeCopyDrawable
+          @attr name com.oliver.bathurst.individualproject:actionModeCopyDrawable
         */
         public static final int AppCompatTheme_actionModeCopyDrawable = 33;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionModeCutDrawable}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionModeCutDrawable}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionModeCutDrawable
+          @attr name com.oliver.bathurst.individualproject:actionModeCutDrawable
         */
         public static final int AppCompatTheme_actionModeCutDrawable = 32;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionModeFindDrawable}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionModeFindDrawable}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionModeFindDrawable
+          @attr name com.oliver.bathurst.individualproject:actionModeFindDrawable
         */
         public static final int AppCompatTheme_actionModeFindDrawable = 37;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionModePasteDrawable}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionModePasteDrawable}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionModePasteDrawable
+          @attr name com.oliver.bathurst.individualproject:actionModePasteDrawable
         */
         public static final int AppCompatTheme_actionModePasteDrawable = 34;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionModePopupWindowStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionModePopupWindowStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionModePopupWindowStyle
+          @attr name com.oliver.bathurst.individualproject:actionModePopupWindowStyle
         */
         public static final int AppCompatTheme_actionModePopupWindowStyle = 39;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionModeSelectAllDrawable}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionModeSelectAllDrawable}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionModeSelectAllDrawable
+          @attr name com.oliver.bathurst.individualproject:actionModeSelectAllDrawable
         */
         public static final int AppCompatTheme_actionModeSelectAllDrawable = 35;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionModeShareDrawable}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionModeShareDrawable}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionModeShareDrawable
+          @attr name com.oliver.bathurst.individualproject:actionModeShareDrawable
         */
         public static final int AppCompatTheme_actionModeShareDrawable = 36;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionModeSplitBackground}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionModeSplitBackground}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionModeSplitBackground
+          @attr name com.oliver.bathurst.individualproject:actionModeSplitBackground
         */
         public static final int AppCompatTheme_actionModeSplitBackground = 30;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionModeStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionModeStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionModeStyle
+          @attr name com.oliver.bathurst.individualproject:actionModeStyle
         */
         public static final int AppCompatTheme_actionModeStyle = 27;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionModeWebSearchDrawable}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionModeWebSearchDrawable}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionModeWebSearchDrawable
+          @attr name com.oliver.bathurst.individualproject:actionModeWebSearchDrawable
         */
         public static final int AppCompatTheme_actionModeWebSearchDrawable = 38;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionOverflowButtonStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionOverflowButtonStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionOverflowButtonStyle
+          @attr name com.oliver.bathurst.individualproject:actionOverflowButtonStyle
         */
         public static final int AppCompatTheme_actionOverflowButtonStyle = 15;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionOverflowMenuStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionOverflowMenuStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionOverflowMenuStyle
+          @attr name com.oliver.bathurst.individualproject:actionOverflowMenuStyle
         */
         public static final int AppCompatTheme_actionOverflowMenuStyle = 16;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#activityChooserViewStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#activityChooserViewStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:activityChooserViewStyle
+          @attr name com.oliver.bathurst.individualproject:activityChooserViewStyle
         */
         public static final int AppCompatTheme_activityChooserViewStyle = 58;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#alertDialogButtonGroupStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#alertDialogButtonGroupStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:alertDialogButtonGroupStyle
+          @attr name com.oliver.bathurst.individualproject:alertDialogButtonGroupStyle
         */
         public static final int AppCompatTheme_alertDialogButtonGroupStyle = 94;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#alertDialogCenterButtons}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#alertDialogCenterButtons}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -5918,27 +5928,27 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:alertDialogCenterButtons
+          @attr name com.oliver.bathurst.individualproject:alertDialogCenterButtons
         */
         public static final int AppCompatTheme_alertDialogCenterButtons = 95;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#alertDialogStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#alertDialogStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:alertDialogStyle
+          @attr name com.oliver.bathurst.individualproject:alertDialogStyle
         */
         public static final int AppCompatTheme_alertDialogStyle = 93;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#alertDialogTheme}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#alertDialogTheme}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:alertDialogTheme
+          @attr name com.oliver.bathurst.individualproject:alertDialogTheme
         */
         public static final int AppCompatTheme_alertDialogTheme = 96;
         /**
@@ -5954,117 +5964,117 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int AppCompatTheme_android_windowIsFloating = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#autoCompleteTextViewStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#autoCompleteTextViewStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:autoCompleteTextViewStyle
+          @attr name com.oliver.bathurst.individualproject:autoCompleteTextViewStyle
         */
         public static final int AppCompatTheme_autoCompleteTextViewStyle = 101;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#borderlessButtonStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#borderlessButtonStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:borderlessButtonStyle
+          @attr name com.oliver.bathurst.individualproject:borderlessButtonStyle
         */
         public static final int AppCompatTheme_borderlessButtonStyle = 55;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#buttonBarButtonStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#buttonBarButtonStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:buttonBarButtonStyle
+          @attr name com.oliver.bathurst.individualproject:buttonBarButtonStyle
         */
         public static final int AppCompatTheme_buttonBarButtonStyle = 52;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#buttonBarNegativeButtonStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#buttonBarNegativeButtonStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:buttonBarNegativeButtonStyle
+          @attr name com.oliver.bathurst.individualproject:buttonBarNegativeButtonStyle
         */
         public static final int AppCompatTheme_buttonBarNegativeButtonStyle = 99;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#buttonBarNeutralButtonStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#buttonBarNeutralButtonStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:buttonBarNeutralButtonStyle
+          @attr name com.oliver.bathurst.individualproject:buttonBarNeutralButtonStyle
         */
         public static final int AppCompatTheme_buttonBarNeutralButtonStyle = 100;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#buttonBarPositiveButtonStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#buttonBarPositiveButtonStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:buttonBarPositiveButtonStyle
+          @attr name com.oliver.bathurst.individualproject:buttonBarPositiveButtonStyle
         */
         public static final int AppCompatTheme_buttonBarPositiveButtonStyle = 98;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#buttonBarStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#buttonBarStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:buttonBarStyle
+          @attr name com.oliver.bathurst.individualproject:buttonBarStyle
         */
         public static final int AppCompatTheme_buttonBarStyle = 51;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#buttonStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#buttonStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:buttonStyle
+          @attr name com.oliver.bathurst.individualproject:buttonStyle
         */
         public static final int AppCompatTheme_buttonStyle = 102;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#buttonStyleSmall}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#buttonStyleSmall}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:buttonStyleSmall
+          @attr name com.oliver.bathurst.individualproject:buttonStyleSmall
         */
         public static final int AppCompatTheme_buttonStyleSmall = 103;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#checkboxStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#checkboxStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:checkboxStyle
+          @attr name com.oliver.bathurst.individualproject:checkboxStyle
         */
         public static final int AppCompatTheme_checkboxStyle = 104;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#checkedTextViewStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#checkedTextViewStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:checkedTextViewStyle
+          @attr name com.oliver.bathurst.individualproject:checkedTextViewStyle
         */
         public static final int AppCompatTheme_checkedTextViewStyle = 105;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#colorAccent}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#colorAccent}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6075,11 +6085,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:colorAccent
+          @attr name com.oliver.bathurst.individualproject:colorAccent
         */
         public static final int AppCompatTheme_colorAccent = 85;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#colorBackgroundFloating}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#colorBackgroundFloating}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6090,11 +6100,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:colorBackgroundFloating
+          @attr name com.oliver.bathurst.individualproject:colorBackgroundFloating
         */
         public static final int AppCompatTheme_colorBackgroundFloating = 92;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#colorButtonNormal}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#colorButtonNormal}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6105,11 +6115,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:colorButtonNormal
+          @attr name com.oliver.bathurst.individualproject:colorButtonNormal
         */
         public static final int AppCompatTheme_colorButtonNormal = 89;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#colorControlActivated}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#colorControlActivated}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6120,11 +6130,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:colorControlActivated
+          @attr name com.oliver.bathurst.individualproject:colorControlActivated
         */
         public static final int AppCompatTheme_colorControlActivated = 87;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#colorControlHighlight}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#colorControlHighlight}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6135,11 +6145,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:colorControlHighlight
+          @attr name com.oliver.bathurst.individualproject:colorControlHighlight
         */
         public static final int AppCompatTheme_colorControlHighlight = 88;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#colorControlNormal}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#colorControlNormal}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6150,11 +6160,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:colorControlNormal
+          @attr name com.oliver.bathurst.individualproject:colorControlNormal
         */
         public static final int AppCompatTheme_colorControlNormal = 86;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#colorPrimary}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#colorPrimary}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6165,11 +6175,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:colorPrimary
+          @attr name com.oliver.bathurst.individualproject:colorPrimary
         */
         public static final int AppCompatTheme_colorPrimary = 83;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#colorPrimaryDark}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#colorPrimaryDark}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6180,11 +6190,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:colorPrimaryDark
+          @attr name com.oliver.bathurst.individualproject:colorPrimaryDark
         */
         public static final int AppCompatTheme_colorPrimaryDark = 84;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#colorSwitchThumbNormal}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#colorSwitchThumbNormal}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6195,21 +6205,21 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:colorSwitchThumbNormal
+          @attr name com.oliver.bathurst.individualproject:colorSwitchThumbNormal
         */
         public static final int AppCompatTheme_colorSwitchThumbNormal = 90;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#controlBackground}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#controlBackground}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:controlBackground
+          @attr name com.oliver.bathurst.individualproject:controlBackground
         */
         public static final int AppCompatTheme_controlBackground = 91;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#dialogPreferredPadding}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#dialogPreferredPadding}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6221,51 +6231,51 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:dialogPreferredPadding
+          @attr name com.oliver.bathurst.individualproject:dialogPreferredPadding
         */
         public static final int AppCompatTheme_dialogPreferredPadding = 44;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#dialogTheme}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#dialogTheme}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:dialogTheme
+          @attr name com.oliver.bathurst.individualproject:dialogTheme
         */
         public static final int AppCompatTheme_dialogTheme = 43;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#dividerHorizontal}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#dividerHorizontal}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:dividerHorizontal
+          @attr name com.oliver.bathurst.individualproject:dividerHorizontal
         */
         public static final int AppCompatTheme_dividerHorizontal = 57;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#dividerVertical}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#dividerVertical}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:dividerVertical
+          @attr name com.oliver.bathurst.individualproject:dividerVertical
         */
         public static final int AppCompatTheme_dividerVertical = 56;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#dropDownListViewStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#dropDownListViewStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:dropDownListViewStyle
+          @attr name com.oliver.bathurst.individualproject:dropDownListViewStyle
         */
         public static final int AppCompatTheme_dropDownListViewStyle = 75;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#dropdownListPreferredItemHeight}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#dropdownListPreferredItemHeight}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6277,21 +6287,21 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:dropdownListPreferredItemHeight
+          @attr name com.oliver.bathurst.individualproject:dropdownListPreferredItemHeight
         */
         public static final int AppCompatTheme_dropdownListPreferredItemHeight = 47;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#editTextBackground}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#editTextBackground}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:editTextBackground
+          @attr name com.oliver.bathurst.individualproject:editTextBackground
         */
         public static final int AppCompatTheme_editTextBackground = 64;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#editTextColor}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#editTextColor}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6299,81 +6309,81 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:editTextColor
+          @attr name com.oliver.bathurst.individualproject:editTextColor
         */
         public static final int AppCompatTheme_editTextColor = 63;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#editTextStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#editTextStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:editTextStyle
+          @attr name com.oliver.bathurst.individualproject:editTextStyle
         */
         public static final int AppCompatTheme_editTextStyle = 106;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#homeAsUpIndicator}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#homeAsUpIndicator}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:homeAsUpIndicator
+          @attr name com.oliver.bathurst.individualproject:homeAsUpIndicator
         */
         public static final int AppCompatTheme_homeAsUpIndicator = 49;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#imageButtonStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#imageButtonStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:imageButtonStyle
+          @attr name com.oliver.bathurst.individualproject:imageButtonStyle
         */
         public static final int AppCompatTheme_imageButtonStyle = 65;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#listChoiceBackgroundIndicator}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#listChoiceBackgroundIndicator}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:listChoiceBackgroundIndicator
+          @attr name com.oliver.bathurst.individualproject:listChoiceBackgroundIndicator
         */
         public static final int AppCompatTheme_listChoiceBackgroundIndicator = 82;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#listDividerAlertDialog}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#listDividerAlertDialog}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:listDividerAlertDialog
+          @attr name com.oliver.bathurst.individualproject:listDividerAlertDialog
         */
         public static final int AppCompatTheme_listDividerAlertDialog = 45;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#listMenuViewStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#listMenuViewStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:listMenuViewStyle
+          @attr name com.oliver.bathurst.individualproject:listMenuViewStyle
         */
         public static final int AppCompatTheme_listMenuViewStyle = 114;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#listPopupWindowStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#listPopupWindowStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:listPopupWindowStyle
+          @attr name com.oliver.bathurst.individualproject:listPopupWindowStyle
         */
         public static final int AppCompatTheme_listPopupWindowStyle = 76;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#listPreferredItemHeight}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#listPreferredItemHeight}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6385,11 +6395,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:listPreferredItemHeight
+          @attr name com.oliver.bathurst.individualproject:listPreferredItemHeight
         */
         public static final int AppCompatTheme_listPreferredItemHeight = 70;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#listPreferredItemHeightLarge}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#listPreferredItemHeightLarge}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6401,11 +6411,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:listPreferredItemHeightLarge
+          @attr name com.oliver.bathurst.individualproject:listPreferredItemHeightLarge
         */
         public static final int AppCompatTheme_listPreferredItemHeightLarge = 72;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#listPreferredItemHeightSmall}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#listPreferredItemHeightSmall}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6417,11 +6427,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:listPreferredItemHeightSmall
+          @attr name com.oliver.bathurst.individualproject:listPreferredItemHeightSmall
         */
         public static final int AppCompatTheme_listPreferredItemHeightSmall = 71;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#listPreferredItemPaddingLeft}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#listPreferredItemPaddingLeft}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6433,11 +6443,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:listPreferredItemPaddingLeft
+          @attr name com.oliver.bathurst.individualproject:listPreferredItemPaddingLeft
         */
         public static final int AppCompatTheme_listPreferredItemPaddingLeft = 73;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#listPreferredItemPaddingRight}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#listPreferredItemPaddingRight}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6449,31 +6459,31 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:listPreferredItemPaddingRight
+          @attr name com.oliver.bathurst.individualproject:listPreferredItemPaddingRight
         */
         public static final int AppCompatTheme_listPreferredItemPaddingRight = 74;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#panelBackground}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#panelBackground}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:panelBackground
+          @attr name com.oliver.bathurst.individualproject:panelBackground
         */
         public static final int AppCompatTheme_panelBackground = 79;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#panelMenuListTheme}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#panelMenuListTheme}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:panelMenuListTheme
+          @attr name com.oliver.bathurst.individualproject:panelMenuListTheme
         */
         public static final int AppCompatTheme_panelMenuListTheme = 81;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#panelMenuListWidth}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#panelMenuListWidth}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6485,211 +6495,211 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:panelMenuListWidth
+          @attr name com.oliver.bathurst.individualproject:panelMenuListWidth
         */
         public static final int AppCompatTheme_panelMenuListWidth = 80;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#popupMenuStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#popupMenuStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:popupMenuStyle
+          @attr name com.oliver.bathurst.individualproject:popupMenuStyle
         */
         public static final int AppCompatTheme_popupMenuStyle = 61;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#popupWindowStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#popupWindowStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:popupWindowStyle
+          @attr name com.oliver.bathurst.individualproject:popupWindowStyle
         */
         public static final int AppCompatTheme_popupWindowStyle = 62;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#radioButtonStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#radioButtonStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:radioButtonStyle
+          @attr name com.oliver.bathurst.individualproject:radioButtonStyle
         */
         public static final int AppCompatTheme_radioButtonStyle = 107;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#ratingBarStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#ratingBarStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:ratingBarStyle
+          @attr name com.oliver.bathurst.individualproject:ratingBarStyle
         */
         public static final int AppCompatTheme_ratingBarStyle = 108;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#ratingBarStyleIndicator}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#ratingBarStyleIndicator}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:ratingBarStyleIndicator
+          @attr name com.oliver.bathurst.individualproject:ratingBarStyleIndicator
         */
         public static final int AppCompatTheme_ratingBarStyleIndicator = 109;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#ratingBarStyleSmall}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#ratingBarStyleSmall}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:ratingBarStyleSmall
+          @attr name com.oliver.bathurst.individualproject:ratingBarStyleSmall
         */
         public static final int AppCompatTheme_ratingBarStyleSmall = 110;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#searchViewStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#searchViewStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:searchViewStyle
+          @attr name com.oliver.bathurst.individualproject:searchViewStyle
         */
         public static final int AppCompatTheme_searchViewStyle = 69;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#seekBarStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#seekBarStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:seekBarStyle
+          @attr name com.oliver.bathurst.individualproject:seekBarStyle
         */
         public static final int AppCompatTheme_seekBarStyle = 111;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#selectableItemBackground}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#selectableItemBackground}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:selectableItemBackground
+          @attr name com.oliver.bathurst.individualproject:selectableItemBackground
         */
         public static final int AppCompatTheme_selectableItemBackground = 53;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#selectableItemBackgroundBorderless}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#selectableItemBackgroundBorderless}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:selectableItemBackgroundBorderless
+          @attr name com.oliver.bathurst.individualproject:selectableItemBackgroundBorderless
         */
         public static final int AppCompatTheme_selectableItemBackgroundBorderless = 54;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#spinnerDropDownItemStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#spinnerDropDownItemStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:spinnerDropDownItemStyle
+          @attr name com.oliver.bathurst.individualproject:spinnerDropDownItemStyle
         */
         public static final int AppCompatTheme_spinnerDropDownItemStyle = 48;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#spinnerStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#spinnerStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:spinnerStyle
+          @attr name com.oliver.bathurst.individualproject:spinnerStyle
         */
         public static final int AppCompatTheme_spinnerStyle = 112;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#switchStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#switchStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:switchStyle
+          @attr name com.oliver.bathurst.individualproject:switchStyle
         */
         public static final int AppCompatTheme_switchStyle = 113;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#textAppearanceLargePopupMenu}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#textAppearanceLargePopupMenu}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:textAppearanceLargePopupMenu
+          @attr name com.oliver.bathurst.individualproject:textAppearanceLargePopupMenu
         */
         public static final int AppCompatTheme_textAppearanceLargePopupMenu = 40;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#textAppearanceListItem}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#textAppearanceListItem}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:textAppearanceListItem
+          @attr name com.oliver.bathurst.individualproject:textAppearanceListItem
         */
         public static final int AppCompatTheme_textAppearanceListItem = 77;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#textAppearanceListItemSmall}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#textAppearanceListItemSmall}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:textAppearanceListItemSmall
+          @attr name com.oliver.bathurst.individualproject:textAppearanceListItemSmall
         */
         public static final int AppCompatTheme_textAppearanceListItemSmall = 78;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#textAppearancePopupMenuHeader}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#textAppearancePopupMenuHeader}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:textAppearancePopupMenuHeader
+          @attr name com.oliver.bathurst.individualproject:textAppearancePopupMenuHeader
         */
         public static final int AppCompatTheme_textAppearancePopupMenuHeader = 42;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#textAppearanceSearchResultSubtitle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#textAppearanceSearchResultSubtitle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:textAppearanceSearchResultSubtitle
+          @attr name com.oliver.bathurst.individualproject:textAppearanceSearchResultSubtitle
         */
         public static final int AppCompatTheme_textAppearanceSearchResultSubtitle = 67;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#textAppearanceSearchResultTitle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#textAppearanceSearchResultTitle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:textAppearanceSearchResultTitle
+          @attr name com.oliver.bathurst.individualproject:textAppearanceSearchResultTitle
         */
         public static final int AppCompatTheme_textAppearanceSearchResultTitle = 66;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#textAppearanceSmallPopupMenu}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#textAppearanceSmallPopupMenu}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:textAppearanceSmallPopupMenu
+          @attr name com.oliver.bathurst.individualproject:textAppearanceSmallPopupMenu
         */
         public static final int AppCompatTheme_textAppearanceSmallPopupMenu = 41;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#textColorAlertDialogListItem}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#textColorAlertDialogListItem}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6697,11 +6707,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:textColorAlertDialogListItem
+          @attr name com.oliver.bathurst.individualproject:textColorAlertDialogListItem
         */
         public static final int AppCompatTheme_textColorAlertDialogListItem = 97;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#textColorSearchUrl}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#textColorSearchUrl}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6709,31 +6719,31 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:textColorSearchUrl
+          @attr name com.oliver.bathurst.individualproject:textColorSearchUrl
         */
         public static final int AppCompatTheme_textColorSearchUrl = 68;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#toolbarNavigationButtonStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#toolbarNavigationButtonStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:toolbarNavigationButtonStyle
+          @attr name com.oliver.bathurst.individualproject:toolbarNavigationButtonStyle
         */
         public static final int AppCompatTheme_toolbarNavigationButtonStyle = 60;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#toolbarStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#toolbarStyle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:toolbarStyle
+          @attr name com.oliver.bathurst.individualproject:toolbarStyle
         */
         public static final int AppCompatTheme_toolbarStyle = 59;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#windowActionBar}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#windowActionBar}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6743,11 +6753,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:windowActionBar
+          @attr name com.oliver.bathurst.individualproject:windowActionBar
         */
         public static final int AppCompatTheme_windowActionBar = 2;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#windowActionBarOverlay}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#windowActionBarOverlay}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6757,11 +6767,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:windowActionBarOverlay
+          @attr name com.oliver.bathurst.individualproject:windowActionBarOverlay
         */
         public static final int AppCompatTheme_windowActionBarOverlay = 4;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#windowActionModeOverlay}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#windowActionModeOverlay}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6771,11 +6781,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:windowActionModeOverlay
+          @attr name com.oliver.bathurst.individualproject:windowActionModeOverlay
         */
         public static final int AppCompatTheme_windowActionModeOverlay = 5;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#windowFixedHeightMajor}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#windowFixedHeightMajor}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6790,11 +6800,11 @@ some parent container.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:windowFixedHeightMajor
+          @attr name com.oliver.bathurst.individualproject:windowFixedHeightMajor
         */
         public static final int AppCompatTheme_windowFixedHeightMajor = 9;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#windowFixedHeightMinor}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#windowFixedHeightMinor}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6809,11 +6819,11 @@ some parent container.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:windowFixedHeightMinor
+          @attr name com.oliver.bathurst.individualproject:windowFixedHeightMinor
         */
         public static final int AppCompatTheme_windowFixedHeightMinor = 7;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#windowFixedWidthMajor}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#windowFixedWidthMajor}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6828,11 +6838,11 @@ some parent container.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:windowFixedWidthMajor
+          @attr name com.oliver.bathurst.individualproject:windowFixedWidthMajor
         */
         public static final int AppCompatTheme_windowFixedWidthMajor = 6;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#windowFixedWidthMinor}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#windowFixedWidthMinor}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6847,11 +6857,11 @@ some parent container.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:windowFixedWidthMinor
+          @attr name com.oliver.bathurst.individualproject:windowFixedWidthMinor
         */
         public static final int AppCompatTheme_windowFixedWidthMinor = 8;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#windowMinWidthMajor}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#windowMinWidthMajor}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6866,11 +6876,11 @@ some parent container.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:windowMinWidthMajor
+          @attr name com.oliver.bathurst.individualproject:windowMinWidthMajor
         */
         public static final int AppCompatTheme_windowMinWidthMajor = 10;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#windowMinWidthMinor}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#windowMinWidthMinor}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6885,11 +6895,11 @@ some parent container.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:windowMinWidthMinor
+          @attr name com.oliver.bathurst.individualproject:windowMinWidthMinor
         */
         public static final int AppCompatTheme_windowMinWidthMinor = 11;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#windowNoTitle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#windowNoTitle}
           attribute's value can be found in the {@link #AppCompatTheme} array.
 
 
@@ -6899,7 +6909,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:windowNoTitle
+          @attr name com.oliver.bathurst.individualproject:windowNoTitle
         */
         public static final int AppCompatTheme_windowNoTitle = 3;
         /** Attributes that can be used with a BottomNavigationView.
@@ -6908,11 +6918,11 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #BottomNavigationView_elevation com.oliver.bathurst.findmyandroiddevice:elevation}</code></td><td></td></tr>
-           <tr><td><code>{@link #BottomNavigationView_itemBackground com.oliver.bathurst.findmyandroiddevice:itemBackground}</code></td><td></td></tr>
-           <tr><td><code>{@link #BottomNavigationView_itemIconTint com.oliver.bathurst.findmyandroiddevice:itemIconTint}</code></td><td></td></tr>
-           <tr><td><code>{@link #BottomNavigationView_itemTextColor com.oliver.bathurst.findmyandroiddevice:itemTextColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #BottomNavigationView_menu com.oliver.bathurst.findmyandroiddevice:menu}</code></td><td></td></tr>
+           <tr><td><code>{@link #BottomNavigationView_elevation com.oliver.bathurst.individualproject:elevation}</code></td><td></td></tr>
+           <tr><td><code>{@link #BottomNavigationView_itemBackground com.oliver.bathurst.individualproject:itemBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #BottomNavigationView_itemIconTint com.oliver.bathurst.individualproject:itemIconTint}</code></td><td></td></tr>
+           <tr><td><code>{@link #BottomNavigationView_itemTextColor com.oliver.bathurst.individualproject:itemTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #BottomNavigationView_menu com.oliver.bathurst.individualproject:menu}</code></td><td></td></tr>
            </table>
            @see #BottomNavigationView_elevation
            @see #BottomNavigationView_itemBackground
@@ -6925,7 +6935,7 @@ containing a value of this type.
             0x7f010126
         };
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#elevation}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#elevation}
           attribute's value can be found in the {@link #BottomNavigationView} array.
 
 
@@ -6937,21 +6947,21 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:elevation
+          @attr name com.oliver.bathurst.individualproject:elevation
         */
         public static final int BottomNavigationView_elevation = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#itemBackground}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#itemBackground}
           attribute's value can be found in the {@link #BottomNavigationView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:itemBackground
+          @attr name com.oliver.bathurst.individualproject:itemBackground
         */
         public static final int BottomNavigationView_itemBackground = 4;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#itemIconTint}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#itemIconTint}
           attribute's value can be found in the {@link #BottomNavigationView} array.
 
 
@@ -6962,11 +6972,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:itemIconTint
+          @attr name com.oliver.bathurst.individualproject:itemIconTint
         */
         public static final int BottomNavigationView_itemIconTint = 2;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#itemTextColor}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#itemTextColor}
           attribute's value can be found in the {@link #BottomNavigationView} array.
 
 
@@ -6977,17 +6987,17 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:itemTextColor
+          @attr name com.oliver.bathurst.individualproject:itemTextColor
         */
         public static final int BottomNavigationView_itemTextColor = 3;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#menu}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#menu}
           attribute's value can be found in the {@link #BottomNavigationView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:menu
+          @attr name com.oliver.bathurst.individualproject:menu
         */
         public static final int BottomNavigationView_menu = 1;
         /** Attributes that can be used with a BottomSheetBehavior_Layout.
@@ -6996,9 +7006,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #BottomSheetBehavior_Layout_behavior_hideable com.oliver.bathurst.findmyandroiddevice:behavior_hideable}</code></td><td></td></tr>
-           <tr><td><code>{@link #BottomSheetBehavior_Layout_behavior_peekHeight com.oliver.bathurst.findmyandroiddevice:behavior_peekHeight}</code></td><td></td></tr>
-           <tr><td><code>{@link #BottomSheetBehavior_Layout_behavior_skipCollapsed com.oliver.bathurst.findmyandroiddevice:behavior_skipCollapsed}</code></td><td></td></tr>
+           <tr><td><code>{@link #BottomSheetBehavior_Layout_behavior_hideable com.oliver.bathurst.individualproject:behavior_hideable}</code></td><td></td></tr>
+           <tr><td><code>{@link #BottomSheetBehavior_Layout_behavior_peekHeight com.oliver.bathurst.individualproject:behavior_peekHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #BottomSheetBehavior_Layout_behavior_skipCollapsed com.oliver.bathurst.individualproject:behavior_skipCollapsed}</code></td><td></td></tr>
            </table>
            @see #BottomSheetBehavior_Layout_behavior_hideable
            @see #BottomSheetBehavior_Layout_behavior_peekHeight
@@ -7008,7 +7018,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f0100ce, 0x7f0100cf, 0x7f0100d0
         };
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#behavior_hideable}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#behavior_hideable}
           attribute's value can be found in the {@link #BottomSheetBehavior_Layout} array.
 
 
@@ -7018,11 +7028,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:behavior_hideable
+          @attr name com.oliver.bathurst.individualproject:behavior_hideable
         */
         public static final int BottomSheetBehavior_Layout_behavior_hideable = 1;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#behavior_peekHeight}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#behavior_peekHeight}
           attribute's value can be found in the {@link #BottomSheetBehavior_Layout} array.
 
 
@@ -7042,11 +7052,11 @@ containing a value of this type.
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>auto</code></td><td>-1</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:behavior_peekHeight
+          @attr name com.oliver.bathurst.individualproject:behavior_peekHeight
         */
         public static final int BottomSheetBehavior_Layout_behavior_peekHeight = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#behavior_skipCollapsed}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#behavior_skipCollapsed}
           attribute's value can be found in the {@link #BottomSheetBehavior_Layout} array.
 
 
@@ -7056,7 +7066,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:behavior_skipCollapsed
+          @attr name com.oliver.bathurst.individualproject:behavior_skipCollapsed
         */
         public static final int BottomSheetBehavior_Layout_behavior_skipCollapsed = 2;
         /** Attributes that can be used with a ButtonBarLayout.
@@ -7065,7 +7075,7 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ButtonBarLayout_allowStacking com.oliver.bathurst.findmyandroiddevice:allowStacking}</code></td><td></td></tr>
+           <tr><td><code>{@link #ButtonBarLayout_allowStacking com.oliver.bathurst.individualproject:allowStacking}</code></td><td></td></tr>
            </table>
            @see #ButtonBarLayout_allowStacking
          */
@@ -7073,7 +7083,7 @@ containing a value of this type.
             0x7f0100d1
         };
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#allowStacking}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#allowStacking}
           attribute's value can be found in the {@link #ButtonBarLayout} array.
 
 
@@ -7083,7 +7093,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:allowStacking
+          @attr name com.oliver.bathurst.individualproject:allowStacking
         */
         public static final int ButtonBarLayout_allowStacking = 0;
         /** Attributes that can be used with a CollapsingToolbarLayout.
@@ -7092,22 +7102,22 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #CollapsingToolbarLayout_collapsedTitleGravity com.oliver.bathurst.findmyandroiddevice:collapsedTitleGravity}</code></td><td></td></tr>
-           <tr><td><code>{@link #CollapsingToolbarLayout_collapsedTitleTextAppearance com.oliver.bathurst.findmyandroiddevice:collapsedTitleTextAppearance}</code></td><td></td></tr>
-           <tr><td><code>{@link #CollapsingToolbarLayout_contentScrim com.oliver.bathurst.findmyandroiddevice:contentScrim}</code></td><td></td></tr>
-           <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleGravity com.oliver.bathurst.findmyandroiddevice:expandedTitleGravity}</code></td><td></td></tr>
-           <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMargin com.oliver.bathurst.findmyandroiddevice:expandedTitleMargin}</code></td><td></td></tr>
-           <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginBottom com.oliver.bathurst.findmyandroiddevice:expandedTitleMarginBottom}</code></td><td></td></tr>
-           <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginEnd com.oliver.bathurst.findmyandroiddevice:expandedTitleMarginEnd}</code></td><td></td></tr>
-           <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginStart com.oliver.bathurst.findmyandroiddevice:expandedTitleMarginStart}</code></td><td></td></tr>
-           <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginTop com.oliver.bathurst.findmyandroiddevice:expandedTitleMarginTop}</code></td><td></td></tr>
-           <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleTextAppearance com.oliver.bathurst.findmyandroiddevice:expandedTitleTextAppearance}</code></td><td></td></tr>
-           <tr><td><code>{@link #CollapsingToolbarLayout_scrimAnimationDuration com.oliver.bathurst.findmyandroiddevice:scrimAnimationDuration}</code></td><td></td></tr>
-           <tr><td><code>{@link #CollapsingToolbarLayout_scrimVisibleHeightTrigger com.oliver.bathurst.findmyandroiddevice:scrimVisibleHeightTrigger}</code></td><td></td></tr>
-           <tr><td><code>{@link #CollapsingToolbarLayout_statusBarScrim com.oliver.bathurst.findmyandroiddevice:statusBarScrim}</code></td><td></td></tr>
-           <tr><td><code>{@link #CollapsingToolbarLayout_title com.oliver.bathurst.findmyandroiddevice:title}</code></td><td></td></tr>
-           <tr><td><code>{@link #CollapsingToolbarLayout_titleEnabled com.oliver.bathurst.findmyandroiddevice:titleEnabled}</code></td><td></td></tr>
-           <tr><td><code>{@link #CollapsingToolbarLayout_toolbarId com.oliver.bathurst.findmyandroiddevice:toolbarId}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_collapsedTitleGravity com.oliver.bathurst.individualproject:collapsedTitleGravity}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_collapsedTitleTextAppearance com.oliver.bathurst.individualproject:collapsedTitleTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_contentScrim com.oliver.bathurst.individualproject:contentScrim}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleGravity com.oliver.bathurst.individualproject:expandedTitleGravity}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMargin com.oliver.bathurst.individualproject:expandedTitleMargin}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginBottom com.oliver.bathurst.individualproject:expandedTitleMarginBottom}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginEnd com.oliver.bathurst.individualproject:expandedTitleMarginEnd}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginStart com.oliver.bathurst.individualproject:expandedTitleMarginStart}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginTop com.oliver.bathurst.individualproject:expandedTitleMarginTop}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleTextAppearance com.oliver.bathurst.individualproject:expandedTitleTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_scrimAnimationDuration com.oliver.bathurst.individualproject:scrimAnimationDuration}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_scrimVisibleHeightTrigger com.oliver.bathurst.individualproject:scrimVisibleHeightTrigger}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_statusBarScrim com.oliver.bathurst.individualproject:statusBarScrim}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_title com.oliver.bathurst.individualproject:title}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_titleEnabled com.oliver.bathurst.individualproject:titleEnabled}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_toolbarId com.oliver.bathurst.individualproject:toolbarId}</code></td><td></td></tr>
            </table>
            @see #CollapsingToolbarLayout_collapsedTitleGravity
            @see #CollapsingToolbarLayout_collapsedTitleTextAppearance
@@ -7133,7 +7143,7 @@ containing a value of this type.
             0x7f0100dd, 0x7f0100de, 0x7f0100df, 0x7f0100e0
         };
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#collapsedTitleGravity}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#collapsedTitleGravity}
           attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
 
 
@@ -7154,21 +7164,21 @@ containing a value of this type.
 <tr><td><code>start</code></td><td>0x00800003</td><td></td></tr>
 <tr><td><code>end</code></td><td>0x00800005</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:collapsedTitleGravity
+          @attr name com.oliver.bathurst.individualproject:collapsedTitleGravity
         */
         public static final int CollapsingToolbarLayout_collapsedTitleGravity = 13;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#collapsedTitleTextAppearance}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#collapsedTitleTextAppearance}
           attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:collapsedTitleTextAppearance
+          @attr name com.oliver.bathurst.individualproject:collapsedTitleTextAppearance
         */
         public static final int CollapsingToolbarLayout_collapsedTitleTextAppearance = 7;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#contentScrim}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#contentScrim}
           attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
 
 
@@ -7179,11 +7189,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:contentScrim
+          @attr name com.oliver.bathurst.individualproject:contentScrim
         */
         public static final int CollapsingToolbarLayout_contentScrim = 8;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#expandedTitleGravity}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#expandedTitleGravity}
           attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
 
 
@@ -7204,11 +7214,11 @@ containing a value of this type.
 <tr><td><code>start</code></td><td>0x00800003</td><td></td></tr>
 <tr><td><code>end</code></td><td>0x00800005</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:expandedTitleGravity
+          @attr name com.oliver.bathurst.individualproject:expandedTitleGravity
         */
         public static final int CollapsingToolbarLayout_expandedTitleGravity = 14;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#expandedTitleMargin}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#expandedTitleMargin}
           attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
 
 
@@ -7220,11 +7230,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:expandedTitleMargin
+          @attr name com.oliver.bathurst.individualproject:expandedTitleMargin
         */
         public static final int CollapsingToolbarLayout_expandedTitleMargin = 1;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#expandedTitleMarginBottom}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#expandedTitleMarginBottom}
           attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
 
 
@@ -7236,11 +7246,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:expandedTitleMarginBottom
+          @attr name com.oliver.bathurst.individualproject:expandedTitleMarginBottom
         */
         public static final int CollapsingToolbarLayout_expandedTitleMarginBottom = 5;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#expandedTitleMarginEnd}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#expandedTitleMarginEnd}
           attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
 
 
@@ -7252,11 +7262,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:expandedTitleMarginEnd
+          @attr name com.oliver.bathurst.individualproject:expandedTitleMarginEnd
         */
         public static final int CollapsingToolbarLayout_expandedTitleMarginEnd = 4;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#expandedTitleMarginStart}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#expandedTitleMarginStart}
           attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
 
 
@@ -7268,11 +7278,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:expandedTitleMarginStart
+          @attr name com.oliver.bathurst.individualproject:expandedTitleMarginStart
         */
         public static final int CollapsingToolbarLayout_expandedTitleMarginStart = 2;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#expandedTitleMarginTop}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#expandedTitleMarginTop}
           attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
 
 
@@ -7284,21 +7294,21 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:expandedTitleMarginTop
+          @attr name com.oliver.bathurst.individualproject:expandedTitleMarginTop
         */
         public static final int CollapsingToolbarLayout_expandedTitleMarginTop = 3;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#expandedTitleTextAppearance}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#expandedTitleTextAppearance}
           attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:expandedTitleTextAppearance
+          @attr name com.oliver.bathurst.individualproject:expandedTitleTextAppearance
         */
         public static final int CollapsingToolbarLayout_expandedTitleTextAppearance = 6;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#scrimAnimationDuration}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#scrimAnimationDuration}
           attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
 
 
@@ -7308,11 +7318,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:scrimAnimationDuration
+          @attr name com.oliver.bathurst.individualproject:scrimAnimationDuration
         */
         public static final int CollapsingToolbarLayout_scrimAnimationDuration = 12;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#scrimVisibleHeightTrigger}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#scrimVisibleHeightTrigger}
           attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
 
 
@@ -7324,11 +7334,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:scrimVisibleHeightTrigger
+          @attr name com.oliver.bathurst.individualproject:scrimVisibleHeightTrigger
         */
         public static final int CollapsingToolbarLayout_scrimVisibleHeightTrigger = 11;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#statusBarScrim}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#statusBarScrim}
           attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
 
 
@@ -7339,11 +7349,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:statusBarScrim
+          @attr name com.oliver.bathurst.individualproject:statusBarScrim
         */
         public static final int CollapsingToolbarLayout_statusBarScrim = 9;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#title}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#title}
           attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
 
 
@@ -7353,11 +7363,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:title
+          @attr name com.oliver.bathurst.individualproject:title
         */
         public static final int CollapsingToolbarLayout_title = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#titleEnabled}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#titleEnabled}
           attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
 
 
@@ -7367,17 +7377,17 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:titleEnabled
+          @attr name com.oliver.bathurst.individualproject:titleEnabled
         */
         public static final int CollapsingToolbarLayout_titleEnabled = 15;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#toolbarId}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#toolbarId}
           attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:toolbarId
+          @attr name com.oliver.bathurst.individualproject:toolbarId
         */
         public static final int CollapsingToolbarLayout_toolbarId = 10;
         /** Attributes that can be used with a CollapsingToolbarLayout_Layout.
@@ -7386,8 +7396,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #CollapsingToolbarLayout_Layout_layout_collapseMode com.oliver.bathurst.findmyandroiddevice:layout_collapseMode}</code></td><td></td></tr>
-           <tr><td><code>{@link #CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier com.oliver.bathurst.findmyandroiddevice:layout_collapseParallaxMultiplier}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_Layout_layout_collapseMode com.oliver.bathurst.individualproject:layout_collapseMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier com.oliver.bathurst.individualproject:layout_collapseParallaxMultiplier}</code></td><td></td></tr>
            </table>
            @see #CollapsingToolbarLayout_Layout_layout_collapseMode
            @see #CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier
@@ -7396,7 +7406,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f0100e1, 0x7f0100e2
         };
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_collapseMode}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_collapseMode}
           attribute's value can be found in the {@link #CollapsingToolbarLayout_Layout} array.
 
 
@@ -7410,11 +7420,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>pin</code></td><td>1</td><td></td></tr>
 <tr><td><code>parallax</code></td><td>2</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_collapseMode
+          @attr name com.oliver.bathurst.individualproject:layout_collapseMode
         */
         public static final int CollapsingToolbarLayout_Layout_layout_collapseMode = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_collapseParallaxMultiplier}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_collapseParallaxMultiplier}
           attribute's value can be found in the {@link #CollapsingToolbarLayout_Layout} array.
 
 
@@ -7424,7 +7434,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_collapseParallaxMultiplier
+          @attr name com.oliver.bathurst.individualproject:layout_collapseParallaxMultiplier
         */
         public static final int CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier = 1;
         /** Attributes that can be used with a ColorStateListItem.
@@ -7433,7 +7443,7 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ColorStateListItem_alpha com.oliver.bathurst.findmyandroiddevice:alpha}</code></td><td></td></tr>
+           <tr><td><code>{@link #ColorStateListItem_alpha com.oliver.bathurst.individualproject:alpha}</code></td><td></td></tr>
            <tr><td><code>{@link #ColorStateListItem_android_alpha android:alpha}</code></td><td></td></tr>
            <tr><td><code>{@link #ColorStateListItem_android_color android:color}</code></td><td></td></tr>
            </table>
@@ -7445,7 +7455,7 @@ containing a value of this type.
             0x010101a5, 0x0101031f, 0x7f0100e3
         };
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#alpha}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#alpha}
           attribute's value can be found in the {@link #ColorStateListItem} array.
 
 
@@ -7455,7 +7465,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:alpha
+          @attr name com.oliver.bathurst.individualproject:alpha
         */
         public static final int ColorStateListItem_alpha = 2;
         /**
@@ -7477,8 +7487,8 @@ containing a value of this type.
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #CompoundButton_android_button android:button}</code></td><td></td></tr>
-           <tr><td><code>{@link #CompoundButton_buttonTint com.oliver.bathurst.findmyandroiddevice:buttonTint}</code></td><td></td></tr>
-           <tr><td><code>{@link #CompoundButton_buttonTintMode com.oliver.bathurst.findmyandroiddevice:buttonTintMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #CompoundButton_buttonTint com.oliver.bathurst.individualproject:buttonTint}</code></td><td></td></tr>
+           <tr><td><code>{@link #CompoundButton_buttonTintMode com.oliver.bathurst.individualproject:buttonTintMode}</code></td><td></td></tr>
            </table>
            @see #CompoundButton_android_button
            @see #CompoundButton_buttonTint
@@ -7494,7 +7504,7 @@ containing a value of this type.
         */
         public static final int CompoundButton_android_button = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#buttonTint}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#buttonTint}
           attribute's value can be found in the {@link #CompoundButton} array.
 
 
@@ -7505,11 +7515,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:buttonTint
+          @attr name com.oliver.bathurst.individualproject:buttonTint
         */
         public static final int CompoundButton_buttonTint = 1;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#buttonTintMode}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#buttonTintMode}
           attribute's value can be found in the {@link #CompoundButton} array.
 
 
@@ -7525,7 +7535,7 @@ containing a value of this type.
 <tr><td><code>multiply</code></td><td>14</td><td></td></tr>
 <tr><td><code>screen</code></td><td>15</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:buttonTintMode
+          @attr name com.oliver.bathurst.individualproject:buttonTintMode
         */
         public static final int CompoundButton_buttonTintMode = 2;
         /** Attributes that can be used with a ConstraintLayout_Layout.
@@ -7539,50 +7549,50 @@ containing a value of this type.
            <tr><td><code>{@link #ConstraintLayout_Layout_android_minHeight android:minHeight}</code></td><td></td></tr>
            <tr><td><code>{@link #ConstraintLayout_Layout_android_minWidth android:minWidth}</code></td><td></td></tr>
            <tr><td><code>{@link #ConstraintLayout_Layout_android_orientation android:orientation}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_constraintSet com.oliver.bathurst.findmyandroiddevice:constraintSet}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBaseline_creator com.oliver.bathurst.findmyandroiddevice:layout_constraintBaseline_creator}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBaseline_toBaselineOf com.oliver.bathurst.findmyandroiddevice:layout_constraintBaseline_toBaselineOf}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBottom_creator com.oliver.bathurst.findmyandroiddevice:layout_constraintBottom_creator}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBottom_toBottomOf com.oliver.bathurst.findmyandroiddevice:layout_constraintBottom_toBottomOf}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBottom_toTopOf com.oliver.bathurst.findmyandroiddevice:layout_constraintBottom_toTopOf}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintDimensionRatio com.oliver.bathurst.findmyandroiddevice:layout_constraintDimensionRatio}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintEnd_toEndOf com.oliver.bathurst.findmyandroiddevice:layout_constraintEnd_toEndOf}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintEnd_toStartOf com.oliver.bathurst.findmyandroiddevice:layout_constraintEnd_toStartOf}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintGuide_begin com.oliver.bathurst.findmyandroiddevice:layout_constraintGuide_begin}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintGuide_end com.oliver.bathurst.findmyandroiddevice:layout_constraintGuide_end}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintGuide_percent com.oliver.bathurst.findmyandroiddevice:layout_constraintGuide_percent}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHeight_default com.oliver.bathurst.findmyandroiddevice:layout_constraintHeight_default}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHeight_max com.oliver.bathurst.findmyandroiddevice:layout_constraintHeight_max}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHeight_min com.oliver.bathurst.findmyandroiddevice:layout_constraintHeight_min}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHorizontal_bias com.oliver.bathurst.findmyandroiddevice:layout_constraintHorizontal_bias}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHorizontal_chainStyle com.oliver.bathurst.findmyandroiddevice:layout_constraintHorizontal_chainStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHorizontal_weight com.oliver.bathurst.findmyandroiddevice:layout_constraintHorizontal_weight}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintLeft_creator com.oliver.bathurst.findmyandroiddevice:layout_constraintLeft_creator}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintLeft_toLeftOf com.oliver.bathurst.findmyandroiddevice:layout_constraintLeft_toLeftOf}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintLeft_toRightOf com.oliver.bathurst.findmyandroiddevice:layout_constraintLeft_toRightOf}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintRight_creator com.oliver.bathurst.findmyandroiddevice:layout_constraintRight_creator}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintRight_toLeftOf com.oliver.bathurst.findmyandroiddevice:layout_constraintRight_toLeftOf}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintRight_toRightOf com.oliver.bathurst.findmyandroiddevice:layout_constraintRight_toRightOf}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintStart_toEndOf com.oliver.bathurst.findmyandroiddevice:layout_constraintStart_toEndOf}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintStart_toStartOf com.oliver.bathurst.findmyandroiddevice:layout_constraintStart_toStartOf}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintTop_creator com.oliver.bathurst.findmyandroiddevice:layout_constraintTop_creator}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintTop_toBottomOf com.oliver.bathurst.findmyandroiddevice:layout_constraintTop_toBottomOf}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintTop_toTopOf com.oliver.bathurst.findmyandroiddevice:layout_constraintTop_toTopOf}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintVertical_bias com.oliver.bathurst.findmyandroiddevice:layout_constraintVertical_bias}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintVertical_chainStyle com.oliver.bathurst.findmyandroiddevice:layout_constraintVertical_chainStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintVertical_weight com.oliver.bathurst.findmyandroiddevice:layout_constraintVertical_weight}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintWidth_default com.oliver.bathurst.findmyandroiddevice:layout_constraintWidth_default}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintWidth_max com.oliver.bathurst.findmyandroiddevice:layout_constraintWidth_max}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintWidth_min com.oliver.bathurst.findmyandroiddevice:layout_constraintWidth_min}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_editor_absoluteX com.oliver.bathurst.findmyandroiddevice:layout_editor_absoluteX}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_editor_absoluteY com.oliver.bathurst.findmyandroiddevice:layout_editor_absoluteY}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginBottom com.oliver.bathurst.findmyandroiddevice:layout_goneMarginBottom}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginEnd com.oliver.bathurst.findmyandroiddevice:layout_goneMarginEnd}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginLeft com.oliver.bathurst.findmyandroiddevice:layout_goneMarginLeft}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginRight com.oliver.bathurst.findmyandroiddevice:layout_goneMarginRight}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginStart com.oliver.bathurst.findmyandroiddevice:layout_goneMarginStart}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginTop com.oliver.bathurst.findmyandroiddevice:layout_goneMarginTop}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintLayout_Layout_layout_optimizationLevel com.oliver.bathurst.findmyandroiddevice:layout_optimizationLevel}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_constraintSet com.oliver.bathurst.individualproject:constraintSet}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBaseline_creator com.oliver.bathurst.individualproject:layout_constraintBaseline_creator}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBaseline_toBaselineOf com.oliver.bathurst.individualproject:layout_constraintBaseline_toBaselineOf}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBottom_creator com.oliver.bathurst.individualproject:layout_constraintBottom_creator}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBottom_toBottomOf com.oliver.bathurst.individualproject:layout_constraintBottom_toBottomOf}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBottom_toTopOf com.oliver.bathurst.individualproject:layout_constraintBottom_toTopOf}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintDimensionRatio com.oliver.bathurst.individualproject:layout_constraintDimensionRatio}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintEnd_toEndOf com.oliver.bathurst.individualproject:layout_constraintEnd_toEndOf}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintEnd_toStartOf com.oliver.bathurst.individualproject:layout_constraintEnd_toStartOf}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintGuide_begin com.oliver.bathurst.individualproject:layout_constraintGuide_begin}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintGuide_end com.oliver.bathurst.individualproject:layout_constraintGuide_end}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintGuide_percent com.oliver.bathurst.individualproject:layout_constraintGuide_percent}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHeight_default com.oliver.bathurst.individualproject:layout_constraintHeight_default}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHeight_max com.oliver.bathurst.individualproject:layout_constraintHeight_max}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHeight_min com.oliver.bathurst.individualproject:layout_constraintHeight_min}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHorizontal_bias com.oliver.bathurst.individualproject:layout_constraintHorizontal_bias}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHorizontal_chainStyle com.oliver.bathurst.individualproject:layout_constraintHorizontal_chainStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHorizontal_weight com.oliver.bathurst.individualproject:layout_constraintHorizontal_weight}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintLeft_creator com.oliver.bathurst.individualproject:layout_constraintLeft_creator}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintLeft_toLeftOf com.oliver.bathurst.individualproject:layout_constraintLeft_toLeftOf}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintLeft_toRightOf com.oliver.bathurst.individualproject:layout_constraintLeft_toRightOf}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintRight_creator com.oliver.bathurst.individualproject:layout_constraintRight_creator}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintRight_toLeftOf com.oliver.bathurst.individualproject:layout_constraintRight_toLeftOf}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintRight_toRightOf com.oliver.bathurst.individualproject:layout_constraintRight_toRightOf}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintStart_toEndOf com.oliver.bathurst.individualproject:layout_constraintStart_toEndOf}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintStart_toStartOf com.oliver.bathurst.individualproject:layout_constraintStart_toStartOf}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintTop_creator com.oliver.bathurst.individualproject:layout_constraintTop_creator}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintTop_toBottomOf com.oliver.bathurst.individualproject:layout_constraintTop_toBottomOf}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintTop_toTopOf com.oliver.bathurst.individualproject:layout_constraintTop_toTopOf}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintVertical_bias com.oliver.bathurst.individualproject:layout_constraintVertical_bias}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintVertical_chainStyle com.oliver.bathurst.individualproject:layout_constraintVertical_chainStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintVertical_weight com.oliver.bathurst.individualproject:layout_constraintVertical_weight}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintWidth_default com.oliver.bathurst.individualproject:layout_constraintWidth_default}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintWidth_max com.oliver.bathurst.individualproject:layout_constraintWidth_max}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintWidth_min com.oliver.bathurst.individualproject:layout_constraintWidth_min}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_editor_absoluteX com.oliver.bathurst.individualproject:layout_editor_absoluteX}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_editor_absoluteY com.oliver.bathurst.individualproject:layout_editor_absoluteY}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginBottom com.oliver.bathurst.individualproject:layout_goneMarginBottom}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginEnd com.oliver.bathurst.individualproject:layout_goneMarginEnd}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginLeft com.oliver.bathurst.individualproject:layout_goneMarginLeft}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginRight com.oliver.bathurst.individualproject:layout_goneMarginRight}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginStart com.oliver.bathurst.individualproject:layout_goneMarginStart}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginTop com.oliver.bathurst.individualproject:layout_goneMarginTop}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintLayout_Layout_layout_optimizationLevel com.oliver.bathurst.individualproject:layout_optimizationLevel}</code></td><td></td></tr>
            </table>
            @see #ConstraintLayout_Layout_android_maxHeight
            @see #ConstraintLayout_Layout_android_maxWidth
@@ -7680,17 +7690,17 @@ containing a value of this type.
         */
         public static final int ConstraintLayout_Layout_android_orientation = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#constraintSet}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#constraintSet}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:constraintSet
+          @attr name com.oliver.bathurst.individualproject:constraintSet
         */
         public static final int ConstraintLayout_Layout_constraintSet = 5;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintBaseline_creator}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintBaseline_creator}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -7700,11 +7710,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintBaseline_creator
+          @attr name com.oliver.bathurst.individualproject:layout_constraintBaseline_creator
         */
         public static final int ConstraintLayout_Layout_layout_constraintBaseline_creator = 6;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintBaseline_toBaselineOf}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintBaseline_toBaselineOf}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -7718,11 +7728,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>parent</code></td><td>0</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintBaseline_toBaselineOf
+          @attr name com.oliver.bathurst.individualproject:layout_constraintBaseline_toBaselineOf
         */
         public static final int ConstraintLayout_Layout_layout_constraintBaseline_toBaselineOf = 7;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintBottom_creator}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintBottom_creator}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -7732,11 +7742,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintBottom_creator
+          @attr name com.oliver.bathurst.individualproject:layout_constraintBottom_creator
         */
         public static final int ConstraintLayout_Layout_layout_constraintBottom_creator = 8;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintBottom_toBottomOf}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintBottom_toBottomOf}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -7750,11 +7760,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>parent</code></td><td>0</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintBottom_toBottomOf
+          @attr name com.oliver.bathurst.individualproject:layout_constraintBottom_toBottomOf
         */
         public static final int ConstraintLayout_Layout_layout_constraintBottom_toBottomOf = 9;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintBottom_toTopOf}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintBottom_toTopOf}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -7768,11 +7778,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>parent</code></td><td>0</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintBottom_toTopOf
+          @attr name com.oliver.bathurst.individualproject:layout_constraintBottom_toTopOf
         */
         public static final int ConstraintLayout_Layout_layout_constraintBottom_toTopOf = 10;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintDimensionRatio}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintDimensionRatio}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -7782,11 +7792,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintDimensionRatio
+          @attr name com.oliver.bathurst.individualproject:layout_constraintDimensionRatio
         */
         public static final int ConstraintLayout_Layout_layout_constraintDimensionRatio = 11;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintEnd_toEndOf}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintEnd_toEndOf}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -7800,11 +7810,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>parent</code></td><td>0</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintEnd_toEndOf
+          @attr name com.oliver.bathurst.individualproject:layout_constraintEnd_toEndOf
         */
         public static final int ConstraintLayout_Layout_layout_constraintEnd_toEndOf = 12;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintEnd_toStartOf}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintEnd_toStartOf}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -7818,11 +7828,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>parent</code></td><td>0</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintEnd_toStartOf
+          @attr name com.oliver.bathurst.individualproject:layout_constraintEnd_toStartOf
         */
         public static final int ConstraintLayout_Layout_layout_constraintEnd_toStartOf = 13;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintGuide_begin}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintGuide_begin}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -7834,11 +7844,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintGuide_begin
+          @attr name com.oliver.bathurst.individualproject:layout_constraintGuide_begin
         */
         public static final int ConstraintLayout_Layout_layout_constraintGuide_begin = 14;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintGuide_end}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintGuide_end}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -7850,11 +7860,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintGuide_end
+          @attr name com.oliver.bathurst.individualproject:layout_constraintGuide_end
         */
         public static final int ConstraintLayout_Layout_layout_constraintGuide_end = 15;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintGuide_percent}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintGuide_percent}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -7864,11 +7874,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintGuide_percent
+          @attr name com.oliver.bathurst.individualproject:layout_constraintGuide_percent
         */
         public static final int ConstraintLayout_Layout_layout_constraintGuide_percent = 16;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintHeight_default}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintHeight_default}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -7881,11 +7891,11 @@ containing a value of this type.
 <tr><td><code>spread</code></td><td>0</td><td></td></tr>
 <tr><td><code>wrap</code></td><td>1</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintHeight_default
+          @attr name com.oliver.bathurst.individualproject:layout_constraintHeight_default
         */
         public static final int ConstraintLayout_Layout_layout_constraintHeight_default = 17;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintHeight_max}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintHeight_max}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -7897,11 +7907,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintHeight_max
+          @attr name com.oliver.bathurst.individualproject:layout_constraintHeight_max
         */
         public static final int ConstraintLayout_Layout_layout_constraintHeight_max = 18;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintHeight_min}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintHeight_min}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -7913,11 +7923,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintHeight_min
+          @attr name com.oliver.bathurst.individualproject:layout_constraintHeight_min
         */
         public static final int ConstraintLayout_Layout_layout_constraintHeight_min = 19;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintHorizontal_bias}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintHorizontal_bias}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -7927,11 +7937,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintHorizontal_bias
+          @attr name com.oliver.bathurst.individualproject:layout_constraintHorizontal_bias
         */
         public static final int ConstraintLayout_Layout_layout_constraintHorizontal_bias = 20;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintHorizontal_chainStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintHorizontal_chainStyle}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -7945,11 +7955,11 @@ containing a value of this type.
 <tr><td><code>spread_inside</code></td><td>1</td><td></td></tr>
 <tr><td><code>packed</code></td><td>2</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintHorizontal_chainStyle
+          @attr name com.oliver.bathurst.individualproject:layout_constraintHorizontal_chainStyle
         */
         public static final int ConstraintLayout_Layout_layout_constraintHorizontal_chainStyle = 21;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintHorizontal_weight}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintHorizontal_weight}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -7959,11 +7969,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintHorizontal_weight
+          @attr name com.oliver.bathurst.individualproject:layout_constraintHorizontal_weight
         */
         public static final int ConstraintLayout_Layout_layout_constraintHorizontal_weight = 22;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintLeft_creator}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintLeft_creator}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -7973,11 +7983,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintLeft_creator
+          @attr name com.oliver.bathurst.individualproject:layout_constraintLeft_creator
         */
         public static final int ConstraintLayout_Layout_layout_constraintLeft_creator = 23;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintLeft_toLeftOf}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintLeft_toLeftOf}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -7991,11 +8001,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>parent</code></td><td>0</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintLeft_toLeftOf
+          @attr name com.oliver.bathurst.individualproject:layout_constraintLeft_toLeftOf
         */
         public static final int ConstraintLayout_Layout_layout_constraintLeft_toLeftOf = 24;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintLeft_toRightOf}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintLeft_toRightOf}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -8009,11 +8019,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>parent</code></td><td>0</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintLeft_toRightOf
+          @attr name com.oliver.bathurst.individualproject:layout_constraintLeft_toRightOf
         */
         public static final int ConstraintLayout_Layout_layout_constraintLeft_toRightOf = 25;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintRight_creator}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintRight_creator}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -8023,11 +8033,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintRight_creator
+          @attr name com.oliver.bathurst.individualproject:layout_constraintRight_creator
         */
         public static final int ConstraintLayout_Layout_layout_constraintRight_creator = 26;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintRight_toLeftOf}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintRight_toLeftOf}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -8041,11 +8051,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>parent</code></td><td>0</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintRight_toLeftOf
+          @attr name com.oliver.bathurst.individualproject:layout_constraintRight_toLeftOf
         */
         public static final int ConstraintLayout_Layout_layout_constraintRight_toLeftOf = 27;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintRight_toRightOf}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintRight_toRightOf}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -8059,11 +8069,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>parent</code></td><td>0</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintRight_toRightOf
+          @attr name com.oliver.bathurst.individualproject:layout_constraintRight_toRightOf
         */
         public static final int ConstraintLayout_Layout_layout_constraintRight_toRightOf = 28;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintStart_toEndOf}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintStart_toEndOf}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -8077,11 +8087,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>parent</code></td><td>0</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintStart_toEndOf
+          @attr name com.oliver.bathurst.individualproject:layout_constraintStart_toEndOf
         */
         public static final int ConstraintLayout_Layout_layout_constraintStart_toEndOf = 29;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintStart_toStartOf}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintStart_toStartOf}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -8095,11 +8105,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>parent</code></td><td>0</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintStart_toStartOf
+          @attr name com.oliver.bathurst.individualproject:layout_constraintStart_toStartOf
         */
         public static final int ConstraintLayout_Layout_layout_constraintStart_toStartOf = 30;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintTop_creator}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintTop_creator}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -8109,11 +8119,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintTop_creator
+          @attr name com.oliver.bathurst.individualproject:layout_constraintTop_creator
         */
         public static final int ConstraintLayout_Layout_layout_constraintTop_creator = 31;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintTop_toBottomOf}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintTop_toBottomOf}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -8127,11 +8137,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>parent</code></td><td>0</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintTop_toBottomOf
+          @attr name com.oliver.bathurst.individualproject:layout_constraintTop_toBottomOf
         */
         public static final int ConstraintLayout_Layout_layout_constraintTop_toBottomOf = 32;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintTop_toTopOf}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintTop_toTopOf}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -8145,11 +8155,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>parent</code></td><td>0</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintTop_toTopOf
+          @attr name com.oliver.bathurst.individualproject:layout_constraintTop_toTopOf
         */
         public static final int ConstraintLayout_Layout_layout_constraintTop_toTopOf = 33;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintVertical_bias}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintVertical_bias}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -8159,11 +8169,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintVertical_bias
+          @attr name com.oliver.bathurst.individualproject:layout_constraintVertical_bias
         */
         public static final int ConstraintLayout_Layout_layout_constraintVertical_bias = 34;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintVertical_chainStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintVertical_chainStyle}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -8177,11 +8187,11 @@ containing a value of this type.
 <tr><td><code>spread_inside</code></td><td>1</td><td></td></tr>
 <tr><td><code>packed</code></td><td>2</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintVertical_chainStyle
+          @attr name com.oliver.bathurst.individualproject:layout_constraintVertical_chainStyle
         */
         public static final int ConstraintLayout_Layout_layout_constraintVertical_chainStyle = 35;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintVertical_weight}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintVertical_weight}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -8191,11 +8201,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintVertical_weight
+          @attr name com.oliver.bathurst.individualproject:layout_constraintVertical_weight
         */
         public static final int ConstraintLayout_Layout_layout_constraintVertical_weight = 36;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintWidth_default}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintWidth_default}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -8208,11 +8218,11 @@ containing a value of this type.
 <tr><td><code>spread</code></td><td>0</td><td></td></tr>
 <tr><td><code>wrap</code></td><td>1</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintWidth_default
+          @attr name com.oliver.bathurst.individualproject:layout_constraintWidth_default
         */
         public static final int ConstraintLayout_Layout_layout_constraintWidth_default = 37;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintWidth_max}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintWidth_max}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -8224,11 +8234,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintWidth_max
+          @attr name com.oliver.bathurst.individualproject:layout_constraintWidth_max
         */
         public static final int ConstraintLayout_Layout_layout_constraintWidth_max = 38;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintWidth_min}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintWidth_min}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -8240,11 +8250,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintWidth_min
+          @attr name com.oliver.bathurst.individualproject:layout_constraintWidth_min
         */
         public static final int ConstraintLayout_Layout_layout_constraintWidth_min = 39;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_editor_absoluteX}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_editor_absoluteX}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -8256,11 +8266,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_editor_absoluteX
+          @attr name com.oliver.bathurst.individualproject:layout_editor_absoluteX
         */
         public static final int ConstraintLayout_Layout_layout_editor_absoluteX = 40;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_editor_absoluteY}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_editor_absoluteY}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -8272,11 +8282,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_editor_absoluteY
+          @attr name com.oliver.bathurst.individualproject:layout_editor_absoluteY
         */
         public static final int ConstraintLayout_Layout_layout_editor_absoluteY = 41;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_goneMarginBottom}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_goneMarginBottom}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -8288,11 +8298,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_goneMarginBottom
+          @attr name com.oliver.bathurst.individualproject:layout_goneMarginBottom
         */
         public static final int ConstraintLayout_Layout_layout_goneMarginBottom = 42;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_goneMarginEnd}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_goneMarginEnd}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -8304,11 +8314,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_goneMarginEnd
+          @attr name com.oliver.bathurst.individualproject:layout_goneMarginEnd
         */
         public static final int ConstraintLayout_Layout_layout_goneMarginEnd = 43;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_goneMarginLeft}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_goneMarginLeft}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -8320,11 +8330,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_goneMarginLeft
+          @attr name com.oliver.bathurst.individualproject:layout_goneMarginLeft
         */
         public static final int ConstraintLayout_Layout_layout_goneMarginLeft = 44;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_goneMarginRight}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_goneMarginRight}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -8336,11 +8346,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_goneMarginRight
+          @attr name com.oliver.bathurst.individualproject:layout_goneMarginRight
         */
         public static final int ConstraintLayout_Layout_layout_goneMarginRight = 45;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_goneMarginStart}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_goneMarginStart}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -8352,11 +8362,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_goneMarginStart
+          @attr name com.oliver.bathurst.individualproject:layout_goneMarginStart
         */
         public static final int ConstraintLayout_Layout_layout_goneMarginStart = 46;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_goneMarginTop}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_goneMarginTop}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -8368,11 +8378,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_goneMarginTop
+          @attr name com.oliver.bathurst.individualproject:layout_goneMarginTop
         */
         public static final int ConstraintLayout_Layout_layout_goneMarginTop = 47;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_optimizationLevel}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_optimizationLevel}
           attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
 
 
@@ -8387,7 +8397,7 @@ containing a value of this type.
 <tr><td><code>basic</code></td><td>4</td><td></td></tr>
 <tr><td><code>chains</code></td><td>8</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_optimizationLevel
+          @attr name com.oliver.bathurst.individualproject:layout_optimizationLevel
         */
         public static final int ConstraintLayout_Layout_layout_optimizationLevel = 48;
         /** Attributes that can be used with a ConstraintSet.
@@ -8418,48 +8428,48 @@ containing a value of this type.
            <tr><td><code>{@link #ConstraintSet_android_translationY android:translationY}</code></td><td></td></tr>
            <tr><td><code>{@link #ConstraintSet_android_translationZ android:translationZ}</code></td><td></td></tr>
            <tr><td><code>{@link #ConstraintSet_android_visibility android:visibility}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintBaseline_creator com.oliver.bathurst.findmyandroiddevice:layout_constraintBaseline_creator}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintBaseline_toBaselineOf com.oliver.bathurst.findmyandroiddevice:layout_constraintBaseline_toBaselineOf}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintBottom_creator com.oliver.bathurst.findmyandroiddevice:layout_constraintBottom_creator}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintBottom_toBottomOf com.oliver.bathurst.findmyandroiddevice:layout_constraintBottom_toBottomOf}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintBottom_toTopOf com.oliver.bathurst.findmyandroiddevice:layout_constraintBottom_toTopOf}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintDimensionRatio com.oliver.bathurst.findmyandroiddevice:layout_constraintDimensionRatio}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintEnd_toEndOf com.oliver.bathurst.findmyandroiddevice:layout_constraintEnd_toEndOf}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintEnd_toStartOf com.oliver.bathurst.findmyandroiddevice:layout_constraintEnd_toStartOf}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintGuide_begin com.oliver.bathurst.findmyandroiddevice:layout_constraintGuide_begin}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintGuide_end com.oliver.bathurst.findmyandroiddevice:layout_constraintGuide_end}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintGuide_percent com.oliver.bathurst.findmyandroiddevice:layout_constraintGuide_percent}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintHeight_default com.oliver.bathurst.findmyandroiddevice:layout_constraintHeight_default}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintHeight_max com.oliver.bathurst.findmyandroiddevice:layout_constraintHeight_max}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintHeight_min com.oliver.bathurst.findmyandroiddevice:layout_constraintHeight_min}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintHorizontal_bias com.oliver.bathurst.findmyandroiddevice:layout_constraintHorizontal_bias}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintHorizontal_chainStyle com.oliver.bathurst.findmyandroiddevice:layout_constraintHorizontal_chainStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintHorizontal_weight com.oliver.bathurst.findmyandroiddevice:layout_constraintHorizontal_weight}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintLeft_creator com.oliver.bathurst.findmyandroiddevice:layout_constraintLeft_creator}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintLeft_toLeftOf com.oliver.bathurst.findmyandroiddevice:layout_constraintLeft_toLeftOf}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintLeft_toRightOf com.oliver.bathurst.findmyandroiddevice:layout_constraintLeft_toRightOf}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintRight_creator com.oliver.bathurst.findmyandroiddevice:layout_constraintRight_creator}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintRight_toLeftOf com.oliver.bathurst.findmyandroiddevice:layout_constraintRight_toLeftOf}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintRight_toRightOf com.oliver.bathurst.findmyandroiddevice:layout_constraintRight_toRightOf}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintStart_toEndOf com.oliver.bathurst.findmyandroiddevice:layout_constraintStart_toEndOf}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintStart_toStartOf com.oliver.bathurst.findmyandroiddevice:layout_constraintStart_toStartOf}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintTop_creator com.oliver.bathurst.findmyandroiddevice:layout_constraintTop_creator}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintTop_toBottomOf com.oliver.bathurst.findmyandroiddevice:layout_constraintTop_toBottomOf}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintTop_toTopOf com.oliver.bathurst.findmyandroiddevice:layout_constraintTop_toTopOf}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintVertical_bias com.oliver.bathurst.findmyandroiddevice:layout_constraintVertical_bias}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintVertical_chainStyle com.oliver.bathurst.findmyandroiddevice:layout_constraintVertical_chainStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintVertical_weight com.oliver.bathurst.findmyandroiddevice:layout_constraintVertical_weight}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintWidth_default com.oliver.bathurst.findmyandroiddevice:layout_constraintWidth_default}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintWidth_max com.oliver.bathurst.findmyandroiddevice:layout_constraintWidth_max}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_constraintWidth_min com.oliver.bathurst.findmyandroiddevice:layout_constraintWidth_min}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_editor_absoluteX com.oliver.bathurst.findmyandroiddevice:layout_editor_absoluteX}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_editor_absoluteY com.oliver.bathurst.findmyandroiddevice:layout_editor_absoluteY}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_goneMarginBottom com.oliver.bathurst.findmyandroiddevice:layout_goneMarginBottom}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_goneMarginEnd com.oliver.bathurst.findmyandroiddevice:layout_goneMarginEnd}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_goneMarginLeft com.oliver.bathurst.findmyandroiddevice:layout_goneMarginLeft}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_goneMarginRight com.oliver.bathurst.findmyandroiddevice:layout_goneMarginRight}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_goneMarginStart com.oliver.bathurst.findmyandroiddevice:layout_goneMarginStart}</code></td><td></td></tr>
-           <tr><td><code>{@link #ConstraintSet_layout_goneMarginTop com.oliver.bathurst.findmyandroiddevice:layout_goneMarginTop}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintBaseline_creator com.oliver.bathurst.individualproject:layout_constraintBaseline_creator}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintBaseline_toBaselineOf com.oliver.bathurst.individualproject:layout_constraintBaseline_toBaselineOf}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintBottom_creator com.oliver.bathurst.individualproject:layout_constraintBottom_creator}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintBottom_toBottomOf com.oliver.bathurst.individualproject:layout_constraintBottom_toBottomOf}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintBottom_toTopOf com.oliver.bathurst.individualproject:layout_constraintBottom_toTopOf}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintDimensionRatio com.oliver.bathurst.individualproject:layout_constraintDimensionRatio}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintEnd_toEndOf com.oliver.bathurst.individualproject:layout_constraintEnd_toEndOf}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintEnd_toStartOf com.oliver.bathurst.individualproject:layout_constraintEnd_toStartOf}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintGuide_begin com.oliver.bathurst.individualproject:layout_constraintGuide_begin}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintGuide_end com.oliver.bathurst.individualproject:layout_constraintGuide_end}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintGuide_percent com.oliver.bathurst.individualproject:layout_constraintGuide_percent}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintHeight_default com.oliver.bathurst.individualproject:layout_constraintHeight_default}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintHeight_max com.oliver.bathurst.individualproject:layout_constraintHeight_max}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintHeight_min com.oliver.bathurst.individualproject:layout_constraintHeight_min}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintHorizontal_bias com.oliver.bathurst.individualproject:layout_constraintHorizontal_bias}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintHorizontal_chainStyle com.oliver.bathurst.individualproject:layout_constraintHorizontal_chainStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintHorizontal_weight com.oliver.bathurst.individualproject:layout_constraintHorizontal_weight}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintLeft_creator com.oliver.bathurst.individualproject:layout_constraintLeft_creator}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintLeft_toLeftOf com.oliver.bathurst.individualproject:layout_constraintLeft_toLeftOf}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintLeft_toRightOf com.oliver.bathurst.individualproject:layout_constraintLeft_toRightOf}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintRight_creator com.oliver.bathurst.individualproject:layout_constraintRight_creator}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintRight_toLeftOf com.oliver.bathurst.individualproject:layout_constraintRight_toLeftOf}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintRight_toRightOf com.oliver.bathurst.individualproject:layout_constraintRight_toRightOf}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintStart_toEndOf com.oliver.bathurst.individualproject:layout_constraintStart_toEndOf}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintStart_toStartOf com.oliver.bathurst.individualproject:layout_constraintStart_toStartOf}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintTop_creator com.oliver.bathurst.individualproject:layout_constraintTop_creator}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintTop_toBottomOf com.oliver.bathurst.individualproject:layout_constraintTop_toBottomOf}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintTop_toTopOf com.oliver.bathurst.individualproject:layout_constraintTop_toTopOf}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintVertical_bias com.oliver.bathurst.individualproject:layout_constraintVertical_bias}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintVertical_chainStyle com.oliver.bathurst.individualproject:layout_constraintVertical_chainStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintVertical_weight com.oliver.bathurst.individualproject:layout_constraintVertical_weight}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintWidth_default com.oliver.bathurst.individualproject:layout_constraintWidth_default}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintWidth_max com.oliver.bathurst.individualproject:layout_constraintWidth_max}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_constraintWidth_min com.oliver.bathurst.individualproject:layout_constraintWidth_min}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_editor_absoluteX com.oliver.bathurst.individualproject:layout_editor_absoluteX}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_editor_absoluteY com.oliver.bathurst.individualproject:layout_editor_absoluteY}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_goneMarginBottom com.oliver.bathurst.individualproject:layout_goneMarginBottom}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_goneMarginEnd com.oliver.bathurst.individualproject:layout_goneMarginEnd}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_goneMarginLeft com.oliver.bathurst.individualproject:layout_goneMarginLeft}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_goneMarginRight com.oliver.bathurst.individualproject:layout_goneMarginRight}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_goneMarginStart com.oliver.bathurst.individualproject:layout_goneMarginStart}</code></td><td></td></tr>
+           <tr><td><code>{@link #ConstraintSet_layout_goneMarginTop com.oliver.bathurst.individualproject:layout_goneMarginTop}</code></td><td></td></tr>
            </table>
            @see #ConstraintSet_android_alpha
            @see #ConstraintSet_android_elevation
@@ -8677,7 +8687,7 @@ containing a value of this type.
         */
         public static final int ConstraintSet_android_visibility = 2;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintBaseline_creator}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintBaseline_creator}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -8687,11 +8697,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintBaseline_creator
+          @attr name com.oliver.bathurst.individualproject:layout_constraintBaseline_creator
         */
         public static final int ConstraintSet_layout_constraintBaseline_creator = 22;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintBaseline_toBaselineOf}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintBaseline_toBaselineOf}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -8705,11 +8715,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>parent</code></td><td>0</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintBaseline_toBaselineOf
+          @attr name com.oliver.bathurst.individualproject:layout_constraintBaseline_toBaselineOf
         */
         public static final int ConstraintSet_layout_constraintBaseline_toBaselineOf = 23;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintBottom_creator}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintBottom_creator}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -8719,11 +8729,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintBottom_creator
+          @attr name com.oliver.bathurst.individualproject:layout_constraintBottom_creator
         */
         public static final int ConstraintSet_layout_constraintBottom_creator = 24;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintBottom_toBottomOf}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintBottom_toBottomOf}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -8737,11 +8747,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>parent</code></td><td>0</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintBottom_toBottomOf
+          @attr name com.oliver.bathurst.individualproject:layout_constraintBottom_toBottomOf
         */
         public static final int ConstraintSet_layout_constraintBottom_toBottomOf = 25;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintBottom_toTopOf}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintBottom_toTopOf}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -8755,11 +8765,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>parent</code></td><td>0</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintBottom_toTopOf
+          @attr name com.oliver.bathurst.individualproject:layout_constraintBottom_toTopOf
         */
         public static final int ConstraintSet_layout_constraintBottom_toTopOf = 26;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintDimensionRatio}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintDimensionRatio}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -8769,11 +8779,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintDimensionRatio
+          @attr name com.oliver.bathurst.individualproject:layout_constraintDimensionRatio
         */
         public static final int ConstraintSet_layout_constraintDimensionRatio = 27;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintEnd_toEndOf}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintEnd_toEndOf}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -8787,11 +8797,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>parent</code></td><td>0</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintEnd_toEndOf
+          @attr name com.oliver.bathurst.individualproject:layout_constraintEnd_toEndOf
         */
         public static final int ConstraintSet_layout_constraintEnd_toEndOf = 28;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintEnd_toStartOf}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintEnd_toStartOf}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -8805,11 +8815,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>parent</code></td><td>0</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintEnd_toStartOf
+          @attr name com.oliver.bathurst.individualproject:layout_constraintEnd_toStartOf
         */
         public static final int ConstraintSet_layout_constraintEnd_toStartOf = 29;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintGuide_begin}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintGuide_begin}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -8821,11 +8831,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintGuide_begin
+          @attr name com.oliver.bathurst.individualproject:layout_constraintGuide_begin
         */
         public static final int ConstraintSet_layout_constraintGuide_begin = 30;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintGuide_end}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintGuide_end}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -8837,11 +8847,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintGuide_end
+          @attr name com.oliver.bathurst.individualproject:layout_constraintGuide_end
         */
         public static final int ConstraintSet_layout_constraintGuide_end = 31;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintGuide_percent}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintGuide_percent}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -8851,11 +8861,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintGuide_percent
+          @attr name com.oliver.bathurst.individualproject:layout_constraintGuide_percent
         */
         public static final int ConstraintSet_layout_constraintGuide_percent = 32;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintHeight_default}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintHeight_default}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -8868,11 +8878,11 @@ containing a value of this type.
 <tr><td><code>spread</code></td><td>0</td><td></td></tr>
 <tr><td><code>wrap</code></td><td>1</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintHeight_default
+          @attr name com.oliver.bathurst.individualproject:layout_constraintHeight_default
         */
         public static final int ConstraintSet_layout_constraintHeight_default = 33;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintHeight_max}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintHeight_max}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -8884,11 +8894,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintHeight_max
+          @attr name com.oliver.bathurst.individualproject:layout_constraintHeight_max
         */
         public static final int ConstraintSet_layout_constraintHeight_max = 34;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintHeight_min}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintHeight_min}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -8900,11 +8910,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintHeight_min
+          @attr name com.oliver.bathurst.individualproject:layout_constraintHeight_min
         */
         public static final int ConstraintSet_layout_constraintHeight_min = 35;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintHorizontal_bias}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintHorizontal_bias}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -8914,11 +8924,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintHorizontal_bias
+          @attr name com.oliver.bathurst.individualproject:layout_constraintHorizontal_bias
         */
         public static final int ConstraintSet_layout_constraintHorizontal_bias = 36;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintHorizontal_chainStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintHorizontal_chainStyle}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -8932,11 +8942,11 @@ containing a value of this type.
 <tr><td><code>spread_inside</code></td><td>1</td><td></td></tr>
 <tr><td><code>packed</code></td><td>2</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintHorizontal_chainStyle
+          @attr name com.oliver.bathurst.individualproject:layout_constraintHorizontal_chainStyle
         */
         public static final int ConstraintSet_layout_constraintHorizontal_chainStyle = 37;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintHorizontal_weight}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintHorizontal_weight}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -8946,11 +8956,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintHorizontal_weight
+          @attr name com.oliver.bathurst.individualproject:layout_constraintHorizontal_weight
         */
         public static final int ConstraintSet_layout_constraintHorizontal_weight = 38;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintLeft_creator}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintLeft_creator}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -8960,11 +8970,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintLeft_creator
+          @attr name com.oliver.bathurst.individualproject:layout_constraintLeft_creator
         */
         public static final int ConstraintSet_layout_constraintLeft_creator = 39;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintLeft_toLeftOf}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintLeft_toLeftOf}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -8978,11 +8988,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>parent</code></td><td>0</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintLeft_toLeftOf
+          @attr name com.oliver.bathurst.individualproject:layout_constraintLeft_toLeftOf
         */
         public static final int ConstraintSet_layout_constraintLeft_toLeftOf = 40;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintLeft_toRightOf}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintLeft_toRightOf}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -8996,11 +9006,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>parent</code></td><td>0</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintLeft_toRightOf
+          @attr name com.oliver.bathurst.individualproject:layout_constraintLeft_toRightOf
         */
         public static final int ConstraintSet_layout_constraintLeft_toRightOf = 41;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintRight_creator}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintRight_creator}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -9010,11 +9020,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintRight_creator
+          @attr name com.oliver.bathurst.individualproject:layout_constraintRight_creator
         */
         public static final int ConstraintSet_layout_constraintRight_creator = 42;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintRight_toLeftOf}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintRight_toLeftOf}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -9028,11 +9038,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>parent</code></td><td>0</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintRight_toLeftOf
+          @attr name com.oliver.bathurst.individualproject:layout_constraintRight_toLeftOf
         */
         public static final int ConstraintSet_layout_constraintRight_toLeftOf = 43;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintRight_toRightOf}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintRight_toRightOf}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -9046,11 +9056,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>parent</code></td><td>0</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintRight_toRightOf
+          @attr name com.oliver.bathurst.individualproject:layout_constraintRight_toRightOf
         */
         public static final int ConstraintSet_layout_constraintRight_toRightOf = 44;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintStart_toEndOf}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintStart_toEndOf}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -9064,11 +9074,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>parent</code></td><td>0</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintStart_toEndOf
+          @attr name com.oliver.bathurst.individualproject:layout_constraintStart_toEndOf
         */
         public static final int ConstraintSet_layout_constraintStart_toEndOf = 45;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintStart_toStartOf}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintStart_toStartOf}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -9082,11 +9092,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>parent</code></td><td>0</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintStart_toStartOf
+          @attr name com.oliver.bathurst.individualproject:layout_constraintStart_toStartOf
         */
         public static final int ConstraintSet_layout_constraintStart_toStartOf = 46;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintTop_creator}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintTop_creator}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -9096,11 +9106,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintTop_creator
+          @attr name com.oliver.bathurst.individualproject:layout_constraintTop_creator
         */
         public static final int ConstraintSet_layout_constraintTop_creator = 47;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintTop_toBottomOf}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintTop_toBottomOf}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -9114,11 +9124,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>parent</code></td><td>0</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintTop_toBottomOf
+          @attr name com.oliver.bathurst.individualproject:layout_constraintTop_toBottomOf
         */
         public static final int ConstraintSet_layout_constraintTop_toBottomOf = 48;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintTop_toTopOf}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintTop_toTopOf}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -9132,11 +9142,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>parent</code></td><td>0</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintTop_toTopOf
+          @attr name com.oliver.bathurst.individualproject:layout_constraintTop_toTopOf
         */
         public static final int ConstraintSet_layout_constraintTop_toTopOf = 49;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintVertical_bias}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintVertical_bias}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -9146,11 +9156,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintVertical_bias
+          @attr name com.oliver.bathurst.individualproject:layout_constraintVertical_bias
         */
         public static final int ConstraintSet_layout_constraintVertical_bias = 50;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintVertical_chainStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintVertical_chainStyle}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -9164,11 +9174,11 @@ containing a value of this type.
 <tr><td><code>spread_inside</code></td><td>1</td><td></td></tr>
 <tr><td><code>packed</code></td><td>2</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintVertical_chainStyle
+          @attr name com.oliver.bathurst.individualproject:layout_constraintVertical_chainStyle
         */
         public static final int ConstraintSet_layout_constraintVertical_chainStyle = 51;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintVertical_weight}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintVertical_weight}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -9178,11 +9188,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintVertical_weight
+          @attr name com.oliver.bathurst.individualproject:layout_constraintVertical_weight
         */
         public static final int ConstraintSet_layout_constraintVertical_weight = 52;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintWidth_default}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintWidth_default}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -9195,11 +9205,11 @@ containing a value of this type.
 <tr><td><code>spread</code></td><td>0</td><td></td></tr>
 <tr><td><code>wrap</code></td><td>1</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintWidth_default
+          @attr name com.oliver.bathurst.individualproject:layout_constraintWidth_default
         */
         public static final int ConstraintSet_layout_constraintWidth_default = 53;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintWidth_max}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintWidth_max}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -9211,11 +9221,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintWidth_max
+          @attr name com.oliver.bathurst.individualproject:layout_constraintWidth_max
         */
         public static final int ConstraintSet_layout_constraintWidth_max = 54;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_constraintWidth_min}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_constraintWidth_min}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -9227,11 +9237,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_constraintWidth_min
+          @attr name com.oliver.bathurst.individualproject:layout_constraintWidth_min
         */
         public static final int ConstraintSet_layout_constraintWidth_min = 55;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_editor_absoluteX}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_editor_absoluteX}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -9243,11 +9253,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_editor_absoluteX
+          @attr name com.oliver.bathurst.individualproject:layout_editor_absoluteX
         */
         public static final int ConstraintSet_layout_editor_absoluteX = 56;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_editor_absoluteY}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_editor_absoluteY}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -9259,11 +9269,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_editor_absoluteY
+          @attr name com.oliver.bathurst.individualproject:layout_editor_absoluteY
         */
         public static final int ConstraintSet_layout_editor_absoluteY = 57;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_goneMarginBottom}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_goneMarginBottom}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -9275,11 +9285,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_goneMarginBottom
+          @attr name com.oliver.bathurst.individualproject:layout_goneMarginBottom
         */
         public static final int ConstraintSet_layout_goneMarginBottom = 58;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_goneMarginEnd}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_goneMarginEnd}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -9291,11 +9301,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_goneMarginEnd
+          @attr name com.oliver.bathurst.individualproject:layout_goneMarginEnd
         */
         public static final int ConstraintSet_layout_goneMarginEnd = 59;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_goneMarginLeft}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_goneMarginLeft}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -9307,11 +9317,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_goneMarginLeft
+          @attr name com.oliver.bathurst.individualproject:layout_goneMarginLeft
         */
         public static final int ConstraintSet_layout_goneMarginLeft = 60;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_goneMarginRight}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_goneMarginRight}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -9323,11 +9333,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_goneMarginRight
+          @attr name com.oliver.bathurst.individualproject:layout_goneMarginRight
         */
         public static final int ConstraintSet_layout_goneMarginRight = 61;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_goneMarginStart}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_goneMarginStart}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -9339,11 +9349,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_goneMarginStart
+          @attr name com.oliver.bathurst.individualproject:layout_goneMarginStart
         */
         public static final int ConstraintSet_layout_goneMarginStart = 62;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_goneMarginTop}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_goneMarginTop}
           attribute's value can be found in the {@link #ConstraintSet} array.
 
 
@@ -9355,7 +9365,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_goneMarginTop
+          @attr name com.oliver.bathurst.individualproject:layout_goneMarginTop
         */
         public static final int ConstraintSet_layout_goneMarginTop = 63;
         /** Attributes that can be used with a CoordinatorLayout.
@@ -9364,8 +9374,8 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #CoordinatorLayout_keylines com.oliver.bathurst.findmyandroiddevice:keylines}</code></td><td></td></tr>
-           <tr><td><code>{@link #CoordinatorLayout_statusBarBackground com.oliver.bathurst.findmyandroiddevice:statusBarBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #CoordinatorLayout_keylines com.oliver.bathurst.individualproject:keylines}</code></td><td></td></tr>
+           <tr><td><code>{@link #CoordinatorLayout_statusBarBackground com.oliver.bathurst.individualproject:statusBarBackground}</code></td><td></td></tr>
            </table>
            @see #CoordinatorLayout_keylines
            @see #CoordinatorLayout_statusBarBackground
@@ -9374,23 +9384,23 @@ containing a value of this type.
             0x7f0100e6, 0x7f0100e7
         };
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#keylines}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#keylines}
           attribute's value can be found in the {@link #CoordinatorLayout} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:keylines
+          @attr name com.oliver.bathurst.individualproject:keylines
         */
         public static final int CoordinatorLayout_keylines = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#statusBarBackground}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#statusBarBackground}
           attribute's value can be found in the {@link #CoordinatorLayout} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:statusBarBackground
+          @attr name com.oliver.bathurst.individualproject:statusBarBackground
         */
         public static final int CoordinatorLayout_statusBarBackground = 1;
         /** Attributes that can be used with a CoordinatorLayout_Layout.
@@ -9400,12 +9410,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #CoordinatorLayout_Layout_android_layout_gravity android:layout_gravity}</code></td><td></td></tr>
-           <tr><td><code>{@link #CoordinatorLayout_Layout_layout_anchor com.oliver.bathurst.findmyandroiddevice:layout_anchor}</code></td><td></td></tr>
-           <tr><td><code>{@link #CoordinatorLayout_Layout_layout_anchorGravity com.oliver.bathurst.findmyandroiddevice:layout_anchorGravity}</code></td><td></td></tr>
-           <tr><td><code>{@link #CoordinatorLayout_Layout_layout_behavior com.oliver.bathurst.findmyandroiddevice:layout_behavior}</code></td><td></td></tr>
-           <tr><td><code>{@link #CoordinatorLayout_Layout_layout_dodgeInsetEdges com.oliver.bathurst.findmyandroiddevice:layout_dodgeInsetEdges}</code></td><td></td></tr>
-           <tr><td><code>{@link #CoordinatorLayout_Layout_layout_insetEdge com.oliver.bathurst.findmyandroiddevice:layout_insetEdge}</code></td><td></td></tr>
-           <tr><td><code>{@link #CoordinatorLayout_Layout_layout_keyline com.oliver.bathurst.findmyandroiddevice:layout_keyline}</code></td><td></td></tr>
+           <tr><td><code>{@link #CoordinatorLayout_Layout_layout_anchor com.oliver.bathurst.individualproject:layout_anchor}</code></td><td></td></tr>
+           <tr><td><code>{@link #CoordinatorLayout_Layout_layout_anchorGravity com.oliver.bathurst.individualproject:layout_anchorGravity}</code></td><td></td></tr>
+           <tr><td><code>{@link #CoordinatorLayout_Layout_layout_behavior com.oliver.bathurst.individualproject:layout_behavior}</code></td><td></td></tr>
+           <tr><td><code>{@link #CoordinatorLayout_Layout_layout_dodgeInsetEdges com.oliver.bathurst.individualproject:layout_dodgeInsetEdges}</code></td><td></td></tr>
+           <tr><td><code>{@link #CoordinatorLayout_Layout_layout_insetEdge com.oliver.bathurst.individualproject:layout_insetEdge}</code></td><td></td></tr>
+           <tr><td><code>{@link #CoordinatorLayout_Layout_layout_keyline com.oliver.bathurst.individualproject:layout_keyline}</code></td><td></td></tr>
            </table>
            @see #CoordinatorLayout_Layout_android_layout_gravity
            @see #CoordinatorLayout_Layout_layout_anchor
@@ -9426,17 +9436,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int CoordinatorLayout_Layout_android_layout_gravity = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_anchor}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_anchor}
           attribute's value can be found in the {@link #CoordinatorLayout_Layout} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_anchor
+          @attr name com.oliver.bathurst.individualproject:layout_anchor
         */
         public static final int CoordinatorLayout_Layout_layout_anchor = 2;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_anchorGravity}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_anchorGravity}
           attribute's value can be found in the {@link #CoordinatorLayout_Layout} array.
 
 
@@ -9461,11 +9471,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>start</code></td><td>0x00800003</td><td></td></tr>
 <tr><td><code>end</code></td><td>0x00800005</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_anchorGravity
+          @attr name com.oliver.bathurst.individualproject:layout_anchorGravity
         */
         public static final int CoordinatorLayout_Layout_layout_anchorGravity = 4;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_behavior}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_behavior}
           attribute's value can be found in the {@link #CoordinatorLayout_Layout} array.
 
 
@@ -9475,11 +9485,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_behavior
+          @attr name com.oliver.bathurst.individualproject:layout_behavior
         */
         public static final int CoordinatorLayout_Layout_layout_behavior = 1;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_dodgeInsetEdges}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_dodgeInsetEdges}
           attribute's value can be found in the {@link #CoordinatorLayout_Layout} array.
 
 
@@ -9498,11 +9508,11 @@ containing a value of this type.
 <tr><td><code>end</code></td><td>0x00800005</td><td></td></tr>
 <tr><td><code>all</code></td><td>0x77</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_dodgeInsetEdges
+          @attr name com.oliver.bathurst.individualproject:layout_dodgeInsetEdges
         */
         public static final int CoordinatorLayout_Layout_layout_dodgeInsetEdges = 6;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_insetEdge}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_insetEdge}
           attribute's value can be found in the {@link #CoordinatorLayout_Layout} array.
 
 
@@ -9520,11 +9530,11 @@ containing a value of this type.
 <tr><td><code>start</code></td><td>0x00800003</td><td></td></tr>
 <tr><td><code>end</code></td><td>0x00800005</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_insetEdge
+          @attr name com.oliver.bathurst.individualproject:layout_insetEdge
         */
         public static final int CoordinatorLayout_Layout_layout_insetEdge = 5;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout_keyline}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout_keyline}
           attribute's value can be found in the {@link #CoordinatorLayout_Layout} array.
 
 
@@ -9534,7 +9544,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout_keyline
+          @attr name com.oliver.bathurst.individualproject:layout_keyline
         */
         public static final int CoordinatorLayout_Layout_layout_keyline = 3;
         /** Attributes that can be used with a DesignTheme.
@@ -9543,9 +9553,9 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #DesignTheme_bottomSheetDialogTheme com.oliver.bathurst.findmyandroiddevice:bottomSheetDialogTheme}</code></td><td></td></tr>
-           <tr><td><code>{@link #DesignTheme_bottomSheetStyle com.oliver.bathurst.findmyandroiddevice:bottomSheetStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #DesignTheme_textColorError com.oliver.bathurst.findmyandroiddevice:textColorError}</code></td><td></td></tr>
+           <tr><td><code>{@link #DesignTheme_bottomSheetDialogTheme com.oliver.bathurst.individualproject:bottomSheetDialogTheme}</code></td><td></td></tr>
+           <tr><td><code>{@link #DesignTheme_bottomSheetStyle com.oliver.bathurst.individualproject:bottomSheetStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #DesignTheme_textColorError com.oliver.bathurst.individualproject:textColorError}</code></td><td></td></tr>
            </table>
            @see #DesignTheme_bottomSheetDialogTheme
            @see #DesignTheme_bottomSheetStyle
@@ -9555,27 +9565,27 @@ containing a value of this type.
             0x7f0100ee, 0x7f0100ef, 0x7f0100f0
         };
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#bottomSheetDialogTheme}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#bottomSheetDialogTheme}
           attribute's value can be found in the {@link #DesignTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:bottomSheetDialogTheme
+          @attr name com.oliver.bathurst.individualproject:bottomSheetDialogTheme
         */
         public static final int DesignTheme_bottomSheetDialogTheme = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#bottomSheetStyle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#bottomSheetStyle}
           attribute's value can be found in the {@link #DesignTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:bottomSheetStyle
+          @attr name com.oliver.bathurst.individualproject:bottomSheetStyle
         */
         public static final int DesignTheme_bottomSheetStyle = 1;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#textColorError}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#textColorError}
           attribute's value can be found in the {@link #DesignTheme} array.
 
 
@@ -9586,7 +9596,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:textColorError
+          @attr name com.oliver.bathurst.individualproject:textColorError
         */
         public static final int DesignTheme_textColorError = 2;
         /** Attributes that can be used with a DrawerArrowToggle.
@@ -9595,14 +9605,14 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #DrawerArrowToggle_arrowHeadLength com.oliver.bathurst.findmyandroiddevice:arrowHeadLength}</code></td><td></td></tr>
-           <tr><td><code>{@link #DrawerArrowToggle_arrowShaftLength com.oliver.bathurst.findmyandroiddevice:arrowShaftLength}</code></td><td></td></tr>
-           <tr><td><code>{@link #DrawerArrowToggle_barLength com.oliver.bathurst.findmyandroiddevice:barLength}</code></td><td></td></tr>
-           <tr><td><code>{@link #DrawerArrowToggle_color com.oliver.bathurst.findmyandroiddevice:color}</code></td><td></td></tr>
-           <tr><td><code>{@link #DrawerArrowToggle_drawableSize com.oliver.bathurst.findmyandroiddevice:drawableSize}</code></td><td></td></tr>
-           <tr><td><code>{@link #DrawerArrowToggle_gapBetweenBars com.oliver.bathurst.findmyandroiddevice:gapBetweenBars}</code></td><td></td></tr>
-           <tr><td><code>{@link #DrawerArrowToggle_spinBars com.oliver.bathurst.findmyandroiddevice:spinBars}</code></td><td></td></tr>
-           <tr><td><code>{@link #DrawerArrowToggle_thickness com.oliver.bathurst.findmyandroiddevice:thickness}</code></td><td></td></tr>
+           <tr><td><code>{@link #DrawerArrowToggle_arrowHeadLength com.oliver.bathurst.individualproject:arrowHeadLength}</code></td><td></td></tr>
+           <tr><td><code>{@link #DrawerArrowToggle_arrowShaftLength com.oliver.bathurst.individualproject:arrowShaftLength}</code></td><td></td></tr>
+           <tr><td><code>{@link #DrawerArrowToggle_barLength com.oliver.bathurst.individualproject:barLength}</code></td><td></td></tr>
+           <tr><td><code>{@link #DrawerArrowToggle_color com.oliver.bathurst.individualproject:color}</code></td><td></td></tr>
+           <tr><td><code>{@link #DrawerArrowToggle_drawableSize com.oliver.bathurst.individualproject:drawableSize}</code></td><td></td></tr>
+           <tr><td><code>{@link #DrawerArrowToggle_gapBetweenBars com.oliver.bathurst.individualproject:gapBetweenBars}</code></td><td></td></tr>
+           <tr><td><code>{@link #DrawerArrowToggle_spinBars com.oliver.bathurst.individualproject:spinBars}</code></td><td></td></tr>
+           <tr><td><code>{@link #DrawerArrowToggle_thickness com.oliver.bathurst.individualproject:thickness}</code></td><td></td></tr>
            </table>
            @see #DrawerArrowToggle_arrowHeadLength
            @see #DrawerArrowToggle_arrowShaftLength
@@ -9618,7 +9628,7 @@ containing a value of this type.
             0x7f0100f5, 0x7f0100f6, 0x7f0100f7, 0x7f0100f8
         };
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#arrowHeadLength}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#arrowHeadLength}
           attribute's value can be found in the {@link #DrawerArrowToggle} array.
 
 
@@ -9630,11 +9640,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:arrowHeadLength
+          @attr name com.oliver.bathurst.individualproject:arrowHeadLength
         */
         public static final int DrawerArrowToggle_arrowHeadLength = 4;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#arrowShaftLength}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#arrowShaftLength}
           attribute's value can be found in the {@link #DrawerArrowToggle} array.
 
 
@@ -9646,11 +9656,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:arrowShaftLength
+          @attr name com.oliver.bathurst.individualproject:arrowShaftLength
         */
         public static final int DrawerArrowToggle_arrowShaftLength = 5;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#barLength}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#barLength}
           attribute's value can be found in the {@link #DrawerArrowToggle} array.
 
 
@@ -9662,11 +9672,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:barLength
+          @attr name com.oliver.bathurst.individualproject:barLength
         */
         public static final int DrawerArrowToggle_barLength = 6;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#color}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#color}
           attribute's value can be found in the {@link #DrawerArrowToggle} array.
 
 
@@ -9677,11 +9687,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:color
+          @attr name com.oliver.bathurst.individualproject:color
         */
         public static final int DrawerArrowToggle_color = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#drawableSize}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#drawableSize}
           attribute's value can be found in the {@link #DrawerArrowToggle} array.
 
 
@@ -9693,11 +9703,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:drawableSize
+          @attr name com.oliver.bathurst.individualproject:drawableSize
         */
         public static final int DrawerArrowToggle_drawableSize = 2;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#gapBetweenBars}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#gapBetweenBars}
           attribute's value can be found in the {@link #DrawerArrowToggle} array.
 
 
@@ -9709,11 +9719,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:gapBetweenBars
+          @attr name com.oliver.bathurst.individualproject:gapBetweenBars
         */
         public static final int DrawerArrowToggle_gapBetweenBars = 3;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#spinBars}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#spinBars}
           attribute's value can be found in the {@link #DrawerArrowToggle} array.
 
 
@@ -9723,11 +9733,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:spinBars
+          @attr name com.oliver.bathurst.individualproject:spinBars
         */
         public static final int DrawerArrowToggle_spinBars = 1;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#thickness}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#thickness}
           attribute's value can be found in the {@link #DrawerArrowToggle} array.
 
 
@@ -9739,7 +9749,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:thickness
+          @attr name com.oliver.bathurst.individualproject:thickness
         */
         public static final int DrawerArrowToggle_thickness = 7;
         /** Attributes that can be used with a FloatingActionButton.
@@ -9748,14 +9758,14 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #FloatingActionButton_backgroundTint com.oliver.bathurst.findmyandroiddevice:backgroundTint}</code></td><td></td></tr>
-           <tr><td><code>{@link #FloatingActionButton_backgroundTintMode com.oliver.bathurst.findmyandroiddevice:backgroundTintMode}</code></td><td></td></tr>
-           <tr><td><code>{@link #FloatingActionButton_borderWidth com.oliver.bathurst.findmyandroiddevice:borderWidth}</code></td><td></td></tr>
-           <tr><td><code>{@link #FloatingActionButton_elevation com.oliver.bathurst.findmyandroiddevice:elevation}</code></td><td></td></tr>
-           <tr><td><code>{@link #FloatingActionButton_fabSize com.oliver.bathurst.findmyandroiddevice:fabSize}</code></td><td></td></tr>
-           <tr><td><code>{@link #FloatingActionButton_pressedTranslationZ com.oliver.bathurst.findmyandroiddevice:pressedTranslationZ}</code></td><td></td></tr>
-           <tr><td><code>{@link #FloatingActionButton_rippleColor com.oliver.bathurst.findmyandroiddevice:rippleColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #FloatingActionButton_useCompatPadding com.oliver.bathurst.findmyandroiddevice:useCompatPadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #FloatingActionButton_backgroundTint com.oliver.bathurst.individualproject:backgroundTint}</code></td><td></td></tr>
+           <tr><td><code>{@link #FloatingActionButton_backgroundTintMode com.oliver.bathurst.individualproject:backgroundTintMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #FloatingActionButton_borderWidth com.oliver.bathurst.individualproject:borderWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #FloatingActionButton_elevation com.oliver.bathurst.individualproject:elevation}</code></td><td></td></tr>
+           <tr><td><code>{@link #FloatingActionButton_fabSize com.oliver.bathurst.individualproject:fabSize}</code></td><td></td></tr>
+           <tr><td><code>{@link #FloatingActionButton_pressedTranslationZ com.oliver.bathurst.individualproject:pressedTranslationZ}</code></td><td></td></tr>
+           <tr><td><code>{@link #FloatingActionButton_rippleColor com.oliver.bathurst.individualproject:rippleColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #FloatingActionButton_useCompatPadding com.oliver.bathurst.individualproject:useCompatPadding}</code></td><td></td></tr>
            </table>
            @see #FloatingActionButton_backgroundTint
            @see #FloatingActionButton_backgroundTintMode
@@ -9771,7 +9781,7 @@ containing a value of this type.
             0x7f0100fc, 0x7f0100fd, 0x7f010181, 0x7f010182
         };
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#backgroundTint}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#backgroundTint}
           attribute's value can be found in the {@link #FloatingActionButton} array.
 
 
@@ -9782,11 +9792,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:backgroundTint
+          @attr name com.oliver.bathurst.individualproject:backgroundTint
         */
         public static final int FloatingActionButton_backgroundTint = 6;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#backgroundTintMode}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#backgroundTintMode}
           attribute's value can be found in the {@link #FloatingActionButton} array.
 
 
@@ -9802,11 +9812,11 @@ containing a value of this type.
 <tr><td><code>multiply</code></td><td>14</td><td></td></tr>
 <tr><td><code>screen</code></td><td>15</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:backgroundTintMode
+          @attr name com.oliver.bathurst.individualproject:backgroundTintMode
         */
         public static final int FloatingActionButton_backgroundTintMode = 7;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#borderWidth}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#borderWidth}
           attribute's value can be found in the {@link #FloatingActionButton} array.
 
 
@@ -9818,11 +9828,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:borderWidth
+          @attr name com.oliver.bathurst.individualproject:borderWidth
         */
         public static final int FloatingActionButton_borderWidth = 4;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#elevation}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#elevation}
           attribute's value can be found in the {@link #FloatingActionButton} array.
 
 
@@ -9834,11 +9844,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:elevation
+          @attr name com.oliver.bathurst.individualproject:elevation
         */
         public static final int FloatingActionButton_elevation = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#fabSize}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#fabSize}
           attribute's value can be found in the {@link #FloatingActionButton} array.
 
 
@@ -9852,11 +9862,11 @@ containing a value of this type.
 <tr><td><code>normal</code></td><td>0</td><td></td></tr>
 <tr><td><code>mini</code></td><td>1</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:fabSize
+          @attr name com.oliver.bathurst.individualproject:fabSize
         */
         public static final int FloatingActionButton_fabSize = 2;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#pressedTranslationZ}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#pressedTranslationZ}
           attribute's value can be found in the {@link #FloatingActionButton} array.
 
 
@@ -9868,11 +9878,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:pressedTranslationZ
+          @attr name com.oliver.bathurst.individualproject:pressedTranslationZ
         */
         public static final int FloatingActionButton_pressedTranslationZ = 3;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#rippleColor}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#rippleColor}
           attribute's value can be found in the {@link #FloatingActionButton} array.
 
 
@@ -9883,11 +9893,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:rippleColor
+          @attr name com.oliver.bathurst.individualproject:rippleColor
         */
         public static final int FloatingActionButton_rippleColor = 1;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#useCompatPadding}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#useCompatPadding}
           attribute's value can be found in the {@link #FloatingActionButton} array.
 
 
@@ -9897,7 +9907,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:useCompatPadding
+          @attr name com.oliver.bathurst.individualproject:useCompatPadding
         */
         public static final int FloatingActionButton_useCompatPadding = 5;
         /** Attributes that can be used with a FloatingActionButton_Behavior_Layout.
@@ -9906,7 +9916,7 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #FloatingActionButton_Behavior_Layout_behavior_autoHide com.oliver.bathurst.findmyandroiddevice:behavior_autoHide}</code></td><td></td></tr>
+           <tr><td><code>{@link #FloatingActionButton_Behavior_Layout_behavior_autoHide com.oliver.bathurst.individualproject:behavior_autoHide}</code></td><td></td></tr>
            </table>
            @see #FloatingActionButton_Behavior_Layout_behavior_autoHide
          */
@@ -9914,7 +9924,7 @@ containing a value of this type.
             0x7f0100fe
         };
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#behavior_autoHide}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#behavior_autoHide}
           attribute's value can be found in the {@link #FloatingActionButton_Behavior_Layout} array.
 
 
@@ -9924,7 +9934,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:behavior_autoHide
+          @attr name com.oliver.bathurst.individualproject:behavior_autoHide
         */
         public static final int FloatingActionButton_Behavior_Layout_behavior_autoHide = 0;
         /** Attributes that can be used with a ForegroundLinearLayout.
@@ -9935,7 +9945,7 @@ containing a value of this type.
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #ForegroundLinearLayout_android_foreground android:foreground}</code></td><td></td></tr>
            <tr><td><code>{@link #ForegroundLinearLayout_android_foregroundGravity android:foregroundGravity}</code></td><td></td></tr>
-           <tr><td><code>{@link #ForegroundLinearLayout_foregroundInsidePadding com.oliver.bathurst.findmyandroiddevice:foregroundInsidePadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #ForegroundLinearLayout_foregroundInsidePadding com.oliver.bathurst.individualproject:foregroundInsidePadding}</code></td><td></td></tr>
            </table>
            @see #ForegroundLinearLayout_android_foreground
            @see #ForegroundLinearLayout_android_foregroundGravity
@@ -9957,7 +9967,7 @@ containing a value of this type.
         */
         public static final int ForegroundLinearLayout_android_foregroundGravity = 1;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#foregroundInsidePadding}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#foregroundInsidePadding}
           attribute's value can be found in the {@link #ForegroundLinearLayout} array.
 
 
@@ -9967,7 +9977,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:foregroundInsidePadding
+          @attr name com.oliver.bathurst.individualproject:foregroundInsidePadding
         */
         public static final int ForegroundLinearLayout_foregroundInsidePadding = 2;
         /** Attributes that can be used with a LinearConstraintLayout.
@@ -10000,10 +10010,10 @@ containing a value of this type.
            <tr><td><code>{@link #LinearLayoutCompat_android_gravity android:gravity}</code></td><td></td></tr>
            <tr><td><code>{@link #LinearLayoutCompat_android_orientation android:orientation}</code></td><td></td></tr>
            <tr><td><code>{@link #LinearLayoutCompat_android_weightSum android:weightSum}</code></td><td></td></tr>
-           <tr><td><code>{@link #LinearLayoutCompat_divider com.oliver.bathurst.findmyandroiddevice:divider}</code></td><td></td></tr>
-           <tr><td><code>{@link #LinearLayoutCompat_dividerPadding com.oliver.bathurst.findmyandroiddevice:dividerPadding}</code></td><td></td></tr>
-           <tr><td><code>{@link #LinearLayoutCompat_measureWithLargestChild com.oliver.bathurst.findmyandroiddevice:measureWithLargestChild}</code></td><td></td></tr>
-           <tr><td><code>{@link #LinearLayoutCompat_showDividers com.oliver.bathurst.findmyandroiddevice:showDividers}</code></td><td></td></tr>
+           <tr><td><code>{@link #LinearLayoutCompat_divider com.oliver.bathurst.individualproject:divider}</code></td><td></td></tr>
+           <tr><td><code>{@link #LinearLayoutCompat_dividerPadding com.oliver.bathurst.individualproject:dividerPadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #LinearLayoutCompat_measureWithLargestChild com.oliver.bathurst.individualproject:measureWithLargestChild}</code></td><td></td></tr>
+           <tr><td><code>{@link #LinearLayoutCompat_showDividers com.oliver.bathurst.individualproject:showDividers}</code></td><td></td></tr>
            </table>
            @see #LinearLayoutCompat_android_baselineAligned
            @see #LinearLayoutCompat_android_baselineAlignedChildIndex
@@ -10051,17 +10061,17 @@ containing a value of this type.
         */
         public static final int LinearLayoutCompat_android_weightSum = 4;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#divider}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#divider}
           attribute's value can be found in the {@link #LinearLayoutCompat} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:divider
+          @attr name com.oliver.bathurst.individualproject:divider
         */
         public static final int LinearLayoutCompat_divider = 5;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#dividerPadding}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#dividerPadding}
           attribute's value can be found in the {@link #LinearLayoutCompat} array.
 
 
@@ -10073,11 +10083,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:dividerPadding
+          @attr name com.oliver.bathurst.individualproject:dividerPadding
         */
         public static final int LinearLayoutCompat_dividerPadding = 8;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#measureWithLargestChild}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#measureWithLargestChild}
           attribute's value can be found in the {@link #LinearLayoutCompat} array.
 
 
@@ -10087,11 +10097,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:measureWithLargestChild
+          @attr name com.oliver.bathurst.individualproject:measureWithLargestChild
         */
         public static final int LinearLayoutCompat_measureWithLargestChild = 6;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#showDividers}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#showDividers}
           attribute's value can be found in the {@link #LinearLayoutCompat} array.
 
 
@@ -10106,7 +10116,7 @@ containing a value of this type.
 <tr><td><code>middle</code></td><td>2</td><td></td></tr>
 <tr><td><code>end</code></td><td>4</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:showDividers
+          @attr name com.oliver.bathurst.individualproject:showDividers
         */
         public static final int LinearLayoutCompat_showDividers = 7;
         /** Attributes that can be used with a LinearLayoutCompat_Layout.
@@ -10185,9 +10195,9 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #LoadingImageView_circleCrop com.oliver.bathurst.findmyandroiddevice:circleCrop}</code></td><td></td></tr>
-           <tr><td><code>{@link #LoadingImageView_imageAspectRatio com.oliver.bathurst.findmyandroiddevice:imageAspectRatio}</code></td><td></td></tr>
-           <tr><td><code>{@link #LoadingImageView_imageAspectRatioAdjust com.oliver.bathurst.findmyandroiddevice:imageAspectRatioAdjust}</code></td><td></td></tr>
+           <tr><td><code>{@link #LoadingImageView_circleCrop com.oliver.bathurst.individualproject:circleCrop}</code></td><td></td></tr>
+           <tr><td><code>{@link #LoadingImageView_imageAspectRatio com.oliver.bathurst.individualproject:imageAspectRatio}</code></td><td></td></tr>
+           <tr><td><code>{@link #LoadingImageView_imageAspectRatioAdjust com.oliver.bathurst.individualproject:imageAspectRatioAdjust}</code></td><td></td></tr>
            </table>
            @see #LoadingImageView_circleCrop
            @see #LoadingImageView_imageAspectRatio
@@ -10197,7 +10207,7 @@ containing a value of this type.
             0x7f010103, 0x7f010104, 0x7f010105
         };
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#circleCrop}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#circleCrop}
           attribute's value can be found in the {@link #LoadingImageView} array.
 
 
@@ -10207,11 +10217,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:circleCrop
+          @attr name com.oliver.bathurst.individualproject:circleCrop
         */
         public static final int LoadingImageView_circleCrop = 2;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#imageAspectRatio}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#imageAspectRatio}
           attribute's value can be found in the {@link #LoadingImageView} array.
 
 
@@ -10221,11 +10231,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:imageAspectRatio
+          @attr name com.oliver.bathurst.individualproject:imageAspectRatio
         */
         public static final int LoadingImageView_imageAspectRatio = 1;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#imageAspectRatioAdjust}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#imageAspectRatioAdjust}
           attribute's value can be found in the {@link #LoadingImageView} array.
 
 
@@ -10239,7 +10249,7 @@ containing a value of this type.
 <tr><td><code>adjust_width</code></td><td>1</td><td></td></tr>
 <tr><td><code>adjust_height</code></td><td>2</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:imageAspectRatioAdjust
+          @attr name com.oliver.bathurst.individualproject:imageAspectRatioAdjust
         */
         public static final int LoadingImageView_imageAspectRatioAdjust = 0;
         /** Attributes that can be used with a MapAttrs.
@@ -10248,29 +10258,29 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #MapAttrs_ambientEnabled com.oliver.bathurst.findmyandroiddevice:ambientEnabled}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_cameraBearing com.oliver.bathurst.findmyandroiddevice:cameraBearing}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_cameraMaxZoomPreference com.oliver.bathurst.findmyandroiddevice:cameraMaxZoomPreference}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_cameraMinZoomPreference com.oliver.bathurst.findmyandroiddevice:cameraMinZoomPreference}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_cameraTargetLat com.oliver.bathurst.findmyandroiddevice:cameraTargetLat}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_cameraTargetLng com.oliver.bathurst.findmyandroiddevice:cameraTargetLng}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_cameraTilt com.oliver.bathurst.findmyandroiddevice:cameraTilt}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_cameraZoom com.oliver.bathurst.findmyandroiddevice:cameraZoom}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_latLngBoundsNorthEastLatitude com.oliver.bathurst.findmyandroiddevice:latLngBoundsNorthEastLatitude}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_latLngBoundsNorthEastLongitude com.oliver.bathurst.findmyandroiddevice:latLngBoundsNorthEastLongitude}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_latLngBoundsSouthWestLatitude com.oliver.bathurst.findmyandroiddevice:latLngBoundsSouthWestLatitude}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_latLngBoundsSouthWestLongitude com.oliver.bathurst.findmyandroiddevice:latLngBoundsSouthWestLongitude}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_liteMode com.oliver.bathurst.findmyandroiddevice:liteMode}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_mapType com.oliver.bathurst.findmyandroiddevice:mapType}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_uiCompass com.oliver.bathurst.findmyandroiddevice:uiCompass}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_uiMapToolbar com.oliver.bathurst.findmyandroiddevice:uiMapToolbar}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_uiRotateGestures com.oliver.bathurst.findmyandroiddevice:uiRotateGestures}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_uiScrollGestures com.oliver.bathurst.findmyandroiddevice:uiScrollGestures}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_uiTiltGestures com.oliver.bathurst.findmyandroiddevice:uiTiltGestures}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_uiZoomControls com.oliver.bathurst.findmyandroiddevice:uiZoomControls}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_uiZoomGestures com.oliver.bathurst.findmyandroiddevice:uiZoomGestures}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_useViewLifecycle com.oliver.bathurst.findmyandroiddevice:useViewLifecycle}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_zOrderOnTop com.oliver.bathurst.findmyandroiddevice:zOrderOnTop}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_ambientEnabled com.oliver.bathurst.individualproject:ambientEnabled}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraBearing com.oliver.bathurst.individualproject:cameraBearing}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraMaxZoomPreference com.oliver.bathurst.individualproject:cameraMaxZoomPreference}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraMinZoomPreference com.oliver.bathurst.individualproject:cameraMinZoomPreference}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraTargetLat com.oliver.bathurst.individualproject:cameraTargetLat}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraTargetLng com.oliver.bathurst.individualproject:cameraTargetLng}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraTilt com.oliver.bathurst.individualproject:cameraTilt}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraZoom com.oliver.bathurst.individualproject:cameraZoom}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_latLngBoundsNorthEastLatitude com.oliver.bathurst.individualproject:latLngBoundsNorthEastLatitude}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_latLngBoundsNorthEastLongitude com.oliver.bathurst.individualproject:latLngBoundsNorthEastLongitude}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_latLngBoundsSouthWestLatitude com.oliver.bathurst.individualproject:latLngBoundsSouthWestLatitude}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_latLngBoundsSouthWestLongitude com.oliver.bathurst.individualproject:latLngBoundsSouthWestLongitude}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_liteMode com.oliver.bathurst.individualproject:liteMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_mapType com.oliver.bathurst.individualproject:mapType}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiCompass com.oliver.bathurst.individualproject:uiCompass}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiMapToolbar com.oliver.bathurst.individualproject:uiMapToolbar}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiRotateGestures com.oliver.bathurst.individualproject:uiRotateGestures}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiScrollGestures com.oliver.bathurst.individualproject:uiScrollGestures}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiTiltGestures com.oliver.bathurst.individualproject:uiTiltGestures}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiZoomControls com.oliver.bathurst.individualproject:uiZoomControls}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiZoomGestures com.oliver.bathurst.individualproject:uiZoomGestures}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_useViewLifecycle com.oliver.bathurst.individualproject:useViewLifecycle}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_zOrderOnTop com.oliver.bathurst.individualproject:zOrderOnTop}</code></td><td></td></tr>
            </table>
            @see #MapAttrs_ambientEnabled
            @see #MapAttrs_cameraBearing
@@ -10305,7 +10315,7 @@ containing a value of this type.
             0x7f01011a, 0x7f01011b, 0x7f01011c
         };
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#ambientEnabled}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#ambientEnabled}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -10315,11 +10325,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:ambientEnabled
+          @attr name com.oliver.bathurst.individualproject:ambientEnabled
         */
         public static final int MapAttrs_ambientEnabled = 16;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#cameraBearing}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#cameraBearing}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -10329,11 +10339,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:cameraBearing
+          @attr name com.oliver.bathurst.individualproject:cameraBearing
         */
         public static final int MapAttrs_cameraBearing = 1;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#cameraMaxZoomPreference}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#cameraMaxZoomPreference}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -10343,11 +10353,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:cameraMaxZoomPreference
+          @attr name com.oliver.bathurst.individualproject:cameraMaxZoomPreference
         */
         public static final int MapAttrs_cameraMaxZoomPreference = 18;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#cameraMinZoomPreference}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#cameraMinZoomPreference}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -10357,11 +10367,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:cameraMinZoomPreference
+          @attr name com.oliver.bathurst.individualproject:cameraMinZoomPreference
         */
         public static final int MapAttrs_cameraMinZoomPreference = 17;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#cameraTargetLat}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#cameraTargetLat}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -10371,11 +10381,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:cameraTargetLat
+          @attr name com.oliver.bathurst.individualproject:cameraTargetLat
         */
         public static final int MapAttrs_cameraTargetLat = 2;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#cameraTargetLng}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#cameraTargetLng}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -10385,11 +10395,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:cameraTargetLng
+          @attr name com.oliver.bathurst.individualproject:cameraTargetLng
         */
         public static final int MapAttrs_cameraTargetLng = 3;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#cameraTilt}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#cameraTilt}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -10399,11 +10409,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:cameraTilt
+          @attr name com.oliver.bathurst.individualproject:cameraTilt
         */
         public static final int MapAttrs_cameraTilt = 4;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#cameraZoom}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#cameraZoom}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -10413,11 +10423,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:cameraZoom
+          @attr name com.oliver.bathurst.individualproject:cameraZoom
         */
         public static final int MapAttrs_cameraZoom = 5;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#latLngBoundsNorthEastLatitude}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#latLngBoundsNorthEastLatitude}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -10427,11 +10437,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:latLngBoundsNorthEastLatitude
+          @attr name com.oliver.bathurst.individualproject:latLngBoundsNorthEastLatitude
         */
         public static final int MapAttrs_latLngBoundsNorthEastLatitude = 21;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#latLngBoundsNorthEastLongitude}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#latLngBoundsNorthEastLongitude}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -10441,11 +10451,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:latLngBoundsNorthEastLongitude
+          @attr name com.oliver.bathurst.individualproject:latLngBoundsNorthEastLongitude
         */
         public static final int MapAttrs_latLngBoundsNorthEastLongitude = 22;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#latLngBoundsSouthWestLatitude}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#latLngBoundsSouthWestLatitude}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -10455,11 +10465,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:latLngBoundsSouthWestLatitude
+          @attr name com.oliver.bathurst.individualproject:latLngBoundsSouthWestLatitude
         */
         public static final int MapAttrs_latLngBoundsSouthWestLatitude = 19;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#latLngBoundsSouthWestLongitude}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#latLngBoundsSouthWestLongitude}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -10469,11 +10479,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:latLngBoundsSouthWestLongitude
+          @attr name com.oliver.bathurst.individualproject:latLngBoundsSouthWestLongitude
         */
         public static final int MapAttrs_latLngBoundsSouthWestLongitude = 20;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#liteMode}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#liteMode}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -10483,11 +10493,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:liteMode
+          @attr name com.oliver.bathurst.individualproject:liteMode
         */
         public static final int MapAttrs_liteMode = 6;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#mapType}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#mapType}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -10503,11 +10513,11 @@ containing a value of this type.
 <tr><td><code>terrain</code></td><td>3</td><td></td></tr>
 <tr><td><code>hybrid</code></td><td>4</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:mapType
+          @attr name com.oliver.bathurst.individualproject:mapType
         */
         public static final int MapAttrs_mapType = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#uiCompass}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#uiCompass}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -10517,11 +10527,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:uiCompass
+          @attr name com.oliver.bathurst.individualproject:uiCompass
         */
         public static final int MapAttrs_uiCompass = 7;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#uiMapToolbar}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#uiMapToolbar}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -10531,11 +10541,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:uiMapToolbar
+          @attr name com.oliver.bathurst.individualproject:uiMapToolbar
         */
         public static final int MapAttrs_uiMapToolbar = 15;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#uiRotateGestures}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#uiRotateGestures}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -10545,11 +10555,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:uiRotateGestures
+          @attr name com.oliver.bathurst.individualproject:uiRotateGestures
         */
         public static final int MapAttrs_uiRotateGestures = 8;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#uiScrollGestures}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#uiScrollGestures}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -10559,11 +10569,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:uiScrollGestures
+          @attr name com.oliver.bathurst.individualproject:uiScrollGestures
         */
         public static final int MapAttrs_uiScrollGestures = 9;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#uiTiltGestures}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#uiTiltGestures}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -10573,11 +10583,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:uiTiltGestures
+          @attr name com.oliver.bathurst.individualproject:uiTiltGestures
         */
         public static final int MapAttrs_uiTiltGestures = 10;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#uiZoomControls}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#uiZoomControls}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -10587,11 +10597,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:uiZoomControls
+          @attr name com.oliver.bathurst.individualproject:uiZoomControls
         */
         public static final int MapAttrs_uiZoomControls = 11;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#uiZoomGestures}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#uiZoomGestures}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -10601,11 +10611,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:uiZoomGestures
+          @attr name com.oliver.bathurst.individualproject:uiZoomGestures
         */
         public static final int MapAttrs_uiZoomGestures = 12;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#useViewLifecycle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#useViewLifecycle}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -10615,11 +10625,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:useViewLifecycle
+          @attr name com.oliver.bathurst.individualproject:useViewLifecycle
         */
         public static final int MapAttrs_useViewLifecycle = 13;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#zOrderOnTop}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#zOrderOnTop}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -10629,7 +10639,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:zOrderOnTop
+          @attr name com.oliver.bathurst.individualproject:zOrderOnTop
         */
         public static final int MapAttrs_zOrderOnTop = 14;
         /** Attributes that can be used with a MenuGroup.
@@ -10698,9 +10708,9 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #MenuItem_actionLayout com.oliver.bathurst.findmyandroiddevice:actionLayout}</code></td><td></td></tr>
-           <tr><td><code>{@link #MenuItem_actionProviderClass com.oliver.bathurst.findmyandroiddevice:actionProviderClass}</code></td><td></td></tr>
-           <tr><td><code>{@link #MenuItem_actionViewClass com.oliver.bathurst.findmyandroiddevice:actionViewClass}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuItem_actionLayout com.oliver.bathurst.individualproject:actionLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuItem_actionProviderClass com.oliver.bathurst.individualproject:actionProviderClass}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuItem_actionViewClass com.oliver.bathurst.individualproject:actionViewClass}</code></td><td></td></tr>
            <tr><td><code>{@link #MenuItem_android_alphabeticShortcut android:alphabeticShortcut}</code></td><td></td></tr>
            <tr><td><code>{@link #MenuItem_android_checkable android:checkable}</code></td><td></td></tr>
            <tr><td><code>{@link #MenuItem_android_checked android:checked}</code></td><td></td></tr>
@@ -10714,7 +10724,7 @@ containing a value of this type.
            <tr><td><code>{@link #MenuItem_android_title android:title}</code></td><td></td></tr>
            <tr><td><code>{@link #MenuItem_android_titleCondensed android:titleCondensed}</code></td><td></td></tr>
            <tr><td><code>{@link #MenuItem_android_visible android:visible}</code></td><td></td></tr>
-           <tr><td><code>{@link #MenuItem_showAsAction com.oliver.bathurst.findmyandroiddevice:showAsAction}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuItem_showAsAction com.oliver.bathurst.individualproject:showAsAction}</code></td><td></td></tr>
            </table>
            @see #MenuItem_actionLayout
            @see #MenuItem_actionProviderClass
@@ -10742,17 +10752,17 @@ containing a value of this type.
             0x7f010120
         };
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionLayout}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionLayout}
           attribute's value can be found in the {@link #MenuItem} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionLayout
+          @attr name com.oliver.bathurst.individualproject:actionLayout
         */
         public static final int MenuItem_actionLayout = 14;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionProviderClass}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionProviderClass}
           attribute's value can be found in the {@link #MenuItem} array.
 
 
@@ -10762,11 +10772,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionProviderClass
+          @attr name com.oliver.bathurst.individualproject:actionProviderClass
         */
         public static final int MenuItem_actionProviderClass = 16;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#actionViewClass}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#actionViewClass}
           attribute's value can be found in the {@link #MenuItem} array.
 
 
@@ -10776,7 +10786,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:actionViewClass
+          @attr name com.oliver.bathurst.individualproject:actionViewClass
         */
         public static final int MenuItem_actionViewClass = 15;
         /**
@@ -10858,7 +10868,7 @@ containing a value of this type.
         */
         public static final int MenuItem_android_visible = 4;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#showAsAction}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#showAsAction}
           attribute's value can be found in the {@link #MenuItem} array.
 
 
@@ -10874,7 +10884,7 @@ containing a value of this type.
 <tr><td><code>withText</code></td><td>4</td><td></td></tr>
 <tr><td><code>collapseActionView</code></td><td>8</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:showAsAction
+          @attr name com.oliver.bathurst.individualproject:showAsAction
         */
         public static final int MenuItem_showAsAction = 13;
         /** Attributes that can be used with a MenuView.
@@ -10890,8 +10900,8 @@ containing a value of this type.
            <tr><td><code>{@link #MenuView_android_itemTextAppearance android:itemTextAppearance}</code></td><td></td></tr>
            <tr><td><code>{@link #MenuView_android_verticalDivider android:verticalDivider}</code></td><td></td></tr>
            <tr><td><code>{@link #MenuView_android_windowAnimationStyle android:windowAnimationStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #MenuView_preserveIconSpacing com.oliver.bathurst.findmyandroiddevice:preserveIconSpacing}</code></td><td></td></tr>
-           <tr><td><code>{@link #MenuView_subMenuArrow com.oliver.bathurst.findmyandroiddevice:subMenuArrow}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuView_preserveIconSpacing com.oliver.bathurst.individualproject:preserveIconSpacing}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuView_subMenuArrow com.oliver.bathurst.individualproject:subMenuArrow}</code></td><td></td></tr>
            </table>
            @see #MenuView_android_headerBackground
            @see #MenuView_android_horizontalDivider
@@ -10951,7 +10961,7 @@ containing a value of this type.
         */
         public static final int MenuView_android_windowAnimationStyle = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#preserveIconSpacing}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#preserveIconSpacing}
           attribute's value can be found in the {@link #MenuView} array.
 
 
@@ -10961,17 +10971,17 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:preserveIconSpacing
+          @attr name com.oliver.bathurst.individualproject:preserveIconSpacing
         */
         public static final int MenuView_preserveIconSpacing = 7;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#subMenuArrow}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#subMenuArrow}
           attribute's value can be found in the {@link #MenuView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:subMenuArrow
+          @attr name com.oliver.bathurst.individualproject:subMenuArrow
         */
         public static final int MenuView_subMenuArrow = 8;
         /** Attributes that can be used with a NavigationView.
@@ -10983,13 +10993,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <tr><td><code>{@link #NavigationView_android_background android:background}</code></td><td></td></tr>
            <tr><td><code>{@link #NavigationView_android_fitsSystemWindows android:fitsSystemWindows}</code></td><td></td></tr>
            <tr><td><code>{@link #NavigationView_android_maxWidth android:maxWidth}</code></td><td></td></tr>
-           <tr><td><code>{@link #NavigationView_elevation com.oliver.bathurst.findmyandroiddevice:elevation}</code></td><td></td></tr>
-           <tr><td><code>{@link #NavigationView_headerLayout com.oliver.bathurst.findmyandroiddevice:headerLayout}</code></td><td></td></tr>
-           <tr><td><code>{@link #NavigationView_itemBackground com.oliver.bathurst.findmyandroiddevice:itemBackground}</code></td><td></td></tr>
-           <tr><td><code>{@link #NavigationView_itemIconTint com.oliver.bathurst.findmyandroiddevice:itemIconTint}</code></td><td></td></tr>
-           <tr><td><code>{@link #NavigationView_itemTextAppearance com.oliver.bathurst.findmyandroiddevice:itemTextAppearance}</code></td><td></td></tr>
-           <tr><td><code>{@link #NavigationView_itemTextColor com.oliver.bathurst.findmyandroiddevice:itemTextColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #NavigationView_menu com.oliver.bathurst.findmyandroiddevice:menu}</code></td><td></td></tr>
+           <tr><td><code>{@link #NavigationView_elevation com.oliver.bathurst.individualproject:elevation}</code></td><td></td></tr>
+           <tr><td><code>{@link #NavigationView_headerLayout com.oliver.bathurst.individualproject:headerLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #NavigationView_itemBackground com.oliver.bathurst.individualproject:itemBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #NavigationView_itemIconTint com.oliver.bathurst.individualproject:itemIconTint}</code></td><td></td></tr>
+           <tr><td><code>{@link #NavigationView_itemTextAppearance com.oliver.bathurst.individualproject:itemTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #NavigationView_itemTextColor com.oliver.bathurst.individualproject:itemTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #NavigationView_menu com.oliver.bathurst.individualproject:menu}</code></td><td></td></tr>
            </table>
            @see #NavigationView_android_background
            @see #NavigationView_android_fitsSystemWindows
@@ -11026,7 +11036,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int NavigationView_android_maxWidth = 2;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#elevation}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#elevation}
           attribute's value can be found in the {@link #NavigationView} array.
 
 
@@ -11038,31 +11048,31 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:elevation
+          @attr name com.oliver.bathurst.individualproject:elevation
         */
         public static final int NavigationView_elevation = 3;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#headerLayout}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#headerLayout}
           attribute's value can be found in the {@link #NavigationView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:headerLayout
+          @attr name com.oliver.bathurst.individualproject:headerLayout
         */
         public static final int NavigationView_headerLayout = 9;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#itemBackground}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#itemBackground}
           attribute's value can be found in the {@link #NavigationView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:itemBackground
+          @attr name com.oliver.bathurst.individualproject:itemBackground
         */
         public static final int NavigationView_itemBackground = 7;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#itemIconTint}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#itemIconTint}
           attribute's value can be found in the {@link #NavigationView} array.
 
 
@@ -11073,21 +11083,21 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:itemIconTint
+          @attr name com.oliver.bathurst.individualproject:itemIconTint
         */
         public static final int NavigationView_itemIconTint = 5;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#itemTextAppearance}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#itemTextAppearance}
           attribute's value can be found in the {@link #NavigationView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:itemTextAppearance
+          @attr name com.oliver.bathurst.individualproject:itemTextAppearance
         */
         public static final int NavigationView_itemTextAppearance = 8;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#itemTextColor}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#itemTextColor}
           attribute's value can be found in the {@link #NavigationView} array.
 
 
@@ -11098,17 +11108,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:itemTextColor
+          @attr name com.oliver.bathurst.individualproject:itemTextColor
         */
         public static final int NavigationView_itemTextColor = 6;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#menu}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#menu}
           attribute's value can be found in the {@link #NavigationView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:menu
+          @attr name com.oliver.bathurst.individualproject:menu
         */
         public static final int NavigationView_menu = 4;
         /** Attributes that can be used with a PopupWindow.
@@ -11119,7 +11129,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #PopupWindow_android_popupAnimationStyle android:popupAnimationStyle}</code></td><td></td></tr>
            <tr><td><code>{@link #PopupWindow_android_popupBackground android:popupBackground}</code></td><td></td></tr>
-           <tr><td><code>{@link #PopupWindow_overlapAnchor com.oliver.bathurst.findmyandroiddevice:overlapAnchor}</code></td><td></td></tr>
+           <tr><td><code>{@link #PopupWindow_overlapAnchor com.oliver.bathurst.individualproject:overlapAnchor}</code></td><td></td></tr>
            </table>
            @see #PopupWindow_android_popupAnimationStyle
            @see #PopupWindow_android_popupBackground
@@ -11141,7 +11151,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int PopupWindow_android_popupBackground = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#overlapAnchor}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#overlapAnchor}
           attribute's value can be found in the {@link #PopupWindow} array.
 
 
@@ -11151,7 +11161,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:overlapAnchor
+          @attr name com.oliver.bathurst.individualproject:overlapAnchor
         */
         public static final int PopupWindow_overlapAnchor = 2;
         /** Attributes that can be used with a PopupWindowBackgroundState.
@@ -11160,7 +11170,7 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #PopupWindowBackgroundState_state_above_anchor com.oliver.bathurst.findmyandroiddevice:state_above_anchor}</code></td><td></td></tr>
+           <tr><td><code>{@link #PopupWindowBackgroundState_state_above_anchor com.oliver.bathurst.individualproject:state_above_anchor}</code></td><td></td></tr>
            </table>
            @see #PopupWindowBackgroundState_state_above_anchor
          */
@@ -11168,7 +11178,7 @@ containing a value of this type.
             0x7f01012a
         };
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#state_above_anchor}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#state_above_anchor}
           attribute's value can be found in the {@link #PopupWindowBackgroundState} array.
 
 
@@ -11178,7 +11188,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:state_above_anchor
+          @attr name com.oliver.bathurst.individualproject:state_above_anchor
         */
         public static final int PopupWindowBackgroundState_state_above_anchor = 0;
         /** Attributes that can be used with a RecycleListView.
@@ -11187,8 +11197,8 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #RecycleListView_paddingBottomNoButtons com.oliver.bathurst.findmyandroiddevice:paddingBottomNoButtons}</code></td><td></td></tr>
-           <tr><td><code>{@link #RecycleListView_paddingTopNoTitle com.oliver.bathurst.findmyandroiddevice:paddingTopNoTitle}</code></td><td></td></tr>
+           <tr><td><code>{@link #RecycleListView_paddingBottomNoButtons com.oliver.bathurst.individualproject:paddingBottomNoButtons}</code></td><td></td></tr>
+           <tr><td><code>{@link #RecycleListView_paddingTopNoTitle com.oliver.bathurst.individualproject:paddingTopNoTitle}</code></td><td></td></tr>
            </table>
            @see #RecycleListView_paddingBottomNoButtons
            @see #RecycleListView_paddingTopNoTitle
@@ -11197,7 +11207,7 @@ containing a value of this type.
             0x7f01012b, 0x7f01012c
         };
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#paddingBottomNoButtons}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#paddingBottomNoButtons}
           attribute's value can be found in the {@link #RecycleListView} array.
 
 
@@ -11209,11 +11219,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:paddingBottomNoButtons
+          @attr name com.oliver.bathurst.individualproject:paddingBottomNoButtons
         */
         public static final int RecycleListView_paddingBottomNoButtons = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#paddingTopNoTitle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#paddingTopNoTitle}
           attribute's value can be found in the {@link #RecycleListView} array.
 
 
@@ -11225,7 +11235,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:paddingTopNoTitle
+          @attr name com.oliver.bathurst.individualproject:paddingTopNoTitle
         */
         public static final int RecycleListView_paddingTopNoTitle = 1;
         /** Attributes that can be used with a RecyclerView.
@@ -11236,10 +11246,10 @@ containing a value of this type.
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #RecyclerView_android_descendantFocusability android:descendantFocusability}</code></td><td></td></tr>
            <tr><td><code>{@link #RecyclerView_android_orientation android:orientation}</code></td><td></td></tr>
-           <tr><td><code>{@link #RecyclerView_layoutManager com.oliver.bathurst.findmyandroiddevice:layoutManager}</code></td><td></td></tr>
-           <tr><td><code>{@link #RecyclerView_reverseLayout com.oliver.bathurst.findmyandroiddevice:reverseLayout}</code></td><td></td></tr>
-           <tr><td><code>{@link #RecyclerView_spanCount com.oliver.bathurst.findmyandroiddevice:spanCount}</code></td><td></td></tr>
-           <tr><td><code>{@link #RecyclerView_stackFromEnd com.oliver.bathurst.findmyandroiddevice:stackFromEnd}</code></td><td></td></tr>
+           <tr><td><code>{@link #RecyclerView_layoutManager com.oliver.bathurst.individualproject:layoutManager}</code></td><td></td></tr>
+           <tr><td><code>{@link #RecyclerView_reverseLayout com.oliver.bathurst.individualproject:reverseLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #RecyclerView_spanCount com.oliver.bathurst.individualproject:spanCount}</code></td><td></td></tr>
+           <tr><td><code>{@link #RecyclerView_stackFromEnd com.oliver.bathurst.individualproject:stackFromEnd}</code></td><td></td></tr>
            </table>
            @see #RecyclerView_android_descendantFocusability
            @see #RecyclerView_android_orientation
@@ -11265,7 +11275,7 @@ containing a value of this type.
         */
         public static final int RecyclerView_android_orientation = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layoutManager}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layoutManager}
           attribute's value can be found in the {@link #RecyclerView} array.
 
 
@@ -11275,11 +11285,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:layoutManager
+          @attr name com.oliver.bathurst.individualproject:layoutManager
         */
         public static final int RecyclerView_layoutManager = 2;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#reverseLayout}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#reverseLayout}
           attribute's value can be found in the {@link #RecyclerView} array.
 
 
@@ -11289,11 +11299,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:reverseLayout
+          @attr name com.oliver.bathurst.individualproject:reverseLayout
         */
         public static final int RecyclerView_reverseLayout = 4;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#spanCount}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#spanCount}
           attribute's value can be found in the {@link #RecyclerView} array.
 
 
@@ -11303,11 +11313,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:spanCount
+          @attr name com.oliver.bathurst.individualproject:spanCount
         */
         public static final int RecyclerView_spanCount = 3;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#stackFromEnd}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#stackFromEnd}
           attribute's value can be found in the {@link #RecyclerView} array.
 
 
@@ -11317,7 +11327,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:stackFromEnd
+          @attr name com.oliver.bathurst.individualproject:stackFromEnd
         */
         public static final int RecyclerView_stackFromEnd = 5;
         /** Attributes that can be used with a ScrimInsetsFrameLayout.
@@ -11326,7 +11336,7 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ScrimInsetsFrameLayout_insetForeground com.oliver.bathurst.findmyandroiddevice:insetForeground}</code></td><td></td></tr>
+           <tr><td><code>{@link #ScrimInsetsFrameLayout_insetForeground com.oliver.bathurst.individualproject:insetForeground}</code></td><td></td></tr>
            </table>
            @see #ScrimInsetsFrameLayout_insetForeground
          */
@@ -11334,7 +11344,7 @@ containing a value of this type.
             0x7f010131
         };
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#insetForeground}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#insetForeground}
           attribute's value can be found in the {@link #ScrimInsetsFrameLayout} array.
 
 
@@ -11342,7 +11352,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:insetForeground
+          @attr name com.oliver.bathurst.individualproject:insetForeground
         */
         public static final int ScrimInsetsFrameLayout_insetForeground = 0;
         /** Attributes that can be used with a ScrollingViewBehavior_Layout.
@@ -11351,7 +11361,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ScrollingViewBehavior_Layout_behavior_overlapTop com.oliver.bathurst.findmyandroiddevice:behavior_overlapTop}</code></td><td></td></tr>
+           <tr><td><code>{@link #ScrollingViewBehavior_Layout_behavior_overlapTop com.oliver.bathurst.individualproject:behavior_overlapTop}</code></td><td></td></tr>
            </table>
            @see #ScrollingViewBehavior_Layout_behavior_overlapTop
          */
@@ -11359,7 +11369,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f010132
         };
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#behavior_overlapTop}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#behavior_overlapTop}
           attribute's value can be found in the {@link #ScrollingViewBehavior_Layout} array.
 
 
@@ -11371,7 +11381,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:behavior_overlapTop
+          @attr name com.oliver.bathurst.individualproject:behavior_overlapTop
         */
         public static final int ScrollingViewBehavior_Layout_behavior_overlapTop = 0;
         /** Attributes that can be used with a SearchView.
@@ -11384,19 +11394,19 @@ containing a value of this type.
            <tr><td><code>{@link #SearchView_android_imeOptions android:imeOptions}</code></td><td></td></tr>
            <tr><td><code>{@link #SearchView_android_inputType android:inputType}</code></td><td></td></tr>
            <tr><td><code>{@link #SearchView_android_maxWidth android:maxWidth}</code></td><td></td></tr>
-           <tr><td><code>{@link #SearchView_closeIcon com.oliver.bathurst.findmyandroiddevice:closeIcon}</code></td><td></td></tr>
-           <tr><td><code>{@link #SearchView_commitIcon com.oliver.bathurst.findmyandroiddevice:commitIcon}</code></td><td></td></tr>
-           <tr><td><code>{@link #SearchView_defaultQueryHint com.oliver.bathurst.findmyandroiddevice:defaultQueryHint}</code></td><td></td></tr>
-           <tr><td><code>{@link #SearchView_goIcon com.oliver.bathurst.findmyandroiddevice:goIcon}</code></td><td></td></tr>
-           <tr><td><code>{@link #SearchView_iconifiedByDefault com.oliver.bathurst.findmyandroiddevice:iconifiedByDefault}</code></td><td></td></tr>
-           <tr><td><code>{@link #SearchView_layout com.oliver.bathurst.findmyandroiddevice:layout}</code></td><td></td></tr>
-           <tr><td><code>{@link #SearchView_queryBackground com.oliver.bathurst.findmyandroiddevice:queryBackground}</code></td><td></td></tr>
-           <tr><td><code>{@link #SearchView_queryHint com.oliver.bathurst.findmyandroiddevice:queryHint}</code></td><td></td></tr>
-           <tr><td><code>{@link #SearchView_searchHintIcon com.oliver.bathurst.findmyandroiddevice:searchHintIcon}</code></td><td></td></tr>
-           <tr><td><code>{@link #SearchView_searchIcon com.oliver.bathurst.findmyandroiddevice:searchIcon}</code></td><td></td></tr>
-           <tr><td><code>{@link #SearchView_submitBackground com.oliver.bathurst.findmyandroiddevice:submitBackground}</code></td><td></td></tr>
-           <tr><td><code>{@link #SearchView_suggestionRowLayout com.oliver.bathurst.findmyandroiddevice:suggestionRowLayout}</code></td><td></td></tr>
-           <tr><td><code>{@link #SearchView_voiceIcon com.oliver.bathurst.findmyandroiddevice:voiceIcon}</code></td><td></td></tr>
+           <tr><td><code>{@link #SearchView_closeIcon com.oliver.bathurst.individualproject:closeIcon}</code></td><td></td></tr>
+           <tr><td><code>{@link #SearchView_commitIcon com.oliver.bathurst.individualproject:commitIcon}</code></td><td></td></tr>
+           <tr><td><code>{@link #SearchView_defaultQueryHint com.oliver.bathurst.individualproject:defaultQueryHint}</code></td><td></td></tr>
+           <tr><td><code>{@link #SearchView_goIcon com.oliver.bathurst.individualproject:goIcon}</code></td><td></td></tr>
+           <tr><td><code>{@link #SearchView_iconifiedByDefault com.oliver.bathurst.individualproject:iconifiedByDefault}</code></td><td></td></tr>
+           <tr><td><code>{@link #SearchView_layout com.oliver.bathurst.individualproject:layout}</code></td><td></td></tr>
+           <tr><td><code>{@link #SearchView_queryBackground com.oliver.bathurst.individualproject:queryBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #SearchView_queryHint com.oliver.bathurst.individualproject:queryHint}</code></td><td></td></tr>
+           <tr><td><code>{@link #SearchView_searchHintIcon com.oliver.bathurst.individualproject:searchHintIcon}</code></td><td></td></tr>
+           <tr><td><code>{@link #SearchView_searchIcon com.oliver.bathurst.individualproject:searchIcon}</code></td><td></td></tr>
+           <tr><td><code>{@link #SearchView_submitBackground com.oliver.bathurst.individualproject:submitBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #SearchView_suggestionRowLayout com.oliver.bathurst.individualproject:suggestionRowLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #SearchView_voiceIcon com.oliver.bathurst.individualproject:voiceIcon}</code></td><td></td></tr>
            </table>
            @see #SearchView_android_focusable
            @see #SearchView_android_imeOptions
@@ -11448,27 +11458,27 @@ containing a value of this type.
         */
         public static final int SearchView_android_maxWidth = 1;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#closeIcon}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#closeIcon}
           attribute's value can be found in the {@link #SearchView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:closeIcon
+          @attr name com.oliver.bathurst.individualproject:closeIcon
         */
         public static final int SearchView_closeIcon = 8;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#commitIcon}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#commitIcon}
           attribute's value can be found in the {@link #SearchView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:commitIcon
+          @attr name com.oliver.bathurst.individualproject:commitIcon
         */
         public static final int SearchView_commitIcon = 13;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#defaultQueryHint}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#defaultQueryHint}
           attribute's value can be found in the {@link #SearchView} array.
 
 
@@ -11478,21 +11488,21 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:defaultQueryHint
+          @attr name com.oliver.bathurst.individualproject:defaultQueryHint
         */
         public static final int SearchView_defaultQueryHint = 7;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#goIcon}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#goIcon}
           attribute's value can be found in the {@link #SearchView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:goIcon
+          @attr name com.oliver.bathurst.individualproject:goIcon
         */
         public static final int SearchView_goIcon = 9;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#iconifiedByDefault}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#iconifiedByDefault}
           attribute's value can be found in the {@link #SearchView} array.
 
 
@@ -11502,31 +11512,31 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:iconifiedByDefault
+          @attr name com.oliver.bathurst.individualproject:iconifiedByDefault
         */
         public static final int SearchView_iconifiedByDefault = 5;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#layout}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#layout}
           attribute's value can be found in the {@link #SearchView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:layout
+          @attr name com.oliver.bathurst.individualproject:layout
         */
         public static final int SearchView_layout = 4;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#queryBackground}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#queryBackground}
           attribute's value can be found in the {@link #SearchView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:queryBackground
+          @attr name com.oliver.bathurst.individualproject:queryBackground
         */
         public static final int SearchView_queryBackground = 15;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#queryHint}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#queryHint}
           attribute's value can be found in the {@link #SearchView} array.
 
 
@@ -11536,57 +11546,57 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:queryHint
+          @attr name com.oliver.bathurst.individualproject:queryHint
         */
         public static final int SearchView_queryHint = 6;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#searchHintIcon}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#searchHintIcon}
           attribute's value can be found in the {@link #SearchView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:searchHintIcon
+          @attr name com.oliver.bathurst.individualproject:searchHintIcon
         */
         public static final int SearchView_searchHintIcon = 11;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#searchIcon}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#searchIcon}
           attribute's value can be found in the {@link #SearchView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:searchIcon
+          @attr name com.oliver.bathurst.individualproject:searchIcon
         */
         public static final int SearchView_searchIcon = 10;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#submitBackground}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#submitBackground}
           attribute's value can be found in the {@link #SearchView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:submitBackground
+          @attr name com.oliver.bathurst.individualproject:submitBackground
         */
         public static final int SearchView_submitBackground = 16;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#suggestionRowLayout}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#suggestionRowLayout}
           attribute's value can be found in the {@link #SearchView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:suggestionRowLayout
+          @attr name com.oliver.bathurst.individualproject:suggestionRowLayout
         */
         public static final int SearchView_suggestionRowLayout = 14;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#voiceIcon}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#voiceIcon}
           attribute's value can be found in the {@link #SearchView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:voiceIcon
+          @attr name com.oliver.bathurst.individualproject:voiceIcon
         */
         public static final int SearchView_voiceIcon = 12;
         /** Attributes that can be used with a SignInButton.
@@ -11595,9 +11605,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #SignInButton_buttonSize com.oliver.bathurst.findmyandroiddevice:buttonSize}</code></td><td></td></tr>
-           <tr><td><code>{@link #SignInButton_colorScheme com.oliver.bathurst.findmyandroiddevice:colorScheme}</code></td><td></td></tr>
-           <tr><td><code>{@link #SignInButton_scopeUris com.oliver.bathurst.findmyandroiddevice:scopeUris}</code></td><td></td></tr>
+           <tr><td><code>{@link #SignInButton_buttonSize com.oliver.bathurst.individualproject:buttonSize}</code></td><td></td></tr>
+           <tr><td><code>{@link #SignInButton_colorScheme com.oliver.bathurst.individualproject:colorScheme}</code></td><td></td></tr>
+           <tr><td><code>{@link #SignInButton_scopeUris com.oliver.bathurst.individualproject:scopeUris}</code></td><td></td></tr>
            </table>
            @see #SignInButton_buttonSize
            @see #SignInButton_colorScheme
@@ -11607,7 +11617,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f010140, 0x7f010141, 0x7f010142
         };
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#buttonSize}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#buttonSize}
           attribute's value can be found in the {@link #SignInButton} array.
 
 
@@ -11623,11 +11633,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>wide</code></td><td>1</td><td></td></tr>
 <tr><td><code>icon_only</code></td><td>2</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:buttonSize
+          @attr name com.oliver.bathurst.individualproject:buttonSize
         */
         public static final int SignInButton_buttonSize = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#colorScheme}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#colorScheme}
           attribute's value can be found in the {@link #SignInButton} array.
 
 
@@ -11643,18 +11653,18 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>light</code></td><td>1</td><td></td></tr>
 <tr><td><code>auto</code></td><td>2</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:colorScheme
+          @attr name com.oliver.bathurst.individualproject:colorScheme
         */
         public static final int SignInButton_colorScheme = 1;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#scopeUris}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#scopeUris}
           attribute's value can be found in the {@link #SignInButton} array.
 
 
           <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
-          @attr name com.oliver.bathurst.findmyandroiddevice:scopeUris
+          @attr name com.oliver.bathurst.individualproject:scopeUris
         */
         public static final int SignInButton_scopeUris = 2;
         /** Attributes that can be used with a SnackbarLayout.
@@ -11664,8 +11674,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #SnackbarLayout_android_maxWidth android:maxWidth}</code></td><td></td></tr>
-           <tr><td><code>{@link #SnackbarLayout_elevation com.oliver.bathurst.findmyandroiddevice:elevation}</code></td><td></td></tr>
-           <tr><td><code>{@link #SnackbarLayout_maxActionInlineWidth com.oliver.bathurst.findmyandroiddevice:maxActionInlineWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #SnackbarLayout_elevation com.oliver.bathurst.individualproject:elevation}</code></td><td></td></tr>
+           <tr><td><code>{@link #SnackbarLayout_maxActionInlineWidth com.oliver.bathurst.individualproject:maxActionInlineWidth}</code></td><td></td></tr>
            </table>
            @see #SnackbarLayout_android_maxWidth
            @see #SnackbarLayout_elevation
@@ -11681,7 +11691,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SnackbarLayout_android_maxWidth = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#elevation}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#elevation}
           attribute's value can be found in the {@link #SnackbarLayout} array.
 
 
@@ -11693,11 +11703,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:elevation
+          @attr name com.oliver.bathurst.individualproject:elevation
         */
         public static final int SnackbarLayout_elevation = 1;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#maxActionInlineWidth}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#maxActionInlineWidth}
           attribute's value can be found in the {@link #SnackbarLayout} array.
 
 
@@ -11709,7 +11719,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:maxActionInlineWidth
+          @attr name com.oliver.bathurst.individualproject:maxActionInlineWidth
         */
         public static final int SnackbarLayout_maxActionInlineWidth = 2;
         /** Attributes that can be used with a Spinner.
@@ -11722,7 +11732,7 @@ containing a value of this type.
            <tr><td><code>{@link #Spinner_android_entries android:entries}</code></td><td></td></tr>
            <tr><td><code>{@link #Spinner_android_popupBackground android:popupBackground}</code></td><td></td></tr>
            <tr><td><code>{@link #Spinner_android_prompt android:prompt}</code></td><td></td></tr>
-           <tr><td><code>{@link #Spinner_popupTheme com.oliver.bathurst.findmyandroiddevice:popupTheme}</code></td><td></td></tr>
+           <tr><td><code>{@link #Spinner_popupTheme com.oliver.bathurst.individualproject:popupTheme}</code></td><td></td></tr>
            </table>
            @see #Spinner_android_dropDownWidth
            @see #Spinner_android_entries
@@ -11759,13 +11769,13 @@ containing a value of this type.
         */
         public static final int Spinner_android_prompt = 2;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#popupTheme}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#popupTheme}
           attribute's value can be found in the {@link #Spinner} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:popupTheme
+          @attr name com.oliver.bathurst.individualproject:popupTheme
         */
         public static final int Spinner_popupTheme = 4;
         /** Attributes that can be used with a SwitchCompat.
@@ -11777,17 +11787,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <tr><td><code>{@link #SwitchCompat_android_textOff android:textOff}</code></td><td></td></tr>
            <tr><td><code>{@link #SwitchCompat_android_textOn android:textOn}</code></td><td></td></tr>
            <tr><td><code>{@link #SwitchCompat_android_thumb android:thumb}</code></td><td></td></tr>
-           <tr><td><code>{@link #SwitchCompat_showText com.oliver.bathurst.findmyandroiddevice:showText}</code></td><td></td></tr>
-           <tr><td><code>{@link #SwitchCompat_splitTrack com.oliver.bathurst.findmyandroiddevice:splitTrack}</code></td><td></td></tr>
-           <tr><td><code>{@link #SwitchCompat_switchMinWidth com.oliver.bathurst.findmyandroiddevice:switchMinWidth}</code></td><td></td></tr>
-           <tr><td><code>{@link #SwitchCompat_switchPadding com.oliver.bathurst.findmyandroiddevice:switchPadding}</code></td><td></td></tr>
-           <tr><td><code>{@link #SwitchCompat_switchTextAppearance com.oliver.bathurst.findmyandroiddevice:switchTextAppearance}</code></td><td></td></tr>
-           <tr><td><code>{@link #SwitchCompat_thumbTextPadding com.oliver.bathurst.findmyandroiddevice:thumbTextPadding}</code></td><td></td></tr>
-           <tr><td><code>{@link #SwitchCompat_thumbTint com.oliver.bathurst.findmyandroiddevice:thumbTint}</code></td><td></td></tr>
-           <tr><td><code>{@link #SwitchCompat_thumbTintMode com.oliver.bathurst.findmyandroiddevice:thumbTintMode}</code></td><td></td></tr>
-           <tr><td><code>{@link #SwitchCompat_track com.oliver.bathurst.findmyandroiddevice:track}</code></td><td></td></tr>
-           <tr><td><code>{@link #SwitchCompat_trackTint com.oliver.bathurst.findmyandroiddevice:trackTint}</code></td><td></td></tr>
-           <tr><td><code>{@link #SwitchCompat_trackTintMode com.oliver.bathurst.findmyandroiddevice:trackTintMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchCompat_showText com.oliver.bathurst.individualproject:showText}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchCompat_splitTrack com.oliver.bathurst.individualproject:splitTrack}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchCompat_switchMinWidth com.oliver.bathurst.individualproject:switchMinWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchCompat_switchPadding com.oliver.bathurst.individualproject:switchPadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchCompat_switchTextAppearance com.oliver.bathurst.individualproject:switchTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchCompat_thumbTextPadding com.oliver.bathurst.individualproject:thumbTextPadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchCompat_thumbTint com.oliver.bathurst.individualproject:thumbTint}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchCompat_thumbTintMode com.oliver.bathurst.individualproject:thumbTintMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchCompat_track com.oliver.bathurst.individualproject:track}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchCompat_trackTint com.oliver.bathurst.individualproject:trackTint}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchCompat_trackTintMode com.oliver.bathurst.individualproject:trackTintMode}</code></td><td></td></tr>
            </table>
            @see #SwitchCompat_android_textOff
            @see #SwitchCompat_android_textOn
@@ -11829,7 +11839,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SwitchCompat_android_thumb = 2;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#showText}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#showText}
           attribute's value can be found in the {@link #SwitchCompat} array.
 
 
@@ -11839,11 +11849,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:showText
+          @attr name com.oliver.bathurst.individualproject:showText
         */
         public static final int SwitchCompat_showText = 13;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#splitTrack}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#splitTrack}
           attribute's value can be found in the {@link #SwitchCompat} array.
 
 
@@ -11853,11 +11863,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:splitTrack
+          @attr name com.oliver.bathurst.individualproject:splitTrack
         */
         public static final int SwitchCompat_splitTrack = 12;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#switchMinWidth}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#switchMinWidth}
           attribute's value can be found in the {@link #SwitchCompat} array.
 
 
@@ -11869,11 +11879,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:switchMinWidth
+          @attr name com.oliver.bathurst.individualproject:switchMinWidth
         */
         public static final int SwitchCompat_switchMinWidth = 10;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#switchPadding}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#switchPadding}
           attribute's value can be found in the {@link #SwitchCompat} array.
 
 
@@ -11885,21 +11895,21 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:switchPadding
+          @attr name com.oliver.bathurst.individualproject:switchPadding
         */
         public static final int SwitchCompat_switchPadding = 11;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#switchTextAppearance}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#switchTextAppearance}
           attribute's value can be found in the {@link #SwitchCompat} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:switchTextAppearance
+          @attr name com.oliver.bathurst.individualproject:switchTextAppearance
         */
         public static final int SwitchCompat_switchTextAppearance = 9;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#thumbTextPadding}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#thumbTextPadding}
           attribute's value can be found in the {@link #SwitchCompat} array.
 
 
@@ -11911,11 +11921,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:thumbTextPadding
+          @attr name com.oliver.bathurst.individualproject:thumbTextPadding
         */
         public static final int SwitchCompat_thumbTextPadding = 8;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#thumbTint}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#thumbTint}
           attribute's value can be found in the {@link #SwitchCompat} array.
 
 
@@ -11926,11 +11936,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:thumbTint
+          @attr name com.oliver.bathurst.individualproject:thumbTint
         */
         public static final int SwitchCompat_thumbTint = 3;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#thumbTintMode}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#thumbTintMode}
           attribute's value can be found in the {@link #SwitchCompat} array.
 
 
@@ -11947,21 +11957,21 @@ containing a value of this type.
 <tr><td><code>screen</code></td><td>15</td><td></td></tr>
 <tr><td><code>add</code></td><td>16</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:thumbTintMode
+          @attr name com.oliver.bathurst.individualproject:thumbTintMode
         */
         public static final int SwitchCompat_thumbTintMode = 4;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#track}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#track}
           attribute's value can be found in the {@link #SwitchCompat} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:track
+          @attr name com.oliver.bathurst.individualproject:track
         */
         public static final int SwitchCompat_track = 5;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#trackTint}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#trackTint}
           attribute's value can be found in the {@link #SwitchCompat} array.
 
 
@@ -11972,11 +11982,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:trackTint
+          @attr name com.oliver.bathurst.individualproject:trackTint
         */
         public static final int SwitchCompat_trackTint = 6;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#trackTintMode}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#trackTintMode}
           attribute's value can be found in the {@link #SwitchCompat} array.
 
 
@@ -11993,7 +12003,7 @@ containing a value of this type.
 <tr><td><code>screen</code></td><td>15</td><td></td></tr>
 <tr><td><code>add</code></td><td>16</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:trackTintMode
+          @attr name com.oliver.bathurst.individualproject:trackTintMode
         */
         public static final int SwitchCompat_trackTintMode = 7;
         /** Attributes that can be used with a TabItem.
@@ -12037,22 +12047,22 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #TabLayout_tabBackground com.oliver.bathurst.findmyandroiddevice:tabBackground}</code></td><td></td></tr>
-           <tr><td><code>{@link #TabLayout_tabContentStart com.oliver.bathurst.findmyandroiddevice:tabContentStart}</code></td><td></td></tr>
-           <tr><td><code>{@link #TabLayout_tabGravity com.oliver.bathurst.findmyandroiddevice:tabGravity}</code></td><td></td></tr>
-           <tr><td><code>{@link #TabLayout_tabIndicatorColor com.oliver.bathurst.findmyandroiddevice:tabIndicatorColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #TabLayout_tabIndicatorHeight com.oliver.bathurst.findmyandroiddevice:tabIndicatorHeight}</code></td><td></td></tr>
-           <tr><td><code>{@link #TabLayout_tabMaxWidth com.oliver.bathurst.findmyandroiddevice:tabMaxWidth}</code></td><td></td></tr>
-           <tr><td><code>{@link #TabLayout_tabMinWidth com.oliver.bathurst.findmyandroiddevice:tabMinWidth}</code></td><td></td></tr>
-           <tr><td><code>{@link #TabLayout_tabMode com.oliver.bathurst.findmyandroiddevice:tabMode}</code></td><td></td></tr>
-           <tr><td><code>{@link #TabLayout_tabPadding com.oliver.bathurst.findmyandroiddevice:tabPadding}</code></td><td></td></tr>
-           <tr><td><code>{@link #TabLayout_tabPaddingBottom com.oliver.bathurst.findmyandroiddevice:tabPaddingBottom}</code></td><td></td></tr>
-           <tr><td><code>{@link #TabLayout_tabPaddingEnd com.oliver.bathurst.findmyandroiddevice:tabPaddingEnd}</code></td><td></td></tr>
-           <tr><td><code>{@link #TabLayout_tabPaddingStart com.oliver.bathurst.findmyandroiddevice:tabPaddingStart}</code></td><td></td></tr>
-           <tr><td><code>{@link #TabLayout_tabPaddingTop com.oliver.bathurst.findmyandroiddevice:tabPaddingTop}</code></td><td></td></tr>
-           <tr><td><code>{@link #TabLayout_tabSelectedTextColor com.oliver.bathurst.findmyandroiddevice:tabSelectedTextColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #TabLayout_tabTextAppearance com.oliver.bathurst.findmyandroiddevice:tabTextAppearance}</code></td><td></td></tr>
-           <tr><td><code>{@link #TabLayout_tabTextColor com.oliver.bathurst.findmyandroiddevice:tabTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabBackground com.oliver.bathurst.individualproject:tabBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabContentStart com.oliver.bathurst.individualproject:tabContentStart}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabGravity com.oliver.bathurst.individualproject:tabGravity}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabIndicatorColor com.oliver.bathurst.individualproject:tabIndicatorColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabIndicatorHeight com.oliver.bathurst.individualproject:tabIndicatorHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabMaxWidth com.oliver.bathurst.individualproject:tabMaxWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabMinWidth com.oliver.bathurst.individualproject:tabMinWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabMode com.oliver.bathurst.individualproject:tabMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabPadding com.oliver.bathurst.individualproject:tabPadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabPaddingBottom com.oliver.bathurst.individualproject:tabPaddingBottom}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabPaddingEnd com.oliver.bathurst.individualproject:tabPaddingEnd}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabPaddingStart com.oliver.bathurst.individualproject:tabPaddingStart}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabPaddingTop com.oliver.bathurst.individualproject:tabPaddingTop}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabSelectedTextColor com.oliver.bathurst.individualproject:tabSelectedTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabTextAppearance com.oliver.bathurst.individualproject:tabTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #TabLayout_tabTextColor com.oliver.bathurst.individualproject:tabTextColor}</code></td><td></td></tr>
            </table>
            @see #TabLayout_tabBackground
            @see #TabLayout_tabContentStart
@@ -12078,17 +12088,17 @@ containing a value of this type.
             0x7f01015b, 0x7f01015c, 0x7f01015d, 0x7f01015e
         };
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#tabBackground}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#tabBackground}
           attribute's value can be found in the {@link #TabLayout} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:tabBackground
+          @attr name com.oliver.bathurst.individualproject:tabBackground
         */
         public static final int TabLayout_tabBackground = 3;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#tabContentStart}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#tabContentStart}
           attribute's value can be found in the {@link #TabLayout} array.
 
 
@@ -12100,11 +12110,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:tabContentStart
+          @attr name com.oliver.bathurst.individualproject:tabContentStart
         */
         public static final int TabLayout_tabContentStart = 2;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#tabGravity}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#tabGravity}
           attribute's value can be found in the {@link #TabLayout} array.
 
 
@@ -12117,11 +12127,11 @@ containing a value of this type.
 <tr><td><code>fill</code></td><td>0</td><td></td></tr>
 <tr><td><code>center</code></td><td>1</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:tabGravity
+          @attr name com.oliver.bathurst.individualproject:tabGravity
         */
         public static final int TabLayout_tabGravity = 5;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#tabIndicatorColor}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#tabIndicatorColor}
           attribute's value can be found in the {@link #TabLayout} array.
 
 
@@ -12132,11 +12142,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:tabIndicatorColor
+          @attr name com.oliver.bathurst.individualproject:tabIndicatorColor
         */
         public static final int TabLayout_tabIndicatorColor = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#tabIndicatorHeight}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#tabIndicatorHeight}
           attribute's value can be found in the {@link #TabLayout} array.
 
 
@@ -12148,11 +12158,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:tabIndicatorHeight
+          @attr name com.oliver.bathurst.individualproject:tabIndicatorHeight
         */
         public static final int TabLayout_tabIndicatorHeight = 1;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#tabMaxWidth}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#tabMaxWidth}
           attribute's value can be found in the {@link #TabLayout} array.
 
 
@@ -12164,11 +12174,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:tabMaxWidth
+          @attr name com.oliver.bathurst.individualproject:tabMaxWidth
         */
         public static final int TabLayout_tabMaxWidth = 7;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#tabMinWidth}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#tabMinWidth}
           attribute's value can be found in the {@link #TabLayout} array.
 
 
@@ -12180,11 +12190,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:tabMinWidth
+          @attr name com.oliver.bathurst.individualproject:tabMinWidth
         */
         public static final int TabLayout_tabMinWidth = 6;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#tabMode}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#tabMode}
           attribute's value can be found in the {@link #TabLayout} array.
 
 
@@ -12197,11 +12207,11 @@ containing a value of this type.
 <tr><td><code>scrollable</code></td><td>0</td><td></td></tr>
 <tr><td><code>fixed</code></td><td>1</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:tabMode
+          @attr name com.oliver.bathurst.individualproject:tabMode
         */
         public static final int TabLayout_tabMode = 4;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#tabPadding}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#tabPadding}
           attribute's value can be found in the {@link #TabLayout} array.
 
 
@@ -12213,11 +12223,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:tabPadding
+          @attr name com.oliver.bathurst.individualproject:tabPadding
         */
         public static final int TabLayout_tabPadding = 15;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#tabPaddingBottom}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#tabPaddingBottom}
           attribute's value can be found in the {@link #TabLayout} array.
 
 
@@ -12229,11 +12239,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:tabPaddingBottom
+          @attr name com.oliver.bathurst.individualproject:tabPaddingBottom
         */
         public static final int TabLayout_tabPaddingBottom = 14;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#tabPaddingEnd}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#tabPaddingEnd}
           attribute's value can be found in the {@link #TabLayout} array.
 
 
@@ -12245,11 +12255,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:tabPaddingEnd
+          @attr name com.oliver.bathurst.individualproject:tabPaddingEnd
         */
         public static final int TabLayout_tabPaddingEnd = 13;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#tabPaddingStart}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#tabPaddingStart}
           attribute's value can be found in the {@link #TabLayout} array.
 
 
@@ -12261,11 +12271,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:tabPaddingStart
+          @attr name com.oliver.bathurst.individualproject:tabPaddingStart
         */
         public static final int TabLayout_tabPaddingStart = 11;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#tabPaddingTop}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#tabPaddingTop}
           attribute's value can be found in the {@link #TabLayout} array.
 
 
@@ -12277,11 +12287,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:tabPaddingTop
+          @attr name com.oliver.bathurst.individualproject:tabPaddingTop
         */
         public static final int TabLayout_tabPaddingTop = 12;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#tabSelectedTextColor}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#tabSelectedTextColor}
           attribute's value can be found in the {@link #TabLayout} array.
 
 
@@ -12292,21 +12302,21 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:tabSelectedTextColor
+          @attr name com.oliver.bathurst.individualproject:tabSelectedTextColor
         */
         public static final int TabLayout_tabSelectedTextColor = 10;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#tabTextAppearance}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#tabTextAppearance}
           attribute's value can be found in the {@link #TabLayout} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:tabTextAppearance
+          @attr name com.oliver.bathurst.individualproject:tabTextAppearance
         */
         public static final int TabLayout_tabTextAppearance = 8;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#tabTextColor}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#tabTextColor}
           attribute's value can be found in the {@link #TabLayout} array.
 
 
@@ -12317,7 +12327,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:tabTextColor
+          @attr name com.oliver.bathurst.individualproject:tabTextColor
         */
         public static final int TabLayout_tabTextColor = 9;
         /** Attributes that can be used with a TextAppearance.
@@ -12335,7 +12345,7 @@ containing a value of this type.
            <tr><td><code>{@link #TextAppearance_android_textSize android:textSize}</code></td><td></td></tr>
            <tr><td><code>{@link #TextAppearance_android_textStyle android:textStyle}</code></td><td></td></tr>
            <tr><td><code>{@link #TextAppearance_android_typeface android:typeface}</code></td><td></td></tr>
-           <tr><td><code>{@link #TextAppearance_textAllCaps com.oliver.bathurst.findmyandroiddevice:textAllCaps}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextAppearance_textAllCaps com.oliver.bathurst.individualproject:textAllCaps}</code></td><td></td></tr>
            </table>
            @see #TextAppearance_android_shadowColor
            @see #TextAppearance_android_shadowDx
@@ -12408,14 +12418,14 @@ containing a value of this type.
         */
         public static final int TextAppearance_android_typeface = 1;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#textAllCaps}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#textAllCaps}
           attribute's value can be found in the {@link #TextAppearance} array.
 
 
           <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:textAllCaps
+          @attr name com.oliver.bathurst.individualproject:textAllCaps
         */
         public static final int TextAppearance_textAllCaps = 9;
         /** Attributes that can be used with a TextInputLayout.
@@ -12426,20 +12436,20 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #TextInputLayout_android_hint android:hint}</code></td><td></td></tr>
            <tr><td><code>{@link #TextInputLayout_android_textColorHint android:textColorHint}</code></td><td></td></tr>
-           <tr><td><code>{@link #TextInputLayout_counterEnabled com.oliver.bathurst.findmyandroiddevice:counterEnabled}</code></td><td></td></tr>
-           <tr><td><code>{@link #TextInputLayout_counterMaxLength com.oliver.bathurst.findmyandroiddevice:counterMaxLength}</code></td><td></td></tr>
-           <tr><td><code>{@link #TextInputLayout_counterOverflowTextAppearance com.oliver.bathurst.findmyandroiddevice:counterOverflowTextAppearance}</code></td><td></td></tr>
-           <tr><td><code>{@link #TextInputLayout_counterTextAppearance com.oliver.bathurst.findmyandroiddevice:counterTextAppearance}</code></td><td></td></tr>
-           <tr><td><code>{@link #TextInputLayout_errorEnabled com.oliver.bathurst.findmyandroiddevice:errorEnabled}</code></td><td></td></tr>
-           <tr><td><code>{@link #TextInputLayout_errorTextAppearance com.oliver.bathurst.findmyandroiddevice:errorTextAppearance}</code></td><td></td></tr>
-           <tr><td><code>{@link #TextInputLayout_hintAnimationEnabled com.oliver.bathurst.findmyandroiddevice:hintAnimationEnabled}</code></td><td></td></tr>
-           <tr><td><code>{@link #TextInputLayout_hintEnabled com.oliver.bathurst.findmyandroiddevice:hintEnabled}</code></td><td></td></tr>
-           <tr><td><code>{@link #TextInputLayout_hintTextAppearance com.oliver.bathurst.findmyandroiddevice:hintTextAppearance}</code></td><td></td></tr>
-           <tr><td><code>{@link #TextInputLayout_passwordToggleContentDescription com.oliver.bathurst.findmyandroiddevice:passwordToggleContentDescription}</code></td><td></td></tr>
-           <tr><td><code>{@link #TextInputLayout_passwordToggleDrawable com.oliver.bathurst.findmyandroiddevice:passwordToggleDrawable}</code></td><td></td></tr>
-           <tr><td><code>{@link #TextInputLayout_passwordToggleEnabled com.oliver.bathurst.findmyandroiddevice:passwordToggleEnabled}</code></td><td></td></tr>
-           <tr><td><code>{@link #TextInputLayout_passwordToggleTint com.oliver.bathurst.findmyandroiddevice:passwordToggleTint}</code></td><td></td></tr>
-           <tr><td><code>{@link #TextInputLayout_passwordToggleTintMode com.oliver.bathurst.findmyandroiddevice:passwordToggleTintMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextInputLayout_counterEnabled com.oliver.bathurst.individualproject:counterEnabled}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextInputLayout_counterMaxLength com.oliver.bathurst.individualproject:counterMaxLength}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextInputLayout_counterOverflowTextAppearance com.oliver.bathurst.individualproject:counterOverflowTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextInputLayout_counterTextAppearance com.oliver.bathurst.individualproject:counterTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextInputLayout_errorEnabled com.oliver.bathurst.individualproject:errorEnabled}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextInputLayout_errorTextAppearance com.oliver.bathurst.individualproject:errorTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextInputLayout_hintAnimationEnabled com.oliver.bathurst.individualproject:hintAnimationEnabled}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextInputLayout_hintEnabled com.oliver.bathurst.individualproject:hintEnabled}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextInputLayout_hintTextAppearance com.oliver.bathurst.individualproject:hintTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextInputLayout_passwordToggleContentDescription com.oliver.bathurst.individualproject:passwordToggleContentDescription}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextInputLayout_passwordToggleDrawable com.oliver.bathurst.individualproject:passwordToggleDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextInputLayout_passwordToggleEnabled com.oliver.bathurst.individualproject:passwordToggleEnabled}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextInputLayout_passwordToggleTint com.oliver.bathurst.individualproject:passwordToggleTint}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextInputLayout_passwordToggleTintMode com.oliver.bathurst.individualproject:passwordToggleTintMode}</code></td><td></td></tr>
            </table>
            @see #TextInputLayout_android_hint
            @see #TextInputLayout_android_textColorHint
@@ -12477,7 +12487,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int TextInputLayout_android_textColorHint = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#counterEnabled}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#counterEnabled}
           attribute's value can be found in the {@link #TextInputLayout} array.
 
 
@@ -12487,11 +12497,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:counterEnabled
+          @attr name com.oliver.bathurst.individualproject:counterEnabled
         */
         public static final int TextInputLayout_counterEnabled = 6;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#counterMaxLength}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#counterMaxLength}
           attribute's value can be found in the {@link #TextInputLayout} array.
 
 
@@ -12501,31 +12511,31 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:counterMaxLength
+          @attr name com.oliver.bathurst.individualproject:counterMaxLength
         */
         public static final int TextInputLayout_counterMaxLength = 7;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#counterOverflowTextAppearance}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#counterOverflowTextAppearance}
           attribute's value can be found in the {@link #TextInputLayout} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:counterOverflowTextAppearance
+          @attr name com.oliver.bathurst.individualproject:counterOverflowTextAppearance
         */
         public static final int TextInputLayout_counterOverflowTextAppearance = 9;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#counterTextAppearance}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#counterTextAppearance}
           attribute's value can be found in the {@link #TextInputLayout} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:counterTextAppearance
+          @attr name com.oliver.bathurst.individualproject:counterTextAppearance
         */
         public static final int TextInputLayout_counterTextAppearance = 8;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#errorEnabled}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#errorEnabled}
           attribute's value can be found in the {@link #TextInputLayout} array.
 
 
@@ -12535,21 +12545,21 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:errorEnabled
+          @attr name com.oliver.bathurst.individualproject:errorEnabled
         */
         public static final int TextInputLayout_errorEnabled = 4;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#errorTextAppearance}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#errorTextAppearance}
           attribute's value can be found in the {@link #TextInputLayout} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:errorTextAppearance
+          @attr name com.oliver.bathurst.individualproject:errorTextAppearance
         */
         public static final int TextInputLayout_errorTextAppearance = 5;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#hintAnimationEnabled}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#hintAnimationEnabled}
           attribute's value can be found in the {@link #TextInputLayout} array.
 
 
@@ -12559,11 +12569,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:hintAnimationEnabled
+          @attr name com.oliver.bathurst.individualproject:hintAnimationEnabled
         */
         public static final int TextInputLayout_hintAnimationEnabled = 10;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#hintEnabled}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#hintEnabled}
           attribute's value can be found in the {@link #TextInputLayout} array.
 
 
@@ -12573,21 +12583,21 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:hintEnabled
+          @attr name com.oliver.bathurst.individualproject:hintEnabled
         */
         public static final int TextInputLayout_hintEnabled = 3;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#hintTextAppearance}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#hintTextAppearance}
           attribute's value can be found in the {@link #TextInputLayout} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:hintTextAppearance
+          @attr name com.oliver.bathurst.individualproject:hintTextAppearance
         */
         public static final int TextInputLayout_hintTextAppearance = 2;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#passwordToggleContentDescription}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#passwordToggleContentDescription}
           attribute's value can be found in the {@link #TextInputLayout} array.
 
 
@@ -12597,21 +12607,21 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:passwordToggleContentDescription
+          @attr name com.oliver.bathurst.individualproject:passwordToggleContentDescription
         */
         public static final int TextInputLayout_passwordToggleContentDescription = 13;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#passwordToggleDrawable}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#passwordToggleDrawable}
           attribute's value can be found in the {@link #TextInputLayout} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:passwordToggleDrawable
+          @attr name com.oliver.bathurst.individualproject:passwordToggleDrawable
         */
         public static final int TextInputLayout_passwordToggleDrawable = 12;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#passwordToggleEnabled}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#passwordToggleEnabled}
           attribute's value can be found in the {@link #TextInputLayout} array.
 
 
@@ -12621,11 +12631,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:passwordToggleEnabled
+          @attr name com.oliver.bathurst.individualproject:passwordToggleEnabled
         */
         public static final int TextInputLayout_passwordToggleEnabled = 11;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#passwordToggleTint}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#passwordToggleTint}
           attribute's value can be found in the {@link #TextInputLayout} array.
 
 
@@ -12636,11 +12646,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:passwordToggleTint
+          @attr name com.oliver.bathurst.individualproject:passwordToggleTint
         */
         public static final int TextInputLayout_passwordToggleTint = 14;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#passwordToggleTintMode}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#passwordToggleTintMode}
           attribute's value can be found in the {@link #TextInputLayout} array.
 
 
@@ -12656,7 +12666,7 @@ containing a value of this type.
 <tr><td><code>multiply</code></td><td>14</td><td></td></tr>
 <tr><td><code>screen</code></td><td>15</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:passwordToggleTintMode
+          @attr name com.oliver.bathurst.individualproject:passwordToggleTintMode
         */
         public static final int TextInputLayout_passwordToggleTintMode = 15;
         /** Attributes that can be used with a Toolbar.
@@ -12667,33 +12677,33 @@ containing a value of this type.
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #Toolbar_android_gravity android:gravity}</code></td><td></td></tr>
            <tr><td><code>{@link #Toolbar_android_minHeight android:minHeight}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_buttonGravity com.oliver.bathurst.findmyandroiddevice:buttonGravity}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_collapseContentDescription com.oliver.bathurst.findmyandroiddevice:collapseContentDescription}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_collapseIcon com.oliver.bathurst.findmyandroiddevice:collapseIcon}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_contentInsetEnd com.oliver.bathurst.findmyandroiddevice:contentInsetEnd}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_contentInsetEndWithActions com.oliver.bathurst.findmyandroiddevice:contentInsetEndWithActions}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_contentInsetLeft com.oliver.bathurst.findmyandroiddevice:contentInsetLeft}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_contentInsetRight com.oliver.bathurst.findmyandroiddevice:contentInsetRight}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_contentInsetStart com.oliver.bathurst.findmyandroiddevice:contentInsetStart}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_contentInsetStartWithNavigation com.oliver.bathurst.findmyandroiddevice:contentInsetStartWithNavigation}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_logo com.oliver.bathurst.findmyandroiddevice:logo}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_logoDescription com.oliver.bathurst.findmyandroiddevice:logoDescription}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_maxButtonHeight com.oliver.bathurst.findmyandroiddevice:maxButtonHeight}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_navigationContentDescription com.oliver.bathurst.findmyandroiddevice:navigationContentDescription}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_navigationIcon com.oliver.bathurst.findmyandroiddevice:navigationIcon}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_popupTheme com.oliver.bathurst.findmyandroiddevice:popupTheme}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_subtitle com.oliver.bathurst.findmyandroiddevice:subtitle}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_subtitleTextAppearance com.oliver.bathurst.findmyandroiddevice:subtitleTextAppearance}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_subtitleTextColor com.oliver.bathurst.findmyandroiddevice:subtitleTextColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_title com.oliver.bathurst.findmyandroiddevice:title}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_titleMargin com.oliver.bathurst.findmyandroiddevice:titleMargin}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_titleMarginBottom com.oliver.bathurst.findmyandroiddevice:titleMarginBottom}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_titleMarginEnd com.oliver.bathurst.findmyandroiddevice:titleMarginEnd}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_titleMarginStart com.oliver.bathurst.findmyandroiddevice:titleMarginStart}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_titleMarginTop com.oliver.bathurst.findmyandroiddevice:titleMarginTop}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_titleMargins com.oliver.bathurst.findmyandroiddevice:titleMargins}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_titleTextAppearance com.oliver.bathurst.findmyandroiddevice:titleTextAppearance}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_titleTextColor com.oliver.bathurst.findmyandroiddevice:titleTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_buttonGravity com.oliver.bathurst.individualproject:buttonGravity}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_collapseContentDescription com.oliver.bathurst.individualproject:collapseContentDescription}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_collapseIcon com.oliver.bathurst.individualproject:collapseIcon}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_contentInsetEnd com.oliver.bathurst.individualproject:contentInsetEnd}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_contentInsetEndWithActions com.oliver.bathurst.individualproject:contentInsetEndWithActions}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_contentInsetLeft com.oliver.bathurst.individualproject:contentInsetLeft}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_contentInsetRight com.oliver.bathurst.individualproject:contentInsetRight}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_contentInsetStart com.oliver.bathurst.individualproject:contentInsetStart}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_contentInsetStartWithNavigation com.oliver.bathurst.individualproject:contentInsetStartWithNavigation}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_logo com.oliver.bathurst.individualproject:logo}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_logoDescription com.oliver.bathurst.individualproject:logoDescription}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_maxButtonHeight com.oliver.bathurst.individualproject:maxButtonHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_navigationContentDescription com.oliver.bathurst.individualproject:navigationContentDescription}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_navigationIcon com.oliver.bathurst.individualproject:navigationIcon}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_popupTheme com.oliver.bathurst.individualproject:popupTheme}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_subtitle com.oliver.bathurst.individualproject:subtitle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_subtitleTextAppearance com.oliver.bathurst.individualproject:subtitleTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_subtitleTextColor com.oliver.bathurst.individualproject:subtitleTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_title com.oliver.bathurst.individualproject:title}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_titleMargin com.oliver.bathurst.individualproject:titleMargin}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_titleMarginBottom com.oliver.bathurst.individualproject:titleMarginBottom}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_titleMarginEnd com.oliver.bathurst.individualproject:titleMarginEnd}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_titleMarginStart com.oliver.bathurst.individualproject:titleMarginStart}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_titleMarginTop com.oliver.bathurst.individualproject:titleMarginTop}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_titleMargins com.oliver.bathurst.individualproject:titleMargins}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_titleTextAppearance com.oliver.bathurst.individualproject:titleTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_titleTextColor com.oliver.bathurst.individualproject:titleTextColor}</code></td><td></td></tr>
            </table>
            @see #Toolbar_android_gravity
            @see #Toolbar_android_minHeight
@@ -12748,7 +12758,7 @@ containing a value of this type.
         */
         public static final int Toolbar_android_minHeight = 1;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#buttonGravity}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#buttonGravity}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -12761,11 +12771,11 @@ containing a value of this type.
 <tr><td><code>top</code></td><td>0x30</td><td></td></tr>
 <tr><td><code>bottom</code></td><td>0x50</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:buttonGravity
+          @attr name com.oliver.bathurst.individualproject:buttonGravity
         */
         public static final int Toolbar_buttonGravity = 21;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#collapseContentDescription}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#collapseContentDescription}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -12775,21 +12785,21 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:collapseContentDescription
+          @attr name com.oliver.bathurst.individualproject:collapseContentDescription
         */
         public static final int Toolbar_collapseContentDescription = 23;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#collapseIcon}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#collapseIcon}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:collapseIcon
+          @attr name com.oliver.bathurst.individualproject:collapseIcon
         */
         public static final int Toolbar_collapseIcon = 22;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#contentInsetEnd}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#contentInsetEnd}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -12801,11 +12811,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:contentInsetEnd
+          @attr name com.oliver.bathurst.individualproject:contentInsetEnd
         */
         public static final int Toolbar_contentInsetEnd = 6;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#contentInsetEndWithActions}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#contentInsetEndWithActions}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -12817,11 +12827,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:contentInsetEndWithActions
+          @attr name com.oliver.bathurst.individualproject:contentInsetEndWithActions
         */
         public static final int Toolbar_contentInsetEndWithActions = 10;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#contentInsetLeft}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#contentInsetLeft}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -12833,11 +12843,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:contentInsetLeft
+          @attr name com.oliver.bathurst.individualproject:contentInsetLeft
         */
         public static final int Toolbar_contentInsetLeft = 7;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#contentInsetRight}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#contentInsetRight}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -12849,11 +12859,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:contentInsetRight
+          @attr name com.oliver.bathurst.individualproject:contentInsetRight
         */
         public static final int Toolbar_contentInsetRight = 8;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#contentInsetStart}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#contentInsetStart}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -12865,11 +12875,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:contentInsetStart
+          @attr name com.oliver.bathurst.individualproject:contentInsetStart
         */
         public static final int Toolbar_contentInsetStart = 5;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#contentInsetStartWithNavigation}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#contentInsetStartWithNavigation}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -12881,21 +12891,21 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:contentInsetStartWithNavigation
+          @attr name com.oliver.bathurst.individualproject:contentInsetStartWithNavigation
         */
         public static final int Toolbar_contentInsetStartWithNavigation = 9;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#logo}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#logo}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:logo
+          @attr name com.oliver.bathurst.individualproject:logo
         */
         public static final int Toolbar_logo = 4;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#logoDescription}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#logoDescription}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -12905,11 +12915,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:logoDescription
+          @attr name com.oliver.bathurst.individualproject:logoDescription
         */
         public static final int Toolbar_logoDescription = 26;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#maxButtonHeight}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#maxButtonHeight}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -12921,11 +12931,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:maxButtonHeight
+          @attr name com.oliver.bathurst.individualproject:maxButtonHeight
         */
         public static final int Toolbar_maxButtonHeight = 20;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#navigationContentDescription}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#navigationContentDescription}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -12935,31 +12945,31 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:navigationContentDescription
+          @attr name com.oliver.bathurst.individualproject:navigationContentDescription
         */
         public static final int Toolbar_navigationContentDescription = 25;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#navigationIcon}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#navigationIcon}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:navigationIcon
+          @attr name com.oliver.bathurst.individualproject:navigationIcon
         */
         public static final int Toolbar_navigationIcon = 24;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#popupTheme}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#popupTheme}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:popupTheme
+          @attr name com.oliver.bathurst.individualproject:popupTheme
         */
         public static final int Toolbar_popupTheme = 11;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#subtitle}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#subtitle}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -12969,21 +12979,21 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:subtitle
+          @attr name com.oliver.bathurst.individualproject:subtitle
         */
         public static final int Toolbar_subtitle = 3;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#subtitleTextAppearance}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#subtitleTextAppearance}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:subtitleTextAppearance
+          @attr name com.oliver.bathurst.individualproject:subtitleTextAppearance
         */
         public static final int Toolbar_subtitleTextAppearance = 13;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#subtitleTextColor}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#subtitleTextColor}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -12994,11 +13004,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:subtitleTextColor
+          @attr name com.oliver.bathurst.individualproject:subtitleTextColor
         */
         public static final int Toolbar_subtitleTextColor = 28;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#title}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#title}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -13008,11 +13018,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:title
+          @attr name com.oliver.bathurst.individualproject:title
         */
         public static final int Toolbar_title = 2;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#titleMargin}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#titleMargin}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -13024,11 +13034,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:titleMargin
+          @attr name com.oliver.bathurst.individualproject:titleMargin
         */
         public static final int Toolbar_titleMargin = 14;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#titleMarginBottom}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#titleMarginBottom}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -13040,11 +13050,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:titleMarginBottom
+          @attr name com.oliver.bathurst.individualproject:titleMarginBottom
         */
         public static final int Toolbar_titleMarginBottom = 18;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#titleMarginEnd}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#titleMarginEnd}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -13056,11 +13066,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:titleMarginEnd
+          @attr name com.oliver.bathurst.individualproject:titleMarginEnd
         */
         public static final int Toolbar_titleMarginEnd = 16;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#titleMarginStart}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#titleMarginStart}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -13072,11 +13082,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:titleMarginStart
+          @attr name com.oliver.bathurst.individualproject:titleMarginStart
         */
         public static final int Toolbar_titleMarginStart = 15;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#titleMarginTop}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#titleMarginTop}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -13088,11 +13098,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:titleMarginTop
+          @attr name com.oliver.bathurst.individualproject:titleMarginTop
         */
         public static final int Toolbar_titleMarginTop = 17;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#titleMargins}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#titleMargins}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -13104,21 +13114,21 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:titleMargins
+          @attr name com.oliver.bathurst.individualproject:titleMargins
         */
         public static final int Toolbar_titleMargins = 19;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#titleTextAppearance}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#titleTextAppearance}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:titleTextAppearance
+          @attr name com.oliver.bathurst.individualproject:titleTextAppearance
         */
         public static final int Toolbar_titleTextAppearance = 12;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#titleTextColor}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#titleTextColor}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -13129,7 +13139,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:titleTextColor
+          @attr name com.oliver.bathurst.individualproject:titleTextColor
         */
         public static final int Toolbar_titleTextColor = 27;
         /** Attributes that can be used with a View.
@@ -13140,9 +13150,9 @@ containing a value of this type.
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #View_android_focusable android:focusable}</code></td><td></td></tr>
            <tr><td><code>{@link #View_android_theme android:theme}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_paddingEnd com.oliver.bathurst.findmyandroiddevice:paddingEnd}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_paddingStart com.oliver.bathurst.findmyandroiddevice:paddingStart}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_theme com.oliver.bathurst.findmyandroiddevice:theme}</code></td><td></td></tr>
+           <tr><td><code>{@link #View_paddingEnd com.oliver.bathurst.individualproject:paddingEnd}</code></td><td></td></tr>
+           <tr><td><code>{@link #View_paddingStart com.oliver.bathurst.individualproject:paddingStart}</code></td><td></td></tr>
+           <tr><td><code>{@link #View_theme com.oliver.bathurst.individualproject:theme}</code></td><td></td></tr>
            </table>
            @see #View_android_focusable
            @see #View_android_theme
@@ -13167,7 +13177,7 @@ containing a value of this type.
         */
         public static final int View_android_theme = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#paddingEnd}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#paddingEnd}
           attribute's value can be found in the {@link #View} array.
 
 
@@ -13179,11 +13189,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:paddingEnd
+          @attr name com.oliver.bathurst.individualproject:paddingEnd
         */
         public static final int View_paddingEnd = 3;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#paddingStart}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#paddingStart}
           attribute's value can be found in the {@link #View} array.
 
 
@@ -13195,17 +13205,17 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:paddingStart
+          @attr name com.oliver.bathurst.individualproject:paddingStart
         */
         public static final int View_paddingStart = 2;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#theme}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#theme}
           attribute's value can be found in the {@link #View} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.oliver.bathurst.findmyandroiddevice:theme
+          @attr name com.oliver.bathurst.individualproject:theme
         */
         public static final int View_theme = 4;
         /** Attributes that can be used with a ViewBackgroundHelper.
@@ -13215,8 +13225,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #ViewBackgroundHelper_android_background android:background}</code></td><td></td></tr>
-           <tr><td><code>{@link #ViewBackgroundHelper_backgroundTint com.oliver.bathurst.findmyandroiddevice:backgroundTint}</code></td><td></td></tr>
-           <tr><td><code>{@link #ViewBackgroundHelper_backgroundTintMode com.oliver.bathurst.findmyandroiddevice:backgroundTintMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #ViewBackgroundHelper_backgroundTint com.oliver.bathurst.individualproject:backgroundTint}</code></td><td></td></tr>
+           <tr><td><code>{@link #ViewBackgroundHelper_backgroundTintMode com.oliver.bathurst.individualproject:backgroundTintMode}</code></td><td></td></tr>
            </table>
            @see #ViewBackgroundHelper_android_background
            @see #ViewBackgroundHelper_backgroundTint
@@ -13232,7 +13242,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int ViewBackgroundHelper_android_background = 0;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#backgroundTint}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#backgroundTint}
           attribute's value can be found in the {@link #ViewBackgroundHelper} array.
 
 
@@ -13243,11 +13253,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.oliver.bathurst.findmyandroiddevice:backgroundTint
+          @attr name com.oliver.bathurst.individualproject:backgroundTint
         */
         public static final int ViewBackgroundHelper_backgroundTint = 1;
         /**
-          <p>This symbol is the offset where the {@link com.oliver.bathurst.findmyandroiddevice.R.attr#backgroundTintMode}
+          <p>This symbol is the offset where the {@link com.oliver.bathurst.individualproject.R.attr#backgroundTintMode}
           attribute's value can be found in the {@link #ViewBackgroundHelper} array.
 
 
@@ -13263,7 +13273,7 @@ containing a value of this type.
 <tr><td><code>multiply</code></td><td>14</td><td></td></tr>
 <tr><td><code>screen</code></td><td>15</td><td></td></tr>
 </table>
-          @attr name com.oliver.bathurst.findmyandroiddevice:backgroundTintMode
+          @attr name com.oliver.bathurst.individualproject:backgroundTintMode
         */
         public static final int ViewBackgroundHelper_backgroundTintMode = 2;
         /** Attributes that can be used with a ViewStubCompat.

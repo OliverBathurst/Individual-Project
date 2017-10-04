@@ -161,7 +161,6 @@ public class SettingsFragment extends PreferenceFragment {
             });
 
 
-
             Preference devAdmin = findPreference("grant_device_admin");
             devAdmin.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
@@ -177,6 +176,23 @@ public class SettingsFragment extends PreferenceFragment {
                     return false;
                 }
             });
+            Preference reg = findPreference("register");
+            reg.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    //register();
+                    return false;
+                }
+            });
+            Preference unreg = findPreference("unregister");
+            unreg.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    //unregister();
+                    return false;
+                }
+            });
+
 
             EditTextPreference emailUpdates = (EditTextPreference) findPreference("email_string");
             if (emailUpdates.getText() != null && emailUpdates.getText().trim().length() != 0) {
@@ -340,7 +356,6 @@ public class SettingsFragment extends PreferenceFragment {
                 }
             });
 
-
             Preference.OnPreferenceChangeListener simpleList = new Preference.OnPreferenceChangeListener() {
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -444,4 +459,5 @@ public class SettingsFragment extends PreferenceFragment {
             super.onActivityResult(requestCode, resultCode, data);
         }
     }
+
 }

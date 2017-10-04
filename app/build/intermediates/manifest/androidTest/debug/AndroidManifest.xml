@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.oliver.bathurst.findmyandroiddevice.test" >
+    package="com.oliver.bathurst.individualproject.test" >
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -10,8 +10,8 @@
         android:name="android.support.test.runner.AndroidJUnitRunner"
         android:functionalTest="false"
         android:handleProfiling="false"
-        android:label="Tests for com.oliver.bathurst.findmyandroiddevice"
-        android:targetPackage="com.oliver.bathurst.findmyandroiddevice" />
+        android:label="Tests for com.oliver.bathurst.individualproject"
+        android:targetPackage="com.oliver.bathurst.individualproject" />
 
     <application>
         <uses-library android:name="android.test.runner" />

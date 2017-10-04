@@ -434,6 +434,26 @@
         android:layout="@layout/divider_preference">
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="Add GCM Messaging">
+        <Preference
+            android:key="register"
+            android:icon="@drawable/ic_add_black_24dp"
+            android:title="Register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Preference
+            android:key="unregister"
+            android:icon="@drawable/ic_remove_black_24dp"
+            android:title="Unregister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout="@layout/divider_preference">
+    </PreferenceCategory>
+
         <PreferenceCategory
             android:title="Account">
             <Preference
