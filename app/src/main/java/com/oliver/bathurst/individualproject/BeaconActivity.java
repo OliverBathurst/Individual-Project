@@ -96,7 +96,14 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
     private void redrawListView(){
         names.clear();
         for(BluetoothDevice i : deviceList){
-            names.add(i.getName());
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
+                if(i.getType() == BluetoothDevice.DEVICE_TYPE_LE){
+                    String le = i.getName() + " LOW ENERGY";
+                    names.add(le);
+                }else{
+                    names.add(i.getName());
+                }
+            }
         }
         devices.setAdapter(new ArrayAdapter(this, R.layout.list_view, R.id.listviewAdapt, names));
     }
@@ -125,6 +132,14 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+    protected void onPause(){
+        super.onPause();
+
+    }
+    protected void onResume(){
+        super.onResume();
+    }
+
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
