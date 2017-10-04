@@ -22,6 +22,8 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.READ_CALL_LOG" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
     <permission
@@ -114,7 +116,9 @@
             </intent-filter>
         </receiver>
 
-        <service android:name="com.oliver.bathurst.individualproject.FirebaseMessagingService" >
+        <service
+            android:name="com.oliver.bathurst.individualproject.FirebaseMessagingService"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
