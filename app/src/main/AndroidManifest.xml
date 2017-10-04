@@ -96,13 +96,8 @@
                 <action android:name="android.intent.action.SIM_STATE_CHANGED" />
             </intent-filter>
         </receiver>
-
-        <service
-            android:name=".FirebaseMessagingService" android:exported = "true">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
-            </intent-filter>
-        </service>
+        <receiver android:name=".BeaconActivity$mReceiver"
+            android:enabled="true" />
 
         <meta-data android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
