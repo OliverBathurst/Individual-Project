@@ -132,13 +132,6 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    protected void onPause(){
-        super.onPause();
-
-    }
-    protected void onResume(){
-        super.onResume();
-    }
 
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override

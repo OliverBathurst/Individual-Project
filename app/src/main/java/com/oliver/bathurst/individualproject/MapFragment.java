@@ -98,11 +98,11 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
 
         try {
             if(locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
-                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 1, this);
+                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 4, this);
             }else if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)){
-                locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 2000, 1, this);
+                locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 2000, 4, this);
             }else if (locationManager.isProviderEnabled(LocationManager.PASSIVE_PROVIDER)){
-                locationManager.requestLocationUpdates(LocationManager.PASSIVE_PROVIDER, 2000, 1, this);
+                locationManager.requestLocationUpdates(LocationManager.PASSIVE_PROVIDER, 2000, 4, this);
             }else{
                 Toast.makeText(getActivity(), "No providers available", Toast.LENGTH_LONG).show();
             }
@@ -158,8 +158,7 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
 
             marker = gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
                     .title("Device Location: " + loc.getLatitude() + loc.getLongitude()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f));
-            CameraPosition cam = CameraPosition.builder().target(new LatLng(loc.getLatitude(), loc.getLongitude())).zoom(19).bearing(0).tilt(45).build();
-            gMap.moveCamera(CameraUpdateFactory.newCameraPosition(cam));
+            gMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(loc.getLatitude(), loc.getLongitude())).zoom(19).bearing(0).tilt(45).build()));
 
             showExtras(loc);
         }catch(Exception e){
@@ -202,7 +201,7 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
             rotation.setText(String.format("%s%s", getString(R.string.degrees), Float.toString(Math.round(event.values[0]))));
             if(marker != null) {
                 ORIENTATION = Math.round(event.values[0]);
-                marker.setRotation(Math.round(event.values[0]));
+                marker.setRotation(ORIENTATION);
             }
         }else if(event.sensor.getType() == Sensor.TYPE_PRESSURE){
             TextView press = (TextView) mView.findViewById(R.id.pressure);
@@ -215,6 +214,8 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
             gMap.clear();
             marker = gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
                     .title("Device Location: " + loc.getLatitude() + loc.getLongitude()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f, 0.5f).rotation(ORIENTATION));
+            gMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(loc.getLatitude(), loc.getLongitude())).zoom(19).bearing(0).tilt(45).build()));
+
             showExtras(loc);
             TextView txtView = (TextView) mView.findViewById(R.id.declare);
             txtView.setText(getString(R.string.declaration).concat(" " + loc.getProvider()));
