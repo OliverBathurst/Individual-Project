@@ -1,8 +1,6 @@
 package com.oliver.bathurst.individualproject;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
@@ -50,13 +48,11 @@ class Server{
     }
 
     private class HttpServerThread extends Thread {
-        static final int HttpServerPORT = 8888;
-
         @Override
         public void run() {
-            Socket socket = null;
+            Socket socket;
             try {
-                httpServerSocket = new ServerSocket(HttpServerPORT);
+                httpServerSocket = new ServerSocket(8888);
 
                 while(true){
                     socket = httpServerSocket.accept();
@@ -69,23 +65,18 @@ class Server{
         }
     }
     private class HttpResponseThread extends Thread {
-        Socket socket;
-        String h1;
+        final Socket socket;
+        final String h1;
 
         HttpResponseThread(Socket socket, String msg){
             this.socket = socket;
             h1 = msg;
         }
+
         @Override
         public void run() {
-            BufferedReader is;
             PrintWriter os;
-            String request;
-
             try {
-                is = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                request = is.readLine();
-
                 os = new PrintWriter(socket.getOutputStream(), true);
 
                 String response =

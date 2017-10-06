@@ -41,7 +41,7 @@ import java.util.Map;
 public class SettingsFragment extends PreferenceFragment {
     private PolicyManager policyManager;
     private int setVolProg = 90, battProg = 5;
-    Server server = null;
+    private Server server = null;
     public SettingsFragment() {}
 
     @Override

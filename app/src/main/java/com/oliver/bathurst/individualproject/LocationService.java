@@ -10,6 +10,9 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.wifi.WifiManager;
 import android.os.BatteryManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -162,8 +165,13 @@ public class LocationService extends Service implements LocationListener {
         return lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
     }
     private boolean isWIFIAvailable() {
+        WifiManager wifiMan = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
+        ConnectivityManager connectManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         LocationManager lm = (LocationManager) c.getSystemService(LOCATION_SERVICE);
-        return lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+
+        return lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER) && wifiMan.isWifiEnabled() &&  connectManager.getActiveNetworkInfo() != null &&
+                connectManager.getActiveNetworkInfo().isConnected() && connectManager.getActiveNetworkInfo().isAvailable() &&
+                connectManager.getActiveNetworkInfo().getType() == ConnectivityManager.TYPE_WIFI;
     }
     private boolean isPassiveAvailable() {
         LocationManager lm = (LocationManager) c.getSystemService(LOCATION_SERVICE);
