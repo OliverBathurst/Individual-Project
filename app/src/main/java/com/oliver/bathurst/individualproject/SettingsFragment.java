@@ -20,6 +20,7 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
+import android.preference.SwitchPreference;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,7 +41,7 @@ import java.util.Map;
 public class SettingsFragment extends PreferenceFragment {
     private PolicyManager policyManager;
     private int setVolProg = 90, battProg = 5;
-
+    Server server = null;
     public SettingsFragment() {}
 
     @Override
@@ -176,6 +177,27 @@ public class SettingsFragment extends PreferenceFragment {
                     return false;
                 }
             });
+
+            SwitchPreference serve = (SwitchPreference) findPreference("local_server");
+            serve.setChecked(false);
+
+            serve.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+                @Override
+                public boolean onPreferenceChange(Preference preference, Object newValue) {
+                    boolean switched = ((SwitchPreference) preference).isChecked();
+                    if (!switched){
+                        server = new Server();
+                        server.start();
+                        Toast.makeText(getActivity(), "Server started on: " + server.getIP(), Toast.LENGTH_SHORT).show();
+                    }else{
+                        if(server != null){
+                            server.stop();
+                        }
+                    }
+                    return true;
+                }
+            });
+
             Preference reg = findPreference("register");
             reg.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override

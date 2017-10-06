@@ -458,7 +458,7 @@
             android:title="Account">
             <Preference
                 android:key="backup_shared_pref"
-                android:icon="@drawable/ic_cloud_upload_black_24dp"
+                android:icon="@drawable/ic_settings_backup_restore_black_24dp"
                 android:title="Backup Preferences"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -466,5 +466,15 @@
 
         <PreferenceCategory
             android:layout="@layout/divider_preference">
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:title="Local Server">
+            <SwitchPreference
+                android:key="local_server"
+                android:icon="@drawable/ic_cloud_upload_black_24dp"
+                android:title="Enable Local Server"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </PreferenceCategory>
 </PreferenceScreen>
