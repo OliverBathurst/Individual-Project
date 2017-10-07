@@ -98,11 +98,11 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
 
         try {
             if(locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
-                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 4, this);
+                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 0, this);
             }else if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)){
-                locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 2000, 4, this);
+                locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 2000, 0, this);
             }else if (locationManager.isProviderEnabled(LocationManager.PASSIVE_PROVIDER)){
-                locationManager.requestLocationUpdates(LocationManager.PASSIVE_PROVIDER, 2000, 4, this);
+                locationManager.requestLocationUpdates(LocationManager.PASSIVE_PROVIDER, 2000, 0, this);
             }else{
                 Toast.makeText(getActivity(), "No providers available", Toast.LENGTH_LONG).show();
             }
