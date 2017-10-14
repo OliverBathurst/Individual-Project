@@ -13,6 +13,14 @@ import java.net.Socket;
 
 import static android.content.Context.WIFI_SERVICE;
 
+/**
+ * Created by Oliver on 03/10/2017.
+ * All Rights Reserved
+ * Unauthorized copying of this file via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Written by Oliver Bathurst <oliverbathurst12345@gmail.com>
+ */
+
 class Server{
     private ServerSocket httpServerSocket;
     private final Context c;
@@ -86,6 +94,7 @@ class Server{
         }
         private String webContent(){
             Location loc = new LocationService(c).getLoc();
+            PermissionsManager perm = new PermissionsManager(c);
             return
                     "<html>\n" +
                             "  <head>\n" +
@@ -115,6 +124,10 @@ class Server{
                             "\t<script async defer\n" +
                             "    src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyDh84qms-mgdSRGTOUckwDdITPey7X3O18&callback=initMap\">\n" +
                             "    </script>\n" +
+                            "   <h3>Your Device Information</h3>\n" +
+                            "   <p>" + perm.getDeviceAttributes() + "</p>\n" +
+                            "   <p>" + perm.getAndroidVersion() + "</p>\n" +
+                            "   <p>" + perm.getCellInfo() + "</p>\n" +
                             "  </body>\n" +
                             "</html>";
         }
