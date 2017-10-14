@@ -179,16 +179,16 @@ public class SettingsFragment extends PreferenceFragment {
             });
 
             SwitchPreference serve = (SwitchPreference) findPreference("local_server");
-            serve.setChecked(false);
+            serve.setChecked(Server.running);
 
             serve.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object newValue) {
                     boolean switched = ((SwitchPreference) preference).isChecked();
                     if (!switched){
-                        server = new Server();
+                        server = new Server(getActivity());
                         server.start();
-                        Toast.makeText(getActivity(), "Server started on: " + server.getIP(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Server started on: " + server.getIP() + ":" + server.getPort(), Toast.LENGTH_SHORT).show();
                     }else{
                         if(server != null){
                             server.stop();
