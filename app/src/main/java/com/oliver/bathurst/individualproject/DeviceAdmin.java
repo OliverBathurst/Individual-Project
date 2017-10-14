@@ -2,9 +2,10 @@ package com.oliver.bathurst.individualproject;
 
 import android.app.admin.DeviceAdminReceiver;
 import android.app.admin.DevicePolicyManager;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.widget.Toast;
 
 /**
@@ -23,8 +24,15 @@ public class DeviceAdmin extends DeviceAdminReceiver {
         super.onDisabled(context, intent);
     }
     public CharSequence onDisableRequested(Context context, Intent intent) {
-        Toast.makeText(context, "Disabled Requested", Toast.LENGTH_SHORT).show();
-        return super.onDisableRequested(context, intent);
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        if(sharedPreferences.getBoolean("prevent_uninstall", false)){
+            DevicePolicyManager deviceManger = (DevicePolicyManager) context.getSystemService(
+                    Context.DEVICE_POLICY_SERVICE);
+            deviceManger.lockNow();
+            return "WARNING: some features will be disabled, continue?";
+        }else{
+            return "Are you sure?";
+        }
     }
     @Override
     public void onEnabled(Context context, Intent intent) {

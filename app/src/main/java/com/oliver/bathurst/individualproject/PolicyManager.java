@@ -26,10 +26,6 @@ class PolicyManager {
         return mDPM.isAdminActive(adminComponent);
     }
 
-    ComponentName getAdminComponent() {
-        return adminComponent;
-    }
-
     void lockPhone(){
         if(isAdminActive()) {
             mDPM.lockNow();

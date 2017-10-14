@@ -14,6 +14,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
+        <CheckBoxPreference
+            android:key="prevent_uninstall"
+            android:title="Prevent Uninstall"
+            android:icon="@drawable/ic_lock_black_24dp" />
+
         <EditTextPreference
             android:key="app_pass"
             android:icon="@drawable/ic_lock_black_24dp"
