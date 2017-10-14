@@ -39,7 +39,6 @@ import java.util.Map;
  */
 
 public class SettingsFragment extends PreferenceFragment {
-    private PolicyManager policyManager;
     private int setVolProg = 90, battProg = 5;
     private Server server = null;
     public SettingsFragment() {}
@@ -48,7 +47,7 @@ public class SettingsFragment extends PreferenceFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.fragment_settings);
-        policyManager = new PolicyManager(getActivity());
+        final PolicyManager pol = new PolicyManager(getActivity());
         final PermissionsManager newPerm = new PermissionsManager(getActivity());
         final SharedPreferences.Editor settings = PreferenceManager.getDefaultSharedPreferences(getActivity()).edit();
         final SharedPreferences settingsView = PreferenceManager.getDefaultSharedPreferences(getActivity());
@@ -166,15 +165,14 @@ public class SettingsFragment extends PreferenceFragment {
             devAdmin.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                        Toast.makeText(getActivity(), "Select 'Device Administrators' and 'App name'", Toast.LENGTH_LONG).show();
+                    if(!pol.isAdminActive()) {
                         Intent activateDeviceAdmin = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
-                        activateDeviceAdmin.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, policyManager.getAdminComponent());
-                        activateDeviceAdmin.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION, "After activating admin, you will be able to access advanced features.");
+                        activateDeviceAdmin.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, new ComponentName(getActivity(), DeviceAdmin.class));
                         startActivityForResult(activateDeviceAdmin, PolicyManager.DPM_ACTIVATION_REQUEST_CODE);
-                        Intent dialogIntent = new Intent(android.provider.Settings.ACTION_SECURITY_SETTINGS);
-                        dialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(dialogIntent);
-                    return false;
+                    }else{
+                        Toast.makeText(getActivity(), "Admin already active", Toast.LENGTH_SHORT).show();
+                    }
+                    return true;
                 }
             });
 
@@ -219,14 +217,6 @@ public class SettingsFragment extends PreferenceFragment {
             EditTextPreference emailUpdates = (EditTextPreference) findPreference("email_string");
             if (emailUpdates.getText() != null && emailUpdates.getText().trim().length() != 0) {
                 emailUpdates.setSummary(emailUpdates.getText());
-            }
-
-            PolicyManager pol = new PolicyManager(getActivity());
-            Preference adminStatus = findPreference("current_status");
-            if(pol.isAdminActive()) {
-                adminStatus.setTitle("Admin Access: Enabled");
-            }else{
-                adminStatus.setTitle("Admin Access: Disabled");
             }
 
             ////////TRIGGERS/////////////////////

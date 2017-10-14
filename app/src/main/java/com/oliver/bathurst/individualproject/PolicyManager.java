@@ -35,7 +35,6 @@ class PolicyManager {
             mDPM.lockNow();
         }
     }
-
     ///////WARNING////////////
     void wipePhone(){
         if(isAdminActive()) {
