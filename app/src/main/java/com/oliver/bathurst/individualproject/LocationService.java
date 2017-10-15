@@ -45,26 +45,23 @@ public class LocationService extends Service implements LocationListener {
         final SharedPreferences settingsView = PreferenceManager.getDefaultSharedPreferences(c);
         Location loc;
         
-        Location gps = switchPref(settingsView.getString("first", "GPS"));
-        if (gps != null) {
-            loc = gps;
-            DECLARED_BY = "GPS";
+        Location first = switchPref(settingsView.getString("first", "GPS"));
+        if (first != null) {
+            loc = first;
         } else {
-            Location wifi = switchPref(settingsView.getString("second", "Wi-Fi"));
-            if (wifi != null) {
-                loc = wifi;
-                DECLARED_BY = "Wi-Fi";
+            Location second = switchPref(settingsView.getString("second", "Wi-Fi"));
+            if (second != null) {
+                loc = second;
             } else {
-                Location pass = switchPref(settingsView.getString("third", "Passive"));
-                if (pass != null) {
-                    loc = pass;
-                    DECLARED_BY = "Passive";
+                Location third = switchPref(settingsView.getString("third", "Passive"));
+                if (third != null) {
+                    loc = third;
                 } else {
                     loc = new Location("Device Location");
-                    DECLARED_BY = "ERROR!";
                 }
             }
         }
+        DECLARED_BY = loc.getProvider() != null ? loc.getProvider() : "ERROR";
         return loc;
     }
     private Location switchPref(String provider){
@@ -163,7 +160,7 @@ public class LocationService extends Service implements LocationListener {
         return lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
     }
     private boolean isWIFIAvailable() {
-        WifiManager wifiMan = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
+        WifiManager wifiMan = (WifiManager) c.getApplicationContext().getSystemService(WIFI_SERVICE);
         LocationManager lm = (LocationManager) c.getSystemService(LOCATION_SERVICE);
 
         return lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER) && wifiMan.isWifiEnabled();

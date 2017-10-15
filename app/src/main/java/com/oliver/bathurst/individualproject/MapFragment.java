@@ -47,9 +47,9 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
     private Circle circle, circle_margin;
     private TextView marginOfError;
     private GoogleMap gMap;
-    private SensorManager sensorManager, baro;
+    private SensorManager sensorManager;
     private LocationManager locationManager;
-    private Sensor gyro, barometer;
+    private Sensor gyro;
     private Marker marker;
 
     public MapFragment(){}
@@ -58,11 +58,6 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
         mView =  inflater.inflate(R.layout.fragment_map, container, false);
         marginOfError = (TextView) mView.findViewById(R.id.margin_of_error);
 
-        baro = (SensorManager) getActivity().getSystemService(SENSOR_SERVICE);
-        if (baro.getDefaultSensor(Sensor.TYPE_PRESSURE) != null) {
-            barometer = baro.getDefaultSensor(Sensor.TYPE_PRESSURE);
-            baro.registerListener(this, barometer, SensorManager.SENSOR_DELAY_NORMAL);
-        }
 
         sensorManager = (SensorManager) getActivity().getSystemService(SENSOR_SERVICE);
         if (sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION) != null) {
@@ -90,30 +85,53 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
             } catch (SecurityException ignored) {}
         }
 
-        if (barometer != null){
-            try {
-                baro.registerListener(this, barometer, SensorManager.SENSOR_DELAY_NORMAL);
-            } catch (SecurityException ignored){}
-        }
-
-        try {
-            if(locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
-                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 0, this);
-            }else if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)){
-                locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 2000, 0, this);
-            }else if (locationManager.isProviderEnabled(LocationManager.PASSIVE_PROVIDER)){
-                locationManager.requestLocationUpdates(LocationManager.PASSIVE_PROVIDER, 2000, 0, this);
-            }else{
-                Toast.makeText(getActivity(), "No providers available", Toast.LENGTH_LONG).show();
+        final SharedPreferences settingsView = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        if(!tryProvider(settingsView.getString("first", "GPS"))){
+            if(!tryProvider(settingsView.getString("second", "Wi-Fi"))){
+                if(!tryProvider(settingsView.getString("third", "Passive"))){
+                    Toast.makeText(getActivity(), "No providers available", Toast.LENGTH_SHORT).show();
+                }
             }
-        }catch(SecurityException ignored){}
-
+        }
+    }
+    boolean tryProvider(String prov){
+        boolean result = false;
+        try {
+            switch (prov) {
+                case "GPS":
+                    if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+                        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 1, this);
+                        result = true;
+                    }else{
+                        result = false;
+                    }
+                    break;
+                case "Wi-Fi":
+                    if(locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+                        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 2000, 1, this);
+                        result = true;
+                    }else{
+                        result = false;
+                    }
+                    break;
+                case "Passive":
+                    if(locationManager.isProviderEnabled(LocationManager.PASSIVE_PROVIDER)){
+                        locationManager.requestLocationUpdates(LocationManager.PASSIVE_PROVIDER,2000,1,this);
+                        result = true;
+                    }else{
+                        result = false;
+                    }
+                    break;
+            }
+        }catch(SecurityException e){
+            Toast.makeText(getActivity(), "Security Exception: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+        return result;
     }
     public void onPause() {
         super.onPause();
         sensorManager.unregisterListener(this);
         locationManager.removeUpdates(this);
-        baro.unregisterListener(this);
     }
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -199,13 +217,10 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
         if (event.sensor.getType() == Sensor.TYPE_ORIENTATION) {
             TextView rotation = (TextView) mView.findViewById(R.id.degrees);
             rotation.setText(String.format("%s%s", getString(R.string.degrees), Float.toString(Math.round(event.values[0]))));
+            ORIENTATION = Math.round(event.values[0]);
             if(marker != null) {
-                ORIENTATION = Math.round(event.values[0]);
                 marker.setRotation(ORIENTATION);
             }
-        }else if(event.sensor.getType() == Sensor.TYPE_PRESSURE){
-            TextView press = (TextView) mView.findViewById(R.id.pressure);
-            press.setText(String.format("%s%s", getString(R.string.pressure), event.values[0]));
         }
     }
     @Override

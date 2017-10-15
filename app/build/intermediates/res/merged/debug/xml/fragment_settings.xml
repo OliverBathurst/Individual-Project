@@ -17,6 +17,7 @@
         <CheckBoxPreference
             android:key="prevent_uninstall"
             android:title="Prevent Uninstall"
+            android:summary="Requires Admin"
             android:icon="@drawable/ic_lock_black_24dp" />
 
         <EditTextPreference
