@@ -51,13 +51,14 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
     private LocationManager locationManager;
     private Sensor gyro;
     private Marker marker;
+    private SharedPreferences settings;
 
     public MapFragment(){}
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mView =  inflater.inflate(R.layout.fragment_map, container, false);
+        settings = PreferenceManager.getDefaultSharedPreferences(getActivity());
         marginOfError = (TextView) mView.findViewById(R.id.margin_of_error);
-
 
         sensorManager = (SensorManager) getActivity().getSystemService(SENSOR_SERVICE);
         if (sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION) != null) {
@@ -84,17 +85,17 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
                 sensorManager.registerListener(this, gyro, SensorManager.SENSOR_DELAY_NORMAL);
             } catch (SecurityException ignored) {}
         }
-
-        final SharedPreferences settingsView = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        if(!tryProvider(settingsView.getString("first", "GPS"))){
-            if(!tryProvider(settingsView.getString("second", "Wi-Fi"))){
-                if(!tryProvider(settingsView.getString("third", "Passive"))){
+        settings = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        if(!tryProvider(settings.getString("first", "GPS"))){
+            if(!tryProvider(settings.getString("second", "Wi-Fi"))){
+                if(!tryProvider(settings.getString("third", "Passive"))){
                     Toast.makeText(getActivity(), "No providers available", Toast.LENGTH_SHORT).show();
                 }
             }
         }
     }
-    boolean tryProvider(String prov){
+    @SuppressWarnings("BooleanMethodIsAlwaysInverted")
+    private boolean tryProvider(String prov){
         boolean result = false;
         try {
             switch (prov) {
@@ -137,10 +138,7 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
     public void onMapReady(GoogleMap googleMap) {
         try {
             gMap = googleMap;
-            LocationService locService = new LocationService(getActivity());
-            Location loc = locService.getLoc();
-
-            SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getActivity());
+            Location loc = new LocationService(getActivity()).getLoc();
 
             String map = settings.getString("mapType", null);
             if (map != null) {
@@ -166,7 +164,7 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
             }
 
             TextView txtView = (TextView) mView.findViewById(R.id.declare);
-            txtView.setText(getString(R.string.declaration).concat(" " + locService.DECLARED_BY));
+            txtView.setText(getString(R.string.declaration).concat(" " + loc.getProvider()));
             TextView acc = (TextView) mView.findViewById(R.id.locationAcc);
             acc.setText(String.format("%s%s", getString(R.string.accuracy), Float.toString(loc.getAccuracy())));
             TextView gpsElevation = (TextView) mView.findViewById(R.id.gpsElevation);
@@ -184,7 +182,6 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
         }
     }
     private void showExtras(Location loc){
-        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getActivity());
         boolean isGeoEnabled = settings.getBoolean("geo_fence_enable_or_not", false);
         boolean showMargin = settings.getBoolean("show_margin", false);
         if(showMargin){
@@ -231,7 +228,10 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
                     .title("Device Location: " + loc.getLatitude() + loc.getLongitude()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f, 0.5f).rotation(ORIENTATION));
             gMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(loc.getLatitude(), loc.getLongitude())).zoom(19).bearing(0).tilt(45).build()));
 
-            showExtras(loc);
+            if(settings != null) {
+                showExtras(loc);
+            }
+
             TextView txtView = (TextView) mView.findViewById(R.id.declare);
             txtView.setText(getString(R.string.declaration).concat(" " + loc.getProvider()));
             TextView acc = (TextView) mView.findViewById(R.id.locationAcc);

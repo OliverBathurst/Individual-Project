@@ -33,7 +33,6 @@ import android.widget.Toast;
 
 @SuppressWarnings("DefaultFileTemplate")
 public class LocationService extends Service implements LocationListener {
-    String DECLARED_BY = "";
     private static final long MIN_DISTANCE_CHANGE_FOR_UPDATES = 0, MIN_TIME_BW_UPDATES = 0;
     private final Context c;
 
@@ -61,7 +60,6 @@ public class LocationService extends Service implements LocationListener {
                 }
             }
         }
-        DECLARED_BY = loc.getProvider() != null ? loc.getProvider() : "ERROR";
         return loc;
     }
     private Location switchPref(String provider){
@@ -80,12 +78,8 @@ public class LocationService extends Service implements LocationListener {
         return loc;
     }
     String batteryLife() {
-        String life = "Build number low";
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            BatteryManager bm = (BatteryManager) c.getSystemService(Context.BATTERY_SERVICE);
-            life = String.valueOf(bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY));
-        }
-        return life;
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ? String.valueOf(((BatteryManager) c.getSystemService(Context.BATTERY_SERVICE))
+                .getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)) : "Build number low";
     }
     @SuppressLint("HardwareIds")
     String IMEI(){

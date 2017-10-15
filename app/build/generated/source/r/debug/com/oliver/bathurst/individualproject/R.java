@@ -3820,22 +3820,21 @@ containing a value of this type.
         public static final int path_password_strike_through=0x7f070049;
         public static final int please_select_battery_percent=0x7f07004a;
         public static final int please_select_volume=0x7f07004b;
-        public static final int pressure=0x7f07004c;
-        public static final int project_id=0x7f07004d;
-        public static final int radius=0x7f07004e;
-        public static final int radiuscolon=0x7f07004f;
-        public static final int save=0x7f070050;
-        public static final int scale=0x7f070051;
-        public static final int scalenozero=0x7f070052;
-        public static final int scalewithone=0x7f070053;
+        public static final int project_id=0x7f07004c;
+        public static final int radius=0x7f07004d;
+        public static final int radiuscolon=0x7f07004e;
+        public static final int save=0x7f07004f;
+        public static final int scale=0x7f070050;
+        public static final int scalenozero=0x7f070051;
+        public static final int scalewithone=0x7f070052;
         public static final int search_menu_title=0x7f070024;
-        public static final int start=0x7f070054;
+        public static final int start=0x7f070053;
         public static final int status_bar_notification_info_overflow=0x7f070025;
-        public static final int title_activity_beacon=0x7f070055;
-        public static final int title_activity_reorder=0x7f070056;
-        public static final int title_dashboard=0x7f070057;
-        public static final int title_device=0x7f070058;
-        public static final int title_home=0x7f070059;
+        public static final int title_activity_beacon=0x7f070054;
+        public static final int title_activity_reorder=0x7f070055;
+        public static final int title_dashboard=0x7f070056;
+        public static final int title_device=0x7f070057;
+        public static final int title_home=0x7f070058;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f0900a1;

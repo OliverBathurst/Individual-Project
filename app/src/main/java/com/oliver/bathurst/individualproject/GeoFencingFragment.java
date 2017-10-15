@@ -164,8 +164,7 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
     public void onMapReady(GoogleMap googleMap) {
         try {
             gMap = googleMap;
-            LocationService locService = new LocationService(getActivity());
-            loc = locService.getLoc();
+            loc = new LocationService(getActivity()).getLoc();
 
             SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getContext());
             boolean showMargin = settings.getBoolean("show_margin", false);
@@ -192,7 +191,7 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
                 gMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             }
             TextView txtView = (TextView) mView.findViewById(R.id.declare);
-            txtView.setText(getString(R.string.declaration).concat(" " + locService.DECLARED_BY));
+            txtView.setText(getString(R.string.declaration).concat(" " + loc.getProvider()));
 
             if (showMargin) {
                 if (circle_margin != null) {

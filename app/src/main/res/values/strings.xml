@@ -17,7 +17,6 @@
     <string name="information">I N F O R M A T I O N</string>
     <string name="degrees">Degrees: </string>
     <string name="accuracy">Accuracy: </string>
-    <string name="pressure">Pressure: </string>
     <string name="gpsElev">Reported Elevation: </string>
     <string name="title_activity_beacon">BeaconActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
