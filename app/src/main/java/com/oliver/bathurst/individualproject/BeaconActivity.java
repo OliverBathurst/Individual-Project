@@ -65,16 +65,12 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
                 blue.enable();
                 Toast.makeText(this, "Turning Bluetooth on...", Toast.LENGTH_SHORT).show();
             }
-
             Toast.makeText(this, "Scanning for beacons...", Toast.LENGTH_SHORT).show();
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 try{
-                    IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
-                    registerReceiver(mReceiver, filter);
-                    IntentFilter filter2 = new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED);
-                    registerReceiver(mReceiver, filter2);
-
+                    registerReceiver(mReceiver, new IntentFilter(BluetoothDevice.ACTION_FOUND));
+                    registerReceiver(mReceiver, new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED));
                     blue.startDiscovery();
                     Toast.makeText(this, "Started discovery", Toast.LENGTH_SHORT).show();
                 }catch(NullPointerException e){
@@ -87,6 +83,19 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
             Toast.makeText(this, "Bluetooth not available", Toast.LENGTH_SHORT).show();
         }
     }
+    protected void onResume(){
+        super.onResume();
+        registerReceiver(mReceiver, new IntentFilter(BluetoothDevice.ACTION_FOUND));
+        registerReceiver(mReceiver, new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED));
+    }
+    protected void onPause(){
+        super.onPause();
+        unregisterReceiver(mReceiver);
+    }
+    protected void onDestroy(){
+        super.onDestroy();
+        unregisterReceiver(mReceiver);
+    }
     private void updateDevices(BluetoothDevice dev) {
         if (!deviceList.contains(dev)) {
             deviceList.add(dev);
@@ -97,13 +106,21 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
         if(names != null){
             names.clear();
         }
-
         for(BluetoothDevice i : deviceList){
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
+
+                String UUID = "";
+                if(i.getUuids() != null && i.getUuids().length != 0) {
+                    for(int ID = 0; ID < i.getUuids().length; ID++){
+                        UUID += "UUID " + ID + ": " + i.getUuids()[ID] + "\n";
+                    }
+                }
                 if(i.getType() == BluetoothDevice.DEVICE_TYPE_LE){
-                    names.add(i.getName() + " LOW ENERGY");
+                    names.add("Alias: " + i.getName() + "  (LOW ENERGY)\nAddress: " + i.getAddress()
+                            +"\n" + UUID);
                 }else{
-                    names.add(i.getName());
+                    names.add("Alias: " + i.getName() + "\nAddress: " + i.getAddress()
+                            +"\n" + UUID);
                 }
             }
         }
