@@ -94,18 +94,22 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
     }
     @SuppressWarnings("unchecked")
     private void redrawListView(){
-        names.clear();
+        if(names != null){
+            names.clear();
+        }
+
         for(BluetoothDevice i : deviceList){
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
                 if(i.getType() == BluetoothDevice.DEVICE_TYPE_LE){
-                    String le = i.getName() + " LOW ENERGY";
-                    names.add(le);
+                    names.add(i.getName() + " LOW ENERGY");
                 }else{
                     names.add(i.getName());
                 }
             }
         }
-        devices.setAdapter(new ArrayAdapter(this, R.layout.list_view, R.id.listviewAdapt, names));
+        if(names != null) {
+            devices.setAdapter(new ArrayAdapter(this, R.layout.list_view, R.id.listviewAdapt, names));
+        }
     }
     @Override
     public void onBackPressed() {
@@ -136,12 +140,11 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            String action = intent.getAction();
-            if (BluetoothDevice.ACTION_FOUND.equals(action) && blue.isDiscovering()) {
+            if (BluetoothDevice.ACTION_FOUND.equals(intent.getAction()) && blue.isDiscovering()) {
                 updateDevices((BluetoothDevice) intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE));
                 redrawListView();
-            } else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(action)) {
-                blue.startDiscovery();
+            } else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(intent.getAction())) {
+                blue.startDiscovery(); //restart discovery
             }
         }
     };
