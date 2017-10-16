@@ -108,19 +108,21 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
         }
         for(BluetoothDevice i : deviceList){
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
-
-                String UUID = "";
-                if(i.getUuids() != null && i.getUuids().length != 0) {
-                    for(int ID = 0; ID < i.getUuids().length; ID++){
-                        UUID += "UUID " + ID + ": " + i.getUuids()[ID] + "\n";
+                if(!i.getName().equals("null")) {
+                    String UUID = "";
+                    if (i.getUuids() != null && i.getUuids().length != 0) {
+                        for (int ID = 0; ID < i.getUuids().length; ID++) {
+                            UUID += "UUID " + ID + ": " + i.getUuids()[ID] + "\n";
+                        }
                     }
-                }
-                if(i.getType() == BluetoothDevice.DEVICE_TYPE_LE){
-                    names.add("Alias: " + i.getName() + "  (LOW ENERGY)\nAddress: " + i.getAddress()
-                            +"\n" + UUID);
-                }else{
-                    names.add("Alias: " + i.getName() + "\nAddress: " + i.getAddress()
-                            +"\n" + UUID);
+                    if (i.getType() == BluetoothDevice.DEVICE_TYPE_LE) {
+                        names.add("Alias: " + i.getName() + "  (LOW ENERGY)\nAddress: " + i.getAddress()
+                                + "\n" + UUID);
+
+                    } else {
+                        names.add("Alias: " + i.getName() + "\nAddress: " + i.getAddress()
+                                + "\n" + UUID);
+                    }
                 }
             }
         }
