@@ -45,11 +45,8 @@ class EmailReceiver {
     }
 
     void getNewEmails() {
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-
-        Properties properties = getServerProperties();
-        Session session = Session.getDefaultInstance(properties);
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitAll().build());
+        Session session = Session.getDefaultInstance(getServerProperties());
         try {
             Store store = session.getStore("imap");
             store.connect(user, pass);
@@ -57,14 +54,10 @@ class EmailReceiver {
             Folder inbox = store.getFolder("INBOX");
             inbox.open(Folder.READ_WRITE);
 
-            int count = inbox.getMessageCount();
-            Message[] messages = inbox.getMessages(1, count);
+            Message[] messages = inbox.getMessages(1, inbox.getMessageCount());
             for (Message message : messages) {
                 if (!message.getFlags().contains(Flags.Flag.SEEN)) {
-                    Address[] fromAddresses = message.getFrom();
-                    String[] parts = fromAddresses[0].toString().split("<");
-                    String[] part2 = parts[1].split(">");
-                    switchEmailSubject(part2[0], message.getSubject().trim());
+                    switchEmailSubject(message.getFrom()[0].toString().split("<")[1].split(">")[0], message.getSubject().trim());
                     message.setFlag(Flags.Flag.SEEN, true);
                 }
             }
@@ -108,15 +101,11 @@ class EmailReceiver {
             }
         }
     }
-
     private void sendLocationBack(String sender){
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitAll().build());
         GMailSender gmail = new GMailSender(user,pass);
         EmailAttachmentHelper help = new EmailAttachmentHelper(c);
         help.attachFiles(gmail);
-
         gmail.sendMail(user, "Location Update", help.getEmailString(), sender);
     }
 }

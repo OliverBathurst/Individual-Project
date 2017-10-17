@@ -27,9 +27,8 @@ public class SimStateChangedReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         String state = intent.getExtras().getString(EXTRA_SIM_STATE);
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
-        boolean isSIMMonitorEnabled = settings.getBoolean("check_sim_preference", false);
         doHide = settings.getBoolean("hide_sms", false);
-        if(isSIMMonitorEnabled){
+        if(settings.getBoolean("check_sim_preference", false)){
 
             if (!doHide) {
                 Toast.makeText(context, "SIM Monitor Activated", Toast.LENGTH_SHORT).show();
@@ -61,8 +60,7 @@ public class SimStateChangedReceiver extends BroadcastReceiver {
                     Toast.makeText(c, "Sending email", Toast.LENGTH_SHORT).show();
                 }
 
-                StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-                StrictMode.setThreadPolicy(policy);
+                StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitAll().build());
 
                 EmailAttachmentHelper help = new EmailAttachmentHelper(c);
                 GMailSender sender = new GMailSender("locator.findmydevice.service@gmail.com", "TheWatchful2");
@@ -81,10 +79,7 @@ public class SimStateChangedReceiver extends BroadcastReceiver {
                 if (!doHide) {
                     Toast.makeText(c, "Sending text message", Toast.LENGTH_SHORT).show();
                 }
-                SmsManager smsManager = SmsManager.getDefault();
-                SMSHelper help = new SMSHelper(c);
-
-                smsManager.sendTextMessage(number.trim(), null, (help.getBody()+ "\nSIM State: " + state), null, null);
+                SmsManager.getDefault().sendTextMessage(number.trim(), null, (new SMSHelper(c).getBody()+ "\nSIM State: " + state), null, null);
             }catch (Exception ignored){}
         }
     }

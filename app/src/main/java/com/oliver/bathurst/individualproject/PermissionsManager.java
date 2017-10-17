@@ -26,8 +26,7 @@ class PermissionsManager {
     }
 
     String getDeviceAttributes(){
-        LocationService locationService = new LocationService(c);
-        Location lastLoc = locationService.getLoc();
+        Location lastLoc = new LocationService(c).getLoc();
         return "Model: " + android.os.Build.MODEL +"\nBrand: "+ Build.BRAND +"\nDevice: "+ Build.DEVICE +"\nDisplay: "+ Build.DISPLAY
                 +"\nManufacturer: "+ Build.MANUFACTURER +"\nModel: "+ Build.MODEL + "\nLast Known Coordinates: " + lastLoc.getLatitude()
                 + " , " + lastLoc.getLongitude() + "\nAccuracy: " + lastLoc.getAccuracy();

@@ -69,8 +69,7 @@ public class Login extends AppCompatActivity{
             webView.setVisibility(View.GONE);
         }
 
-        PermissionsManager perm = new PermissionsManager(this);
-        perm.permissionsCheckup();
+        new PermissionsManager(this).permissionsCheckup();
     }
 
     private void attemptLogin(){

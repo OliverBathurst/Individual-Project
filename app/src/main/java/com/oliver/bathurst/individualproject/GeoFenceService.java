@@ -23,12 +23,10 @@ public class GeoFenceService extends IntentService {
     }
     @Override
     protected void onHandleIntent(Intent intent) {
-        GeofencingEvent geofencingEvent = GeofencingEvent.fromIntent(intent);
-        if (geofencingEvent.hasError()) {
+        if (GeofencingEvent.fromIntent(intent).hasError()) {
             return;
         }
-        int geofenceTransition = geofencingEvent.getGeofenceTransition();
-        if(geofenceTransition == Geofence.GEOFENCE_TRANSITION_EXIT) {
+        if(GeofencingEvent.fromIntent(intent).getGeofenceTransition() == Geofence.GEOFENCE_TRANSITION_EXIT) {
             sendEmail();
         }
     }
@@ -38,11 +36,8 @@ public class GeoFenceService extends IntentService {
         boolean enabled = settings.getBoolean("geo_fence_enable_or_not",false);
 
         if(enabled && emailToSendTo !=null && emailToSendTo.trim().length()!=0 && emailToSendTo.contains("@")) {
-            EmailAttachmentHelper help = new EmailAttachmentHelper(this);
-
-            GMailSender sender = new GMailSender("locator.findmydevice.service@gmail.com", "TheWatchful2");
-            sender.sendMail("locator.findmydevice.service@gmail.com",
-                    "Geofence Breach", help.getEmailString(), emailToSendTo.trim());
+            new GMailSender("locator.findmydevice.service@gmail.com", "TheWatchful2").sendMail("locator.findmydevice.service@gmail.com",
+                    "Geofence Breach", new EmailAttachmentHelper(this).getEmailString(), emailToSendTo.trim());
         }
     }
 }

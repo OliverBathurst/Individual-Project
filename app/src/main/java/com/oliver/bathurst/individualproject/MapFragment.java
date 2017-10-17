@@ -162,16 +162,10 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
             } else {
                 gMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             }
-
-            TextView txtView = (TextView) mView.findViewById(R.id.declare);
-            txtView.setText(getString(R.string.declaration).concat(" " + loc.getProvider()));
-            TextView acc = (TextView) mView.findViewById(R.id.locationAcc);
-            acc.setText(String.format("%s%s", getString(R.string.accuracy), Float.toString(loc.getAccuracy())));
-            TextView gpsElevation = (TextView) mView.findViewById(R.id.gpsElevation);
-            gpsElevation.setText(String.format("%s%s", getString(R.string.gpsElev), Double.toString(loc.getAltitude())));
-
+            ((TextView) mView.findViewById(R.id.declare)).setText(getString(R.string.declaration).concat(" " + loc.getProvider()));
+            ((TextView) mView.findViewById(R.id.locationAcc)).setText(String.format("%s%s", getString(R.string.accuracy), Float.toString(loc.getAccuracy())));
+            ((TextView) mView.findViewById(R.id.gpsElevation)).setText(String.format("%s%s", getString(R.string.gpsElev), Double.toString(loc.getAltitude())));
             MapsInitializer.initialize(getContext());
-
             marker = gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
                     .title("Device Location: " + loc.getLatitude() + loc.getLongitude()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f));
             gMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(loc.getLatitude(), loc.getLongitude())).zoom(19).bearing(0).tilt(45).build()));
@@ -182,9 +176,7 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
         }
     }
     private void showExtras(Location loc){
-        boolean isGeoEnabled = settings.getBoolean("geo_fence_enable_or_not", false);
-        boolean showMargin = settings.getBoolean("show_margin", false);
-        if(showMargin){
+        if(settings.getBoolean("show_margin", false)){
             if (circle_margin != null) {
                 circle_margin.remove();
             }
@@ -195,25 +187,22 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
             }
             marginOfError.setText(String.valueOf("Margin of error: " + loc.getAccuracy() + "m"));
         }
-        if (isGeoEnabled) {
-            TextView txtView = (TextView) mView.findViewById(R.id.radiusMap);
-            int rad = settings.getInt("geo_fence_value", 0);
-            double lat = Double.longBitsToDouble(settings.getLong("geo_fence_cordLat",0));
-            double lon = Double.longBitsToDouble(settings.getLong("geo_fence_cordLon",0));
-            txtView.setText(getString(R.string.radiuscolon).concat(" " + String.valueOf(rad)));
+        if (settings.getBoolean("geo_fence_enable_or_not", false)) {
+            ((TextView) mView.findViewById(R.id.radiusMap)).setText(getString(R.string.radiuscolon).concat(" " + String.valueOf(settings.getInt("geo_fence_value", 0))));
             if (circle != null) {
                 circle.remove();
             }
             if (gMap != null) {
-                circle = gMap.addCircle(new CircleOptions().strokeColor(Color.GREEN).fillColor(0x5500ff00).center(new LatLng(lat, lon)).radius(rad));
+                circle = gMap.addCircle(new CircleOptions().strokeColor(Color.GREEN).fillColor(0x5500ff00)
+                        .center(new LatLng(Double.longBitsToDouble(settings.getLong("geo_fence_cordLat",0)),
+                                Double.longBitsToDouble(settings.getLong("geo_fence_cordLon",0)))).radius(settings.getInt("geo_fence_value", 0)));
             }
         }
     }
     @Override
     public void onSensorChanged(SensorEvent event) {
         if (event.sensor.getType() == Sensor.TYPE_ORIENTATION) {
-            TextView rotation = (TextView) mView.findViewById(R.id.degrees);
-            rotation.setText(String.format("%s%s", getString(R.string.degrees), Float.toString(Math.round(event.values[0]))));
+            ((TextView) mView.findViewById(R.id.degrees)).setText(String.format("%s%s", getString(R.string.degrees), Float.toString(Math.round(event.values[0]))));
             ORIENTATION = Math.round(event.values[0]);
             if(marker != null) {
                 marker.setRotation(ORIENTATION);
@@ -231,13 +220,9 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
             if(settings != null) {
                 showExtras(loc);
             }
-
-            TextView txtView = (TextView) mView.findViewById(R.id.declare);
-            txtView.setText(getString(R.string.declaration).concat(" " + loc.getProvider()));
-            TextView acc = (TextView) mView.findViewById(R.id.locationAcc);
-            acc.setText(String.format("%s%s", getString(R.string.accuracy), Float.toString(loc.getAccuracy())));
-            TextView gpsElevation = (TextView) mView.findViewById(R.id.gpsElevation);
-            gpsElevation.setText(String.format("%s%s", getString(R.string.gpsElev), Double.toString(loc.getAltitude())));
+            ((TextView) mView.findViewById(R.id.declare)).setText(getString(R.string.declaration).concat(" " + loc.getProvider()));
+            ((TextView) mView.findViewById(R.id.locationAcc)).setText(String.format("%s%s", getString(R.string.accuracy), Float.toString(loc.getAccuracy())));
+            ((TextView) mView.findViewById(R.id.gpsElevation)).setText(String.format("%s%s", getString(R.string.gpsElev), Double.toString(loc.getAltitude())));
         }
     }
     @Override

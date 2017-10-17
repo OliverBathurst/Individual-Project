@@ -24,11 +24,8 @@ public class DeviceAdmin extends DeviceAdminReceiver {
         super.onDisabled(context, intent);
     }
     public CharSequence onDisableRequested(Context context, Intent intent) {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        if(sharedPreferences.getBoolean("prevent_uninstall", false)){
-            DevicePolicyManager deviceManger = (DevicePolicyManager) context.getSystemService(
-                    Context.DEVICE_POLICY_SERVICE);
-            deviceManger.lockNow();
+        if(PreferenceManager.getDefaultSharedPreferences(context).getBoolean("prevent_uninstall", false)){ //if 'prevent uninstall' is true
+            ((DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE)).lockNow();
             return "WARNING: some features will be disabled, continue?";
         }else{
             return "Are you sure?";

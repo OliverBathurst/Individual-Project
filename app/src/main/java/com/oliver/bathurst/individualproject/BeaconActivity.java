@@ -58,8 +58,8 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
 
         deviceList = new ArrayList<>();
         names = new ArrayList<>();
-
         blue = BluetoothAdapter.getDefaultAdapter();
+
         if(blue != null) {
             if (!blue.isEnabled()) {
                 blue.enable();
@@ -103,12 +103,10 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
     }
     @SuppressWarnings("unchecked")
     private void redrawListView(){
-        if(names != null){
+        if(names != null) {
             names.clear();
-        }
-        for(BluetoothDevice i : deviceList){
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
-                if(!i.getName().equals("null")) {
+            for (BluetoothDevice i : deviceList) {
+                if (!i.getName().equals("null") && android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
                     String UUID = "";
                     if (i.getUuids() != null && i.getUuids().length != 0) {
                         for (int ID = 0; ID < i.getUuids().length; ID++) {
@@ -118,15 +116,12 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
                     if (i.getType() == BluetoothDevice.DEVICE_TYPE_LE) {
                         names.add("Alias: " + i.getName() + "  (LOW ENERGY)\nAddress: " + i.getAddress()
                                 + "\n" + UUID);
-
                     } else {
                         names.add("Alias: " + i.getName() + "\nAddress: " + i.getAddress()
                                 + "\n" + UUID);
                     }
                 }
             }
-        }
-        if(names != null) {
             devices.setAdapter(new ArrayAdapter(this, R.layout.list_view, R.id.listviewAdapt, names));
         }
     }

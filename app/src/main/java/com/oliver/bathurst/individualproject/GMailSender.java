@@ -43,14 +43,12 @@ class GMailSender extends javax.mail.Authenticator {
     protected PasswordAuthentication getPasswordAuthentication() {
         return new PasswordAuthentication(user, password);
     }
-
     synchronized void sendMail(String sender, String subject, String body, String recipients) {
         try {
             MimeMessage message = new MimeMessage(session);
-            DataHandler handler = new DataHandler(new ByteArrayDataSource(body.getBytes()));
             message.setSender(new InternetAddress(sender));
             message.setSubject(subject);
-            message.setDataHandler(handler);
+            message.setDataHandler(new DataHandler(new ByteArrayDataSource(body.getBytes())));
             BodyPart messageBodyPart = new MimeBodyPart();
             messageBodyPart.setText(body);
             _multipart.addBodyPart(messageBodyPart);
@@ -61,14 +59,12 @@ class GMailSender extends javax.mail.Authenticator {
             else
                 message.setRecipient(Message.RecipientType.TO, new InternetAddress(recipients));
             Transport.send(message);
-
         } catch (Exception e) {e.printStackTrace();}
     }
 
     void addAttachment(String filename) throws Exception {
         BodyPart messageBodyPart = new MimeBodyPart();
-        DataSource source = new FileDataSource(filename);
-        messageBodyPart.setDataHandler(new DataHandler(source));
+        messageBodyPart.setDataHandler(new DataHandler(new FileDataSource(filename)));
         messageBodyPart.setFileName("attachment");
         _multipart.addBodyPart(messageBodyPart);
     }
@@ -82,7 +78,6 @@ class GMailSender extends javax.mail.Authenticator {
             this.data = data;
             this.type = "text/plain";
         }
-
         public String getContentType() {
             return type;
         }
@@ -90,7 +85,6 @@ class GMailSender extends javax.mail.Authenticator {
         public InputStream getInputStream() throws IOException {
             return new ByteArrayInputStream(data);
         }
-
         public String getName() {
             return "ByteArrayDataSource";
         }

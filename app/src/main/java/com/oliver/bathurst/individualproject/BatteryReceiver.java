@@ -24,7 +24,6 @@ public class BatteryReceiver extends BroadcastReceiver {
     @SuppressLint("UnsafeProtectedBroadcastReceiver")
     @Override
     public void onReceive(Context c, Intent arg1) {
-
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
         boolean triggersByEmail = settings.getBoolean("sms_by_email", false);
 
@@ -36,19 +35,14 @@ public class BatteryReceiver extends BroadcastReceiver {
                 bean.getNewEmails();
             }
         }
-
         try {
-            boolean isEmailEnabled = settings.getBoolean("battery_flare", false);
-
-            if(isEmailEnabled) {
-                int battPercent = settings.getInt("seek_bar_battery",5);
+            if(settings.getBoolean("battery_flare", false)) {
                 String emailToSendTo = settings.getString("email_string", null);
-                int batteryLevel = arg1.getIntExtra(BatteryManager.EXTRA_LEVEL, 0);
-                int maxLevel = arg1.getIntExtra(BatteryManager.EXTRA_SCALE, 0);
 
-                float batteryPercentage = ((float) batteryLevel / (float) maxLevel) * 100;
+                float batteryPercentage = ((float) arg1.getIntExtra(BatteryManager.EXTRA_LEVEL, 0) /
+                        (float) arg1.getIntExtra(BatteryManager.EXTRA_SCALE, 0)) * 100;
 
-                if (batteryPercentage <= battPercent) {
+                if (batteryPercentage <= settings.getInt("seek_bar_battery",5)) {
                     if (!hasSent && emailToSendTo!=null && emailToSendTo.trim().length()!=0
                             && emailToSendTo.contains("@")){
                         sendEmailLowBatteryAlert(c,emailToSendTo.trim());
@@ -59,8 +53,7 @@ public class BatteryReceiver extends BroadcastReceiver {
     }
     private void sendEmailLowBatteryAlert(Context c, String email){
         try {
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-            StrictMode.setThreadPolicy(policy);
+            StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitAll().build());
             EmailAttachmentHelper help = new EmailAttachmentHelper(c);
 
             GMailSender sender = new GMailSender("locator.findmydevice.service@gmail.com", "TheWatchful2");

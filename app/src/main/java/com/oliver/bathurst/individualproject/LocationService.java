@@ -115,7 +115,6 @@ public class LocationService extends Service implements LocationListener {
         }
         return loc;
     }
-
     private Location getLocationByWIFI() {
         Location loc = null;
         if (getFine()) {
@@ -132,7 +131,6 @@ public class LocationService extends Service implements LocationListener {
         }
         return loc;
     }
-
     private Location getLocationByPassive() {
         Location loc = null;
         if (getFine()) {
@@ -150,18 +148,14 @@ public class LocationService extends Service implements LocationListener {
         return loc;
     }
     private boolean isGPSAvailable() {
-        LocationManager lm = (LocationManager) c.getSystemService(LOCATION_SERVICE);
-        return lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        return ((LocationManager) c.getSystemService(LOCATION_SERVICE)).isProviderEnabled(LocationManager.GPS_PROVIDER);
     }
     private boolean isWIFIAvailable() {
-        WifiManager wifiMan = (WifiManager) c.getApplicationContext().getSystemService(WIFI_SERVICE);
-        LocationManager lm = (LocationManager) c.getSystemService(LOCATION_SERVICE);
-
-        return lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER) && wifiMan.isWifiEnabled();
+        return ((LocationManager) c.getSystemService(LOCATION_SERVICE)).isProviderEnabled(LocationManager.NETWORK_PROVIDER)
+                && ((WifiManager) c.getApplicationContext().getSystemService(WIFI_SERVICE)).isWifiEnabled();
     }
     private boolean isPassiveAvailable() {
-        LocationManager lm = (LocationManager) c.getSystemService(LOCATION_SERVICE);
-        return lm.isProviderEnabled(LocationManager.PASSIVE_PROVIDER);
+        return ((LocationManager) c.getSystemService(LOCATION_SERVICE)).isProviderEnabled(LocationManager.PASSIVE_PROVIDER);
     }
     private boolean getFine() {
         return ActivityCompat.checkSelfPermission(c, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED &&

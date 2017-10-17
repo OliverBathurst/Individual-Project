@@ -55,12 +55,10 @@ class Server{
     private class HttpServerThread extends Thread {
         @Override
         public void run() {
-            Socket socket;
             try {
                 httpServerSocket = new ServerSocket(8888);
                 while(true){
-                    socket = httpServerSocket.accept();
-                    new HttpResponseThread(socket).start();
+                    new HttpResponseThread(httpServerSocket.accept()).start();
                     running = true;
                 }
             } catch (IOException e) {

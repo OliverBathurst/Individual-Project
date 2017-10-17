@@ -53,14 +53,12 @@ public class MainActivity extends AppCompatActivity{
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        ((BottomNavigationView) findViewById(R.id.navigation)).setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         frame = (FrameLayout) findViewById(R.id.content);
         setHome();
     }
     private void setHome(){
-        MapFragment newMapFrag = new MapFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.content, newMapFrag).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.content, new MapFragment()).commit();
     }
     private void settingsPage(){
         getFragmentManager().beginTransaction().add(R.id.content, new SettingsFragment()).commit();

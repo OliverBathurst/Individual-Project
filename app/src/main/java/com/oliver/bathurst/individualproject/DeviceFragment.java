@@ -16,9 +16,7 @@ import android.provider.Settings;
  */
 
 public class DeviceFragment extends PreferenceFragment {
-    private static final String ANDROID_INFO = "androidInfo";
-    private static final String DEVICE_INFO = "deviceInfo";
-    private static final String CELL_INFO = "cellInfo";
+    private static final String ANDROID_INFO = "androidInfo", DEVICE_INFO = "deviceInfo", CELL_INFO = "cellInfo";
 
     public DeviceFragment() {}
     @Override

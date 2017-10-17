@@ -63,8 +63,7 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
 
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        final TextView radiusText = (TextView) mView.findViewById(R.id.radiusTextView);
-        final TextView scaleText = (TextView) mView.findViewById(R.id.scale);
+        final TextView radiusText = (TextView) mView.findViewById(R.id.radiusTextView), scaleText = (TextView) mView.findViewById(R.id.scale);
         marginOfError = (TextView) mView.findViewById(R.id.margin_of_error_geomap);
 
         final MapView mMapView = (MapView) mView.findViewById(R.id.map);
@@ -85,8 +84,7 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
                 scaleText.setText(R.string.scalewithone);
             }
         }
-        SeekBar radius = (SeekBar) mView.findViewById(R.id.radius);
-        radius.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        ((SeekBar) mView.findViewById(R.id.radius)).setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
             }
@@ -104,7 +102,6 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
                     }
                     circle = gMap.addCircle(new CircleOptions().strokeColor(Color.GREEN).fillColor(0x5500ff00).center(new LatLng(loc.getLatitude(), loc.getLongitude())).radius(mRadius * scaleFactorInt));
                     radiusText.setText(getString(R.string.radiuscolon).concat(" " + String.valueOf(mRadius * scaleFactorInt)));
-
                 } catch (Exception ignored) {}
             }
         });
@@ -121,33 +118,29 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
             @Override
             public void onClick(View v) {
                 try {
-                    int rad = (mRadius * scaleFactorInt);
                     SharedPreferences.Editor settings = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
-                    settings.putInt("geo_fence_value", rad);
+                    settings.putInt("geo_fence_value", (mRadius * scaleFactorInt));
                     settings.putLong("geo_fence_cordLat", Double.doubleToRawLongBits(loc.getLatitude()));//geofence center latitude
                     settings.putLong("geo_fence_cordLon", Double.doubleToRawLongBits(loc.getLongitude()));//geofence center longitude
                     settings.apply();
                     mGeofencingClient = LocationServices.getGeofencingClient(getActivity());
 
-                    Geofence geofence = new Geofence.Builder().setRequestId("geoId")
-                            .setCircularRegion(loc.getLatitude(), loc.getLongitude(), rad) // defining fence region
+                    myList.clear();
+                    myList.add(new Geofence.Builder().setRequestId("geoId")
+                            .setCircularRegion(loc.getLatitude(), loc.getLongitude(), (mRadius * scaleFactorInt)) // defining fence region
                             .setExpirationDuration(Geofence.NEVER_EXPIRE)
                             .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_EXIT)
-                            .build();
-
-                    myList.clear();
-                    myList.add(geofence);
+                            .build());
 
                     GeofencingRequest.Builder builder = new GeofencingRequest.Builder();
                     builder.setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_EXIT);
                     builder.addGeofences(myList);
-                    GeofencingRequest geoReq = builder.build();
 
                     PendingIntent mGeofenceIntent = PendingIntent.getService(getActivity(),
                             0, new Intent(getActivity(), GeoFenceService.class), PendingIntent.FLAG_UPDATE_CURRENT);
 
                     try {
-                        mGeofencingClient.addGeofences(geoReq, mGeofenceIntent);
+                        mGeofencingClient.addGeofences(builder.build(), mGeofenceIntent);
                     } catch (SecurityException securityException) {
                         Toast.makeText(getActivity(), securityException.getMessage(), Toast.LENGTH_LONG).show();
                     }
@@ -167,7 +160,7 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
             loc = new LocationService(getActivity()).getLoc();
 
             SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getContext());
-            boolean showMargin = settings.getBoolean("show_margin", false);
+
             String map = settings.getString("mapType", null);
             if (map != null) {
                 switch (map.toUpperCase()) {
@@ -190,10 +183,9 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
             } else {
                 gMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             }
-            TextView txtView = (TextView) mView.findViewById(R.id.declare);
-            txtView.setText(getString(R.string.declaration).concat(" " + loc.getProvider()));
+            ((TextView) mView.findViewById(R.id.declare)).setText(getString(R.string.declaration).concat(" " + loc.getProvider()));
 
-            if (showMargin) {
+            if (settings.getBoolean("show_margin", false)) {
                 if (circle_margin != null) {
                     circle_margin.remove();
                 }
@@ -206,8 +198,7 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
             MapsInitializer.initialize(getContext());
             gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
                     .title("Device Location: " + loc.getLatitude() + loc.getLongitude()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f));
-            CameraPosition cam = CameraPosition.builder().target(new LatLng(loc.getLatitude(), loc.getLongitude())).zoom(19).bearing(0).tilt(45).build();
-            gMap.moveCamera(CameraUpdateFactory.newCameraPosition(cam));
+            gMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(loc.getLatitude(), loc.getLongitude())).zoom(19).bearing(0).tilt(45).build()));
         } catch (Exception e) {
             Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
         }

@@ -49,8 +49,7 @@ public class Reorder extends AppCompatActivity {
             getSupportActionBar().hide();
         }catch(Exception ignored){}
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        (findViewById(R.id.fab)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Saving...", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
@@ -58,9 +57,6 @@ public class Reorder extends AppCompatActivity {
                 Snackbar.make(view, "Saved", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
             }
         });
-        Button up = (Button) findViewById(R.id.up);
-        Button down = (Button) findViewById(R.id.down);
-
         order = new ArrayList<>();
         lv = (ListView) findViewById(R.id.list);
 
@@ -69,7 +65,6 @@ public class Reorder extends AppCompatActivity {
                     settingsView.getString("third", "Passive"));
         lv.setAdapter(new ArrayAdapter(this, R.layout.list_view, R.id.listviewAdapt, order));
 
-
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -77,8 +72,7 @@ public class Reorder extends AppCompatActivity {
                 selected = position;
             }
         });
-
-        up.setOnClickListener(new View.OnClickListener() {
+        (findViewById(R.id.up)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (selected > 0) {
@@ -88,7 +82,7 @@ public class Reorder extends AppCompatActivity {
                 }
             }
         });
-        down.setOnClickListener(new View.OnClickListener() {
+        (findViewById(R.id.down)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (selected + 1 < order.size()) {
@@ -99,7 +93,6 @@ public class Reorder extends AppCompatActivity {
             }
         });
 
-
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Warning");
         builder.setMessage("No not edit these without good reason, this order has been " +
@@ -108,8 +101,6 @@ public class Reorder extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int id) {}
         });
         builder.create().show();
-
-
     }
     private void reOrder(){
         lv.setAdapter(new ArrayAdapter(this, R.layout.list_view, R.id.listviewAdapt, order));

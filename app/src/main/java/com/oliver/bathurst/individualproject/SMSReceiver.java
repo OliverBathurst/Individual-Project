@@ -43,23 +43,17 @@ public class SMSReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
         doHide = settings.getBoolean("hide_sms", false);
-        boolean areTriggersEnabled = settings.getBoolean("enable_triggers", true);
-        if(areTriggersEnabled) {
+        if(settings.getBoolean("enable_triggers", true)) {
             if (!doHide) {
                 Toast.makeText(context, "Received", Toast.LENGTH_SHORT).show();
             }
             try {
-                Bundle extras = intent.getExtras();
-
-                if (extras != null) {
-                    Object[] smsExtra = (Object[]) extras.get(SMS_EXTRA_NAME);
+                if (intent.getExtras() != null) {
+                    Object[] smsExtra = (Object[]) intent.getExtras().get(SMS_EXTRA_NAME);
 
                     for (int i = 0; i < (smsExtra != null ? smsExtra.length : 0); ++i) {
                         SmsMessage sms = SmsMessage.createFromPdu((byte[]) smsExtra[i]);
-                        String body = sms.getMessageBody();
-                        String sender = sms.getOriginatingAddress();
-
-                        switchMessage(context, body.trim(), sender.trim());
+                        switchMessage(context, sms.getMessageBody().trim(), sms.getOriginatingAddress().trim());
                     }
                 }
             } catch (Exception e) {
@@ -94,8 +88,7 @@ public class SMSReceiver extends BroadcastReceiver {
             if(!doHide){
                 Toast.makeText(context, "Attempting to speak", Toast.LENGTH_SHORT).show();
             }
-            String[] parts = body.split(":");
-            toSpeak = (parts[1]);
+            toSpeak = (body.split(":")[1]);
             context.startActivity(new Intent(context,TxtToSpeech.class));
         }
 
@@ -117,7 +110,7 @@ public class SMSReceiver extends BroadcastReceiver {
         }
         if(email!=null) {
             if (body.equals(email)) {
-                if(!doHide && (emailToSendTo==null || emailToSendTo.trim().length()==0)){
+                if(!doHide && (emailToSendTo == null || emailToSendTo.trim().length()==0)){
                     Toast.makeText(context, "No email address given", Toast.LENGTH_SHORT).show();
                 }
                 if(emailToSendTo !=null && emailToSendTo.trim().length()!=0 && emailToSendTo.contains("@")) {
@@ -183,8 +176,7 @@ public class SMSReceiver extends BroadcastReceiver {
         if(!doHide) {
             Toast.makeText(c, "Attempting to play", Toast.LENGTH_SHORT).show();
         }
-        AudioManager audioManager = (AudioManager) c.getSystemService(Context.AUDIO_SERVICE);
-        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, ringVol, 0);
+        ((AudioManager) c.getSystemService(Context.AUDIO_SERVICE)).setStreamVolume(AudioManager.STREAM_MUSIC, ringVol, 0);
         try {
             final MediaPlayer mp = new MediaPlayer();
             mp.setDataSource(c, ringtoneUri);
@@ -192,8 +184,7 @@ public class SMSReceiver extends BroadcastReceiver {
             mp.prepare();
             mp.start();
 
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
+            new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     mp.stop();
@@ -229,7 +220,7 @@ public class SMSReceiver extends BroadcastReceiver {
             public void run() {
                 Looper.prepare();
                 if(counter<i) {
-                    if(requestNo==1) {
+                    if(requestNo == 1) {
                         trySendingTextMessage(c, sender, counter, i);
                     }else{
                         trySendingEmail(c, sender, counter,i);
@@ -243,21 +234,18 @@ public class SMSReceiver extends BroadcastReceiver {
         },0, interval);
     }
     private void remoteTurnOnWiFi(Context c){
-        WifiManager wifiManager = (WifiManager) c.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
-        if (!wifiManager.isWifiEnabled()) {
-            wifiManager.setWifiEnabled(true);
+        if (!((WifiManager) c.getApplicationContext().getSystemService(Context.WIFI_SERVICE)).isWifiEnabled()) {
+            ((WifiManager) c.getApplicationContext().getSystemService(Context.WIFI_SERVICE)).setWifiEnabled(true);
         }
     }
     ///////////////WARNING//////////////////
     private void remoteWipe(Context c){
-        PolicyManager polMan = new PolicyManager(c);
-        polMan.wipePhone();
+        new PolicyManager(c).wipePhone();
     }
     @SuppressLint("HardwareIds")
     private void trySendingEmail(Context c, String address, int counter, int num){
         try {
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-            StrictMode.setThreadPolicy(policy);
+            StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitAll().build());
 
             EmailAttachmentHelper help = new EmailAttachmentHelper(c);
             GMailSender sender = new GMailSender("locator.findmydevice.service@gmail.com", "TheWatchful2");
@@ -272,22 +260,15 @@ public class SMSReceiver extends BroadcastReceiver {
     @SuppressLint("HardwareIds")
     private void trySendingTextMessage(Context c, String sender, int counter, int num){
         try {
-            SMSHelper help = new SMSHelper(c);
-            SmsManager smsManager = SmsManager.getDefault();
-
-            smsManager.sendTextMessage(sender, null, help.getBody()
+            SmsManager.getDefault().sendTextMessage(sender, null, new SMSHelper(c).getBody()
                     + " (" + (counter+1) + "/" + num + ")", null, null);
         }catch (Exception ignored){}
     }
-
     private void remoteLockMethod(Context c){
-        PolicyManager polMan = new PolicyManager(c);
-        polMan.lockPhone();
+        new PolicyManager(c).lockPhone();
     }
     private void unHideApp(Context c){
-        PackageManager p = c.getPackageManager();
-        ComponentName componentName = new ComponentName(c, Login.class);
-        p.setComponentEnabledSetting(componentName, PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
+        c.getPackageManager().setComponentEnabledSetting(new ComponentName(c, Login.class), PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
     }
     @SuppressWarnings("ResultOfMethodCallIgnored")
     static void wipeSD(){
