@@ -41,20 +41,17 @@ public class Login extends AppCompatActivity{
         pass = prefs.getString("app_pass", null);
         passHint = prefs.getString("app_pass_hint", null);
 
-        final Button button = (Button) findViewById(R.id.email_sign_in_button);
-        button.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.email_sign_in_button).setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 attemptLogin();
             }
         });
 
-        final Button button2 = (Button) findViewById(R.id.info_login);
-        button2.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.info_login).setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 infoDialog();
             }
         });
-
 
         try {
             webView = (WebView) findViewById(R.id.web);
@@ -68,10 +65,8 @@ public class Login extends AppCompatActivity{
         }catch(Exception ignored){
             webView.setVisibility(View.GONE);
         }
-
         new PermissionsManager(this).permissionsCheckup();
     }
-
     private void attemptLogin(){
         if(pass==null || pass.trim().length()==0){
             startActivity(new Intent(Login.this, MainActivity.class));
@@ -81,15 +76,26 @@ public class Login extends AppCompatActivity{
         }
     }
     private void showDialog(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Please enter your password:");
+        AlertDialog.Builder builder = new AlertDialog.Builder(this)
+                .setTitle("Please enter your password:");
         final EditText input = new EditText(this);
         input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
         builder.setView(input);
 
         builder.setPositiveButton("SUBMIT", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {}
+            public void onClick(DialogInterface dialog, int which) {
+                if (input.getText().toString().trim().equals(pass)) {
+                    startActivity(new Intent(Login.this, MainActivity.class));
+                    finish();
+                } else {
+                    input.getText().clear();
+                    Toast.makeText(getApplicationContext(), "Failure to login", Toast.LENGTH_SHORT).show();
+                    if (passHint != null && passHint.trim().length() != 0) {
+                        Toast.makeText(getApplicationContext(), "Password hint: " + passHint, Toast.LENGTH_LONG).show();
+                    }
+                }
+            }
         });
         builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
             @Override
@@ -97,34 +103,17 @@ public class Login extends AppCompatActivity{
                 dialog.dismiss();
             }
         });
-        AlertDialog alert= builder.create();
-        alert.show();
-
-        alert.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (input.getText().toString().trim().equals(pass)) {
-                    startActivity(new Intent(Login.this, MainActivity.class));
-                    finish();
-                } else {
-                    if (passHint != null && passHint.trim().length() != 0) {
-                        Toast.makeText(getApplicationContext(), "Password hint: " + passHint, Toast.LENGTH_LONG).show();
-                    }
-                    input.getText().clear();
-                    Toast.makeText(getApplicationContext(), "Failure to login", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+        builder.create().show();
     }
     private void infoDialog(){
-        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
-        builder.setMessage("Created by Oliver Bathurst").setCancelable(false)
+        new android.app.AlertDialog.Builder(this)
+                .setMessage("Created by Oliver Bathurst")
+                .setCancelable(false)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.dismiss();
                     }
-                });
-        builder.create().show();
+                }).create().show();
     }
     protected void onDestroy(){
         super.onDestroy();

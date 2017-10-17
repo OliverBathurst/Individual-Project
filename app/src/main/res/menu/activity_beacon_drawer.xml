@@ -3,13 +3,9 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/View_Beacons"
+            android:icon="@drawable/ic_view_agenda_black_24dp"
+            android:title="Edit Beacons" />
     </group>
 
     <item android:title="Communicate">
