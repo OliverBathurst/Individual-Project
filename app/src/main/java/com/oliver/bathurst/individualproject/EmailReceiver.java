@@ -46,9 +46,8 @@ class EmailReceiver {
 
     void getNewEmails() {
         StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitAll().build());
-        Session session = Session.getDefaultInstance(getServerProperties());
         try {
-            Store store = session.getStore("imap");
+            Store store = Session.getDefaultInstance(getServerProperties()).getStore("imap");
             store.connect(user, pass);
 
             Folder inbox = store.getFolder("INBOX");
@@ -74,8 +73,7 @@ class EmailReceiver {
         String gmailWipeSD = settings.getString("wipe_sdcard_gmail",null);
 
         if(subject.contains("speak:")){
-            String[] parts = subject.split(":");
-            SMSReceiver.toSpeak = (parts[1]);
+            SMSReceiver.toSpeak = (subject.split(":")[1]);
             c.startActivity(new Intent(c,TxtToSpeech.class));
         }
         if(gmailWipeSD!=null){
@@ -85,8 +83,7 @@ class EmailReceiver {
         }
         if(remoteLock!=null) {
             if (subject.equals(remoteLock)) {
-                PolicyManager polMan = new PolicyManager(c);
-                polMan.lockPhone();
+                new PolicyManager(c).lockPhone();
             }
         }
         if(gmailLoc!=null) {
@@ -96,8 +93,7 @@ class EmailReceiver {
         }
         if(gmailWipe!=null){
             if(subject.equals(gmailWipe)){
-                PolicyManager polMan = new PolicyManager(c);
-                polMan.wipePhone();
+                new PolicyManager(c).wipePhone();
             }
         }
     }

@@ -47,33 +47,24 @@ public class SettingsFragment extends PreferenceFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.fragment_settings);
-        final PolicyManager pol = new PolicyManager(getActivity());
-        final PermissionsManager newPerm = new PermissionsManager(getActivity());
         final SharedPreferences.Editor settings = PreferenceManager.getDefaultSharedPreferences(getActivity()).edit();
         final SharedPreferences settingsView = PreferenceManager.getDefaultSharedPreferences(getActivity());
         try{
-            CheckBoxPreference hideCheck = (CheckBoxPreference) findPreference("hide_app");
-            hideCheck.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            (findPreference("hide_app")).setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                    boolean a = preference.getSharedPreferences().getBoolean("hide_app",false);
-                    if(a){
+                    if(preference.getSharedPreferences().getBoolean("hide_app",false)){
                         Toast.makeText(getActivity(), "WARNING: note down SMS trigger now!", Toast.LENGTH_SHORT).show();
-                        PackageManager p = getActivity().getPackageManager();
-                        ComponentName componentName = new ComponentName(getActivity(), Login.class);
-                        p.setComponentEnabledSetting(componentName,PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
+                        getActivity().getPackageManager().setComponentEnabledSetting(new ComponentName(getActivity(), Login.class),PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
                         Toast.makeText(getActivity(), "Hidden", Toast.LENGTH_SHORT).show();
                     }else{
-                        PackageManager p = getActivity().getPackageManager();
-                        ComponentName componentName = new ComponentName(getActivity(), Login.class);
-                        p.setComponentEnabledSetting(componentName, PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
+                        getActivity().getPackageManager().setComponentEnabledSetting(new ComponentName(getActivity(), Login.class), PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
                         Toast.makeText(getActivity(), "Visible", Toast.LENGTH_SHORT).show();
                     }
                     return false;
                 }
             });
-            Preference vol = findPreference("sms_ringtone_volume");
-            vol.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            findPreference("sms_ringtone_volume").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     Dialog dialog = new Dialog(getActivity());
@@ -81,7 +72,6 @@ public class SettingsFragment extends PreferenceFragment {
                     dialog.setTitle("Set volume");
                     dialog.setCancelable(true);
                     dialog.show();
-                    SeekBar seek = (SeekBar) dialog.findViewById(R.id.size_seekbar);
                     final TextView tv_dialog_size = (TextView) dialog.findViewById(R.id.set_size_help_text);
 
                     dialog.setOnCancelListener(new Dialog.OnCancelListener() {
@@ -89,8 +79,7 @@ public class SettingsFragment extends PreferenceFragment {
                         public void onCancel(DialogInterface dialog) {
                             settings.putInt("seek_bar_volume", setVolProg);
                             settings.apply();
-                            Preference volPref = findPreference("sms_ringtone_volume");
-                            volPref.setSummary("Current volume: " + setVolProg + "%");
+                            findPreference("sms_ringtone_volume").setSummary("Current volume: " + setVolProg + "%");
                         }
                     });
                     dialog.setOnDismissListener(new Dialog.OnDismissListener() {
@@ -98,11 +87,10 @@ public class SettingsFragment extends PreferenceFragment {
                         public void onDismiss(DialogInterface dialog) {
                             settings.putInt("seek_bar_volume", setVolProg);
                             settings.apply();
-                            Preference volPref = findPreference("sms_ringtone_volume");
-                            volPref.setSummary("Current volume: " + setVolProg + "%");
+                            findPreference("sms_ringtone_volume").setSummary("Current volume: " + setVolProg + "%");
                         }
                     });
-                    seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                    ((SeekBar) dialog.findViewById(R.id.size_seekbar)).setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
                             tv_dialog_size.setText("Please select volume: (" + progress+ "%)");
                             setVolProg = progress;
@@ -125,7 +113,6 @@ public class SettingsFragment extends PreferenceFragment {
                     dialog.setTitle("Set battery percent");
                     dialog.setCancelable(true);
                     dialog.show();
-                    SeekBar seek = (SeekBar) dialog.findViewById(R.id.size_seekbar2);
                     final TextView tv_dialog_size = (TextView) dialog.findViewById(R.id.set_size_help_text2);
 
                     dialog.setOnCancelListener(new Dialog.OnCancelListener() {
@@ -133,8 +120,7 @@ public class SettingsFragment extends PreferenceFragment {
                         public void onCancel(DialogInterface dialog) {
                             settings.putInt("seek_bar_battery", battProg);
                             settings.apply();
-                            Preference volPref = findPreference("battery_percent");
-                            volPref.setSummary("Current percentage: " + battProg + "%");
+                            findPreference("battery_percent").setSummary("Current percentage: " + battProg + "%");
                         }
                     });
                     dialog.setOnDismissListener(new Dialog.OnDismissListener() {
@@ -142,11 +128,10 @@ public class SettingsFragment extends PreferenceFragment {
                         public void onDismiss(DialogInterface dialog) {
                             settings.putInt("seek_bar_battery", battProg);
                             settings.apply();
-                            Preference volPref = findPreference("battery_percent");
-                            volPref.setSummary("Current percentage: " + battProg + "%");
+                            findPreference("battery_percent").setSummary("Current percentage: " + battProg + "%");
                         }
                     });
-                    seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                    ((SeekBar) dialog.findViewById(R.id.size_seekbar2)).setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
                             tv_dialog_size.setText("Please select percentage: (" + progress+ "%)");
                             battProg = progress;
@@ -160,12 +145,10 @@ public class SettingsFragment extends PreferenceFragment {
                 }
             });
 
-
-            Preference devAdmin = findPreference("grant_device_admin");
-            devAdmin.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            findPreference("grant_device_admin").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                    if(!pol.isAdminActive()) {
+                    if(!new PolicyManager(getActivity()).isAdminActive()) {
                         Intent activateDeviceAdmin = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
                         activateDeviceAdmin.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, new ComponentName(getActivity(), DeviceAdmin.class));
                         startActivityForResult(activateDeviceAdmin, PolicyManager.DPM_ACTIVATION_REQUEST_CODE);
@@ -176,14 +159,12 @@ public class SettingsFragment extends PreferenceFragment {
                 }
             });
 
-            SwitchPreference serve = (SwitchPreference) findPreference("local_server");
-            serve.setChecked(Server.running);
+            ((SwitchPreference) findPreference("local_server")).setChecked(Server.running);
 
-            serve.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            findPreference("local_server").setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object newValue) {
-                    boolean switched = ((SwitchPreference) preference).isChecked();
-                    if (!switched){
+                    if (!((SwitchPreference) preference).isChecked()){
                         server = new Server(getActivity());
                         server.start();
                         Toast.makeText(getActivity(), "Server started on: " + server.getIP() + ":" + server.getPort(), Toast.LENGTH_SHORT).show();
@@ -196,16 +177,14 @@ public class SettingsFragment extends PreferenceFragment {
                 }
             });
 
-            Preference reg = findPreference("register");
-            reg.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            findPreference("register").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     //register();
                     return false;
                 }
             });
-            Preference unreg = findPreference("unregister");
-            unreg.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            findPreference("unregister").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     //unregister();
@@ -311,14 +290,11 @@ public class SettingsFragment extends PreferenceFragment {
                 ringDur.setSummary("Current: 20s (default)");
             }
 
-            Preference volPref = findPreference("sms_ringtone_volume");
-            volPref.setSummary("Current volume: " + settingsView.getInt("seek_bar_volume", 90) + "%");
+            findPreference("sms_ringtone_volume").setSummary("Current volume: " + settingsView.getInt("seek_bar_volume", 90) + "%");
 
-            Preference battPref = findPreference("battery_percent");
-            battPref.setSummary("Current percentage: " + settingsView.getInt("seek_bar_battery", 5) + "%");
+            findPreference("battery_percent").setSummary("Current percentage: " + settingsView.getInt("seek_bar_battery", 5) + "%");
 
-            Preference backupPrefs = findPreference("backup_shared_pref");
-            backupPrefs.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            findPreference("backup_shared_pref").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     actionSharedPref();
@@ -326,11 +302,10 @@ public class SettingsFragment extends PreferenceFragment {
                 }
             });
 
-            Preference checkPerms = findPreference("check_perm");
-            checkPerms.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            findPreference("check_perm").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                    newPerm.permissionsCheckup();
+                    new PermissionsManager(getActivity()).permissionsCheckup();
                     return false;
                 }
             });
@@ -342,16 +317,14 @@ public class SettingsFragment extends PreferenceFragment {
                     return true;
                 }
             };
-            Preference geoFence = findPreference("geo_fence");
-            geoFence.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            findPreference("geo_fence").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     startActivity(new Intent(SettingsFragment.super.getActivity(), GeoFencing.class));
                     return false;
                 }
             });
-            Preference beacon = findPreference("beacon");
-            beacon.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            findPreference("beacon").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     startActivity(new Intent(SettingsFragment.super.getActivity(), BeaconActivity.class));
@@ -359,15 +332,13 @@ public class SettingsFragment extends PreferenceFragment {
                 }
             });
 
-            Preference sort_loc = findPreference("sort_loc");
-            sort_loc.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            findPreference("sort_loc").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     startActivity(new Intent(SettingsFragment.super.getActivity(), Reorder.class));
                     return false;
                 }
             });
-
             Preference.OnPreferenceChangeListener simpleList = new Preference.OnPreferenceChangeListener() {
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -389,9 +360,7 @@ public class SettingsFragment extends PreferenceFragment {
                 RingtoneManager ringtoneManager = new RingtoneManager(getActivity());
                 Cursor cursor = ringtoneManager.getCursor();
                 while (cursor.moveToNext()) {
-                    String notificationTitle = cursor.getString(RingtoneManager.TITLE_COLUMN_INDEX);
-                    String notificationUri = ringtoneManager.getRingtoneUri(cursor.getPosition()).toString();
-                    list.put(notificationTitle, notificationUri);
+                    list.put(cursor.getString(RingtoneManager.TITLE_COLUMN_INDEX), ringtoneManager.getRingtoneUri(cursor.getPosition()).toString());
                 }
                 ringList.setEntries(list.keySet().toArray(new CharSequence[0]));
                 ringList.setEntryValues(list.values().toArray(new CharSequence[0]));
@@ -407,7 +376,6 @@ public class SettingsFragment extends PreferenceFragment {
             hide.setOnPreferenceChangeListener(listener);
             ringDur.setOnPreferenceChangeListener(secondsListener);
 
-            Preference genInfo = findPreference("general_info");
             Preference.OnPreferenceClickListener generalInfo = new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
@@ -427,13 +395,11 @@ public class SettingsFragment extends PreferenceFragment {
                                     dialog.dismiss();
                                 }
                             });
-                    AlertDialog alert = builder.create();
-                    alert.show();
+                    builder.create().show();
                     return false;
                 }
             };
-            genInfo.setOnPreferenceClickListener(generalInfo);
-
+            findPreference("general_info").setOnPreferenceClickListener(generalInfo);
         }catch(Exception ignored){}
     }
     private void savePref(SharedPreferences.Editor settings, Preference pref, String defaultVal, String prefTag){
@@ -442,15 +408,13 @@ public class SettingsFragment extends PreferenceFragment {
         settings.apply();
     }
     private void actionSharedPref(){
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
         try {
             File prefTxt = new File(Environment.getExternalStorageDirectory(), "prefs.txt");
 
             FileOutputStream fileInput = new FileOutputStream(prefTxt);
             OutputStreamWriter writer = new OutputStreamWriter(fileInput);
-            String total="";
-            Map<String, ?> keys = prefs.getAll();
-            for (Map.Entry<String, ?> entry : keys.entrySet()) {
+            String total = "";
+            for (Map.Entry<String, ?> entry : PreferenceManager.getDefaultSharedPreferences(getActivity()).getAll().entrySet()) {
                 total += "Key: "+ entry.getKey() + " Value: " + entry.getValue().toString()+"\n";
             }
             writer.write(total);
@@ -458,9 +422,8 @@ public class SettingsFragment extends PreferenceFragment {
             fileInput.close();
 
             Intent sharingIntent = new Intent(Intent.ACTION_SEND);
-            Uri fileUri = Uri.fromFile(prefTxt);
             sharingIntent.setType("file/*");
-            sharingIntent.putExtra(Intent.EXTRA_STREAM, fileUri);
+            sharingIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(prefTxt));
             startActivity(Intent.createChooser(sharingIntent, "Save"));
         }catch(Exception e){
             Toast.makeText(getActivity(),e.getMessage(),Toast.LENGTH_SHORT).show();

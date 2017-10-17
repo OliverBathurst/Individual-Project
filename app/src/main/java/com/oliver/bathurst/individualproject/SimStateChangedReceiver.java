@@ -74,7 +74,7 @@ public class SimStateChangedReceiver extends BroadcastReceiver {
     }
     @SuppressLint("HardwareIds")
     private void sendSMS(Context c, String state, String number){
-        if(number!=null && number.trim().length()!=0){
+        if(number != null && number.trim().length() != 0){
             try {
                 if (!doHide) {
                     Toast.makeText(c, "Sending text message", Toast.LENGTH_SHORT).show();

@@ -73,8 +73,7 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
             mMapView.getMapAsync(this);
         }
 
-        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getContext());
-        String scaleFactor = settings.getString("geo_fence_scale", null);
+        String scaleFactor = PreferenceManager.getDefaultSharedPreferences(getContext()).getString("geo_fence_scale", null);
         if (scaleFactor != null && scaleFactor.trim().length() != 0) {
             try {
                 scaleFactorInt = Integer.parseInt(scaleFactor);
@@ -86,13 +85,9 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
         }
         ((SeekBar) mView.findViewById(R.id.radius)).setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-            }
-
+            public void onStopTrackingTouch(SeekBar seekBar) {}
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-            }
-
+            public void onStartTrackingTouch(SeekBar seekBar) {}
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 mRadius = progress;
@@ -136,11 +131,9 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
                     builder.setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_EXIT);
                     builder.addGeofences(myList);
 
-                    PendingIntent mGeofenceIntent = PendingIntent.getService(getActivity(),
-                            0, new Intent(getActivity(), GeoFenceService.class), PendingIntent.FLAG_UPDATE_CURRENT);
-
                     try {
-                        mGeofencingClient.addGeofences(builder.build(), mGeofenceIntent);
+                        mGeofencingClient.addGeofences(builder.build(), PendingIntent.getService(getActivity(),
+                                0, new Intent(getActivity(), GeoFenceService.class), PendingIntent.FLAG_UPDATE_CURRENT));
                     } catch (SecurityException securityException) {
                         Toast.makeText(getActivity(), securityException.getMessage(), Toast.LENGTH_LONG).show();
                     }

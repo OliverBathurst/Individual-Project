@@ -124,8 +124,7 @@ public class Login extends AppCompatActivity{
                         dialog.dismiss();
                     }
                 });
-        android.app.AlertDialog alert = builder.create();
-        alert.show();
+        builder.create().show();
     }
     protected void onDestroy(){
         super.onDestroy();

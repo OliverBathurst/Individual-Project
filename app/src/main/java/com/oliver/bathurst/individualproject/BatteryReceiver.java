@@ -25,9 +25,8 @@ public class BatteryReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context c, Intent arg1) {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
-        boolean triggersByEmail = settings.getBoolean("sms_by_email", false);
 
-        if(triggersByEmail){
+        if(settings.getBoolean("sms_by_email", false)){
             String user = settings.getString("gmail_username", null);
             String pass = settings.getString("gmail_password", null);
             if((user!=null && user.trim().length()!=0 && user.contains("@")) && (pass!=null && pass.trim().length()!=0)){

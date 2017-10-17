@@ -144,10 +144,7 @@ class EmailAttachmentHelper {
             final WifiManager wifiManager = (WifiManager) c.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
             NetworkInfo networkInfo = ((ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE)).getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
             TelephonyManager telephonyManager = (TelephonyManager)c.getSystemService(Context.TELEPHONY_SERVICE);
-
-            LocationService locationService = new LocationService(c);
-            Location loc = locationService.getLoc();
-
+            Location loc = new LocationService(c).getLoc();
 
             emailBody = "This is a location alert, your device location is: " + loc.getLatitude()
                     + "," + loc.getLongitude()

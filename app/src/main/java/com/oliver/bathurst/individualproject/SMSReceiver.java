@@ -199,7 +199,7 @@ public class SMSReceiver extends BroadcastReceiver {
     private void sendLoc(final Context c, final String sender, String updateInterval, String updateIntervalNum, final int requestNo){
         int interval = 1,number = 1;
 
-        if(updateInterval!=null && updateIntervalNum!=null){
+        if(updateInterval != null && updateIntervalNum != null){
             try{
                 interval = Integer.parseInt(updateInterval);
                 number = Integer.parseInt(updateIntervalNum);
@@ -210,7 +210,6 @@ public class SMSReceiver extends BroadcastReceiver {
         }
 
         final int i = number;
-
         final Timer t = new Timer();
 
         t.scheduleAtFixedRate(new TimerTask() {
