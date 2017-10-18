@@ -738,9 +738,6 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
-    <item name="ic_menu_camera" type="drawable">@android:drawable/ic_menu_camera</item>
-    <item name="ic_menu_gallery" type="drawable">@android:drawable/ic_menu_gallery</item>
-    <item name="ic_menu_share" type="drawable">@android:drawable/ic_menu_share</item>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <drawable name="notification_template_icon_low_bg">#0cffffff</drawable>
     <item name="action_bar_activity_content" type="id"/>
@@ -803,6 +800,7 @@
     <string name="app_name">Individual Project</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
+    <string name="calibrate_beacon">Calibrate Beacon</string>
     <string name="cancel">Cancel</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Enable</string>
@@ -825,6 +823,8 @@
     <string name="declaration">Position declared by: </string>
     <string name="default_web_client_id" translatable="false">827608726307-n6kdngdn74oospm1ueldavh6es9jtsri.apps.googleusercontent.com</string>
     <string name="degrees">Degrees: </string>
+    <string name="delete_all_beacons">Delete All Beacons</string>
+    <string name="edit_beacons">Edit Beacons</string>
     <string name="firebase_database_url" translatable="false">https://individual-proje-1506098783043.firebaseio.com</string>
     <string name="gcm_defaultSenderId" translatable="false">827608726307</string>
     <string name="google_api_key" translatable="false">AIzaSyDvNpwbBOViIX2m9BFq1b51RkIML2O3c2Q</string>
@@ -833,6 +833,7 @@
     <string name="google_storage_bucket" translatable="false">individual-proje-1506098783043.appspot.com</string>
     <string name="gpsElev">Reported Elevation: </string>
     <string name="information">I N F O R M A T I O N</string>
+    <string name="misc">Misc</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="password_toggle_content_description">Toggle password visibility</string>

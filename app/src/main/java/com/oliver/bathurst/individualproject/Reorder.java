@@ -4,7 +4,6 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -14,7 +13,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 import java.util.ArrayList;
@@ -84,7 +82,7 @@ public class Reorder extends AppCompatActivity {
         (findViewById(R.id.down)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (selected + 1 < order.size()) {
+                if (selected  < order.size()-1) {
                     Collections.swap(order, selected, selected + 1);
                     selected++;
                     reOrder();
@@ -92,12 +90,13 @@ public class Reorder extends AppCompatActivity {
             }
         });
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Warning");
-        builder.setMessage("No not edit these without good reason, this order has been " +
-                "specifically chosen for optimal accuracy");
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {}
+        AlertDialog.Builder builder = new AlertDialog.Builder(this).setTitle("Warning")
+                .setMessage("No not edit these without good reason, this order has been " +
+                "specifically chosen for optimal accuracy")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
         });
         builder.create().show();
     }
