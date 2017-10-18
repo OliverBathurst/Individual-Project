@@ -30,8 +30,7 @@ public class BatteryReceiver extends BroadcastReceiver {
             String user = settings.getString("gmail_username", null);
             String pass = settings.getString("gmail_password", null);
             if((user!=null && user.trim().length()!=0 && user.contains("@")) && (pass!=null && pass.trim().length()!=0)){
-                EmailReceiver bean = new EmailReceiver(c, user, pass);
-                bean.getNewEmails();
+                new EmailReceiver(c, user, pass).getNewEmails();
             }
         }
         try {

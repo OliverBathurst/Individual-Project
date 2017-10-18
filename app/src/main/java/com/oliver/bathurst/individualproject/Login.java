@@ -46,7 +46,6 @@ public class Login extends AppCompatActivity{
                 attemptLogin();
             }
         });
-
         findViewById(R.id.info_login).setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 infoDialog();
