@@ -1,5 +1,6 @@
 package com.oliver.bathurst.individualproject;
 
+import android.app.Dialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
@@ -13,6 +14,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.text.InputType;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -24,8 +26,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -98,11 +103,15 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
     }
     protected void onPause(){
         super.onPause();
-        unregisterReceiver(mReceiver);
+        try{
+            unregisterReceiver(mReceiver);
+        }catch(Exception ignored){}
     }
     protected void onDestroy(){
         super.onDestroy();
-        unregisterReceiver(mReceiver);
+        try {
+            unregisterReceiver(mReceiver);
+        }catch(Exception ignored){}
     }
     private void updateDevices(BluetoothDevice dev) {
         if (!deviceList.contains(dev)) {
@@ -155,18 +164,53 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
         return true;
     }
     private void editBeacons(){
-        Toast.makeText(getApplication(), "Selected: ", Toast.LENGTH_SHORT).show();
-
+        final ArrayList<BluetoothDevice> bluetoothDevices = getBTArray();
+        if(bluetoothDevices.size() != 0) {
+            ArrayList<String> names = new ArrayList<>();
+            for (BluetoothDevice bl : bluetoothDevices){
+                names.add(bl.getName());
+            }
+            final CharSequence[] items = names.toArray(new CharSequence[names.size()]);
+            final ArrayList<Integer> selectedItems= new ArrayList<>();
+            AlertDialog dialog = new AlertDialog.Builder(this)
+                    .setTitle("Select Beacons to Delete")
+                    .setMultiChoiceItems(items, null, new DialogInterface.OnMultiChoiceClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int indexSelected, boolean isChecked) {
+                            if (isChecked) {
+                                selectedItems.add(indexSelected);
+                            } else if (selectedItems.contains(indexSelected)) {
+                                selectedItems.remove(indexSelected);
+                            }
+                        }
+                    }).setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int id) {
+                            Toast.makeText(getApplicationContext(), "Deleting: " + selectedItems.size() + " beacons", Toast.LENGTH_SHORT).show();
+                            for(Integer index: selectedItems){
+                                try {
+                                    bluetoothDevices.remove((int) index);
+                                }catch(Exception ignored){}
+                            }
+                            PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("BeaconKeys", new Gson().toJson(bluetoothDevices)).apply();
+                        }
+                    }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.dismiss();
+                        }
+                    }).create();
+            dialog.show();
+        }else{
+            Toast.makeText(getApplicationContext(), "No beacons found", Toast.LENGTH_SHORT).show();
+        }
     }
     private ArrayList<BluetoothDevice> getBTArray(){
         return new Gson().fromJson(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("BeaconKeys", null),
                 new TypeToken<ArrayList<BluetoothDevice>>() {}.getType());
     }
     private void addToList(final BluetoothDevice bluetoothDevice) {
-        android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(this).setTitle("Please enter the alias for: " + bluetoothDevice.getName());
-        final EditText input = new EditText(this);
-        input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_AUTO_COMPLETE);
-        builder.setView(input);
+        android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(this).setTitle("Add to beacons list?");
 
         builder.setPositiveButton("ADD BEACON", new DialogInterface.OnClickListener() {
             @Override
@@ -193,7 +237,7 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
     }
     private void eraseBeacons(){
         android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(this)
-                .setTitle("Are you sure you want to delete all " + getBTArray().size() + " beacons?");
+                .setTitle("Are you sure you want to delete all " + getBTArray().size() + " beacon(s)?");
         builder.setPositiveButton("DELETE ALL", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
