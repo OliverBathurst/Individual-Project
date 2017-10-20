@@ -823,7 +823,6 @@
     <string name="declaration">Position declared by: </string>
     <string name="default_web_client_id" translatable="false">827608726307-n6kdngdn74oospm1ueldavh6es9jtsri.apps.googleusercontent.com</string>
     <string name="degrees">Degrees: </string>
-    <string name="delete">Delete</string>
     <string name="delete_all_beacons">Delete All Beacons</string>
     <string name="edit_beacons">Edit Beacons</string>
     <string name="firebase_database_url" translatable="false">https://individual-proje-1506098783043.firebaseio.com</string>
