@@ -14,6 +14,7 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.preference.CheckBoxPreference;
 import android.preference.EditTextPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -197,6 +198,9 @@ public class SettingsFragment extends PreferenceFragment {
                 emailUpdates.setSummary(emailUpdates.getText());
             }
 
+            ((CheckBoxPreference) findPreference("hide_sms")).setChecked(settingsView.getBoolean("hide_sms", true));
+            ((CheckBoxPreference) findPreference("enable_triggers")).setChecked(settingsView.getBoolean("enable_triggers", true));
+
             ////////TRIGGERS/////////////////////
             EditTextPreference smsRing = (EditTextPreference) findPreference("sms_ring");
             if (smsRing.getText() != null && smsRing.getText().trim().length() != 0) {
@@ -204,6 +208,14 @@ public class SettingsFragment extends PreferenceFragment {
             }else{
                 savePref(settings, smsRing, "ring12345", "sms_ring");
             }
+
+            EditTextPreference smsStolen = (EditTextPreference) findPreference("sms_stolen");
+            if (smsStolen.getText() != null && smsStolen.getText().trim().length() != 0) {
+                smsStolen.setSummary("Trigger: " + smsStolen.getText());
+            }else{
+                savePref(settings, smsStolen, "stolen", "sms_stolen");
+            }
+
 
             EditTextPreference smsEmail = (EditTextPreference) findPreference("sms_relay_email");
             if (smsEmail.getText() != null && smsEmail.getText().trim().length() != 0) {
@@ -367,6 +379,7 @@ public class SettingsFragment extends PreferenceFragment {
 
             emailUpdates.setOnPreferenceChangeListener(simpleList);
             smsRing.setOnPreferenceChangeListener(listener);
+            smsStolen.setOnPreferenceChangeListener(listener);
             smsEmail.setOnPreferenceChangeListener(listener);
             smsText.setOnPreferenceChangeListener(listener);
             smsLoc.setOnPreferenceChangeListener(listener);
@@ -403,8 +416,7 @@ public class SettingsFragment extends PreferenceFragment {
     }
     private void savePref(SharedPreferences.Editor settings, Preference pref, String defaultVal, String prefTag){
         pref.setSummary("Trigger: " + defaultVal);
-        settings.putString(prefTag, defaultVal);
-        settings.apply();
+        settings.putString(prefTag, defaultVal).apply();
     }
     private void actionSharedPref(){
         try {

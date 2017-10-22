@@ -153,6 +153,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditTextPreference
+            android:key="sms_stolen"
+            android:icon="@drawable/ic_android_black_24dp"
+            android:title="To Flag Device As Lost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditTextPreference
             android:key="wipe_sdcard"
             android:icon="@drawable/ic_warning_black_24dp"
             android:title="To Remotely Wipe SD Card"
@@ -373,6 +380,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:icon="@drawable/ic_do_not_disturb_on_black_24dp"
+                android:defaultValue="true"
                 android:key="hide_sms"
                 android:title="Hide Notifications" />
             <EditTextPreference
