@@ -164,7 +164,7 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
             }
             ((TextView) mView.findViewById(R.id.declare)).setText(getString(R.string.declaration).concat(" " + loc.getProvider()));
             ((TextView) mView.findViewById(R.id.locationAcc)).setText(String.format("%s%s", getString(R.string.accuracy), Float.toString(loc.getAccuracy())));
-            ((TextView) mView.findViewById(R.id.gpsElevation)).setText(String.format("%s%s", getString(R.string.gpsElev), Double.toString(loc.getAltitude())));
+
             MapsInitializer.initialize(getContext());
             marker = gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
                     .title("Device Location: " + loc.getLatitude() + loc.getLongitude()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f));
@@ -222,7 +222,6 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
             }
             ((TextView) mView.findViewById(R.id.declare)).setText(getString(R.string.declaration).concat(" " + loc.getProvider()));
             ((TextView) mView.findViewById(R.id.locationAcc)).setText(String.format("%s%s", getString(R.string.accuracy), Float.toString(loc.getAccuracy())));
-            ((TextView) mView.findViewById(R.id.gpsElevation)).setText(String.format("%s%s", getString(R.string.gpsElev), Double.toString(loc.getAltitude())));
         }
     }
     @Override

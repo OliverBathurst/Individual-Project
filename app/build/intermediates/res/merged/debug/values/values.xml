@@ -831,7 +831,6 @@
     <string name="google_app_id" translatable="false">1:827608726307:android:857be97c3c142a00</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDvNpwbBOViIX2m9BFq1b51RkIML2O3c2Q</string>
     <string name="google_storage_bucket" translatable="false">individual-proje-1506098783043.appspot.com</string>
-    <string name="gpsElev">Reported Elevation: </string>
     <string name="information">I N F O R M A T I O N</string>
     <string name="misc">Misc</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
