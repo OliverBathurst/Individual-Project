@@ -25,4 +25,5 @@
     <string name="edit_beacons">Edit Beacons</string>
     <string name="misc">Misc</string>
     <string name="calibrate_beacon">Calibrate Beacons</string>
+    <string name="main">Main</string>
 </resources>

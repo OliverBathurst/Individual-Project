@@ -2,14 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/View_Beacons"
-            android:icon="@drawable/ic_view_agenda_black_24dp"
-            android:title="@string/edit_beacons" />
-        <item
-            android:id="@+id/Erase_Beacons"
-            android:icon="@drawable/ic_delete_black_24dp"
-            android:title="@string/delete_all_beacons" />
+        <item android:title="@string/main">
+            <menu>
+                <item
+                    android:id="@+id/View_Beacons"
+                    android:icon="@drawable/ic_view_agenda_black_24dp"
+                    android:title="@string/edit_beacons" />
+                <item
+                    android:id="@+id/Erase_Beacons"
+                    android:icon="@drawable/ic_delete_black_24dp"
+                    android:title="@string/delete_all_beacons" />
+            </menu>
+        </item>
     </group>
 
     <item android:title="@string/misc">

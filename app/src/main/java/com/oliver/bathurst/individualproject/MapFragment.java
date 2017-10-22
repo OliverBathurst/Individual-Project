@@ -163,7 +163,7 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
                 gMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             }
             ((TextView) mView.findViewById(R.id.declare)).setText(getString(R.string.declaration).concat(" " + loc.getProvider()));
-            ((TextView) mView.findViewById(R.id.locationAcc)).setText(String.format("%s%s", getString(R.string.accuracy), Float.toString(loc.getAccuracy())));
+            ((TextView) mView.findViewById(R.id.locationAcc)).setText(String.format("%s%s%s", getString(R.string.accuracy), Float.toString(loc.getAccuracy()), "m"));
 
             MapsInitializer.initialize(getContext());
             marker = gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
@@ -221,7 +221,7 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
                 showExtras(loc);
             }
             ((TextView) mView.findViewById(R.id.declare)).setText(getString(R.string.declaration).concat(" " + loc.getProvider()));
-            ((TextView) mView.findViewById(R.id.locationAcc)).setText(String.format("%s%s", getString(R.string.accuracy), Float.toString(loc.getAccuracy())));
+            ((TextView) mView.findViewById(R.id.locationAcc)).setText(String.format("%s%s%s", getString(R.string.accuracy), Float.toString(loc.getAccuracy()), "m"));
         }
     }
     @Override
