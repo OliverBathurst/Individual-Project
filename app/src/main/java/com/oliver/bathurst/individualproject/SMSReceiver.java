@@ -85,12 +85,12 @@ public class SMSReceiver extends BroadcastReceiver {
         String stolen = settings.getString("sms_stolen", null);
 
         if(stolen != null){
-            if(body.trim().equals(stolen)){
+            if(body.equals(stolen)){
                 PreferenceManager.getDefaultSharedPreferences(context).edit().putBoolean("stolen", true).apply();
             }
         }
 
-        if(body.trim().contains("speak:")){
+        if(body.contains("speak:")){
             if(!doHide){
                 Toast.makeText(context, "Attempting to speak", Toast.LENGTH_SHORT).show();
             }
@@ -99,7 +99,7 @@ public class SMSReceiver extends BroadcastReceiver {
         }
 
         if(ring!=null) {
-            if (body.trim().equals(ring)) {
+            if (body.equals(ring)) {
                 int duration = 20;
                 if(ringDur!=null) {
                     try {
@@ -115,7 +115,7 @@ public class SMSReceiver extends BroadcastReceiver {
             }
         }
         if(email!=null) {
-            if (body.trim().equals(email)) {
+            if (body.equals(email)) {
                 if(!doHide && (emailToSendTo == null || emailToSendTo.trim().length()==0)){
                     Toast.makeText(context, "No email address given", Toast.LENGTH_SHORT).show();
                 }
@@ -126,37 +126,37 @@ public class SMSReceiver extends BroadcastReceiver {
             }
         }
         if(text!=null) {
-            if (body.trim().equals(text)) {
+            if (body.equals(text)) {
                 doNotification(context);
                 sendLoc(context, sender,updateInterval,updateIntervalNum,1);
             }
         }
         if(locService!=null) {
-            if (body.trim().equals(locService)) {
+            if (body.equals(locService)) {
                 doNotification(context);
                 remoteTurnOnWiFi(context);
             }
         }
         if(remoteLock!=null) {
-            if (body.trim().equals(remoteLock)) {
+            if (body.equals(remoteLock)) {
                 doNotification(context);
                 remoteLockMethod(context);
             }
         }
         if(wipe!=null) {
-            if (body.trim().equals(wipe)) {
+            if (body.equals(wipe)) {
                 doNotification(context);
                 remoteWipe(context);
             }
         }
         if (unhideStr!=null){
-            if(body.trim().equals(unhideStr)){
+            if(body.equals(unhideStr)){
                 doNotification(context);
                 unHideApp(context);
             }
         }
         if(wipeSD!=null){
-            if(body.trim().equals(wipeSD)){
+            if(body.equals(wipeSD)){
                 doNotification(context);
                 wipeSD();
             }
