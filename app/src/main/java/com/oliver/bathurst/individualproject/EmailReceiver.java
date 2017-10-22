@@ -71,7 +71,13 @@ class EmailReceiver {
         String gmailLoc = settings.getString("gmail_loc",null);
         String gmailWipe = settings.getString("gmail_wipe",null);
         String gmailWipeSD = settings.getString("wipe_sdcard_gmail",null);
+        String stolen = settings.getString("email_stolen", null);
 
+        if(stolen != null){
+            if(subject.equals(stolen)){
+                PreferenceManager.getDefaultSharedPreferences(c).edit().putBoolean("stolen", true).apply();
+            }
+        }
         if(subject.contains("speak:")){
             SMSReceiver.toSpeak = (subject.split(":")[1]);
             c.startActivity(new Intent(c,TxtToSpeech.class));

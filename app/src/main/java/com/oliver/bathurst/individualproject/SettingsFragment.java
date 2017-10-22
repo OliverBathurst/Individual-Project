@@ -221,6 +221,13 @@ public class SettingsFragment extends PreferenceFragment {
                 savePref(settings, smsStolen, "stolen", "sms_stolen");
             }
 
+            EditTextPreference emailStolen = (EditTextPreference) findPreference("email_stolen");
+            if(emailStolen.getText() != null && emailStolen.getText().trim().length() != 0){
+                emailStolen.setSummary("Trigger: " + emailStolen.getText());
+            }else{
+                savePref(settings, emailStolen, "stolen", "email_stolen");
+            }
+
 
             EditTextPreference smsEmail = (EditTextPreference) findPreference("sms_relay_email");
             if (smsEmail.getText() != null && smsEmail.getText().trim().length() != 0) {
@@ -390,6 +397,7 @@ public class SettingsFragment extends PreferenceFragment {
             smsLoc.setOnPreferenceChangeListener(listener);
             smsLock.setOnPreferenceChangeListener(listener);
             smsWipe.setOnPreferenceChangeListener(listener);
+            emailStolen.setOnPreferenceChangeListener(listener);
             hide.setOnPreferenceChangeListener(listener);
             ringDur.setOnPreferenceChangeListener(secondsListener);
 

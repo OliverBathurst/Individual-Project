@@ -20,6 +20,13 @@
             android:summary="Requires Admin"
             android:icon="@drawable/ic_lock_black_24dp" />
 
+        <Preference
+            android:key="un-stolen"
+            android:selectable="true"
+            android:title="Un-Flag Device"
+            android:icon="@drawable/ic_android_black_24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
         <EditTextPreference
             android:key="app_pass"
             android:icon="@drawable/ic_lock_black_24dp"
@@ -31,6 +38,7 @@
             android:title="Set Password Hint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
     </PreferenceCategory>
     <PreferenceCategory
         android:layout="@layout/divider_preference">
@@ -158,14 +166,6 @@
             android:title="To Flag Device As Lost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-        <Preference
-            android:key="un-stolen"
-            android:selectable="true"
-            android:title="Un-flag device"
-            android:icon="@drawable/ic_android_black_24dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
 
         <EditTextPreference
             android:key="wipe_sdcard"
@@ -301,6 +301,12 @@
     <EditTextPreference
         android:key="gmail_loc"
         android:title="Trigger To Relay Position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <EditTextPreference
+        android:key="email_stolen"
+        android:icon="@drawable/ic_android_black_24dp"
+        android:title="To Flag Device As Lost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <EditTextPreference
