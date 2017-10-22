@@ -177,6 +177,9 @@
             android:label="@string/title_activity_reorder"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name="com.oliver.bathurst.individualproject.BeaconConfig"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
+        <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />

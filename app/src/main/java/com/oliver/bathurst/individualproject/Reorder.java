@@ -4,7 +4,6 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -49,9 +48,8 @@ public class Reorder extends AppCompatActivity {
         (findViewById(R.id.fab)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Saving...", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                 saveOrder();
-                Snackbar.make(view, "Saved", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+                Reorder.super.onBackPressed();
             }
         });
         order = new ArrayList<>();

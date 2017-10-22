@@ -19,7 +19,7 @@
     <item android:title="@string/misc">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/calibrate"
                 android:icon="@drawable/ic_edit_black_24dp"
                 android:title="@string/calibrate_beacon" />
         </menu>

@@ -19,12 +19,20 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.BIND_DEVICE_ADMIN"
+    <uses-permission
+        android:name="android.permission.BIND_DEVICE_ADMIN"
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-    <permission android:name="your.package.name.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+
+    <permission
+        android:name="your.package.name.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
     <uses-permission android:name="your.package.name.permission.C2D_MESSAGE" />
-    <uses-feature android:name="android.hardware.bluetooth_le" android:required="false"/>
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="false" />
 
     <uses-permission
         android:name="android.permission.BROADCAST_SMS"
@@ -59,19 +67,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-
-        <receiver android:name=".DeviceAdmin"
+        <receiver
+            android:name=".DeviceAdmin"
             android:permission="android.permission.BIND_DEVICE_ADMIN">
             <meta-data
                 android:name="android.app.device_admin"
                 android:resource="@xml/device_admin" />
+
             <intent-filter android:priority="999">
                 <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
                 <action android:name="android.app.action.ACTION_DEVICE_ADMIN_DISABLE_REQUESTED" />
                 <action android:name="android.app.action.ACTION_DEVICE_ADMIN_DISABLED" />
             </intent-filter>
         </receiver>
-
         <receiver
             android:name=".SMSReceiver"
             android:enabled="true"
@@ -101,10 +109,12 @@
                 <action android:name="android.intent.action.SIM_STATE_CHANGED" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".BeaconActivity$mReceiver"
+        <receiver
+            android:name=".BeaconActivity$mReceiver"
             android:enabled="true" />
 
-        <meta-data android:name="com.google.android.gms.version"
+        <meta-data
+            android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
         <activity
@@ -154,6 +164,9 @@
             android:name=".Reorder"
             android:label="@string/title_activity_reorder"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".BeaconConfig"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
     </application>
 
 </manifest>

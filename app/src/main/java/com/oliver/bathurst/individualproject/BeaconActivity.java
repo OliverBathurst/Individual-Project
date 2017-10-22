@@ -52,17 +52,11 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
             @SuppressWarnings("ResultOfMethodCallIgnored")
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                boolean tryNull = true;
                 try{
                     //noinspection RedundantStringToString
                     deviceList.get(position).getName().toString(); //make sure it's not null, try parsing name
-                }catch(Exception e){
-                    tryNull = false;
-                }
-
-                if(tryNull){
                     addToList(deviceList.get(position));
-                }else{
+                }catch(Exception e){
                     Snackbar.make(findViewById(R.id.drawer_layout), "Cannot add beacon", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                 }
             }
@@ -166,6 +160,8 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
             editBeacons();
         } else if (id == R.id.Erase_Beacons) {
             eraseBeacons();
+        } else if (id == R.id.calibrate){
+            startActivity(new Intent(this, BeaconConfig.class));
         }
         ((DrawerLayout) findViewById(R.id.drawer_layout)).closeDrawer(GravityCompat.START);
         return true;
