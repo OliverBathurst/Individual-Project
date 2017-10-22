@@ -34,7 +34,8 @@ public class GeoFenceService extends IntentService {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
         String emailToSendTo = settings.getString("email_string", null);
 
-        if(settings.getBoolean("geo_fence_enable_or_not",false) && emailToSendTo !=null && emailToSendTo.trim().length()!=0 && emailToSendTo.contains("@")) {
+        if(settings.getBoolean("geo_fence_enable_or_not",false) && emailToSendTo != null && emailToSendTo.trim().length()!=0
+                && emailToSendTo.contains("@") && settings.getBoolean("stolen", false)) {
             new GMailSender("locator.findmydevice.service@gmail.com", "TheWatchful2").sendMail("locator.findmydevice.service@gmail.com",
                     "Geofence Breach", new EmailAttachmentHelper(this).getEmailString(), emailToSendTo.trim());
         }

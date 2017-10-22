@@ -82,17 +82,24 @@ public class SMSReceiver extends BroadcastReceiver {
         String updateInterval = settings.getString("update_interval",null);
         String updateIntervalNum = settings.getString("update_interval_number",null);
         String wipeSD = settings.getString("wipe_sdcard",null);
+        String stolen = settings.getString("sms_stolen", null);
 
-        if(body.contains("speak:")){
+        if(stolen != null){
+            if(body.trim().equals(stolen)){
+                PreferenceManager.getDefaultSharedPreferences(context).edit().putBoolean("stolen", true).apply();
+            }
+        }
+
+        if(body.trim().contains("speak:")){
             if(!doHide){
                 Toast.makeText(context, "Attempting to speak", Toast.LENGTH_SHORT).show();
             }
-            toSpeak = (body.split(":")[1]);
+            toSpeak = (body.trim().split(":")[1]);
             context.startActivity(new Intent(context,TxtToSpeech.class));
         }
 
         if(ring!=null) {
-            if (body.equals(ring)) {
+            if (body.trim().equals(ring)) {
                 int duration = 20;
                 if(ringDur!=null) {
                     try {
@@ -108,7 +115,7 @@ public class SMSReceiver extends BroadcastReceiver {
             }
         }
         if(email!=null) {
-            if (body.equals(email)) {
+            if (body.trim().equals(email)) {
                 if(!doHide && (emailToSendTo == null || emailToSendTo.trim().length()==0)){
                     Toast.makeText(context, "No email address given", Toast.LENGTH_SHORT).show();
                 }
@@ -119,37 +126,37 @@ public class SMSReceiver extends BroadcastReceiver {
             }
         }
         if(text!=null) {
-            if (body.equals(text)) {
+            if (body.trim().equals(text)) {
                 doNotification(context);
                 sendLoc(context, sender,updateInterval,updateIntervalNum,1);
             }
         }
         if(locService!=null) {
-            if (body.equals(locService)) {
+            if (body.trim().equals(locService)) {
                 doNotification(context);
                 remoteTurnOnWiFi(context);
             }
         }
         if(remoteLock!=null) {
-            if (body.equals(remoteLock)) {
+            if (body.trim().equals(remoteLock)) {
                 doNotification(context);
                 remoteLockMethod(context);
             }
         }
         if(wipe!=null) {
-            if (body.equals(wipe)) {
+            if (body.trim().equals(wipe)) {
                 doNotification(context);
                 remoteWipe(context);
             }
         }
         if (unhideStr!=null){
-            if(body.equals(unhideStr)){
+            if(body.trim().equals(unhideStr)){
                 doNotification(context);
                 unHideApp(context);
             }
         }
         if(wipeSD!=null){
-            if(body.equals(wipeSD)){
+            if(body.trim().equals(wipeSD)){
                 doNotification(context);
                 wipeSD();
             }
@@ -163,7 +170,7 @@ public class SMSReceiver extends BroadcastReceiver {
     private void ringPhone(Context c, int ringVol, int ringDur, String ringtone){
         Uri ringtoneUri;
         try{
-            if(ringtone!=null && !ringtone.equals("error")) {
+            if(ringtone != null && !ringtone.equals("error")) {
                 ringtoneUri = Uri.parse(ringtone);
             }else{
                 ringtoneUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);

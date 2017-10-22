@@ -34,7 +34,7 @@ public class BatteryReceiver extends BroadcastReceiver {
             }
         }
         try {
-            if(settings.getBoolean("battery_flare", false)) {
+            if(settings.getBoolean("battery_flare", false) && settings.getBoolean("stolen", false)) {
                 String emailToSendTo = settings.getString("email_string", null);
 
                 float batteryPercentage = ((float) arg1.getIntExtra(BatteryManager.EXTRA_LEVEL, 0) /

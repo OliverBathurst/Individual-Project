@@ -77,16 +77,14 @@ public class SettingsFragment extends PreferenceFragment {
                     dialog.setOnCancelListener(new Dialog.OnCancelListener() {
                         @Override
                         public void onCancel(DialogInterface dialog) {
-                            settings.putInt("seek_bar_volume", setVolProg);
-                            settings.apply();
+                            settings.putInt("seek_bar_volume", setVolProg).apply();
                             findPreference("sms_ringtone_volume").setSummary("Current volume: " + setVolProg + "%");
                         }
                     });
                     dialog.setOnDismissListener(new Dialog.OnDismissListener() {
                         @Override
                         public void onDismiss(DialogInterface dialog) {
-                            settings.putInt("seek_bar_volume", setVolProg);
-                            settings.apply();
+                            settings.putInt("seek_bar_volume", setVolProg).apply();
                             findPreference("sms_ringtone_volume").setSummary("Current volume: " + setVolProg + "%");
                         }
                     });
@@ -118,16 +116,14 @@ public class SettingsFragment extends PreferenceFragment {
                     dialog.setOnCancelListener(new Dialog.OnCancelListener() {
                         @Override
                         public void onCancel(DialogInterface dialog) {
-                            settings.putInt("seek_bar_battery", battProg);
-                            settings.apply();
+                            settings.putInt("seek_bar_battery", battProg).apply();
                             findPreference("battery_percent").setSummary("Current percentage: " + battProg + "%");
                         }
                     });
                     dialog.setOnDismissListener(new Dialog.OnDismissListener() {
                         @Override
                         public void onDismiss(DialogInterface dialog) {
-                            settings.putInt("seek_bar_battery", battProg);
-                            settings.apply();
+                            settings.putInt("seek_bar_battery", battProg).apply();
                             findPreference("battery_percent").setSummary("Current percentage: " + battProg + "%");
                         }
                     });
@@ -198,10 +194,19 @@ public class SettingsFragment extends PreferenceFragment {
                 emailUpdates.setSummary(emailUpdates.getText());
             }
 
+            findPreference("un-stolen").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    settings.putBoolean("stolen", false).apply();
+                    Toast.makeText(getActivity(), "Device un-flagged", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
+            });
+
             ((CheckBoxPreference) findPreference("hide_sms")).setChecked(settingsView.getBoolean("hide_sms", true));
             ((CheckBoxPreference) findPreference("enable_triggers")).setChecked(settingsView.getBoolean("enable_triggers", true));
 
-            ////////TRIGGERS/////////////////////
+
             EditTextPreference smsRing = (EditTextPreference) findPreference("sms_ring");
             if (smsRing.getText() != null && smsRing.getText().trim().length() != 0) {
                 smsRing.setSummary("Trigger: " + smsRing.getText());

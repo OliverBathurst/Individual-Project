@@ -158,6 +158,14 @@
             android:title="To Flag Device As Lost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+        <Preference
+            android:key="un-stolen"
+            android:selectable="true"
+            android:title="Un-flag device"
+            android:icon="@drawable/ic_android_black_24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
 
         <EditTextPreference
             android:key="wipe_sdcard"
