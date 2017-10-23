@@ -27,11 +27,12 @@
     <string name="calibrate_beacon">Calibrate Beacons</string>
     <string name="main">Main</string>
     <string name="beacon">Beacon</string>
-    <string name="signal">Signal</string>
+    <string name="signal">No Signal</string>
     <string name="distance">Distance</string>
     <string name="saveAS">Save</string>
     <string name="calibrate">Calibrate</string>
     <string name="to_calibrate_move_away_from_the_beacon_and_save_the_signal_strength_at_different_distances_the_more_readings_the_more_accurate_the_positioning_will_be">To calibrate, move away from the beacon and save the signal strength at different distances, the more readings, the more accurate the positioning will be.</string>
+    <string name="reset_beacon_calibration">Reset Beacon Calibration</string>
     <string-array name = "CMorM">
         <item>CM</item>
         <item>M</item>

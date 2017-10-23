@@ -6,6 +6,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -17,18 +18,15 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
-import java.util.ArrayList;
 
 public class BeaconConfig extends AppCompatActivity {
     private int selectedPosition = 0;
     private TextView signal;
     private BluetoothDevice globalDevice;
     private String globalDeviceName;
-    private BluetoothAdapter BTAdapter = BluetoothAdapter.getDefaultAdapter();
+    private final BluetoothAdapter BTAdapter = BluetoothAdapter.getDefaultAdapter();
 
 
     @Override
@@ -44,12 +42,10 @@ public class BeaconConfig extends AppCompatActivity {
         signal = (TextView) findViewById(R.id.signal);
         ((TextView) findViewById(R.id.beaconName)).setText(globalDeviceName);
 
-
         Snackbar.make(findViewById(R.id.beaconContent), globalDeviceName + " Loaded", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
         registerReceiver(receiver, new IntentFilter(BluetoothDevice.ACTION_FOUND));
         registerReceiver(receiver, new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED));
         BTAdapter.startDiscovery();
-
 
         ((Spinner) findViewById(R.id.spinner)).setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -68,41 +64,61 @@ public class BeaconConfig extends AppCompatActivity {
                     try {
                         Float toSave = Float.parseFloat(edit.getText().toString().trim());
                         try{
-                            int RSSI = Integer.parseInt(signal.getText().toString());
+                            if(toSave > 0) {
+                                SharedPreferences.Editor put = PreferenceManager.getDefaultSharedPreferences(getApplication()).edit();
+                                int RSSI = Integer.parseInt(signal.getText().toString());
+                                float temp = PreferenceManager.getDefaultSharedPreferences(getApplication()).getFloat(globalDeviceName, 1);
 
-
-
-
-
+                                if (selectedPosition == 0) {
+                                    put.putFloat(globalDeviceName, (temp + (RSSI / toSave)) / 2).apply();  //1 cm to dbm
+                                } else if (selectedPosition == 1) {
+                                    put.putFloat(globalDeviceName, (temp + (RSSI / (toSave * 100))) / 2).apply();  //1 cm to dbm
+                                }
+                            }else{
+                                Snackbar.make(findViewById(R.id.beaconContent), "Division by zero", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+                            }
                         }catch(Exception e){
                             Snackbar.make(findViewById(R.id.beaconContent), "Failure to parse signal", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                         }
                     }catch(Exception e){
                         Snackbar.make(findViewById(R.id.beaconContent), "Failure to parse text", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+                        edit.setText("");
                     }
                 }else{
                     Snackbar.make(findViewById(R.id.beaconContent), "No distance provided", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                 }
-
-                switch(selectedPosition){
-                    case 0 :
-                        break;
-                    case 1 :
-                        break;
-                    default:
-                        break;
-                }
             }
         });
+    }
+    protected void onPause(){
+        super.onPause();
+        try {
+            unregisterReceiver(receiver);
+        }catch(Exception ignored){}
+    }
+    protected void onDestroy(){
+        super.onDestroy();
+        try {
+            unregisterReceiver(receiver);
+        }catch(Exception ignored){}
+    }
+    protected void onResume(){
+        super.onResume();
+        try {
+            registerReceiver(receiver, new IntentFilter(BluetoothDevice.ACTION_FOUND));
+            registerReceiver(receiver, new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED));
+        }catch(Exception ignored){}
     }
     private final BroadcastReceiver receiver = new BroadcastReceiver(){
         @Override
         public void onReceive(Context context, Intent intent) {
             if(BluetoothDevice.ACTION_FOUND.equals(intent.getAction())) {
-                if(intent.getStringExtra(BluetoothDevice.EXTRA_NAME).equals(globalDeviceName)){
-                    signal.setText(String.valueOf(intent.getShortExtra(BluetoothDevice.EXTRA_RSSI,Short.MIN_VALUE)));
-                    BTAdapter.cancelDiscovery();
-                    BTAdapter.startDiscovery();
+                if(globalDeviceName != null && intent.getStringExtra(BluetoothDevice.EXTRA_NAME) != null) {
+                    if (intent.getStringExtra(BluetoothDevice.EXTRA_NAME).equals(globalDeviceName)) {
+                        signal.setText(String.valueOf(intent.getShortExtra(BluetoothDevice.EXTRA_RSSI, Short.MIN_VALUE)));
+                        BTAdapter.cancelDiscovery();
+                        BTAdapter.startDiscovery();
+                    }
                 }
             }else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(intent.getAction())){
                 BTAdapter.startDiscovery();

@@ -163,9 +163,40 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
             eraseBeacons();
         } else if (id == R.id.calibrate){
             calibrate();
+        }else if (id == R.id.Reset_Beacons){
+            resetBeacon();
         }
         ((DrawerLayout) findViewById(R.id.drawer_layout)).closeDrawer(GravityCompat.START);
         return true;
+    }
+    private void resetBeacon(){
+        final ArrayList<BluetoothDevice> get = getBTArray();
+        if(get != null && get.size() != 0) {
+            ArrayList<String> names = new ArrayList<>();
+            for (BluetoothDevice bl : get) {
+                names.add(bl.getName());
+            }
+            new AlertDialog.Builder(this).setTitle("Select a Beacon to Reset")
+                    .setSingleChoiceItems(names.toArray(new CharSequence[names.size()]), 0, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            selectedIndex = which;
+                        }
+                    }).setPositiveButton("Reset", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+                    try{
+                        PreferenceManager.getDefaultSharedPreferences(getApplication()).edit().putFloat(get.get(selectedIndex).getName(), 1).apply();
+                    }catch(Exception e){
+                        Snackbar.make(findViewById(R.id.drawer_layout), "Cannot find device at index: " + selectedIndex, Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+                    }
+                }
+            }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+                    dialog.dismiss();
+                }
+            }).create().show();
+        }else{
+            Snackbar.make(findViewById(R.id.drawer_layout), "No saved beacons", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+        }
     }
     private void calibrate(){
         final ArrayList<BluetoothDevice> get = getBTArray();
@@ -181,7 +212,11 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
                         }
                     }).setPositiveButton("Calibrate", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int whichButton) {
-                            startActivity(new Intent(getBaseContext(), BeaconConfig.class).putExtra("BT_DEVICE", new Gson().toJson(get.get(selectedIndex))));
+                            try{
+                                startActivity(new Intent(getBaseContext(), BeaconConfig.class).putExtra("BT_DEVICE", new Gson().toJson(get.get(selectedIndex))));
+                            }catch(Exception e){
+                                Snackbar.make(findViewById(R.id.drawer_layout), "Cannot find device at index: " + selectedIndex, Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+                            }
                         }
                     }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int whichButton) {
@@ -285,8 +320,7 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
             builder.setPositiveButton("DELETE ALL", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit();
-                    editor.putString("BeaconKeys", new Gson().toJson(new ArrayList<BluetoothDevice>())).apply(); //overwrite
+                    PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("BeaconKeys", new Gson().toJson(new ArrayList<BluetoothDevice>())).apply();
                     Snackbar.make(findViewById(R.id.drawer_layout), "Deleted All", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                 }
             });

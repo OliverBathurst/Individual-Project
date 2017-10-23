@@ -12,6 +12,11 @@
                     android:id="@+id/Erase_Beacons"
                     android:icon="@drawable/ic_delete_black_24dp"
                     android:title="@string/delete_all_beacons" />
+                <item
+                    android:id="@+id/Reset_Beacons"
+                    android:icon="@drawable/ic_refresh_black_24dp"
+                    android:title="@string/reset_beacon_calibration" />
+
             </menu>
         </item>
     </group>
