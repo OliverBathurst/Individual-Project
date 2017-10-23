@@ -170,7 +170,6 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
     private void calibrate(){
         final ArrayList<BluetoothDevice> get = getBTArray();
         if(get != null && get.size() != 0) {
-
             ArrayList<String> names = new ArrayList<>();
             for (BluetoothDevice bl : get) {
                 names.add(bl.getName());
@@ -182,7 +181,7 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
                         }
                     }).setPositiveButton("Calibrate", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int whichButton) {
-                            startActivity(new Intent(getBaseContext(), BeaconConfig.class).putExtra("GET_INDEX", selectedIndex));
+                            startActivity(new Intent(getBaseContext(), BeaconConfig.class).putExtra("BT_DEVICE", new Gson().toJson(get.get(selectedIndex))));
                         }
                     }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int whichButton) {
@@ -280,7 +279,7 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
         builder.create().show();
     }
     private void eraseBeacons(){
-        if(getBTArray() != null) {
+        if(getBTArray() != null && getBTArray().size() != 0) {
             android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(this)
                     .setTitle("Are you sure you want to delete all " + getBTArray().size() + " beacon(s)?");
             builder.setPositiveButton("DELETE ALL", new DialogInterface.OnClickListener() {

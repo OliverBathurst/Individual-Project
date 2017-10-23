@@ -3482,6 +3482,7 @@ containing a value of this type.
         public static final int auto=0x7f0e002d;
         public static final int basic=0x7f0e0015;
         public static final int beaconContent=0x7f0e0086;
+        public static final int beaconName=0x7f0e008a;
         public static final int beginning=0x7f0e003f;
         public static final int bottom=0x7f0e002e;
         public static final int buttonPanel=0x7f0e005c;
@@ -3642,7 +3643,6 @@ containing a value of this type.
         public static final int text2=0x7f0e00ce;
         public static final int textSpacerNoButtons=0x7f0e0063;
         public static final int textSpacerNoTitle=0x7f0e0062;
-        public static final int textView2=0x7f0e008a;
         public static final int textView4=0x7f0e008c;
         public static final int textView5=0x7f0e008e;
         public static final int textView6=0x7f0e008f;
