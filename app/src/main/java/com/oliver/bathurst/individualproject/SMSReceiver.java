@@ -182,6 +182,7 @@ public class SMSReceiver extends BroadcastReceiver {
         if(!doHide) {
             Toast.makeText(c, "Attempting to play", Toast.LENGTH_SHORT).show();
         }
+
         ((AudioManager) c.getSystemService(Context.AUDIO_SERVICE)).setStreamVolume(AudioManager.STREAM_MUSIC, ringVol, 0);
         try {
             final MediaPlayer mp = new MediaPlayer();

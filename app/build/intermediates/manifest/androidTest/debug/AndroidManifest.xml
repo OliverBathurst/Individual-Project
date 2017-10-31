@@ -13,7 +13,7 @@
         android:label="Tests for com.oliver.bathurst.individualproject"
         android:targetPackage="com.oliver.bathurst.individualproject" />
 
-    <application>
+    <application android:debuggable="true" >
         <uses-library android:name="android.test.runner" />
     </application>
 

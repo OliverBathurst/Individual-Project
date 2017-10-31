@@ -61,7 +61,7 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
         marginOfError = (TextView) mView.findViewById(R.id.margin_of_error);
 
         sensorManager = (SensorManager) getActivity().getSystemService(SENSOR_SERVICE);
-        if (sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION) != null) {
+        if ((sensorManager != null ? sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION) : null) != null) {
             gyro = sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
             sensorManager.registerListener(this, gyro, SensorManager.SENSOR_DELAY_NORMAL);
         }

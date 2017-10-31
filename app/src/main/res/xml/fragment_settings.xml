@@ -292,7 +292,6 @@
         android:title="Gmail Triggers">
     </PreferenceCategory>
 
-
     <EditTextPreference
         android:key="gmail_remote_lock"
         android:title="Trigger To Remotely Lock Phone"
@@ -414,6 +413,12 @@
                 android:title="SMS Trigger To Unhide App"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+            <Preference
+                android:key="theme"
+                android:title="Change Theme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
         </PreferenceCategory>
 
         <PreferenceCategory

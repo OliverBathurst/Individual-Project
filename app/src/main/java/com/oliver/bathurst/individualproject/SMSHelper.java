@@ -22,7 +22,7 @@ class SMSHelper {
         c = context;
     }
 
-    @SuppressLint("HardwareIds")
+    @SuppressLint({"HardwareIds", "MissingPermission"})
     String getBody(){
         TelephonyManager telephonyManager = (TelephonyManager)c.getSystemService(Context.TELEPHONY_SERVICE);
         LocationService locationService = new LocationService(c);
@@ -35,8 +35,8 @@ class SMSHelper {
                 + "\nTime Declared: " + DateFormat.getDateTimeInstance().format(new Date())
                 + "\nDeclared by: " + newLocReturn.getProvider() + " Accuracy: " + newLocReturn.getAccuracy()
                 + "\nBattery level: " + locationService.batteryLife()
-                + "\nIMEI: " +  telephonyManager.getDeviceId()
-                + "\nPhone number: " + telephonyManager.getLine1Number()
-                + "\nSIM Serial: " + telephonyManager.getSimSerialNumber();
+                + "\nIMEI: " + (telephonyManager != null ? telephonyManager.getDeviceId() : "null")
+                + "\nPhone number: " + (telephonyManager != null ? telephonyManager.getLine1Number() : "null")
+                + "\nSIM Serial: " + (telephonyManager != null ? telephonyManager.getSimSerialNumber() : "null");
     }
 }

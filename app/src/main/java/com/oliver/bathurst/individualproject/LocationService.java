@@ -43,7 +43,7 @@ public class LocationService extends Service implements LocationListener {
     Location getLoc() {
         final SharedPreferences settingsView = PreferenceManager.getDefaultSharedPreferences(c);
         Location loc;
-        
+
         Location first = switchPref(settingsView.getString("first", "GPS"));
         if (first != null) {
             loc = first;
@@ -81,13 +81,15 @@ public class LocationService extends Service implements LocationListener {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ? String.valueOf(((BatteryManager) c.getSystemService(Context.BATTERY_SERVICE))
                 .getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)) : "Build number low";
     }
-    @SuppressLint("HardwareIds")
+    @SuppressLint({"HardwareIds", "MissingPermission"})
     String IMEI(){
         return ((TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
     }
+    @SuppressLint("MissingPermission")
     int LAC(){
         return ((GsmCellLocation) ((TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE)).getCellLocation()).getLac();
     }
+    @SuppressLint("MissingPermission")
     int CID(){
         return ((GsmCellLocation) ((TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE)).getCellLocation()).getCid();
     }
@@ -105,8 +107,10 @@ public class LocationService extends Service implements LocationListener {
             if (isGPSAvailable()) {
                 try {
                     LocationManager locationManager = (LocationManager) c.getSystemService(LOCATION_SERVICE);
-                    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, MIN_TIME_BW_UPDATES, MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
-                    loc =  locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                    if (locationManager != null) {
+                        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, MIN_TIME_BW_UPDATES, MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
+                        loc =  locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                    }
                 }catch(SecurityException ignored){}
             }
         } else {
@@ -121,8 +125,10 @@ public class LocationService extends Service implements LocationListener {
             if (isWIFIAvailable()) {
                 try {
                     LocationManager locationManager = (LocationManager) c.getSystemService(LOCATION_SERVICE);
-                    locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME_BW_UPDATES, MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
-                    loc = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+                    if (locationManager != null) {
+                        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME_BW_UPDATES, MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
+                        loc = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+                    }
                 }catch(SecurityException ignored){}
             }
         } else {
@@ -137,8 +143,10 @@ public class LocationService extends Service implements LocationListener {
             if (isPassiveAvailable()) {
                 try {
                     LocationManager locationManager = (LocationManager) c.getSystemService(LOCATION_SERVICE);
-                    locationManager.requestLocationUpdates(LocationManager.PASSIVE_PROVIDER, MIN_TIME_BW_UPDATES, MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
-                    loc = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
+                    if (locationManager != null) {
+                        locationManager.requestLocationUpdates(LocationManager.PASSIVE_PROVIDER, MIN_TIME_BW_UPDATES, MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
+                        loc = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
+                    }
                 }catch(SecurityException ignored){}
             }
         } else {

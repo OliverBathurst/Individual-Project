@@ -33,6 +33,10 @@
     <string name="calibrate">Calibrate</string>
     <string name="to_calibrate_move_away_from_the_beacon_and_save_the_signal_strength_at_different_distances_the_more_readings_the_more_accurate_the_positioning_will_be">To calibrate, move away from the beacon and save the signal strength at different distances, the more readings, the more accurate the positioning will be.</string>
     <string name="reset_beacon_calibration">Reset Beacon Calibration</string>
+    <string name="vol">Please select volume: (</string>
+    <string name="per">%)</string>
+    <string name="plsselectpercent">Please select percentage: (</string>
+    <string name="per2">%)</string>
     <string-array name = "CMorM">
         <item>CM</item>
         <item>M</item>

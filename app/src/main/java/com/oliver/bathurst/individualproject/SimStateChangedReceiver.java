@@ -23,6 +23,7 @@ public class SimStateChangedReceiver extends BroadcastReceiver {
     private static final String EXTRA_SIM_STATE = "ss";
     private boolean doHide;
 
+    @SuppressWarnings("ConstantConditions")
     @Override
     public void onReceive(Context context, Intent intent) {
         String state = intent.getExtras().getString(EXTRA_SIM_STATE);

@@ -1,5 +1,6 @@
 package com.oliver.bathurst.individualproject;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity{
     private void infoPage(){
         getFragmentManager().beginTransaction().add(R.id.content, new DeviceFragment()).commit();
     }
+    @SuppressLint("RestrictedApi")
     private void removeAllFragments() {
         try {
             getSupportFragmentManager().getFragments().clear();

@@ -1,5 +1,6 @@
 package com.oliver.bathurst.individualproject;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -30,6 +31,8 @@ import java.io.OutputStreamWriter;
 import java.util.HashMap;
 import java.util.Map;
 
+import static android.preference.PreferenceManager.getDefaultSharedPreferences;
+
 /**
  * Created by Oliver on 17/06/2017.
  * All Rights Reserved
@@ -39,7 +42,7 @@ import java.util.Map;
  */
 
 public class SettingsFragment extends PreferenceFragment {
-    private int setVolProg = 90, battProg = 5;
+    private int setVolProg = 90, battProg = 5, selected = 0;
     private Server server = null;
     public SettingsFragment() {}
 
@@ -47,8 +50,15 @@ public class SettingsFragment extends PreferenceFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.fragment_settings);
-        final SharedPreferences.Editor settings = PreferenceManager.getDefaultSharedPreferences(getActivity()).edit();
-        final SharedPreferences settingsView = PreferenceManager.getDefaultSharedPreferences(getActivity());
+
+        if(PreferenceManager.getDefaultSharedPreferences(getActivity()).getBoolean("isDark", false)){
+            getActivity().setTheme(R.style.dark);
+        }else{
+            getActivity().setTheme(R.style.AppTheme);
+        }
+
+        final SharedPreferences.Editor settings = getDefaultSharedPreferences(getActivity()).edit();
+        final SharedPreferences settingsView = getDefaultSharedPreferences(getActivity());
         try{
             (findPreference("hide_app")).setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
@@ -89,8 +99,9 @@ public class SettingsFragment extends PreferenceFragment {
                         }
                     });
                     ((SeekBar) dialog.findViewById(R.id.size_seekbar)).setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                        @SuppressLint("DefaultLocale")
                         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
-                            tv_dialog_size.setText("Please select volume: (" + progress+ "%)");
+                            tv_dialog_size.setText(String.format("%s%d%s", getString(R.string.vol), progress, getString(R.string.per)));
                             setVolProg = progress;
                         }
                         @Override
@@ -128,8 +139,9 @@ public class SettingsFragment extends PreferenceFragment {
                         }
                     });
                     ((SeekBar) dialog.findViewById(R.id.size_seekbar2)).setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                        @SuppressLint("DefaultLocale")
                         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
-                            tv_dialog_size.setText("Please select percentage: (" + progress+ "%)");
+                            tv_dialog_size.setText(String.format("%s%d%s", getString(R.string.plsselectpercent), progress, getString(R.string.per2)));
                             battProg = progress;
                         }
                         @Override
@@ -325,6 +337,14 @@ public class SettingsFragment extends PreferenceFragment {
                 }
             });
 
+            findPreference("theme").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    changeTheme();
+                    return false;
+                }
+            });
+
             findPreference("check_perm").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
@@ -437,11 +457,11 @@ public class SettingsFragment extends PreferenceFragment {
 
             FileOutputStream fileInput = new FileOutputStream(prefTxt);
             OutputStreamWriter writer = new OutputStreamWriter(fileInput);
-            String total = "";
-            for (Map.Entry<String, ?> entry : PreferenceManager.getDefaultSharedPreferences(getActivity()).getAll().entrySet()) {
-                total += "Key: "+ entry.getKey() + " Value: " + entry.getValue().toString()+"\n";
+            StringBuilder total = new StringBuilder();
+            for (Map.Entry<String, ?> entry : getDefaultSharedPreferences(getActivity()).getAll().entrySet()) {
+                total.append("Key: ").append(entry.getKey()).append(" Value: ").append(entry.getValue().toString()).append("\n");
             }
-            writer.write(total);
+            writer.write(total.toString());
             writer.close();
             fileInput.close();
 
@@ -458,5 +478,27 @@ public class SettingsFragment extends PreferenceFragment {
             super.onActivityResult(requestCode, resultCode, data);
         }
     }
+    private void changeTheme(){
+        new android.support.v7.app.AlertDialog.Builder(getActivity()).setTitle("Choose theme").setSingleChoiceItems(new CharSequence[]{"Light", "Dark"}, 0, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        selected = which;
+                    }
+                }).setPositiveButton("Change", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                if(selected == 0){
+                    getActivity().setTheme(R.style.AppTheme);
+                    getDefaultSharedPreferences(getActivity()).edit().putBoolean("isDark", false).apply();
+                }else{
+                    getActivity().setTheme(R.style.dark);
+                    getDefaultSharedPreferences(getActivity()).edit().putBoolean("isDark", true).apply();
+                }
+            }
+        }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                dialog.dismiss();
+            }
+        }).create().show();
+    }
+
 
 }

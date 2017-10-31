@@ -24,7 +24,6 @@ import com.google.gson.reflect.TypeToken;
 public class BeaconConfig extends AppCompatActivity {
     private int selectedPosition = 0;
     private TextView signal;
-    private BluetoothDevice globalDevice;
     private String globalDeviceName;
     private final BluetoothAdapter BTAdapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -37,7 +36,8 @@ public class BeaconConfig extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_beacon_config);
 
-        globalDevice = new Gson().fromJson(getIntent().getStringExtra("BT_DEVICE"), new TypeToken<BluetoothDevice>() {}.getType());
+        BluetoothDevice globalDevice = new Gson().fromJson(getIntent().getStringExtra("BT_DEVICE"), new TypeToken<BluetoothDevice>() {
+        }.getType());
         globalDeviceName = globalDevice.getName();
         signal = (TextView) findViewById(R.id.signal);
         ((TextView) findViewById(R.id.beaconName)).setText(globalDeviceName);

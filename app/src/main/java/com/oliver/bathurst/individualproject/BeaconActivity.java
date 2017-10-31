@@ -7,7 +7,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -126,10 +125,10 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
             names.clear();
             for (BluetoothDevice i : deviceList) {
                 if (i != null && android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
-                    String UUID = "";
+                    StringBuilder UUID = new StringBuilder();
                     if (i.getUuids() != null && i.getUuids().length != 0) {
                         for (int ID = 0; ID < i.getUuids().length; ID++) {
-                            UUID += "UUID " + ID + ": " + i.getUuids()[ID] + "\n";
+                            UUID.append("UUID ").append(ID).append(": ").append(i.getUuids()[ID]).append("\n");
                         }
                     }
                     if (i.getType() == BluetoothDevice.DEVICE_TYPE_LE) {
