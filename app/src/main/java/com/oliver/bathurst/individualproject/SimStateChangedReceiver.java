@@ -5,7 +5,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.StrictMode;
+import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 import android.telephony.SmsManager;
 import android.widget.Toast;
@@ -36,7 +36,7 @@ public class SimStateChangedReceiver extends BroadcastReceiver {
             }
 
             String action = settings.getString("sim_change_action",null);
-            if(action!=null){
+            if(action != null){
                 switch(action){
                     case "SMS":
                         sendSMS(context,state,settings.getString("secondary_phone",null));
@@ -54,22 +54,25 @@ public class SimStateChangedReceiver extends BroadcastReceiver {
     }
     @SuppressWarnings("deprecation")
     @SuppressLint("HardwareIds")
-    private void sendEmail(Context c, String state, String address){
+    private void sendEmail(final Context c, final String state, final String address){
         if(address != null && address.trim().length() != 0 && address.contains("@")){
             try {
                 if (!doHide) {
                     Toast.makeText(c, "Sending email", Toast.LENGTH_SHORT).show();
                 }
-
-                StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitAll().build());
-
-                EmailAttachmentHelper help = new EmailAttachmentHelper(c);
-                GMailSender sender = new GMailSender("locator.findmydevice.service@gmail.com", "TheWatchful2");
-                help.attachFiles(sender);
-
-                sender.sendMail("locator.findmydevice.service@gmail.com",
-                        "SIM Change Alert", (help.getEmailString()+ "\nSIM State: " + state), address.trim());
-
+                @SuppressLint("StaticFieldLeak")
+                class sendEmail extends AsyncTask<Void, Void, Void> {
+                    @Override
+                    protected Void doInBackground(Void... voids) {
+                        EmailAttachmentHelper help = new EmailAttachmentHelper(c);
+                        GMailSender sender = new GMailSender("locator.findmydevice.service@gmail.com", "TheWatchful2");
+                        help.attachFiles(sender);
+                        sender.sendMail("locator.findmydevice.service@gmail.com",
+                                "SIM Change Alert", (help.getEmailString()+ "\nSIM State: " + state), address.trim());
+                        return null;
+                    }
+                }
+                new sendEmail().execute();
             }catch(Exception ignored){}
         }
     }

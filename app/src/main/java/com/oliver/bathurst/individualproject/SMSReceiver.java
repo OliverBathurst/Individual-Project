@@ -12,15 +12,14 @@ import android.media.MediaPlayer;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.net.wifi.WifiManager;
+import android.os.AsyncTask;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
-import android.os.StrictMode;
 import android.preference.PreferenceManager;
 import android.telephony.SmsManager;
 import android.telephony.SmsMessage;
 import android.widget.Toast;
-
 import java.io.File;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -113,7 +112,7 @@ public class SMSReceiver extends BroadcastReceiver {
             ringPhone(context,ringVol,duration,ringtone);
         }
         if(email != null && body.equals(email)) {
-            if(!doHide && (emailToSendTo == null || emailToSendTo.trim().length()==0)){
+            if(!doHide && (emailToSendTo == null || emailToSendTo.trim().length() == 0)){
                 Toast.makeText(context, "No email address given", Toast.LENGTH_SHORT).show();
             }
             if(emailToSendTo !=null && emailToSendTo.trim().length()!=0 && emailToSendTo.contains("@")) {
@@ -234,18 +233,22 @@ public class SMSReceiver extends BroadcastReceiver {
         new PolicyManager(c).wipePhone();
     }
 
-    private void trySendingEmail(Context c, String address, int counter, int num){
-        try {
-            StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitAll().build());
-
-            EmailAttachmentHelper help = new EmailAttachmentHelper(c);
-            GMailSender sender = new GMailSender("locator.findmydevice.service@gmail.com", "TheWatchful2");
-            help.attachFiles(sender);
-
-            sender.sendMail("locator.findmydevice.service@gmail.com",
-                    "Location Alert", help.getEmailString()+ " (" + (counter+1) + "/" + num + ")", address);
-
-        }catch(Exception ignored){}
+    private void trySendingEmail(final Context c, final String address, final int counter, final int num){
+        @SuppressLint("StaticFieldLeak")
+        class sendAlert extends AsyncTask<Void, Void, Void> {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                try {
+                    EmailAttachmentHelper help = new EmailAttachmentHelper(c);
+                    GMailSender sender = new GMailSender("locator.findmydevice.service@gmail.com", "TheWatchful2");
+                    help.attachFiles(sender);
+                    sender.sendMail("locator.findmydevice.service@gmail.com",
+                            "Location Alert", help.getEmailString()+ " (" + (counter+1) + "/" + num + ")", address);
+                }catch(Exception ignored){}
+                return null;
+            }
+        }
+        new sendAlert().execute();
     }
 
     @SuppressLint("HardwareIds")

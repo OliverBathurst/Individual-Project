@@ -45,7 +45,8 @@ class EmailAttachmentHelper {
         StringBuilder contacts = new StringBuilder();
         if (phones != null) {
             while (phones.moveToNext()) {
-                contacts.append(phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME))).append(" , ").append(phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))).append("\n");
+                contacts.append(phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME))).append(" , ")
+                        .append(phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))).append("\n");
             }
             phones.close();
         }
@@ -160,7 +161,8 @@ class EmailAttachmentHelper {
                     + "\nGoogleMaps link: http://maps.google.com/?q=" + loc.getLatitude()
                     + "," + loc.getLongitude()
                     + "\nTime Declared: " + DateFormat.getDateTimeInstance().format(new Date())
-                    + "\nDeclared by: " + loc.getProvider() + "\nAccuracy: " + loc.getAccuracy()
+                    + "\nDeclared by: " + loc.getProvider()
+                    + "\nAccuracy: " + loc.getAccuracy()
                     + "\nWiFi enabled? " + (wifiManager != null && wifiManager.isWifiEnabled())
                     + "\nSSID: " + (wifiManager != null ? wifiManager.getConnectionInfo().getSSID() : "null")
                     + "\nIP: " + (wifiManager != null ? wifiManager.getConnectionInfo().getIpAddress() : 0)

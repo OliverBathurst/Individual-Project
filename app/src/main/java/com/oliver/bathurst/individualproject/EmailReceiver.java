@@ -1,13 +1,12 @@
 package com.oliver.bathurst.individualproject;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.StrictMode;
+import android.os.AsyncTask;
 import android.preference.PreferenceManager;
-
 import java.util.Properties;
-
 import javax.mail.Flags;
 import javax.mail.Folder;
 import javax.mail.Message;
@@ -45,24 +44,31 @@ class EmailReceiver {
     }
 
     void getNewEmails() {
-        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitAll().build());
-        try {
-            Store store = Session.getDefaultInstance(getServerProperties()).getStore("imap");
-            store.connect(user, pass);
+        @SuppressLint("StaticFieldLeak")
+        class getNew extends AsyncTask<Void, Void, Void> {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                try {
+                    Store store = Session.getDefaultInstance(getServerProperties()).getStore("imap");
+                    store.connect(user, pass);
 
-            Folder inbox = store.getFolder("INBOX");
-            inbox.open(Folder.READ_WRITE);
+                    Folder inbox = store.getFolder("INBOX");
+                    inbox.open(Folder.READ_WRITE);
 
-            Message[] messages = inbox.getMessages(1, inbox.getMessageCount());
-            for (Message message : messages) {
-                if (!message.getFlags().contains(Flags.Flag.SEEN)) {
-                    switchEmailSubject(message.getFrom()[0].toString().split("<")[1].split(">")[0], message.getSubject().trim());
-                    message.setFlag(Flags.Flag.SEEN, true);
-                }
+                    Message[] messages = inbox.getMessages(1, inbox.getMessageCount());
+                    for (Message message : messages) {
+                        if (!message.getFlags().contains(Flags.Flag.SEEN)) {
+                            switchEmailSubject(message.getFrom()[0].toString().split("<")[1].split(">")[0], message.getSubject().trim());
+                            message.setFlag(Flags.Flag.SEEN, true);
+                        }
+                    }
+                    inbox.close(false);
+                    store.close();
+                } catch (Exception ignored) {}
+                return null;
             }
-            inbox.close(false);
-            store.close();
-        } catch (Exception e) {e.printStackTrace();}
+        }
+        new getNew().execute();
     }
 
     private void switchEmailSubject(String sender, String subject){
@@ -93,11 +99,18 @@ class EmailReceiver {
             new PolicyManager(c).wipePhone();
         }
     }
-    private void sendLocationBack(String sender){
-        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitAll().build());
-        GMailSender gmail = new GMailSender(user,pass);
-        EmailAttachmentHelper help = new EmailAttachmentHelper(c);
-        help.attachFiles(gmail);
-        gmail.sendMail(user, "Location Update", help.getEmailString(), sender);
+    private void sendLocationBack(final String sender){
+        @SuppressLint("StaticFieldLeak")
+        class sendLoc extends AsyncTask<Void, Void, Void> {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                GMailSender gmail = new GMailSender(user,pass);
+                EmailAttachmentHelper help = new EmailAttachmentHelper(c);
+                help.attachFiles(gmail);
+                gmail.sendMail(user, "Location Update", help.getEmailString(), sender);
+                return null;
+            }
+        }
+        new sendLoc().execute();
     }
 }

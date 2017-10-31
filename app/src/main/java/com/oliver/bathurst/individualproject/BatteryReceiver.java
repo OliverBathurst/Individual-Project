@@ -5,8 +5,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.BatteryManager;
-import android.os.StrictMode;
 import android.preference.PreferenceManager;
 
 /**
@@ -29,7 +29,7 @@ public class BatteryReceiver extends BroadcastReceiver {
         if(settings.getBoolean("sms_by_email", false)){
             String user = settings.getString("gmail_username", null);
             String pass = settings.getString("gmail_password", null);
-            if((user!=null && user.trim().length()!=0 && user.contains("@")) && (pass!=null && pass.trim().length()!=0)){
+            if((user != null && user.trim().length() != 0 && user.contains("@")) && (pass != null && pass.trim().length() != 0)){
                 new EmailReceiver(c, user, pass).getNewEmails();
             }
         }
@@ -49,17 +49,22 @@ public class BatteryReceiver extends BroadcastReceiver {
             }
         }catch(Exception ignored){}
     }
-    private void sendEmailLowBatteryAlert(Context c, String email){
-        try {
-            StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitAll().build());
-            EmailAttachmentHelper help = new EmailAttachmentHelper(c);
+    private void sendEmailLowBatteryAlert(final Context c, final String email){
+        @SuppressLint("StaticFieldLeak")
+        class sendAlert extends AsyncTask<Void, Void, Void> {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                EmailAttachmentHelper help = new EmailAttachmentHelper(c);
 
-            GMailSender sender = new GMailSender("locator.findmydevice.service@gmail.com", "TheWatchful2");
-            help.attachFiles(sender);
+                GMailSender sender = new GMailSender("locator.findmydevice.service@gmail.com", "TheWatchful2");
+                help.attachFiles(sender);
 
-            sender.sendMail("locator.findmydevice.service@gmail.com",
-                    "Low Battery Alert", help.getEmailString(), email);
-            hasSent = true;
-        }catch(Exception ignored){}
+                sender.sendMail("locator.findmydevice.service@gmail.com",
+                        "Low Battery Alert", help.getEmailString(), email);
+                hasSent = true;
+                return null;
+            }
+        }
+        new sendAlert().execute();
     }
 }
