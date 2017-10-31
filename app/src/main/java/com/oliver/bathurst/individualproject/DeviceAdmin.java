@@ -22,12 +22,13 @@ public class DeviceAdmin extends DeviceAdminReceiver {
         Toast.makeText(context, "Disabled Admin", Toast.LENGTH_SHORT).show();
         super.onDisabled(context, intent);
     }
-    @SuppressWarnings("ConstantConditions")
+
     public CharSequence onDisableRequested(Context context, Intent intent) {
         if(PreferenceManager.getDefaultSharedPreferences(context).getBoolean("prevent_uninstall", false)){ //if 'prevent uninstall' is true
-            try {
-                ((DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE)).lockNow();
-            }catch(Exception ignored){}
+            DevicePolicyManager devPol = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
+            if(devPol != null){
+                devPol.lockNow();
+            }
             return "WARNING: some features will be disabled, continue?";
         }else{
             return "Are you sure?";

@@ -20,7 +20,6 @@ import android.preference.EditTextPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
-import android.preference.PreferenceManager;
 import android.preference.SwitchPreference;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -51,14 +50,15 @@ public class SettingsFragment extends PreferenceFragment {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.fragment_settings);
 
-        if(PreferenceManager.getDefaultSharedPreferences(getActivity()).getBoolean("isDark", false)){
-            getActivity().setTheme(R.style.dark);
-        }else{
-            getActivity().setTheme(R.style.AppTheme);
-        }
-
         final SharedPreferences.Editor settings = getDefaultSharedPreferences(getActivity()).edit();
         final SharedPreferences settingsView = getDefaultSharedPreferences(getActivity());
+
+        if(settingsView.getBoolean("isDark", false)){
+            getActivity().setTheme(R.style.dark);
+        }else{
+            getActivity().setTheme(R.style.Light);
+        }
+
         try{
             (findPreference("hide_app")).setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
@@ -486,7 +486,7 @@ public class SettingsFragment extends PreferenceFragment {
                 }).setPositiveButton("Change", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
                 if(selected == 0){
-                    getActivity().setTheme(R.style.AppTheme);
+                    getActivity().setTheme(R.style.Light);
                     getDefaultSharedPreferences(getActivity()).edit().putBoolean("isDark", false).apply();
                 }else{
                     getActivity().setTheme(R.style.dark);

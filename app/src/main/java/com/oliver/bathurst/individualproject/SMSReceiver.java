@@ -183,7 +183,11 @@ public class SMSReceiver extends BroadcastReceiver {
             Toast.makeText(c, "Attempting to play", Toast.LENGTH_SHORT).show();
         }
 
-        ((AudioManager) c.getSystemService(Context.AUDIO_SERVICE)).setStreamVolume(AudioManager.STREAM_MUSIC, ringVol, 0);
+        AudioManager audMan = ((AudioManager) c.getSystemService(Context.AUDIO_SERVICE));
+        if(audMan != null){
+            audMan.setStreamVolume(AudioManager.STREAM_MUSIC, ringVol, 0);
+        }
+
         try {
             final MediaPlayer mp = new MediaPlayer();
             mp.setDataSource(c, ringtoneUri);
@@ -240,8 +244,9 @@ public class SMSReceiver extends BroadcastReceiver {
         },0, interval);
     }
     private void remoteTurnOnWiFi(Context c){
-        if (!((WifiManager) c.getApplicationContext().getSystemService(Context.WIFI_SERVICE)).isWifiEnabled()) {
-            ((WifiManager) c.getApplicationContext().getSystemService(Context.WIFI_SERVICE)).setWifiEnabled(true);
+        WifiManager wMan = ((WifiManager) c.getApplicationContext().getSystemService(Context.WIFI_SERVICE));
+        if(wMan != null && wMan.isWifiEnabled()){
+            wMan.setWifiEnabled(true);
         }
     }
     ///////////////WARNING//////////////////

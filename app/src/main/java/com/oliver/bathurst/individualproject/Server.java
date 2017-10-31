@@ -45,8 +45,8 @@ class Server{
     }
     @SuppressWarnings("deprecation")
     String getIP() {
-        return Formatter.formatIpAddress(((WifiManager) c.getApplicationContext().getSystemService(WIFI_SERVICE))
-                .getConnectionInfo().getIpAddress());
+        WifiManager wifiMan = (WifiManager) c.getApplicationContext().getSystemService(WIFI_SERVICE);
+        return (wifiMan != null && wifiMan.getConnectionInfo() != null) ? Formatter.formatIpAddress(wifiMan.getConnectionInfo().getIpAddress()) : Formatter.formatIpAddress(0);
     }
     int getPort(){
         return httpServerSocket != null ? httpServerSocket.getLocalPort() : 0;

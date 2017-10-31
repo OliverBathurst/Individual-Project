@@ -55,7 +55,7 @@ public class SimStateChangedReceiver extends BroadcastReceiver {
     @SuppressWarnings("deprecation")
     @SuppressLint("HardwareIds")
     private void sendEmail(Context c, String state, String address){
-        if(address!=null && address.trim().length()!=0 && address.contains("@")){
+        if(address != null && address.trim().length() != 0 && address.contains("@")){
             try {
                 if (!doHide) {
                     Toast.makeText(c, "Sending email", Toast.LENGTH_SHORT).show();

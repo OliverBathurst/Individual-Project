@@ -78,28 +78,35 @@ public class LocationService extends Service implements LocationListener {
         return loc;
     }
     String batteryLife() {
-        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ? String.valueOf(((BatteryManager) c.getSystemService(Context.BATTERY_SERVICE))
-                .getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)) : "Build number low";
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            BatteryManager batMan = (BatteryManager) c.getSystemService(Context.BATTERY_SERVICE);
+            return batMan != null ? String.valueOf(batMan.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)) : "Battery manager null";
+        }else{
+            return "Build number low";
+        }
     }
     @SuppressLint({"HardwareIds", "MissingPermission"})
     String IMEI(){
-        return ((TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
+        TelephonyManager telMan = (TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE);
+        return telMan != null ? telMan.getDeviceId() : "error";
     }
     @SuppressLint("MissingPermission")
     int LAC(){
-        return ((GsmCellLocation) ((TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE)).getCellLocation()).getLac();
+        TelephonyManager telMan = (TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE);
+        return telMan != null ? ((GsmCellLocation) telMan.getCellLocation()).getLac() : 0;
     }
     @SuppressLint("MissingPermission")
     int CID(){
-        return ((GsmCellLocation) ((TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE)).getCellLocation()).getCid();
+        TelephonyManager telMan = (TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE);
+        return telMan != null ? ((GsmCellLocation) telMan.getCellLocation()).getCid() : 0;
     }
     int MCC(){
-        String networkOperator = ((TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE)).getNetworkOperator();
-        return !TextUtils.isEmpty(networkOperator) ? Integer.parseInt(networkOperator.substring(0, 3)) : 0;
+        TelephonyManager telMan = (TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE);
+        return telMan != null ? (!TextUtils.isEmpty(telMan.getNetworkOperator()) ? Integer.parseInt(telMan.getNetworkOperator().substring(0, 3)) : 0) : 0;
     }
     int MNC(){
-        String networkOperator = ((TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE)).getNetworkOperator();
-        return !TextUtils.isEmpty(networkOperator) ? Integer.parseInt(networkOperator.substring(3)) : 0;
+        TelephonyManager telMan = (TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE);
+        return telMan != null ? (!TextUtils.isEmpty(telMan.getNetworkOperator()) ? Integer.parseInt(telMan.getNetworkOperator().substring(3)) : 0) : 0;
     }
     private Location getLocationByGPS() {
         Location loc = null;
@@ -156,14 +163,18 @@ public class LocationService extends Service implements LocationListener {
         return loc;
     }
     private boolean isGPSAvailable() {
-        return ((LocationManager) c.getSystemService(LOCATION_SERVICE)).isProviderEnabled(LocationManager.GPS_PROVIDER);
+        LocationManager locMan = (LocationManager) c.getSystemService(LOCATION_SERVICE);
+        return (locMan != null && locMan.isProviderEnabled(LocationManager.GPS_PROVIDER));
     }
     private boolean isWIFIAvailable() {
-        return ((LocationManager) c.getSystemService(LOCATION_SERVICE)).isProviderEnabled(LocationManager.NETWORK_PROVIDER)
-                && ((WifiManager) c.getApplicationContext().getSystemService(WIFI_SERVICE)).isWifiEnabled();
+        LocationManager locMan = (LocationManager) c.getSystemService(LOCATION_SERVICE);
+        WifiManager wifiMan =  (WifiManager) c.getApplicationContext().getSystemService(WIFI_SERVICE);
+        return (locMan != null && locMan.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
+                    && wifiMan != null && wifiMan.isWifiEnabled());
     }
     private boolean isPassiveAvailable() {
-        return ((LocationManager) c.getSystemService(LOCATION_SERVICE)).isProviderEnabled(LocationManager.PASSIVE_PROVIDER);
+        LocationManager locMan = (LocationManager) c.getSystemService(LOCATION_SERVICE);
+        return locMan != null && locMan.isProviderEnabled(LocationManager.PASSIVE_PROVIDER);
     }
     private boolean getFine() {
         return ActivityCompat.checkSelfPermission(c, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED &&

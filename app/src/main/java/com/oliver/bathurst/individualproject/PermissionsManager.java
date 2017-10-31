@@ -17,7 +17,6 @@ import android.widget.Toast;
  * Written by Oliver Bathurst <oliverbathurst12345@gmail.com>
  */
 
-@SuppressWarnings({"DefaultFileTemplate", "MissingPermission"})
 class PermissionsManager {
     private final Context c;
 

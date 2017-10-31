@@ -18,6 +18,7 @@ import android.provider.CallLog;
 import android.provider.ContactsContract;
 import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
@@ -57,7 +58,8 @@ class EmailAttachmentHelper {
             writer.write(contacts.toString());
             writer.close();
             fileInput.close();
-        } catch (Exception ignored) {}
+        } catch (Exception ignored) {
+        }
 
         return contactsFile; //check if file is null when attaching
     }
@@ -108,41 +110,49 @@ class EmailAttachmentHelper {
                 writer.write(content.toString());
                 writer.close();
                 fileInput.close();
-            } catch (Exception ignored) {}
+            } catch (Exception ignored) {
+            }
 
         }
         return callLogFile;
     }
-    void attachFiles(GMailSender sender){
+
+    void attachFiles(GMailSender sender) {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
         ///contacts
-        if(settings.getBoolean("include_contacts", false)) {
+        if (settings.getBoolean("include_contacts", false)) {
             File contact = getContacts();
             if (contact != null) {
                 try {
                     sender.addAttachment(contact.getAbsolutePath());
-                } catch (Exception ignored) {}
+                } catch (Exception ignored) {
+                }
             }
         }
         //call log
-        if(settings.getBoolean("include_calllog", false)) {
+        if (settings.getBoolean("include_calllog", false)) {
             File calllog = getCallLog();
             if (calllog != null) {
                 try {
                     sender.addAttachment(calllog.getAbsolutePath());
-                } catch (Exception ignored) {}
+                } catch (Exception ignored) {
+                }
             }
         }
     }
+
     @SuppressWarnings("deprecation")
     @SuppressLint({"HardwareIds", "MissingPermission"})
-    String getEmailString(){
+    String getEmailString() {
         String emailBody = "";
         try {
             final WifiManager wifiManager = (WifiManager) c.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
-            NetworkInfo networkInfo = ((ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE))
-                    .getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-            TelephonyManager telephonyManager = (TelephonyManager)c.getSystemService(Context.TELEPHONY_SERVICE);
+            ConnectivityManager networkInfo = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo net = null;
+            if (networkInfo != null) {
+                net = networkInfo.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+            }
+            TelephonyManager telephonyManager = (TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE);
             Location loc = new LocationService(c).getLoc();
 
             emailBody = "This is a location alert, your device location is: " + loc.getLatitude()
@@ -151,11 +161,13 @@ class EmailAttachmentHelper {
                     + "," + loc.getLongitude()
                     + "\nTime Declared: " + DateFormat.getDateTimeInstance().format(new Date())
                     + "\nDeclared by: " + loc.getProvider() + "\nAccuracy: " + loc.getAccuracy()
-                    + "\nWiFi enabled? " + (wifiManager != null && wifiManager.isWifiEnabled()) + "\nSSID: " + (wifiManager != null ? wifiManager.getConnectionInfo().getSSID() : "null")
+                    + "\nWiFi enabled? " + (wifiManager != null && wifiManager.isWifiEnabled())
+                    + "\nSSID: " + (wifiManager != null ? wifiManager.getConnectionInfo().getSSID() : "null")
                     + "\nIP: " + (wifiManager != null ? wifiManager.getConnectionInfo().getIpAddress() : 0)
-                    + "\nMobile network enabled? " + networkInfo.isConnected()
-                    + "\nNetwork type: " + networkInfo.getType() + " Network name: " + networkInfo.getTypeName()
-                    + "\nExtra info: " + networkInfo.getExtraInfo()
+                    + "\nMobile network enabled? " + (net != null && net.isConnected())
+                    + "\nNetwork type: " + (net != null ? net.getType() : "error")
+                    + " Network name: " + (net != null ? net.getTypeName() : "error")
+                    + "\nExtra info: " + (net != null ? net.getExtraInfo() : "error")
                     + "\nBattery: " + getBattery(c)
                     + "\nIMEI: " + (telephonyManager != null ? telephonyManager.getDeviceId() : "null")
                     + "\nPhone number: " + (telephonyManager != null ? telephonyManager.getLine1Number() : "null")
@@ -164,12 +176,11 @@ class EmailAttachmentHelper {
         return emailBody;
     }
     private String getBattery(Context c){
-        if ((c.getSystemService(Context.BATTERY_SERVICE)) != null) {
-                return Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ?
-                        String.valueOf((c.getSystemService(Context.BATTERY_SERVICE)) != null ? (c.getSystemService(Context.BATTERY_SERVICE)) != null ? ((BatteryManager) c.getSystemService(Context.BATTERY_SERVICE))
-                                .getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY) : 0 : 0) : "Build number low";
-        } else {
-            return "0";
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            BatteryManager batMan = (BatteryManager) c.getSystemService(Context.BATTERY_SERVICE);
+            return batMan != null ? String.valueOf(batMan.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)) : "Battery manager is null";
+        }else{
+            return "Build number low";
         }
     }
 }
