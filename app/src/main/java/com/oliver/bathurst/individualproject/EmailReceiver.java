@@ -73,34 +73,24 @@ class EmailReceiver {
         String gmailWipeSD = settings.getString("wipe_sdcard_gmail",null);
         String stolen = settings.getString("email_stolen", null);
 
-        if(stolen != null){
-            if(subject.equals(stolen)){
-                PreferenceManager.getDefaultSharedPreferences(c).edit().putBoolean("stolen", true).apply();
-            }
+        if(stolen != null && subject.equals(stolen)){
+            PreferenceManager.getDefaultSharedPreferences(c).edit().putBoolean("stolen", true).apply();
         }
         if(subject.contains("speak:")){
             SMSReceiver.toSpeak = (subject.split(":")[1]);
             c.startActivity(new Intent(c,TxtToSpeech.class));
         }
-        if(gmailWipeSD!=null){
-            if(subject.equals(gmailWipeSD)){
-                SMSReceiver.wipeSD();
-            }
+        if(gmailWipeSD != null && subject.equals(gmailWipeSD)){
+            SMSReceiver.wipeSD();
         }
-        if(remoteLock!=null) {
-            if (subject.equals(remoteLock)) {
-                new PolicyManager(c).lockPhone();
-            }
+        if(remoteLock != null && subject.equals(remoteLock)) {
+            new PolicyManager(c).lockPhone();
         }
-        if(gmailLoc!=null) {
-            if (subject.equals(gmailLoc)) {
-                sendLocationBack(sender.trim());
-            }
+        if(gmailLoc != null && subject.equals(gmailLoc)) {
+            sendLocationBack(sender.trim());
         }
-        if(gmailWipe!=null){
-            if(subject.equals(gmailWipe)){
-                new PolicyManager(c).wipePhone();
-            }
+        if(gmailWipe != null && subject.equals(gmailWipe)){
+            new PolicyManager(c).wipePhone();
         }
     }
     private void sendLocationBack(String sender){

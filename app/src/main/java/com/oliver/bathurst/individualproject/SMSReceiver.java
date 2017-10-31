@@ -98,68 +98,52 @@ public class SMSReceiver extends BroadcastReceiver {
             context.startActivity(new Intent(context,TxtToSpeech.class));
         }
 
-        if(ring!=null) {
-            if (body.equals(ring)) {
-                int duration = 20;
-                if(ringDur!=null) {
-                    try {
-                        duration = Integer.parseInt(ringDur);
-                    } catch (NumberFormatException e) {
-                        duration = 20;
-                    }
-                }else{
+        if(ring!=null && body.equals(ring)) {
+            int duration = 20;
+            if(ringDur!=null) {
+                try {
+                    duration = Integer.parseInt(ringDur);
+                } catch (NumberFormatException e) {
                     duration = 20;
                 }
+            }else{
+                duration = 20;
+            }
+            doNotification(context);
+            ringPhone(context,ringVol,duration,ringtone);
+        }
+        if(email != null && body.equals(email)) {
+            if(!doHide && (emailToSendTo == null || emailToSendTo.trim().length()==0)){
+                Toast.makeText(context, "No email address given", Toast.LENGTH_SHORT).show();
+            }
+            if(emailToSendTo !=null && emailToSendTo.trim().length()!=0 && emailToSendTo.contains("@")) {
                 doNotification(context);
-                ringPhone(context,ringVol,duration,ringtone);
+                sendLoc(context,emailToSendTo.trim(),updateInterval,updateIntervalNum,2);
             }
         }
-        if(email!=null) {
-            if (body.equals(email)) {
-                if(!doHide && (emailToSendTo == null || emailToSendTo.trim().length()==0)){
-                    Toast.makeText(context, "No email address given", Toast.LENGTH_SHORT).show();
-                }
-                if(emailToSendTo !=null && emailToSendTo.trim().length()!=0 && emailToSendTo.contains("@")) {
-                    doNotification(context);
-                    sendLoc(context,emailToSendTo.trim(),updateInterval,updateIntervalNum,2);
-                }
-            }
+        if(text != null && body.equals(text)) {
+            doNotification(context);
+            sendLoc(context, sender,updateInterval,updateIntervalNum,1);
         }
-        if(text!=null) {
-            if (body.equals(text)) {
-                doNotification(context);
-                sendLoc(context, sender,updateInterval,updateIntervalNum,1);
-            }
+        if(locService != null && body.equals(locService)) {
+            doNotification(context);
+            remoteTurnOnWiFi(context);
         }
-        if(locService!=null) {
-            if (body.equals(locService)) {
-                doNotification(context);
-                remoteTurnOnWiFi(context);
-            }
+        if(remoteLock != null && body.equals(remoteLock)) {
+            doNotification(context);
+            remoteLockMethod(context);
         }
-        if(remoteLock!=null) {
-            if (body.equals(remoteLock)) {
-                doNotification(context);
-                remoteLockMethod(context);
-            }
+        if(wipe != null && body.equals(wipe)) {
+            doNotification(context);
+            remoteWipe(context);
         }
-        if(wipe!=null) {
-            if (body.equals(wipe)) {
-                doNotification(context);
-                remoteWipe(context);
-            }
+        if (unhideStr != null && body.equals(unhideStr)){
+            doNotification(context);
+            unHideApp(context);
         }
-        if (unhideStr!=null){
-            if(body.equals(unhideStr)){
-                doNotification(context);
-                unHideApp(context);
-            }
-        }
-        if(wipeSD!=null){
-            if(body.equals(wipeSD)){
-                doNotification(context);
-                wipeSD();
-            }
+        if(wipeSD != null && body.equals(wipeSD)){
+            doNotification(context);
+            wipeSD();
         }
     }
     private void doNotification(Context c){
@@ -170,11 +154,7 @@ public class SMSReceiver extends BroadcastReceiver {
     private void ringPhone(Context c, int ringVol, int ringDur, String ringtone){
         Uri ringtoneUri;
         try{
-            if(ringtone != null && !ringtone.equals("error")) {
-                ringtoneUri = Uri.parse(ringtone);
-            }else{
-                ringtoneUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
-            }
+            ringtoneUri = (ringtone != null && !ringtone.equals("error")) ? Uri.parse(ringtone) : RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
         }catch(Exception e){
             ringtoneUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
         }
@@ -253,7 +233,7 @@ public class SMSReceiver extends BroadcastReceiver {
     private void remoteWipe(Context c){
         new PolicyManager(c).wipePhone();
     }
-    @SuppressLint("HardwareIds")
+
     private void trySendingEmail(Context c, String address, int counter, int num){
         try {
             StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitAll().build());
