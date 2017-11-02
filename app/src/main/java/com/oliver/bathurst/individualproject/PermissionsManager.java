@@ -3,6 +3,7 @@ package com.oliver.bathurst.individualproject;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
@@ -42,6 +43,13 @@ class PermissionsManager {
                 + Build.VERSION_CODES.class.getFields()[android.os.Build.VERSION.SDK_INT].getName();
     }
 
+    String getAppInfo(){
+        try {
+            return c.getPackageManager().getPackageInfo(c.getPackageName(), 0).versionName;
+        }catch(Exception e){
+            return "Version name not found";
+        }
+    }
     void permissionsCheckup(){
         getSummary();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

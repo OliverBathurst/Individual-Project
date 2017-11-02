@@ -2,6 +2,7 @@ package com.oliver.bathurst.individualproject;
 
 import android.app.admin.DevicePolicyManager;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
@@ -16,7 +17,7 @@ import android.provider.Settings;
  */
 
 public class DeviceFragment extends PreferenceFragment {
-    private static final String ANDROID_INFO = "androidInfo", DEVICE_INFO = "deviceInfo", CELL_INFO = "cellInfo";
+    private static final String ANDROID_INFO = "androidInfo", DEVICE_INFO = "deviceInfo", CELL_INFO = "cellInfo", APP_INFO = "projectVersion";
 
     public DeviceFragment() {}
     @Override
@@ -27,9 +28,9 @@ public class DeviceFragment extends PreferenceFragment {
         findPreference(ANDROID_INFO).setSummary(permMan.getAndroidVersion());
         findPreference(DEVICE_INFO).setSummary(permMan.getDeviceAttributes());
         findPreference(CELL_INFO).setSummary(permMan.getCellInfo());
+        findPreference(APP_INFO).setSummary("Version: " + permMan.getAppInfo());
 
-        Preference locationIntent = findPreference("settings_location_settings");
-        locationIntent.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+        findPreference("settings_location_settings").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
                 startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
@@ -37,8 +38,7 @@ public class DeviceFragment extends PreferenceFragment {
             }
         });
 
-        Preference screenLock = findPreference("screen_lock_settings");
-        screenLock.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+        findPreference("screen_lock_settings").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
                 startActivity(new Intent(DevicePolicyManager.ACTION_SET_NEW_PASSWORD));

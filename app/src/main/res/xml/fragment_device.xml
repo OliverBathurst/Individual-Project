@@ -3,31 +3,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-        <PreferenceCategory
-            android:title="Android Information">
-            <ListPreference
-                android:key="androidInfo"
-                android:summary="default"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:selectable="false"/>
-        </PreferenceCategory>
-        <PreferenceCategory
-            android:layout="@layout/divider_preference">
+    <PreferenceCategory
+        android:title="@string/app_name">
+        <ListPreference
+            android:key="projectVersion"
+            android:summary="default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:selectable="false"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout="@layout/divider_preference">
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Android Information">
+        <ListPreference
+            android:key="androidInfo"
+            android:summary="default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:selectable="false"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout="@layout/divider_preference">
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Device Information">
+        <Preference
+            android:key="deviceInfo"
+            android:summary="default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:selectable= "false"/>
         </PreferenceCategory>
 
-        <PreferenceCategory
-            android:title="Device Information">
-            <Preference
-                android:key="deviceInfo"
-                android:summary="default"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:selectable= "false"/>
-        </PreferenceCategory>
-        <PreferenceCategory
-            android:layout="@layout/divider_preference">
-        </PreferenceCategory>
+    <PreferenceCategory
+        android:layout="@layout/divider_preference">
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:title="Cell Information">
@@ -43,7 +59,6 @@
         android:layout="@layout/divider_preference">
     </PreferenceCategory>
 
-
     <PreferenceCategory
             android:title="Screen Lock Settings">
             <Preference
@@ -54,10 +69,10 @@
                 android:layout_height="wrap_content"
                 android:selectable= "true"/>
         </PreferenceCategory>
-        <PreferenceCategory
-            android:layout="@layout/divider_preference">
-        </PreferenceCategory>
 
+    <PreferenceCategory
+        android:layout="@layout/divider_preference">
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:title="Location Settings">
@@ -69,6 +84,7 @@
             android:layout_height="wrap_content"
             android:selectable= "true"/>
     </PreferenceCategory>
+
     <PreferenceCategory
         android:layout="@layout/divider_preference">
     </PreferenceCategory>
