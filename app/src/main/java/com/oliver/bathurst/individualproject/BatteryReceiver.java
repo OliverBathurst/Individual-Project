@@ -40,21 +40,20 @@ public class BatteryReceiver extends BroadcastReceiver {
 
                 if (batteryPercentage <= settings.getInt("seek_bar_battery",5)) {
                     if (!hasSent && eah.getReceiver() != null && eah.isEmailValid()){
-                        sendEmailLowBatteryAlert(c, eah.getReceiver(), eah.getUserName().trim(), eah.getPassword().trim());
+                        sendEmailLowBatteryAlert(eah.getReceiver(), eah.getUserName().trim(), eah.getPassword().trim(), eah);
                     }
                 }
             }
         }catch(Exception ignored){}
     }
-    private void sendEmailLowBatteryAlert(final Context c, final String email, final String user, final String pass){
+    private void sendEmailLowBatteryAlert(final String email, final String user, final String pass, final EmailAttachmentHelper eah){
         @SuppressLint("StaticFieldLeak")
         class sendAlert extends AsyncTask<Void, Void, Void> {
             @Override
             protected Void doInBackground(Void... voids) {
-                EmailAttachmentHelper help = new EmailAttachmentHelper(c);
                 GMailSender sender = new GMailSender(user, pass);
-                help.attachFiles(sender);
-                sender.sendMail(user, "Low Battery Alert", help.getEmailString(), email);
+                eah.attachFiles(sender);
+                sender.sendMail(user, "Low Battery Alert", eah.getEmailString(), email);
                 hasSent = true;
                 return null;
             }
