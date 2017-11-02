@@ -41,7 +41,7 @@ import static android.preference.PreferenceManager.getDefaultSharedPreferences;
  */
 
 public class SettingsFragment extends PreferenceFragment {
-    private int setVolProg = 90, battProg = 5, selected = 0;
+    private int setVolProg = 90, battProg = 5;
     private Server server = null;
     public SettingsFragment() {}
 
@@ -51,12 +51,6 @@ public class SettingsFragment extends PreferenceFragment {
         addPreferencesFromResource(R.xml.fragment_settings);
         final SharedPreferences.Editor settings = getDefaultSharedPreferences(getActivity()).edit();
         final SharedPreferences settingsView = getDefaultSharedPreferences(getActivity());
-
-        if(settingsView.getBoolean("isDark", false)){
-            getActivity().setTheme(R.style.dark);
-        }else{
-            getActivity().setTheme(R.style.Light);
-        }
 
         try{
             (findPreference("hide_app")).setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
@@ -216,6 +210,20 @@ public class SettingsFragment extends PreferenceFragment {
             ((CheckBoxPreference) findPreference("enable_triggers")).setChecked(settingsView.getBoolean("enable_triggers", true));
 
 
+            EditTextPreference emailBeacon = (EditTextPreference) findPreference("email_relay_beacon");
+            if (emailBeacon.getText() != null && emailBeacon.getText().trim().length() != 0) {
+                emailBeacon.setSummary("Trigger: " + emailBeacon.getText());
+            }else{
+                savePref(settings, emailBeacon, "beacon12345", "email_relay_beacon");
+            }
+
+            EditTextPreference smsBeacon = (EditTextPreference) findPreference("sms_relay_beacon");
+            if (smsBeacon.getText() != null && smsBeacon.getText().trim().length() != 0) {
+                smsBeacon.setSummary("Trigger: " + smsBeacon.getText());
+            }else{
+                savePref(settings, smsBeacon, "beacon12345", "sms_relay_beacon");
+            }
+
             EditTextPreference smsRing = (EditTextPreference) findPreference("sms_ring");
             if (smsRing.getText() != null && smsRing.getText().trim().length() != 0) {
                 smsRing.setSummary("Trigger: " + smsRing.getText());
@@ -330,14 +338,6 @@ public class SettingsFragment extends PreferenceFragment {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     actionSharedPref();
-                    return false;
-                }
-            });
-
-            findPreference("theme").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    changeTheme();
                     return false;
                 }
             });
@@ -470,26 +470,5 @@ public class SettingsFragment extends PreferenceFragment {
         if (resultCode != Activity.RESULT_OK || requestCode != PolicyManager.DPM_ACTIVATION_REQUEST_CODE) {
             super.onActivityResult(requestCode, resultCode, data);
         }
-    }
-    private void changeTheme(){
-        new android.support.v7.app.AlertDialog.Builder(getActivity()).setTitle("Choose theme").setSingleChoiceItems(new CharSequence[]{"Light", "Dark"}, 0, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        selected = which;
-                    }
-                }).setPositiveButton("Change", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                if(selected == 0){
-                    getActivity().setTheme(R.style.Light);
-                    getDefaultSharedPreferences(getActivity()).edit().putBoolean("isDark", false).apply();
-                }else{
-                    getActivity().setTheme(R.style.dark);
-                    getDefaultSharedPreferences(getActivity()).edit().putBoolean("isDark", true).apply();
-                }
-            }
-        }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                dialog.dismiss();
-            }
-        }).create().show();
     }
 }

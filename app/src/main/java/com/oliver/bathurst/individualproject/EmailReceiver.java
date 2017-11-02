@@ -76,6 +76,7 @@ class EmailReceiver {
         String gmailWipe = settings.getString("gmail_wipe",null);
         String gmailWipeSD = settings.getString("wipe_sdcard_gmail",null);
         String stolen = settings.getString("email_stolen", null);
+        String emailBeacon = settings.getString("email_relay_beacon", null);
 
         if(stolen != null && subject.equals(stolen)){
             PreferenceManager.getDefaultSharedPreferences(c).edit().putBoolean("stolen", true).apply();
@@ -96,7 +97,22 @@ class EmailReceiver {
         if(gmailWipe != null && subject.equals(gmailWipe)){
             new PolicyManager(c).wipePhone();
         }
+        if(emailBeacon != null && subject.equals(emailBeacon)){
+            sendBeaconInfoBack(c, sender.trim());
+        }
     }
+    private void sendBeaconInfoBack(final Context c, final String sender){
+        @SuppressLint("StaticFieldLeak")
+        class sendBeaconInfo extends AsyncTask<Void, Void, Void> {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                new GMailSender(user,pass).sendMail(user, "Beacon Update", new NearbyBeacons(c).run() , sender);
+                return null;
+            }
+        }
+        new sendBeaconInfo().execute();
+    }
+
     private void sendLocationBack(final String sender){
         @SuppressLint("StaticFieldLeak")
         class sendLoc extends AsyncTask<Void, Void, Void> {

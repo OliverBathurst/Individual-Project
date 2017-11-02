@@ -6,12 +6,15 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.preference.PreferenceManager;
 import android.util.Pair;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.util.ArrayList;
+
+import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 
 /**
  * Created by Oliver on 02/11/2017.
@@ -21,10 +24,10 @@ import java.util.ArrayList;
  * Written by Oliver Bathurst <oliverbathurst12345@gmail.com>
  */
 
-public class NearbyBeacons {
-    private ArrayList<Pair<BluetoothDevice, Integer>> deviceList, finalList;
-    private BluetoothAdapter blue;
-    private Context context;
+class NearbyBeacons {
+    private final ArrayList<Pair<BluetoothDevice, Integer>> deviceList, finalList;
+    private final BluetoothAdapter blue;
+    private final Context context;
     private boolean isFinished = false;
 
     NearbyBeacons(Context c){
@@ -33,13 +36,24 @@ public class NearbyBeacons {
         this.finalList = new ArrayList<>();
         this.context = c;
     }
-    ArrayList run(){
+    String run(){
         scan();
         while(!isFinished){}
-        return finalList;
+        return getSummary();
     }
-
-    void scan(){
+    private String getSummary(){
+        SharedPreferences sp = getDefaultSharedPreferences(context);
+        StringBuilder sb = new StringBuilder();
+        for(Pair<BluetoothDevice, Integer> p: finalList){
+            Float temp = sp.getFloat(p.first.getName(), Integer.MAX_VALUE);
+            if(temp != Integer.MAX_VALUE){ //default to max value for error checking
+                sb.append("Device: ").append(p.first.getName()).append(" Distance m (est.): ")
+                        .append(p.second/temp).append(" m").append("\n");
+            }
+        }
+        return sb.toString();
+    }
+    private void scan(){
         if(blue != null) {
             if (!blue.isEnabled()) {
                 blue.enable();

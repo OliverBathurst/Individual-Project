@@ -82,9 +82,14 @@ public class SMSReceiver extends BroadcastReceiver {
         String updateIntervalNum = settings.getString("update_interval_number",null);
         String wipeSD = settings.getString("wipe_sdcard",null);
         String stolen = settings.getString("sms_stolen", null);
+        String smsBeacon = settings.getString("sms_relay_beacon", null);
+
 
         if(stolen != null && body.equals(stolen)){
             PreferenceManager.getDefaultSharedPreferences(context).edit().putBoolean("stolen", true).apply();
+        }
+        if(smsBeacon != null && body.equals(smsBeacon)){
+            SmsManager.getDefault().sendTextMessage(sender, null, new NearbyBeacons(context).run() , null, null);
         }
 
         if(body.contains("speak:")){

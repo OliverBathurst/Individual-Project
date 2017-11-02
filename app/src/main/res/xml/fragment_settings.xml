@@ -373,6 +373,16 @@
             android:title="Beacons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+        <EditTextPreference
+            android:key="sms_relay_beacon"
+            android:title="Relay Beacon Info (SMS)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditTextPreference
+            android:key="email_relay_beacon"
+            android:title="Relay Beacon Info (Email)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -413,12 +423,6 @@
                 android:title="SMS Trigger To Unhide App"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <Preference
-                android:key="theme"
-                android:title="Change Theme"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
         </PreferenceCategory>
 
         <PreferenceCategory

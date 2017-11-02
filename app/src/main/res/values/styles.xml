@@ -7,15 +7,6 @@
         <item name="android:background">#ffffff</item>
     </style>
 
-    <style name="Light" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="android:textColor">#000000</item>
-        <item name="android:textColorPrimary">#000000</item>
-        <item name="colorPrimary">#000000</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:background">#ffffff</item>
-    </style>
-
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -32,12 +23,4 @@
         <item name="android:windowContentOverlay">@null</item>
     </style>
 
-    <style name="dark" parent="Theme.AppCompat">
-        <item name="android:textColor">#ffffff</item>
-        <item name="android:textColorPrimary">#ffffff</item>
-        <item name="colorPrimary">#38BC1D</item>
-        <item name="colorPrimaryDark">#38BC1D</item>
-        <item name="colorAccent">#38BC1D</item>
-        <item name="android:background">#3D3D3D</item>
-    </style>
 </resources>
