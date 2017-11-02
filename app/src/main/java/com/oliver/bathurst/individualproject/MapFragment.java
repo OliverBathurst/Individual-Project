@@ -86,48 +86,14 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
             } catch (SecurityException ignored) {}
         }
         settings = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        if(!tryProvider(settings.getString("first", "GPS"))){
-            if(!tryProvider(settings.getString("second", "Wi-Fi"))){
-                if(!tryProvider(settings.getString("third", "Passive"))){
+        LocationService newLocationService = new LocationService(getActivity());
+        if(!newLocationService.tryProviders(locationManager, settings.getString("first", "GPS"), 2000, 1)){
+            if(!newLocationService.tryProviders(locationManager, settings.getString("second", "Wi-Fi"), 2000, 1)){
+                if(!newLocationService.tryProviders(locationManager, settings.getString("third", "Passive"), 2000, 1)){
                     Toast.makeText(getActivity(), "No providers available", Toast.LENGTH_SHORT).show();
                 }
             }
         }
-    }
-    @SuppressWarnings("BooleanMethodIsAlwaysInverted")
-    private boolean tryProvider(String prov){
-        boolean result = false;
-        try {
-            switch (prov) {
-                case "GPS":
-                    if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-                        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 1, this);
-                        result = true;
-                    }else{
-                        result = false;
-                    }
-                    break;
-                case "Wi-Fi":
-                    if(locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
-                        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 2000, 1, this);
-                        result = true;
-                    }else{
-                        result = false;
-                    }
-                    break;
-                case "Passive":
-                    if(locationManager.isProviderEnabled(LocationManager.PASSIVE_PROVIDER)){
-                        locationManager.requestLocationUpdates(LocationManager.PASSIVE_PROVIDER,2000,1,this);
-                        result = true;
-                    }else{
-                        result = false;
-                    }
-                    break;
-            }
-        }catch(SecurityException e){
-            Toast.makeText(getActivity(), "Security Exception: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-        }
-        return result;
     }
     public void onPause() {
         super.onPause();

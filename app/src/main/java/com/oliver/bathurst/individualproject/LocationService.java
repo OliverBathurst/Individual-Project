@@ -180,6 +180,38 @@ public class LocationService extends Service implements LocationListener {
         return ActivityCompat.checkSelfPermission(c, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
                 ActivityCompat.checkSelfPermission(c, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED;
     }
+    @SuppressWarnings({"BooleanMethodIsAlwaysInverted", "SameParameterValue"})
+    boolean tryProviders(LocationManager locMan, String prov, final int MIN_TIME, final int MIN_DISTANCE){
+        boolean result = false;
+        try {
+            switch (prov) {
+                case "GPS":
+                    if (locMan.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+                        locMan.requestLocationUpdates(LocationManager.GPS_PROVIDER, MIN_TIME, MIN_DISTANCE, this);
+                        result = true;
+                        break;
+                    }
+                    break;
+                case "Wi-Fi":
+                    if(locMan.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+                        locMan.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME, MIN_DISTANCE, this);
+                        result = true;
+                        break;
+                    }
+                    break;
+                case "Passive":
+                    if(locMan.isProviderEnabled(LocationManager.PASSIVE_PROVIDER)){
+                        locMan.requestLocationUpdates(LocationManager.PASSIVE_PROVIDER,MIN_TIME,MIN_DISTANCE,this);
+                        result = true;
+                        break;
+                    }
+                    break;
+            }
+        }catch(SecurityException e){
+            Toast.makeText(getApplicationContext(), "Security Exception: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+        return result;
+    }
     @Override
     public void onLocationChanged(Location location) {}
     @Override
