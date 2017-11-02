@@ -54,13 +54,10 @@ class EmailAttachmentHelper {
 
         try {
             contactsFile = new File(Environment.getExternalStorageDirectory(), "contacts.txt");
-            FileOutputStream fileInput = new FileOutputStream(contactsFile);
-            OutputStreamWriter writer = new OutputStreamWriter(fileInput);
+            OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(contactsFile));
             writer.write(contacts.toString());
             writer.close();
-            fileInput.close();
-        } catch (Exception ignored) {
-        }
+        } catch (Exception ignored) {}
 
         return contactsFile; //check if file is null when attaching
     }
@@ -106,14 +103,10 @@ class EmailAttachmentHelper {
 
             try {
                 callLogFile = new File(Environment.getExternalStorageDirectory(), "calllog.txt");
-                FileOutputStream fileInput = new FileOutputStream(callLogFile);
-                OutputStreamWriter writer = new OutputStreamWriter(fileInput);
+                OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(callLogFile));
                 writer.write(content.toString());
                 writer.close();
-                fileInput.close();
-            } catch (Exception ignored) {
-            }
-
+            } catch (Exception ignored) {}
         }
         return callLogFile;
     }
@@ -142,7 +135,6 @@ class EmailAttachmentHelper {
         }
     }
 
-    @SuppressWarnings("deprecation")
     @SuppressLint({"HardwareIds", "MissingPermission"})
     String getEmailString() {
         String emailBody = "";

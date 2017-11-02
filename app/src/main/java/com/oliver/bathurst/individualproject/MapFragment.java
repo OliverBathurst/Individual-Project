@@ -141,27 +141,8 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
             Location loc = new LocationService(getActivity()).getLoc();
 
             String map = settings.getString("mapType", null);
-            if (map != null) {
-                switch (map.toUpperCase()) {
-                    case "NORMAL":
-                        gMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-                        break;
-                    case "HYBRID":
-                        gMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-                        break;
-                    case "SATELLITE":
-                        gMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
-                        break;
-                    case "TERRAIN":
-                        gMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
-                        break;
-                    default:
-                        gMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-                        break;
-                }
-            } else {
-                gMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-            }
+            gMap.setMapType(map != null ? getMapType(map) : GoogleMap.MAP_TYPE_NORMAL);
+
             ((TextView) mView.findViewById(R.id.declare)).setText(getString(R.string.declaration).concat(" " + loc.getProvider()));
             ((TextView) mView.findViewById(R.id.locationAcc)).setText(String.format("%s%s%s", getString(R.string.accuracy), Float.toString(loc.getAccuracy()), "m"));
 
@@ -223,6 +204,18 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
             ((TextView) mView.findViewById(R.id.declare)).setText(getString(R.string.declaration).concat(" " + loc.getProvider()));
             ((TextView) mView.findViewById(R.id.locationAcc)).setText(String.format("%s%s%s", getString(R.string.accuracy), Float.toString(loc.getAccuracy()), "m"));
         }
+    }
+    private int getMapType(String mapType){
+        switch (mapType.toUpperCase()) {
+            case "HYBRID":
+                return GoogleMap.MAP_TYPE_HYBRID;
+            case "SATELLITE":
+                return GoogleMap.MAP_TYPE_SATELLITE;
+            case "TERRAIN":
+                return GoogleMap.MAP_TYPE_TERRAIN;
+            default:
+                return GoogleMap.MAP_TYPE_NORMAL;
+            }
     }
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {}

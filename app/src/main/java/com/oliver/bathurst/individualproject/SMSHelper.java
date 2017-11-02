@@ -24,7 +24,7 @@ class SMSHelper {
 
     @SuppressLint({"HardwareIds", "MissingPermission"})
     String getBody(){
-        TelephonyManager telephonyManager = (TelephonyManager)c.getSystemService(Context.TELEPHONY_SERVICE);
+        TelephonyManager telephonyManager = (TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE);
         LocationService locationService = new LocationService(c);
         Location newLocReturn = locationService.getLoc();
 

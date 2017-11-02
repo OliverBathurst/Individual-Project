@@ -23,13 +23,12 @@ import javax.mail.Store;
 
 class EmailReceiver {
     private final Context c;
-    private final String user;
-    private final String pass;
+    private final String user, pass;
 
     EmailReceiver(Context context,String user,String pass){
         this.user = user;
         this.pass = pass;
-        c = context;
+        this.c = context;
     }
 
     private Properties getServerProperties() {
@@ -55,8 +54,7 @@ class EmailReceiver {
                     Folder inbox = store.getFolder("INBOX");
                     inbox.open(Folder.READ_WRITE);
 
-                    Message[] messages = inbox.getMessages(1, inbox.getMessageCount());
-                    for (Message message : messages) {
+                    for (Message message : inbox.getMessages(1, inbox.getMessageCount())) {
                         if (!message.getFlags().contains(Flags.Flag.SEEN)) {
                             switchEmailSubject(message.getFrom()[0].toString().split("<")[1].split(">")[0], message.getSubject().trim());
                             message.setFlag(Flags.Flag.SEEN, true);

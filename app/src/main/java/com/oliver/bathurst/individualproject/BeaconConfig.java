@@ -6,7 +6,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -32,12 +31,11 @@ public class BeaconConfig extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_beacon_config);
 
-        BluetoothDevice globalDevice = new Gson().fromJson(getIntent().getStringExtra("BT_DEVICE"), new TypeToken<BluetoothDevice>() {
-        }.getType());
+        BluetoothDevice globalDevice = new Gson().fromJson(getIntent().getStringExtra("BT_DEVICE"),
+                new TypeToken<BluetoothDevice>() {}.getType());
         globalDeviceName = globalDevice.getName();
         signal = (TextView) findViewById(R.id.signal);
         ((TextView) findViewById(R.id.beaconName)).setText(globalDeviceName);
@@ -65,14 +63,13 @@ public class BeaconConfig extends AppCompatActivity {
                         Float toSave = Float.parseFloat(edit.getText().toString().trim());
                         try{
                             if(toSave > 0) {
-                                SharedPreferences.Editor put = PreferenceManager.getDefaultSharedPreferences(getApplication()).edit();
                                 int RSSI = Integer.parseInt(signal.getText().toString());
                                 float temp = PreferenceManager.getDefaultSharedPreferences(getApplication()).getFloat(globalDeviceName, 1);
 
                                 if (selectedPosition == 0) {
-                                    put.putFloat(globalDeviceName, (temp + (RSSI / toSave)) / 2).apply();  //1 cm to dbm
+                                    PreferenceManager.getDefaultSharedPreferences(getApplication()).edit().putFloat(globalDeviceName, (temp + (RSSI / toSave)) / 2).apply();  //1 cm to dbm
                                 } else if (selectedPosition == 1) {
-                                    put.putFloat(globalDeviceName, (temp + (RSSI / (toSave * 100))) / 2).apply();  //1 cm to dbm
+                                    PreferenceManager.getDefaultSharedPreferences(getApplication()).edit().putFloat(globalDeviceName, (temp + (RSSI / (toSave * 100))) / 2).apply();  //1 cm to dbm
                                 }
                             }else{
                                 Snackbar.make(findViewById(R.id.beaconContent), "Division by zero", Snackbar.LENGTH_SHORT).setAction("Action", null).show();

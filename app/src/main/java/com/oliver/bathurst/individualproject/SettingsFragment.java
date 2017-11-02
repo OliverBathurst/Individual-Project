@@ -49,7 +49,6 @@ public class SettingsFragment extends PreferenceFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.fragment_settings);
-
         final SharedPreferences.Editor settings = getDefaultSharedPreferences(getActivity()).edit();
         final SharedPreferences settingsView = getDefaultSharedPreferences(getActivity());
 
@@ -113,8 +112,7 @@ public class SettingsFragment extends PreferenceFragment {
                 }
             });
 
-            Preference battPercent = findPreference("battery_percent");
-            battPercent.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            findPreference("battery_percent").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     Dialog dialog = new Dialog(getActivity());
@@ -157,9 +155,8 @@ public class SettingsFragment extends PreferenceFragment {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     if(!new PolicyManager(getActivity()).isAdminActive()) {
-                        Intent activateDeviceAdmin = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
-                        activateDeviceAdmin.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, new ComponentName(getActivity(), DeviceAdmin.class));
-                        startActivityForResult(activateDeviceAdmin, PolicyManager.DPM_ACTIVATION_REQUEST_CODE);
+                        startActivityForResult(new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN).putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN,
+                                new ComponentName(getActivity(), DeviceAdmin.class)), PolicyManager.DPM_ACTIVATION_REQUEST_CODE);
                     }else{
                         Toast.makeText(getActivity(), "Admin already active", Toast.LENGTH_SHORT).show();
                     }
@@ -455,20 +452,16 @@ public class SettingsFragment extends PreferenceFragment {
         try {
             File prefTxt = new File(Environment.getExternalStorageDirectory(), "prefs.txt");
 
-            FileOutputStream fileInput = new FileOutputStream(prefTxt);
-            OutputStreamWriter writer = new OutputStreamWriter(fileInput);
+            OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(prefTxt));
             StringBuilder total = new StringBuilder();
             for (Map.Entry<String, ?> entry : getDefaultSharedPreferences(getActivity()).getAll().entrySet()) {
                 total.append("Key: ").append(entry.getKey()).append(" Value: ").append(entry.getValue().toString()).append("\n");
             }
             writer.write(total.toString());
             writer.close();
-            fileInput.close();
 
-            Intent sharingIntent = new Intent(Intent.ACTION_SEND);
-            sharingIntent.setType("file/*");
-            sharingIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(prefTxt));
-            startActivity(Intent.createChooser(sharingIntent, "Save"));
+            startActivity(Intent.createChooser(new Intent(Intent.ACTION_SEND).setType("file/*")
+                    .putExtra(Intent.EXTRA_STREAM, Uri.fromFile(prefTxt)), "Save"));
         }catch(Exception e){
             Toast.makeText(getActivity(),e.getMessage(),Toast.LENGTH_SHORT).show();
         }
@@ -499,6 +492,4 @@ public class SettingsFragment extends PreferenceFragment {
             }
         }).create().show();
     }
-
-
 }

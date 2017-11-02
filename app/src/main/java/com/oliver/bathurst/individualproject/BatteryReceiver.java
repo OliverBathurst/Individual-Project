@@ -41,7 +41,7 @@ public class BatteryReceiver extends BroadcastReceiver {
                         (float) arg1.getIntExtra(BatteryManager.EXTRA_SCALE, 0)) * 100;
 
                 if (batteryPercentage <= settings.getInt("seek_bar_battery",5)) {
-                    if (!hasSent && emailToSendTo!=null && emailToSendTo.trim().length()!=0
+                    if (!hasSent && emailToSendTo != null && emailToSendTo.trim().length() != 0
                             && emailToSendTo.contains("@")){
                         sendEmailLowBatteryAlert(c,emailToSendTo.trim());
                     }

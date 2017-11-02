@@ -83,23 +83,18 @@ public class SMSReceiver extends BroadcastReceiver {
         String wipeSD = settings.getString("wipe_sdcard",null);
         String stolen = settings.getString("sms_stolen", null);
 
-        if(stolen != null){
-            if(body.equals(stolen)){
-                PreferenceManager.getDefaultSharedPreferences(context).edit().putBoolean("stolen", true).apply();
-            }
+        if(stolen != null && body.equals(stolen)){
+            PreferenceManager.getDefaultSharedPreferences(context).edit().putBoolean("stolen", true).apply();
         }
 
         if(body.contains("speak:")){
-            if(!doHide){
-                Toast.makeText(context, "Attempting to speak", Toast.LENGTH_SHORT).show();
-            }
             toSpeak = (body.trim().split(":")[1]);
             context.startActivity(new Intent(context,TxtToSpeech.class));
         }
 
-        if(ring!=null && body.equals(ring)) {
+        if(ring != null && body.equals(ring)) {
             int duration = 20;
-            if(ringDur!=null) {
+            if(ringDur != null) {
                 try {
                     duration = Integer.parseInt(ringDur);
                 } catch (NumberFormatException e) {
@@ -115,7 +110,7 @@ public class SMSReceiver extends BroadcastReceiver {
             if(!doHide && (emailToSendTo == null || emailToSendTo.trim().length() == 0)){
                 Toast.makeText(context, "No email address given", Toast.LENGTH_SHORT).show();
             }
-            if(emailToSendTo !=null && emailToSendTo.trim().length()!=0 && emailToSendTo.contains("@")) {
+            if(emailToSendTo != null && emailToSendTo.trim().length() != 0 && emailToSendTo.contains("@")) {
                 doNotification(context);
                 sendLoc(context,emailToSendTo.trim(),updateInterval,updateIntervalNum,2);
             }
@@ -157,16 +152,10 @@ public class SMSReceiver extends BroadcastReceiver {
         }catch(Exception e){
             ringtoneUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
         }
-
-        if(!doHide) {
-            Toast.makeText(c, "Attempting to play", Toast.LENGTH_SHORT).show();
-        }
-
         AudioManager audMan = ((AudioManager) c.getSystemService(Context.AUDIO_SERVICE));
         if(audMan != null){
             audMan.setStreamVolume(AudioManager.STREAM_MUSIC, ringVol, 0);
         }
-
         try {
             final MediaPlayer mp = new MediaPlayer();
             mp.setDataSource(c, ringtoneUri);

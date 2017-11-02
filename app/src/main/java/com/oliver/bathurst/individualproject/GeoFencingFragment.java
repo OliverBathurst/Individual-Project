@@ -63,7 +63,7 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
 
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        final TextView radiusText = (TextView) mView.findViewById(R.id.radiusTextView), scaleText = (TextView) mView.findViewById(R.id.scale);
+        final TextView scaleText = (TextView) mView.findViewById(R.id.scale);
         marginOfError = (TextView) mView.findViewById(R.id.margin_of_error_geomap);
 
         final MapView mMapView = (MapView) mView.findViewById(R.id.map);
@@ -96,20 +96,18 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
                         circle.remove();
                     }
                     circle = gMap.addCircle(new CircleOptions().strokeColor(Color.GREEN).fillColor(0x5500ff00).center(new LatLng(loc.getLatitude(), loc.getLongitude())).radius(mRadius * scaleFactorInt));
-                    radiusText.setText(getString(R.string.radiuscolon).concat(" " + String.valueOf(mRadius * scaleFactorInt)));
+                    ((TextView) mView.findViewById(R.id.radiusTextView)).setText(getString(R.string.radiuscolon).concat(" " + String.valueOf(mRadius * scaleFactorInt)));
                 } catch (Exception ignored) {}
             }
         });
-        Button cancelButton = (Button) mView.findViewById(R.id.cancel);
-        cancelButton.setOnClickListener(new View.OnClickListener() {
+        (mView.findViewById(R.id.cancel)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getContext(), MainActivity.class));
             }
         });
 
-        Button saveButton = (Button) mView.findViewById(R.id.save);
-        saveButton.setOnClickListener(new View.OnClickListener() {
+        (mView.findViewById(R.id.save)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
@@ -155,27 +153,8 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
             SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getContext());
 
             String map = settings.getString("mapType", null);
-            if (map != null) {
-                switch (map.toUpperCase()) {
-                    case "NORMAL":
-                        gMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-                        break;
-                    case "HYBRID":
-                        gMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-                        break;
-                    case "SATELLITE":
-                        gMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
-                        break;
-                    case "TERRAIN":
-                        gMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
-                        break;
-                    default:
-                        gMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-                        break;
-                }
-            } else {
-                gMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-            }
+            gMap.setMapType(map != null ? getMapType(map) : GoogleMap.MAP_TYPE_NORMAL);
+
             ((TextView) mView.findViewById(R.id.declare)).setText(getString(R.string.declaration).concat(" " + loc.getProvider()));
 
             if (settings.getBoolean("show_margin", false)) {
@@ -187,13 +166,24 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
                         .radius(loc.getAccuracy()));
                 marginOfError.setText(String.valueOf("Margin of error: " + loc.getAccuracy() + "m"));
             }
-
             MapsInitializer.initialize(getContext());
             gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
                     .title("Device Location: " + loc.getLatitude() + loc.getLongitude()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f));
             gMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(loc.getLatitude(), loc.getLongitude())).zoom(19).bearing(0).tilt(45).build()));
         } catch (Exception e) {
             Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+    }
+    private int getMapType(String mapType){
+        switch (mapType.toUpperCase()) {
+            case "HYBRID":
+                return GoogleMap.MAP_TYPE_HYBRID;
+            case "SATELLITE":
+                return GoogleMap.MAP_TYPE_SATELLITE;
+            case "TERRAIN":
+                return GoogleMap.MAP_TYPE_TERRAIN;
+            default:
+                return GoogleMap.MAP_TYPE_NORMAL;
         }
     }
 }

@@ -87,7 +87,6 @@ public class Reorder extends AppCompatActivity {
                 }
             }
         });
-
         AlertDialog.Builder builder = new AlertDialog.Builder(this).setTitle("Warning")
                 .setMessage("No not edit these without good reason, this order has been " +
                 "specifically chosen for optimal accuracy")
@@ -102,10 +101,7 @@ public class Reorder extends AppCompatActivity {
         lv.setAdapter(new ArrayAdapter(this, R.layout.list_view, R.id.listviewAdapt, order));
     }
     private void saveOrder(){
-        final SharedPreferences.Editor settingsView = PreferenceManager.getDefaultSharedPreferences(getApplication()).edit();
-        settingsView.putString("first", order.get(0));
-        settingsView.putString("second", order.get(1));
-        settingsView.putString("third", order.get(2));
-        settingsView.apply();
+        PreferenceManager.getDefaultSharedPreferences(getApplication()).edit()
+                .putString("first", order.get(0)).putString("second", order.get(1)).putString("third", order.get(2)).apply();
     }
 }
