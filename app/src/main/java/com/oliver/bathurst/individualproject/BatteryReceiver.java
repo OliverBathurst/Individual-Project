@@ -25,42 +25,36 @@ public class BatteryReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context c, Intent arg1) {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
+        EmailAttachmentHelper eah = new EmailAttachmentHelper(c);
 
         if(settings.getBoolean("sms_by_email", false)){
-            String user = settings.getString("gmail_username", null);
-            String pass = settings.getString("gmail_password", null);
-            if((user != null && user.trim().length() != 0 && user.contains("@")) && (pass != null && pass.trim().length() != 0)){
-                new EmailReceiver(c, user, pass).getNewEmails();
+            if(eah.isEmailValid()) {
+                new EmailReceiver(c, eah.getUserName(), eah.getPassword()).getNewEmails();
             }
         }
         try {
             if(settings.getBoolean("battery_flare", false) && settings.getBoolean("stolen", false)) {
-                String emailToSendTo = settings.getString("email_string", null);
 
                 float batteryPercentage = ((float) arg1.getIntExtra(BatteryManager.EXTRA_LEVEL, 0) /
                         (float) arg1.getIntExtra(BatteryManager.EXTRA_SCALE, 0)) * 100;
 
                 if (batteryPercentage <= settings.getInt("seek_bar_battery",5)) {
-                    if (!hasSent && emailToSendTo != null && emailToSendTo.trim().length() != 0
-                            && emailToSendTo.contains("@")){
-                        sendEmailLowBatteryAlert(c,emailToSendTo.trim());
+                    if (!hasSent && eah.getReceiver() != null && eah.isEmailValid()){
+                        sendEmailLowBatteryAlert(c, eah.getReceiver(), eah.getUserName().trim(), eah.getPassword().trim());
                     }
                 }
             }
         }catch(Exception ignored){}
     }
-    private void sendEmailLowBatteryAlert(final Context c, final String email){
+    private void sendEmailLowBatteryAlert(final Context c, final String email, final String user, final String pass){
         @SuppressLint("StaticFieldLeak")
         class sendAlert extends AsyncTask<Void, Void, Void> {
             @Override
             protected Void doInBackground(Void... voids) {
                 EmailAttachmentHelper help = new EmailAttachmentHelper(c);
-
-                GMailSender sender = new GMailSender("locator.findmydevice.service@gmail.com", "TheWatchful2");
+                GMailSender sender = new GMailSender(user, pass);
                 help.attachFiles(sender);
-
-                sender.sendMail("locator.findmydevice.service@gmail.com",
-                        "Low Battery Alert", help.getEmailString(), email);
+                sender.sendMail(user, "Low Battery Alert", help.getEmailString(), email);
                 hasSent = true;
                 return null;
             }

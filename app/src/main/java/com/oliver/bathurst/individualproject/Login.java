@@ -66,7 +66,7 @@ public class Login extends AppCompatActivity{
         new PermissionsManager(this).permissionsCheckup();
     }
     private void attemptLogin(){
-        if(pass==null || pass.trim().length()==0){
+        if(pass == null || pass.trim().length() == 0){
             startActivity(new Intent(Login.this, MainActivity.class));
             finish();
         }else {

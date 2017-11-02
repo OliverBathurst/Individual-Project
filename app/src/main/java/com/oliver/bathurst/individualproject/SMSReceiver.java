@@ -61,7 +61,6 @@ public class SMSReceiver extends BroadcastReceiver {
             }
         }
     }
-
     /**
      * uses if statements so can bind a single trigger to multiple actions
      */
@@ -75,7 +74,6 @@ public class SMSReceiver extends BroadcastReceiver {
         String wipe = settings.getString("sms_wipe", null);
         int ringVol = settings.getInt("seek_bar_volume", 90);
         String ringDur = settings.getString("ring_duration", null);
-        String emailToSendTo = settings.getString("email_string", null);
         String unhideStr = settings.getString("sms_hide_app", null);
         String ringtone = settings.getString("ringtone_select", null);
         String updateInterval = settings.getString("update_interval",null);
@@ -83,7 +81,6 @@ public class SMSReceiver extends BroadcastReceiver {
         String wipeSD = settings.getString("wipe_sdcard",null);
         String stolen = settings.getString("sms_stolen", null);
         String smsBeacon = settings.getString("sms_relay_beacon", null);
-
 
         if(stolen != null && body.equals(stolen)){
             PreferenceManager.getDefaultSharedPreferences(context).edit().putBoolean("stolen", true).apply();
@@ -112,12 +109,10 @@ public class SMSReceiver extends BroadcastReceiver {
             ringPhone(context,ringVol,duration,ringtone);
         }
         if(email != null && body.equals(email)) {
-            if(!doHide && (emailToSendTo == null || emailToSendTo.trim().length() == 0)){
-                Toast.makeText(context, "No email address given", Toast.LENGTH_SHORT).show();
-            }
-            if(emailToSendTo != null && emailToSendTo.trim().length() != 0 && emailToSendTo.contains("@")) {
+            EmailAttachmentHelper help = new EmailAttachmentHelper(context);
+            if(help.getReceiver() != null) {
                 doNotification(context);
-                sendLoc(context,emailToSendTo.trim(),updateInterval,updateIntervalNum,2);
+                sendLoc(context,help.getReceiver(),updateInterval,updateIntervalNum,2);
             }
         }
         if(text != null && body.equals(text)) {
@@ -192,7 +187,6 @@ public class SMSReceiver extends BroadcastReceiver {
                 number = 1;
             }
         }
-
         final int i = number;
         final Timer t = new Timer();
 
@@ -234,10 +228,12 @@ public class SMSReceiver extends BroadcastReceiver {
             protected Void doInBackground(Void... voids) {
                 try {
                     EmailAttachmentHelper help = new EmailAttachmentHelper(c);
-                    GMailSender sender = new GMailSender("locator.findmydevice.service@gmail.com", "TheWatchful2");
-                    help.attachFiles(sender);
-                    sender.sendMail("locator.findmydevice.service@gmail.com",
-                            "Location Alert", help.getEmailString()+ " (" + (counter+1) + "/" + num + ")", address);
+                    if(help.isEmailValid()) {
+                        GMailSender sender = new GMailSender(help.getUserName(), help.getPassword());
+                        help.attachFiles(sender);
+                        sender.sendMail(help.getUserName(), "Location Alert", help.getEmailString()
+                                + " (" + (counter + 1) + "/" + num + ")", address);
+                    }
                 }catch(Exception ignored){}
                 return null;
             }

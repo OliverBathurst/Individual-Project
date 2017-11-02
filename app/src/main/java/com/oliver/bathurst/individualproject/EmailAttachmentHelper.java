@@ -39,6 +39,23 @@ class EmailAttachmentHelper {
         c = context;
     }
 
+    boolean isEmailValid(){
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
+        String user = settings.getString("gmail_username", null);
+        String pass = settings.getString("gmail_password", null);
+        return user != null && user.trim().length() != 0 && user.contains("@") && pass != null && pass.trim().length() != 0;
+    }
+    String getUserName(){
+        return PreferenceManager.getDefaultSharedPreferences(c).getString("gmail_username", null);
+    }
+    String getPassword(){
+        return PreferenceManager.getDefaultSharedPreferences(c).getString("gmail_password", null);
+    }
+    String getReceiver(){
+        String receiversEmail = PreferenceManager.getDefaultSharedPreferences(c).getString("email_string", null);
+        return (receiversEmail != null && receiversEmail.trim().length() != 0 && receiversEmail.contains("@")) ? receiversEmail.trim() : null;
+    }
+
     private File getContacts() {
         Cursor phones = c.getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
         StringBuilder contacts = new StringBuilder();

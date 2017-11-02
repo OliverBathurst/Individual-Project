@@ -36,6 +36,7 @@ class NearbyBeacons {
         this.finalList = new ArrayList<>();
         this.context = c;
     }
+    @SuppressWarnings("StatementWithEmptyBody")
     String run(){
         scan();
         while(!isFinished){}
@@ -43,10 +44,11 @@ class NearbyBeacons {
     }
     private String getSummary(){
         SharedPreferences sp = getDefaultSharedPreferences(context);
+
         StringBuilder sb = new StringBuilder();
         for(Pair<BluetoothDevice, Integer> p: finalList){
             Float temp = sp.getFloat(p.first.getName(), Integer.MAX_VALUE);
-            if(temp != Integer.MAX_VALUE){ //default to max value for error checking
+            if(temp != Integer.MAX_VALUE && temp != 0){ //default to max value for error checking
                 sb.append("Device: ").append(p.first.getName()).append(" Distance m (est.): ")
                         .append(p.second/temp).append(" m").append("\n");
             }

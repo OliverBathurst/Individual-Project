@@ -21,19 +21,13 @@ import android.widget.Toast;
 public class SimStateChangedReceiver extends BroadcastReceiver {
 
     private static final String EXTRA_SIM_STATE = "ss";
-    private boolean doHide;
 
     @SuppressWarnings("ConstantConditions")
     @Override
     public void onReceive(Context context, Intent intent) {
         String state = intent.getExtras().getString(EXTRA_SIM_STATE);
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
-        doHide = settings.getBoolean("hide_sms", false);
         if(settings.getBoolean("check_sim_preference", false)){
-
-            if (!doHide) {
-                Toast.makeText(context, "SIM Monitor Activated", Toast.LENGTH_SHORT).show();
-            }
 
             String action = settings.getString("sim_change_action",null);
             if(action != null){
@@ -42,11 +36,17 @@ public class SimStateChangedReceiver extends BroadcastReceiver {
                         sendSMS(context,state,settings.getString("secondary_phone",null));
                         break;
                     case "EMAIL":
-                        sendEmail(context,state,settings.getString("email_string",null));
+                        EmailAttachmentHelper help = new EmailAttachmentHelper(context);
+                        if(help.isEmailValid()) {
+                            sendEmail(context, state, help.getReceiver(), help.getUserName(), help.getPassword(), help);
+                        }
                         break;
                     case "BOTH":
+                        EmailAttachmentHelper helper = new EmailAttachmentHelper(context);
                         sendSMS(context,state,settings.getString("secondary_phone",null));
-                        sendEmail(context,state,settings.getString("email_string",null));
+                        if(helper.isEmailValid()) {
+                            sendEmail(context, state, helper.getReceiver(), helper.getUserName(), helper.getPassword(), helper);
+                        }
                         break;
                 }
             }
@@ -54,21 +54,17 @@ public class SimStateChangedReceiver extends BroadcastReceiver {
     }
     @SuppressWarnings("deprecation")
     @SuppressLint("HardwareIds")
-    private void sendEmail(final Context c, final String state, final String address){
-        if(address != null && address.trim().length() != 0 && address.contains("@")){
+    private void sendEmail(final Context c, final String state, final String address, final String username, final String password,
+                           final EmailAttachmentHelper help){
+        if(address != null){
             try {
-                if (!doHide) {
-                    Toast.makeText(c, "Sending email", Toast.LENGTH_SHORT).show();
-                }
                 @SuppressLint("StaticFieldLeak")
                 class sendEmail extends AsyncTask<Void, Void, Void> {
                     @Override
                     protected Void doInBackground(Void... voids) {
-                        EmailAttachmentHelper help = new EmailAttachmentHelper(c);
-                        GMailSender sender = new GMailSender("locator.findmydevice.service@gmail.com", "TheWatchful2");
+                        GMailSender sender = new GMailSender(username, password);
                         help.attachFiles(sender);
-                        sender.sendMail("locator.findmydevice.service@gmail.com",
-                                "SIM Change Alert", (help.getEmailString()+ "\nSIM State: " + state), address.trim());
+                        sender.sendMail(username, "SIM Change Alert", (help.getEmailString()+ "\nSIM State: " + state), address.trim());
                         return null;
                     }
                 }
@@ -80,9 +76,6 @@ public class SimStateChangedReceiver extends BroadcastReceiver {
     private void sendSMS(Context c, String state, String number){
         if(number != null && number.trim().length() != 0){
             try {
-                if (!doHide) {
-                    Toast.makeText(c, "Sending text message", Toast.LENGTH_SHORT).show();
-                }
                 SmsManager.getDefault().sendTextMessage(number.trim(), null, (new SMSHelper(c).getBody()+ "\nSIM State: " + state), null, null);
             }catch (Exception ignored){}
         }

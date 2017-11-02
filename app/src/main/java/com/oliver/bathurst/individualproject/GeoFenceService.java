@@ -31,13 +31,13 @@ public class GeoFenceService extends IntentService {
         }
     }
     private void sendEmail(){
+        EmailAttachmentHelper helper =  new EmailAttachmentHelper(this);
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
-        String emailToSendTo = settings.getString("email_string", null);
 
-        if(settings.getBoolean("geo_fence_enable_or_not",false) && emailToSendTo != null && emailToSendTo.trim().length() != 0
-                && emailToSendTo.contains("@") && settings.getBoolean("stolen", false)) {
-            new GMailSender("locator.findmydevice.service@gmail.com", "TheWatchful2").sendMail("locator.findmydevice.service@gmail.com",
-                    "Geofence Breach", new EmailAttachmentHelper(this).getEmailString(), emailToSendTo.trim());
+        if(helper.isEmailValid()) {
+            if (settings.getBoolean("geo_fence_enable_or_not", false) && helper.getReceiver() != null && settings.getBoolean("stolen", false)) {
+                new GMailSender(helper.getUserName(), helper.getPassword()).sendMail(helper.getUserName(), "Geofence Breach", helper.getEmailString(), helper.getReceiver().trim());
+            }
         }
     }
 }
