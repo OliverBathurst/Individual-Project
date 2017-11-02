@@ -8,7 +8,6 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 import android.telephony.SmsManager;
-import android.widget.Toast;
 
 /**
  * Created by Oliver on 17/06/2017.
@@ -38,14 +37,14 @@ public class SimStateChangedReceiver extends BroadcastReceiver {
                     case "EMAIL":
                         EmailAttachmentHelper help = new EmailAttachmentHelper(context);
                         if(help.isEmailValid()) {
-                            sendEmail(context, state, help.getReceiver(), help.getUserName(), help.getPassword(), help);
+                            sendEmail(state, help.getReceiver(), help.getUserName(), help.getPassword(), help);
                         }
                         break;
                     case "BOTH":
-                        EmailAttachmentHelper helper = new EmailAttachmentHelper(context);
                         sendSMS(context,state,settings.getString("secondary_phone",null));
+                        EmailAttachmentHelper helper = new EmailAttachmentHelper(context);
                         if(helper.isEmailValid()) {
-                            sendEmail(context, state, helper.getReceiver(), helper.getUserName(), helper.getPassword(), helper);
+                            sendEmail(state, helper.getReceiver(), helper.getUserName(), helper.getPassword(), helper);
                         }
                         break;
                 }
@@ -54,7 +53,7 @@ public class SimStateChangedReceiver extends BroadcastReceiver {
     }
     @SuppressWarnings("deprecation")
     @SuppressLint("HardwareIds")
-    private void sendEmail(final Context c, final String state, final String address, final String username, final String password,
+    private void sendEmail(final String state, final String address, final String username, final String password,
                            final EmailAttachmentHelper help){
         if(address != null){
             try {
