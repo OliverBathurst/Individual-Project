@@ -25,11 +25,11 @@ public class BatteryReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context c, Intent arg1) {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
-        EmailAttachmentHelper eah = new EmailAttachmentHelper(c);
+        GMailSender gmail = new GMailSender(c);
 
         if(settings.getBoolean("sms_by_email", false)){
-            if(eah.isEmailValid()) {
-                new EmailReceiver(c, eah.getUserName(), eah.getPassword()).getNewEmails();
+            if(gmail.isEmailValid()) {
+                new EmailReceiver(c, gmail.getUserName().trim(), gmail.getPassword().trim()).getNewEmails();
             }
         }
         try {
@@ -39,21 +39,20 @@ public class BatteryReceiver extends BroadcastReceiver {
                         (float) arg1.getIntExtra(BatteryManager.EXTRA_SCALE, 0)) * 100;
 
                 if (batteryPercentage <= settings.getInt("seek_bar_battery",5)) {
-                    if (!hasSent && eah.getReceiver() != null && eah.isEmailValid()){
-                        sendEmailLowBatteryAlert(eah.getReceiver(), eah.getUserName().trim(), eah.getPassword().trim(), eah);
+                    if (!hasSent && gmail.getReceiver() != null && gmail.isEmailValid()){
+                        gmail.setUserAndPass(gmail.getUserName().trim(), gmail.getPassword().trim());
+                        sendEmailLowBatteryAlert(gmail.getReceiver(), gmail);
                     }
                 }
             }
         }catch(Exception ignored){}
     }
-    private void sendEmailLowBatteryAlert(final String email, final String user, final String pass, final EmailAttachmentHelper eah){
+    private void sendEmailLowBatteryAlert(final String email, final GMailSender g){
         @SuppressLint("StaticFieldLeak")
         class sendAlert extends AsyncTask<Void, Void, Void> {
             @Override
             protected Void doInBackground(Void... voids) {
-                GMailSender sender = new GMailSender(user, pass);
-                eah.attachFiles(sender);
-                sender.sendMail(user, "Low Battery Alert", eah.getEmailString(), email);
+                g.sendMail(g.getUserName().trim(), "Low Battery Alert", g.getEmailString(), email);
                 hasSent = true;
                 return null;
             }

@@ -31,12 +31,14 @@ public class GeoFenceService extends IntentService {
         }
     }
     private void sendEmail(){
-        EmailAttachmentHelper helper =  new EmailAttachmentHelper(this);
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
 
-        if(helper.isEmailValid()) {
-            if (settings.getBoolean("geo_fence_enable_or_not", false) && helper.getReceiver() != null && settings.getBoolean("stolen", false)) {
-                new GMailSender(helper.getUserName(), helper.getPassword()).sendMail(helper.getUserName(), "Geofence Breach", helper.getEmailString(), helper.getReceiver().trim());
+        if (settings.getBoolean("geo_fence_enable_or_not", false) && settings.getBoolean("stolen", false)) {
+            GMailSender gmail = new GMailSender(this);
+
+            if(gmail.isEmailValid() && gmail.getReceiver() != null) {
+                gmail.setUserAndPass(gmail.getUserName().trim(), gmail.getPassword().trim());
+                gmail.sendMail(gmail.getUserName(), "Geofence Breach", gmail.getEmailString(), gmail.getReceiver().trim());
             }
         }
     }

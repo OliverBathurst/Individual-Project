@@ -109,10 +109,10 @@ public class SMSReceiver extends BroadcastReceiver {
             ringPhone(context,ringVol,duration,ringtone);
         }
         if(email != null && body.equals(email)) {
-            EmailAttachmentHelper help = new EmailAttachmentHelper(context);
-            if(help.getReceiver() != null) {
+            GMailSender g = new GMailSender(context);
+            if(g.getReceiver() != null) {
                 doNotification(context);
-                sendLoc(context,help.getReceiver(),updateInterval,updateIntervalNum,2);
+                sendLoc(context, g.getReceiver(),updateInterval,updateIntervalNum,2);
             }
         }
         if(text != null && body.equals(text)) {
@@ -227,11 +227,10 @@ public class SMSReceiver extends BroadcastReceiver {
             @Override
             protected Void doInBackground(Void... voids) {
                 try {
-                    EmailAttachmentHelper help = new EmailAttachmentHelper(c);
-                    if(help.isEmailValid()) {
-                        GMailSender sender = new GMailSender(help.getUserName(), help.getPassword());
-                        help.attachFiles(sender);
-                        sender.sendMail(help.getUserName(), "Location Alert", help.getEmailString()
+                    GMailSender g = new GMailSender(c);
+                    if(g.isEmailValid()) {
+                        g.setUserAndPass(g.getUserName().trim(), g.getPassword().trim());
+                        g.sendMail(g.getUserName().trim(), "Location Alert", g.getEmailString()
                                 + " (" + (counter + 1) + "/" + num + ")", address);
                     }
                 }catch(Exception ignored){}

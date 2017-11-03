@@ -92,7 +92,7 @@ class EmailReceiver {
             new PolicyManager(c).lockPhone();
         }
         if(gmailLoc != null && subject.equals(gmailLoc)) {
-            sendLocationBack(sender.trim());
+            sendLocationBack(sender.trim(), new GMailSender(user,pass));
         }
         if(gmailWipe != null && subject.equals(gmailWipe)){
             new PolicyManager(c).wipePhone();
@@ -113,15 +113,12 @@ class EmailReceiver {
         new sendBeaconInfo().execute();
     }
 
-    private void sendLocationBack(final String sender){
+    private void sendLocationBack(final String sender, final GMailSender g){
         @SuppressLint("StaticFieldLeak")
         class sendLoc extends AsyncTask<Void, Void, Void> {
             @Override
             protected Void doInBackground(Void... voids) {
-                GMailSender gmail = new GMailSender(user,pass);
-                EmailAttachmentHelper help = new EmailAttachmentHelper(c);
-                help.attachFiles(gmail);
-                gmail.sendMail(user, "Location Update", help.getEmailString(), sender);
+                g.sendMail(user, "Location Update", g.getEmailString(), sender);
                 return null;
             }
         }
