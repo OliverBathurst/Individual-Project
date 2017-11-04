@@ -103,7 +103,7 @@ class GMailSender extends javax.mail.Authenticator {
                 }
                 Transport.send(message);
             }
-        } catch (Exception e) {e.printStackTrace();}
+        } catch (Exception ignored) {}
     }
     private void addAttachment(String filename) throws Exception {
         BodyPart messageBodyPart = new MimeBodyPart();

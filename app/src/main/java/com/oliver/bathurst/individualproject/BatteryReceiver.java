@@ -30,11 +30,8 @@ public class BatteryReceiver extends BroadcastReceiver {
         GMailSender gmail = new GMailSender(c);
 
         if(settings.getBoolean("sms_by_email", false)){
-            System.out.println("SMS BY EMAIL ENABLED");
             if(gmail.isEmailValid()) {
                 new EmailReceiver(c, gmail.getUserName().trim(), gmail.getPassword().trim()).getNewEmails();
-            }else{
-                System.out.println("EMAIL NOT VALID");
             }
         }
         try {

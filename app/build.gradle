@@ -10,7 +10,7 @@ android {
         //noinspection OldTargetApi
         targetSdkVersion 25
         versionCode 1
-        versionName "v1.0 rv54"
+        versionName "v1.0 rv67"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

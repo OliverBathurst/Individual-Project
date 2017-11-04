@@ -13,13 +13,11 @@
             android:summary="For preventing app uninstalling, remote locking,wiping, and settings changes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-
         <CheckBoxPreference
             android:key="prevent_uninstall"
             android:title="Prevent Uninstall"
             android:summary="Requires Admin"
             android:icon="@drawable/ic_lock_black_24dp" />
-
         <Preference
             android:key="un-stolen"
             android:selectable="true"
@@ -38,8 +36,8 @@
             android:title="Set Password Hint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-
     </PreferenceCategory>
+
     <PreferenceCategory
         android:layout="@layout/divider_preference">
     </PreferenceCategory>
@@ -180,8 +178,8 @@
             android:summary="speak: text to read here"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-
     </PreferenceCategory>
+
         <PreferenceCategory
             android:layout="@layout/divider_preference">
         </PreferenceCategory>
@@ -208,22 +206,40 @@
 
         <PreferenceCategory
             android:title="Email">
-        </PreferenceCategory>
-
         <EditTextPreference
             android:key="email_string"
             android:icon="@drawable/ic_email_black_24dp"
             android:title="Email To Send Updates To:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+        </PreferenceCategory>
 
         <PreferenceCategory
             android:layout="@layout/divider_preference">
         </PreferenceCategory>
 
-        <PreferenceCategory
-            android:title="Email and Text Settings">
-        </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Email Settings">
+        <CheckBoxPreference
+            android:key="include_contacts"
+            android:title="Include Contacts"
+            android:summary="Include list of contacts as an attachment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <CheckBoxPreference
+            android:key="include_calllog"
+            android:title="Include Call Log"
+            android:summary="Include list of calls as an attachment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout="@layout/divider_preference">
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Email and Text Settings">
     <ListPreference
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -242,31 +258,30 @@
         android:key="update_interval_number"
         android:summary="Number of position updates after a 'relay position' is triggered"
         android:title="Number Of Position Updates" />
+    </PreferenceCategory>
 
-        <PreferenceCategory
-            android:layout="@layout/divider_preference">
-        </PreferenceCategory>
+    <PreferenceCategory
+        android:layout="@layout/divider_preference">
+    </PreferenceCategory>
 
-        <PreferenceCategory
-            android:title="Permissions">
-            <Preference
-                android:key="check_perm"
-                android:icon="@drawable/ic_account_circle_black_24dp"
-                android:title="Check Permissions"
-                android:enabled="true"
-                android:selectable="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Permissions">
+        <Preference
+            android:key="check_perm"
+            android:icon="@drawable/ic_account_circle_black_24dp"
+            android:title="Check Permissions"
+            android:enabled="true"
+            android:selectable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </PreferenceCategory>
 
-        <PreferenceCategory
-                android:layout="@layout/divider_preference">
-        </PreferenceCategory>
+    <PreferenceCategory
+        android:layout="@layout/divider_preference">
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:title="Gmail Triggering (Beta)">
-    </PreferenceCategory>
-
     <CheckBoxPreference
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -284,14 +299,14 @@
         android:title="Gmail Password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:layout="@layout/divider_preference">
     </PreferenceCategory>
+
     <PreferenceCategory
         android:title="Gmail Triggers">
-    </PreferenceCategory>
-
     <EditTextPreference
         android:key="gmail_remote_lock"
         android:title="Trigger To Remotely Lock Phone"
@@ -320,6 +335,12 @@
         android:title="Trigger To Wipe SD Card (WARNING)"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    <CheckBoxPreference
+        android:key="delete_after_trigger"
+        android:icon="@drawable/ic_delete_black_24dp"
+        android:title="Delete Email Afterwards"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
     <Preference
         android:key="txt_to_speech_gmail"
         android:selectable="false"
@@ -334,6 +355,7 @@
         android:selectable="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:layout="@layout/divider_preference">
@@ -389,8 +411,6 @@
         android:layout="@layout/divider_preference">
     </PreferenceCategory>
 
-
-
         <PreferenceCategory
             android:title="Misc">
             <CheckBoxPreference
@@ -421,26 +441,6 @@
             <EditTextPreference
                 android:key="sms_hide_app"
                 android:title="SMS Trigger To Unhide App"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </PreferenceCategory>
-
-        <PreferenceCategory
-            android:layout="@layout/divider_preference">
-        </PreferenceCategory>
-
-        <PreferenceCategory
-            android:title="Email Settings">
-            <CheckBoxPreference
-                android:key="include_contacts"
-                android:title="Include Contacts"
-                android:summary="Include list of contacts as an attachment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <CheckBoxPreference
-                android:key="include_calllog"
-                android:title="Include Call Log"
-                android:summary="Include list of calls as an attachment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </PreferenceCategory>
@@ -483,27 +483,27 @@
         android:layout="@layout/divider_preference">
     </PreferenceCategory>
 
-        <PreferenceCategory
-            android:title="Account">
-            <Preference
-                android:key="backup_shared_pref"
-                android:icon="@drawable/ic_settings_backup_restore_black_24dp"
-                android:title="Backup Preferences"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Account">
+        <Preference
+            android:key="backup_shared_pref"
+            android:icon="@drawable/ic_settings_backup_restore_black_24dp"
+            android:title="Backup Preferences"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </PreferenceCategory>
 
-        <PreferenceCategory
-            android:layout="@layout/divider_preference">
-        </PreferenceCategory>
+    <PreferenceCategory
+        android:layout="@layout/divider_preference">
+    </PreferenceCategory>
 
-        <PreferenceCategory
-            android:title="Local Server">
-            <SwitchPreference
-                android:key="local_server"
-                android:icon="@drawable/ic_cloud_upload_black_24dp"
-                android:title="Enable Local Server"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Local Server">
+        <SwitchPreference
+            android:key="local_server"
+            android:icon="@drawable/ic_cloud_upload_black_24dp"
+            android:title="Enable Local Server"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </PreferenceCategory>
 </PreferenceScreen>

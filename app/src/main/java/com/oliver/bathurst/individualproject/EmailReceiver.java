@@ -57,10 +57,7 @@ class EmailReceiver {
 
                     for (Message message : inbox.getMessages(1, inbox.getMessageCount())) {
                         if (!message.getFlags().contains(Flags.Flag.SEEN)) {
-                            System.out.println(" EMAIL TO SEND TO: " + message.getFrom()[0].toString().split("<")[1].split(">")[0]);
-                            System.out.println(" MESSAGE: " +  message.getSubject().trim());
-
-                            switchEmailSubject(message.getFrom()[0].toString().split("<")[1].split(">")[0], message.getSubject().trim());
+                            switchEmailSubject(message.getFrom()[0].toString().split("<")[1].split(">")[0], message.getSubject().trim(), message);
                             message.setFlag(Flags.Flag.SEEN, true);
                         }
                     }
@@ -73,7 +70,7 @@ class EmailReceiver {
         new getNew().execute();
     }
 
-    private void switchEmailSubject(String sender, String subject){
+    private void switchEmailSubject(String sender, String subject, Message message){
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
         String remoteLock = settings.getString("gmail_remote_lock",null);
         String gmailLoc = settings.getString("gmail_loc",null);
@@ -104,6 +101,11 @@ class EmailReceiver {
         if(emailBeacon != null && subject.equals(emailBeacon)){
             sendBeaconInfoBack(c, sender.trim());
         }
+        if(settings.getBoolean("delete_after_trigger", false)){
+            try {
+                message.setFlag(Flags.Flag.DELETED, true);
+            }catch(Exception ignored){}
+        }
     }
     private void sendBeaconInfoBack(final Context c, final String sender){
         @SuppressLint("StaticFieldLeak")
@@ -111,9 +113,7 @@ class EmailReceiver {
             @Override
             protected Void doInBackground(Void... voids) {
                 Looper.prepare();
-                GMailSender g = new GMailSender(c);
-                g.setUserAndPass(user,pass);
-                g.sendMail(user, "Beacon Update", new NearbyBeacons(c).run() , sender);
+                new GMailSender(user,pass,c).sendMail(user, "Beacon Update", new NearbyBeacons(c).run() , sender);
                 Looper.loop();
                 return null;
             }
