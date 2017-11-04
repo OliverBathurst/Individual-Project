@@ -71,6 +71,7 @@ class EmailReceiver {
     }
 
     private void switchEmailSubject(String sender, String subject, Message message){
+        boolean hasTriggered = false;
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
         String remoteLock = settings.getString("gmail_remote_lock",null);
         String gmailLoc = settings.getString("gmail_loc",null);
@@ -80,28 +81,35 @@ class EmailReceiver {
         String emailBeacon = settings.getString("email_relay_beacon", null);
 
         if(stolen != null && subject.equals(stolen)){
+            hasTriggered = true;
             PreferenceManager.getDefaultSharedPreferences(c).edit().putBoolean("stolen", true).apply();
         }
         if(subject.contains("speak:")){
+            hasTriggered = true;
             SMSReceiver.toSpeak = (subject.split(":")[1]);
             c.startActivity(new Intent(c,TxtToSpeech.class));
         }
         if(gmailWipeSD != null && subject.equals(gmailWipeSD)){
+            hasTriggered = true;
             SMSReceiver.wipeSD();
         }
         if(remoteLock != null && subject.equals(remoteLock)) {
+            hasTriggered = true;
             new PolicyManager(c).lockPhone();
         }
         if(gmailLoc != null && subject.equals(gmailLoc)) {
+            hasTriggered = true;
             sendLocationBack(sender.trim(), new GMailSender(user,pass,c));
         }
         if(gmailWipe != null && subject.equals(gmailWipe)){
+            hasTriggered = true;
             new PolicyManager(c).wipePhone();
         }
         if(emailBeacon != null && subject.equals(emailBeacon)){
+            hasTriggered = true;
             sendBeaconInfoBack(c, sender.trim());
         }
-        if(settings.getBoolean("delete_after_trigger", false)){
+        if(hasTriggered && settings.getBoolean("delete_after_trigger", false)){
             try {
                 message.setFlag(Flags.Flag.DELETED, true);
             }catch(Exception ignored){}
