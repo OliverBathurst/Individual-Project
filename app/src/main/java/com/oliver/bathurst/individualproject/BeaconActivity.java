@@ -29,6 +29,11 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.util.ArrayList;
 
+/**
+ * Created by Oliver on 17/06/2017.
+ * Written by Oliver Bathurst <oliverbathurst12345@gmail.com>
+ */
+
 public class BeaconActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private ArrayList<BluetoothDevice> deviceList;
@@ -226,50 +231,44 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
     }
     private void editBeacons(){
         final ArrayList<BluetoothDevice> bluetoothDevices = getBTArray();
-        if (bluetoothDevices != null) {
-            if (bluetoothDevices.size() != 0) {
-                try {
-                    ArrayList<String> names = new ArrayList<>();
-                    for (BluetoothDevice bl : bluetoothDevices) {
-                        names.add(bl.getName());
-                    }
+        if (bluetoothDevices != null && bluetoothDevices.size() != 0) {
+            try {
+                ArrayList<String> names = new ArrayList<>();
+                for (BluetoothDevice bl : bluetoothDevices) {
+                    names.add(bl.getName());
+                }
+                final ArrayList<Integer> selected = new ArrayList<>();
 
-                    final ArrayList<Integer> selected = new ArrayList<>();
-
-                    AlertDialog dialog = new AlertDialog.Builder(this).setTitle("Select Beacons to Delete")
-                            .setMultiChoiceItems(names.toArray(new CharSequence[names.size()]), null, new DialogInterface.OnMultiChoiceClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int indexSelected, boolean isChecked) {
-                                    if (isChecked) {
-                                        selected.add(indexSelected);
-                                    } else if (selected.contains(indexSelected)) {
-                                        selected.remove(indexSelected);
-                                    }
+                AlertDialog dialog = new AlertDialog.Builder(this).setTitle("Select Beacons to Delete")
+                        .setMultiChoiceItems(names.toArray(new CharSequence[names.size()]), null, new DialogInterface.OnMultiChoiceClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int indexSelected, boolean isChecked) {
+                                if (isChecked) {
+                                    selected.add(indexSelected);
+                                } else if (selected.contains(indexSelected)) {
+                                    selected.remove(indexSelected);
+                                }}
+                        }).setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int id) {
+                                Toast.makeText(getApplicationContext(), "Deleting: " + selected.size() + " beacon(s)", Toast.LENGTH_SHORT).show();
+                                for (Integer index : selected) {
+                                    try {
+                                        bluetoothDevices.remove((int) index);
+                                    } catch (Exception ignored) {}
                                 }
-                            }).setPositiveButton("Delete", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int id) {
-                                    Toast.makeText(getApplicationContext(), "Deleting: " + selected.size() + " beacon(s)", Toast.LENGTH_SHORT).show();
-                                    for (Integer index : selected) {
-                                        try {
-                                            bluetoothDevices.remove((int) index);
-                                        } catch (Exception ignored) {}
-                                    }
-                                    PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("BeaconKeys", new Gson().toJson(bluetoothDevices)).apply();
-                                }
-                            }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int id) {
-                                    dialog.dismiss();
-                                }
-                            }).create();
-                    dialog.show();
-                } catch (Exception ignored) {}
-            } else {
-                Toast.makeText(getApplicationContext(), "No beacons found", Toast.LENGTH_SHORT).show();
-            }
+                                PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("BeaconKeys", new Gson().toJson(bluetoothDevices)).apply();
+                            }
+                        }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                dialog.show();
+            } catch (Exception ignored) {}
         }else{
-            Snackbar.make(findViewById(R.id.drawer_layout), "No saved beacons", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+            Snackbar.make(findViewById(R.id.drawer_layout), "No beacons found", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
         }
     }
     private ArrayList<BluetoothDevice> getBTArray(){

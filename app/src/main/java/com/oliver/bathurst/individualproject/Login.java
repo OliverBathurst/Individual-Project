@@ -11,22 +11,17 @@ import android.text.InputType;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.Toast;
 
 /**
  * Created by Oliver on 17/06/2017.
- * All Rights Reserved
- * Unauthorized copying of this file via any medium is strictly prohibited
- * Proprietary and confidential
  * Written by Oliver Bathurst <oliverbathurst12345@gmail.com>
  */
 
 public class Login extends AppCompatActivity{
     private String pass,passHint;
-    private WebView webView;
+    private PermissionsManager perm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +29,7 @@ public class Login extends AppCompatActivity{
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.newlogin);
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         pass = prefs.getString("app_pass", null);
@@ -51,19 +46,8 @@ public class Login extends AppCompatActivity{
             }
         });
 
-        try {
-            webView = (WebView) findViewById(R.id.web);
-            webView.setWebViewClient(new WebViewClient() {
-                @SuppressWarnings("deprecation")
-                public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
-                    webView.setVisibility(View.GONE);
-                }
-            });
-            webView.loadUrl("https://oliverbathurst.github.io/");
-        }catch(Exception ignored){
-            webView.setVisibility(View.GONE);
-        }
-        new PermissionsManager(this).permissionsCheckup();
+        perm = new PermissionsManager(this);
+        perm.permissionsCheckup();
     }
     private void attemptLogin(){
         if(pass == null || pass.trim().length() == 0){
@@ -74,8 +58,7 @@ public class Login extends AppCompatActivity{
         }
     }
     private void showDialog(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this)
-                .setTitle("Please enter your password:");
+        AlertDialog.Builder builder = new AlertDialog.Builder(this).setTitle("Please enter your password:");
         final EditText input = new EditText(this);
         input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
         builder.setView(input);
@@ -104,17 +87,13 @@ public class Login extends AppCompatActivity{
         builder.create().show();
     }
     private void infoDialog(){
-        new android.app.AlertDialog.Builder(this)
-                .setMessage("Created by Oliver Bathurst")
+        new AlertDialog.Builder(this)
+                .setMessage("Created by: Oliver Bathurst\noliverbathurst12345@gmail.com\n" + (perm != null ? perm.getAppInfo() : "No version found"))
                 .setCancelable(false)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.dismiss();
                     }
                 }).create().show();
-    }
-    protected void onDestroy(){
-        super.onDestroy();
-        webView = null;
     }
 }

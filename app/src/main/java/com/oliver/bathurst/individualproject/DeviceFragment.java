@@ -9,9 +9,6 @@ import android.provider.Settings;
 
 /**
  * Created by Oliver on 17/06/2017.
- * All Rights Reserved
- * Unauthorized copying of this file via any medium is strictly prohibited
- * Proprietary and confidential
  * Written by Oliver Bathurst <oliverbathurst12345@gmail.com>
  */
 
@@ -27,7 +24,7 @@ public class DeviceFragment extends PreferenceFragment {
         findPreference(ANDROID_INFO).setSummary(permMan.getAndroidVersion());
         findPreference(DEVICE_INFO).setSummary(permMan.getDeviceAttributes());
         findPreference(CELL_INFO).setSummary(permMan.getCellInfo());
-        findPreference(APP_INFO).setSummary("Version: " + permMan.getAppInfo());
+        findPreference(APP_INFO).setSummary(permMan.getAppInfo());
 
         findPreference("settings_location_settings").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override

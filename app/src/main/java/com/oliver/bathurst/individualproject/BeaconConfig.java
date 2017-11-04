@@ -20,9 +20,15 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+/**
+ * Created by Oliver on 17/06/2017.
+ * Written by Oliver Bathurst <oliverbathurst12345@gmail.com>
+ */
+
 public class BeaconConfig extends AppCompatActivity {
     private int selectedPosition = 0;
     private TextView signal;
+    private int currentSignal = 0;
     private String globalDeviceName;
     private final BluetoothAdapter BTAdapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -63,13 +69,11 @@ public class BeaconConfig extends AppCompatActivity {
                         Float toSave = Float.parseFloat(edit.getText().toString().trim());
                         try{
                             if(toSave > 0) {
-                                int RSSI = Integer.parseInt(signal.getText().toString());
                                 float temp = PreferenceManager.getDefaultSharedPreferences(getApplication()).getFloat(globalDeviceName, 1);
-
                                 if (selectedPosition == 0) {
-                                    PreferenceManager.getDefaultSharedPreferences(getApplication()).edit().putFloat(globalDeviceName, (temp + (RSSI / toSave)) / 2).apply();  //1 cm to dbm
+                                    PreferenceManager.getDefaultSharedPreferences(getApplication()).edit().putFloat(globalDeviceName, (temp + (currentSignal / toSave)) / 2).apply();  //1 cm to dbm
                                 } else if (selectedPosition == 1) {
-                                    PreferenceManager.getDefaultSharedPreferences(getApplication()).edit().putFloat(globalDeviceName, (temp + (RSSI / (toSave * 100))) / 2).apply();  //1 cm to dbm
+                                    PreferenceManager.getDefaultSharedPreferences(getApplication()).edit().putFloat(globalDeviceName, (temp + (currentSignal / (toSave * 100))) / 2).apply();  //1 cm to dbm
                                 }
                             }else{
                                 Snackbar.make(findViewById(R.id.beaconContent), "Division by zero", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
@@ -112,7 +116,8 @@ public class BeaconConfig extends AppCompatActivity {
             if(BluetoothDevice.ACTION_FOUND.equals(intent.getAction())) {
                 if(globalDeviceName != null && intent.getStringExtra(BluetoothDevice.EXTRA_NAME) != null) {
                     if (intent.getStringExtra(BluetoothDevice.EXTRA_NAME).equals(globalDeviceName)) {
-                        signal.setText(String.valueOf(intent.getShortExtra(BluetoothDevice.EXTRA_RSSI, Short.MIN_VALUE)));
+                        currentSignal = intent.getShortExtra(BluetoothDevice.EXTRA_RSSI, Short.MIN_VALUE);
+                        signal.setText(String.valueOf(currentSignal));
                         BTAdapter.cancelDiscovery();
                         BTAdapter.startDiscovery();
                     }

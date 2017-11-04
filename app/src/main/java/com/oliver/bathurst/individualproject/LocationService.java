@@ -27,9 +27,6 @@ import com.google.android.gms.maps.GoogleMap;
 
 /**
  * Created by Oliver on 17/06/2017.
- * All Rights Reserved
- * Unauthorized copying of this file via any medium is strictly prohibited
- * Proprietary and confidential
  * Written by Oliver Bathurst <oliverbathurst12345@gmail.com>
  */
 
@@ -112,16 +109,14 @@ public class LocationService extends Service implements LocationListener {
     }
     private Location getLocationByGPS() {
         Location loc = null;
-        if (getFine()) {
-            if (isGPSAvailable()) {
-                try {
-                    LocationManager locationManager = (LocationManager) c.getSystemService(LOCATION_SERVICE);
-                    if (locationManager != null) {
-                        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, MIN_TIME_BW_UPDATES, MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
-                        loc =  locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-                    }
-                }catch(SecurityException ignored){}
-            }
+        if (getFine() && isGPSAvailable()) {
+            try {
+                LocationManager locationManager = (LocationManager) c.getSystemService(LOCATION_SERVICE);
+                if (locationManager != null) {
+                    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, MIN_TIME_BW_UPDATES, MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
+                    loc =  locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                }
+            }catch(SecurityException ignored){}
         } else {
             Toast.makeText(c, "Permission not granted, enable permissions and restart app or go to" +
                     "'Permissions Checkup' on 'Device' tab", Toast.LENGTH_SHORT).show();
@@ -130,16 +125,14 @@ public class LocationService extends Service implements LocationListener {
     }
     private Location getLocationByWIFI() {
         Location loc = null;
-        if (getFine()) {
-            if (isWIFIAvailable()) {
-                try {
-                    LocationManager locationManager = (LocationManager) c.getSystemService(LOCATION_SERVICE);
-                    if (locationManager != null) {
-                        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME_BW_UPDATES, MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
-                        loc = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-                    }
-                }catch(SecurityException ignored){}
-            }
+        if (getFine() && isWIFIAvailable()) {
+            try {
+                LocationManager locationManager = (LocationManager) c.getSystemService(LOCATION_SERVICE);
+                if (locationManager != null) {
+                    locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME_BW_UPDATES, MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
+                    loc = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+                }
+            }catch(SecurityException ignored){}
         } else {
             Toast.makeText(c, "Permission not granted, enable permissions and restart app or go to" +
                     "'Permissions Checkup' on 'Device' tab", Toast.LENGTH_SHORT).show();
@@ -148,16 +141,14 @@ public class LocationService extends Service implements LocationListener {
     }
     private Location getLocationByPassive() {
         Location loc = null;
-        if (getFine()) {
-            if (isPassiveAvailable()) {
-                try {
-                    LocationManager locationManager = (LocationManager) c.getSystemService(LOCATION_SERVICE);
-                    if (locationManager != null) {
-                        locationManager.requestLocationUpdates(LocationManager.PASSIVE_PROVIDER, MIN_TIME_BW_UPDATES, MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
-                        loc = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
-                    }
-                }catch(SecurityException ignored){}
-            }
+        if (getFine() && isPassiveAvailable()) {
+            try {
+                LocationManager locationManager = (LocationManager) c.getSystemService(LOCATION_SERVICE);
+                if (locationManager != null) {
+                    locationManager.requestLocationUpdates(LocationManager.PASSIVE_PROVIDER, MIN_TIME_BW_UPDATES, MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
+                    loc = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
+                }
+            }catch(SecurityException ignored){}
         } else {
             Toast.makeText(c, "Permission not granted, enable permissions and restart app or go to" +
                     " 'Permissions Checkup' on 'Device' tab", Toast.LENGTH_SHORT).show();

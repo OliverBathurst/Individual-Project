@@ -18,9 +18,6 @@ import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 
 /**
  * Created by Oliver on 02/11/2017.
- * All Rights Reserved
- * Unauthorized copying of this file via any medium is strictly prohibited
- * Proprietary and confidential
  * Written by Oliver Bathurst <oliverbathurst12345@gmail.com>
  */
 
@@ -44,7 +41,6 @@ class NearbyBeacons {
     }
     private String getSummary(){
         SharedPreferences sp = getDefaultSharedPreferences(context);
-
         StringBuilder sb = new StringBuilder();
         for(Pair<BluetoothDevice, Integer> p: finalList){
             Float temp = sp.getFloat(p.first.getName(), Integer.MAX_VALUE);

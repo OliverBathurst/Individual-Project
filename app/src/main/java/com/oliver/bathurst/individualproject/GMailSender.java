@@ -262,9 +262,11 @@ class GMailSender extends javax.mail.Authenticator {
         final WifiManager wifiManager = (WifiManager) c.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         ConnectivityManager networkInfo = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo net = null;
+
         if (networkInfo != null) {
             net = networkInfo.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
         }
+
         TelephonyManager telephonyManager = (TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE);
         Location loc = new LocationService(c).getLoc();
 

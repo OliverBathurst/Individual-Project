@@ -16,9 +16,6 @@ import javax.mail.Store;
 
 /**
  * Created by Oliver on 18/06/2017.
- * All Rights Reserved
- * Unauthorized copying of this file via any medium is strictly prohibited
- * Proprietary and confidential
  * Written by Oliver Bathurst <oliverbathurst12345@gmail.com>
  */
 
@@ -71,7 +68,6 @@ class EmailReceiver {
     }
 
     private void switchEmailSubject(String sender, String subject, Message message){
-        boolean hasTriggered = false;
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
         String remoteLock = settings.getString("gmail_remote_lock",null);
         String gmailLoc = settings.getString("gmail_loc",null);
@@ -79,6 +75,7 @@ class EmailReceiver {
         String gmailWipeSD = settings.getString("wipe_sdcard_gmail",null);
         String stolen = settings.getString("email_stolen", null);
         String emailBeacon = settings.getString("email_relay_beacon", null);
+        boolean hasTriggered = false;
 
         if(stolen != null && subject.equals(stolen)){
             hasTriggered = true;

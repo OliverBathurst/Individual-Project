@@ -11,9 +11,6 @@ import android.widget.Toast;
 
 /**
  * Created by Oliver on 17/06/2017.
- * All Rights Reserved
- * Unauthorized copying of this file via any medium is strictly prohibited
- * Proprietary and confidential
  * Written by Oliver Bathurst <oliverbathurst12345@gmail.com>
  */
 
@@ -44,7 +41,7 @@ class PermissionsManager {
 
     String getAppInfo(){
         try {
-            return c.getPackageManager().getPackageInfo(c.getPackageName(), 0).versionName;
+            return "Version: " + c.getPackageManager().getPackageInfo(c.getPackageName(), 0).versionName;
         }catch(Exception e){
             return "Version name not found";
         }
