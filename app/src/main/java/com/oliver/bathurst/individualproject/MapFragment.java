@@ -87,9 +87,9 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
         }
         settings = PreferenceManager.getDefaultSharedPreferences(getActivity());
         LocationService newLocationService = new LocationService(getActivity());
-        if(!newLocationService.tryProviders(locationManager, settings.getString("first", "GPS"), 2000, 1)){
-            if(!newLocationService.tryProviders(locationManager, settings.getString("second", "Wi-Fi"), 2000, 1)){
-                if(!newLocationService.tryProviders(locationManager, settings.getString("third", "Passive"), 2000, 1)){
+        if(newLocationService.tryProviders(locationManager, settings.getString("first", "GPS"), 2000, 1)){
+            if(newLocationService.tryProviders(locationManager, settings.getString("second", "Wi-Fi"), 2000, 1)){
+                if(newLocationService.tryProviders(locationManager, settings.getString("third", "Passive"), 2000, 1)){
                     Toast.makeText(getActivity(), "No providers available", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -104,20 +104,21 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
     public void onMapReady(GoogleMap googleMap) {
         try {
             gMap = googleMap;
-            Location loc = new LocationService(getActivity()).getLoc();
+            LocationService loc = new LocationService(getActivity());
+            Location newLoc = loc.getLoc();
 
             String map = settings.getString("mapType", null);
-            gMap.setMapType(map != null ? getMapType(map) : GoogleMap.MAP_TYPE_NORMAL);
+            gMap.setMapType(map != null ? loc.getMapType(map) : GoogleMap.MAP_TYPE_NORMAL);
 
-            ((TextView) mView.findViewById(R.id.declare)).setText(getString(R.string.declaration).concat(" " + loc.getProvider()));
-            ((TextView) mView.findViewById(R.id.locationAcc)).setText(String.format("%s%s%s", getString(R.string.accuracy), Float.toString(loc.getAccuracy()), "m"));
+            ((TextView) mView.findViewById(R.id.declare)).setText(getString(R.string.declaration).concat(" " + newLoc.getProvider()));
+            ((TextView) mView.findViewById(R.id.locationAcc)).setText(String.format("%s%s%s", getString(R.string.accuracy), Float.toString(newLoc.getAccuracy()), "m"));
 
             MapsInitializer.initialize(getContext());
-            marker = gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
-                    .title("Device Location: " + loc.getLatitude() + loc.getLongitude()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f));
-            gMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(loc.getLatitude(), loc.getLongitude())).zoom(19).bearing(0).tilt(45).build()));
+            marker = gMap.addMarker(new MarkerOptions().position(new LatLng(newLoc.getLatitude(), newLoc.getLongitude()))
+                    .title("Device Location: " + newLoc.getLatitude() + newLoc.getLongitude()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f));
+            gMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(newLoc.getLatitude(), newLoc.getLongitude())).zoom(19).bearing(0).tilt(45).build()));
 
-            showExtras(loc);
+            showExtras(newLoc);
         }catch(Exception e){
             Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
         }
@@ -170,18 +171,6 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
             ((TextView) mView.findViewById(R.id.declare)).setText(getString(R.string.declaration).concat(" " + loc.getProvider()));
             ((TextView) mView.findViewById(R.id.locationAcc)).setText(String.format("%s%s%s", getString(R.string.accuracy), Float.toString(loc.getAccuracy()), "m"));
         }
-    }
-    private int getMapType(String mapType){
-        switch (mapType.toUpperCase()) {
-            case "HYBRID":
-                return GoogleMap.MAP_TYPE_HYBRID;
-            case "SATELLITE":
-                return GoogleMap.MAP_TYPE_SATELLITE;
-            case "TERRAIN":
-                return GoogleMap.MAP_TYPE_TERRAIN;
-            default:
-                return GoogleMap.MAP_TYPE_NORMAL;
-            }
     }
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {}

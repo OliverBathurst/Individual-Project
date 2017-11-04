@@ -19,7 +19,7 @@ class SMSHelper {
     private final Context c;
 
     SMSHelper(Context context){
-        c = context;
+        this.c = context;
     }
 
     @SuppressLint({"HardwareIds", "MissingPermission"})

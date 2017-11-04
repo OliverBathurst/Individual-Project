@@ -43,7 +43,6 @@ class Server{
             }
         }
     }
-    @SuppressWarnings("deprecation")
     String getIP() {
         WifiManager wifiMan = (WifiManager) c.getApplicationContext().getSystemService(WIFI_SERVICE);
         return (wifiMan != null && wifiMan.getConnectionInfo() != null) ? Formatter.formatIpAddress(wifiMan.getConnectionInfo().getIpAddress()) : Formatter.formatIpAddress(0);

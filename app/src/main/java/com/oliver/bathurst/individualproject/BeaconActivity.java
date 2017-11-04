@@ -151,7 +151,6 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
             super.onBackPressed();
         }
     }
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();

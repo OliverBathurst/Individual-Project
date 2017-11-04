@@ -23,6 +23,8 @@ import android.telephony.gsm.GsmCellLocation;
 import android.text.TextUtils;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.GoogleMap;
+
 /**
  * Created by Oliver on 17/06/2017.
  * All Rights Reserved
@@ -180,7 +182,7 @@ public class LocationService extends Service implements LocationListener {
         return ActivityCompat.checkSelfPermission(c, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
                 ActivityCompat.checkSelfPermission(c, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED;
     }
-    @SuppressWarnings({"BooleanMethodIsAlwaysInverted", "SameParameterValue"})
+    @SuppressWarnings({"SameParameterValue"})
     boolean tryProviders(LocationManager locMan, String prov, final int MIN_TIME, final int MIN_DISTANCE){
         boolean result = false;
         try {
@@ -210,7 +212,19 @@ public class LocationService extends Service implements LocationListener {
         }catch(SecurityException e){
             Toast.makeText(getApplicationContext(), "Security Exception: " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-        return result;
+        return !result;
+    }
+    int getMapType(String mapType){
+        switch (mapType.toUpperCase()) {
+            case "HYBRID":
+                return GoogleMap.MAP_TYPE_HYBRID;
+            case "SATELLITE":
+                return GoogleMap.MAP_TYPE_SATELLITE;
+            case "TERRAIN":
+                return GoogleMap.MAP_TYPE_TERRAIN;
+            default:
+                return GoogleMap.MAP_TYPE_NORMAL;
+        }
     }
     @Override
     public void onLocationChanged(Location location) {}

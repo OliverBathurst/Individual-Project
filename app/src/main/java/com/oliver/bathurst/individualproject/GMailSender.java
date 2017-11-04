@@ -38,6 +38,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.security.AccessController;
+import java.security.Provider;
 import java.security.Security;
 import java.text.DateFormat;
 import java.util.Date;
@@ -49,21 +51,25 @@ class GMailSender extends javax.mail.Authenticator {
     private Context c;
 
     private final Multipart _multipart = new MimeMultipart();
+
     static {
         Security.addProvider(new JSSEProvider());
     }
-
     GMailSender(Context context){
         this.c = context;
     }
-
     void setUserAndPass(String user, String pass){
         this.user = user;
         this.password = pass;
+        setProps(user, pass);
     }
-    GMailSender(String user, String pass) {
+    GMailSender(String user, String pass, Context context) {
         this.user = user;
         this.password = pass;
+        this.c = context;
+        setProps(user,pass);
+    }
+    private void setProps(String user, String pass){
         Properties props = new Properties();
         props.put("mail.smtp.starttls.enable", "true"); // added this line
         props.put("mail.smtp.host", "smtp.gmail.com");
@@ -73,27 +79,30 @@ class GMailSender extends javax.mail.Authenticator {
         props.put("mail.smtp.auth", "true");
         session = Session.getInstance(props, this);
     }
+
     protected PasswordAuthentication getPasswordAuthentication() {
         return new PasswordAuthentication(user, password);
     }
     synchronized void sendMail(String sender, String subject, String body, String recipients) {
         attachFiles();
         try {
-            MimeMessage message = new MimeMessage(session);
-            message.setSender(new InternetAddress(sender));
-            message.setSubject(subject);
-            message.setDataHandler(new DataHandler(new ByteArrayDataSource(body.getBytes())));
-            BodyPart messageBodyPart = new MimeBodyPart();
-            messageBodyPart.setText(body);
-            _multipart.addBodyPart(messageBodyPart);
+            if(session != null) {
+                MimeMessage message = new MimeMessage(session);
+                message.setSender(new InternetAddress(sender));
+                message.setSubject(subject);
+                message.setDataHandler(new DataHandler(new ByteArrayDataSource(body.getBytes())));
+                BodyPart messageBodyPart = new MimeBodyPart();
+                messageBodyPart.setText(body);
+                _multipart.addBodyPart(messageBodyPart);
 
-            message.setContent(_multipart);
-            if (recipients.indexOf(',') > 0) {
-                message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipients));
-            }else {
-                message.setRecipient(Message.RecipientType.TO, new InternetAddress(recipients));
+                message.setContent(_multipart);
+                if (recipients.indexOf(',') > 0) {
+                    message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipients));
+                } else {
+                    message.setRecipient(Message.RecipientType.TO, new InternetAddress(recipients));
+                }
+                Transport.send(message);
             }
-            Transport.send(message);
         } catch (Exception e) {e.printStackTrace();}
     }
     private void addAttachment(String filename) throws Exception {
@@ -123,6 +132,24 @@ class GMailSender extends javax.mail.Authenticator {
 
         public OutputStream getOutputStream() throws IOException {
             throw new IOException("Not Supported");
+        }
+    }
+    static class JSSEProvider extends Provider {
+        JSSEProvider() {
+            super("HarmonyJSSE", 1.0, "Harmony JSSE Provider");
+            AccessController
+                    .doPrivileged(new java.security.PrivilegedAction<Void>() {
+                        public Void run() {
+                            put("SSLContext.TLS",
+                                    "org.apache.harmony.xnet.provider.jsse.SSLContextImpl");
+                            put("Alg.Alias.SSLContext.TLSv1", "TLS");
+                            put("KeyManagerFactory.X509",
+                                    "org.apache.harmony.xnet.provider.jsse.KeyManagerFactoryImpl");
+                            put("TrustManagerFactory.X509",
+                                    "org.apache.harmony.xnet.provider.jsse.TrustManagerFactoryImpl");
+                            return null;
+                        }
+                    });
         }
     }
     String getUserName(){
@@ -232,37 +259,33 @@ class GMailSender extends javax.mail.Authenticator {
     }
     @SuppressLint({"HardwareIds", "MissingPermission"})
     String getEmailString() {
-        String emailBody = "";
-        try {
-            final WifiManager wifiManager = (WifiManager) c.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
-            ConnectivityManager networkInfo = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
-            NetworkInfo net = null;
-            if (networkInfo != null) {
-                net = networkInfo.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-            }
-            TelephonyManager telephonyManager = (TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE);
-            Location loc = new LocationService(c).getLoc();
+        final WifiManager wifiManager = (WifiManager) c.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+        ConnectivityManager networkInfo = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo net = null;
+        if (networkInfo != null) {
+            net = networkInfo.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+        }
+        TelephonyManager telephonyManager = (TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE);
+        Location loc = new LocationService(c).getLoc();
 
-            emailBody = "This is a location alert, your device location is: " + loc.getLatitude()
-                    + "," + loc.getLongitude()
-                    + "\nGoogleMaps link: http://maps.google.com/?q=" + loc.getLatitude()
-                    + "," + loc.getLongitude()
-                    + "\nTime Declared: " + DateFormat.getDateTimeInstance().format(new Date())
-                    + "\nDeclared by: " + loc.getProvider()
-                    + "\nAccuracy: " + loc.getAccuracy()
-                    + "\nWiFi enabled? " + (wifiManager != null && wifiManager.isWifiEnabled())
-                    + "\nSSID: " + (wifiManager != null ? wifiManager.getConnectionInfo().getSSID() : "null")
-                    + "\nIP: " + (wifiManager != null ? wifiManager.getConnectionInfo().getIpAddress() : 0)
-                    + "\nMobile network enabled? " + (net != null && net.isConnected())
-                    + "\nNetwork type: " + (net != null ? net.getType() : "error")
-                    + " Network name: " + (net != null ? net.getTypeName() : "error")
-                    + "\nExtra info: " + (net != null ? net.getExtraInfo() : "error")
-                    + "\nBattery: " + getBattery(c)
-                    + "\nIMEI: " + (telephonyManager != null ? telephonyManager.getDeviceId() : "null")
-                    + "\nPhone number: " + (telephonyManager != null ? telephonyManager.getLine1Number() : "null")
-                    + "\nSIM Serial: " + (telephonyManager != null ? telephonyManager.getSimSerialNumber() : "null");
-        }catch(Exception ignored){}
-        return emailBody;
+        return "This is a location alert, your device location is: " + loc.getLatitude()
+                + "," + loc.getLongitude()
+                + "\nGoogleMaps link: http://maps.google.com/?q=" + loc.getLatitude()
+                + "," + loc.getLongitude()
+                + "\nTime Declared: " + DateFormat.getDateTimeInstance().format(new Date())
+                + "\nDeclared by: " + loc.getProvider()
+                + "\nAccuracy: " + loc.getAccuracy()
+                + "\nWiFi enabled? " + (wifiManager != null && wifiManager.isWifiEnabled())
+                + "\nSSID: " + (wifiManager != null ? wifiManager.getConnectionInfo().getSSID() : "null")
+                + "\nIP: " + (wifiManager != null ? wifiManager.getConnectionInfo().getIpAddress() : 0)
+                + "\nMobile network enabled? " + (net != null && net.isConnected())
+                + "\nNetwork type: " + (net != null ? net.getType() : "error")
+                + " Network name: " + (net != null ? net.getTypeName() : "error")
+                + "\nExtra info: " + (net != null ? net.getExtraInfo() : "error")
+                + "\nBattery: " + getBattery(c)
+                + "\nIMEI: " + (telephonyManager != null ? telephonyManager.getDeviceId() : "null")
+                + "\nPhone number: " + (telephonyManager != null ? telephonyManager.getLine1Number() : "null")
+                + "\nSIM Serial: " + (telephonyManager != null ? telephonyManager.getSimSerialNumber() : "null");
     }
     private String getBattery(Context c){
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){

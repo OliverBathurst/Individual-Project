@@ -145,13 +145,14 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
     @Override
     public void onMapReady(GoogleMap googleMap) {
         try {
+            LocationService locService = new LocationService(getActivity());
             gMap = googleMap;
-            loc = new LocationService(getActivity()).getLoc();
+            loc = locService.getLoc();
 
             SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getContext());
 
             String map = settings.getString("mapType", null);
-            gMap.setMapType(map != null ? getMapType(map) : GoogleMap.MAP_TYPE_NORMAL);
+            gMap.setMapType(map != null ? locService.getMapType(map) : GoogleMap.MAP_TYPE_NORMAL);
 
             ((TextView) mView.findViewById(R.id.declare)).setText(getString(R.string.declaration).concat(" " + loc.getProvider()));
 
@@ -170,18 +171,6 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
             gMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(loc.getLatitude(), loc.getLongitude())).zoom(19).bearing(0).tilt(45).build()));
         } catch (Exception e) {
             Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
-        }
-    }
-    private int getMapType(String mapType){
-        switch (mapType.toUpperCase()) {
-            case "HYBRID":
-                return GoogleMap.MAP_TYPE_HYBRID;
-            case "SATELLITE":
-                return GoogleMap.MAP_TYPE_SATELLITE;
-            case "TERRAIN":
-                return GoogleMap.MAP_TYPE_TERRAIN;
-            default:
-                return GoogleMap.MAP_TYPE_NORMAL;
         }
     }
 }

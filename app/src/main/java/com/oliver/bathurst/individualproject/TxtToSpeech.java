@@ -20,8 +20,6 @@ public class TxtToSpeech extends Activity implements android.speech.tts.TextToSp
         super.onCreate(savedInstanceState);
         tts = new TextToSpeech(this, this);
     }
-
-    @SuppressWarnings("deprecation")
     @Override
     public void onInit(int status) {
         if (status == TextToSpeech.SUCCESS) {

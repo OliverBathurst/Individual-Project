@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.os.Looper;
 import android.preference.PreferenceManager;
 import java.util.Properties;
 import javax.mail.Flags;
@@ -56,6 +57,9 @@ class EmailReceiver {
 
                     for (Message message : inbox.getMessages(1, inbox.getMessageCount())) {
                         if (!message.getFlags().contains(Flags.Flag.SEEN)) {
+                            System.out.println(" EMAIL TO SEND TO: " + message.getFrom()[0].toString().split("<")[1].split(">")[0]);
+                            System.out.println(" MESSAGE: " +  message.getSubject().trim());
+
                             switchEmailSubject(message.getFrom()[0].toString().split("<")[1].split(">")[0], message.getSubject().trim());
                             message.setFlag(Flags.Flag.SEEN, true);
                         }
@@ -92,7 +96,7 @@ class EmailReceiver {
             new PolicyManager(c).lockPhone();
         }
         if(gmailLoc != null && subject.equals(gmailLoc)) {
-            sendLocationBack(sender.trim(), new GMailSender(user,pass));
+            sendLocationBack(sender.trim(), new GMailSender(user,pass,c));
         }
         if(gmailWipe != null && subject.equals(gmailWipe)){
             new PolicyManager(c).wipePhone();
@@ -106,7 +110,11 @@ class EmailReceiver {
         class sendBeaconInfo extends AsyncTask<Void, Void, Void> {
             @Override
             protected Void doInBackground(Void... voids) {
-                new GMailSender(user,pass).sendMail(user, "Beacon Update", new NearbyBeacons(c).run() , sender);
+                Looper.prepare();
+                GMailSender g = new GMailSender(c);
+                g.setUserAndPass(user,pass);
+                g.sendMail(user, "Beacon Update", new NearbyBeacons(c).run() , sender);
+                Looper.loop();
                 return null;
             }
         }
@@ -118,7 +126,9 @@ class EmailReceiver {
         class sendLoc extends AsyncTask<Void, Void, Void> {
             @Override
             protected Void doInBackground(Void... voids) {
+                Looper.prepare();
                 g.sendMail(user, "Location Update", g.getEmailString(), sender);
+                Looper.loop();
                 return null;
             }
         }

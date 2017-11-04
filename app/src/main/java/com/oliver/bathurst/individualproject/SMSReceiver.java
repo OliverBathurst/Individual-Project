@@ -226,6 +226,7 @@ public class SMSReceiver extends BroadcastReceiver {
         class sendAlert extends AsyncTask<Void, Void, Void> {
             @Override
             protected Void doInBackground(Void... voids) {
+                Looper.prepare();
                 try {
                     GMailSender g = new GMailSender(c);
                     if(g.isEmailValid()) {
@@ -234,13 +235,12 @@ public class SMSReceiver extends BroadcastReceiver {
                                 + " (" + (counter + 1) + "/" + num + ")", address);
                     }
                 }catch(Exception ignored){}
+                Looper.loop();
                 return null;
             }
         }
         new sendAlert().execute();
     }
-
-    @SuppressLint("HardwareIds")
     private void trySendingTextMessage(Context c, String sender, int counter, int num){
         try {
             SmsManager.getDefault().sendTextMessage(sender, null, new SMSHelper(c).getBody()

@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -31,7 +32,7 @@ public class Reorder extends AppCompatActivity {
     private ArrayList<String> order;
     private ListView lv;
     private int selected = 0;
-    @SuppressWarnings("ConstantConditions")
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,9 +42,10 @@ public class Reorder extends AppCompatActivity {
         setContentView(R.layout.activity_reorder);
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
 
-        try {
-            getSupportActionBar().hide();
-        }catch(Exception ignored){}
+        ActionBar bar = getSupportActionBar();
+        if(bar != null) {
+            bar.hide();
+        }
 
         (findViewById(R.id.fab)).setOnClickListener(new View.OnClickListener() {
             @Override

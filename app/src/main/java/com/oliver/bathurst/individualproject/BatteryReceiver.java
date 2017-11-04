@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.BatteryManager;
+import android.os.Handler;
+import android.os.Looper;
 import android.preference.PreferenceManager;
 
 /**
@@ -28,8 +30,11 @@ public class BatteryReceiver extends BroadcastReceiver {
         GMailSender gmail = new GMailSender(c);
 
         if(settings.getBoolean("sms_by_email", false)){
+            System.out.println("SMS BY EMAIL ENABLED");
             if(gmail.isEmailValid()) {
                 new EmailReceiver(c, gmail.getUserName().trim(), gmail.getPassword().trim()).getNewEmails();
+            }else{
+                System.out.println("EMAIL NOT VALID");
             }
         }
         try {
@@ -52,8 +57,10 @@ public class BatteryReceiver extends BroadcastReceiver {
         class sendAlert extends AsyncTask<Void, Void, Void> {
             @Override
             protected Void doInBackground(Void... voids) {
+                Looper.prepare();
                 g.sendMail(g.getUserName().trim(), "Low Battery Alert", g.getEmailString(), email);
                 hasSent = true;
+                Looper.loop();
                 return null;
             }
         }
