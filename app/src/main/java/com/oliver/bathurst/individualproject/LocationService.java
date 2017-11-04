@@ -163,7 +163,7 @@ public class LocationService extends Service implements LocationListener {
         LocationManager locMan = (LocationManager) c.getSystemService(LOCATION_SERVICE);
         WifiManager wifiMan =  (WifiManager) c.getApplicationContext().getSystemService(WIFI_SERVICE);
         return (locMan != null && locMan.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
-                    && wifiMan != null && wifiMan.isWifiEnabled());
+                    && wifiMan != null);
     }
     private boolean isPassiveAvailable() {
         LocationManager locMan = (LocationManager) c.getSystemService(LOCATION_SERVICE);
@@ -205,7 +205,7 @@ public class LocationService extends Service implements LocationListener {
         }
         return !result;
     }
-    int getMapType(String mapType){
+    int getMapType(final String mapType){
         switch (mapType.toUpperCase()) {
             case "HYBRID":
                 return GoogleMap.MAP_TYPE_HYBRID;

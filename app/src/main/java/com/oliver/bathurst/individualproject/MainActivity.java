@@ -1,6 +1,5 @@
 package com.oliver.bathurst.individualproject;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -28,21 +27,20 @@ public class MainActivity extends AppCompatActivity{
 
                 switch (item.getItemId()) {
                     case R.id.navigation_home:
-                        setHome();
+                        getSupportFragmentManager().beginTransaction().add(R.id.content, new MapFragment()).commit();
                         return true;
                     case R.id.navigation_dashboard:
-                        settingsPage();
+                        getFragmentManager().beginTransaction().add(R.id.content, new SettingsFragment()).commit();
                         return true;
                     case R.id.navigation_device:
-                        infoPage();
+                        getFragmentManager().beginTransaction().add(R.id.content, new DeviceFragment()).commit();
                         return true;
-                    }
+                }
                 return false;
             }
             return false;
         }
     };
-    public void onBackPressed() {}
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,18 +51,8 @@ public class MainActivity extends AppCompatActivity{
 
         ((BottomNavigationView) findViewById(R.id.navigation)).setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         frame = (FrameLayout) findViewById(R.id.content);
-        setHome();
-    }
-    private void setHome(){
         getSupportFragmentManager().beginTransaction().add(R.id.content, new MapFragment()).commit();
     }
-    private void settingsPage(){
-        getFragmentManager().beginTransaction().add(R.id.content, new SettingsFragment()).commit();
-    }
-    private void infoPage(){
-        getFragmentManager().beginTransaction().add(R.id.content, new DeviceFragment()).commit();
-    }
-    @SuppressLint("RestrictedApi")
     private void removeAllFragments() {
         try {
             getSupportFragmentManager().getFragments().clear();

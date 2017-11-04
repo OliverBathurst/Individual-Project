@@ -26,12 +26,10 @@ import com.google.gson.reflect.TypeToken;
  */
 
 public class BeaconConfig extends AppCompatActivity {
-    private int selectedPosition = 0;
-    private TextView signal;
-    private int currentSignal = 0;
-    private String globalDeviceName;
     private final BluetoothAdapter BTAdapter = BluetoothAdapter.getDefaultAdapter();
-
+    private int selectedPosition = 0, currentSignal = 0;
+    private TextView signal;
+    private String globalDeviceName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +40,7 @@ public class BeaconConfig extends AppCompatActivity {
 
         BluetoothDevice globalDevice = new Gson().fromJson(getIntent().getStringExtra("BT_DEVICE"),
                 new TypeToken<BluetoothDevice>() {}.getType());
+
         globalDeviceName = globalDevice.getName();
         signal = (TextView) findViewById(R.id.signal);
         ((TextView) findViewById(R.id.beaconName)).setText(globalDeviceName);
@@ -49,6 +48,10 @@ public class BeaconConfig extends AppCompatActivity {
         Snackbar.make(findViewById(R.id.beaconContent), globalDeviceName + " Loaded", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
         registerReceiver(receiver, new IntentFilter(BluetoothDevice.ACTION_FOUND));
         registerReceiver(receiver, new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED));
+
+        if(BTAdapter.isDiscovering()){
+            BTAdapter.cancelDiscovery();
+        }
         BTAdapter.startDiscovery();
 
         ((Spinner) findViewById(R.id.spinner)).setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -59,7 +62,6 @@ public class BeaconConfig extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {}
         });
-
         (findViewById(R.id.saveBeacon)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,19 +69,15 @@ public class BeaconConfig extends AppCompatActivity {
                 if(edit.getText().toString().trim().length() != 0){
                     try {
                         Float toSave = Float.parseFloat(edit.getText().toString().trim());
-                        try{
-                            if(toSave > 0) {
-                                float temp = PreferenceManager.getDefaultSharedPreferences(getApplication()).getFloat(globalDeviceName, 1);
-                                if (selectedPosition == 0) {
-                                    PreferenceManager.getDefaultSharedPreferences(getApplication()).edit().putFloat(globalDeviceName, (temp + (currentSignal / toSave)) / 2).apply();  //1 cm to dbm
-                                } else if (selectedPosition == 1) {
-                                    PreferenceManager.getDefaultSharedPreferences(getApplication()).edit().putFloat(globalDeviceName, (temp + (currentSignal / (toSave * 100))) / 2).apply();  //1 cm to dbm
-                                }
-                            }else{
-                                Snackbar.make(findViewById(R.id.beaconContent), "Division by zero", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+                        if(toSave > 0) {
+                            float temp = PreferenceManager.getDefaultSharedPreferences(getApplication()).getFloat(globalDeviceName, 1);
+                            if (selectedPosition == 0) {
+                                PreferenceManager.getDefaultSharedPreferences(getApplication()).edit().putFloat(globalDeviceName, (temp + (currentSignal / toSave)) / 2).apply();  //1 cm to dbm
+                            } else if (selectedPosition == 1) {
+                                PreferenceManager.getDefaultSharedPreferences(getApplication()).edit().putFloat(globalDeviceName, (temp + (currentSignal / (toSave * 100))) / 2).apply();  //1 cm to dbm
                             }
-                        }catch(Exception e){
-                            Snackbar.make(findViewById(R.id.beaconContent), "Failure to parse signal", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+                        }else{
+                            Snackbar.make(findViewById(R.id.beaconContent), "Division by zero", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                         }
                     }catch(Exception e){
                         Snackbar.make(findViewById(R.id.beaconContent), "Failure to parse text", Snackbar.LENGTH_SHORT).setAction("Action", null).show();

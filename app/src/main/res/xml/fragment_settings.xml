@@ -294,11 +294,12 @@
         android:title="Gmail Username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-    <EditTextPreference
-        android:key="gmail_password"
-        android:title="Gmail Password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <EditTextPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:key="gmail_password"
+            android:inputType="textPassword"
+            android:title="Gmail Password" />
     </PreferenceCategory>
 
     <PreferenceCategory
