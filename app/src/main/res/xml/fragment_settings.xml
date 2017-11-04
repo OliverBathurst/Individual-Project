@@ -405,6 +405,12 @@
             android:title="Relay Beacon Info (Email)"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+        <Preference
+            android:title="Info:"
+            android:summary="This is a slow operation"
+            android:selectable="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </PreferenceCategory>
 
     <PreferenceCategory

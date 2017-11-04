@@ -26,6 +26,7 @@ class NearbyBeacons {
     private final BluetoothAdapter blue;
     private final Context context;
     private boolean isFinished = false;
+    private ArrayList<BluetoothDevice> bluetoothArray;
 
     NearbyBeacons(Context c){
         this.blue = BluetoothAdapter.getDefaultAdapter();
@@ -35,9 +36,17 @@ class NearbyBeacons {
     }
     @SuppressWarnings("StatementWithEmptyBody")
     String run(){
-        scan();
-        while(!isFinished){}
-        return getSummary();
+        if(blue != null && blue.isDiscovering()){
+            blue.cancelDiscovery();
+        }
+        bluetoothArray = getBTArray();
+        if(bluetoothArray != null && !bluetoothArray.isEmpty()){
+            scan();
+            while(!isFinished){}
+            return getSummary();
+        }else{
+            return "No Beacons Found";
+        }
     }
     private String getSummary(){
         SharedPreferences sp = getDefaultSharedPreferences(context);
@@ -45,11 +54,12 @@ class NearbyBeacons {
         for(Pair<BluetoothDevice, Integer> p: finalList){
             Float temp = sp.getFloat(p.first.getName(), Integer.MAX_VALUE);
             if(temp != Integer.MAX_VALUE && temp != 0){ //default to max value for error checking
-                sb.append("Device: ").append(p.first.getName()).append(" Distance m (est.): ")
-                        .append(p.second/temp).append(" m").append("\n");
+                sb.append("Device: ").append(p.first.getName()).append("\n")
+                        .append("Distance m (est.): ")
+                        .append(p.second/temp).append(" cm").append("\n");
             }
         }
-        return sb.toString();
+        return sb.toString().trim().length() != 0 ? sb.toString().trim() : "No Beacons Found";
     }
     private void scan(){
         if(blue != null) {
@@ -57,8 +67,8 @@ class NearbyBeacons {
                 blue.enable();
             }
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                context.registerReceiver(mReceiver, new IntentFilter(BluetoothDevice.ACTION_FOUND));
-                context.registerReceiver(mReceiver, new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED));
+                context.getApplicationContext().registerReceiver(mReceiver, new IntentFilter(BluetoothDevice.ACTION_FOUND));
+                context.getApplicationContext().registerReceiver(mReceiver, new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED));
                 blue.startDiscovery();
             }else{
                 isFinished = true;
@@ -81,20 +91,19 @@ class NearbyBeacons {
             }
         }catch(Exception ignored){}// if .equals() is performed on a null object
     }
-    private void compare() {
-        ArrayList<BluetoothDevice> fromPrefs = new Gson().fromJson(PreferenceManager.getDefaultSharedPreferences(context)
+    private ArrayList<BluetoothDevice> getBTArray(){
+        return new Gson().fromJson(PreferenceManager.getDefaultSharedPreferences(context)
                 .getString("BeaconKeys", null), new TypeToken<ArrayList<BluetoothDevice>>() {}.getType());
-
-        if(fromPrefs != null && !fromPrefs.isEmpty()) {
-            for (BluetoothDevice bd : fromPrefs) {
-                for (Pair<BluetoothDevice, Integer> p : deviceList) {
-                    try {
-                        if (p.first.equals(bd)) { //if it finds a saved beacon
-                            finalList.add(p);
-                            break;
-                        }
-                    }catch(Exception ignored){} //if .equals on null object
-                }
+    }
+    private void compare() {
+        for (BluetoothDevice bd : bluetoothArray) {
+            for (Pair<BluetoothDevice, Integer> p : deviceList) {
+                try {
+                    if (p.first.equals(bd)) { //if it finds a saved beacon
+                        finalList.add(p);
+                        break;
+                    }
+                }catch(Exception ignored){} //if .equals on null object
             }
         }
         isFinished = true;

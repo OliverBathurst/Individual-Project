@@ -19,7 +19,6 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-
         app:menu="@menu/activity_beacon_drawer" >
 
     </android.support.design.widget.NavigationView>
