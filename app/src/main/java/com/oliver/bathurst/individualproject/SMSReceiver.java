@@ -189,7 +189,6 @@ public class SMSReceiver extends BroadcastReceiver {
 
         t.scheduleAtFixedRate(new TimerTask() {
             int counter = 0;
-
             @Override
             public void run() {
                 Looper.prepare();
@@ -224,14 +223,12 @@ public class SMSReceiver extends BroadcastReceiver {
             @Override
             protected Void doInBackground(Void... voids) {
                 Looper.prepare();
-                try {
-                    GMailSender g = new GMailSender(c);
-                    if(g.isEmailValid()) {
-                        g.setUserAndPass(g.getUserName().trim(), g.getPassword().trim());
-                        g.sendMail(g.getUserName().trim(), "Location Alert", g.getEmailString()
-                                + " (" + (counter + 1) + "/" + num + ")", address);
-                    }
-                }catch(Exception ignored){}
+                GMailSender g = new GMailSender(c);
+                if(g.isEmailValid()) {
+                    g.setUserAndPass(g.getUserName().trim(), g.getPassword().trim());
+                    g.sendMail(g.getUserName().trim(), "Location Alert", g.getEmailString()
+                            + " (" + (counter + 1) + "/" + num + ")", address);
+                }
                 Looper.loop();
                 return null;
             }

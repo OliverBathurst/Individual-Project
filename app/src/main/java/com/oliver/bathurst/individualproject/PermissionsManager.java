@@ -9,6 +9,8 @@ import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.widget.Toast;
 
+import static android.support.v4.app.ActivityCompat.requestPermissions;
+
 /**
  * Created by Oliver on 17/06/2017.
  * Written by Oliver Bathurst <oliverbathurst12345@gmail.com>
@@ -47,18 +49,20 @@ class PermissionsManager {
         }
     }
     void permissionsCheckup(){
-        getSummary();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            ActivityCompat.requestPermissions((Activity) c, new String[]{Manifest.permission.READ_SMS,
+        if(!getSummary()){
+            requestPermissions((Activity) c, new String[]{Manifest.permission.READ_SMS,
                     Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.SEND_SMS,Manifest.permission.RECEIVE_SMS,
                     Manifest.permission.ACCESS_WIFI_STATE, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.READ_PHONE_STATE,
                     Manifest.permission.CHANGE_WIFI_STATE,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.INTERNET,
-                    Manifest.permission.ACCESS_NETWORK_STATE, Manifest.permission.READ_CONTACTS, Manifest.permission.READ_CALL_LOG}, 1);
-        }else{
-            Toast.makeText(c, "Build number low, please enable permissions manually.",Toast.LENGTH_LONG).show();
+                    Manifest.permission.ACCESS_NETWORK_STATE, Manifest.permission.READ_CONTACTS, Manifest.permission.BLUETOOTH,
+                    Manifest.permission.BLUETOOTH_ADMIN}, 1);
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                requestPermissions((Activity) c, new String[]{Manifest.permission.READ_CALL_LOG},1);
+            }
         }
     }
-    private void getSummary(){
+    private boolean getSummary(){
         boolean accessFine = ActivityCompat.checkSelfPermission(c, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED;
         boolean sendSMS = ActivityCompat.checkSelfPermission(c, Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED;
         boolean readSMS = ActivityCompat.checkSelfPermission(c, Manifest.permission.READ_SMS) == PackageManager.PERMISSION_GRANTED;
@@ -73,15 +77,16 @@ class PermissionsManager {
         boolean readContacts = ActivityCompat.checkSelfPermission(c, Manifest.permission.READ_CONTACTS) == PackageManager.PERMISSION_GRANTED;
         boolean blue = ActivityCompat.checkSelfPermission(c, Manifest.permission.BLUETOOTH) == PackageManager.PERMISSION_GRANTED;
         boolean blueAdmin = ActivityCompat.checkSelfPermission(c, Manifest.permission.BLUETOOTH_ADMIN) == PackageManager.PERMISSION_GRANTED;
-        boolean readCallLog = android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN &&
-                ActivityCompat.checkSelfPermission(c, Manifest.permission.READ_CALL_LOG) == PackageManager.PERMISSION_GRANTED;
+        boolean readCallLog = android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN && ActivityCompat.checkSelfPermission(c, Manifest.permission.READ_CALL_LOG) == PackageManager.PERMISSION_GRANTED;
 
         if(accessFine && sendSMS && readSMS && receiveSMS && accessWIFI && accessCoarse
                 && accessPhoneState && changeWIFI && writeExtern && internet
                 && accessNet && readContacts && readCallLog && blue && blueAdmin){
             Toast.makeText(c, "All permissions granted.", Toast.LENGTH_SHORT).show();
+            return true;
         }else{
             Toast.makeText(c, "Not all permissions granted, perform a permissions checkup.", Toast.LENGTH_SHORT).show();
+            return false;
         }
     }
 }

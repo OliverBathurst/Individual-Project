@@ -86,15 +86,14 @@ public class Reorder extends AppCompatActivity {
                 }
             }
         });
-        AlertDialog.Builder builder = new AlertDialog.Builder(this).setTitle("Warning")
+        new AlertDialog.Builder(this).setTitle("Warning")
                 .setMessage("No not edit these without good reason, this order has been " +
                 "specifically chosen for optimal accuracy")
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 dialog.dismiss();
             }
-        });
-        builder.create().show();
+        }).create().show();
     }
     private void reOrder(){
         lv.setAdapter(new ArrayAdapter(this, R.layout.list_view, R.id.listviewAdapt, order));

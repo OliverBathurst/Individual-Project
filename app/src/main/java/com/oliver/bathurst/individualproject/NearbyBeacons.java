@@ -36,16 +36,23 @@ class NearbyBeacons {
     }
     @SuppressWarnings("StatementWithEmptyBody")
     String run(){
-        if(blue != null && blue.isDiscovering()){
-            blue.cancelDiscovery();
-        }
-        bluetoothArray = getBTArray();
-        if(bluetoothArray != null && !bluetoothArray.isEmpty()){
-            scan();
-            while(!isFinished){}
-            return getSummary();
+        if(blue != null){
+            if(blue.isDiscovering()) {
+                blue.cancelDiscovery();
+            }
+            if (!blue.isEnabled()) {
+                blue.enable();
+            }
+            bluetoothArray = getBTArray();
+            if(bluetoothArray != null && !bluetoothArray.isEmpty()){
+                scan();
+                while(!isFinished){}
+                return getSummary();
+            }else{
+                return "No Beacons Found";
+            }
         }else{
-            return "No Beacons Found";
+            return "Bluetooth not available";
         }
     }
     private String getSummary(){
@@ -62,17 +69,10 @@ class NearbyBeacons {
         return sb.toString().trim().length() != 0 ? sb.toString().trim() : "No Beacons Found";
     }
     private void scan(){
-        if(blue != null) {
-            if (!blue.isEnabled()) {
-                blue.enable();
-            }
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                context.getApplicationContext().registerReceiver(mReceiver, new IntentFilter(BluetoothDevice.ACTION_FOUND));
-                context.getApplicationContext().registerReceiver(mReceiver, new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED));
-                blue.startDiscovery();
-            }else{
-                isFinished = true;
-            }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            context.getApplicationContext().registerReceiver(mReceiver, new IntentFilter(BluetoothDevice.ACTION_FOUND));
+            context.getApplicationContext().registerReceiver(mReceiver, new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED));
+            blue.startDiscovery();
         }else{
             isFinished = true;
         }
@@ -89,7 +89,7 @@ class NearbyBeacons {
             if (!found) {
                 deviceList.add(new Pair<>(blueDev, rssi));
             }
-        }catch(Exception ignored){}// if .equals() is performed on a null object
+        }catch(Exception ignored){}
     }
     private ArrayList<BluetoothDevice> getBTArray(){
         return new Gson().fromJson(PreferenceManager.getDefaultSharedPreferences(context)
