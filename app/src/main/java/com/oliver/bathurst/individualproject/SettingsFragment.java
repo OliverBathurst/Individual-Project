@@ -5,9 +5,14 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.admin.DevicePolicyManager;
+import android.content.BroadcastReceiver;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -21,6 +26,7 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.SwitchPreference;
+import android.support.v4.content.LocalBroadcastManager;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +44,7 @@ import static android.preference.PreferenceManager.getDefaultSharedPreferences;
  */
 
 public class SettingsFragment extends PreferenceFragment {
+    private BroadcastReceiver mRegistrationBroadcastReceiver;
     private int setVolProg = 90, battProg = 5;
     private Server server = null;
     public SettingsFragment() {}
@@ -50,6 +57,36 @@ public class SettingsFragment extends PreferenceFragment {
         final SharedPreferences settingsView = getDefaultSharedPreferences(getActivity());
 
         try{
+            mRegistrationBroadcastReceiver = new BroadcastReceiver() {
+                @Override
+                public void onReceive(Context context, Intent intent) {
+                    if(intent.getAction() != null) {
+                        if (intent.getAction().equals(RegistrationIntentService.REGISTRATION_SUCCESS)) {
+                            final String token = intent.getStringExtra("token");
+                            new android.support.v7.app.AlertDialog.Builder(getActivity())
+                                    .setMessage("Your GCM token:\n" + token)
+                                    .setCancelable(false)
+                                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int id) {
+                                            dialog.dismiss();
+                                        }
+                                    }).setNegativeButton("Copy", new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int id) {
+                                            ClipboardManager clipboard = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+                                            if(clipboard != null) {
+                                                clipboard.setPrimaryClip(ClipData.newPlainText("token", token));
+                                                Toast.makeText(getActivity(), "Token copied to clipboard", Toast.LENGTH_SHORT).show();
+                                            }else{
+                                                Toast.makeText(getActivity(), "Error copying token to clipboard", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }}).create().show();
+                        } else if (intent.getAction().equals(RegistrationIntentService.REGISTRATION_ERROR)) {
+                            Toast.makeText(getActivity(), "GCM registration error", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }
+            };
+
             (findPreference("hide_app")).setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
@@ -176,14 +213,7 @@ public class SettingsFragment extends PreferenceFragment {
             findPreference("register").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                    //register();
-                    return false;
-                }
-            });
-            findPreference("unregister").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    //unregister();
+                    registerGCM();
                     return false;
                 }
             });
@@ -483,5 +513,18 @@ public class SettingsFragment extends PreferenceFragment {
         if (resultCode != Activity.RESULT_OK || requestCode != PolicyManager.DPM_ACTIVATION_REQUEST_CODE) {
             super.onActivityResult(requestCode, resultCode, data);
         }
+    }
+    private void registerGCM(){
+        getActivity().startService(new Intent(getActivity(), RegistrationIntentService.class));
+    }
+    public void onResume() {
+        super.onResume();
+        LocalBroadcastManager.getInstance(getActivity()).registerReceiver(mRegistrationBroadcastReceiver, new IntentFilter(RegistrationIntentService.REGISTRATION_SUCCESS));
+        LocalBroadcastManager.getInstance(getActivity()).registerReceiver(mRegistrationBroadcastReceiver, new IntentFilter(RegistrationIntentService.REGISTRATION_ERROR));
+    }
+    @Override
+    public void onPause() {
+        super.onPause();
+        LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(mRegistrationBroadcastReceiver);
     }
 }

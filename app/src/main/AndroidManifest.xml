@@ -113,6 +113,26 @@
             android:name=".BeaconActivity$mReceiver"
             android:enabled="true" />
 
+        <!-- GCM -->
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.oliver.bathurst.individualproject"/>
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".RegistrationIntentService" android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID"/>
+            </intent-filter>
+        </service>
+        <service android:name=".TokenRefreshListener" />
+
+
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -155,6 +175,7 @@
             android:enabled="true"
             android:exported="true"
             tools:ignore="ExportedService" />
+        <service android:name=".GcmReceiver" />
 
         <activity
             android:name=".BeaconActivity"
@@ -169,7 +190,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
             android:name=".SignUpActivity"
-            android:label="@string/title_activity_sign_up"></activity>
+            android:label="@string/title_activity_sign_up"/>
     </application>
 
 </manifest>

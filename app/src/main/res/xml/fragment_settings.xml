@@ -490,12 +490,6 @@
             android:title="Register GCM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-        <Preference
-            android:key="unregister"
-            android:icon="@drawable/ic_remove_black_24dp"
-            android:title="Unregister GCM"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
     </PreferenceCategory>
 
     <PreferenceCategory
