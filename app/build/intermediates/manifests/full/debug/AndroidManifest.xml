@@ -136,7 +136,7 @@
 
         <service
             android:name="com.oliver.bathurst.individualproject.ReceiverService"
-            android:exported="false" >
+            android:exported="true" >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
             </intent-filter>

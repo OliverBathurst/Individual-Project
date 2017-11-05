@@ -487,7 +487,13 @@
         <Preference
             android:key="register"
             android:icon="@drawable/ic_add_black_24dp"
-            android:title="Register GCM"
+            android:title="Register GCM Token"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Preference
+            android:key="get_token"
+            android:icon="@drawable/ic_code_black_24dp"
+            android:title="Get Current GCM Token"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </PreferenceCategory>

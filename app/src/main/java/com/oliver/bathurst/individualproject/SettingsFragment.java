@@ -25,6 +25,7 @@ import android.preference.EditTextPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 import android.preference.SwitchPreference;
 import android.support.v4.content.LocalBroadcastManager;
 import android.widget.SeekBar;
@@ -207,6 +208,13 @@ public class SettingsFragment extends PreferenceFragment {
                         }
                     }
                     return true;
+                }
+            });
+            findPreference("get_token").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    getCurrentGCM();
+                    return false;
                 }
             });
 
@@ -516,6 +524,30 @@ public class SettingsFragment extends PreferenceFragment {
     }
     private void registerGCM(){
         getActivity().startService(new Intent(getActivity(), RegistrationIntentService.class));
+    }
+    private void getCurrentGCM(){
+        final String currToken = PreferenceManager.getDefaultSharedPreferences(getActivity()).getString("GCM_Token", null);
+        new android.support.v7.app.AlertDialog.Builder(getActivity())
+                .setMessage("Your GCM token:\n" + (currToken != null ? currToken : "No saved GCM token"))
+                .setCancelable(false)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                    }
+                }).setNegativeButton("Copy", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                if(currToken != null) {
+                    ClipboardManager clipboard = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+                    if (clipboard != null) {
+                        clipboard.setPrimaryClip(ClipData.newPlainText("token", currToken));
+                        Toast.makeText(getActivity(), "Token copied to clipboard", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getActivity(), "Error copying token to clipboard", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(getActivity(), "Error copying token to clipboard", Toast.LENGTH_SHORT).show();
+                }
+            }}).create().show();
     }
     public void onResume() {
         super.onResume();
