@@ -16,7 +16,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.READ_CALL_LOG"
+    <uses-permission
+        android:name="android.permission.READ_CALL_LOG"
         tools:ignore="UniquePermission" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -24,7 +25,6 @@
     <uses-permission
         android:name="android.permission.BIND_DEVICE_ADMIN"
         tools:ignore="ProtectedPermissions" />
-
 
     <uses-feature
         android:name="android.hardware.bluetooth_le"
@@ -53,6 +53,10 @@
         android:normalScreens="true"
         android:smallScreens="true"
         android:xlargeScreens="true" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
 
     <application
         android:allowBackup="true"
@@ -162,7 +166,10 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".BeaconConfig"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
+        <activity
+            android:name=".SignUpActivity"
+            android:label="@string/title_activity_sign_up"></activity>
     </application>
 
 </manifest>

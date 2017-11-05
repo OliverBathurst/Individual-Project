@@ -188,6 +188,22 @@ public class SettingsFragment extends PreferenceFragment {
                 }
             });
 
+            findPreference("open_interface").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://oliverbathurst.github.io/web")));
+                    return false;
+                }
+            });
+
+            findPreference("sign_up").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    startActivity(new Intent(getActivity(), SignUpActivity.class));
+                    return false;
+                }
+            });
+
 
             EditTextPreference emailUpdates = (EditTextPreference) findPreference("email_string");
             if (emailUpdates.getText() != null && emailUpdates.getText().trim().length() != 0) {

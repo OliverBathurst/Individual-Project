@@ -471,17 +471,29 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="Add GCM Messaging">
+        android:title="Add GCM Messaging/Web Interface">
+        <Preference
+            android:key="sign_up"
+            android:icon="@drawable/ic_account_circle_black_24dp"
+            android:title="Sign Up For Account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Preference
+            android:key="open_interface"
+            android:icon="@drawable/ic_web_black_24dp"
+            android:title="Open Web Interface"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
         <Preference
             android:key="register"
             android:icon="@drawable/ic_add_black_24dp"
-            android:title="Register"
+            android:title="Register GCM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Preference
             android:key="unregister"
             android:icon="@drawable/ic_remove_black_24dp"
-            android:title="Unregister"
+            android:title="Unregister GCM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </PreferenceCategory>
@@ -491,7 +503,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="Account">
+        android:title="Backup">
         <Preference
             android:key="backup_shared_pref"
             android:icon="@drawable/ic_settings_backup_restore_black_24dp"
