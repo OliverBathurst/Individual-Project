@@ -8,8 +8,8 @@ import android.content.Context;
  */
 
 class GCMHandler {
-    private String toExamine;
-    private Context context;
+    private final String toExamine;
+    private final Context context;
 
     GCMHandler(String str,Context c){
         this.toExamine = str;
