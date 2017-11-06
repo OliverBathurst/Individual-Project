@@ -6,16 +6,14 @@ package com.oliver.bathurst.individualproject;
  */
 
 import android.os.Bundle;
-import android.util.Log;
 import com.google.android.gms.gcm.GcmListenerService;
 
 public class ReceiverService extends GcmListenerService {
     @Override
     public void onMessageReceived(String from, Bundle data) {
-        handle(from, data.getString("message"));
+        handle(data.toString().trim());
     }
-    @SuppressWarnings("unused")
-    private void handle(String sender, String message) {
-        Log.d("messagegcm", message);
+    private void handle(String message) {
+        new GCMHandler(message).examine();
     }
 }
