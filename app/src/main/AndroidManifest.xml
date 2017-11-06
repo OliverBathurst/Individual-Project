@@ -35,6 +35,7 @@
     <permission
         android:name="com.oliver.bathurst.individualproject.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
+
     <uses-permission android:name="com.oliver.bathurst.individualproject.permission.C2D_MESSAGE" />
 
     <uses-feature
@@ -138,7 +139,6 @@
             </intent-filter>
         </service>
 
-
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -181,7 +181,6 @@
             android:enabled="true"
             android:exported="true"
             tools:ignore="ExportedService" />
-        <service android:name=".TokenRefreshListener" />
 
         <activity
             android:name=".BeaconActivity"
@@ -196,6 +195,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
             android:name=".SignUpActivity"
-            android:label="@string/title_activity_sign_up"/>
+            android:label="@string/title_activity_sign_up" />
     </application>
+
 </manifest>

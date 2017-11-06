@@ -6,14 +6,16 @@ package com.oliver.bathurst.individualproject;
  */
 
 import android.os.Bundle;
+
 import com.google.android.gms.gcm.GcmListenerService;
 
 public class ReceiverService extends GcmListenerService {
     @Override
     public void onMessageReceived(String from, Bundle data) {
-        handle(data.toString().trim());
-    }
-    private void handle(String message) {
-        new GCMHandler(message).examine();
+        System.out.println("Received");
+        if(data.toString().contains("isTrigger")){ //if it contains the keyword
+
+            new GCMHandler(data.toString(), this).examine();
+        }
     }
 }
