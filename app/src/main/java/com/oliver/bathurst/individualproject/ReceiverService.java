@@ -12,10 +12,11 @@ import com.google.android.gms.gcm.GcmListenerService;
 public class ReceiverService extends GcmListenerService {
     @Override
     public void onMessageReceived(String from, Bundle data) {
-        System.out.println("Received");
-        if(data.toString().contains("isTrigger")){ //if it contains the keyword
+        String isValid = data.getString("validator");
 
-            new GCMHandler(data.toString(), this).examine();
+        if(isValid !=null && isValid.equals(getString(R.string.API_GCM))){
+            System.out.println(data.getString("message"));
+            // new GCMHandler(data.toString(), this).examine();
         }
     }
 }
