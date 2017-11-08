@@ -292,9 +292,9 @@ class GMailSender extends javax.mail.Authenticator {
     private String getBattery(Context c){
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
             BatteryManager batMan = (BatteryManager) c.getSystemService(Context.BATTERY_SERVICE);
-            return batMan != null ? String.valueOf(batMan.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)) : "Battery manager is null";
+            return batMan != null ? String.valueOf(batMan.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)) : c.getString(R.string.batt_manager_null);
         }else{
-            return "Build number low";
+            return c.getString(R.string.build_number_low);
         }
     }
 }

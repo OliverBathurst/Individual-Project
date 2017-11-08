@@ -67,11 +67,11 @@ public class SettingsFragment extends PreferenceFragment {
                             new android.support.v7.app.AlertDialog.Builder(getActivity())
                                     .setMessage("Your GCM token:\n" + token)
                                     .setCancelable(false)
-                                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    .setPositiveButton(getString(R.string.OK), new DialogInterface.OnClickListener() {
                                         public void onClick(DialogInterface dialog, int id) {
                                             dialog.dismiss();
                                         }
-                                    }).setNegativeButton("Copy", new DialogInterface.OnClickListener() {
+                                    }).setNegativeButton(getString(R.string.copy), new DialogInterface.OnClickListener() {
                                         public void onClick(DialogInterface dialog, int id) {
                                             ClipboardManager clipboard = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
                                             if(clipboard != null) {
@@ -116,14 +116,14 @@ public class SettingsFragment extends PreferenceFragment {
                         @Override
                         public void onCancel(DialogInterface dialog) {
                             settings.putInt("seek_bar_volume", setVolProg).apply();
-                            findPreference("sms_ringtone_volume").setSummary("Current volume: " + setVolProg + "%");
+                            findPreference("sms_ringtone_volume").setSummary(getString(R.string.current_volume) + setVolProg + getString(R.string.percentage_symbol));
                         }
                     });
                     dialog.setOnDismissListener(new Dialog.OnDismissListener() {
                         @Override
                         public void onDismiss(DialogInterface dialog) {
                             settings.putInt("seek_bar_volume", setVolProg).apply();
-                            findPreference("sms_ringtone_volume").setSummary("Current volume: " + setVolProg + "%");
+                            findPreference("sms_ringtone_volume").setSummary(getString(R.string.current_volume) + setVolProg + getString(R.string.percentage_symbol));
                         }
                     });
                     ((SeekBar) dialog.findViewById(R.id.size_seekbar)).setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -146,7 +146,7 @@ public class SettingsFragment extends PreferenceFragment {
                 public boolean onPreferenceClick(Preference preference) {
                     Dialog dialog = new Dialog(getActivity());
                     dialog.setContentView(R.layout.dialog2);
-                    dialog.setTitle("Set battery percent");
+                    dialog.setTitle("Set battery percentage");
                     dialog.setCancelable(true);
                     dialog.show();
                     final TextView tv_dialog_size = (TextView) dialog.findViewById(R.id.set_size_help_text2);
@@ -155,20 +155,20 @@ public class SettingsFragment extends PreferenceFragment {
                         @Override
                         public void onCancel(DialogInterface dialog) {
                             settings.putInt("seek_bar_battery", battProg).apply();
-                            findPreference("battery_percent").setSummary("Current percentage: " + battProg + "%");
+                            findPreference("battery_percent").setSummary(getString(R.string.current_percentage) + battProg + getString(R.string.percentage_symbol));
                         }
                     });
                     dialog.setOnDismissListener(new Dialog.OnDismissListener() {
                         @Override
                         public void onDismiss(DialogInterface dialog) {
                             settings.putInt("seek_bar_battery", battProg).apply();
-                            findPreference("battery_percent").setSummary("Current percentage: " + battProg + "%");
+                            findPreference("battery_percent").setSummary(getString(R.string.current_percentage) + battProg + getString(R.string.percentage_symbol));
                         }
                     });
                     ((SeekBar) dialog.findViewById(R.id.size_seekbar2)).setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                         @SuppressLint("DefaultLocale")
                         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
-                            tv_dialog_size.setText(String.format("%s%d%s", getString(R.string.plsselectpercent), progress, getString(R.string.per2)));
+                            tv_dialog_size.setText(String.format("%s%d%s", getString(R.string.plsselectpercent), progress, getString(R.string.per)));
                             battProg = progress;
                         }
                         @Override
@@ -187,7 +187,7 @@ public class SettingsFragment extends PreferenceFragment {
                         startActivityForResult(new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN).putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN,
                                 new ComponentName(getActivity(), DeviceAdmin.class)), PolicyManager.DPM_ACTIVATION_REQUEST_CODE);
                     }else{
-                        Toast.makeText(getActivity(), "Admin already active", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), R.string.admin_already_active, Toast.LENGTH_SHORT).show();
                     }
                     return true;
                 }
@@ -229,7 +229,7 @@ public class SettingsFragment extends PreferenceFragment {
             findPreference("open_interface").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://oliverbathurst.github.io/web")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.my_website))));
                     return false;
                 }
             });
@@ -252,7 +252,7 @@ public class SettingsFragment extends PreferenceFragment {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     settings.putBoolean("stolen", false).apply();
-                    Toast.makeText(getActivity(), "Device un-flagged", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), R.string.unflag_device, Toast.LENGTH_SHORT).show();
                     return false;
                 }
             });
@@ -263,42 +263,49 @@ public class SettingsFragment extends PreferenceFragment {
 
             EditTextPreference lockGCM = (EditTextPreference) findPreference("lock_gcm");
             if (lockGCM.getText() != null && lockGCM.getText().trim().length() != 0) {
-                lockGCM.setSummary("Trigger: " + lockGCM.getText());
+                lockGCM.setSummary(getString(R.string.trigger_value) + lockGCM.getText());
             }else{
                 savePref(settings, lockGCM, "lock12345", "lock_gcm");
             }
 
+            EditTextPreference ringGCM = (EditTextPreference) findPreference("gcm_ring");
+            if (ringGCM.getText() != null && ringGCM.getText().trim().length() != 0) {
+                ringGCM.setSummary(getString(R.string.trigger_value) + ringGCM.getText());
+            }else{
+                savePref(settings, ringGCM, "ring12345", "gcm_ring");
+            }
+
             EditTextPreference emailBeacon = (EditTextPreference) findPreference("email_relay_beacon");
             if (emailBeacon.getText() != null && emailBeacon.getText().trim().length() != 0) {
-                emailBeacon.setSummary("Trigger: " + emailBeacon.getText());
+                emailBeacon.setSummary(getString(R.string.trigger_value) + emailBeacon.getText());
             }else{
                 savePref(settings, emailBeacon, "beacon12345", "email_relay_beacon");
             }
 
             EditTextPreference smsBeacon = (EditTextPreference) findPreference("sms_relay_beacon");
             if (smsBeacon.getText() != null && smsBeacon.getText().trim().length() != 0) {
-                smsBeacon.setSummary("Trigger: " + smsBeacon.getText());
+                smsBeacon.setSummary(getString(R.string.trigger_value) + smsBeacon.getText());
             }else{
                 savePref(settings, smsBeacon, "beacon12345", "sms_relay_beacon");
             }
 
             EditTextPreference smsRing = (EditTextPreference) findPreference("sms_ring");
             if (smsRing.getText() != null && smsRing.getText().trim().length() != 0) {
-                smsRing.setSummary("Trigger: " + smsRing.getText());
+                smsRing.setSummary(getString(R.string.trigger_value) + smsRing.getText());
             }else{
                 savePref(settings, smsRing, "ring12345", "sms_ring");
             }
 
             EditTextPreference smsStolen = (EditTextPreference) findPreference("sms_stolen");
             if (smsStolen.getText() != null && smsStolen.getText().trim().length() != 0) {
-                smsStolen.setSummary("Trigger: " + smsStolen.getText());
+                smsStolen.setSummary(getString(R.string.trigger_value) + smsStolen.getText());
             }else{
                 savePref(settings, smsStolen, "stolen", "sms_stolen");
             }
 
             EditTextPreference emailStolen = (EditTextPreference) findPreference("email_stolen");
             if(emailStolen.getText() != null && emailStolen.getText().trim().length() != 0){
-                emailStolen.setSummary("Trigger: " + emailStolen.getText());
+                emailStolen.setSummary(getString(R.string.trigger_value) + emailStolen.getText());
             }else{
                 savePref(settings, emailStolen, "stolen", "email_stolen");
             }
@@ -306,21 +313,21 @@ public class SettingsFragment extends PreferenceFragment {
 
             EditTextPreference smsEmail = (EditTextPreference) findPreference("sms_relay_email");
             if (smsEmail.getText() != null && smsEmail.getText().trim().length() != 0) {
-                smsEmail.setSummary("Trigger: " + smsEmail.getText());
+                smsEmail.setSummary(getString(R.string.trigger_value) + smsEmail.getText());
             }else{
                 savePref(settings, smsEmail, "email12345", "sms_relay_email");
             }
 
             EditTextPreference smsText = (EditTextPreference) findPreference("sms_relay_text");
             if (smsText.getText() != null && smsText.getText().trim().length() != 0) {
-                smsText.setSummary("Trigger: " + smsText.getText());
+                smsText.setSummary(getString(R.string.trigger_value) + smsText.getText());
             }else{
                 savePref(settings, smsText, "text12345", "sms_relay_text");
             }
             //sms_loc_services
             EditTextPreference smsLoc = (EditTextPreference) findPreference("sms_loc_services");
             if (smsLoc.getText() != null && smsLoc.getText().trim().length() != 0) {
-                smsLoc.setSummary("Trigger: " + smsLoc.getText());
+                smsLoc.setSummary(getString(R.string.trigger_value) + smsLoc.getText());
             }else{
                 savePref(settings, smsLoc, "remoteEnableLocation", "sms_loc_services");
             }
@@ -328,69 +335,69 @@ public class SettingsFragment extends PreferenceFragment {
             //sms_remote_lock
             EditTextPreference smsLock = (EditTextPreference) findPreference("sms_remote_lock");
             if (smsLock.getText() != null && smsLock.getText().trim().length() != 0) {
-                smsLock.setSummary("Trigger: " + smsLock.getText());
+                smsLock.setSummary(getString(R.string.trigger_value) + smsLock.getText());
             }else{
                 savePref(settings, smsLock, "remoteEnableLock", "sms_remote_lock");
             }
             //sms_wipe
             EditTextPreference smsWipe = (EditTextPreference) findPreference("sms_wipe");
             if (smsWipe.getText() != null && smsWipe.getText().trim().length() != 0) {
-                smsWipe.setSummary("Trigger: " + smsWipe.getText());
+                smsWipe.setSummary(getString(R.string.trigger_value) + smsWipe.getText());
             }else{
                 savePref(settings, smsWipe, "remoteEnableWIPE", "sms_wipe");
             }
             ////////////////////GMAIL//////////////////////////////////////
             EditTextPreference gmailLock = (EditTextPreference) findPreference("gmail_remote_lock");
             if (gmailLock.getText() != null && gmailLock.getText().trim().length() != 0) {
-                gmailLock.setSummary("Trigger: " + gmailLock.getText());
+                gmailLock.setSummary(getString(R.string.trigger_value) + gmailLock.getText());
             }else{
                 savePref(settings, gmailLock, "remoteLockGmail", "gmail_remote_lock");
             }
 
             EditTextPreference gmailLoc = (EditTextPreference) findPreference("gmail_loc");
             if (gmailLoc.getText() != null && gmailLoc.getText().trim().length() != 0) {
-                gmailLoc.setSummary("Trigger: " + gmailLoc.getText());
+                gmailLoc.setSummary(getString(R.string.trigger_value) + gmailLoc.getText());
             }else{
                 savePref(settings, gmailLoc, "remoteLocationGmail", "gmail_loc");
             }
 
             EditTextPreference gmailWipe = (EditTextPreference) findPreference("gmail_wipe");
             if (gmailWipe.getText() != null && gmailWipe.getText().trim().length() != 0) {
-                gmailWipe.setSummary("Trigger: " + gmailWipe.getText());
+                gmailWipe.setSummary(getString(R.string.trigger_value) + gmailWipe.getText());
             }else{
                 savePref(settings, gmailWipe, "remoteWipeGmail", "gmail_wipe");
             }
             EditTextPreference SDWipe = (EditTextPreference) findPreference("wipe_sdcard");
             if (SDWipe.getText() != null && SDWipe.getText().trim().length() != 0) {
-                SDWipe.setSummary("Trigger: " + SDWipe.getText());
+                SDWipe.setSummary(getString(R.string.trigger_value) + SDWipe.getText());
             }else{
                 savePref(settings, SDWipe, "remoteWipeSDCard", "wipe_sdcard");
             }
 
             EditTextPreference SDWipeGmail = (EditTextPreference) findPreference("wipe_sdcard_gmail");
             if (SDWipeGmail.getText() != null && SDWipeGmail.getText().trim().length() != 0) {
-                SDWipeGmail.setSummary("Trigger: " + SDWipeGmail.getText());
+                SDWipeGmail.setSummary(getString(R.string.trigger_value) + SDWipeGmail.getText());
             }else{
                 savePref(settings, SDWipeGmail, "wipeSDCardGmail", "wipe_sdcard_gmail");
             }
 
             EditTextPreference hide = (EditTextPreference) findPreference("sms_hide_app");
             if (hide.getText() != null && hide.getText().trim().length() != 0) {
-                hide.setSummary("Trigger: " + hide.getText());
+                hide.setSummary(getString(R.string.trigger_value) + hide.getText());
             }else{
                 savePref(settings, hide, "unHide", "sms_hide_app");
             }
 
             EditTextPreference ringDur = (EditTextPreference) findPreference("ring_duration");
             if (ringDur.getText() != null && ringDur.getText().trim().length() != 0) {
-                ringDur.setSummary("Current: " + ringDur.getText() + "s");
+                ringDur.setSummary(getString(R.string.current_value) + ringDur.getText() + "s");
             }else{
-                ringDur.setSummary("Current: 20s (default)");
+                ringDur.setSummary(R.string.default_ring_dur);
             }
 
-            findPreference("sms_ringtone_volume").setSummary("Current volume: " + settingsView.getInt("seek_bar_volume", 90) + "%");
+            findPreference("sms_ringtone_volume").setSummary(getString(R.string.current_volume) + settingsView.getInt("seek_bar_volume", 90) + "%");
 
-            findPreference("battery_percent").setSummary("Current percentage: " + settingsView.getInt("seek_bar_battery", 5) + "%");
+            findPreference("battery_percent").setSummary(getString(R.string.current_percentage) + settingsView.getInt("seek_bar_battery", 5) + "%");
 
             findPreference("backup_shared_pref").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
@@ -411,7 +418,7 @@ public class SettingsFragment extends PreferenceFragment {
             Preference.OnPreferenceChangeListener listener = new Preference.OnPreferenceChangeListener() {
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object newValue) {
-                    preference.setSummary("Trigger: " + newValue.toString());
+                    preference.setSummary(getString(R.string.trigger_value) + newValue.toString());
                     return true;
                 }
             };
@@ -440,14 +447,14 @@ public class SettingsFragment extends PreferenceFragment {
             Preference.OnPreferenceChangeListener simpleList = new Preference.OnPreferenceChangeListener() {
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object newValue) {
-                    preference.setSummary("Current: " + newValue.toString());
+                    preference.setSummary(getString(R.string.current_value) + newValue.toString());
                     return true;
                 }
             };
             Preference.OnPreferenceChangeListener secondsListener = new Preference.OnPreferenceChangeListener() {
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object newValue) {
-                    preference.setSummary("Current: " + newValue.toString() + "s");
+                    preference.setSummary(getString(R.string.current_value) + newValue.toString() + getString(R.string.seconds));
                     return true;
                 }
             };
@@ -480,17 +487,13 @@ public class SettingsFragment extends PreferenceFragment {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                    builder.setMessage("Gmail triggers: once Gmail credentials are entered " +
-                            "into the username and password boxes, this app will monitor that inbox for incoming " +
-                            "mail every time the battery level changes. On a battery level change, it will attempt " +
-                            "to connect to that Gmail account and search for unread emails and scans their subject " +
-                            "line for triggers to perform actions. E.g. if a trigger to send the location is 'loc12345' " +
-                            "then sending that as a subject in an email to the monitored account will trigger that action " +
-                            "on a battery change i.e a charger is connected/disconnected, battery level rises/decreases. " +
-                            " Additionally, this feature may require you to enable a Gmail setting called 'Enable Access From " +
-                            "Less Secure Apps' on the monitored account.")
+                    builder.setMessage("Gmail triggers: once Gmail credentials are entered into the username and password boxes, this app will monitor that inbox for incoming\n" +
+                            "mail every time the battery level changes. On a battery level change, it will attempt to connect to that Gmail account and search for unread emails and scans their subject\n" +
+                            "line for triggers to perform actions. E.g. if a trigger to send the location is &#39;loc12345&#39; then sending that as a subject in an email to the monitored account will trigger that action\n" +
+                            "on a battery change i.e a charger is connected/disconnected, battery level rises/decreases. Additionally, this feature may require you to enable a Gmail setting called 'Enable Access From\n" +
+                            "Less Secure Apps' on the monitored account.\"")
                             .setCancelable(false)
-                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            .setPositiveButton(getString(R.string.OK), new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     dialog.dismiss();
                                 }
@@ -503,7 +506,7 @@ public class SettingsFragment extends PreferenceFragment {
         }catch(Exception ignored){}
     }
     private void savePref(SharedPreferences.Editor settings, Preference pref, String defaultVal, String prefTag){
-        pref.setSummary("Trigger: " + defaultVal);
+        pref.setSummary(getString(R.string.trigger_value) + defaultVal);
         settings.putString(prefTag, defaultVal).apply();
     }
     private void actionSharedPref(){
@@ -537,11 +540,11 @@ public class SettingsFragment extends PreferenceFragment {
         new android.support.v7.app.AlertDialog.Builder(getActivity())
                 .setMessage("Your GCM token:\n" + (currToken != null ? currToken : "No saved GCM token"))
                 .setCancelable(false)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                .setPositiveButton(getString(R.string.OK), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.dismiss();
                     }
-                }).setNegativeButton("Copy", new DialogInterface.OnClickListener() {
+                }).setNegativeButton(getString(R.string.copy), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 if(currToken != null) {
                     ClipboardManager clipboard = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);

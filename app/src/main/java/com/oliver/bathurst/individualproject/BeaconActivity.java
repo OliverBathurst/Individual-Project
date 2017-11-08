@@ -47,7 +47,7 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_beacon);
-        setTitle("Beacons");
+        setTitle(getString(R.string.beacons_activity_header));
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         devices = (ListView) findViewById(R.id.devices);
@@ -191,7 +191,7 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
                         Snackbar.make(findViewById(R.id.drawer_layout), "Cannot find device at index: " + selectedIndex, Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                     }
                 }
-            }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            }).setNegativeButton(R.string.cancel_dialog, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
                     dialog.dismiss();
                 }
@@ -220,7 +220,7 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
                                 Snackbar.make(findViewById(R.id.drawer_layout), "Cannot find device at index: " + selectedIndex, Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                             }
                         }
-                    }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    }).setNegativeButton(R.string.cancel_dialog, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int whichButton) {
                             dialog.dismiss();
                         }
@@ -248,7 +248,7 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
                                 } else if (selected.contains(indexSelected)) {
                                     selected.remove(indexSelected);
                                 }}
-                        }).setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                        }).setPositiveButton(R.string.del, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int id) {
                                 Toast.makeText(getApplicationContext(), "Deleting: " + selected.size() + " beacon(s)", Toast.LENGTH_SHORT).show();
@@ -259,7 +259,7 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
                                 }
                                 PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("BeaconKeys", new Gson().toJson(bluetoothDevices)).apply();
                             }
-                        }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        }).setNegativeButton(R.string.cancel_dialog, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int id) {
                                 dialog.dismiss();
@@ -301,7 +301,7 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
                 }
             }
         });
-        builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(R.string.cancel_dialog, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
@@ -320,7 +320,7 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
                     Snackbar.make(findViewById(R.id.drawer_layout), "Deleted All", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                 }
             });
-            builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+            builder.setNegativeButton(R.string.cancel_dialog, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     dialog.dismiss();

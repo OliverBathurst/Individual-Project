@@ -118,7 +118,7 @@ class EmailReceiver {
             @Override
             protected Void doInBackground(Void... voids) {
                 Looper.prepare();
-                new GMailSender(user,pass,c).sendMail(user, "Beacon Update", new NearbyBeacons(c).run() , sender);
+                new GMailSender(user,pass,c).sendMail(user, c.getString(R.string.beacon_update_title), new NearbyBeacons(c).run() , sender);
                 Looper.loop();
                 return null;
             }
@@ -132,7 +132,7 @@ class EmailReceiver {
             @Override
             protected Void doInBackground(Void... voids) {
                 Looper.prepare();
-                g.sendMail(user, "Location Update", g.getEmailString(), sender);
+                g.sendMail(user, c.getString(R.string.location_update_title), g.getEmailString(), sender);
                 Looper.loop();
                 return null;
             }

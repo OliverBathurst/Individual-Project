@@ -21,11 +21,16 @@ class GCMHandler {
     void examine(){
         SharedPreferences shared = PreferenceManager.getDefaultSharedPreferences(context);
         String lock = shared.getString("lock_gcm", null);
+        String ring = shared.getString("gcm_ring", null);
+        String ringDur = shared.getString("ring_duration", null);
+        String ringtone = shared.getString("ringtone_select", null);
+        int ringVol = shared.getInt("seek_bar_volume", 90);
 
-
-        ///TEST
         if(lock != null && toExamine.equals(lock)) {
             new PolicyManager(context).lockPhone();
+        }
+        if(ring != null && toExamine.equals(ring)) {
+            new Alarm(context,ringVol,ringDur,ringtone).ring();
         }
     }
 }

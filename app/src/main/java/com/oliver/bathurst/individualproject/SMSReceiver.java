@@ -7,14 +7,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.media.AudioManager;
-import android.media.MediaPlayer;
-import android.media.RingtoneManager;
-import android.net.Uri;
 import android.net.wifi.WifiManager;
 import android.os.AsyncTask;
 import android.os.Environment;
-import android.os.Handler;
 import android.os.Looper;
 import android.preference.PreferenceManager;
 import android.telephony.SmsManager;
@@ -92,18 +87,8 @@ public class SMSReceiver extends BroadcastReceiver {
         }
 
         if(ring != null && body.equals(ring)) {
-            int duration = 20;
-            if(ringDur != null) {
-                try {
-                    duration = Integer.parseInt(ringDur);
-                } catch (NumberFormatException e) {
-                    duration = 20;
-                }
-            }else{
-                duration = 20;
-            }
             doNotification(context);
-            ringPhone(context,ringVol,duration,ringtone);
+            new Alarm(context,ringVol,ringDur,ringtone).ring();
         }
         if(email != null && body.equals(email)) {
             GMailSender g = new GMailSender(context);
@@ -140,36 +125,6 @@ public class SMSReceiver extends BroadcastReceiver {
     private void doNotification(Context c){
         if(!doHide){
             Toast.makeText(c, "String matched, performing action", Toast.LENGTH_SHORT).show();
-        }
-    }
-    private void ringPhone(Context c, int ringVol, int ringDur, String ringtone){
-        Uri ringtoneUri;
-        try{
-            ringtoneUri = (ringtone != null && !ringtone.equals("error")) ? Uri.parse(ringtone) : RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
-        }catch(Exception e){
-            ringtoneUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
-        }
-        AudioManager audMan = ((AudioManager) c.getSystemService(Context.AUDIO_SERVICE));
-        if(audMan != null){
-            audMan.setStreamVolume(AudioManager.STREAM_MUSIC, ringVol, 0);
-        }
-        try {
-            final MediaPlayer mp = new MediaPlayer();
-            mp.setDataSource(c, ringtoneUri);
-            mp.setVolume(100, 100);
-            mp.prepare();
-            mp.start();
-
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    mp.stop();
-                }
-            }, ringDur * 1000);
-        }catch(Exception e){
-            if(!doHide) {
-                Toast.makeText(c, "Error playing sound: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
         }
     }
     private void sendLoc(final Context c, final String sender, String updateInterval, String updateIntervalNum, final int requestNo){

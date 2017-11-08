@@ -33,7 +33,9 @@ import com.google.android.gms.maps.GoogleMap;
 @SuppressWarnings("DefaultFileTemplate")
 public class LocationService extends Service implements LocationListener {
     private static final long MIN_DISTANCE_CHANGE_FOR_UPDATES = 0, MIN_TIME_BW_UPDATES = 0;
-    private final Context c;
+    private Context c;
+
+    public LocationService(){}
 
     LocationService(Context context) {
         c = context;
@@ -55,7 +57,7 @@ public class LocationService extends Service implements LocationListener {
                 if (third != null) {
                     loc = third;
                 } else {
-                    loc = new Location("Device Location");
+                    loc = new Location(getString(R.string.default_null_location));
                 }
             }
         }
@@ -79,9 +81,9 @@ public class LocationService extends Service implements LocationListener {
     String batteryLife() {
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
             BatteryManager batMan = (BatteryManager) c.getSystemService(Context.BATTERY_SERVICE);
-            return batMan != null ? String.valueOf(batMan.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)) : "Battery manager null";
+            return batMan != null ? String.valueOf(batMan.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)) : getString(R.string.batt_manager_null);
         }else{
-            return "Build number low";
+            return getString(R.string.build_number_low);
         }
     }
     @SuppressLint({"HardwareIds", "MissingPermission"})
@@ -118,8 +120,7 @@ public class LocationService extends Service implements LocationListener {
                 }
             }catch(SecurityException ignored){}
         } else {
-            Toast.makeText(c, "Permission not granted, enable permissions and restart app or go to" +
-                    "'Permissions Checkup' on 'Device' tab", Toast.LENGTH_SHORT).show();
+            Toast.makeText(c, R.string.perform_permissions_checkup, Toast.LENGTH_SHORT).show();
         }
         return loc;
     }
@@ -134,8 +135,7 @@ public class LocationService extends Service implements LocationListener {
                 }
             }catch(SecurityException ignored){}
         } else {
-            Toast.makeText(c, "Permission not granted, enable permissions and restart app or go to" +
-                    "'Permissions Checkup' on 'Device' tab", Toast.LENGTH_SHORT).show();
+            Toast.makeText(c, R.string.perform_permissions_checkup, Toast.LENGTH_SHORT).show();
         }
         return loc;
     }
@@ -150,8 +150,7 @@ public class LocationService extends Service implements LocationListener {
                 }
             }catch(SecurityException ignored){}
         } else {
-            Toast.makeText(c, "Permission not granted, enable permissions and restart app or go to" +
-                    " 'Permissions Checkup' on 'Device' tab", Toast.LENGTH_SHORT).show();
+            Toast.makeText(c, R.string.perform_permissions_checkup, Toast.LENGTH_SHORT).show();
         }
         return loc;
     }
@@ -201,7 +200,7 @@ public class LocationService extends Service implements LocationListener {
                     break;
             }
         }catch(SecurityException e){
-            Toast.makeText(getApplicationContext(), "Security Exception: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), getString(R.string.sec_exception) + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
         return !result;
     }

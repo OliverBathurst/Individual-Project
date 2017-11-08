@@ -30,6 +30,7 @@ import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -72,7 +73,7 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
         if (scaleFactor != null && scaleFactor.trim().length() != 0) {
             try {
                 scaleFactorInt = Integer.parseInt(scaleFactor);
-                scaleText.setText(getString(R.string.scalenozero).concat(" " + String.valueOf(scaleFactorInt)));
+                scaleText.setText(getString(R.string.scalenozero).concat(getString(R.string.space) + String.valueOf(scaleFactorInt)));
             } catch (Exception e) {
                 scaleFactorInt = 1;
                 scaleText.setText(R.string.scalewithone);
@@ -91,7 +92,7 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
                         circle.remove();
                     }
                     circle = gMap.addCircle(new CircleOptions().strokeColor(Color.GREEN).fillColor(0x5500ff00).center(new LatLng(loc.getLatitude(), loc.getLongitude())).radius(mRadius * scaleFactorInt));
-                    ((TextView) mView.findViewById(R.id.radiusTextView)).setText(getString(R.string.radiuscolon).concat(" " + String.valueOf(mRadius * scaleFactorInt)));
+                    ((TextView) mView.findViewById(R.id.radiusTextView)).setText(getString(R.string.radiuscolon).concat(getString(R.string.space) + String.valueOf(mRadius * scaleFactorInt)));
                 } catch (Exception ignored) {}
             }
         });
@@ -151,7 +152,7 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
             String map = settings.getString("mapType", null);
             gMap.setMapType(map != null ? locService.getMapType(map) : GoogleMap.MAP_TYPE_NORMAL);
 
-            ((TextView) mView.findViewById(R.id.declare)).setText(getString(R.string.declaration).concat(" " + loc.getProvider()));
+            ((TextView) mView.findViewById(R.id.declare)).setText(getString(R.string.declaration).concat(getString(R.string.space) + loc.getProvider()));
 
             if (settings.getBoolean("show_margin", false)) {
                 if (circle_margin != null) {
@@ -160,11 +161,11 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
                 circle_margin = googleMap.addCircle(new CircleOptions().strokeColor(Color.RED)
                         .center(new LatLng(loc.getLatitude(), loc.getLongitude()))
                         .radius(loc.getAccuracy()));
-                marginOfError.setText(String.valueOf("Margin of error: " + loc.getAccuracy() + "m"));
+                marginOfError.setText(String.valueOf(getString(R.string.margin_of_error) + loc.getAccuracy() + getString(R.string.meters_unit)));
             }
             MapsInitializer.initialize(getContext());
             gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
-                    .title("Device Location: " + loc.getLatitude() + loc.getLongitude()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f));
+                    .title(getString(R.string.device_location) + loc.getLatitude() + loc.getLongitude() + getString(R.string.space) + new Date()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f));
             gMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(loc.getLatitude(), loc.getLongitude())).zoom(19).bearing(0).tilt(45).build()));
         } catch (Exception e) {
             Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();

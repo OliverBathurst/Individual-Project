@@ -85,7 +85,7 @@ class PermissionsManager {
             Toast.makeText(c, "All permissions granted.", Toast.LENGTH_SHORT).show();
             return true;
         }else{
-            Toast.makeText(c, "Not all permissions granted, perform a permissions checkup.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(c, R.string.perform_permissions_checkup, Toast.LENGTH_SHORT).show();
             return false;
         }
     }

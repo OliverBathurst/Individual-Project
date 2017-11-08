@@ -62,7 +62,7 @@ public class Reorder extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplication(), "Selected: " + order.get(position), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplication(), getString(R.string.selected) + order.get(position), Toast.LENGTH_SHORT).show();
                 selected = position;
             }
         });
@@ -86,10 +86,9 @@ public class Reorder extends AppCompatActivity {
                 }
             }
         });
-        new AlertDialog.Builder(this).setTitle("Warning")
-                .setMessage("No not edit these without good reason, this order has been " +
-                "specifically chosen for optimal accuracy")
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        new AlertDialog.Builder(this).setTitle(R.string.warning)
+                .setMessage(getString(R.string.locator_precedence_warning))
+                .setPositiveButton(getString(R.string.OK), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 dialog.dismiss();
             }

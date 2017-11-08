@@ -35,7 +35,7 @@ public class GeoFenceService extends IntentService {
 
             if(gmail.isEmailValid() && gmail.getReceiver() != null) {
                 gmail.setUserAndPass(gmail.getUserName().trim(), gmail.getPassword().trim());
-                gmail.sendMail(gmail.getUserName().trim(), "Geofence Breach", gmail.getEmailString(), gmail.getReceiver());
+                gmail.sendMail(gmail.getUserName().trim(), getString(R.string.geofence_breach_title), gmail.getEmailString(), gmail.getReceiver());
             }
         }
     }

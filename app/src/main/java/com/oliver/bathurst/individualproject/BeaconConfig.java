@@ -45,7 +45,7 @@ public class BeaconConfig extends AppCompatActivity {
         signal = (TextView) findViewById(R.id.signal);
         ((TextView) findViewById(R.id.beaconName)).setText(globalDeviceName);
 
-        Snackbar.make(findViewById(R.id.beaconContent), globalDeviceName + " Loaded", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+        Snackbar.make(findViewById(R.id.beaconContent), globalDeviceName + getString(R.string.loaded_bt_device), Snackbar.LENGTH_SHORT).setAction("Action", null).show();
         registerReceiver(receiver, new IntentFilter(BluetoothDevice.ACTION_FOUND));
         registerReceiver(receiver, new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED));
 
@@ -77,14 +77,14 @@ public class BeaconConfig extends AppCompatActivity {
                                 PreferenceManager.getDefaultSharedPreferences(getApplication()).edit().putFloat(globalDeviceName, (temp + (currentSignal / (toSave * 100))) / 2).apply();  //1 cm to dbm
                             }
                         }else{
-                            Snackbar.make(findViewById(R.id.beaconContent), "Division by zero", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+                            Snackbar.make(findViewById(R.id.beaconContent), R.string.div_by_0_error, Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                         }
                     }catch(Exception e){
-                        Snackbar.make(findViewById(R.id.beaconContent), "Failure to parse text", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+                        Snackbar.make(findViewById(R.id.beaconContent), R.string.failure_parsing, Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                         edit.setText("");
                     }
                 }else{
-                    Snackbar.make(findViewById(R.id.beaconContent), "No distance provided", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+                    Snackbar.make(findViewById(R.id.beaconContent), R.string.no_distance_found, Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                 }
             }
         });

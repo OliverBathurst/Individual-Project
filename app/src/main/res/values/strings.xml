@@ -32,19 +32,12 @@
     <string name="distance">Distance</string>
     <string name="saveAS">Save</string>
     <string name="calibrate">Calibrate</string>
-    <string name="to_calibrate_move_away_from_the_beacon_and_save_the_signal_strength_at_different_distances_the_more_readings_the_more_accurate_the_positioning_will_be">To calibrate, move away from the beacon and save the signal strength at different distances, the more readings, the more accurate the positioning will be.</string>
+    <string name="to_calibrate_move_away_from_the_beacon">To calibrate, move away from the beacon and save the signal strength at different distances, the more readings, the more accurate the positioning will be.</string>
     <string name="reset_beacon_calibration">Reset Beacon Calibration</string>
     <string name="vol">Please select volume: (</string>
     <string name="per">%)</string>
     <string name="plsselectpercent">Please select percentage: (</string>
-    <string name="per2">%)</string>
-    <string-array name="CMorM">
-        <item>CM</item>
-        <item>M</item>
-    </string-array>
     <string name="title_activity_sign_up">Sign Up</string>
-
-    <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign Up</string>
@@ -52,9 +45,7 @@
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
     <string name="admin_enable">Enable Administrator Access</string>
     <string name="prevent_app_info">For preventing app uninstalling, remote locking,wiping, and settings changes</string>
     <string name="admin_require">Requires Admin</string>
@@ -82,7 +73,7 @@
     <string name="speak_summary">speak: text to read here</string>
     <string name="lock_phone_admin">SMS To Remotely Lock Phone</string>
     <string name="sms_wipe_phone_admin">SMS To Wipe Phone (WARNING)</string>
-    <string name="email_to_send_to">Email To Send Updates To:</string>
+    <string name="email_to_send_to">Email To Send Updates To: </string>
     <string name="email_include_contacts">Include Contacts</string>
     <string name="include_contacts_summary">Include list of contacts as an attachment</string>
     <string name="email_include_call_log">Include Call Log</string>
@@ -111,13 +102,13 @@
     <string name="beacons_title">Beacons</string>
     <string name="relay_beacon_sms">Relay Beacon Info (SMS)</string>
     <string name="relay_beacon_email">Relay Beacon Info (Email)</string>
-    <string name="beacon_info">Info:</string>
+    <string name="beacon_info">Info: </string>
     <string name="beacon_info_summary">This is a slow operation</string>
     <string name="sign_up_account">Sign Up For An Account</string>
     <string name="sign_up_account_summary">Will automatically update the database with the device\'s location at a set interval. Use the web interface to retrieve the data.</string>
     <string name="show_warnings_toggle">Don\'t Show Warnings On Launch</string>
     <string name="hide_notifications">Hide Notifications</string>
-    <string name="second_phone">Secondary Phone Number (Optional):</string>
+    <string name="second_phone">Secondary Phone Number (Optional): </string>
     <string name="hide_app">Hide App From Drawer</string>
     <string name="hide_app_summary">WARNING: Requires SMS to unhide</string>
     <string name="sms_to_unhide">SMS Trigger To Unhide App</string>
@@ -129,20 +120,15 @@
     <string name="backup_shared_prefs">Backup Preferences</string>
     <string name="enable_loc_server">Enable Local Server</string>
     <string name="loc_server_summary">For testing purposes</string>
-    <string name="loc_server_title">Local Server</string>
-    <string name="backup_title">Backup</string>
-    <string name="gcm_trigger_title">GCM Triggers</string>
-    <string name="add_gcm_web_title">Add GCM Messaging/Web Interface</string>
+    <string name="add_gcm_web_title">GCM Messaging/Triggers</string>
     <string name="locator_precedence_title">Locator Precedence</string>
     <string name="misc_title">Misc</string>
     <string name="beacons_beta_title">Beacons (Beta)</string>
     <string name="geofencing_beta">Geofencing (Beta)</string>
     <string name="gmail_trigger_header">Gmail Triggers</string>
     <string name="gmail_sending_header">Gmail Account For Email Sending</string>
-    <string name="permissions_header">Permissions</string>
     <string name="email_text_header">Email and Text Settings</string>
     <string name="email_settings_header">Email Settings</string>
-    <string name="user_email_header">Email</string>
     <string name="admin_triggers_header">Admin Triggers</string>
     <string name="sms_trigger_header">SMS Triggers</string>
     <string name="battery_header">Battery Settings</string>
@@ -159,5 +145,50 @@
     <string name="screen_lock_recommend">A screen lock is recommended</string>
     <string name="manage_screen_lock">Manage Screen Lock</string>
     <string name="default_summary">default</string>
-
+    <string name="ringer_header">Ringer Settings</string>
+    <string name="current_value">Current: </string>
+    <string name="seconds">s</string>
+    <string name="trigger_value">Trigger: </string>
+    <string name="current_volume">Current volume: </string>
+    <string name="current_percentage">Current percentage: </string>
+    <string name="percentage_symbol">%</string>
+    <string name="admin_already_active">Admin already active</string>
+    <string name="my_website">https://oliverbathurst.github.io/web</string>
+    <string name="unflag_device">Device un-flagged</string>
+    <string name="default_ring_dur">Current: 20s (default)</string>
+    <string name="OK">OK</string>
+    <string name="my_name">Created by: Oliver Bathurst</string>
+    <string name="email_address">oliverbathurst12345@gmail.com</string>
+    <string name="cancel_dialog">Cancel</string>
+    <string name="beacons_activity_header">Beacons</string>
+    <string name="copy">Copy</string>
+    <string name="no_app_version_found">No version found</string>
+    <string name="submit_login">SUBMIT</string>
+    <string name="enter_password_prompt">Please enter your password:</string>
+    <string name="login_fail_message">Failure to login</string>
+    <string name="show_password_hint">Password hint: </string>
+    <string name="failure_parsing">Failure to parse text</string>
+    <string name="loaded_bt_device">Loaded</string>
+    <string name="div_by_0_error">Division by zero</string>
+    <string name="no_distance_found">No distance provided</string>
+    <string name="beacon_update_title">Beacon Update</string>
+    <string name="location_update_title">Location Update</string>
+    <string name="geofence_breach_title">Geofence Breach</string>
+    <string name="margin_of_error">Margin of error: </string>
+    <string name="device_location">Device Location: </string>
+    <string name="meters_unit">m</string>
+    <string name="perform_permissions_checkup">Not all permissions granted, perform a permissions checkup.</string>
+    <string name="locator_precedence_warning">No not edit these without good reason, this order has been specifically chosen for optimal accuracy</string>
+    <string name="warning">Warning</string>
+    <string name="selected">Selected: </string>
+    <string name="sec_exception">Security Exception:</string>
+    <string name="default_null_location">Device Location</string>
+    <string name="del">Delete</string>
+    <string name="space"> </string>
+    <string name="batt_manager_null">Battery manager is null</string>
+    <string name="build_number_low">Build number low</string>
+    <string-array name="CMorM">
+        <item>CM</item>
+        <item>M</item>
+    </string-array>
 </resources>
