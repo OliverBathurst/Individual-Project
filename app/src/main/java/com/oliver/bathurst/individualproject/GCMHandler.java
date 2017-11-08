@@ -1,6 +1,8 @@
 package com.oliver.bathurst.individualproject;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 /**
  * Created by Oliver on 06/11/2017.
@@ -17,9 +19,13 @@ class GCMHandler {
     }
 
     void examine(){
-        ///TEST
-        if(toExamine.contains("testing")) {
+        SharedPreferences shared = PreferenceManager.getDefaultSharedPreferences(context);
+        String lock = shared.getString("lock_gcm", null);
 
+
+        ///TEST
+        if(lock != null && toExamine.equals(lock)) {
+            new PolicyManager(context).lockPhone();
         }
     }
 }

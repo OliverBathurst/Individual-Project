@@ -5,35 +5,35 @@
         android:layout_height="match_parent">
 
     <PreferenceCategory
-        android:title="Device">
+        android:title="@string/device_header">
         <Preference
             android:key="grant_device_admin"
-            android:title="Enable Administrator Access"
+            android:title="@string/admin_enable"
             android:icon="@drawable/ic_phone_android_black_24dp"
-            android:summary="For preventing app uninstalling, remote locking,wiping, and settings changes"
+            android:summary="@string/prevent_app_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <CheckBoxPreference
             android:key="prevent_uninstall"
-            android:title="Prevent Uninstall"
-            android:summary="Requires Admin"
+            android:title="@string/prevent_uninstallation"
+            android:summary="@string/admin_require"
             android:icon="@drawable/ic_lock_black_24dp" />
         <Preference
             android:key="un-stolen"
             android:selectable="true"
-            android:title="Un-Flag Device"
+            android:title="@string/unflag"
             android:icon="@drawable/ic_android_black_24dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditTextPreference
             android:key="app_pass"
             android:icon="@drawable/ic_lock_black_24dp"
-            android:title="Set App Password"
+            android:title="@string/set_app_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditTextPreference
             android:key="app_pass_hint"
-            android:title="Set Password Hint"
+            android:title="@string/set_password_hint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </PreferenceCategory>
@@ -43,10 +43,10 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="SIM Settings">
+        android:title="@string/sim_header">
     <CheckBoxPreference
         android:key="check_sim_preference"
-        android:title="Monitor SIM Card"
+        android:title="@string/monitor_SIM"
         android:icon="@drawable/ic_sim_card_black_24dp"
         android:selectable="true"
         android:layout_width="wrap_content"
@@ -54,7 +54,7 @@
     <ListPreference
         android:key="sim_change_action"
         android:icon="@drawable/ic_view_list_black_24dp"
-        android:title="SIM Change Action"
+        android:title="@string/sim_change_action"
         android:entries="@array/sim_action"
         android:entryValues="@array/sim_action_values"
         android:selectable="true"
@@ -67,11 +67,11 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="Google Maps Settings">
+        android:title="@string/gmaps_settings">
         <ListPreference
             android:key="mapType"
             android:icon="@drawable/ic_map_black_24dp"
-            android:title="Map Type"
+            android:title="@string/map_type"
             android:entries="@array/map_type_names_array"
             android:entryValues="@array/map_type_values_array"
             android:selectable="true"
@@ -80,7 +80,7 @@
         <CheckBoxPreference
             android:key="show_margin"
             android:icon="@drawable/ic_open_with_black_24dp"
-            android:title="Show Margin Of Error"
+            android:title="@string/show_margin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </PreferenceCategory>
@@ -90,16 +90,16 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="Battery Settings">
+        android:title="@string/battery_header">
         <CheckBoxPreference
             android:key="battery_flare"
             android:icon="@drawable/ic_battery_20_black_24dp"
-            android:title="Send Email When Battery Is Low"
+            android:title="@string/send_email_battery_low"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Preference
             android:key="battery_percent"
-            android:title="Battery %"
+            android:title="@string/battery_percent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </PreferenceCategory>
@@ -109,27 +109,27 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="SMS Triggers">
+        android:title="@string/sms_trigger_header">
         <CheckBoxPreference
             android:key="enable_triggers"
-            android:title="Enable SMS Listening"
+            android:title="@string/enable_sms_listen"
             android:defaultValue="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditTextPreference
             android:key="sms_ring"
             android:icon="@drawable/ic_phone_in_talk_black_24dp"
-            android:title="To Play Ringtone"
+            android:title="@string/play_ring"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditTextPreference
             android:key="ring_duration"
-            android:title="Ringtone Duration (Seconds)"
+            android:title="@string/ring_duration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <ListPreference
             android:key="ringtone_select"
-            android:title="Ringtone"
+            android:title="@string/ringtone"
             android:selectable="true"
             android:entries="@array/no_ringtone_found"
             android:entryValues="@array/no_ringtone_found_values"
@@ -137,45 +137,45 @@
             android:layout_height="wrap_content" />
         <Preference
             android:key="sms_ringtone_volume"
-            android:title="Volume %"
+            android:title="@string/volume_percentage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditTextPreference
             android:key="sms_relay_email"
             android:icon="@drawable/ic_email_black_24dp"
-            android:title="To Relay Position via Email"
+            android:title="@string/relay_position_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditTextPreference
             android:key="sms_relay_text"
             android:icon="@drawable/ic_textsms_black_24dp"
-            android:title="To Relay Position via Text"
+            android:title="@string/relay_position_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditTextPreference
             android:key="sms_loc_services"
             android:icon="@drawable/ic_textsms_black_24dp"
-            android:title="To Remotely Enable WiFi"
+            android:title="@string/remote_enable_wifi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditTextPreference
             android:key="sms_stolen"
             android:icon="@drawable/ic_android_black_24dp"
-            android:title="To Flag Device As Lost"
+            android:title="@string/flag_device_lost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <EditTextPreference
             android:key="wipe_sdcard"
             android:icon="@drawable/ic_warning_black_24dp"
-            android:title="To Remotely Wipe SD Card"
+            android:title="@string/remote_wipe_sd_sms"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Preference
             android:key="txt_to_speech_sms"
             android:selectable="false"
-            android:title="To Speak (Text To Speech)"
-            android:summary="speak: text to read here"
+            android:title="@string/to_speak"
+            android:summary="@string/speak_summary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </PreferenceCategory>
@@ -185,18 +185,18 @@
         </PreferenceCategory>
 
         <PreferenceCategory
-            android:title="Admin Triggers">
+            android:title="@string/admin_triggers_header">
         </PreferenceCategory>
         <EditTextPreference
             android:key="sms_remote_lock"
             android:icon="@drawable/ic_textsms_black_24dp"
-            android:title="SMS To Remotely Lock Phone"
+            android:title="@string/lock_phone_admin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditTextPreference
             android:key="sms_wipe"
             android:icon="@drawable/ic_textsms_black_24dp"
-            android:title="SMS To Wipe Phone (WARNING)"
+            android:title="@string/sms_wipe_phone_admin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -205,11 +205,11 @@
         </PreferenceCategory>
 
         <PreferenceCategory
-            android:title="Email">
+            android:title="@string/user_email_header">
         <EditTextPreference
             android:key="email_string"
             android:icon="@drawable/ic_email_black_24dp"
-            android:title="Email To Send Updates To:"
+            android:title="@string/email_to_send_to"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         </PreferenceCategory>
@@ -219,17 +219,17 @@
         </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="Email Settings">
+        android:title="@string/email_settings_header">
         <CheckBoxPreference
             android:key="include_contacts"
-            android:title="Include Contacts"
-            android:summary="Include list of contacts as an attachment"
+            android:title="@string/email_include_contacts"
+            android:summary="@string/include_contacts_summary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <CheckBoxPreference
             android:key="include_calllog"
-            android:title="Include Call Log"
-            android:summary="Include list of calls as an attachment"
+            android:title="@string/email_include_call_log"
+            android:summary="@string/include_call_log_summary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </PreferenceCategory>
@@ -239,7 +239,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="Email and Text Settings">
+        android:title="@string/email_text_header">
     <ListPreference
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -247,8 +247,8 @@
         android:entryValues="@array/update_interval_values"
         android:icon="@drawable/ic_timer_black_24dp"
         android:key="update_interval"
-        android:summary="Interval between position updates after a 'relay position' is triggered"
-        android:title="Position Update Interval" />
+        android:summary="@string/interval_updates_summary"
+        android:title="@string/position_update_interval" />
     <ListPreference
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -256,8 +256,8 @@
         android:entryValues="@array/no_updates_values"
         android:icon="@drawable/ic_format_list_numbered_black_24dp"
         android:key="update_interval_number"
-        android:summary="Number of position updates after a 'relay position' is triggered"
-        android:title="Number Of Position Updates" />
+        android:summary="@string/number_position_updates_summary"
+        android:title="@string/number_position_updates" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -265,11 +265,11 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="Permissions">
+        android:title="@string/permissions_header">
         <Preference
             android:key="check_perm"
             android:icon="@drawable/ic_account_circle_black_24dp"
-            android:title="Check Permissions"
+            android:title="@string/check_permissions_title"
             android:enabled="true"
             android:selectable="true"
             android:layout_width="wrap_content"
@@ -281,17 +281,11 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="Gmail Triggering (Beta)">
-    <CheckBoxPreference
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:icon="@drawable/ic_email_black_24dp"
-        android:key="sms_by_email"
-        android:summary="Will monitor a Gmail inbox for unread emails and scan their subject lines for triggers (Scanning is performed on a battery level change)."
-        android:title="Allow Triggers via Gmail" />
+        android:title="@string/gmail_sending_header">
+
     <EditTextPreference
         android:key="gmail_username"
-        android:title="Gmail Username"
+        android:title="@string/gmail_username_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
         <EditTextPreference
@@ -299,7 +293,7 @@
             android:layout_height="wrap_content"
             android:key="gmail_password"
             android:inputType="textPassword"
-            android:title="Gmail Password" />
+            android:title="@string/gmail_password_title" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -307,52 +301,59 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="Gmail Triggers">
+        android:title="@string/gmail_trigger_header">
+        <CheckBoxPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/ic_email_black_24dp"
+            android:key="sms_by_email"
+            android:summary="@string/gmail_trigger_summary"
+            android:title="@string/triggers_gmail_title" />
     <EditTextPreference
         android:key="gmail_remote_lock"
-        android:title="Trigger To Remotely Lock Phone"
+        android:title="@string/remote_lock_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <EditTextPreference
         android:key="gmail_loc"
-        android:title="Trigger To Relay Position"
+        android:title="@string/relay_position_gmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <EditTextPreference
         android:key="email_stolen"
         android:icon="@drawable/ic_android_black_24dp"
-        android:title="To Flag Device As Lost"
+        android:title="@string/flag_device_gmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <EditTextPreference
         android:key="gmail_wipe"
         android:icon="@drawable/ic_warning_black_24dp"
-        android:title="Trigger To Wipe Phone (WARNING)"
+        android:title="@string/wipe_phone_gmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <EditTextPreference
         android:key="wipe_sdcard_gmail"
         android:icon="@drawable/ic_warning_black_24dp"
-        android:title="Trigger To Wipe SD Card (WARNING)"
+        android:title="@string/wipe_SD_gmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <CheckBoxPreference
         android:key="delete_after_trigger"
         android:icon="@drawable/ic_delete_black_24dp"
-        android:title="Delete Email Afterwards"
+        android:title="@string/delete_email_optional"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <Preference
         android:key="txt_to_speech_gmail"
         android:selectable="false"
-        android:title="To Speak (Text To Speech)"
-        android:summary="speak: text to read here"
+        android:title="@string/txt_to_speech_gmail_title"
+        android:summary="@string/txt_to_speech_gmail_summary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <Preference
         android:key="general_info"
         android:icon="@drawable/ic_info_black_24dp"
-        android:title="Info"
+        android:title="@string/info_gmail_triggering"
         android:selectable="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -363,23 +364,23 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="Geofencing (Beta)">
+        android:title="@string/geofencing_beta">
         <CheckBoxPreference
             android:key="geo_fence_enable_or_not"
             android:icon="@drawable/ic_location_searching_black_24dp"
-            android:title="Toggle Geofence"
+            android:title="@string/toggle_geofence"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Preference
             android:key="geo_fence"
             android:icon="@drawable/ic_location_searching_black_24dp"
-            android:title="Geofence Map"
+            android:title="@string/geo_map"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditTextPreference
             android:key="geo_fence_scale"
             android:icon="@drawable/ic_location_searching_black_24dp"
-            android:title="Geofencing Scale"
+            android:title="@string/geo_scale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </PreferenceCategory>
@@ -389,26 +390,26 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="Beacons (Beta)">
+        android:title="@string/beacons_beta_title">
         <Preference
             android:key="beacon"
             android:icon="@drawable/ic_brightness_1_black_24dp"
-            android:title="Beacons"
+            android:title="@string/beacons_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditTextPreference
             android:key="sms_relay_beacon"
-            android:title="Relay Beacon Info (SMS)"
+            android:title="@string/relay_beacon_sms"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditTextPreference
             android:key="email_relay_beacon"
-            android:title="Relay Beacon Info (Email)"
+            android:title="@string/relay_beacon_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Preference
-            android:title="Info:"
-            android:summary="This is a slow operation"
+            android:title="@string/beacon_info"
+            android:summary="@string/beacon_info_summary"
             android:selectable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -419,11 +420,18 @@
     </PreferenceCategory>
 
         <PreferenceCategory
-            android:title="Misc">
+            android:title="@string/misc_title">
+            <Preference
+                android:key="sign_up"
+                android:icon="@drawable/ic_account_circle_black_24dp"
+                android:title="@string/sign_up_account"
+                android:summary="@string/sign_up_account_summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
             <CheckBoxPreference
                 android:key="prompt_gps_on_boot"
                 android:icon="@drawable/ic_warning_black_24dp"
-                android:title="Don't Show Warnings On Launch"
+                android:title="@string/show_warnings_toggle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <CheckBoxPreference
@@ -432,22 +440,22 @@
                 android:icon="@drawable/ic_do_not_disturb_on_black_24dp"
                 android:defaultValue="true"
                 android:key="hide_sms"
-                android:title="Hide Notifications" />
+                android:title="@string/hide_notifications" />
             <EditTextPreference
                 android:key="secondary_phone"
                 android:icon="@drawable/ic_phone_android_black_24dp"
-                android:title="Secondary Phone Number (Optional):"
+                android:title="@string/second_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <CheckBoxPreference
                 android:key="hide_app"
-                android:title="Hide App From Drawer"
-                android:summary="WARNING: Requires SMS to unhide"
+                android:title="@string/hide_app"
+                android:summary="@string/hide_app_summary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <EditTextPreference
                 android:key="sms_hide_app"
-                android:title="SMS Trigger To Unhide App"
+                android:title="@string/sms_to_unhide"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </PreferenceCategory>
@@ -457,11 +465,11 @@
         </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="Locator Precedence">
+        android:title="@string/locator_precedence_title">
         <Preference
             android:key="sort_loc"
             android:icon="@drawable/ic_format_list_numbered_black_24dp"
-            android:title="Sort Location Methods"
+            android:title="@string/sort_loc_methods"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </PreferenceCategory>
@@ -471,29 +479,23 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="Add GCM Messaging/Web Interface">
-        <Preference
-            android:key="sign_up"
-            android:icon="@drawable/ic_account_circle_black_24dp"
-            android:title="Sign Up For Account"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        android:title="@string/add_gcm_web_title">
         <Preference
             android:key="open_interface"
             android:icon="@drawable/ic_web_black_24dp"
-            android:title="Open Web Interface"
+            android:title="@string/open_interface"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Preference
             android:key="register"
             android:icon="@drawable/ic_add_black_24dp"
-            android:title="Register GCM Token"
+            android:title="@string/register_gcm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Preference
             android:key="get_token"
             android:icon="@drawable/ic_code_black_24dp"
-            android:title="Get Current GCM Token"
+            android:title="@string/get_gcm_token"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </PreferenceCategory>
@@ -503,11 +505,24 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="Backup">
+        android:title="@string/gcm_trigger_title">
+        <EditTextPreference
+            android:key="lock_gcm"
+            android:title="@string/lock_phone_gcm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout="@layout/divider_preference">
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/backup_title">
         <Preference
             android:key="backup_shared_pref"
             android:icon="@drawable/ic_settings_backup_restore_black_24dp"
-            android:title="Backup Preferences"
+            android:title="@string/backup_shared_prefs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </PreferenceCategory>
@@ -517,11 +532,12 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="Local Server">
+        android:title="@string/loc_server_title">
         <SwitchPreference
             android:key="local_server"
             android:icon="@drawable/ic_cloud_upload_black_24dp"
-            android:title="Enable Local Server"
+            android:title="@string/enable_loc_server"
+            android:summary="@string/loc_server_summary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </PreferenceCategory>

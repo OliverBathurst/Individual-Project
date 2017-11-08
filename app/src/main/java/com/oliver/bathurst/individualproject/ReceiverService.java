@@ -14,9 +14,11 @@ public class ReceiverService extends GcmListenerService {
     public void onMessageReceived(String from, Bundle data) {
         String isValid = data.getString("validator");
 
-        if(isValid !=null && isValid.equals(getString(R.string.API_GCM))){
-            System.out.println(data.getString("message"));
-            // new GCMHandler(data.toString(), this).examine();
+        if(isValid != null && isValid.equals(getString(R.string.API_GCM))){
+            String isNull = data.getString("message");
+            if(isNull != null){
+                new GCMHandler(isNull, this).examine();
+            }
         }
     }
 }

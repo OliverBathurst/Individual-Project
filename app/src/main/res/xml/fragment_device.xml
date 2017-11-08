@@ -7,7 +7,7 @@
         android:title="@string/app_name">
         <ListPreference
             android:key="projectVersion"
-            android:summary="default"
+            android:summary="@string/default_summary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:selectable="false"/>
@@ -18,10 +18,10 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="Android Information">
+        android:title="@string/android_info">
         <ListPreference
             android:key="androidInfo"
-            android:summary="default"
+            android:summary="@string/default_summary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:selectable="false"/>
@@ -32,10 +32,10 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="Device Information">
+        android:title="@string/device_info">
         <Preference
             android:key="deviceInfo"
-            android:summary="default"
+            android:summary="@string/default_summary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:selectable= "false"/>
@@ -46,10 +46,10 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="Cell Information">
+        android:title="@string/cell_info">
         <Preference
             android:key="cellInfo"
-            android:summary="default"
+            android:summary="@string/default_summary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:selectable= "false"/>
@@ -60,11 +60,11 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-            android:title="Screen Lock Settings">
+            android:title="@string/screen_lock_settings">
             <Preference
-                android:title="Manage Screen Lock"
+                android:title="@string/manage_screen_lock"
                 android:key="screen_lock_settings"
-                android:summary="A screen lock is recommended"
+                android:summary="@string/screen_lock_recommend"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:selectable= "true"/>
@@ -75,11 +75,11 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="Location Settings">
+        android:title="@string/location_settings">
         <Preference
-            android:title="Manage Location Settings"
+            android:title="@string/manage_location_settings"
             android:key="settings_location_settings"
-            android:summary="'High Accuracy' is recommended"
+            android:summary="@string/location_recommendation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:selectable= "true"/>

@@ -2,6 +2,7 @@
   <dictionary name="Oliver">
     <words>
       <w>apiid</w>
+      <w>assp</w>
       <w>baro</w>
       <w>batt</w>
       <w>bcom</w>
@@ -18,6 +19,7 @@
       <w>geofencing</w>
       <w>geomap</w>
       <w>gmail</w>
+      <w>gmaps</w>
       <w>iklruvqq</w>
       <w>imap</w>
       <w>imapexample</w>
@@ -27,6 +29,7 @@
       <w>inet</w>
       <w>jsse</w>
       <w>jtsri</w>
+      <w>kake</w>
       <w>kdngdn</w>
       <w>listview</w>
       <w>lockscreen</w>
@@ -52,10 +55,13 @@
       <w>smtp</w>
       <w>ssid</w>
       <w>starttls</w>
+      <w>susddib</w>
       <w>textsms</w>
       <w>uckw</w>
       <w>ueldavh</w>
+      <w>unflag</w>
       <w>unhide</w>
+      <w>uninstallation</w>
       <w>unreg</w>
       <w>unsecure</w>
       <w>usernames</w>

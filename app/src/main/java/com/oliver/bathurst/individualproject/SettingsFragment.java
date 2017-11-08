@@ -261,6 +261,13 @@ public class SettingsFragment extends PreferenceFragment {
             ((CheckBoxPreference) findPreference("enable_triggers")).setChecked(settingsView.getBoolean("enable_triggers", true));
 
 
+            EditTextPreference lockGCM = (EditTextPreference) findPreference("lock_gcm");
+            if (lockGCM.getText() != null && lockGCM.getText().trim().length() != 0) {
+                lockGCM.setSummary("Trigger: " + lockGCM.getText());
+            }else{
+                savePref(settings, lockGCM, "lock12345", "lock_gcm");
+            }
+
             EditTextPreference emailBeacon = (EditTextPreference) findPreference("email_relay_beacon");
             if (emailBeacon.getText() != null && emailBeacon.getText().trim().length() != 0) {
                 emailBeacon.setSummary("Trigger: " + emailBeacon.getText());
