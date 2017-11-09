@@ -58,12 +58,12 @@ public class Login extends AppCompatActivity{
         }
     }
     private void showDialog(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this).setTitle(R.string.enter_password_prompt);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this).setTitle(getString(R.string.enter_password_prompt));
         final EditText input = new EditText(this);
         input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
         builder.setView(input);
 
-        builder.setPositiveButton(R.string.submit_login, new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(getString(R.string.submit_login), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 if (input.getText().toString().trim().equals(pass)) {
@@ -71,14 +71,14 @@ public class Login extends AppCompatActivity{
                     finish();
                 } else {
                     input.getText().clear();
-                    Toast.makeText(getApplicationContext(), R.string.login_fail_message, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.login_fail_message), Toast.LENGTH_SHORT).show();
                     if (passHint != null && passHint.trim().length() != 0) {
                         Toast.makeText(getApplicationContext(), getString(R.string.show_password_hint) + passHint, Toast.LENGTH_LONG).show();
                     }
                 }
             }
         });
-        builder.setNegativeButton(R.string.cancel_dialog, new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(getString(R.string.cancel_dialog), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();

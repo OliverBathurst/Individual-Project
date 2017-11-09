@@ -16,7 +16,7 @@ public class DeviceAdmin extends DeviceAdminReceiver {
 
     @Override
     public void onDisabled(Context context, Intent intent) {
-        Toast.makeText(context, "Disabled Admin", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, context.getString(R.string.disabled_admin), Toast.LENGTH_SHORT).show();
         super.onDisabled(context, intent);
     }
 
@@ -26,14 +26,14 @@ public class DeviceAdmin extends DeviceAdminReceiver {
             if(devPol != null){
                 devPol.lockNow();
             }
-            return "WARNING: some features will be disabled, continue?";
+            return context.getString(R.string.some_features_disabled);
         }else{
-            return "Are you sure?";
+            return context.getString(R.string.confirm_disable);
         }
     }
     @Override
     public void onEnabled(Context context, Intent intent) {
         super.onEnabled(context, intent);
-        Toast.makeText(context, "Enabled Admin!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, context.getString(R.string.enabled_admin), Toast.LENGTH_SHORT).show();
     }
 }

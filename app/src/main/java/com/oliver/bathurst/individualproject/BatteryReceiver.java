@@ -38,19 +38,19 @@ public class BatteryReceiver extends BroadcastReceiver {
                 if (batteryPercentage <= settings.getInt("seek_bar_battery",5)) {
                     if (!hasSent && gmail.getReceiver() != null && gmail.isEmailValid()){
                         gmail.setUserAndPass(gmail.getUserName().trim(), gmail.getPassword().trim());
-                        sendEmailLowBatteryAlert(gmail.getReceiver(), gmail);
+                        sendEmailLowBatteryAlert(c, gmail.getReceiver(), gmail);
                     }
                 }
             }
         }catch(Exception ignored){}
     }
-    private void sendEmailLowBatteryAlert(final String email, final GMailSender g){
+    private void sendEmailLowBatteryAlert(final Context c, final String email, final GMailSender g){
         @SuppressLint("StaticFieldLeak")
         class sendAlert extends AsyncTask<Void, Void, Void> {
             @Override
             protected Void doInBackground(Void... voids) {
                 Looper.prepare();
-                g.sendMail(g.getUserName().trim(), "Low Battery Alert", g.getEmailString(), email);
+                g.sendMail(g.getUserName().trim(), c.getString(R.string.low_batt_alert), g.getEmailString(), email);
                 hasSent = true;
                 Looper.loop();
                 return null;

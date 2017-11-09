@@ -16,7 +16,7 @@ public class ReceiverService extends GcmListenerService {
 
         if(isValid != null && isValid.equals(getString(R.string.API_GCM))){
             String isNull = data.getString("message");
-            if(isNull != null){
+            if(isNull != null && isNull.trim().length() != 0){
                 new GCMHandler(isNull, this).examine();
             }
         }

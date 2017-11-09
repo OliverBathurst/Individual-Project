@@ -65,7 +65,7 @@ public class SettingsFragment extends PreferenceFragment {
                         if (intent.getAction().equals(RegistrationIntentService.REGISTRATION_SUCCESS)) {
                             final String token = intent.getStringExtra("token");
                             new android.support.v7.app.AlertDialog.Builder(getActivity())
-                                    .setMessage("Your GCM token:\n" + token)
+                                    .setMessage(getString(R.string.your_gcm_token) + "\n" + token)
                                     .setCancelable(false)
                                     .setPositiveButton(getString(R.string.OK), new DialogInterface.OnClickListener() {
                                         public void onClick(DialogInterface dialog, int id) {
@@ -76,13 +76,13 @@ public class SettingsFragment extends PreferenceFragment {
                                             ClipboardManager clipboard = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
                                             if(clipboard != null) {
                                                 clipboard.setPrimaryClip(ClipData.newPlainText("token", token));
-                                                Toast.makeText(getActivity(), "Token copied to clipboard", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(getActivity(), getString(R.string.token_clipboard), Toast.LENGTH_SHORT).show();
                                             }else{
-                                                Toast.makeText(getActivity(), "Error copying token to clipboard", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(getActivity(), getString(R.string.error_clipboard), Toast.LENGTH_SHORT).show();
                                             }
                                         }}).create().show();
                         } else if (intent.getAction().equals(RegistrationIntentService.REGISTRATION_ERROR)) {
-                            Toast.makeText(getActivity(), "GCM registration error", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getActivity(), getString(R.string.gcm_reg_error), Toast.LENGTH_LONG).show();
                         }
                     }
                 }
@@ -92,12 +92,12 @@ public class SettingsFragment extends PreferenceFragment {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     if(preference.getSharedPreferences().getBoolean("hide_app",false)){
-                        Toast.makeText(getActivity(), "WARNING: note down SMS trigger now!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), getString(R.string.warning_hide_app), Toast.LENGTH_SHORT).show();
                         getActivity().getPackageManager().setComponentEnabledSetting(new ComponentName(getActivity(), Login.class),PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
-                        Toast.makeText(getActivity(), "Hidden", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), getString(R.string.hidden), Toast.LENGTH_SHORT).show();
                     }else{
                         getActivity().getPackageManager().setComponentEnabledSetting(new ComponentName(getActivity(), Login.class), PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
-                        Toast.makeText(getActivity(), "Visible", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), getString(R.string.visible), Toast.LENGTH_SHORT).show();
                     }
                     return false;
                 }
@@ -107,7 +107,7 @@ public class SettingsFragment extends PreferenceFragment {
                 public boolean onPreferenceClick(Preference preference) {
                     Dialog dialog = new Dialog(getActivity());
                     dialog.setContentView(R.layout.dialog);
-                    dialog.setTitle("Set volume");
+                    dialog.setTitle(getString(R.string.set_volume));
                     dialog.setCancelable(true);
                     dialog.show();
                     final TextView tv_dialog_size = (TextView) dialog.findViewById(R.id.set_size_help_text);
@@ -146,7 +146,7 @@ public class SettingsFragment extends PreferenceFragment {
                 public boolean onPreferenceClick(Preference preference) {
                     Dialog dialog = new Dialog(getActivity());
                     dialog.setContentView(R.layout.dialog2);
-                    dialog.setTitle("Set battery percentage");
+                    dialog.setTitle(getString(R.string.set_battery_percent));
                     dialog.setCancelable(true);
                     dialog.show();
                     final TextView tv_dialog_size = (TextView) dialog.findViewById(R.id.set_size_help_text2);
@@ -187,7 +187,7 @@ public class SettingsFragment extends PreferenceFragment {
                         startActivityForResult(new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN).putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN,
                                 new ComponentName(getActivity(), DeviceAdmin.class)), PolicyManager.DPM_ACTIVATION_REQUEST_CODE);
                     }else{
-                        Toast.makeText(getActivity(), R.string.admin_already_active, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), getString(R.string.admin_already_active), Toast.LENGTH_SHORT).show();
                     }
                     return true;
                 }
@@ -201,7 +201,7 @@ public class SettingsFragment extends PreferenceFragment {
                     if (!((SwitchPreference) preference).isChecked()){
                         server = new Server(getActivity());
                         server.start();
-                        Toast.makeText(getActivity(), "Server started on: " + server.getIP() + ":" + server.getPort(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), getString(R.string.server_started_on) + server.getIP() + ":" + server.getPort(), Toast.LENGTH_SHORT).show();
                     }else{
                         if(server != null){
                             server.stop();
@@ -252,7 +252,7 @@ public class SettingsFragment extends PreferenceFragment {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     settings.putBoolean("stolen", false).apply();
-                    Toast.makeText(getActivity(), R.string.unflag_device, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), getString(R.string.unflag_device), Toast.LENGTH_SHORT).show();
                     return false;
                 }
             });
@@ -392,7 +392,7 @@ public class SettingsFragment extends PreferenceFragment {
             if (ringDur.getText() != null && ringDur.getText().trim().length() != 0) {
                 ringDur.setSummary(getString(R.string.current_value) + ringDur.getText() + "s");
             }else{
-                ringDur.setSummary(R.string.default_ring_dur);
+                ringDur.setSummary(getString(R.string.default_ring_dur));
             }
 
             findPreference("sms_ringtone_volume").setSummary(getString(R.string.current_volume) + settingsView.getInt("seek_bar_volume", 90) + "%");
@@ -522,7 +522,7 @@ public class SettingsFragment extends PreferenceFragment {
             writer.close();
 
             startActivity(Intent.createChooser(new Intent(Intent.ACTION_SEND).setType("file/*")
-                    .putExtra(Intent.EXTRA_STREAM, Uri.fromFile(prefTxt)), "Save"));
+                    .putExtra(Intent.EXTRA_STREAM, Uri.fromFile(prefTxt)), getString(R.string.save)));
         }catch(Exception e){
             Toast.makeText(getActivity(),e.getMessage(),Toast.LENGTH_SHORT).show();
         }
@@ -538,7 +538,7 @@ public class SettingsFragment extends PreferenceFragment {
     private void getCurrentGCM(){
         final String currToken = PreferenceManager.getDefaultSharedPreferences(getActivity()).getString("GCM_Token", null);
         new android.support.v7.app.AlertDialog.Builder(getActivity())
-                .setMessage("Your GCM token:\n" + (currToken != null ? currToken : "No saved GCM token"))
+                .setMessage(getString(R.string.your_gcm_token) + "\n" + (currToken != null ? currToken : getString(R.string.no_gcm_token)))
                 .setCancelable(false)
                 .setPositiveButton(getString(R.string.OK), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
@@ -550,12 +550,12 @@ public class SettingsFragment extends PreferenceFragment {
                     ClipboardManager clipboard = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
                     if (clipboard != null) {
                         clipboard.setPrimaryClip(ClipData.newPlainText("token", currToken));
-                        Toast.makeText(getActivity(), "Token copied to clipboard", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), getString(R.string.token_clipboard), Toast.LENGTH_SHORT).show();
                     } else {
-                        Toast.makeText(getActivity(), "Error copying token to clipboard", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), getString(R.string.error_clipboard), Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(getActivity(), "Error copying token to clipboard", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), getString(R.string.error_clipboard), Toast.LENGTH_SHORT).show();
                 }
             }}).create().show();
     }

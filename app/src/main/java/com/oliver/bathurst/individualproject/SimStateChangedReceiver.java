@@ -20,7 +20,7 @@ public class SimStateChangedReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        String state = intent.getExtras() != null ? intent.getExtras().getString(EXTRA_SIM_STATE) : "Cannot get SIM state";
+        String state = intent.getExtras() != null ? intent.getExtras().getString(EXTRA_SIM_STATE) : context.getString(R.string.no_sim_state);
 
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
         if(settings.getBoolean("check_sim_preference", false)){
@@ -32,30 +32,30 @@ public class SimStateChangedReceiver extends BroadcastReceiver {
                         sendSMS(context,state,settings.getString("secondary_phone",null));
                         break;
                     case "EMAIL":
-                        checkEmail(new GMailSender(context), state);
+                        checkEmail(new GMailSender(context), state, context);
                         break;
                     case "BOTH":
                         sendSMS(context,state,settings.getString("secondary_phone",null));
-                        checkEmail(new GMailSender(context), state);
+                        checkEmail(new GMailSender(context), state, context);
                         break;
                 }
             }
         }
     }
-    private void checkEmail(GMailSender gmail, String state){
+    private void checkEmail(GMailSender gmail, String state, Context c){
         if(gmail.isEmailValid()) {
             gmail.setUserAndPass(gmail.getUserName().trim(), gmail.getPassword().trim());
-            sendEmail(state, gmail.getReceiver(), gmail);
+            sendEmail(c, state, gmail.getReceiver(), gmail);
         }
     }
-    private void sendEmail(final String state, final String address, final GMailSender g){
+    private void sendEmail(final Context c, final String state, final String address, final GMailSender g){
         if(address != null){
             try {
                 @SuppressLint("StaticFieldLeak")
                 class sendEmail extends AsyncTask<Void, Void, Void> {
                     @Override
                     protected Void doInBackground(Void... voids) {
-                        g.sendMail(g.getUserName().trim(), "SIM Change Alert", (g.getEmailString()+ "\nSIM State: " + state), address);
+                        g.sendMail(g.getUserName().trim(), c.getString(R.string.sim_change_alert), (g.getEmailString()+ "\n" + c.getString(R.string.sim_state) + state), address);
                         return null;
                     }
                 }
@@ -66,7 +66,7 @@ public class SimStateChangedReceiver extends BroadcastReceiver {
     private void sendSMS(Context c, String state, String number){
         if(number != null && number.trim().length() != 0){
             try {
-                SmsManager.getDefault().sendTextMessage(number.trim(), null, (new SMSHelper(c).getBody()+ "\nSIM State: " + state), null, null);
+                SmsManager.getDefault().sendTextMessage(number.trim(), null, (new SMSHelper(c).getBody()+ "\n" + c.getString(R.string.sim_state) + state), null, null);
             }catch (Exception ignored){}
         }
     }

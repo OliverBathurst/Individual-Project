@@ -49,10 +49,10 @@ class NearbyBeacons {
                 while(!isFinished){}
                 return getSummary();
             }else{
-                return "No Beacons Found";
+                return context.getString(R.string.no_beacons_found);
             }
         }else{
-            return "Bluetooth not available";
+            return context.getString(R.string.bluetooth_not_available);
         }
     }
     private String getSummary(){
@@ -61,12 +61,12 @@ class NearbyBeacons {
         for(Pair<BluetoothDevice, Integer> p: finalList){
             Float temp = sp.getFloat(p.first.getName(), Integer.MAX_VALUE);
             if(temp != Integer.MAX_VALUE && temp != 0){ //default to max value for error checking
-                sb.append("Device: ").append(p.first.getName()).append("\n")
-                        .append("Distance m (est.): ")
-                        .append(p.second/temp).append(" cm").append("\n");
+                sb.append(context.getString(R.string.beacon_device)).append(p.first.getName()).append("\n")
+                        .append(context.getString(R.string.est_distance_m))
+                        .append(p.second/temp).append(context.getString(R.string.centimetres)).append("\n");
             }
         }
-        return sb.toString().trim().length() != 0 ? sb.toString().trim() : "No Beacons Found";
+        return sb.toString().trim().length() != 0 ? sb.toString().trim() : context.getString(R.string.no_beacons_found);
     }
     private void scan(){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {

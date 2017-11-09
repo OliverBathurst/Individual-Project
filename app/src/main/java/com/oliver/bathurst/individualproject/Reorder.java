@@ -55,8 +55,8 @@ public class Reorder extends AppCompatActivity {
         lv = (ListView) findViewById(R.id.list);
 
         final SharedPreferences settingsView = PreferenceManager.getDefaultSharedPreferences(this);
-        Collections.addAll(order, settingsView.getString("first", "GPS"), settingsView.getString("second", "Wi-Fi"),
-                    settingsView.getString("third", "Passive"));
+        Collections.addAll(order, settingsView.getString("first", getString(R.string.gps_value)), settingsView.getString("second", getString(R.string.wifi_value)),
+                    settingsView.getString("third", getString(R.string.passive_value)));
         lv.setAdapter(new ArrayAdapter(this, R.layout.list_view, R.id.listviewAdapt, order));
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -86,7 +86,7 @@ public class Reorder extends AppCompatActivity {
                 }
             }
         });
-        new AlertDialog.Builder(this).setTitle(R.string.warning)
+        new AlertDialog.Builder(this).setTitle(getString(R.string.warning))
                 .setMessage(getString(R.string.locator_precedence_warning))
                 .setPositiveButton(getString(R.string.OK), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {

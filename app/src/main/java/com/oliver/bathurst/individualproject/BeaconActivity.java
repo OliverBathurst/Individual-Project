@@ -61,7 +61,7 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
                     deviceList.get(position).getName().toString(); //make sure it's not null, try parsing name
                     addToList(deviceList.get(position));
                 }catch(Exception e){
-                    Snackbar.make(findViewById(R.id.drawer_layout), "Cannot add beacon", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+                    Snackbar.make(findViewById(R.id.drawer_layout), getString(R.string.cannot_add_beacon), Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                 }
             }
         });
@@ -81,24 +81,23 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
         if(blue != null) {
             if (!blue.isEnabled()) {
                 blue.enable();
-                Snackbar.make(findViewById(R.id.drawer_layout), "Turning Bluetooth on...", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+                Snackbar.make(findViewById(R.id.drawer_layout), getString(R.string.turning_bluetooth_on), Snackbar.LENGTH_SHORT).setAction("Action", null).show();
             }
-            Toast.makeText(this, "Scanning for beacons...", Toast.LENGTH_SHORT).show();
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 try{
                     registerReceiver(mReceiver, new IntentFilter(BluetoothDevice.ACTION_FOUND));
                     registerReceiver(mReceiver, new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED));
                     blue.startDiscovery();
-                    Toast.makeText(this, "Started discovery", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, getString(R.string.started_discovery), Toast.LENGTH_SHORT).show();
                 }catch(NullPointerException e){
-                    Toast.makeText(this, "Cannot scan: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, getString(R.string.cannot_scan) + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }else{
-                Toast.makeText(this, "Android version too low for BLE", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.android_too_low), Toast.LENGTH_SHORT).show();
             }
         }else{
-            Snackbar.make(findViewById(R.id.drawer_layout), "Bluetooth not available", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+            Snackbar.make(findViewById(R.id.drawer_layout), getString(R.string.bluetooth_not_available), Snackbar.LENGTH_SHORT).setAction("Action", null).show();
         }
     }
     protected void onResume(){
@@ -132,14 +131,14 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
                     StringBuilder UUID = new StringBuilder();
                     if (i.getUuids() != null && i.getUuids().length != 0) {
                         for (int ID = 0; ID < i.getUuids().length; ID++) {
-                            UUID.append("UUID ").append(ID).append(": ").append(i.getUuids()[ID]).append("\n");
+                            UUID.append(getString(R.string.uuid)).append(ID).append(": ").append(i.getUuids()[ID]).append("\n");
                         }
                     }
                     if (i.getType() == BluetoothDevice.DEVICE_TYPE_LE) {
-                        names.add("Alias: " + i.getName() + "  (LOW ENERGY)\nAddress: " + i.getAddress()
+                        names.add(getString(R.string.alias) + i.getName() + getString(R.string.low_energy) + "\n" + getString(R.string.address) + i.getAddress()
                                 + "\n" + UUID);
                     } else {
-                        names.add("Alias: " + i.getName() + "\nAddress: " + i.getAddress()
+                        names.add(getString(R.string.alias) + i.getName() + "\n" + getString(R.string.address) + i.getAddress()
                                 + "\n" + UUID);
                     }
                 }
@@ -178,26 +177,26 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
             for (BluetoothDevice bl : get) {
                 names.add(bl.getName());
             }
-            new AlertDialog.Builder(this).setTitle("Select a Beacon to Reset")
+            new AlertDialog.Builder(this).setTitle(getString(R.string.beacon_reset))
                     .setSingleChoiceItems(names.toArray(new CharSequence[names.size()]), 0, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             selectedIndex = which;
                         }
-                    }).setPositiveButton("Reset", new DialogInterface.OnClickListener() {
+                    }).setPositiveButton(getString(R.string.reset), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
                     try{
                         PreferenceManager.getDefaultSharedPreferences(getApplication()).edit().putFloat(get.get(selectedIndex).getName(), 1).apply();
                     }catch(Exception e){
-                        Snackbar.make(findViewById(R.id.drawer_layout), "Cannot find device at index: " + selectedIndex, Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+                        Snackbar.make(findViewById(R.id.drawer_layout), getString(R.string.cannot_find_at_index) + selectedIndex, Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                     }
                 }
-            }).setNegativeButton(R.string.cancel_dialog, new DialogInterface.OnClickListener() {
+            }).setNegativeButton(getString(R.string.cancel_dialog), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
                     dialog.dismiss();
                 }
             }).create().show();
         }else{
-            Snackbar.make(findViewById(R.id.drawer_layout), "No saved beacons", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+            Snackbar.make(findViewById(R.id.drawer_layout), getString(R.string.no_saved_beacons), Snackbar.LENGTH_SHORT).setAction("Action", null).show();
         }
     }
     private void calibrate(){
@@ -207,26 +206,26 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
             for (BluetoothDevice bl : get) {
                 names.add(bl.getName());
             }
-            new AlertDialog.Builder(this).setTitle("Select a Beacon to Calibrate")
+            new AlertDialog.Builder(this).setTitle(getString(R.string.select_beacon_calibrate))
                     .setSingleChoiceItems(names.toArray(new CharSequence[names.size()]), 0, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             selectedIndex = which;
                         }
-                    }).setPositiveButton("Calibrate", new DialogInterface.OnClickListener() {
+                    }).setPositiveButton(getString(R.string.calibrate), new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int whichButton) {
                             try{
                                 startActivity(new Intent(getBaseContext(), BeaconConfig.class).putExtra("BT_DEVICE", new Gson().toJson(get.get(selectedIndex))));
                             }catch(Exception e){
-                                Snackbar.make(findViewById(R.id.drawer_layout), "Cannot find device at index: " + selectedIndex, Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+                                Snackbar.make(findViewById(R.id.drawer_layout), getString(R.string.cannot_find_at_index) + selectedIndex, Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                             }
                         }
-                    }).setNegativeButton(R.string.cancel_dialog, new DialogInterface.OnClickListener() {
+                    }).setNegativeButton(getString(R.string.cancel_dialog), new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int whichButton) {
                             dialog.dismiss();
                         }
                     }).create().show();
         }else{
-            Snackbar.make(findViewById(R.id.drawer_layout), "No saved beacons", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+            Snackbar.make(findViewById(R.id.drawer_layout), getString(R.string.no_saved_beacons), Snackbar.LENGTH_SHORT).setAction("Action", null).show();
         }
     }
     private void editBeacons(){
@@ -239,7 +238,7 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
                 }
                 final ArrayList<Integer> selected = new ArrayList<>();
 
-                AlertDialog dialog = new AlertDialog.Builder(this).setTitle("Select Beacons to Delete")
+                AlertDialog dialog = new AlertDialog.Builder(this).setTitle(getString(R.string.select_beacons_delete))
                         .setMultiChoiceItems(names.toArray(new CharSequence[names.size()]), null, new DialogInterface.OnMultiChoiceClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int indexSelected, boolean isChecked) {
@@ -248,10 +247,10 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
                                 } else if (selected.contains(indexSelected)) {
                                     selected.remove(indexSelected);
                                 }}
-                        }).setPositiveButton(R.string.del, new DialogInterface.OnClickListener() {
+                        }).setPositiveButton(getString(R.string.del), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int id) {
-                                Toast.makeText(getApplicationContext(), "Deleting: " + selected.size() + " beacon(s)", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.deleting) + selected.size() + getString(R.string.beacons_question), Toast.LENGTH_SHORT).show();
                                 for (Integer index : selected) {
                                     try {
                                         bluetoothDevices.remove((int) index);
@@ -259,7 +258,7 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
                                 }
                                 PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("BeaconKeys", new Gson().toJson(bluetoothDevices)).apply();
                             }
-                        }).setNegativeButton(R.string.cancel_dialog, new DialogInterface.OnClickListener() {
+                        }).setNegativeButton(getString(R.string.cancel_dialog), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int id) {
                                 dialog.dismiss();
@@ -268,7 +267,7 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
                 dialog.show();
             } catch (Exception ignored) {}
         }else{
-            Snackbar.make(findViewById(R.id.drawer_layout), "No beacons found", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+            Snackbar.make(findViewById(R.id.drawer_layout), getString(R.string.no_saved_beacons), Snackbar.LENGTH_SHORT).setAction("Action", null).show();
         }
     }
     private ArrayList<BluetoothDevice> getBTArray(){
@@ -276,9 +275,9 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
                 new TypeToken<ArrayList<BluetoothDevice>>() {}.getType());
     }
     private void addToList(final BluetoothDevice bluetoothDevice) {
-        android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(this).setTitle("Add to beacons list?");
+        android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(this).setTitle(getString(R.string.add_to_list_question_mark));
 
-        builder.setPositiveButton("ADD BEACON", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(getString(R.string.add_beacon), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 try {
@@ -291,17 +290,17 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
                         if(!arrList.contains(bluetoothDevice)){
                             arrList.add(bluetoothDevice);
                             PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("BeaconKeys", new Gson().toJson(arrList)).apply();
-                            Snackbar.make(findViewById(R.id.drawer_layout), "Saved", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+                            Snackbar.make(findViewById(R.id.drawer_layout), getString(R.string.saved), Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                         }else{
-                            Snackbar.make(findViewById(R.id.drawer_layout), "Beacon already saved", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+                            Snackbar.make(findViewById(R.id.drawer_layout), getString(R.string.beacon_already_saved), Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                         }
                     }
                 }catch(Exception e){
-                    Snackbar.make(findViewById(R.id.drawer_layout), "Unknown error saving prefs", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+                    Snackbar.make(findViewById(R.id.drawer_layout), getString(R.string.unknown_error), Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                 }
             }
         });
-        builder.setNegativeButton(R.string.cancel_dialog, new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(getString(R.string.cancel_dialog), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
@@ -312,15 +311,15 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
     private void eraseBeacons(){
         if(getBTArray() != null && getBTArray().size() != 0) {
             android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(this)
-                    .setTitle("Are you sure you want to delete all " + getBTArray().size() + " beacon(s)?");
-            builder.setPositiveButton("DELETE ALL", new DialogInterface.OnClickListener() {
+                    .setTitle(getString(R.string.do_you_want_to_delete_all) + getBTArray().size() + getString(R.string.beacons_question_mark));
+            builder.setPositiveButton(getString(R.string.delete_all), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("BeaconKeys", new Gson().toJson(new ArrayList<BluetoothDevice>())).apply();
-                    Snackbar.make(findViewById(R.id.drawer_layout), "Deleted All", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+                    Snackbar.make(findViewById(R.id.drawer_layout), getString(R.string.deleted_all), Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                 }
             });
-            builder.setNegativeButton(R.string.cancel_dialog, new DialogInterface.OnClickListener() {
+            builder.setNegativeButton(getString(R.string.cancel_dialog), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     dialog.dismiss();
@@ -328,7 +327,7 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
             });
             builder.create().show();
         }else{
-            Snackbar.make(findViewById(R.id.drawer_layout), "No saved beacons", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+            Snackbar.make(findViewById(R.id.drawer_layout), getString(R.string.no_saved_beacons), Snackbar.LENGTH_SHORT).setAction("Action", null).show();
         }
     }
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {

@@ -34,21 +34,12 @@ public class SMSReceiver extends BroadcastReceiver {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
         doHide = settings.getBoolean("hide_sms", false);
         if(settings.getBoolean("enable_triggers", true)) {
-            if (!doHide) {
-                Toast.makeText(context, "Received", Toast.LENGTH_SHORT).show();
-            }
-            try {
-                if (intent.getExtras() != null) {
-                    Object[] smsExtra = (Object[]) intent.getExtras().get(SMS_EXTRA_NAME);
+            if (intent.getExtras() != null) {
+                Object[] smsExtra = (Object[]) intent.getExtras().get(SMS_EXTRA_NAME);
 
-                    for (int i = 0; i < (smsExtra != null ? smsExtra.length : 0); ++i) {
-                        SmsMessage sms = SmsMessage.createFromPdu((byte[]) smsExtra[i]);
-                        switchMessage(context, sms.getMessageBody().trim(), sms.getOriginatingAddress().trim());
-                    }
-                }
-            } catch (Exception e) {
-                if (!doHide) {
-                    Toast.makeText(context, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                for (int i = 0; i < (smsExtra != null ? smsExtra.length : 0); ++i) {
+                    SmsMessage sms = SmsMessage.createFromPdu((byte[]) smsExtra[i]);
+                    switchMessage(context, sms.getMessageBody().trim(), sms.getOriginatingAddress().trim());
                 }
             }
         }
@@ -124,7 +115,7 @@ public class SMSReceiver extends BroadcastReceiver {
     }
     private void doNotification(Context c){
         if(!doHide){
-            Toast.makeText(c, "String matched, performing action", Toast.LENGTH_SHORT).show();
+            Toast.makeText(c, c.getString(R.string.matched_trigger), Toast.LENGTH_SHORT).show();
         }
     }
     private void sendLoc(final Context c, final String sender, String updateInterval, String updateIntervalNum, final int requestNo){
@@ -181,7 +172,7 @@ public class SMSReceiver extends BroadcastReceiver {
                 GMailSender g = new GMailSender(c);
                 if(g.isEmailValid()) {
                     g.setUserAndPass(g.getUserName().trim(), g.getPassword().trim());
-                    g.sendMail(g.getUserName().trim(), "Location Alert", g.getEmailString()
+                    g.sendMail(g.getUserName().trim(), c.getString(R.string.location_update_title), g.getEmailString()
                             + " (" + (counter + 1) + "/" + num + ")", address);
                 }
                 Looper.loop();

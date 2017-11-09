@@ -25,15 +25,16 @@ class SMSHelper {
         LocationService locationService = new LocationService(c);
         Location newLocReturn = locationService.getLoc();
 
-        return "This is a location alert, SIM Change Alert, your device location is: " + newLocReturn.getLatitude()
+        return c.getString(R.string.sim_change_alert_subject_title) + newLocReturn.getLatitude()
                 + "," + newLocReturn.getLongitude()
-                + "\nGoogleMaps link: http://maps.google.com/?q=" + newLocReturn.getLatitude()
+                + "\n" + c.getString(R.string.gmaps_syntax) + newLocReturn.getLatitude()
                 + "," + newLocReturn.getLongitude()
-                + "\nTime Declared: " + DateFormat.getDateTimeInstance().format(new Date())
-                + "\nDeclared by: " + newLocReturn.getProvider() + " Accuracy: " + newLocReturn.getAccuracy()
-                + "\nBattery level: " + locationService.batteryLife()
-                + "\nIMEI: " + (telephonyManager != null ? telephonyManager.getDeviceId() : "null")
-                + "\nPhone number: " + (telephonyManager != null ? telephonyManager.getLine1Number() : "null")
-                + "\nSIM Serial: " + (telephonyManager != null ? telephonyManager.getSimSerialNumber() : "null");
+                + "\n" + c.getString(R.string.time_declared) + DateFormat.getDateTimeInstance().format(new Date())
+                + "\n" + c.getString(R.string.declared_by) + newLocReturn.getProvider()
+                + "\n" + c.getString(R.string.accuracy) + newLocReturn.getAccuracy()
+                + "\n" + c.getString(R.string.batt_level) + locationService.batteryLife()
+                + "\n" + c.getString(R.string.imei) + (telephonyManager != null ? telephonyManager.getDeviceId() : c.getString(R.string.null_value_string))
+                + "\n" + c.getString(R.string.phone_number) + (telephonyManager != null ? telephonyManager.getLine1Number() : c.getString(R.string.null_value_string))
+                + "\n" + c.getString(R.string.sim_serial) + (telephonyManager != null ? telephonyManager.getSimSerialNumber() : c.getString(R.string.null_value_string));
     }
 }

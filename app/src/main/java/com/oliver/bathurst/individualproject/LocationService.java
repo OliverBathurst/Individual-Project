@@ -45,15 +45,15 @@ public class LocationService extends Service implements LocationListener {
         final SharedPreferences settingsView = PreferenceManager.getDefaultSharedPreferences(c);
         Location loc;
 
-        Location first = switchPref(settingsView.getString("first", "GPS"));
+        Location first = switchPref(settingsView.getString("first", getString(R.string.gps_value)));
         if (first != null) {
             loc = first;
         } else {
-            Location second = switchPref(settingsView.getString("second", "Wi-Fi"));
+            Location second = switchPref(settingsView.getString("second", getString(R.string.wifi_value)));
             if (second != null) {
                 loc = second;
             } else {
-                Location third = switchPref(settingsView.getString("third", "Passive"));
+                Location third = switchPref(settingsView.getString("third", getString(R.string.passive_value)));
                 if (third != null) {
                     loc = third;
                 } else {
@@ -89,7 +89,7 @@ public class LocationService extends Service implements LocationListener {
     @SuppressLint({"HardwareIds", "MissingPermission"})
     String IMEI(){
         TelephonyManager telMan = (TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE);
-        return telMan != null ? telMan.getDeviceId() : "error";
+        return telMan != null ? telMan.getDeviceId() : getString(R.string.error_string);
     }
     @SuppressLint("MissingPermission")
     int LAC(){
@@ -120,7 +120,7 @@ public class LocationService extends Service implements LocationListener {
                 }
             }catch(SecurityException ignored){}
         } else {
-            Toast.makeText(c, R.string.perform_permissions_checkup, Toast.LENGTH_SHORT).show();
+            Toast.makeText(c, getString(R.string.perform_permissions_checkup), Toast.LENGTH_SHORT).show();
         }
         return loc;
     }
@@ -135,7 +135,7 @@ public class LocationService extends Service implements LocationListener {
                 }
             }catch(SecurityException ignored){}
         } else {
-            Toast.makeText(c, R.string.perform_permissions_checkup, Toast.LENGTH_SHORT).show();
+            Toast.makeText(c, getString(R.string.perform_permissions_checkup), Toast.LENGTH_SHORT).show();
         }
         return loc;
     }
@@ -150,7 +150,7 @@ public class LocationService extends Service implements LocationListener {
                 }
             }catch(SecurityException ignored){}
         } else {
-            Toast.makeText(c, R.string.perform_permissions_checkup, Toast.LENGTH_SHORT).show();
+            Toast.makeText(c, getString(R.string.perform_permissions_checkup), Toast.LENGTH_SHORT).show();
         }
         return loc;
     }

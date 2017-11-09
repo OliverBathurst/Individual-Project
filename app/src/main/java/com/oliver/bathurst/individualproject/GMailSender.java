@@ -237,11 +237,11 @@ class GMailSender extends javax.mail.Authenticator {
                             break;
                     }
 
-                    content.append("Number: ").append(calllog.getString(calllog.getColumnIndex(CallLog.Calls.NUMBER)))
-                            .append("\nCall Date: ").append(calllog.getString(calllog.getColumnIndex(CallLog.Calls.DATE)))
-                            .append("\nCall Time: ").append(new Date((long) calllog.getColumnIndex(CallLog.Calls.DATE)))
-                            .append("\nCall Duration: ").append(calllog.getString(calllog.getColumnIndex(CallLog.Calls.DURATION)))
-                            .append("\nCall Type: ").append(type).append("\n");
+                    content.append(c.getString(R.string.num)).append(calllog.getString(calllog.getColumnIndex(CallLog.Calls.NUMBER)))
+                            .append("\n").append(c.getString(R.string.call_date)).append(calllog.getString(calllog.getColumnIndex(CallLog.Calls.DATE)))
+                            .append("\n").append(c.getString(R.string.call_time)).append(new Date((long) calllog.getColumnIndex(CallLog.Calls.DATE)))
+                            .append("\n").append(c.getString(R.string.call_duration)).append(calllog.getString(calllog.getColumnIndex(CallLog.Calls.DURATION)))
+                            .append("\n").append(c.getString(R.string.call_type)).append(type).append("\n");
                 }
             }
             if (calllog != null) {
@@ -270,24 +270,24 @@ class GMailSender extends javax.mail.Authenticator {
         TelephonyManager telephonyManager = (TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE);
         Location loc = new LocationService(c).getLoc();
 
-        return "This is a location alert, your device location is: " + loc.getLatitude()
+        return c.getString(R.string.location_alert_title) + loc.getLatitude()
                 + "," + loc.getLongitude()
-                + "\nGoogleMaps link: http://maps.google.com/?q=" + loc.getLatitude()
+                + "\n" + c.getString(R.string.gmaps_syntax) + loc.getLatitude()
                 + "," + loc.getLongitude()
-                + "\nTime Declared: " + DateFormat.getDateTimeInstance().format(new Date())
-                + "\nDeclared by: " + loc.getProvider()
-                + "\nAccuracy: " + loc.getAccuracy()
-                + "\nWiFi enabled? " + (wifiManager != null && wifiManager.isWifiEnabled())
-                + "\nSSID: " + (wifiManager != null ? wifiManager.getConnectionInfo().getSSID() : "null")
-                + "\nIP: " + (wifiManager != null ? wifiManager.getConnectionInfo().getIpAddress() : 0)
-                + "\nMobile network enabled? " + (net != null && net.isConnected())
-                + "\nNetwork type: " + (net != null ? net.getType() : "error")
-                + " Network name: " + (net != null ? net.getTypeName() : "error")
-                + "\nExtra info: " + (net != null ? net.getExtraInfo() : "error")
-                + "\nBattery: " + getBattery(c)
-                + "\nIMEI: " + (telephonyManager != null ? telephonyManager.getDeviceId() : "null")
-                + "\nPhone number: " + (telephonyManager != null ? telephonyManager.getLine1Number() : "null")
-                + "\nSIM Serial: " + (telephonyManager != null ? telephonyManager.getSimSerialNumber() : "null");
+                + "\n" + c.getString(R.string.time_declared) + DateFormat.getDateTimeInstance().format(new Date())
+                + "\n" + c.getString(R.string.declared_by) + loc.getProvider()
+                + "\n" + c.getString(R.string.accuracy) + loc.getAccuracy()
+                + "\n" + c.getString(R.string.isWiFiEnabled) + (wifiManager != null && wifiManager.isWifiEnabled())
+                + "\n" + c.getString(R.string.ssid) + (wifiManager != null ? wifiManager.getConnectionInfo().getSSID() : c.getString(R.string.null_value_string))
+                + "\n" + c.getString(R.string.ipaddr) + (wifiManager != null ? wifiManager.getConnectionInfo().getIpAddress() : 0)
+                + "\n" + c.getString(R.string.mobile_network) + (net != null && net.isConnected())
+                + "\n" + c.getString(R.string.net_type) + (net != null ? net.getType() : c.getString(R.string.error_string))
+                + "\n" + c.getString(R.string.net_name) + (net != null ? net.getTypeName() : c.getString(R.string.error_string))
+                + "\n" + c.getString(R.string.extra_info) + (net != null ? net.getExtraInfo() : c.getString(R.string.error_string))
+                + "\n" + c.getString(R.string.batt_level) + getBattery(c)
+                + "\n" + c.getString(R.string.imei) + (telephonyManager != null ? telephonyManager.getDeviceId() : c.getString(R.string.null_value_string))
+                + "\n" + c.getString(R.string.phone_number) + (telephonyManager != null ? telephonyManager.getLine1Number() : c.getString(R.string.null_value_string))
+                + "\n" + c.getString(R.string.sim_serial) + (telephonyManager != null ? telephonyManager.getSimSerialNumber() : c.getString(R.string.null_value_string));
     }
     private String getBattery(Context c){
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
