@@ -161,11 +161,11 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
                 circle_margin = googleMap.addCircle(new CircleOptions().strokeColor(Color.RED)
                         .center(new LatLng(loc.getLatitude(), loc.getLongitude()))
                         .radius(loc.getAccuracy()));
-                marginOfError.setText(String.valueOf(getString(R.string.margin_of_error) + loc.getAccuracy() + getString(R.string.meters_unit)));
+                marginOfError.setText(String.valueOf(getString(R.string.margin_of_error) + " " + loc.getAccuracy() + getString(R.string.meters_unit)));
             }
             MapsInitializer.initialize(getContext());
             gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
-                    .title(getString(R.string.device_location) + loc.getLatitude() + loc.getLongitude() + " " + "\n" + new Date()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f));
+                    .title(getString(R.string.device_location) + " " + loc.getLatitude() + loc.getLongitude() + " " + "\n" + new Date()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f));
             gMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(loc.getLatitude(), loc.getLongitude())).zoom(19).bearing(0).tilt(45).build()));
         } catch (Exception e) {
             Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();

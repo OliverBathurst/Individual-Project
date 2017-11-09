@@ -50,6 +50,11 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
         setTitle(getString(R.string.beacons_activity_header));
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        deviceList = new ArrayList<>();
+        names = new ArrayList<>();
+        blue = BluetoothAdapter.getDefaultAdapter();
+
         devices = (ListView) findViewById(R.id.devices);
 
         devices.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -74,9 +79,6 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
 
         ((NavigationView) findViewById(R.id.nav_view)).setNavigationItemSelectedListener(this);
 
-        deviceList = new ArrayList<>();
-        names = new ArrayList<>();
-        blue = BluetoothAdapter.getDefaultAdapter();
 
         if(blue != null) {
             if (!blue.isEnabled()) {
@@ -118,33 +120,37 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
         }catch(Exception ignored){}
     }
     private void updateDevices(BluetoothDevice dev) {
-        if (!deviceList.contains(dev)) {
+        if (!deviceList.contains(dev) && dev != null) {
             deviceList.add(dev);
         }
     }
     @SuppressWarnings("unchecked")
     private void redrawListView(){
-        if(names != null) {
-            names.clear();
-            for (BluetoothDevice i : deviceList) {
-                if (i != null && android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
-                    StringBuilder UUID = new StringBuilder();
-                    if (i.getUuids() != null && i.getUuids().length != 0) {
-                        for (int ID = 0; ID < i.getUuids().length; ID++) {
-                            UUID.append(getString(R.string.uuid)).append(ID).append(": ").append(i.getUuids()[ID]).append("\n");
+        try {
+            if (names != null) {
+                names.clear();
+                for (BluetoothDevice i : deviceList) {
+                    if (i != null && android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
+                        StringBuilder UUID = new StringBuilder();
+                        if (i.getUuids() != null && i.getUuids().length != 0) {
+                            for (int ID = 0; ID < i.getUuids().length; ID++) {
+                                UUID.append(getString(R.string.uuid)).append(" ").append(ID).append(": ").append(i.getUuids()[ID]).append("\n");
+                            }
+                        }
+                        if (i.getType() == BluetoothDevice.DEVICE_TYPE_LE) {
+                            names.add(getString(R.string.alias) + " " + i.getName() + "  " + getString(R.string.low_energy) + "\n" + getString(R.string.address) + i.getAddress()
+                                    + "\n" + UUID);
+                        } else {
+                            names.add(getString(R.string.alias) + " " + i.getName() + "\n" + getString(R.string.address) + i.getAddress()
+                                    + "\n" + UUID);
                         }
                     }
-                    if (i.getType() == BluetoothDevice.DEVICE_TYPE_LE) {
-                        names.add(getString(R.string.alias) + i.getName() + getString(R.string.low_energy) + "\n" + getString(R.string.address) + i.getAddress()
-                                + "\n" + UUID);
-                    } else {
-                        names.add(getString(R.string.alias) + i.getName() + "\n" + getString(R.string.address) + i.getAddress()
-                                + "\n" + UUID);
-                    }
                 }
+                try {
+                    devices.setAdapter(new ArrayAdapter(this, R.layout.list_view, R.id.listviewAdapt, names));
+                }catch(Exception ignored){}
             }
-            devices.setAdapter(new ArrayAdapter(this, R.layout.list_view, R.id.listviewAdapt, names));
-        }
+        }catch(Exception ignored){}
     }
     @Override
     public void onBackPressed() {
@@ -216,7 +222,7 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
                             try{
                                 startActivity(new Intent(getBaseContext(), BeaconConfig.class).putExtra("BT_DEVICE", new Gson().toJson(get.get(selectedIndex))));
                             }catch(Exception e){
-                                Snackbar.make(findViewById(R.id.drawer_layout), getString(R.string.cannot_find_at_index) + selectedIndex, Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+                                Snackbar.make(findViewById(R.id.drawer_layout), getString(R.string.cannot_find_at_index) + " " + selectedIndex, Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                             }
                         }
                     }).setNegativeButton(getString(R.string.cancel_dialog), new DialogInterface.OnClickListener() {
@@ -250,7 +256,7 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
                         }).setPositiveButton(getString(R.string.del), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int id) {
-                                Toast.makeText(getApplicationContext(), getString(R.string.deleting) + selected.size() + getString(R.string.beacons_question), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.deleting) + " " + selected.size() + " " + getString(R.string.beacons_question), Toast.LENGTH_SHORT).show();
                                 for (Integer index : selected) {
                                     try {
                                         bluetoothDevices.remove((int) index);
@@ -311,7 +317,7 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
     private void eraseBeacons(){
         if(getBTArray() != null && getBTArray().size() != 0) {
             android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(this)
-                    .setTitle(getString(R.string.do_you_want_to_delete_all) + getBTArray().size() + getString(R.string.beacons_question_mark));
+                    .setTitle(getString(R.string.do_you_want_to_delete_all) + " " + getBTArray().size() + " " + getString(R.string.beacons_question_mark));
             builder.setPositiveButton(getString(R.string.delete_all), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {

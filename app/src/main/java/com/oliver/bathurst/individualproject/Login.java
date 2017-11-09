@@ -73,7 +73,7 @@ public class Login extends AppCompatActivity{
                     input.getText().clear();
                     Toast.makeText(getApplicationContext(), getString(R.string.login_fail_message), Toast.LENGTH_SHORT).show();
                     if (passHint != null && passHint.trim().length() != 0) {
-                        Toast.makeText(getApplicationContext(), getString(R.string.show_password_hint) + passHint, Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), getString(R.string.show_password_hint) + " " + passHint, Toast.LENGTH_LONG).show();
                     }
                 }
             }
@@ -88,7 +88,7 @@ public class Login extends AppCompatActivity{
     }
     private void infoDialog(){
         new AlertDialog.Builder(this)
-                .setMessage(getString(R.string.my_name) + "\n" + getString(R.string.email_address) + (perm != null ? perm.getAppInfo() : getString(R.string.no_app_version_found)))
+                .setMessage(getString(R.string.my_name) + "\n" + getString(R.string.email_address) + "\n" + (perm != null ? perm.getAppInfo() : getString(R.string.no_app_version_found)))
                 .setCancelable(false)
                 .setPositiveButton(getString(R.string.OK), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {

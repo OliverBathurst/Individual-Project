@@ -115,7 +115,7 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
 
             MapsInitializer.initialize(getContext());
             marker = gMap.addMarker(new MarkerOptions().position(new LatLng(newLoc.getLatitude(), newLoc.getLongitude()))
-                    .title(getString(R.string.device_location) + newLoc.getLatitude() + newLoc.getLongitude() + " \n" + new Date()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f));
+                    .title(getString(R.string.device_location) + " " + newLoc.getLatitude() + newLoc.getLongitude() + " \n" + new Date()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f));
             gMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(newLoc.getLatitude(), newLoc.getLongitude())).zoom(19).bearing(0).tilt(45).build()));
 
             showExtras(newLoc);
@@ -133,7 +133,7 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
                         .center(new LatLng(loc.getLatitude(), loc.getLongitude()))
                         .radius(loc.getAccuracy()));
             }
-            marginOfError.setText(String.valueOf(getString(R.string.margin_of_error) + loc.getAccuracy() + getString(R.string.meters_unit)));
+            marginOfError.setText(String.valueOf(getString(R.string.margin_of_error) + " " + loc.getAccuracy() + getString(R.string.meters_unit)));
         }
         if (settings.getBoolean("geo_fence_enable_or_not", false)) {
             ((TextView) mView.findViewById(R.id.radiusMap)).setText(getString(R.string.radiuscolon).concat(" " + String.valueOf(settings.getInt("geo_fence_value", 0))));

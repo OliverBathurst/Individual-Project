@@ -57,7 +57,7 @@ public class LocationService extends Service implements LocationListener {
                 if (third != null) {
                     loc = third;
                 } else {
-                    loc = new Location(getString(R.string.default_null_location));
+                    loc = new Location(c.getString(R.string.default_null_location));
                 }
             }
         }

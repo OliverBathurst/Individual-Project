@@ -65,7 +65,7 @@ public class SettingsFragment extends PreferenceFragment {
                         if (intent.getAction().equals(RegistrationIntentService.REGISTRATION_SUCCESS)) {
                             final String token = intent.getStringExtra("token");
                             new android.support.v7.app.AlertDialog.Builder(getActivity())
-                                    .setMessage(getString(R.string.your_gcm_token) + "\n" + token)
+                                    .setMessage(getString(R.string.your_gcm_token) + " \n" + token)
                                     .setCancelable(false)
                                     .setPositiveButton(getString(R.string.OK), new DialogInterface.OnClickListener() {
                                         public void onClick(DialogInterface dialog, int id) {
@@ -116,14 +116,14 @@ public class SettingsFragment extends PreferenceFragment {
                         @Override
                         public void onCancel(DialogInterface dialog) {
                             settings.putInt("seek_bar_volume", setVolProg).apply();
-                            findPreference("sms_ringtone_volume").setSummary(getString(R.string.current_volume) + setVolProg + getString(R.string.percentage_symbol));
+                            findPreference("sms_ringtone_volume").setSummary(getString(R.string.current_volume) + " " + setVolProg + getString(R.string.percentage_symbol));
                         }
                     });
                     dialog.setOnDismissListener(new Dialog.OnDismissListener() {
                         @Override
                         public void onDismiss(DialogInterface dialog) {
                             settings.putInt("seek_bar_volume", setVolProg).apply();
-                            findPreference("sms_ringtone_volume").setSummary(getString(R.string.current_volume) + setVolProg + getString(R.string.percentage_symbol));
+                            findPreference("sms_ringtone_volume").setSummary(getString(R.string.current_volume) + " " + setVolProg + getString(R.string.percentage_symbol));
                         }
                     });
                     ((SeekBar) dialog.findViewById(R.id.size_seekbar)).setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -155,14 +155,14 @@ public class SettingsFragment extends PreferenceFragment {
                         @Override
                         public void onCancel(DialogInterface dialog) {
                             settings.putInt("seek_bar_battery", battProg).apply();
-                            findPreference("battery_percent").setSummary(getString(R.string.current_percentage) + battProg + getString(R.string.percentage_symbol));
+                            findPreference("battery_percent").setSummary(getString(R.string.current_percentage)+ " " + battProg + getString(R.string.percentage_symbol));
                         }
                     });
                     dialog.setOnDismissListener(new Dialog.OnDismissListener() {
                         @Override
                         public void onDismiss(DialogInterface dialog) {
                             settings.putInt("seek_bar_battery", battProg).apply();
-                            findPreference("battery_percent").setSummary(getString(R.string.current_percentage) + battProg + getString(R.string.percentage_symbol));
+                            findPreference("battery_percent").setSummary(getString(R.string.current_percentage)+ " " + battProg + getString(R.string.percentage_symbol));
                         }
                     });
                     ((SeekBar) dialog.findViewById(R.id.size_seekbar2)).setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -201,7 +201,7 @@ public class SettingsFragment extends PreferenceFragment {
                     if (!((SwitchPreference) preference).isChecked()){
                         server = new Server(getActivity());
                         server.start();
-                        Toast.makeText(getActivity(), getString(R.string.server_started_on) + server.getIP() + ":" + server.getPort(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), getString(R.string.server_started_on) + " " + server.getIP() + ":" + server.getPort(), Toast.LENGTH_SHORT).show();
                     }else{
                         if(server != null){
                             server.stop();
@@ -395,9 +395,9 @@ public class SettingsFragment extends PreferenceFragment {
                 ringDur.setSummary(getString(R.string.default_ring_dur));
             }
 
-            findPreference("sms_ringtone_volume").setSummary(getString(R.string.current_volume) + settingsView.getInt("seek_bar_volume", 90) + "%");
+            findPreference("sms_ringtone_volume").setSummary(getString(R.string.current_volume) + " " + settingsView.getInt("seek_bar_volume", 90) + "%");
 
-            findPreference("battery_percent").setSummary(getString(R.string.current_percentage) + settingsView.getInt("seek_bar_battery", 5) + "%");
+            findPreference("battery_percent").setSummary(getString(R.string.current_percentage) + " " + settingsView.getInt("seek_bar_battery", 5) + "%");
 
             findPreference("backup_shared_pref").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
@@ -418,7 +418,7 @@ public class SettingsFragment extends PreferenceFragment {
             Preference.OnPreferenceChangeListener listener = new Preference.OnPreferenceChangeListener() {
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object newValue) {
-                    preference.setSummary(getString(R.string.trigger_value) + newValue.toString());
+                    preference.setSummary(getString(R.string.trigger_value) + " " + newValue.toString());
                     return true;
                 }
             };
@@ -447,14 +447,14 @@ public class SettingsFragment extends PreferenceFragment {
             Preference.OnPreferenceChangeListener simpleList = new Preference.OnPreferenceChangeListener() {
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object newValue) {
-                    preference.setSummary(getString(R.string.current_value) + newValue.toString());
+                    preference.setSummary(getString(R.string.current_value) + " " + newValue.toString());
                     return true;
                 }
             };
             Preference.OnPreferenceChangeListener secondsListener = new Preference.OnPreferenceChangeListener() {
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object newValue) {
-                    preference.setSummary(getString(R.string.current_value) + newValue.toString() + getString(R.string.seconds));
+                    preference.setSummary(getString(R.string.current_value) + " " + newValue.toString() + getString(R.string.seconds));
                     return true;
                 }
             };
@@ -506,7 +506,7 @@ public class SettingsFragment extends PreferenceFragment {
         }catch(Exception ignored){}
     }
     private void savePref(SharedPreferences.Editor settings, Preference pref, String defaultVal, String prefTag){
-        pref.setSummary(getString(R.string.trigger_value) + defaultVal);
+        pref.setSummary(getString(R.string.trigger_value) + " " + defaultVal);
         settings.putString(prefTag, defaultVal).apply();
     }
     private void actionSharedPref(){
