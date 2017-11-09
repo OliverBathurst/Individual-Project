@@ -16,7 +16,6 @@ import android.widget.FrameLayout;
 
 public class MainActivity extends AppCompatActivity{
     private FrameLayout frame;
-
     private final BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -54,11 +53,9 @@ public class MainActivity extends AppCompatActivity{
         getSupportFragmentManager().beginTransaction().add(R.id.content, new MapFragment()).commit();
     }
     private void removeAllFragments() {
-        try {
-            getSupportFragmentManager().getFragments().clear();
-            while (getFragmentManager().getBackStackEntryCount() > 0) {
-                getFragmentManager().popBackStackImmediate();
-            }
-        }catch(Exception ignored){}
+        getSupportFragmentManager().getFragments().clear();
+        while (getFragmentManager().getBackStackEntryCount() > 0) {
+            getFragmentManager().popBackStackImmediate();
+        }
     }
 }

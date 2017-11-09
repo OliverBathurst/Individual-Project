@@ -39,7 +39,6 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
     private ArrayList<BluetoothDevice> deviceList;
     private ArrayList<String> names;
     private BluetoothAdapter blue;
-    private ListView devices;
     private int selectedIndex = 0;
 
     @SuppressWarnings("deprecation")
@@ -55,9 +54,8 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
         names = new ArrayList<>();
         blue = BluetoothAdapter.getDefaultAdapter();
 
-        devices = (ListView) findViewById(R.id.devices);
 
-        devices.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        ((ListView) findViewById(R.id.devices)).setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @SuppressWarnings("ResultOfMethodCallIgnored")
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -106,23 +104,27 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
         super.onResume();
         registerReceiver(mReceiver, new IntentFilter(BluetoothDevice.ACTION_FOUND));
         registerReceiver(mReceiver, new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED));
+        if(blue != null){
+            blue.startDiscovery();
+        }
     }
     protected void onPause(){
         super.onPause();
         try{
             unregisterReceiver(mReceiver);
+            if(blue != null && blue.isDiscovering()){
+                blue.cancelDiscovery();
+            }
         }catch(Exception ignored){}
     }
     protected void onDestroy(){
         super.onDestroy();
         try {
             unregisterReceiver(mReceiver);
+            if(blue != null && blue.isDiscovering()){
+                blue.cancelDiscovery();
+            }
         }catch(Exception ignored){}
-    }
-    private void updateDevices(BluetoothDevice dev) {
-        if (!deviceList.contains(dev) && dev != null) {
-            deviceList.add(dev);
-        }
     }
     @SuppressWarnings("unchecked")
     private void redrawListView(){
@@ -134,21 +136,21 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
                         StringBuilder UUID = new StringBuilder();
                         if (i.getUuids() != null && i.getUuids().length != 0) {
                             for (int ID = 0; ID < i.getUuids().length; ID++) {
-                                UUID.append(getString(R.string.uuid)).append(" ").append(ID).append(": ").append(i.getUuids()[ID]).append("\n");
+                                if(i.getUuids()[ID] != null) {
+                                    UUID.append(getString(R.string.uuid)).append(" ").append(ID).append(": ").append(i.getUuids()[ID]).append("\n");
+                                }
                             }
                         }
                         if (i.getType() == BluetoothDevice.DEVICE_TYPE_LE) {
                             names.add(getString(R.string.alias) + " " + i.getName() + "  " + getString(R.string.low_energy) + "\n" + getString(R.string.address) + i.getAddress()
-                                    + "\n" + UUID);
+                                        + "\n" + UUID);
                         } else {
                             names.add(getString(R.string.alias) + " " + i.getName() + "\n" + getString(R.string.address) + i.getAddress()
-                                    + "\n" + UUID);
+                                        + "\n" + UUID);
                         }
                     }
                 }
-                try {
-                    devices.setAdapter(new ArrayAdapter(this, R.layout.list_view, R.id.listviewAdapt, names));
-                }catch(Exception ignored){}
+                ((ListView) findViewById(R.id.devices)).setAdapter(new ArrayAdapter(this, R.layout.list_view, R.id.listviewAdapt, names));
             }
         }catch(Exception ignored){}
     }
@@ -339,9 +341,14 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            if (BluetoothDevice.ACTION_FOUND.equals(intent.getAction()) && blue.isDiscovering()) {
-                updateDevices((BluetoothDevice) intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE));
-                redrawListView();
+            if (BluetoothDevice.ACTION_FOUND.equals(intent.getAction())) {
+                if(deviceList != null){
+                    BluetoothDevice btDev = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+                    if(!deviceList.contains(btDev)){
+                        deviceList.add(btDev);
+                        redrawListView();
+                    }
+                }
             } else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(intent.getAction())) {
                 blue.startDiscovery(); //restart discovery
             }

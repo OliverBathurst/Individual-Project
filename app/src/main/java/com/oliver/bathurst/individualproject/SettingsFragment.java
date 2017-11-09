@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.admin.DevicePolicyManager;
+import android.bluetooth.BluetoothAdapter;
 import android.content.BroadcastReceiver;
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -432,7 +433,7 @@ public class SettingsFragment extends PreferenceFragment {
             findPreference("beacon").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                    startActivity(new Intent(SettingsFragment.super.getActivity(), BeaconActivity.class));
+                    startBeaconActivity();
                     return false;
                 }
             });
@@ -535,6 +536,18 @@ public class SettingsFragment extends PreferenceFragment {
     private void registerGCM(){
         getActivity().startService(new Intent(getActivity(), RegistrationIntentService.class));
     }
+    private void startBeaconActivity(){
+        BluetoothAdapter bt = BluetoothAdapter.getDefaultAdapter();
+        if(bt != null) {
+            if (!bt.isEnabled()) {
+                bt.enable();
+            }
+            startActivity(new Intent(SettingsFragment.super.getActivity(), BeaconActivity.class));
+        }else{
+            Toast.makeText(getActivity(),getString(R.string.bluetooth_not_available),Toast.LENGTH_SHORT).show();
+        }
+    }
+
     private void getCurrentGCM(){
         final String currToken = PreferenceManager.getDefaultSharedPreferences(getActivity()).getString("GCM_Token", null);
         new android.support.v7.app.AlertDialog.Builder(getActivity())
