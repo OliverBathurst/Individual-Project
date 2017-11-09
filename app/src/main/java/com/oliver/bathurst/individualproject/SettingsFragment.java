@@ -1,7 +1,6 @@
 package com.oliver.bathurst.individualproject;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.admin.DevicePolicyManager;
@@ -37,7 +36,7 @@ import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.util.HashMap;
 import java.util.Map;
-
+import static android.app.Activity.RESULT_OK;
 import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 
 /**
@@ -47,6 +46,7 @@ import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 
 public class SettingsFragment extends PreferenceFragment {
     private BroadcastReceiver mRegistrationBroadcastReceiver;
+    private static final int REQUEST_ENABLE_BT = 23;
     private int setVolProg = 90, battProg = 5;
     private Server server = null;
     public SettingsFragment() {}
@@ -529,8 +529,14 @@ public class SettingsFragment extends PreferenceFragment {
         }
     }
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode != Activity.RESULT_OK || requestCode != PolicyManager.DPM_ACTIVATION_REQUEST_CODE) {
+        if (resultCode != RESULT_OK || requestCode != PolicyManager.DPM_ACTIVATION_REQUEST_CODE) {
             super.onActivityResult(requestCode, resultCode, data);
+        }
+        if (requestCode == REQUEST_ENABLE_BT) {
+            if (resultCode == RESULT_OK) {
+                BluetoothAdapter.getDefaultAdapter().enable();
+                startActivity(new Intent(SettingsFragment.super.getActivity(), BeaconActivity.class));
+            }
         }
     }
     private void registerGCM(){
@@ -540,9 +546,8 @@ public class SettingsFragment extends PreferenceFragment {
         BluetoothAdapter bt = BluetoothAdapter.getDefaultAdapter();
         if(bt != null) {
             if (!bt.isEnabled()) {
-                bt.enable();
+                startActivityForResult(new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE), REQUEST_ENABLE_BT);
             }
-            startActivity(new Intent(SettingsFragment.super.getActivity(), BeaconActivity.class));
         }else{
             Toast.makeText(getActivity(),getString(R.string.bluetooth_not_available),Toast.LENGTH_SHORT).show();
         }
