@@ -45,15 +45,15 @@ public class LocationService extends Service implements LocationListener {
         final SharedPreferences settingsView = PreferenceManager.getDefaultSharedPreferences(c);
         Location loc;
 
-        Location first = switchPref(settingsView.getString("first", getString(R.string.gps_value)));
+        Location first = switchPref(settingsView.getString("first", c.getString(R.string.gps_value)));
         if (first != null) {
             loc = first;
         } else {
-            Location second = switchPref(settingsView.getString("second", getString(R.string.wifi_value)));
+            Location second = switchPref(settingsView.getString("second", c.getString(R.string.wifi_value)));
             if (second != null) {
                 loc = second;
             } else {
-                Location third = switchPref(settingsView.getString("third", getString(R.string.passive_value)));
+                Location third = switchPref(settingsView.getString("third", c.getString(R.string.passive_value)));
                 if (third != null) {
                     loc = third;
                 } else {
@@ -81,15 +81,15 @@ public class LocationService extends Service implements LocationListener {
     String batteryLife() {
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
             BatteryManager batMan = (BatteryManager) c.getSystemService(Context.BATTERY_SERVICE);
-            return batMan != null ? String.valueOf(batMan.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)) : getString(R.string.batt_manager_null);
+            return batMan != null ? String.valueOf(batMan.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)) : c.getString(R.string.batt_manager_null);
         }else{
-            return getString(R.string.build_number_low);
+            return c.getString(R.string.build_number_low);
         }
     }
     @SuppressLint({"HardwareIds", "MissingPermission"})
     String IMEI(){
         TelephonyManager telMan = (TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE);
-        return telMan != null ? telMan.getDeviceId() : getString(R.string.error_string);
+        return telMan != null ? telMan.getDeviceId() : c.getString(R.string.error_string);
     }
     @SuppressLint("MissingPermission")
     int LAC(){
@@ -120,7 +120,7 @@ public class LocationService extends Service implements LocationListener {
                 }
             }catch(SecurityException ignored){}
         } else {
-            Toast.makeText(c, getString(R.string.perform_permissions_checkup), Toast.LENGTH_SHORT).show();
+            Toast.makeText(c, c.getString(R.string.perform_permissions_checkup), Toast.LENGTH_SHORT).show();
         }
         return loc;
     }
@@ -135,7 +135,7 @@ public class LocationService extends Service implements LocationListener {
                 }
             }catch(SecurityException ignored){}
         } else {
-            Toast.makeText(c, getString(R.string.perform_permissions_checkup), Toast.LENGTH_SHORT).show();
+            Toast.makeText(c, c.getString(R.string.perform_permissions_checkup), Toast.LENGTH_SHORT).show();
         }
         return loc;
     }
@@ -150,7 +150,7 @@ public class LocationService extends Service implements LocationListener {
                 }
             }catch(SecurityException ignored){}
         } else {
-            Toast.makeText(c, getString(R.string.perform_permissions_checkup), Toast.LENGTH_SHORT).show();
+            Toast.makeText(c, c.getString(R.string.perform_permissions_checkup), Toast.LENGTH_SHORT).show();
         }
         return loc;
     }
@@ -200,7 +200,7 @@ public class LocationService extends Service implements LocationListener {
                     break;
             }
         }catch(SecurityException e){
-            Toast.makeText(getApplicationContext(), getString(R.string.sec_exception) + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), c.getString(R.string.sec_exception) + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
         return !result;
     }
