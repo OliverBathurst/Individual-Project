@@ -110,12 +110,12 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
             String map = settings.getString("mapType", null);
             gMap.setMapType(map != null ? loc.getMapType(map) : GoogleMap.MAP_TYPE_NORMAL);
 
-            ((TextView) mView.findViewById(R.id.declare)).setText(getString(R.string.declaration).concat(" " + newLoc.getProvider()));
+            ((TextView) mView.findViewById(R.id.declare)).setText(getString(R.string.declaration).concat(newLoc.getProvider()));
             ((TextView) mView.findViewById(R.id.locationAcc)).setText(String.format("%s%s%s", getString(R.string.accuracy), Float.toString(newLoc.getAccuracy()), getString(R.string.meters_unit)));
 
             MapsInitializer.initialize(getContext());
             marker = gMap.addMarker(new MarkerOptions().position(new LatLng(newLoc.getLatitude(), newLoc.getLongitude()))
-                    .title(getString(R.string.device_location) + " " + newLoc.getLatitude() + newLoc.getLongitude() + " \n" + new Date()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f));
+                    .title(getString(R.string.device_location) + newLoc.getLatitude() + newLoc.getLongitude() + " \n" + new Date()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f));
             gMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(newLoc.getLatitude(), newLoc.getLongitude())).zoom(19).bearing(0).tilt(45).build()));
 
             showExtras(newLoc);
@@ -133,10 +133,10 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
                         .center(new LatLng(loc.getLatitude(), loc.getLongitude()))
                         .radius(loc.getAccuracy()));
             }
-            marginOfError.setText(String.valueOf(getString(R.string.margin_of_error) + " " + loc.getAccuracy() + getString(R.string.meters_unit)));
+            marginOfError.setText(String.valueOf(getString(R.string.margin_of_error) + loc.getAccuracy() + getString(R.string.meters_unit)));
         }
         if (settings.getBoolean("geo_fence_enable_or_not", false)) {
-            ((TextView) mView.findViewById(R.id.radiusMap)).setText(getString(R.string.radiuscolon).concat(" " + String.valueOf(settings.getInt("geo_fence_value", 0))));
+            ((TextView) mView.findViewById(R.id.radiusMap)).setText(getString(R.string.radiuscolon).concat(String.valueOf(settings.getInt("geo_fence_value", 0))));
             if (circle != null) {
                 circle.remove();
             }
@@ -162,13 +162,13 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
         if (gMap != null) {
             gMap.clear();
             marker = gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
-                    .title(getString(R.string.device_location) + loc.getLatitude() + loc.getLongitude() + " " + "\n" + new Date()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f, 0.5f).rotation(ORIENTATION));
+                    .title(getString(R.string.device_location) + loc.getLatitude() + loc.getLongitude() + "\n" + new Date()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f, 0.5f).rotation(ORIENTATION));
             gMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(loc.getLatitude(), loc.getLongitude())).zoom(19).bearing(0).tilt(45).build()));
 
             if(settings != null) {
                 showExtras(loc);
             }
-            ((TextView) mView.findViewById(R.id.declare)).setText(getString(R.string.declaration).concat(" " + loc.getProvider()));
+            ((TextView) mView.findViewById(R.id.declare)).setText(getString(R.string.declaration).concat(loc.getProvider()));
             ((TextView) mView.findViewById(R.id.locationAcc)).setText(String.format("%s%s%s", getString(R.string.accuracy), Float.toString(loc.getAccuracy()), getString(R.string.meters_unit)));
         }
     }

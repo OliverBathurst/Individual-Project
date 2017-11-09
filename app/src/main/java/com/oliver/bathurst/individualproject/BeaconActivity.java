@@ -137,15 +137,15 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
                         if (i.getUuids() != null && i.getUuids().length != 0) {
                             for (int ID = 0; ID < i.getUuids().length; ID++) {
                                 if(i.getUuids()[ID] != null) {
-                                    UUID.append(getString(R.string.uuid)).append(" ").append(ID).append(": ").append(i.getUuids()[ID]).append("\n");
+                                    UUID.append(getString(R.string.uuid)).append(ID).append(": ").append(i.getUuids()[ID]).append("\n");
                                 }
                             }
                         }
                         if (i.getType() == BluetoothDevice.DEVICE_TYPE_LE) {
-                            names.add(getString(R.string.alias) + " " + i.getName() + "  " + getString(R.string.low_energy) + "\n" + getString(R.string.address) + i.getAddress()
+                            names.add(getString(R.string.alias) + i.getName() + getString(R.string.low_energy) + "\n" + getString(R.string.address) + i.getAddress()
                                         + "\n" + UUID);
                         } else {
-                            names.add(getString(R.string.alias) + " " + i.getName() + "\n" + getString(R.string.address) + i.getAddress()
+                            names.add(getString(R.string.alias) + i.getName() + "\n" + getString(R.string.address) + i.getAddress()
                                         + "\n" + UUID);
                         }
                     }
@@ -224,7 +224,7 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
                             try{
                                 startActivity(new Intent(getBaseContext(), BeaconConfig.class).putExtra("BT_DEVICE", new Gson().toJson(get.get(selectedIndex))));
                             }catch(Exception e){
-                                Snackbar.make(findViewById(R.id.drawer_layout), getString(R.string.cannot_find_at_index) + " " + selectedIndex, Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+                                Snackbar.make(findViewById(R.id.drawer_layout), getString(R.string.cannot_find_at_index) + selectedIndex, Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                             }
                         }
                     }).setNegativeButton(getString(R.string.cancel_dialog), new DialogInterface.OnClickListener() {
@@ -258,7 +258,7 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
                         }).setPositiveButton(getString(R.string.del), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int id) {
-                                Toast.makeText(getApplicationContext(), getString(R.string.deleting) + " " + selected.size() + " " + getString(R.string.beacons_question), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.deleting) + selected.size() + getString(R.string.beacons_question), Toast.LENGTH_SHORT).show();
                                 for (Integer index : selected) {
                                     try {
                                         bluetoothDevices.remove((int) index);
@@ -319,7 +319,7 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
     private void eraseBeacons(){
         if(getBTArray() != null && getBTArray().size() != 0) {
             android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(this)
-                    .setTitle(getString(R.string.do_you_want_to_delete_all) + " " + getBTArray().size() + " " + getString(R.string.beacons_question_mark));
+                    .setTitle(getString(R.string.do_you_want_to_delete_all) + getBTArray().size() + getString(R.string.beacons_question_mark));
             builder.setPositiveButton(getString(R.string.delete_all), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {

@@ -146,9 +146,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditTextPreference
+            android:key="wipe_gcm"
+            android:icon="@drawable/ic_warning_black_24dp"
+            android:title="Wipe Phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditTextPreference
             android:key="gcm_ring"
             android:icon="@drawable/ic_phone_in_talk_black_24dp"
             android:title="Ring Phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditTextPreference
+            android:key="sms_stolen_gcm"
+            android:icon="@drawable/ic_android_black_24dp"
+            android:title="@string/flag_device_gcm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </PreferenceCategory>

@@ -25,27 +25,27 @@ class PermissionsManager {
 
     String getDeviceAttributes(){
         Location lastLoc = new LocationService(c).getLoc();
-        return c.getString(R.string.model) + " " + android.os.Build.MODEL + "\n" + c.getString(R.string.brand) + " " + Build.BRAND + "\n" + c.getString(R.string.device) + " "
-                + Build.DEVICE + "\n" + c.getString(R.string.display) + " " + Build.DISPLAY
-                + "\n" + c.getString(R.string.manufacturer) + " " + Build.MANUFACTURER + "\n"
-                + c.getString(R.string.last_known) + " " + lastLoc.getLatitude()
-                + " , " + lastLoc.getLongitude() + "\n" + c.getString(R.string.accuracy) + " " + lastLoc.getAccuracy();
+        return c.getString(R.string.model) + android.os.Build.MODEL + "\n" + c.getString(R.string.brand) + Build.BRAND + "\n" + c.getString(R.string.device)
+                + Build.DEVICE + "\n" + c.getString(R.string.display) + Build.DISPLAY
+                + "\n" + c.getString(R.string.manufacturer) + Build.MANUFACTURER + "\n"
+                + c.getString(R.string.last_known) + lastLoc.getLatitude()
+                + " , " + lastLoc.getLongitude() + "\n" + c.getString(R.string.accuracy) + lastLoc.getAccuracy();
     }
     String getCellInfo(){
         LocationService locationService = new LocationService(c);
-        return c.getString(R.string.imei) + " " + locationService.IMEI()
-                + "\n" + c.getString(R.string.lac) + " " + locationService.LAC() + "\n" + c.getString(R.string.cid) + " " + locationService.CID() + "\n" + c.getString(R.string.mcc) + " " + locationService.MCC()
-                + "\n" + c.getString(R.string.mnc) + " " + locationService.MNC();
+        return c.getString(R.string.imei) + locationService.IMEI()
+                + "\n" + c.getString(R.string.lac) + locationService.LAC() + "\n" + c.getString(R.string.cid) + locationService.CID() + "\n" + c.getString(R.string.mcc) + locationService.MCC()
+                + "\n" + c.getString(R.string.mnc) + locationService.MNC();
     }
 
     String getAndroidVersion(){
-        return c.getString(R.string.release_version) + " " + Build.VERSION.RELEASE + "\n" + c.getString(R.string.version_name) + " "
+        return c.getString(R.string.release_version) + Build.VERSION.RELEASE + "\n" + c.getString(R.string.version_name)
                 + Build.VERSION_CODES.class.getFields()[android.os.Build.VERSION.SDK_INT].getName();
     }
 
     String getAppInfo(){
         try {
-            return c.getString(R.string.version) + " " + c.getPackageManager().getPackageInfo(c.getPackageName(), 0).versionName;
+            return c.getString(R.string.version) + c.getPackageManager().getPackageInfo(c.getPackageName(), 0).versionName;
         }catch(Exception e){
             return c.getString(R.string.version_not_found);
         }

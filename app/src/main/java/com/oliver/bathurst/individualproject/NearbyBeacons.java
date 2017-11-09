@@ -61,8 +61,8 @@ class NearbyBeacons {
         for(Pair<BluetoothDevice, Integer> p: finalList){
             Float temp = sp.getFloat(p.first.getName(), Integer.MAX_VALUE);
             if(temp != Integer.MAX_VALUE && temp != 0){ //default to max value for error checking
-                sb.append(context.getString(R.string.beacon_device)).append(" ").append(p.first.getName()).append("\n")
-                        .append(context.getString(R.string.est_distance_m)).append(" ")
+                sb.append(context.getString(R.string.beacon_device)).append(p.first.getName()).append("\n")
+                        .append(context.getString(R.string.est_distance_m))
                         .append(p.second/temp).append(context.getString(R.string.centimetres)).append("\n");
             }
         }

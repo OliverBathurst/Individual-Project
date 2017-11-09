@@ -73,7 +73,7 @@ public class Login extends AppCompatActivity{
                     input.getText().clear();
                     Toast.makeText(getApplicationContext(), getString(R.string.login_fail_message), Toast.LENGTH_SHORT).show();
                     if (passHint != null && passHint.trim().length() != 0) {
-                        Toast.makeText(getApplicationContext(), getString(R.string.show_password_hint) + " " + passHint, Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), getString(R.string.show_password_hint) + passHint, Toast.LENGTH_LONG).show();
                     }
                 }
             }
