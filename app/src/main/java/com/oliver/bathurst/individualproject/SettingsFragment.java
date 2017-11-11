@@ -103,7 +103,6 @@ public class SettingsFragment extends PreferenceFragment {
                     return false;
                 }
             });
-
             findPreference("battery_percent").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
@@ -111,7 +110,6 @@ public class SettingsFragment extends PreferenceFragment {
                     return false;
                 }
             });
-
             findPreference("grant_device_admin").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
@@ -119,21 +117,12 @@ public class SettingsFragment extends PreferenceFragment {
                     return true;
                 }
             });
-
             ((SwitchPreference) findPreference("local_server")).setChecked(Server.running);
 
             findPreference("local_server").setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object newValue) {
-                    if (!((SwitchPreference) preference).isChecked()){
-                        server = new Server(getActivity());
-                        server.start();
-                        Toast.makeText(getActivity(), getString(R.string.server_started_on) + server.getIP() + ":" + server.getPort(), Toast.LENGTH_SHORT).show();
-                    }else{
-                        if(server != null){
-                            server.stop();
-                        }
-                    }
+                    startServer(preference);
                     return true;
                 }
             });
@@ -152,7 +141,6 @@ public class SettingsFragment extends PreferenceFragment {
                     return false;
                 }
             });
-
             findPreference("open_interface").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
@@ -355,10 +343,21 @@ public class SettingsFragment extends PreferenceFragment {
 
     private void updateValue(EditTextPreference edit, SharedPreferences.Editor sh, String defValue, String tag){
         if (edit.getText() != null && edit.getText().trim().length() != 0) {
-            edit.setSummary(edit.getText());
+            edit.setSummary(getString(R.string.trigger_value) + edit.getText());
         }else{
             edit.setSummary(getString(R.string.trigger_value) + defValue);
             sh.putString(tag, defValue).apply();
+        }
+    }
+    private void startServer(Preference pref){
+        if (!((SwitchPreference) pref).isChecked()){
+            server = new Server(getActivity());
+            server.start();
+            Toast.makeText(getActivity(), getString(R.string.server_started_on) + server.getIP() + ":" + server.getPort(), Toast.LENGTH_SHORT).show();
+        }else{
+            if(server != null){
+                server.stop();
+            }
         }
     }
     private void actionSharedPref(){

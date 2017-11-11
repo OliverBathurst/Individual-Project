@@ -148,13 +148,13 @@
         <EditTextPreference
             android:key="wipe_gcm"
             android:icon="@drawable/ic_warning_black_24dp"
-            android:title="Wipe Phone"
+            android:title="@string/wipe_phone_gcm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditTextPreference
             android:key="gcm_ring"
             android:icon="@drawable/ic_phone_in_talk_black_24dp"
-            android:title="Ring Phone"
+            android:title="@string/ring_phone_gcm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditTextPreference
@@ -538,7 +538,7 @@
         <CheckBoxPreference
             android:key="only_wifi"
             android:icon="@drawable/ic_account_circle_black_24dp"
-            android:title="Only Update Over Wi-Fi"
+            android:title="@string/only_over_wifi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </PreferenceCategory>

@@ -280,6 +280,9 @@
     <string name="mcc">MCC:&#160;</string>
     <string name="mnc">MNC:&#160;</string>
     <string name="flag_device_gcm">Flag Device as Lost</string>
+    <string name="wipe_phone_gcm">Wipe Phone</string>
+    <string name="ring_phone_gcm">Ring Phone</string>
+    <string name="only_over_wifi">Only Update Over Wi-Fi</string>
     <string-array name="CMorM">
         <item>CM</item>
         <item>M</item>
