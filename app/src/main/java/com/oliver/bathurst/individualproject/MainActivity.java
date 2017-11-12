@@ -22,13 +22,17 @@ public class MainActivity extends AppCompatActivity{
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             if (!item.isChecked()) {
-                item.setChecked(true);
                 frame.removeAllViews();
-                removeAllFragments();
+
+                getSupportFragmentManager().getFragments().clear();
+                while (getFragmentManager().getBackStackEntryCount() > 0) {
+                    getFragmentManager().popBackStackImmediate();
+                }
 
                 switch (item.getItemId()) {
                     case R.id.navigation_home:
                         getSupportFragmentManager().beginTransaction().add(R.id.content, new MapFragment()).commitNow();
+                        item.setChecked(true);
                         return true;
                     case R.id.navigation_dashboard:
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
@@ -36,6 +40,7 @@ public class MainActivity extends AppCompatActivity{
                         }else{
                             getFragmentManager().beginTransaction().add(R.id.content, new SettingsFragment()).commit();
                         }
+                        item.setChecked(true);
                         return true;
                     case R.id.navigation_device:
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
@@ -43,6 +48,7 @@ public class MainActivity extends AppCompatActivity{
                         }else{
                             getFragmentManager().beginTransaction().add(R.id.content, new DeviceFragment()).commit();
                         }
+                        item.setChecked(true);
                         return true;
                 }
                 return false;
@@ -60,11 +66,5 @@ public class MainActivity extends AppCompatActivity{
         ((BottomNavigationView) findViewById(R.id.navigation)).setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         frame = (FrameLayout) findViewById(R.id.content);
         getSupportFragmentManager().beginTransaction().add(R.id.content, new MapFragment()).commit();
-    }
-    private void removeAllFragments() {
-        getSupportFragmentManager().getFragments().clear();
-        while (getFragmentManager().getBackStackEntryCount() > 0) {
-            getFragmentManager().popBackStackImmediate();
-        }
     }
 }
