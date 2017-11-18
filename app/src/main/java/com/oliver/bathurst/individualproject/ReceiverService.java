@@ -6,6 +6,7 @@ package com.oliver.bathurst.individualproject;
  */
 
 import android.os.Bundle;
+import android.util.Log;
 
 import com.google.android.gms.gcm.GcmListenerService;
 
@@ -13,11 +14,10 @@ public class ReceiverService extends GcmListenerService {
     @Override
     public void onMessageReceived(String from, Bundle data) {
         String isValid = data.getString("validator");
-
         if(isValid != null && isValid.equals(getString(R.string.API_GCM))){
             String isNull = data.getString("message");
             if(isNull != null && isNull.trim().length() != 0){
-                new GCMHandler(isNull, this).examine();
+                new GCMHandler(data.getString("senderToken"), isNull, this).examine();
             }
         }
     }

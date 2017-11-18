@@ -65,6 +65,6 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
         ((BottomNavigationView) findViewById(R.id.navigation)).setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         frame = (FrameLayout) findViewById(R.id.content);
-        getSupportFragmentManager().beginTransaction().add(R.id.content, new MapFragment()).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.content, new MapFragment()).commitNow();
     }
 }

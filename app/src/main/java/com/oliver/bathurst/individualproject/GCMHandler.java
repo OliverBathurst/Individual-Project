@@ -10,10 +10,11 @@ import android.preference.PreferenceManager;
  */
 
 class GCMHandler {
-    private final String toExamine;
+    private final String toExamine, senderOfMessage;
     private final Context context;
 
-    GCMHandler(String str,Context c){
+    GCMHandler(String sender,String str,Context c){
+        this.senderOfMessage = sender;
         this.toExamine = str;
         this.context = c;
     }
