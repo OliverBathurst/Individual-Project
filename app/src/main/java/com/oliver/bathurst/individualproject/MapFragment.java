@@ -115,7 +115,7 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
 
             MapsInitializer.initialize(getContext());
             marker = gMap.addMarker(new MarkerOptions().position(new LatLng(newLoc.getLatitude(), newLoc.getLongitude()))
-                    .title(getString(R.string.device_location) + newLoc.getLatitude() + newLoc.getLongitude() + " \n" + new Date()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f));
+                    .title(new Date().toString()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f));
             gMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(newLoc.getLatitude(), newLoc.getLongitude())).zoom(19).bearing(0).tilt(45).build()));
 
             showExtras(newLoc);
@@ -162,7 +162,7 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
         if (gMap != null) {
             gMap.clear();
             marker = gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
-                    .title(getString(R.string.device_location) + loc.getLatitude() + loc.getLongitude() + "\n" + new Date()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f, 0.5f).rotation(ORIENTATION));
+                    .title(new Date().toString()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f, 0.5f).rotation(ORIENTATION));
             gMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(loc.getLatitude(), loc.getLongitude())).zoom(19).bearing(0).tilt(45).build()));
 
             if(settings != null) {

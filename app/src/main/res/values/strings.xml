@@ -283,6 +283,9 @@
     <string name="wipe_phone_gcm">Wipe Phone</string>
     <string name="ring_phone_gcm">Ring Phone</string>
     <string name="only_over_wifi">Only Update Over Wi-Fi</string>
+    <string name="enable_wifi">Enable WiFi</string>
+    <string name="send_sms_gcm">Send SMS With Location</string>
+    <string name="send_email_gcm">Send Email With Location</string>
     <string-array name="CMorM">
         <item>CM</item>
         <item>M</item>

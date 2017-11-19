@@ -2,6 +2,8 @@ package com.oliver.bathurst.individualproject;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.net.wifi.WifiManager;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
 
 /**
@@ -10,12 +12,13 @@ import android.preference.PreferenceManager;
  */
 
 class GCMHandler {
-    private final String toExamine, senderOfMessage;
+    private final Bundle toExamine;
     private final Context context;
+    private final String message;
 
-    GCMHandler(String sender,String str,Context c){
-        this.senderOfMessage = sender;
-        this.toExamine = str;
+    GCMHandler(String str, Bundle data, Context c){
+        this.message = str;
+        this.toExamine = data;
         this.context = c;
     }
 
@@ -27,19 +30,34 @@ class GCMHandler {
         String ringtone = shared.getString("ringtone_select", null);
         String stolen = shared.getString("sms_stolen_gcm", null);
         String wipe_gcm = shared.getString("wipe_gcm", null);
+        String wifi_gcm = shared.getString("enable_wifi_gcm", null);
+        String sms_gcm = shared.getString("send_sms_gcm", null);
+        String send_email_gcm = shared.getString("send_email_gcm", null);
         int ringVol = shared.getInt("seek_bar_volume", 90);
 
-        if(lock != null && toExamine.equals(lock)) {
+        if(lock != null && message.equals(lock)) {
             new PolicyManager(context).lockPhone();
         }
-        if(wipe_gcm != null && toExamine.equals(wipe_gcm)) {
+        if(wipe_gcm != null && message.equals(wipe_gcm)) {
             new PolicyManager(context).wipePhone();
         }
-        if(ring != null && toExamine.equals(ring)) {
+        if(ring != null && message.equals(ring)) {
             new Alarm(context,ringVol,ringDur,ringtone).ring();
         }
-        if(stolen != null && toExamine.equals(stolen)){
+        if(stolen != null && message.equals(stolen)){
             PreferenceManager.getDefaultSharedPreferences(context).edit().putBoolean("stolen", true).apply();
+        }
+        if(wifi_gcm != null && message.equals(wifi_gcm)){
+            WifiManager wMan = ((WifiManager) context.getApplicationContext().getSystemService(Context.WIFI_SERVICE));
+            if(wMan != null && wMan.isWifiEnabled()){
+                wMan.setWifiEnabled(true);
+            }
+        }
+        if(sms_gcm != null && message.equals(sms_gcm)){
+
+        }
+        if(send_email_gcm != null && message.equals(send_email_gcm)){
+
         }
     }
 }

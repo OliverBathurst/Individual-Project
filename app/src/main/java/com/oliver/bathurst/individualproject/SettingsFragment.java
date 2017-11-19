@@ -242,6 +242,13 @@ public class SettingsFragment extends PreferenceFragment {
                 ringList.setEntryValues(list.values().toArray(new CharSequence[0]));
             }catch(Exception ignored){}
 
+
+            EditTextPreference emailGCM = (EditTextPreference) findPreference("send_email_gcm");
+            updateValue(emailGCM, settings, "GCMEmail12345", "send_email_gcm");
+            EditTextPreference smsGCM = (EditTextPreference) findPreference("send_sms_gcm");
+            updateValue(smsGCM, settings, "GCMSMS12345", "send_sms_gcm");
+            EditTextPreference wifiGCM = (EditTextPreference) findPreference("enable_wifi_gcm");
+            updateValue(wifiGCM, settings, "GCMWiFi12345", "enable_wifi_gcm");
             EditTextPreference wipeGCM = (EditTextPreference) findPreference("wipe_gcm");
             updateValue(wipeGCM, settings, "GCMWipe12345", "wipe_gcm");
             EditTextPreference stolenGCM = (EditTextPreference) findPreference("sms_stolen_gcm");
@@ -294,7 +301,9 @@ public class SettingsFragment extends PreferenceFragment {
             if (emailUpdates.getText() != null && emailUpdates.getText().trim().length() != 0) {
                 emailUpdates.setSummary(emailUpdates.getText());
             }
-
+            emailGCM.setOnPreferenceChangeListener(listener);
+            smsGCM.setOnPreferenceChangeListener(listener);
+            wifiGCM.setOnPreferenceChangeListener(listener);
             smsRing.setOnPreferenceChangeListener(listener);
             smsStolen.setOnPreferenceChangeListener(listener);
             smsEmail.setOnPreferenceChangeListener(listener);

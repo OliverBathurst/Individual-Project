@@ -163,6 +163,24 @@
             android:title="@string/flag_device_gcm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+        <EditTextPreference
+            android:key="enable_wifi_gcm"
+            android:icon="@drawable/ic_android_black_24dp"
+            android:title="@string/enable_wifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditTextPreference
+            android:key="send_sms_gcm"
+            android:icon="@drawable/ic_android_black_24dp"
+            android:title="@string/send_sms_gcm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditTextPreference
+            android:key="send_email_gcm"
+            android:icon="@drawable/ic_android_black_24dp"
+            android:title="@string/send_email_gcm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </PreferenceCategory>
 
     <PreferenceCategory
