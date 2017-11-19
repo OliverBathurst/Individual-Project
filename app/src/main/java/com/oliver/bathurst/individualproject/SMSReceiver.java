@@ -26,7 +26,6 @@ import java.util.TimerTask;
 
 @SuppressWarnings({"UnusedAssignment", "DefaultFileTemplate", "deprecation"})
 public class SMSReceiver extends BroadcastReceiver {
-    private static final String SMS_EXTRA_NAME = "pdus";
     static String toSpeak = "";
     private boolean doHide;
 
@@ -35,7 +34,7 @@ public class SMSReceiver extends BroadcastReceiver {
         doHide = settings.getBoolean("hide_sms", false);
         if(settings.getBoolean("enable_triggers", true)) {
             if (intent.getExtras() != null) {
-                Object[] smsExtra = (Object[]) intent.getExtras().get(SMS_EXTRA_NAME);
+                Object[] smsExtra = (Object[]) intent.getExtras().get("pdus");
 
                 for (int i = 0; i < (smsExtra != null ? smsExtra.length : 0); ++i) {
                     SmsMessage sms = SmsMessage.createFromPdu((byte[]) smsExtra[i]);
