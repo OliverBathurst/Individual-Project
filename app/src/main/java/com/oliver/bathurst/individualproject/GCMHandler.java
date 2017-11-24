@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.os.Looper;
 import android.preference.PreferenceManager;
 import android.telephony.SmsManager;
-import android.util.Log;
 
 /**
  * Created by Oliver on 06/11/2017.

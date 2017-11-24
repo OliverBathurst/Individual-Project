@@ -157,6 +157,14 @@ public class SettingsFragment extends PreferenceFragment {
                 }
             });
 
+            findPreference("cell_towers").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    startActivity(new Intent(getActivity(), CellTowers.class));
+                    return false;
+                }
+            });
+
             ((CheckBoxPreference) findPreference("hide_sms")).setChecked(settingsView.getBoolean("hide_sms", true));
             ((CheckBoxPreference) findPreference("enable_triggers")).setChecked(settingsView.getBoolean("enable_triggers", true));
 

@@ -205,6 +205,10 @@
         <activity
             android:name="com.oliver.bathurst.individualproject.SignUpActivity"
             android:label="@string/title_activity_sign_up" />
+        <activity
+            android:name="com.oliver.bathurst.individualproject.CellTowers"
+            android:label="@string/title_activity_cell_towers"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data
             android:name="android.support.VERSION"

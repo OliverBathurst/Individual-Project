@@ -488,6 +488,12 @@
         <PreferenceCategory
             android:title="@string/misc_title">
             <Preference
+                android:key="cell_towers"
+                android:icon="@drawable/ic_network_cell_black_24dp"
+                android:title="@string/cell_tower_activity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Preference
                 android:key="backup_shared_pref"
                 android:icon="@drawable/ic_settings_backup_restore_black_24dp"
                 android:title="@string/backup_shared_prefs"
