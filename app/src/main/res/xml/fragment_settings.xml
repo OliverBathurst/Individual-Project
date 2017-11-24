@@ -491,6 +491,7 @@
                 android:key="cell_towers"
                 android:icon="@drawable/ic_network_cell_black_24dp"
                 android:title="@string/cell_tower_activity"
+                android:summary="@string/cell_tower_requirement"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <Preference

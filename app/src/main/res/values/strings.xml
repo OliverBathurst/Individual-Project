@@ -188,7 +188,7 @@
     <string name="no_saved_beacons">No saved beacons</string>
     <string name="gmaps_syntax">GoogleMaps link: http://maps.google.com/?q=</string>
     <string name="null_value_string">null</string>
-    <string name="error_string">error</string>
+    <string name="error_string">Error</string>
     <string name="no_providers_enabled">No providers available</string>
     <string name="no_beacons_found">No Beacons Found</string>
     <string name="bluetooth_not_available">Bluetooth not available</string>
@@ -292,7 +292,24 @@
         <item>M</item>
     </string-array>
     <string name="title_activity_cell_towers">CellTowers</string>
-
     <string name="view_map">View Map</string>
     <string name="cell_tower_activity_title">Cell Towers</string>
+    <string name="cell_tower_requirement">Requires Android 4.2 and above</string>
+    <string name="cell_info_updated">Cell Info Updated</string>
+    <string name="gcm">GCM</string>
+    <string name="lte">LTE</string>
+    <string name="wcdma">WCDMA</string>
+    <string name="CID">CID:&#160;</string>
+    <string name="MCC">MCC:&#160;</string>
+    <string name="MNC">MNC:&#160;</string>
+    <string name="LAC">LAC:&#160;</string>
+    <string name="isActive">Is Active:&#160;</string>
+    <string name="signalStrength">Signal Strength:&#160;</string>
+    <string name="typeCell">TYPE:&#160;</string>
+    <string name="PCI">PCI:&#160;</string>
+    <string name="TAC">TAC:&#160;</string>
+    <string name="ID">ID:&#160;</string>
+    <string name="title_activity_cell_tower_map">Map</string>
+    <string name="options">Options</string>
+    <string name="viewingMap">Viewing Map...</string>
 </resources>

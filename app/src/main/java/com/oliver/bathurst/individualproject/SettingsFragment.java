@@ -18,6 +18,7 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.media.RingtoneManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.preference.CheckBoxPreference;
@@ -160,7 +161,11 @@ public class SettingsFragment extends PreferenceFragment {
             findPreference("cell_towers").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                    startActivity(new Intent(getActivity(), CellTowers.class));
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                        startActivity(new Intent(getActivity(), CellTowers.class));
+                    }else{
+                        Toast.makeText(getActivity(),getString(R.string.build_number_low),Toast.LENGTH_SHORT).show();
+                    }
                     return false;
                 }
             });

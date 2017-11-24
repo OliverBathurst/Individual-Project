@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:2:1-211:12
-INJECTED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:2:1-211:12
-INJECTED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:2:1-211:12
-INJECTED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:2:1-211:12
+ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:2:1-214:12
+INJECTED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:2:1-214:12
+INJECTED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:2:1-214:12
+INJECTED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:2:1-214:12
 MERGED from [com.android.support:design:25.4.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\design-25.4.0.aar\2cc5743655d38998f96be6ea2edd247f\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:appcompat-v7:25.4.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.4.0.aar\fa0339afbac0fd1609e3827350c9e76b\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:transition:25.4.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\transition-25.4.0.aar\1897a84d3f6632cf4e3e125fc7ac8d68\AndroidManifest.xml:17:1-28:12
@@ -40,22 +40,22 @@ MERGED from [com.google.firebase:firebase-analytics-license:11.6.0] C:\Users\Oli
 MERGED from [com.google.firebase:firebase-common-license:11.6.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-license-11.6.0.aar\d557ce4c0959ccba1046cac442459b6f\AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.firebase:firebase-analytics-impl-license:11.6.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-11.6.0.aar\97d8ad2c84bea78e2c3c332506dfc8f5\AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.firebase:firebase-iid-license:11.6.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-11.6.0.aar\bd83877ed1a6b770f9c023573c40441a\AndroidManifest.xml:2:1-6:12
-INJECTED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:2:1-211:12
-INJECTED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:2:1-211:12
-INJECTED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:2:1-211:12
+INJECTED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:2:1-214:12
+INJECTED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:2:1-214:12
+INJECTED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:2:1-214:12
 	package
 		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:4:5-52
 		INJECTED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:2:1-211:12
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:2:1-214:12
 		INJECTED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:2:1-211:12
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:2:1-214:12
 		INJECTED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:2:11-69
@@ -228,7 +228,7 @@ ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\
 	android:anyDensity
 		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:58:9-34
 application
-ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:64:5-209:19
+ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:64:5-212:19
 MERGED from [com.android.support:design:25.4.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\design-25.4.0.aar\2cc5743655d38998f96be6ea2edd247f\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:design:25.4.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\design-25.4.0.aar\2cc5743655d38998f96be6ea2edd247f\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:appcompat-v7:25.4.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.4.0.aar\fa0339afbac0fd1609e3827350c9e76b\AndroidManifest.xml:25:5-29:19
@@ -564,13 +564,19 @@ ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\
 	android:name
 		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:203:13-43
 activity#com.oliver.bathurst.individualproject.CellTowers
-ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:205:9-208:68
+ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:205:9-208:59
 	android:label
 		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:207:13-63
 	android:theme
 		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:208:13-56
 	android:name
 		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:206:13-39
+activity#com.oliver.bathurst.individualproject.CellTowerMap
+ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:209:9-211:69
+	android:label
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:211:13-66
+	android:name
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:210:13-41
 uses-sdk
 INJECTED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml

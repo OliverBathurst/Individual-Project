@@ -205,7 +205,10 @@
         <activity
             android:name=".CellTowers"
             android:label="@string/title_activity_cell_towers"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CellTowerMap"
+            android:label="@string/title_activity_cell_tower_map" />
     </application>
 
 </manifest>
