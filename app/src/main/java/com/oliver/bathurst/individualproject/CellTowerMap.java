@@ -11,7 +11,6 @@ import android.telephony.CellIdentityWcdma;
 import android.telephony.CellInfoGsm;
 import android.telephony.CellInfoLte;
 import android.telephony.CellInfoWcdma;
-import android.telephony.NeighboringCellInfo;
 import android.widget.Toast;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -21,24 +20,13 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.io.Serializable;
-import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
-
-import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 public class CellTowerMap extends FragmentActivity implements OnMapReadyCallback {
@@ -46,8 +34,6 @@ public class CellTowerMap extends FragmentActivity implements OnMapReadyCallback
     private static final String MOBILE_LOCATION_URI = "http://www.opencellid.org/cell/get?key=978e483439b03f";
     private GoogleMap mMap;
     private HashMap cellTowers;
-    private double lat = 0, lon = 0, range = 0;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -125,13 +111,12 @@ public class CellTowerMap extends FragmentActivity implements OnMapReadyCallback
     }
     @SuppressLint("StaticFieldLeak")
     private Double[] locationFromOpenCellID(final int cid, final int lac, final int mcc, final int mnc){
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitAll().build());
 
         Double[] doubleArr = null;
-        String toPost = MOBILE_LOCATION_URI + "&mcc=" + mcc + "&mnc=" + mnc + "&cellid=" + cid + "&lac=" + lac;
-        System.out.println(toPost);
+
         try {
+            String toPost = MOBILE_LOCATION_URI + "&mcc=" + mcc + "&mnc=" + mnc + "&cellid=" + cid + "&lac=" + lac;
             HttpURLConnection connection = (HttpURLConnection) new URL(toPost).openConnection();
             connection.setRequestMethod("GET");
             connection.setRequestProperty("Accept", "application/xml");
@@ -140,10 +125,9 @@ public class CellTowerMap extends FragmentActivity implements OnMapReadyCallback
             NodeList nodeList = doc.getElementsByTagName("cell");
             if(nodeList.getLength() >= 1){
                 NamedNodeMap attributes = nodeList.item(0).getAttributes();
-                lat = Double.parseDouble(attributes.getNamedItem("lat").getNodeValue());
-                lon = Double.parseDouble(attributes.getNamedItem("lon").getNodeValue());
-                range = Double.parseDouble(attributes.getNamedItem("range").getNodeValue());
-                doubleArr = new Double[] {lat, lon, range};
+                doubleArr = new Double[] {Double.parseDouble(attributes.getNamedItem("lat").getNodeValue()),
+                        Double.parseDouble(attributes.getNamedItem("lon").getNodeValue()),
+                        Double.parseDouble(attributes.getNamedItem("range").getNodeValue())};
             }else{
                 doubleArr = new Double[] {0.0, 0.0, 0.0};
             }
