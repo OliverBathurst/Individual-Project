@@ -296,7 +296,7 @@
     <string name="cell_tower_activity_title">Cell Towers</string>
     <string name="cell_tower_requirement">Requires Android 4.2 and above</string>
     <string name="cell_info_updated">Cell Info Updated</string>
-    <string name="gcm">GCM</string>
+    <string name="gcm">GSM</string>
     <string name="lte">LTE</string>
     <string name="CID">CID:&#160;</string>
     <string name="MCC">MCC:&#160;</string>
@@ -310,4 +310,11 @@
     <string name="options">Options</string>
     <string name="neighbour">Neighbour Network</string>
     <string name="noFriends">No neighbour networks found</string>
+    <string name="can_not_get_location">Cannot get location</string>
+    <string name="cdma">CDMA</string>
+    <string name="basestation_id">Basestation ID:&#160;</string>
+    <string name="network_id">Network ID:&#160;</string>
+    <string name="system_id">System ID:&#160;</string>
+    <string name="latitude">Latitude:&#160;</string>
+    <string name="longitude">Longitude:&#160;</string>
 </resources>

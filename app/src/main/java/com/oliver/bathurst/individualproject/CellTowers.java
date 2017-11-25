@@ -13,10 +13,12 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.telephony.CellIdentityCdma;
 import android.telephony.CellIdentityGsm;
 import android.telephony.CellIdentityLte;
 import android.telephony.CellIdentityWcdma;
 import android.telephony.CellInfo;
+import android.telephony.CellInfoCdma;
 import android.telephony.CellInfoGsm;
 import android.telephony.CellInfoLte;
 import android.telephony.CellInfoWcdma;
@@ -99,6 +101,9 @@ public class CellTowers extends AppCompatActivity implements NavigationView.OnNa
                     } else if (cell instanceof CellInfoLte) {
                         CellInfoLte lte = ((CellInfoLte) cell);
                         general.put(lte.toString(), lte);
+                    } else if (cell instanceof CellInfoCdma){
+                        CellInfoCdma cdma = (CellInfoCdma) cell;
+                        general.put(cdma.toString(), cdma);
                     }
                 }
             }
@@ -168,7 +173,7 @@ public class CellTowers extends AppCompatActivity implements NavigationView.OnNa
                                 .append(getString(R.string.MNC)).append(cellCasted.getMnc()).append("\n")
                                 .append(getString(R.string.signalStrength)).append(((CellInfoGsm) cellTower).getCellSignalStrength().getDbm()).append("\n")
                                 .append(getString(R.string.isActive)).append(cell.isRegistered()).append("\n")
-                                .append(getString(R.string.typeCell)).append(getString(R.string.gcm)).append("\n");
+                                .append(getString(R.string.typeCell)).append(getString(R.string.gcm));
                     }
                 }else if(cellTower instanceof CellInfoLte){
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
@@ -179,7 +184,7 @@ public class CellTowers extends AppCompatActivity implements NavigationView.OnNa
                                 .append(getString(R.string.MNC)).append(cellCasted.getMnc()).append("\n")
                                 .append(getString(R.string.PCI)).append(cellCasted.getPci()).append("\n")
                                 .append(getString(R.string.LAC)).append(cellCasted.getTac()).append("\n")
-                                .append(getString(R.string.typeCell)).append(getString(R.string.lte)).append("\n");
+                                .append(getString(R.string.typeCell)).append(getString(R.string.lte));
                     }
                 }else if(cellTower instanceof CellInfoWcdma){
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
@@ -193,15 +198,28 @@ public class CellTowers extends AppCompatActivity implements NavigationView.OnNa
                                 .append(getString(R.string.MNC)).append(cellCasted.getMnc()).append("\n")
                                 .append(getString(R.string.signalStrength)).append(cell.getCellSignalStrength().getDbm()).append("\n")
                                 .append(getString(R.string.isActive)).append(cell.isRegistered()).append("\n")
-                                .append(getString(R.string.typeCell)).append(getString(R.string.gcm)).append("\n");
+                                .append(getString(R.string.typeCell)).append(getString(R.string.gcm));
                     }
                 }else if(cellTower instanceof NeighboringCellInfo){
+
                     NeighboringCellInfo cellNeighbour = (NeighboringCellInfo) cellTower;
                     build.append(getString(R.string.neighbour)).append("\n")
                             .append(getString(R.string.CID)).append(cellNeighbour.getCid()).append("\n")
                             .append(getString(R.string.LAC)).append(cellNeighbour.getLac()).append("\n")
                             .append(getString(R.string.signalStrength)).append(cellNeighbour.getRssi()).append("\n")
-                            .append(getString(R.string.typeCell)).append(cellNeighbour.getNetworkType()).append("\n");
+                            .append(getString(R.string.typeCell)).append(cellNeighbour.getNetworkType());
+
+                }else if(cellTower instanceof CellInfoCdma){
+                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                        CellIdentityCdma cdmaIdentity = ((CellInfoCdma) cellTower).getCellIdentity();
+
+                        build.append(getString(R.string.cdma)).append("\n")
+                                .append(getString(R.string.basestation_id)).append(cdmaIdentity.getBasestationId()).append("\n")
+                                .append(getString(R.string.network_id)).append(cdmaIdentity.getNetworkId()).append("\n")
+                                .append(getString(R.string.system_id)).append(cdmaIdentity.getSystemId()).append("\n")
+                                .append(getString(R.string.latitude)).append(cdmaIdentity.getLatitude()).append("\n")
+                                .append(getString(R.string.longitude)).append(cdmaIdentity.getLongitude());
+                    }
                 }
                 cells.add(build.toString());
                 build.setLength(0);

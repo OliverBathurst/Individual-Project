@@ -4,11 +4,13 @@
       <w>apiid</w>
       <w>assp</w>
       <w>baro</w>
+      <w>basestation</w>
       <w>batt</w>
       <w>bcom</w>
       <w>bssid</w>
       <w>calib</w>
       <w>calllog</w>
+      <w>cdma</w>
       <w>cellid</w>
       <w>extern</w>
       <w>feop</w>

@@ -2,12 +2,15 @@ package com.oliver.bathurst.individualproject;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.StrictMode;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.telephony.CellIdentityCdma;
 import android.telephony.CellIdentityGsm;
 import android.telephony.CellIdentityLte;
 import android.telephony.CellIdentityWcdma;
+import android.telephony.CellInfoCdma;
 import android.telephony.CellInfoGsm;
 import android.telephony.CellInfoLte;
 import android.telephony.CellInfoWcdma;
@@ -49,7 +52,6 @@ public class CellTowerMap extends FragmentActivity implements OnMapReadyCallback
             Toast.makeText(this, getString(R.string.error_string), Toast.LENGTH_SHORT).show();
         }
     }
-
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
@@ -70,28 +72,39 @@ public class CellTowerMap extends FragmentActivity implements OnMapReadyCallback
         if(cellTowers != null){
             for(Object cell: cellTowers.values()){
                 if(cell instanceof CellInfoGsm){
-                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
                         CellIdentityGsm gsm  = ((CellInfoGsm) cell).getCellIdentity();
                         if(gsm.getCid() != 0) {
                             validate(gsm.getCid(), locationFromOpenCellID(gsm.getCid(), gsm.getLac(), gsm.getMcc(), gsm.getMnc()));
                         }
                     }
                 }else if (cell instanceof CellInfoLte){
-                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
                         CellIdentityLte gsm = ((CellInfoLte) cell).getCellIdentity();
                         if(gsm.getCi() != 0) {
                             validate(gsm.getCi(), locationFromOpenCellID(gsm.getCi(), gsm.getTac(), gsm.getMcc(), gsm.getMnc()));
                         }
                     }
                 }else if (cell instanceof CellInfoWcdma){
-                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
                         CellIdentityWcdma gsm = ((CellInfoWcdma) cell).getCellIdentity();
                         if(gsm.getCid() != 0) {
                             validate(gsm.getCid(), locationFromOpenCellID(gsm.getCid(), gsm.getLac(), gsm.getMcc(), gsm.getMnc()));
                         }
                     }
+                }else if (cell instanceof CellInfoCdma){
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                        CellIdentityCdma  identity = ((CellInfoCdma) cell).getCellIdentity();
+                        addToMap(String.valueOf(getString(R.string.cdma)), identity.getLatitude(), identity.getLongitude());
+                    }
                 }
             }
+        }
+    }
+    private void addToMap(String identity, double lat, double lon){
+        if(mMap != null) {
+            mMap.addMarker(new MarkerOptions().position(new LatLng(lat, lon)).title(identity));
+            mMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(lat, lon)).zoom(15).bearing(0).tilt(45).build()));
         }
     }
     private void validate(int title, Double[] da){
@@ -106,7 +119,7 @@ public class CellTowerMap extends FragmentActivity implements OnMapReadyCallback
                 }catch (Exception ignored){}
             }
         }else{
-            Toast.makeText(this, "Cannot get location", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.can_not_get_location, Toast.LENGTH_SHORT).show();
         }
     }
     @SuppressLint("StaticFieldLeak")
