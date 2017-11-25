@@ -1,34 +1,40 @@
 package com.oliver.bathurst.individualproject;
 
 import android.annotation.SuppressLint;
+import android.content.pm.PackageManager;
 import android.os.AsyncTask;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.telephony.CellIdentityGsm;
+import android.telephony.CellIdentityLte;
+import android.telephony.CellInfoGsm;
+import android.telephony.CellInfoLte;
+import android.telephony.NeighboringCellInfo;
+import android.telephony.TelephonyManager;
+import android.telephony.gsm.GsmCellLocation;
 import android.widget.Toast;
-
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.Serializable;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
 import java.util.HashMap;
 
 public class CellTowerMap extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private HashMap cellTowers;
-    private int myLatitude = 0,myLongitude = 0;
+    private float myLatitude = 0, myLongitude = 0;
     private boolean fail = false;
 
     @Override
@@ -37,10 +43,11 @@ public class CellTowerMap extends FragmentActivity implements OnMapReadyCallback
         setContentView(R.layout.activity_cell_tower_map);
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
         Serializable cellTowersReceived = getIntent().getSerializableExtra("CELL_TOWERS");
-        if(cellTowersReceived instanceof HashMap){
-            cellTowers = (HashMap)cellTowersReceived;
-        }else{
+        if (cellTowersReceived instanceof HashMap) {
+            cellTowers = (HashMap) cellTowersReceived;
+        } else {
             Toast.makeText(this, getString(R.string.error_string), Toast.LENGTH_SHORT).show();
         }
     }
@@ -56,27 +63,57 @@ public class CellTowerMap extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        getHome();
         processMap();
+    }
+    private void getHome() {
+        TelephonyManager telephonyManager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            if(telephonyManager != null){
+                GsmCellLocation gsmLocation = (GsmCellLocation) telephonyManager.getCellLocation();
+                locationFromGoogle(gsmLocation.getCid(), gsmLocation.getLac());
+                validate(gsmLocation.getCid(), true);
+            }
+        }else{
+            Toast.makeText(this, getString(R.string.perform_permissions_checkup), Toast.LENGTH_SHORT).show();
+        }
     }
     private void processMap(){
         if(cellTowers != null){
             for(Object cell: cellTowers.values()){
-                if(cell instanceof Cell){
-                    Cell toCell = (Cell) cell;
-                    locationFromGoogle(toCell.getCID(), toCell.getLAC());
-                    if(!fail){
-                        LatLng pos = new LatLng(myLatitude, myLongitude);
-                        mMap.addMarker(new MarkerOptions().position(pos).title(String.valueOf(toCell.getCID())));
-                        mMap.moveCamera(CameraUpdateFactory.newLatLng(pos));
+                if(cell instanceof CellInfoGsm){
+                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                        CellIdentityGsm gsm  = ((CellInfoGsm) cell).getCellIdentity();
+                        locationFromGoogle(gsm.getCid(), gsm.getLac());
+                        validate(gsm.getCid(),false);
                     }
-                }else if (cell instanceof CellLte){
-                    CellLte toCellLTE = (CellLte) cell;
-                    //process here
+                }else if (cell instanceof CellInfoLte){
+                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                        CellIdentityLte gsm = ((CellInfoLte) cell).getCellIdentity();
+                        locationFromGoogle(gsm.getCi(), gsm.getTac());
+                        validate(gsm.getCi(), false);
+                    }
+                }else if (cell instanceof NeighboringCellInfo){
+                    NeighboringCellInfo cellNeighbour = (NeighboringCellInfo) cell;
+                    locationFromGoogle(cellNeighbour.getCid(), cellNeighbour.getLac());
+                    validate(cellNeighbour.getCid(), false);
                 }
             }
         }
     }
-
+    private void validate(int title, boolean zoom){
+        if(!fail){
+            if(myLatitude != 0 && myLongitude != 0) {
+                LatLng pos = new LatLng(myLatitude, myLongitude);
+                mMap.addMarker(new MarkerOptions().position(pos).title(String.valueOf(title)));
+                if (zoom) {
+                    mMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(myLatitude, myLongitude)).zoom(19).bearing(0).tilt(45).build()));
+                }
+            }else{
+                Toast.makeText(this, "Cannot get home network location", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
     @SuppressLint("StaticFieldLeak")
     private void locationFromGoogle(final int cid, final int lac){
          new AsyncTask<Void, Void, Void>(){
@@ -91,10 +128,9 @@ public class CellTowerMap extends FragmentActivity implements OnMapReadyCallback
                     DataInputStream dataInputStream = new DataInputStream(httpConn.getInputStream());
                     dataInputStream.readShort();
                     dataInputStream.readByte();
-
                     if (dataInputStream.readInt() == 0) {
-                        myLatitude = dataInputStream.readInt();
-                        myLongitude = dataInputStream.readInt();
+                        myLatitude = dataInputStream.readInt() / 1000000;
+                        myLongitude = dataInputStream.readInt() / 1000000;
                         fail = false;
                     }else{
                         fail = true;

@@ -298,7 +298,6 @@
     <string name="cell_info_updated">Cell Info Updated</string>
     <string name="gcm">GCM</string>
     <string name="lte">LTE</string>
-    <string name="wcdma">WCDMA</string>
     <string name="CID">CID:&#160;</string>
     <string name="MCC">MCC:&#160;</string>
     <string name="MNC">MNC:&#160;</string>
@@ -311,5 +310,6 @@
     <string name="ID">ID:&#160;</string>
     <string name="title_activity_cell_tower_map">Map</string>
     <string name="options">Options</string>
-    <string name="viewingMap">Viewing Map...</string>
+    <string name="neighbour">Neighbour Network</string>
+    <string name="noFriends">No neighbours found</string>
 </resources>
