@@ -306,10 +306,8 @@
     <string name="signalStrength">Signal Strength:&#160;</string>
     <string name="typeCell">TYPE:&#160;</string>
     <string name="PCI">PCI:&#160;</string>
-    <string name="TAC">TAC:&#160;</string>
-    <string name="ID">ID:&#160;</string>
     <string name="title_activity_cell_tower_map">Map</string>
     <string name="options">Options</string>
     <string name="neighbour">Neighbour Network</string>
-    <string name="noFriends">No neighbours found</string>
+    <string name="noFriends">No neighbour networks found</string>
 </resources>

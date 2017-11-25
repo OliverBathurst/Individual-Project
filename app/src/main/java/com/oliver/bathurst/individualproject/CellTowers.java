@@ -102,7 +102,20 @@ public class CellTowers extends AppCompatActivity implements NavigationView.OnNa
                     }
                 }
             }
-            addNeighbours();
+            if (tel != null) {
+                if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                    List<NeighboringCellInfo> neighboringCells = tel.getNeighboringCellInfo();
+                    if(neighboringCells.isEmpty()){
+                        Snackbar.make(findViewById(R.id.drawer_layout), R.string.noFriends, Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+                    }else{
+                        if (general != null) {
+                            for (NeighboringCellInfo neighboringCellInfo : neighboringCells) {
+                                general.put(neighboringCellInfo.getCid(), neighboringCellInfo);
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     @SuppressWarnings("StatementWithEmptyBody")
@@ -113,23 +126,6 @@ public class CellTowers extends AppCompatActivity implements NavigationView.OnNa
         }
         ((DrawerLayout) findViewById(R.id.drawer_layout)).closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    private void addNeighbours() {
-        if (tel != null) {
-            if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-                List<NeighboringCellInfo> neighboringCells = tel.getNeighboringCellInfo();
-                if(neighboringCells.isEmpty()){
-                    Snackbar.make(findViewById(R.id.drawer_layout), R.string.noFriends, Snackbar.LENGTH_SHORT).setAction("Action", null).show();
-                }else{
-                    if (general != null) {
-                        for (NeighboringCellInfo neighboringCellInfo : neighboringCells) {
-                            general.put(neighboringCellInfo.getCid(), neighboringCellInfo);
-                        }
-                    }
-                }
-            }
-        }
     }
     public class CellStateListener extends PhoneStateListener {
         public void onCellInfoChanged (List<CellInfo> cellInfo){
@@ -178,11 +174,11 @@ public class CellTowers extends AppCompatActivity implements NavigationView.OnNa
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
                         CellIdentityLte cellCasted = ((CellInfoLte) cellTower).getCellIdentity();
 
-                        build.append(getString(R.string.ID)).append(cellCasted.getCi()).append("\n")
+                        build.append(getString(R.string.CID)).append(cellCasted.getCi()).append("\n")
                                 .append(getString(R.string.MCC)).append(cellCasted.getMcc()).append("\n")
                                 .append(getString(R.string.MNC)).append(cellCasted.getMnc()).append("\n")
                                 .append(getString(R.string.PCI)).append(cellCasted.getPci()).append("\n")
-                                .append(getString(R.string.TAC)).append(cellCasted.getTac()).append("\n")
+                                .append(getString(R.string.LAC)).append(cellCasted.getTac()).append("\n")
                                 .append(getString(R.string.typeCell)).append(getString(R.string.lte)).append("\n");
                     }
                 }else if(cellTower instanceof CellInfoWcdma){
@@ -201,7 +197,8 @@ public class CellTowers extends AppCompatActivity implements NavigationView.OnNa
                     }
                 }else if(cellTower instanceof NeighboringCellInfo){
                     NeighboringCellInfo cellNeighbour = (NeighboringCellInfo) cellTower;
-                    build.append(getString(R.string.neighbour)).append("\n").append(getString(R.string.CID)).append(cellNeighbour.getCid()).append("\n")
+                    build.append(getString(R.string.neighbour)).append("\n")
+                            .append(getString(R.string.CID)).append(cellNeighbour.getCid()).append("\n")
                             .append(getString(R.string.LAC)).append(cellNeighbour.getLac()).append("\n")
                             .append(getString(R.string.signalStrength)).append(cellNeighbour.getRssi()).append("\n")
                             .append(getString(R.string.typeCell)).append(cellNeighbour.getNetworkType()).append("\n");

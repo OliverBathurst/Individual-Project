@@ -188,23 +188,81 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/sim_header">
+        android:title="@string/gmail_trigger_header">
         <CheckBoxPreference
-            android:key="check_sim_preference"
-            android:title="@string/monitor_SIM"
-            android:icon="@drawable/ic_sim_card_black_24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/ic_email_black_24dp"
+            android:key="sms_by_email"
+            android:summary="@string/gmail_trigger_summary"
+            android:title="@string/triggers_gmail_title" />
+        <EditTextPreference
+            android:key="gmail_remote_lock"
+            android:title="@string/remote_lock_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditTextPreference
+            android:key="gmail_loc"
+            android:title="@string/relay_position_gmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditTextPreference
+            android:key="email_stolen"
+            android:icon="@drawable/ic_android_black_24dp"
+            android:title="@string/flag_device_gmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditTextPreference
+            android:key="gmail_wipe"
+            android:icon="@drawable/ic_warning_black_24dp"
+            android:title="@string/wipe_phone_gmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditTextPreference
+            android:key="wipe_sdcard_gmail"
+            android:icon="@drawable/ic_warning_black_24dp"
+            android:title="@string/wipe_SD_gmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <CheckBoxPreference
+            android:key="delete_after_trigger"
+            android:icon="@drawable/ic_delete_black_24dp"
+            android:title="@string/delete_email_optional"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Preference
+            android:key="txt_to_speech_gmail"
+            android:selectable="false"
+            android:title="@string/txt_to_speech_gmail_title"
+            android:summary="@string/txt_to_speech_gmail_summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Preference
+            android:key="general_info"
+            android:icon="@drawable/ic_info_black_24dp"
+            android:title="@string/info_gmail_triggering"
             android:selectable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-        <ListPreference
-            android:key="sim_change_action"
-            android:icon="@drawable/ic_view_list_black_24dp"
-            android:title="@string/sim_change_action"
-            android:entries="@array/sim_action"
-            android:entryValues="@array/sim_action_values"
-            android:selectable="true"
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout="@layout/divider_preference">
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/gmail_sending_header">
+        <EditTextPreference
+            android:key="gmail_username"
+            android:title="@string/gmail_username_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+        <EditTextPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:key="gmail_password"
+            android:inputType="textPassword"
+            android:title="@string/gmail_password_title" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -229,6 +287,30 @@
             android:key="include_calllog"
             android:title="@string/email_include_call_log"
             android:summary="@string/include_call_log_summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout="@layout/divider_preference">
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/sim_header">
+        <CheckBoxPreference
+            android:key="check_sim_preference"
+            android:title="@string/monitor_SIM"
+            android:icon="@drawable/ic_sim_card_black_24dp"
+            android:selectable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ListPreference
+            android:key="sim_change_action"
+            android:icon="@drawable/ic_view_list_black_24dp"
+            android:title="@string/sim_change_action"
+            android:entries="@array/sim_action"
+            android:entryValues="@array/sim_action_values"
+            android:selectable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </PreferenceCategory>
@@ -334,81 +416,26 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/gmail_sending_header">
-    <EditTextPreference
-        android:key="gmail_username"
-        android:title="@string/gmail_username_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <EditTextPreference
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:key="gmail_password"
-        android:inputType="textPassword"
-        android:title="@string/gmail_password_title" />
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:layout="@layout/divider_preference">
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/gmail_trigger_header">
-    <CheckBoxPreference
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:icon="@drawable/ic_email_black_24dp"
-        android:key="sms_by_email"
-        android:summary="@string/gmail_trigger_summary"
-        android:title="@string/triggers_gmail_title" />
-    <EditTextPreference
-        android:key="gmail_remote_lock"
-        android:title="@string/remote_lock_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <EditTextPreference
-        android:key="gmail_loc"
-        android:title="@string/relay_position_gmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <EditTextPreference
-        android:key="email_stolen"
-        android:icon="@drawable/ic_android_black_24dp"
-        android:title="@string/flag_device_gmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <EditTextPreference
-        android:key="gmail_wipe"
-        android:icon="@drawable/ic_warning_black_24dp"
-        android:title="@string/wipe_phone_gmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <EditTextPreference
-        android:key="wipe_sdcard_gmail"
-        android:icon="@drawable/ic_warning_black_24dp"
-        android:title="@string/wipe_SD_gmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <CheckBoxPreference
-        android:key="delete_after_trigger"
-        android:icon="@drawable/ic_delete_black_24dp"
-        android:title="@string/delete_email_optional"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <Preference
-        android:key="txt_to_speech_gmail"
-        android:selectable="false"
-        android:title="@string/txt_to_speech_gmail_title"
-        android:summary="@string/txt_to_speech_gmail_summary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <Preference
-        android:key="general_info"
-        android:icon="@drawable/ic_info_black_24dp"
-        android:title="@string/info_gmail_triggering"
-        android:selectable="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:title="Cell Tower Information">
+        <Preference
+            android:key="cell_towers"
+            android:icon="@drawable/ic_network_cell_black_24dp"
+            android:title="@string/cell_tower_activity"
+            android:summary="@string/cell_tower_requirement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <CheckBoxPreference
+            android:key="cell_tower_email"
+            android:icon="@drawable/ic_email_black_24dp"
+            android:title="Include Info in Email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <CheckBoxPreference
+            android:key="cell_tower_sms"
+            android:icon="@drawable/ic_textsms_black_24dp"
+            android:title="Include Info in SMS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -487,13 +514,6 @@
 
         <PreferenceCategory
             android:title="@string/misc_title">
-            <Preference
-                android:key="cell_towers"
-                android:icon="@drawable/ic_network_cell_black_24dp"
-                android:title="@string/cell_tower_activity"
-                android:summary="@string/cell_tower_requirement"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
             <Preference
                 android:key="backup_shared_pref"
                 android:icon="@drawable/ic_settings_backup_restore_black_24dp"
