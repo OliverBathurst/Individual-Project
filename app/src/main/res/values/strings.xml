@@ -317,4 +317,8 @@
     <string name="system_id">System ID:&#160;</string>
     <string name="latitude">Latitude:&#160;</string>
     <string name="longitude">Longitude:&#160;</string>
+    <string name="range">Range:&#160;</string>
+    <string name="provided_by_opencellid">Provided by OpenCellID</string>
+    <string name="wcdma">WCDMA</string>
+    <string name="cell_tower_info">Cell Tower Information:</string>
 </resources>

@@ -1,9 +1,7 @@
 package com.oliver.bathurst.individualproject;
 
-import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Build;
-import android.os.StrictMode;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.telephony.CellIdentityCdma;
@@ -23,18 +21,11 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import org.w3c.dom.Document;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.NodeList;
 import java.io.Serializable;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.HashMap;
-import javax.xml.parsers.DocumentBuilderFactory;
 
 public class CellTowerMap extends FragmentActivity implements OnMapReadyCallback {
 
-    private static final String MOBILE_LOCATION_URI = "http://www.opencellid.org/cell/get?key=978e483439b03f";
     private GoogleMap mMap;
     private HashMap cellTowers;
 
@@ -66,37 +57,38 @@ public class CellTowerMap extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
         if(cellTowers != null) {
             processMap();
+        }else{
+            Toast.makeText(this, getString(R.string.error_string), Toast.LENGTH_SHORT).show();
         }
     }
     private void processMap(){
-        if(cellTowers != null){
-            for(Object cell: cellTowers.values()){
-                if(cell instanceof CellInfoGsm){
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-                        CellIdentityGsm gsm  = ((CellInfoGsm) cell).getCellIdentity();
-                        if(gsm.getCid() != 0) {
-                            validate(gsm.getCid(), locationFromOpenCellID(gsm.getCid(), gsm.getLac(), gsm.getMcc(), gsm.getMnc()));
-                        }
+        CellTowerHelper cth = new CellTowerHelper(this);
+        for(Object cell: cellTowers.values()){
+            if(cell instanceof CellInfoGsm){
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                    CellIdentityGsm gsm  = ((CellInfoGsm) cell).getCellIdentity();
+                    if(gsm.getCid() != 0) {
+                        validate(gsm.getCid(), cth.callOpenCell(gsm.getCid(), gsm.getLac(), gsm.getMcc(), gsm.getMnc()));
                     }
-                }else if (cell instanceof CellInfoLte){
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-                        CellIdentityLte gsm = ((CellInfoLte) cell).getCellIdentity();
-                        if(gsm.getCi() != 0) {
-                            validate(gsm.getCi(), locationFromOpenCellID(gsm.getCi(), gsm.getTac(), gsm.getMcc(), gsm.getMnc()));
-                        }
+                }
+            }else if (cell instanceof CellInfoLte){
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                    CellIdentityLte lte = ((CellInfoLte) cell).getCellIdentity();
+                    if(lte.getCi() != 0) {
+                        validate(lte.getCi(), cth.callOpenCell(lte.getCi(), lte.getTac(), lte.getMcc(), lte.getMnc()));
                     }
-                }else if (cell instanceof CellInfoWcdma){
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
-                        CellIdentityWcdma gsm = ((CellInfoWcdma) cell).getCellIdentity();
-                        if(gsm.getCid() != 0) {
-                            validate(gsm.getCid(), locationFromOpenCellID(gsm.getCid(), gsm.getLac(), gsm.getMcc(), gsm.getMnc()));
-                        }
+                }
+            }else if (cell instanceof CellInfoWcdma){
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
+                    CellIdentityWcdma wcdma = ((CellInfoWcdma) cell).getCellIdentity();
+                    if(wcdma.getCid() != 0) {
+                        validate(wcdma.getCid(), cth.callOpenCell(wcdma.getCid(), wcdma.getLac(), wcdma.getMcc(), wcdma.getMnc()));
                     }
-                }else if (cell instanceof CellInfoCdma){
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-                        CellIdentityCdma  identity = ((CellInfoCdma) cell).getCellIdentity();
-                        addToMap(String.valueOf(getString(R.string.cdma)), identity.getLatitude(), identity.getLongitude());
-                    }
+                }
+            }else if (cell instanceof CellInfoCdma){
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                    CellIdentityCdma  identity = ((CellInfoCdma) cell).getCellIdentity();
+                    addToMap(String.valueOf(getString(R.string.cdma)), identity.getLatitude(), identity.getLongitude());
                 }
             }
         }
@@ -109,43 +101,13 @@ public class CellTowerMap extends FragmentActivity implements OnMapReadyCallback
     }
     private void validate(int title, Double[] da){
         if(da != null && da[0] != null && da[1] != null && da[2] != null && mMap != null) {
-            if(da[0] != 0 && da[1] != 0) {
-                try {
-                    mMap.addMarker(new MarkerOptions().position(new LatLng(da[0], da[1])).title(String.valueOf(title)));
-                    mMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(da[0], da[1])).zoom(15).bearing(0).tilt(45).build()));
-                    mMap.addCircle(new CircleOptions().strokeColor(Color.GREEN).fillColor(0x5500ff00)
-                            .center(new LatLng(da[0], da[1]))
-                            .radius(da[2]));
-                }catch (Exception ignored){}
-            }
+            try {
+                mMap.addMarker(new MarkerOptions().position(new LatLng(da[0], da[1])).title(String.valueOf(title)));
+                mMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(da[0], da[1])).zoom(15).bearing(0).tilt(45).build()));
+                mMap.addCircle(new CircleOptions().strokeColor(Color.GREEN).fillColor(0x5500ff00).center(new LatLng(da[0], da[1])).radius(da[2]));
+            }catch (Exception ignored){}
         }else{
             Toast.makeText(this, R.string.can_not_get_location, Toast.LENGTH_SHORT).show();
         }
-    }
-    @SuppressLint("StaticFieldLeak")
-    private Double[] locationFromOpenCellID(final int cid, final int lac, final int mcc, final int mnc){
-        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitAll().build());
-
-        Double[] doubleArr = null;
-
-        try {
-            String toPost = MOBILE_LOCATION_URI + "&mcc=" + mcc + "&mnc=" + mnc + "&cellid=" + cid + "&lac=" + lac;
-            HttpURLConnection connection = (HttpURLConnection) new URL(toPost).openConnection();
-            connection.setRequestMethod("GET");
-            connection.setRequestProperty("Accept", "application/xml");
-            Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(connection.getInputStream());
-            doc.normalize();
-            NodeList nodeList = doc.getElementsByTagName("cell");
-            if(nodeList.getLength() >= 1){
-                NamedNodeMap attributes = nodeList.item(0).getAttributes();
-                doubleArr = new Double[] {Double.parseDouble(attributes.getNamedItem("lat").getNodeValue()),
-                        Double.parseDouble(attributes.getNamedItem("lon").getNodeValue()),
-                        Double.parseDouble(attributes.getNamedItem("range").getNodeValue())};
-            }else{
-                doubleArr = new Double[] {0.0, 0.0, 0.0};
-            }
-        }catch (Exception ignored){}
-
-        return doubleArr;
     }
 }

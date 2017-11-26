@@ -198,7 +198,7 @@ public class CellTowers extends AppCompatActivity implements NavigationView.OnNa
                                 .append(getString(R.string.MNC)).append(cellCasted.getMnc()).append("\n")
                                 .append(getString(R.string.signalStrength)).append(cell.getCellSignalStrength().getDbm()).append("\n")
                                 .append(getString(R.string.isActive)).append(cell.isRegistered()).append("\n")
-                                .append(getString(R.string.typeCell)).append(getString(R.string.gcm));
+                                .append(getString(R.string.typeCell)).append(getString(R.string.wcdma));
                     }
                 }else if(cellTower instanceof NeighboringCellInfo){
 
