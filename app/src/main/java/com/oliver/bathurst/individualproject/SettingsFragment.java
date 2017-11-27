@@ -1,8 +1,6 @@
 package com.oliver.bathurst.individualproject;
 
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.app.admin.DevicePolicyManager;
 import android.bluetooth.BluetoothAdapter;
 import android.content.BroadcastReceiver;
@@ -29,8 +27,6 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.SwitchPreference;
 import android.support.v4.content.LocalBroadcastManager;
-import android.widget.SeekBar;
-import android.widget.TextView;
 import android.widget.Toast;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -48,7 +44,6 @@ import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 public class SettingsFragment extends PreferenceFragment {
     private BroadcastReceiver mRegistrationBroadcastReceiver;
     private static final int REQUEST_ENABLE_BT = 23;
-    private int setVolProg = 90, battProg = 5;
     private Server server = null;
     public SettingsFragment() {}
 
@@ -94,20 +89,6 @@ public class SettingsFragment extends PreferenceFragment {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     hideApp(preference);
-                    return false;
-                }
-            });
-            findPreference("sms_ringtone_volume").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    smsRingtoneVol(settings);
-                    return false;
-                }
-            });
-            findPreference("battery_percent").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    batteryPercent(settings);
                     return false;
                 }
             });
@@ -173,9 +154,9 @@ public class SettingsFragment extends PreferenceFragment {
             ((CheckBoxPreference) findPreference("hide_sms")).setChecked(settingsView.getBoolean("hide_sms", true));
             ((CheckBoxPreference) findPreference("enable_triggers")).setChecked(settingsView.getBoolean("enable_triggers", true));
 
-            findPreference("sms_ringtone_volume").setSummary(getString(R.string.current_volume) + settingsView.getInt("seek_bar_volume", 90) + "%");
+            findPreference("sms_ringtone_volume").setSummary(getString(R.string.current_volume) + settingsView.getString("sms_ringtone_volume", "90") + "%");
 
-            findPreference("battery_percent").setSummary(getString(R.string.current_percentage) + settingsView.getInt("seek_bar_battery", 5) + "%");
+            findPreference("battery_percent").setSummary(getString(R.string.current_percentage) + settingsView.getString("battery_percent", "5") + "%");
 
             findPreference("un-stolen").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
@@ -242,6 +223,20 @@ public class SettingsFragment extends PreferenceFragment {
                     return true;
                 }
             };
+            Preference.OnPreferenceChangeListener listenerSeconds = new Preference.OnPreferenceChangeListener() {
+                @Override
+                public boolean onPreferenceChange(Preference preference, Object newValue) {
+                    preference.setSummary(getString(R.string.current_volume) + newValue.toString() + "%");
+                    return true;
+                }
+            };
+            Preference.OnPreferenceChangeListener listenerPercentage = new Preference.OnPreferenceChangeListener() {
+                @Override
+                public boolean onPreferenceChange(Preference preference, Object newValue) {
+                    preference.setSummary(getString(R.string.current_percentage) + newValue.toString() + "%");
+                    return true;
+                }
+            };
 
             ListPreference ringList = (ListPreference) findPreference("ringtone_select");
             try {
@@ -254,6 +249,9 @@ public class SettingsFragment extends PreferenceFragment {
                 ringList.setEntries(list.keySet().toArray(new CharSequence[0]));
                 ringList.setEntryValues(list.values().toArray(new CharSequence[0]));
             }catch(Exception ignored){}
+
+            EditTextPreference volumeRinger = (EditTextPreference) findPreference("sms_ringtone_volume");
+            EditTextPreference batteryPercentage = (EditTextPreference) findPreference("battery_percent");
 
 
             EditTextPreference emailGCM = (EditTextPreference) findPreference("send_email_gcm");
@@ -314,6 +312,8 @@ public class SettingsFragment extends PreferenceFragment {
             if (emailUpdates.getText() != null && emailUpdates.getText().trim().length() != 0) {
                 emailUpdates.setSummary(emailUpdates.getText());
             }
+            volumeRinger.setOnPreferenceChangeListener(listenerSeconds);
+            batteryPercentage.setOnPreferenceChangeListener(listenerPercentage);
             emailGCM.setOnPreferenceChangeListener(listener);
             smsGCM.setOnPreferenceChangeListener(listener);
             wifiGCM.setOnPreferenceChangeListener(listener);
@@ -362,7 +362,6 @@ public class SettingsFragment extends PreferenceFragment {
             findPreference("general_info").setOnPreferenceClickListener(generalInfo);
         }catch(Exception ignored){}
     }
-
     private void updateValue(EditTextPreference edit, SharedPreferences.Editor sh, String defValue, String tag){
         if (edit.getText() != null && edit.getText().trim().length() != 0) {
             edit.setSummary(getString(R.string.trigger_value) + edit.getText());
@@ -457,74 +456,6 @@ public class SettingsFragment extends PreferenceFragment {
     public void onPause() {
         super.onPause();
         LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(mRegistrationBroadcastReceiver);
-    }
-    private void smsRingtoneVol(final SharedPreferences.Editor settings){
-        Dialog dialog = new Dialog(getActivity());
-        dialog.setContentView(R.layout.dialog);
-        dialog.setTitle(getString(R.string.set_volume));
-        dialog.setCancelable(true);
-        dialog.show();
-        final TextView tv_dialog_size = (TextView) dialog.findViewById(R.id.set_size_help_text);
-
-        dialog.setOnCancelListener(new Dialog.OnCancelListener() {
-            @Override
-            public void onCancel(DialogInterface dialog) {
-                settings.putInt("seek_bar_volume", setVolProg).apply();
-                findPreference("sms_ringtone_volume").setSummary(getString(R.string.current_volume) + setVolProg + getString(R.string.percentage_symbol));
-            }
-        });
-        dialog.setOnDismissListener(new Dialog.OnDismissListener() {
-            @Override
-            public void onDismiss(DialogInterface dialog) {
-                settings.putInt("seek_bar_volume", setVolProg).apply();
-                findPreference("sms_ringtone_volume").setSummary(getString(R.string.current_volume) + setVolProg + getString(R.string.percentage_symbol));
-            }
-        });
-        ((SeekBar) dialog.findViewById(R.id.size_seekbar)).setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @SuppressLint("DefaultLocale")
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
-                tv_dialog_size.setText(String.format("%s%d%s", getString(R.string.vol), progress, getString(R.string.per)));
-                setVolProg = progress;
-            }
-            @Override
-            public void onStartTrackingTouch(SeekBar arg0) {}
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {}
-        });
-    }
-    private void batteryPercent(final SharedPreferences.Editor settings){
-        Dialog dialog = new Dialog(getActivity());
-        dialog.setContentView(R.layout.dialog2);
-        dialog.setTitle(getString(R.string.set_battery_percent));
-        dialog.setCancelable(true);
-        dialog.show();
-        final TextView tv_dialog_size = (TextView) dialog.findViewById(R.id.set_size_help_text2);
-
-        dialog.setOnCancelListener(new Dialog.OnCancelListener() {
-            @Override
-            public void onCancel(DialogInterface dialog) {
-                settings.putInt("seek_bar_battery", battProg).apply();
-                findPreference("battery_percent").setSummary(getString(R.string.current_percentage)+ battProg + getString(R.string.percentage_symbol));
-            }
-        });
-        dialog.setOnDismissListener(new Dialog.OnDismissListener() {
-            @Override
-            public void onDismiss(DialogInterface dialog) {
-                settings.putInt("seek_bar_battery", battProg).apply();
-                findPreference("battery_percent").setSummary(getString(R.string.current_percentage)+ battProg + getString(R.string.percentage_symbol));
-            }
-        });
-        ((SeekBar) dialog.findViewById(R.id.size_seekbar2)).setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @SuppressLint("DefaultLocale")
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
-                tv_dialog_size.setText(String.format("%s%d%s", getString(R.string.plsselectpercent), progress, getString(R.string.per)));
-                battProg = progress;
-            }
-            @Override
-            public void onStartTrackingTouch(SeekBar arg0) {}
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {}
-        });
     }
     private void hideApp(Preference preference){
         if(preference.getSharedPreferences().getBoolean("hide_app",false)){

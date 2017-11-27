@@ -29,6 +29,7 @@
             android:key="app_pass"
             android:icon="@drawable/ic_lock_black_24dp"
             android:title="@string/set_app_password"
+            android:inputType="textPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditTextPreference
@@ -351,9 +352,10 @@
             android:title="@string/send_email_battery_low"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-        <Preference
+        <EditTextPreference
             android:key="battery_percent"
             android:title="@string/battery_percent"
+            android:inputType="number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </PreferenceCategory>
@@ -394,6 +396,7 @@
         <EditTextPreference
             android:key="ring_duration"
             android:title="@string/ring_duration"
+            android:inputType="number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <ListPreference
@@ -404,9 +407,10 @@
             android:entryValues="@array/no_ringtone_found_values"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-        <Preference
+        <EditTextPreference
             android:key="sms_ringtone_volume"
             android:title="@string/volume_percentage"
+            android:inputType="number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </PreferenceCategory>
@@ -536,6 +540,7 @@
             <EditTextPreference
                 android:key="secondary_phone"
                 android:icon="@drawable/ic_phone_android_black_24dp"
+                android:inputType="number"
                 android:title="@string/second_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />

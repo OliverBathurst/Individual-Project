@@ -12,8 +12,6 @@
     <string name="scalewithone">Scale: 1</string>
     <string name="radiuscolon">Radius: </string>
     <string name="declaration">Position declared by:&#160;</string>
-    <string name="please_select_volume">Please select volume: (%)</string>
-    <string name="please_select_battery_percent">Please select battery percent: (%)</string>
     <string name="start">S T A R T</string>
     <string name="information">I N F O R M A T I O N</string>
     <string name="degrees">Degrees:&#160;</string>
@@ -33,9 +31,6 @@
     <string name="saveAS">Save</string>
     <string name="to_calibrate_move_away_from_the_beacon">To calibrate, move away from the beacon and save the signal strength at different distances, the more readings, the more accurate the positioning will be.</string>
     <string name="reset_beacon_calibration">Reset Beacon Calibration</string>
-    <string name="vol">Please select volume: (</string>
-    <string name="per">%)</string>
-    <string name="plsselectpercent">Please select percentage: (</string>
     <string name="title_activity_sign_up">Sign Up</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -150,7 +145,6 @@
     <string name="trigger_value">Trigger:&#160;</string>
     <string name="current_volume">Current volume:&#160;</string>
     <string name="current_percentage">Current percentage:&#160;</string>
-    <string name="percentage_symbol">%</string>
     <string name="admin_already_active">Admin already active</string>
     <string name="my_website">https://oliverbathurst.github.io/web</string>
     <string name="unflag_device">Device un-flagged</string>
@@ -196,8 +190,6 @@
     <string name="cannot_find_at_index">Cannot find device at index:&#160;</string>
     <string name="all_perms_granted">All permissions granted.</string>
     <string name="error_clipboard">Error copying token to clipboard</string>
-    <string name="set_volume">Set volume</string>
-    <string name="set_battery_percent">Set battery percentage</string>
     <string name="token_clipboard">Token copied to clipboard</string>
     <string name="sim_change_alert">SIM Change Alert</string>
     <string name="sim_state">SIM State:&#160;</string>
@@ -294,7 +286,7 @@
     <string name="title_activity_cell_towers">CellTowers</string>
     <string name="view_map">View Map</string>
     <string name="cell_tower_activity_title">Cell Towers</string>
-    <string name="cell_tower_requirement">Requires Android 4.2 and above</string>
+    <string name="cell_tower_requirement">Requires Android 4.2 (Jelly Bean) and above</string>
     <string name="cell_info_updated">Cell Info Updated</string>
     <string name="gcm">GSM</string>
     <string name="lte">LTE</string>

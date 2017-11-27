@@ -5,9 +5,7 @@
 
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/group2"
-            android:title="@string/options">
+        <item android:title="@string/options">
             <menu>
                 <item
                     android:id="@+id/viewMap"
