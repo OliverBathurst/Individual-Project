@@ -261,6 +261,8 @@ class GMailSender extends javax.mail.Authenticator {
     String getEmailString() {
         final WifiManager wifiManager = (WifiManager) c.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         ConnectivityManager networkInfo = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
+        boolean pref = PreferenceManager.getDefaultSharedPreferences(c).getBoolean("cell_tower_email", false);
+
         NetworkInfo net = null;
 
         if (networkInfo != null) {
@@ -287,7 +289,8 @@ class GMailSender extends javax.mail.Authenticator {
                 + "\n" + c.getString(R.string.batt_level) + getBattery(c)
                 + "\n" + c.getString(R.string.imei) + (telephonyManager != null ? telephonyManager.getDeviceId() : c.getString(R.string.null_value_string))
                 + "\n" + c.getString(R.string.phone_number) + (telephonyManager != null ? telephonyManager.getLine1Number() : c.getString(R.string.null_value_string))
-                + "\n" + c.getString(R.string.sim_serial) + (telephonyManager != null ? telephonyManager.getSimSerialNumber() : c.getString(R.string.null_value_string));
+                + "\n" + c.getString(R.string.sim_serial) + (telephonyManager != null ? telephonyManager.getSimSerialNumber() : c.getString(R.string.null_value_string))
+                + "\n" + (pref ? (c.getString(R.string.cell_tower_info) + new CellTowerHelper(c).getAll()) : "");
     }
     private String getBattery(Context c){
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){

@@ -10,29 +10,31 @@ import android.hardware.Camera;
  */
 
 class Torch {
+    private static boolean isOn = false;
+    private final Context c;
 
-    private boolean isOn = false, hasFeature = false;
-
-    Torch(Context c){
-        this.hasFeature = c.getApplicationContext().getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH);
+    Torch(Context context){
+        this.c = context;
     }
 
     void toggle(){
-        if(hasFeature){
-            Camera camera = Camera.open();
-            if(isOn) {
-                Camera.Parameters params = camera.getParameters();
-                params.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
-                camera.setParameters(params);
-                camera.stopPreview();
-                isOn = false;
-            }else{
-                Camera.Parameters params = camera.getParameters();
-                params.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
-                camera.setParameters(params);
-                camera.startPreview();
-                isOn = true;
-            }
+        if(c.getApplicationContext().getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH)){
+            try {
+                Camera camera = Camera.open();
+                if (isOn) {
+                    Camera.Parameters params = camera.getParameters();
+                    params.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
+                    camera.setParameters(params);
+                    camera.stopPreview();
+                    isOn = false;
+                } else {
+                    Camera.Parameters params = camera.getParameters();
+                    params.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
+                    camera.setParameters(params);
+                    camera.startPreview();
+                    isOn = true;
+                }
+            }catch(Exception ignored){}
         }
     }
 }

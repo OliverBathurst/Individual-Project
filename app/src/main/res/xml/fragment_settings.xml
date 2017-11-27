@@ -182,6 +182,12 @@
             android:title="@string/send_email_gcm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+        <EditTextPreference
+            android:key="turn_torch_on_gcm"
+            android:icon="@drawable/ic_android_black_24dp"
+            android:title="Toggle Torch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -431,13 +437,13 @@
         <CheckBoxPreference
             android:key="cell_tower_email"
             android:icon="@drawable/ic_email_black_24dp"
-            android:title="Include Info in Email"
+            android:title="@string/include_cell_in_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <CheckBoxPreference
             android:key="cell_tower_sms"
             android:icon="@drawable/ic_textsms_black_24dp"
-            android:title="Include Info in SMS"
+            android:title="@string/include_cell_in_sms"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </PreferenceCategory>

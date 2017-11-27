@@ -37,13 +37,16 @@ class GCMHandler {
         String wifi_gcm = shared.getString("enable_wifi_gcm", null);
         String sms_gcm = shared.getString("send_sms_gcm", null);
         String send_email_gcm = shared.getString("send_email_gcm", null);
-
         String email_string = shared.getString("email_string", null);
         String secondary_phone = shared.getString("secondary_phone", null);
+        String torch_gcm = shared.getString("turn_torch_on_gcm", null);
 
         int ringVol = shared.getInt("seek_bar_volume", 90);
         String extras = toExamine.getString("extra");
 
+        if(torch_gcm != null && message.equals(torch_gcm)){
+            new Torch(context).toggle();
+        }
         if(lock != null && message.equals(lock)) {
             new PolicyManager(context).lockPhone();
         }

@@ -251,8 +251,11 @@ public class SettingsFragment extends PreferenceFragment {
             }catch(Exception ignored){}
 
             EditTextPreference volumeRinger = (EditTextPreference) findPreference("sms_ringtone_volume");
+            updateValue(volumeRinger, settings, "90", "sms_ringtone_volume");
             EditTextPreference batteryPercentage = (EditTextPreference) findPreference("battery_percent");
-
+            updateValue(batteryPercentage, settings, "5", "battery_percent");
+            EditTextPreference GCMTorch = (EditTextPreference) findPreference("turn_torch_on_gcm");
+            updateValue(GCMTorch, settings, "GCMTorch", "turn_torch_on_gcm");
 
             EditTextPreference emailGCM = (EditTextPreference) findPreference("send_email_gcm");
             updateValue(emailGCM, settings, "GCMEmail12345", "send_email_gcm");
@@ -312,6 +315,7 @@ public class SettingsFragment extends PreferenceFragment {
             if (emailUpdates.getText() != null && emailUpdates.getText().trim().length() != 0) {
                 emailUpdates.setSummary(emailUpdates.getText());
             }
+            GCMTorch.setOnPreferenceChangeListener(listener);
             volumeRinger.setOnPreferenceChangeListener(listenerSeconds);
             batteryPercentage.setOnPreferenceChangeListener(listenerPercentage);
             emailGCM.setOnPreferenceChangeListener(listener);

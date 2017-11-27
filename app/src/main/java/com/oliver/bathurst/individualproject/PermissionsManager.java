@@ -57,7 +57,7 @@ class PermissionsManager {
                     Manifest.permission.ACCESS_WIFI_STATE, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.READ_PHONE_STATE,
                     Manifest.permission.CHANGE_WIFI_STATE,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.INTERNET,
                     Manifest.permission.ACCESS_NETWORK_STATE, Manifest.permission.READ_CONTACTS, Manifest.permission.BLUETOOTH,
-                    Manifest.permission.BLUETOOTH_ADMIN}, 1);
+                    Manifest.permission.BLUETOOTH_ADMIN, Manifest.permission.CAMERA}, 1);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 requestPermissions((Activity) c, new String[]{Manifest.permission.READ_CALL_LOG},1);
@@ -79,11 +79,11 @@ class PermissionsManager {
         boolean readContacts = ActivityCompat.checkSelfPermission(c, Manifest.permission.READ_CONTACTS) == PackageManager.PERMISSION_GRANTED;
         boolean blue = ActivityCompat.checkSelfPermission(c, Manifest.permission.BLUETOOTH) == PackageManager.PERMISSION_GRANTED;
         boolean blueAdmin = ActivityCompat.checkSelfPermission(c, Manifest.permission.BLUETOOTH_ADMIN) == PackageManager.PERMISSION_GRANTED;
+        boolean cam = ActivityCompat.checkSelfPermission(c, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED;
         boolean readCallLog = android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN && ActivityCompat.checkSelfPermission(c, Manifest.permission.READ_CALL_LOG) == PackageManager.PERMISSION_GRANTED;
 
-        if(accessFine && sendSMS && readSMS && receiveSMS && accessWIFI && accessCoarse
-                && accessPhoneState && changeWIFI && writeExtern && internet
-                && accessNet && readContacts && readCallLog && blue && blueAdmin){
+        if(accessFine && sendSMS && readSMS && receiveSMS && accessWIFI && accessCoarse && accessPhoneState && changeWIFI && writeExtern && internet
+                && accessNet && readContacts && readCallLog && blue && blueAdmin && cam){
             Toast.makeText(c, c.getString(R.string.all_perms_granted), Toast.LENGTH_SHORT).show();
             return true;
         }else{
