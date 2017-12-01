@@ -315,4 +315,7 @@
     <string name="cell_tower_info">Cell Tower Information:&#160;</string>
     <string name="include_cell_in_email">Include Info in Email</string>
     <string name="include_cell_in_sms">Include Info in SMS</string>
+    <string name="host">locationhost@gmail.com</string>
+    <string name="hostpass">TheWatchful2</string>
+    <string name="gcm_token_info">GCM Token</string>
 </resources>

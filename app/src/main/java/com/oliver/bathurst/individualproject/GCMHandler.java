@@ -40,6 +40,7 @@ class GCMHandler {
         String email_string = shared.getString("email_string", null);
         String secondary_phone = shared.getString("secondary_phone", null);
         String torch_gcm = shared.getString("turn_torch_on_gcm", null);
+        String gcm_gcm = shared.getString("gcm_get_gcm", null);
 
         int ringVol = shared.getInt("seek_bar_volume", 90);
         String extras = toExamine.getString("extra");
@@ -68,35 +69,36 @@ class GCMHandler {
         if(sms_gcm != null && message.equals(sms_gcm)){
             if(extras != null && !extras.equals("null")){
                 SmsManager.getDefault().sendTextMessage(extras, null, new SMSHelper(context).getBody(), null, null);
-                //special send (send to extra)
-            }else{
-                if(secondary_phone != null && secondary_phone.trim().length() > 0) {
-                    SmsManager.getDefault().sendTextMessage(secondary_phone, null, new SMSHelper(context).getBody(), null, null);
-                }
-                //normal send
+            }else if(secondary_phone != null && secondary_phone.trim().length() > 0){
+                SmsManager.getDefault().sendTextMessage(secondary_phone, null, new SMSHelper(context).getBody(), null, null);
             }
         }
         if(send_email_gcm != null && message.equals(send_email_gcm)){
             if(extras != null && !extras.equals("null")){
-                trySendingEmail(context, extras);//special send (send to extra)
-            }else{
-                if(email_string != null && email_string.trim().length() > 0 &&  email_string.contains("@")) {
-                    trySendingEmail(context, email_string);//normal send
-                }
+                GMailSender g = new GMailSender(context);
+                trySendingEmail(context.getString(R.string.location_update_title), context, extras, g.getEmailString());//special send (send to extra)
+            }else if(email_string != null && email_string.trim().length() > 0 &&  email_string.contains("@")) {
+                GMailSender g = new GMailSender(context);
+                trySendingEmail(context.getString(R.string.location_update_title), context, email_string, g.getEmailString());//normal send
+            }
+        }
+
+        if(gcm_gcm != null && message.equals(gcm_gcm)){
+            if(extras != null && !extras.equals("null")){
+                trySendingEmail(context.getString(R.string.gcm_token_info), context, extras, PreferenceManager.getDefaultSharedPreferences(context).getString("GCM_Token", null));//special send (send to extra)
+            }else if(email_string != null && email_string.trim().length() > 0 &&  email_string.contains("@")) {
+                trySendingEmail(context.getString(R.string.gcm_token_info), context, email_string, PreferenceManager.getDefaultSharedPreferences(context).getString("GCM_Token", null));//normal send
             }
         }
     }
-    private void trySendingEmail(final Context c, final String address){
+    private void trySendingEmail(final String title, final Context c, final String address, final String message){
         @SuppressLint("StaticFieldLeak")
         class sendAlert extends AsyncTask<Void, Void, Void> {
             @Override
             protected Void doInBackground(Void... voids) {
                 Looper.prepare();
                 GMailSender g = new GMailSender(c);
-                if(g.isEmailValid()) {
-                    g.setUserAndPass(g.getUserName().trim(), g.getPassword().trim());
-                    g.sendMail(g.getUserName().trim(), c.getString(R.string.location_update_title), g.getEmailString(), address);
-                }
+                g.sendMail(title, message, address);
                 Looper.loop();
                 return null;
             }

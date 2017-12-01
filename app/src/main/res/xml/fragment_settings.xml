@@ -88,6 +88,18 @@
             android:title="@string/remote_wipe_sd_sms"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+        <EditTextPreference
+            android:key="turn_torch_on_sms"
+            android:icon="@drawable/ic_android_black_24dp"
+            android:title="Toggle Torch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditTextPreference
+            android:key="get_gcm_sms"
+            android:icon="@drawable/ic_code_black_24dp"
+            android:title="Get GCM Token"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
         <Preference
             android:key="txt_to_speech_sms"
             android:selectable="false"
@@ -186,6 +198,12 @@
             android:key="turn_torch_on_gcm"
             android:icon="@drawable/ic_android_black_24dp"
             android:title="Toggle Torch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditTextPreference
+            android:key="gcm_get_gcm"
+            android:icon="@drawable/ic_android_black_24dp"
+            android:title="Get GCM Token"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </PreferenceCategory>

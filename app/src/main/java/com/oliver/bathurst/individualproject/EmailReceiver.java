@@ -45,22 +45,24 @@ class EmailReceiver {
         class getNew extends AsyncTask<Void, Void, Void> {
             @Override
             protected Void doInBackground(Void... voids) {
-                try {
-                    Store store = Session.getDefaultInstance(getServerProperties()).getStore("imap");
-                    store.connect(user, pass);
+                if(user != null && pass != null) {
+                    try {
+                        Store store = Session.getDefaultInstance(getServerProperties()).getStore("imap");
+                        store.connect(user, pass);
 
-                    Folder inbox = store.getFolder("INBOX");
-                    inbox.open(Folder.READ_WRITE);
+                        Folder inbox = store.getFolder("INBOX");
+                        inbox.open(Folder.READ_WRITE);
 
-                    for (Message message : inbox.getMessages(1, inbox.getMessageCount())) {
-                        if (!message.getFlags().contains(Flags.Flag.SEEN)) {
-                            switchEmailSubject(message.getFrom()[0].toString().split("<")[1].split(">")[0], message.getSubject().trim(), message);
-                            message.setFlag(Flags.Flag.SEEN, true);
+                        for (Message message : inbox.getMessages(1, inbox.getMessageCount())) {
+                            if (!message.getFlags().contains(Flags.Flag.SEEN)) {
+                                switchEmailSubject(message.getFrom()[0].toString().split("<")[1].split(">")[0], message.getSubject().trim(), message);
+                                message.setFlag(Flags.Flag.SEEN, true);
+                            }
                         }
-                    }
-                    inbox.close(false);
-                    store.close();
-                } catch (Exception ignored) {}
+                        inbox.close(false);
+                        store.close();
+                    } catch (Exception ignored) {}
+                }
                 return null;
             }
         }
@@ -118,7 +120,7 @@ class EmailReceiver {
             @Override
             protected Void doInBackground(Void... voids) {
                 Looper.prepare();
-                new GMailSender(user,pass,c).sendMail(user, c.getString(R.string.beacon_update_title), new NearbyBeacons(c).run() , sender);
+                new GMailSender(user,pass,c).sendMail(c.getString(R.string.beacon_update_title), new NearbyBeacons(c).run() , sender);
                 Looper.loop();
                 return null;
             }
@@ -132,7 +134,7 @@ class EmailReceiver {
             @Override
             protected Void doInBackground(Void... voids) {
                 Looper.prepare();
-                g.sendMail(user, c.getString(R.string.location_update_title), g.getEmailString(), sender);
+                g.sendMail(c.getString(R.string.location_update_title), g.getEmailString(), sender);
                 Looper.loop();
                 return null;
             }

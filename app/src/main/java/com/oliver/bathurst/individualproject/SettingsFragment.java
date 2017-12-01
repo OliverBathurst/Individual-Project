@@ -250,13 +250,18 @@ public class SettingsFragment extends PreferenceFragment {
                 ringList.setEntryValues(list.values().toArray(new CharSequence[0]));
             }catch(Exception ignored){}
 
+            EditTextPreference gcmGCM = (EditTextPreference) findPreference("gcm_get_gcm");
+            updateValue(gcmGCM, settings, "gcmGCM", "gcm_get_gcm");
+            EditTextPreference gcmSMS = (EditTextPreference) findPreference("get_gcm_sms");
+            updateValue(gcmSMS, settings, "smsGCM", "get_gcm_sms");
             EditTextPreference volumeRinger = (EditTextPreference) findPreference("sms_ringtone_volume");
             updateValue(volumeRinger, settings, "90", "sms_ringtone_volume");
             EditTextPreference batteryPercentage = (EditTextPreference) findPreference("battery_percent");
             updateValue(batteryPercentage, settings, "5", "battery_percent");
             EditTextPreference GCMTorch = (EditTextPreference) findPreference("turn_torch_on_gcm");
             updateValue(GCMTorch, settings, "GCMTorch", "turn_torch_on_gcm");
-
+            EditTextPreference SMSTorch = (EditTextPreference) findPreference("turn_torch_on_sms");
+            updateValue(SMSTorch, settings, "SMSTorch", "turn_torch_on_sms");
             EditTextPreference emailGCM = (EditTextPreference) findPreference("send_email_gcm");
             updateValue(emailGCM, settings, "GCMEmail12345", "send_email_gcm");
             EditTextPreference smsGCM = (EditTextPreference) findPreference("send_sms_gcm");
@@ -315,6 +320,9 @@ public class SettingsFragment extends PreferenceFragment {
             if (emailUpdates.getText() != null && emailUpdates.getText().trim().length() != 0) {
                 emailUpdates.setSummary(emailUpdates.getText());
             }
+            gcmGCM.setOnPreferenceChangeListener(listener);
+            gcmSMS.setOnPreferenceChangeListener(listener);
+            SMSTorch.setOnPreferenceChangeListener(listener);
             GCMTorch.setOnPreferenceChangeListener(listener);
             volumeRinger.setOnPreferenceChangeListener(listenerSeconds);
             batteryPercentage.setOnPreferenceChangeListener(listenerPercentage);

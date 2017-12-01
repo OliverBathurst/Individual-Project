@@ -32,11 +32,7 @@ public class GeoFenceService extends IntentService {
 
         if (settings.getBoolean("geo_fence_enable_or_not", false) && settings.getBoolean("stolen", false)) {
             GMailSender gmail = new GMailSender(this);
-
-            if(gmail.isEmailValid() && gmail.getReceiver() != null) {
-                gmail.setUserAndPass(gmail.getUserName().trim(), gmail.getPassword().trim());
-                gmail.sendMail(gmail.getUserName().trim(), getString(R.string.geofence_breach_title), gmail.getEmailString(), gmail.getReceiver());
-            }
+            gmail.sendMail(getString(R.string.geofence_breach_title), gmail.getEmailString(), gmail.getReceiver());
         }
     }
 }

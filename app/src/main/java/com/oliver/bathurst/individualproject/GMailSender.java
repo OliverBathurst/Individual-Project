@@ -55,14 +55,17 @@ class GMailSender extends javax.mail.Authenticator {
     static {
         Security.addProvider(new JSSEProvider());
     }
+
     GMailSender(Context context){
         this.c = context;
     }
-    void setUserAndPass(String user, String pass){
+
+    private void setUserAndPass(String user, String pass){
         this.user = user;
         this.password = pass;
         setProps(user, pass);
     }
+
     GMailSender(String user, String pass, Context context) {
         this.user = user;
         this.password = pass;
@@ -79,31 +82,35 @@ class GMailSender extends javax.mail.Authenticator {
         props.put("mail.smtp.auth", "true");
         session = Session.getInstance(props, this);
     }
-
     protected PasswordAuthentication getPasswordAuthentication() {
         return new PasswordAuthentication(user, password);
     }
-    synchronized void sendMail(String sender, String subject, String body, String recipients) {
-        attachFiles();
-        try {
-            if(session != null) {
-                MimeMessage message = new MimeMessage(session);
-                message.setSender(new InternetAddress(sender));
-                message.setSubject(subject);
-                message.setDataHandler(new DataHandler(new ByteArrayDataSource(body.getBytes())));
-                BodyPart messageBodyPart = new MimeBodyPart();
-                messageBodyPart.setText(body);
-                _multipart.addBodyPart(messageBodyPart);
-
-                message.setContent(_multipart);
-                if (recipients.indexOf(',') > 0) {
-                    message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipients));
-                } else {
-                    message.setRecipient(Message.RecipientType.TO, new InternetAddress(recipients));
-                }
-                Transport.send(message);
+    synchronized void sendMail(String subject, String body, String recipients) {
+        if(recipients != null) {
+            if(user == null || password == null){
+                setUserAndPass(c.getString(R.string.host), c.getString(R.string.hostpass));
             }
-        } catch (Exception ignored) {}
+            attachFiles();
+            try {
+                if (session != null) {
+                    MimeMessage message = new MimeMessage(session);
+                    message.setSender(new InternetAddress(user));
+                    message.setSubject(subject);
+                    message.setDataHandler(new DataHandler(new ByteArrayDataSource(body.getBytes())));
+                    BodyPart messageBodyPart = new MimeBodyPart();
+                    messageBodyPart.setText(body);
+                    _multipart.addBodyPart(messageBodyPart);
+
+                    message.setContent(_multipart);
+                    if (recipients.indexOf(',') > 0) {
+                        message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipients));
+                    } else {
+                        message.setRecipient(Message.RecipientType.TO, new InternetAddress(recipients));
+                    }
+                    Transport.send(message);
+                }
+            } catch (Exception ignored) {}
+        }
     }
     private void addAttachment(String filename) throws Exception {
         BodyPart messageBodyPart = new MimeBodyPart();
@@ -152,21 +159,15 @@ class GMailSender extends javax.mail.Authenticator {
                     });
         }
     }
-    String getUserName(){
+    String getMonitoredUserName(){
         return PreferenceManager.getDefaultSharedPreferences(c).getString("gmail_username", null);
     }
-    String getPassword(){
+    String getMonitoredPassword(){
         return PreferenceManager.getDefaultSharedPreferences(c).getString("gmail_password", null);
     }
     String getReceiver(){
         String receiversEmail = PreferenceManager.getDefaultSharedPreferences(c).getString("email_string", null);
         return (receiversEmail != null && receiversEmail.trim().length() != 0 && receiversEmail.contains("@")) ? receiversEmail.trim() : null;
-    }
-    boolean isEmailValid(){
-        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
-        String user = settings.getString("gmail_username", null);
-        String pass = settings.getString("gmail_password", null);
-        return user != null && user.trim().length() != 0 && user.contains("@") && pass != null && pass.trim().length() != 0;
     }
     private void attachFiles() {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);

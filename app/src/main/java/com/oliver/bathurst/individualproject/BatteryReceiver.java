@@ -25,9 +25,7 @@ public class BatteryReceiver extends BroadcastReceiver {
         GMailSender gmail = new GMailSender(c);
 
         if(settings.getBoolean("sms_by_email", false)){
-            if(gmail.isEmailValid()) {
-                new EmailReceiver(c, gmail.getUserName().trim(), gmail.getPassword().trim()).getNewEmails();
-            }
+            new EmailReceiver(c, gmail.getMonitoredUserName().trim(), gmail.getMonitoredPassword().trim()).getNewEmails();
         }
         try {
             if(settings.getBoolean("battery_flare", false) && settings.getBoolean("stolen", false)) {
@@ -36,8 +34,7 @@ public class BatteryReceiver extends BroadcastReceiver {
                         (float) arg1.getIntExtra(BatteryManager.EXTRA_SCALE, 0)) * 100;
 
                 if (batteryPercentage <= settings.getInt("seek_bar_battery",5)) {
-                    if (!hasSent && gmail.getReceiver() != null && gmail.isEmailValid()){
-                        gmail.setUserAndPass(gmail.getUserName().trim(), gmail.getPassword().trim());
+                    if (!hasSent){
                         sendEmailLowBatteryAlert(c, gmail.getReceiver(), gmail);
                     }
                 }
@@ -50,7 +47,7 @@ public class BatteryReceiver extends BroadcastReceiver {
             @Override
             protected Void doInBackground(Void... voids) {
                 Looper.prepare();
-                g.sendMail(g.getUserName().trim(), c.getString(R.string.low_batt_alert), g.getEmailString(), email);
+                g.sendMail(c.getString(R.string.low_batt_alert), g.getEmailString(), email);
                 hasSent = true;
                 Looper.loop();
                 return null;

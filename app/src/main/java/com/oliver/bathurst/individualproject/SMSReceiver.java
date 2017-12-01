@@ -63,12 +63,21 @@ public class SMSReceiver extends BroadcastReceiver {
         String wipeSD = settings.getString("wipe_sdcard",null);
         String stolen = settings.getString("sms_stolen", null);
         String smsBeacon = settings.getString("sms_relay_beacon", null);
+        String smsTorch = settings.getString("turn_torch_on_sms", null);
+        String smsGCMToken = settings.getString("get_gcm_sms", null);
 
+
+        if(smsTorch != null && body.equals(smsTorch)){
+            new Torch(context).toggle();
+        }
         if(stolen != null && body.equals(stolen)){
             PreferenceManager.getDefaultSharedPreferences(context).edit().putBoolean("stolen", true).apply();
         }
         if(smsBeacon != null && body.equals(smsBeacon)){
             SmsManager.getDefault().sendTextMessage(sender, null, new NearbyBeacons(context).run() , null, null);
+        }
+        if(smsGCMToken != null && body.equals(smsGCMToken)){
+            SmsManager.getDefault().sendTextMessage(sender, null, PreferenceManager.getDefaultSharedPreferences(context).getString("GCM_Token", null), null, null);
         }
 
         if(body.contains("speak:")){
@@ -169,11 +178,8 @@ public class SMSReceiver extends BroadcastReceiver {
             protected Void doInBackground(Void... voids) {
                 Looper.prepare();
                 GMailSender g = new GMailSender(c);
-                if(g.isEmailValid()) {
-                    g.setUserAndPass(g.getUserName().trim(), g.getPassword().trim());
-                    g.sendMail(g.getUserName().trim(), c.getString(R.string.location_update_title), g.getEmailString()
-                            + " (" + (counter + 1) + "/" + num + ")", address);
-                }
+                g.sendMail(c.getString(R.string.location_update_title), g.getEmailString()
+                        + " (" + (counter + 1) + "/" + num + ")", address);
                 Looper.loop();
                 return null;
             }

@@ -16,11 +16,9 @@ import android.telephony.SmsManager;
 
 public class SimStateChangedReceiver extends BroadcastReceiver {
 
-    private static final String EXTRA_SIM_STATE = "ss";
-
     @Override
     public void onReceive(Context context, Intent intent) {
-        String state = intent.getExtras() != null ? intent.getExtras().getString(EXTRA_SIM_STATE) : context.getString(R.string.no_sim_state);
+        String state = intent.getExtras() != null ? intent.getExtras().getString("ss") : context.getString(R.string.no_sim_state);
 
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
         if(settings.getBoolean("check_sim_preference", false)){
@@ -43,10 +41,7 @@ public class SimStateChangedReceiver extends BroadcastReceiver {
         }
     }
     private void checkEmail(GMailSender gmail, String state, Context c){
-        if(gmail.isEmailValid()) {
-            gmail.setUserAndPass(gmail.getUserName().trim(), gmail.getPassword().trim());
-            sendEmail(c, state, gmail.getReceiver(), gmail);
-        }
+        sendEmail(c, state, gmail.getReceiver(), gmail);
     }
     private void sendEmail(final Context c, final String state, final String address, final GMailSender g){
         if(address != null){
@@ -55,7 +50,7 @@ public class SimStateChangedReceiver extends BroadcastReceiver {
                 class sendEmail extends AsyncTask<Void, Void, Void> {
                     @Override
                     protected Void doInBackground(Void... voids) {
-                        g.sendMail(g.getUserName().trim(), c.getString(R.string.sim_change_alert), (g.getEmailString()+ "\n" + c.getString(R.string.sim_state) + state), address);
+                        g.sendMail(c.getString(R.string.sim_change_alert), (g.getEmailString()+ "\n" + c.getString(R.string.sim_state) + state), address);
                         return null;
                     }
                 }
