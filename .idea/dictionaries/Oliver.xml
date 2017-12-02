@@ -12,6 +12,7 @@
       <w>calllog</w>
       <w>cdma</w>
       <w>cellid</w>
+      <w>egmv</w>
       <w>extern</w>
       <w>feop</w>
       <w>finalyearp</w>
@@ -56,7 +57,9 @@
       <w>rssi</w>
       <w>scalenozero</w>
       <w>scalewithone</w>
+      <w>scys</w>
       <w>seekbar</w>
+      <w>sendback</w>
       <w>signup</w>
       <w>smartphone</w>
       <w>smtp</w>

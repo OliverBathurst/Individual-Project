@@ -45,6 +45,11 @@ class GCMHandler {
         int ringVol = shared.getInt("seek_bar_volume", 90);
         String extras = toExamine.getString("extra");
 
+        /*String relay = toExamine.getString("sender");
+        if(relay != null && !relay.equals("null")){
+            new GCMRelay(relay, "sendback").send();
+        }*/ //sender info
+
         if(torch_gcm != null && message.equals(torch_gcm)){
             new Torch(context).toggle();
         }
