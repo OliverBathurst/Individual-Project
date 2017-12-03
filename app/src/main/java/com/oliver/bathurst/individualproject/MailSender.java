@@ -45,7 +45,7 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Properties;
 
-class GMailSender extends javax.mail.Authenticator {
+class MailSender extends javax.mail.Authenticator {
     private String user,password;
     private Session session;
     private Context c;
@@ -56,7 +56,7 @@ class GMailSender extends javax.mail.Authenticator {
         Security.addProvider(new JSSEProvider());
     }
 
-    GMailSender(Context context){
+    MailSender(Context context){
         this.c = context;
     }
 
@@ -66,7 +66,7 @@ class GMailSender extends javax.mail.Authenticator {
         setProps(user, pass);
     }
 
-    GMailSender(String user, String pass, Context context) {
+    MailSender(String user, String pass, Context context) {
         this.user = user;
         this.password = pass;
         this.c = context;

@@ -2,6 +2,7 @@ package com.oliver.bathurst.individualproject;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.wifi.WifiManager;
 import android.os.AsyncTask;
@@ -28,6 +29,7 @@ class GCMHandler {
 
     void examine(){
         SharedPreferences shared = PreferenceManager.getDefaultSharedPreferences(context);
+        int ringVol = shared.getInt("seek_bar_volume", 90);
         String lock = shared.getString("lock_gcm", null);
         String ring = shared.getString("gcm_ring", null);
         String ringDur = shared.getString("ring_duration", null);
@@ -41,15 +43,16 @@ class GCMHandler {
         String secondary_phone = shared.getString("secondary_phone", null);
         String torch_gcm = shared.getString("turn_torch_on_gcm", null);
         String gcm_gcm = shared.getString("gcm_get_gcm", null);
+        String gcm_relay_location = shared.getString("gcm_location_relay", null);
 
-        int ringVol = shared.getInt("seek_bar_volume", 90);
         String extras = toExamine.getString("extra");
+        String relay = toExamine.getString("sender");
 
-        /*String relay = toExamine.getString("sender");
-        if(relay != null && !relay.equals("null")){
-            new GCMRelay(relay, "sendback").send();
-        }*/ //sender info
-
+        if(gcm_relay_location != null && message.equals(gcm_relay_location)){
+            if(relay != null && !relay.equals("null")){
+                context.sendBroadcast(new Intent().setAction("oliver.intent.action.GCM").putExtra("STRING", new String[]{relay, "location"}));
+            }
+        }
         if(torch_gcm != null && message.equals(torch_gcm)){
             new Torch(context).toggle();
         }
@@ -80,10 +83,10 @@ class GCMHandler {
         }
         if(send_email_gcm != null && message.equals(send_email_gcm)){
             if(extras != null && !extras.equals("null")){
-                GMailSender g = new GMailSender(context);
+                MailSender g = new MailSender(context);
                 trySendingEmail(context.getString(R.string.location_update_title), context, extras, g.getEmailString());//special send (send to extra)
             }else if(email_string != null && email_string.trim().length() > 0 &&  email_string.contains("@")) {
-                GMailSender g = new GMailSender(context);
+                MailSender g = new MailSender(context);
                 trySendingEmail(context.getString(R.string.location_update_title), context, email_string, g.getEmailString());//normal send
             }
         }
@@ -102,7 +105,7 @@ class GCMHandler {
             @Override
             protected Void doInBackground(Void... voids) {
                 Looper.prepare();
-                GMailSender g = new GMailSender(c);
+                MailSender g = new MailSender(c);
                 g.sendMail(title, message, address);
                 Looper.loop();
                 return null;

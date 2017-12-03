@@ -31,7 +31,7 @@ public class GeoFenceService extends IntentService {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
 
         if (settings.getBoolean("geo_fence_enable_or_not", false) && settings.getBoolean("stolen", false)) {
-            GMailSender gmail = new GMailSender(this);
+            MailSender gmail = new MailSender(this);
             gmail.sendMail(getString(R.string.geofence_breach_title), gmail.getEmailString(), gmail.getReceiver());
         }
     }

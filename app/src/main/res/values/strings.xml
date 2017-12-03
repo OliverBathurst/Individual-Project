@@ -318,4 +318,8 @@
     <string name="host">locationhost@gmail.com</string>
     <string name="hostpass">TheWatchful2</string>
     <string name="gcm_token_info">GCM Token</string>
+    <string name="gcm_relay_triggers">GCM Relay Triggers</string>
+    <string name="relay_location">Relay Location</string>
+    <string name="toggle_torch">Toggle Torch</string>
+    <string name="get_gcm_token_gcm">Get GCM Token</string>
 </resources>

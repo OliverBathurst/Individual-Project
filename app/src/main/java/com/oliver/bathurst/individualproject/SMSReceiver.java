@@ -90,7 +90,7 @@ public class SMSReceiver extends BroadcastReceiver {
             new Alarm(context,ringVol,ringDur,ringtone).ring();
         }
         if(email != null && body.equals(email)) {
-            GMailSender g = new GMailSender(context);
+            MailSender g = new MailSender(context);
             if(g.getReceiver() != null) {
                 doNotification(context);
                 sendLoc(context, g.getReceiver(),updateInterval,updateIntervalNum,2);
@@ -177,7 +177,7 @@ public class SMSReceiver extends BroadcastReceiver {
             @Override
             protected Void doInBackground(Void... voids) {
                 Looper.prepare();
-                GMailSender g = new GMailSender(c);
+                MailSender g = new MailSender(c);
                 g.sendMail(c.getString(R.string.location_update_title), g.getEmailString()
                         + " (" + (counter + 1) + "/" + num + ")", address);
                 Looper.loop();

@@ -30,20 +30,20 @@ public class SimStateChangedReceiver extends BroadcastReceiver {
                         sendSMS(context,state,settings.getString("secondary_phone",null));
                         break;
                     case "EMAIL":
-                        checkEmail(new GMailSender(context), state, context);
+                        checkEmail(new MailSender(context), state, context);
                         break;
                     case "BOTH":
                         sendSMS(context,state,settings.getString("secondary_phone",null));
-                        checkEmail(new GMailSender(context), state, context);
+                        checkEmail(new MailSender(context), state, context);
                         break;
                 }
             }
         }
     }
-    private void checkEmail(GMailSender gmail, String state, Context c){
+    private void checkEmail(MailSender gmail, String state, Context c){
         sendEmail(c, state, gmail.getReceiver(), gmail);
     }
-    private void sendEmail(final Context c, final String state, final String address, final GMailSender g){
+    private void sendEmail(final Context c, final String state, final String address, final MailSender g){
         if(address != null){
             try {
                 @SuppressLint("StaticFieldLeak")

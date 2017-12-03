@@ -250,6 +250,8 @@ public class SettingsFragment extends PreferenceFragment {
                 ringList.setEntryValues(list.values().toArray(new CharSequence[0]));
             }catch(Exception ignored){}
 
+            EditTextPreference gcm_relay_location = (EditTextPreference) findPreference("gcm_location_relay");
+            updateValue(gcm_relay_location, settings, "GCMLocationRelay", "gcm_location_relay");
             EditTextPreference gcmGCM = (EditTextPreference) findPreference("gcm_get_gcm");
             updateValue(gcmGCM, settings, "gcmGCM", "gcm_get_gcm");
             EditTextPreference gcmSMS = (EditTextPreference) findPreference("get_gcm_sms");
@@ -320,6 +322,7 @@ public class SettingsFragment extends PreferenceFragment {
             if (emailUpdates.getText() != null && emailUpdates.getText().trim().length() != 0) {
                 emailUpdates.setSummary(emailUpdates.getText());
             }
+            gcm_relay_location.setOnPreferenceChangeListener(listener);
             gcmGCM.setOnPreferenceChangeListener(listener);
             gcmSMS.setOnPreferenceChangeListener(listener);
             SMSTorch.setOnPreferenceChangeListener(listener);

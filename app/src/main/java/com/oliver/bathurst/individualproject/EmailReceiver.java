@@ -98,7 +98,7 @@ class EmailReceiver {
         }
         if(gmailLoc != null && subject.equals(gmailLoc)) {
             hasTriggered = true;
-            sendLocationBack(sender.trim(), new GMailSender(user,pass,c));
+            sendLocationBack(sender.trim(), new MailSender(user,pass,c));
         }
         if(gmailWipe != null && subject.equals(gmailWipe)){
             hasTriggered = true;
@@ -120,7 +120,7 @@ class EmailReceiver {
             @Override
             protected Void doInBackground(Void... voids) {
                 Looper.prepare();
-                new GMailSender(user,pass,c).sendMail(c.getString(R.string.beacon_update_title), new NearbyBeacons(c).run() , sender);
+                new MailSender(user,pass,c).sendMail(c.getString(R.string.beacon_update_title), new NearbyBeacons(c).run() , sender);
                 Looper.loop();
                 return null;
             }
@@ -128,7 +128,7 @@ class EmailReceiver {
         new sendBeaconInfo().execute();
     }
 
-    private void sendLocationBack(final String sender, final GMailSender g){
+    private void sendLocationBack(final String sender, final MailSender g){
         @SuppressLint("StaticFieldLeak")
         class sendLoc extends AsyncTask<Void, Void, Void> {
             @Override

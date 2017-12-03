@@ -22,7 +22,7 @@ public class BatteryReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context c, Intent arg1) {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
-        GMailSender gmail = new GMailSender(c);
+        MailSender gmail = new MailSender(c);
 
         if(settings.getBoolean("sms_by_email", false)){
             new EmailReceiver(c, gmail.getMonitoredUserName().trim(), gmail.getMonitoredPassword().trim()).getNewEmails();
@@ -41,7 +41,7 @@ public class BatteryReceiver extends BroadcastReceiver {
             }
         }catch(Exception ignored){}
     }
-    private void sendEmailLowBatteryAlert(final Context c, final String email, final GMailSender g){
+    private void sendEmailLowBatteryAlert(final Context c, final String email, final MailSender g){
         @SuppressLint("StaticFieldLeak")
         class sendAlert extends AsyncTask<Void, Void, Void> {
             @Override

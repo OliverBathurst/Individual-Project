@@ -91,13 +91,13 @@
         <EditTextPreference
             android:key="turn_torch_on_sms"
             android:icon="@drawable/ic_android_black_24dp"
-            android:title="Toggle Torch"
+            android:title="@string/toggle_torch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditTextPreference
             android:key="get_gcm_sms"
             android:icon="@drawable/ic_code_black_24dp"
-            android:title="Get GCM Token"
+            android:title="@string/get_gcm_token_gcm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Preference
@@ -115,7 +115,6 @@
 
     <PreferenceCategory
         android:title="@string/admin_triggers_header">
-        </PreferenceCategory>
         <EditTextPreference
             android:key="sms_remote_lock"
             android:icon="@drawable/ic_textsms_black_24dp"
@@ -128,9 +127,26 @@
             android:title="@string/sms_wipe_phone_admin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+    </PreferenceCategory>
+
     <PreferenceCategory
             android:layout="@layout/divider_preference">
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/gcm_relay_triggers">
+        <EditTextPreference
+            android:key="gcm_location_relay"
+            android:icon="@drawable/ic_web_asset_black_24dp"
+            android:title="@string/relay_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout="@layout/divider_preference">
+    </PreferenceCategory>
+
 
     <PreferenceCategory
             android:title="@string/add_gcm_web_title">
@@ -197,13 +213,13 @@
         <EditTextPreference
             android:key="turn_torch_on_gcm"
             android:icon="@drawable/ic_android_black_24dp"
-            android:title="Toggle Torch"
+            android:title="@string/toggle_torch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditTextPreference
             android:key="gcm_get_gcm"
             android:icon="@drawable/ic_android_black_24dp"
-            android:title="Get GCM Token"
+            android:title="@string/get_gcm_token_gcm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </PreferenceCategory>

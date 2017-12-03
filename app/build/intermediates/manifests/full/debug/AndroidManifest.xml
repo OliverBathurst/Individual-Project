@@ -122,6 +122,14 @@
             </intent-filter>
         </receiver>
         <receiver
+            android:name="com.oliver.bathurst.individualproject.GCMBroadcast"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter android:priority="999" >
+                <action android:name="oliver.intent.action.GCM" />
+            </intent-filter>
+        </receiver>
+        <receiver
             android:name="com.oliver.bathurst.individualproject.BeaconActivity$mReceiver"
             android:enabled="true" />
 
@@ -215,6 +223,10 @@
         <activity
             android:name="com.oliver.bathurst.individualproject.CellTowerMap"
             android:label="@string/title_activity_cell_tower_map" />
+        <activity
+            android:name="com.oliver.bathurst.individualproject.GCMRelayActivity"
+            android:label="@string/title_activity_gcmrelay"
+            android:theme="@style/Theme.Transparent" />
 
         <meta-data
             android:name="android.support.VERSION"
