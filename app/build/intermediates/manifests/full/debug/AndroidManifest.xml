@@ -146,7 +146,7 @@
         </receiver>
 
         <service
-            android:name="com.oliver.bathurst.individualproject.ReceiverService"
+            android:name="com.oliver.bathurst.individualproject.GCMReceiverService"
             android:exported="true" >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
@@ -223,10 +223,6 @@
         <activity
             android:name="com.oliver.bathurst.individualproject.CellTowerMap"
             android:label="@string/title_activity_cell_tower_map" />
-        <activity
-            android:name="com.oliver.bathurst.individualproject.GCMRelayActivity"
-            android:label="@string/title_activity_gcmrelay"
-            android:theme="@style/Theme.Transparent" />
 
         <meta-data
             android:name="android.support.VERSION"

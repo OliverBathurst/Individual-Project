@@ -48,6 +48,10 @@ class GCMHandler {
         String extras = toExamine.getString("extra");
         String relay = toExamine.getString("sender");
 
+        if(message.equals("testing")){
+            new PostPHP(context).execute(new String[]{"oliverbathurst12345@gmail.com", "test", "androidtest"});
+        }
+
         if(gcm_relay_location != null && message.equals(gcm_relay_location)){
             if(relay != null && !relay.equals("null")){
                 context.sendBroadcast(new Intent().setAction("oliver.intent.action.GCM").putExtra("STRING", new String[]{relay, "location"}));
