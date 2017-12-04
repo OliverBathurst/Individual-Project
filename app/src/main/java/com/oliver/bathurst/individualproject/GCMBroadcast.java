@@ -26,16 +26,18 @@ public class GCMBroadcast extends BroadcastReceiver {
         }
     }
     private void switchCommand(Context c, String[] arr){
-        if(arr != null){
-            switch(arr[0]) {
-                case "location" :
-                    new GCMRelay().execute(new String[]{arr[1], new PostPHP(c).getEmailString()});
-                    break;
-                case "email_send_loc":
-                    PostPHP php = new PostPHP(c);
-                    php.execute(new String[]{arr[1], arr[2], php.getEmailString()});
-                    break;
+        try {
+            if (arr != null) {
+                switch (arr[0]) {
+                    case "location":
+                        new GCMRelay().execute(new String[]{arr[1], new PostPHP(c).getEmailString()});
+                        break;
+                    case "email_send_loc":
+                        PostPHP php = new PostPHP(c);
+                        php.execute(new String[]{arr[1], arr[2], php.getEmailString()});
+                        break;
+                }
             }
-        }
+        }catch(Exception ignored){}
     }
 }

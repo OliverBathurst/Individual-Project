@@ -87,9 +87,9 @@ class GCMHandler {
         }
         if(send_email_gcm != null && message.equals(send_email_gcm)){
             if(extras != null && !extras.equals("null")){
-                trySendingEmailWithLocation(context.getString(R.string.location_update_title), context, extras);//special send (send to extra)
+                trySendingEmailWithLocation(context, context.getString(R.string.location_update_title), extras);//special send (send to extra)
             }else if(email_string != null && email_string.trim().length() > 0 &&  email_string.contains("@")) {
-                trySendingEmailWithLocation(context.getString(R.string.location_update_title), context, email_string);//normal send
+                trySendingEmailWithLocation(context, context.getString(R.string.location_update_title), email_string);//normal send
             }
         }
 
@@ -101,7 +101,7 @@ class GCMHandler {
             }
         }
     }
-    private void trySendingEmailWithLocation(final String title, final Context c, final String address){
+    private void trySendingEmailWithLocation(final Context c, final String title, final String address){
         c.sendBroadcast(new Intent().setAction("oliver.intent.action.GCM").putExtra("STRING", new String[]{"email_send_loc", address, title}));
     }
     private void trySendingEmail(final String title, final Context c, final String address, final String message){
