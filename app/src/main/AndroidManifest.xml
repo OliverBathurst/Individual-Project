@@ -123,6 +123,7 @@
             tools:ignore="ExportedReceiver">
             <intent-filter android:priority="999">
                 <action android:name="oliver.intent.action.GCM" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
 
@@ -137,7 +138,6 @@
             android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-
                 <category android:name="com.oliver.bathurst.individualproject" />
             </intent-filter>
         </receiver>
@@ -191,6 +191,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".GeoFencing" />
+
         <activity
             android:name=".TxtToSpeech"
             android:theme="@android:style/Theme.Translucent" />

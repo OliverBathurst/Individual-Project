@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 /**
  * Created by Oliver on 03/12/2017.
@@ -11,13 +12,11 @@ import android.os.Bundle;
  */
 
 public class GCMBroadcast extends BroadcastReceiver {
-    private static final String CUSTOM_INTENT = "oliver.intent.action.GCM";
-
     @Override
     public void onReceive(Context context, Intent intent) {
         if(intent != null){
             String intentStr =  intent.getAction();
-            if(intentStr != null && intent.getAction().equals(CUSTOM_INTENT)){
+            if(intentStr != null && intent.getAction().equals("oliver.intent.action.GCM")){
                 Bundle bundle = intent.getExtras();
                 if(bundle != null){
                     switchCommand(context, bundle.getStringArray("STRING"));

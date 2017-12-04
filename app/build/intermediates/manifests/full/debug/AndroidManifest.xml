@@ -127,6 +127,8 @@
             android:exported="true" >
             <intent-filter android:priority="999" >
                 <action android:name="oliver.intent.action.GCM" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
         <receiver
