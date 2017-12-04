@@ -44,5 +44,4 @@ class GCMRelay extends AsyncTask<String[],Void,Void>{
         Looper.loop();
         return null;
     }
-
 }
