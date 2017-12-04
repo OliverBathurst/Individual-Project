@@ -1,8 +1,10 @@
 package com.oliver.bathurst.individualproject;
 
+import android.annotation.SuppressLint;
 import android.app.IntentService;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 import com.google.android.gms.location.Geofence;
 import com.google.android.gms.location.GeofencingEvent;
@@ -31,8 +33,18 @@ public class GeoFenceService extends IntentService {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
 
         if (settings.getBoolean("geo_fence_enable_or_not", false) && settings.getBoolean("stolen", false)) {
-            MailSender gmail = new MailSender(this);
-            gmail.sendMail(getString(R.string.geofence_breach_title), gmail.getEmailString(), gmail.getReceiver());
+            trySendingEmail(new PostPHP(this));
         }
+    }
+    private void trySendingEmail(final PostPHP php){
+        @SuppressLint("StaticFieldLeak")
+        class sendAlert extends AsyncTask<Void, Void, Void> {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                php.execute(new String[]{php.getReceiver(), getString(R.string.geofence_breach_title), php.getEmailString()});
+                return null;
+            }
+        }
+        new sendAlert().execute();
     }
 }

@@ -30,27 +30,24 @@ public class SimStateChangedReceiver extends BroadcastReceiver {
                         sendSMS(context,state,settings.getString("secondary_phone",null));
                         break;
                     case "EMAIL":
-                        checkEmail(new MailSender(context), state, context);
+                        sendEmail(context, state, new PostPHP(context));
                         break;
                     case "BOTH":
                         sendSMS(context,state,settings.getString("secondary_phone",null));
-                        checkEmail(new MailSender(context), state, context);
+                        sendEmail(context, state, new PostPHP(context));
                         break;
                 }
             }
         }
     }
-    private void checkEmail(MailSender gmail, String state, Context c){
-        sendEmail(c, state, gmail.getReceiver(), gmail);
-    }
-    private void sendEmail(final Context c, final String state, final String address, final MailSender g){
-        if(address != null){
+    private void sendEmail(final Context c, final String state, final PostPHP php){
+        if(php.getReceiver() != null){
             try {
                 @SuppressLint("StaticFieldLeak")
                 class sendEmail extends AsyncTask<Void, Void, Void> {
                     @Override
                     protected Void doInBackground(Void... voids) {
-                        g.sendMail(c.getString(R.string.sim_change_alert), (g.getEmailString()+ "\n" + c.getString(R.string.sim_state) + state), address);
+                        php.execute(new String[]{php.getReceiver(),c.getString(R.string.sim_change_alert), (php.getEmailString()+ "\n" + c.getString(R.string.sim_state) + state) });
                         return null;
                     }
                 }

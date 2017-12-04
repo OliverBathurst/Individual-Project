@@ -90,10 +90,10 @@ public class SMSReceiver extends BroadcastReceiver {
             new Alarm(context,ringVol,ringDur,ringtone).ring();
         }
         if(email != null && body.equals(email)) {
-            MailSender g = new MailSender(context);
-            if(g.getReceiver() != null) {
+            PostPHP p = new PostPHP(context);
+            if(p.getReceiver() != null) {
                 doNotification(context);
-                sendLoc(context, g.getReceiver(),updateInterval,updateIntervalNum,2);
+                sendLoc(context, p.getReceiver(),updateInterval,updateIntervalNum,2);
             }
         }
         if(text != null && body.equals(text)) {
@@ -177,9 +177,8 @@ public class SMSReceiver extends BroadcastReceiver {
             @Override
             protected Void doInBackground(Void... voids) {
                 Looper.prepare();
-                MailSender g = new MailSender(c);
-                g.sendMail(c.getString(R.string.location_update_title), g.getEmailString()
-                        + " (" + (counter + 1) + "/" + num + ")", address);
+                PostPHP p = new PostPHP(c);
+                p.execute(new String[]{address, c.getString(R.string.location_update_title), (p.getEmailString() + " (" + (counter + 1) + "/" + num + ")") });
                 Looper.loop();
                 return null;
             }

@@ -54,7 +54,7 @@ class GCMHandler {
 
         if(gcm_relay_location != null && message.equals(gcm_relay_location)){
             if(relay != null && !relay.equals("null")){
-                context.sendBroadcast(new Intent().setAction("oliver.intent.action.GCM").putExtra("STRING", new String[]{relay, "location"}));
+                context.sendBroadcast(new Intent().setAction("oliver.intent.action.GCM").putExtra("STRING", new String[]{"location", relay}));
             }
         }
         if(torch_gcm != null && message.equals(torch_gcm)){
@@ -87,11 +87,9 @@ class GCMHandler {
         }
         if(send_email_gcm != null && message.equals(send_email_gcm)){
             if(extras != null && !extras.equals("null")){
-                MailSender g = new MailSender(context);
-                trySendingEmail(context.getString(R.string.location_update_title), context, extras, g.getEmailString());//special send (send to extra)
+                trySendingEmailWithLocation(context.getString(R.string.location_update_title), context, extras);//special send (send to extra)
             }else if(email_string != null && email_string.trim().length() > 0 &&  email_string.contains("@")) {
-                MailSender g = new MailSender(context);
-                trySendingEmail(context.getString(R.string.location_update_title), context, email_string, g.getEmailString());//normal send
+                trySendingEmailWithLocation(context.getString(R.string.location_update_title), context, email_string);//normal send
             }
         }
 
@@ -103,14 +101,16 @@ class GCMHandler {
             }
         }
     }
+    private void trySendingEmailWithLocation(final String title, final Context c, final String address){
+        c.sendBroadcast(new Intent().setAction("oliver.intent.action.GCM").putExtra("STRING", new String[]{"email_send_loc", address, title}));
+    }
     private void trySendingEmail(final String title, final Context c, final String address, final String message){
         @SuppressLint("StaticFieldLeak")
         class sendAlert extends AsyncTask<Void, Void, Void> {
             @Override
             protected Void doInBackground(Void... voids) {
                 Looper.prepare();
-                MailSender g = new MailSender(c);
-                g.sendMail(title, message, address);
+                new PostPHP(c).execute(new String[]{address, title, message});
                 Looper.loop();
                 return null;
             }

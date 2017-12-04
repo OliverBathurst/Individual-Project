@@ -98,7 +98,7 @@ class EmailReceiver {
         }
         if(gmailLoc != null && subject.equals(gmailLoc)) {
             hasTriggered = true;
-            sendLocationBack(sender.trim(), new MailSender(user,pass,c));
+            sendLocationBack(c, sender.trim());
         }
         if(gmailWipe != null && subject.equals(gmailWipe)){
             hasTriggered = true;
@@ -120,7 +120,7 @@ class EmailReceiver {
             @Override
             protected Void doInBackground(Void... voids) {
                 Looper.prepare();
-                new MailSender(user,pass,c).sendMail(c.getString(R.string.beacon_update_title), new NearbyBeacons(c).run() , sender);
+                new PostPHP(c).execute(new String[]{sender, c.getString(R.string.beacon_update_title), new NearbyBeacons(c).run()});
                 Looper.loop();
                 return null;
             }
@@ -128,13 +128,14 @@ class EmailReceiver {
         new sendBeaconInfo().execute();
     }
 
-    private void sendLocationBack(final String sender, final MailSender g){
+    private void sendLocationBack(final Context c, final String sender){
         @SuppressLint("StaticFieldLeak")
         class sendLoc extends AsyncTask<Void, Void, Void> {
             @Override
             protected Void doInBackground(Void... voids) {
                 Looper.prepare();
-                g.sendMail(c.getString(R.string.location_update_title), g.getEmailString(), sender);
+                PostPHP php = new PostPHP(c);
+                php.execute(new String[]{sender, c.getString(R.string.location_update_title), php.getEmailString()} );
                 Looper.loop();
                 return null;
             }

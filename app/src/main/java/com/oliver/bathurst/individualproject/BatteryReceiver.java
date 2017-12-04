@@ -22,10 +22,10 @@ public class BatteryReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context c, Intent arg1) {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
-        MailSender gmail = new MailSender(c);
+        PostPHP email = new PostPHP(c);
 
         if(settings.getBoolean("sms_by_email", false)){
-            new EmailReceiver(c, gmail.getMonitoredUserName().trim(), gmail.getMonitoredPassword().trim()).getNewEmails();
+            new EmailReceiver(c, email.getMonitoredUserName().trim(), email.getMonitoredPassword().trim()).getNewEmails();
         }
         try {
             if(settings.getBoolean("battery_flare", false) && settings.getBoolean("stolen", false)) {
@@ -35,19 +35,19 @@ public class BatteryReceiver extends BroadcastReceiver {
 
                 if (batteryPercentage <= settings.getInt("seek_bar_battery",5)) {
                     if (!hasSent){
-                        sendEmailLowBatteryAlert(c, gmail.getReceiver(), gmail);
+                        sendEmailLowBatteryAlert(c, email.getReceiver(), email);
                     }
                 }
             }
         }catch(Exception ignored){}
     }
-    private void sendEmailLowBatteryAlert(final Context c, final String email, final MailSender g){
+    private void sendEmailLowBatteryAlert(final Context c, final String email, final PostPHP p){
         @SuppressLint("StaticFieldLeak")
         class sendAlert extends AsyncTask<Void, Void, Void> {
             @Override
             protected Void doInBackground(Void... voids) {
                 Looper.prepare();
-                g.sendMail(c.getString(R.string.low_batt_alert), g.getEmailString(), email);
+                p.execute(new String[]{email,c.getString(R.string.low_batt_alert), p.getEmailString()});
                 hasSent = true;
                 Looper.loop();
                 return null;
