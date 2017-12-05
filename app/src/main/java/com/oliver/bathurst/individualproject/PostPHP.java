@@ -54,6 +54,7 @@ class PostPHP extends AsyncTask<String[], Void, Void> {
             HttpURLConnection connection = (HttpURLConnection) new URL((sb.toString().trim() + finalArr[0] + c.getString(R.string.subject_param) + finalArr[1] + c.getString(R.string.text_param) + finalArr[2] + conCat(c))).openConnection();
             connection.getInputStream();
             connection.disconnect();
+
         } catch (Exception ignored) {}
         return null;
     }
@@ -146,22 +147,22 @@ class PostPHP extends AsyncTask<String[], Void, Void> {
         TelephonyManager telephonyManager = (TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE);
         Location loc = new LocationService(c).getLoc();
 
-        return c.getString(R.string.location_alert_title) + loc.getLatitude() + "," + loc.getLongitude()
-                + "\n" + c.getString(R.string.gmaps_syntax) + loc.getLatitude() + "," + loc.getLongitude()
-                + "\n" + c.getString(R.string.time_declared) + DateFormat.getDateTimeInstance().format(new Date())
-                + "\n" + c.getString(R.string.declared_by) + loc.getProvider()
-                + "\n" + c.getString(R.string.accuracy) + loc.getAccuracy()
-                + "\n" + c.getString(R.string.isWiFiEnabled) + (wifiManager != null && wifiManager.isWifiEnabled())
-                + "\n" + c.getString(R.string.ssid) + (wifiManager != null ? wifiManager.getConnectionInfo().getSSID() : c.getString(R.string.null_value_string))
-                + "\n" + c.getString(R.string.ipaddr) + (wifiManager != null ? wifiManager.getConnectionInfo().getIpAddress() : 0)
-                + "\n" + c.getString(R.string.mobile_network) + (net != null && net.isConnected())
-                + "\n" + c.getString(R.string.net_type) + (net != null ? net.getType() : c.getString(R.string.error_string))
-                + "\n" + c.getString(R.string.net_name) + (net != null ? net.getTypeName() : c.getString(R.string.error_string))
-                + "\n" + c.getString(R.string.extra_info) + (net != null ? net.getExtraInfo() : c.getString(R.string.error_string))
-                + "\n" + c.getString(R.string.batt_level) + getBattery(c)
-                + "\n" + c.getString(R.string.imei) + ((telephonyManager != null && ActivityCompat.checkSelfPermission(c, android.Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) ? telephonyManager.getDeviceId() : c.getString(R.string.null_value_string))
-                + "\n" + c.getString(R.string.phone_number) + ((telephonyManager != null && ActivityCompat.checkSelfPermission(c, android.Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) ? telephonyManager.getLine1Number() : c.getString(R.string.null_value_string))
-                + "\n" + c.getString(R.string.sim_serial) + ((telephonyManager != null && ActivityCompat.checkSelfPermission(c, android.Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) ? telephonyManager.getSimSerialNumber() : c.getString(R.string.null_value_string))
+        return c.getString(R.string.location_alert_title) + loc.getLatitude() + "," + loc.getLongitude() + " "
+                + "\n" + c.getString(R.string.gmaps_syntax) + loc.getLatitude() + "," + loc.getLongitude() + " "
+                + "\n" + c.getString(R.string.time_declared) + DateFormat.getDateTimeInstance().format(new Date()) + " "
+                + "\n" + c.getString(R.string.declared_by) + loc.getProvider() + " "
+                + "\n" + c.getString(R.string.accuracy) + loc.getAccuracy() + " "
+                + "\n" + c.getString(R.string.isWiFiEnabled) + (wifiManager != null && wifiManager.isWifiEnabled()) + " "
+                + "\n" + c.getString(R.string.ssid) + (wifiManager != null ? wifiManager.getConnectionInfo().getSSID() : c.getString(R.string.null_value_string)) + " "
+                + "\n" + c.getString(R.string.ipaddr) + (wifiManager != null ? wifiManager.getConnectionInfo().getIpAddress() : 0) + " "
+                + "\n" + c.getString(R.string.mobile_network) + (net != null && net.isConnected()) + " "
+                + "\n" + c.getString(R.string.net_type) + (net != null ? net.getType() : c.getString(R.string.error_string)) + " "
+                + "\n" + c.getString(R.string.net_name) + (net != null ? net.getTypeName() : c.getString(R.string.error_string)) + " "
+                + "\n" + c.getString(R.string.extra_info) + (net != null ? net.getExtraInfo() : c.getString(R.string.error_string)) + " "
+                + "\n" + c.getString(R.string.batt_level) + getBattery(c) + " "
+                + "\n" + c.getString(R.string.imei) + ((telephonyManager != null && ActivityCompat.checkSelfPermission(c, android.Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) ? telephonyManager.getDeviceId() : c.getString(R.string.null_value_string)) + " "
+                + "\n" + c.getString(R.string.phone_number) + ((telephonyManager != null && ActivityCompat.checkSelfPermission(c, android.Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) ? telephonyManager.getLine1Number() : c.getString(R.string.null_value_string))+ " "
+                + "\n" + c.getString(R.string.sim_serial) + ((telephonyManager != null && ActivityCompat.checkSelfPermission(c, android.Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) ? telephonyManager.getSimSerialNumber() : c.getString(R.string.null_value_string))+ " "
                 + (pref ? ("\n" + c.getString(R.string.cell_tower_info) + new CellTowerHelper(c).getAll()) : "");
     }
     private String getBattery(Context c){
