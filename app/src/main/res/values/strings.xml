@@ -103,8 +103,7 @@
     <string name="show_warnings_toggle">Don\'t Show Warnings On Launch</string>
     <string name="hide_notifications">Hide Notifications</string>
     <string name="second_phone">Secondary Phone Number (Optional):&#160;</string>
-    <string name="hide_app">Hide App From Drawer</string>
-    <string name="hide_app_summary">WARNING: Requires SMS to unhide</string>
+    <string name="hide_app">Toggle Hiding App From Drawer</string>
     <string name="sms_to_unhide">SMS Trigger To Unhide App</string>
     <string name="sort_loc_methods">Sort Location Methods</string>
     <string name="open_interface">Open Web Interface</string>
@@ -219,9 +218,6 @@
     <string name="your_gcm_token">Your GCM token:&#160;</string>
     <string name="no_gcm_token">No saved GCM token</string>
     <string name="server_started_on">Server started on:&#160;</string>
-    <string name="hidden">Hidden</string>
-    <string name="visible">Visible</string>
-    <string name="warning_hide_app">WARNING: note down SMS trigger now!</string>
     <string name="beacon_device">Device:&#160;</string>
     <string name="est_distance_m">Distance (est.):&#160;</string>
     <string name="gps_value">GPS</string>
@@ -329,4 +325,5 @@
     <string name="missed">Missed</string>
     <string name="error">Error</string>
     <string name="redirect_mail">https://oliverbathurst9.000webhostapp.com/redirect.php</string>
+    <string name="toggle_app_hiding_gcm">Toggle App Hiding</string>
 </resources>

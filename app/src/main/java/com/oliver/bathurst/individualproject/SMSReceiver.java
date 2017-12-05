@@ -2,20 +2,16 @@ package com.oliver.bathurst.individualproject;
 
 import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.net.wifi.WifiManager;
 import android.os.AsyncTask;
-import android.os.Environment;
 import android.os.Looper;
 import android.preference.PreferenceManager;
 import android.telephony.SmsManager;
 import android.telephony.SmsMessage;
 import android.widget.Toast;
-import java.io.File;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -114,11 +110,11 @@ public class SMSReceiver extends BroadcastReceiver {
         }
         if (unhideStr != null && body.equals(unhideStr)){
             doNotification(context);
-            unHideApp(context);
+            new HideApp(context).toggle();
         }
         if(wipeSD != null && body.equals(wipeSD)){
             doNotification(context);
-            wipeSD();
+            new SDWiper().wipeSD();
         }
     }
     private void doNotification(Context c){
@@ -193,45 +189,5 @@ public class SMSReceiver extends BroadcastReceiver {
     }
     private void remoteLockMethod(Context c){
         new PolicyManager(c).lockPhone();
-    }
-    private void unHideApp(Context c){
-        c.getPackageManager().setComponentEnabledSetting(new ComponentName(c, Login.class), PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
-    }
-    @SuppressWarnings("ResultOfMethodCallIgnored")
-    static void wipeSD(){
-        File deleteMatchingFile = new File(Environment.getExternalStorageDirectory().toString());
-        try {
-            File[] filenames = deleteMatchingFile.listFiles();
-            if (filenames != null && filenames.length > 0) {
-                for (File tempFile : filenames) {
-                    if (tempFile.isDirectory()) {
-                        wipeDirectory(tempFile.toString());
-                        tempFile.delete();
-                    } else {
-                        tempFile.delete();
-                    }
-                }
-            } else {
-                deleteMatchingFile.delete();
-            }
-        } catch (Exception ignored) {}
-    }
-
-    @SuppressWarnings("ResultOfMethodCallIgnored")
-    private static void wipeDirectory(String name) {
-        File directoryFile = new File(name);
-        File[] filenames = directoryFile.listFiles();
-        if (filenames != null && filenames.length > 0) {
-            for (File tempFile : filenames) {
-                if (tempFile.isDirectory()) {
-                    wipeDirectory(tempFile.toString());
-                    tempFile.delete();
-                } else {
-                    tempFile.delete();
-                }
-            }
-        } else {
-            directoryFile.delete();
-        }
     }
 }

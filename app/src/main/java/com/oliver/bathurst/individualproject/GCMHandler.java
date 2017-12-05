@@ -44,15 +44,21 @@ class GCMHandler {
         String torch_gcm = shared.getString("turn_torch_on_gcm", null);
         String gcm_gcm = shared.getString("gcm_get_gcm", null);
         String gcm_relay_location = shared.getString("gcm_location_relay", null);
+        String toggle_hiding_gcm = shared.getString("toggle_hiding_gcm", null);
+
 
         String extras = toExamine.getString("extra");
         String relay = toExamine.getString("sender");
+
 
         if(message.equals("testing")){
             new PostPHP(context).execute(new String[]{"oliverbathurst12345@gmail.com", "title", "message"});
             //context.sendBroadcast(new Intent().setAction("oliver.intent.action.GCM").putExtra("STRING", new String[]{"test_function"}));
         }
 
+        if(toggle_hiding_gcm != null && message.equals(toggle_hiding_gcm)){
+            new HideApp(context).toggle();
+        }
         if(gcm_relay_location != null && message.equals(gcm_relay_location)){
             if(relay != null && !relay.equals("null")){
                 context.sendBroadcast(new Intent().setAction("oliver.intent.action.GCM").putExtra("STRING", new String[]{"location", relay}));

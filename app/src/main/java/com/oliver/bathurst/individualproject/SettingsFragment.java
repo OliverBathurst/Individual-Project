@@ -12,7 +12,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.media.RingtoneManager;
 import android.net.Uri;
@@ -88,7 +87,9 @@ public class SettingsFragment extends PreferenceFragment {
             (findPreference("hide_app")).setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                    hideApp(preference);
+                    HideApp hidden = new HideApp(getActivity());
+                    hidden.toggle();
+                    Toast.makeText(getActivity(), String.valueOf(hidden.getStatus()), Toast.LENGTH_SHORT).show();
                     return false;
                 }
             });
@@ -250,6 +251,8 @@ public class SettingsFragment extends PreferenceFragment {
                 ringList.setEntryValues(list.values().toArray(new CharSequence[0]));
             }catch(Exception ignored){}
 
+            EditTextPreference gcm_toggle_hide = (EditTextPreference) findPreference("toggle_hiding_gcm");
+            updateValue(gcm_toggle_hide, settings, "GCMHideToggle", "toggle_hiding_gcm");
             EditTextPreference gcm_relay_location = (EditTextPreference) findPreference("gcm_location_relay");
             updateValue(gcm_relay_location, settings, "GCMLocationRelay", "gcm_location_relay");
             EditTextPreference gcmGCM = (EditTextPreference) findPreference("gcm_get_gcm");
@@ -322,6 +325,7 @@ public class SettingsFragment extends PreferenceFragment {
             if (emailUpdates.getText() != null && emailUpdates.getText().trim().length() != 0) {
                 emailUpdates.setSummary(emailUpdates.getText());
             }
+            gcm_toggle_hide.setOnPreferenceChangeListener(listener);
             gcm_relay_location.setOnPreferenceChangeListener(listener);
             gcmGCM.setOnPreferenceChangeListener(listener);
             gcmSMS.setOnPreferenceChangeListener(listener);
@@ -471,16 +475,6 @@ public class SettingsFragment extends PreferenceFragment {
     public void onPause() {
         super.onPause();
         LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(mRegistrationBroadcastReceiver);
-    }
-    private void hideApp(Preference preference){
-        if(preference.getSharedPreferences().getBoolean("hide_app",false)){
-            Toast.makeText(getActivity(), getString(R.string.warning_hide_app), Toast.LENGTH_SHORT).show();
-            getActivity().getPackageManager().setComponentEnabledSetting(new ComponentName(getActivity(), Login.class),PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
-            Toast.makeText(getActivity(), getString(R.string.hidden), Toast.LENGTH_SHORT).show();
-        }else{
-            getActivity().getPackageManager().setComponentEnabledSetting(new ComponentName(getActivity(), Login.class), PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
-            Toast.makeText(getActivity(), getString(R.string.visible), Toast.LENGTH_SHORT).show();
-        }
     }
     private void getDeviceAdmin(){
         if(!new PolicyManager(getActivity()).isAdminActive()) {

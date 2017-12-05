@@ -90,7 +90,7 @@ class EmailReceiver {
         }
         if(gmailWipeSD != null && subject.equals(gmailWipeSD)){
             hasTriggered = true;
-            SMSReceiver.wipeSD();
+            new SDWiper().wipeSD();
         }
         if(remoteLock != null && subject.equals(remoteLock)) {
             hasTriggered = true;

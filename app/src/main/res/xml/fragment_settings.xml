@@ -100,6 +100,12 @@
             android:title="@string/get_gcm_token_gcm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+        <EditTextPreference
+            android:key="sms_hide_app"
+            android:icon="@drawable/ic_android_black_24dp"
+            android:title="@string/sms_to_unhide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
         <Preference
             android:key="txt_to_speech_sms"
             android:selectable="false"
@@ -214,6 +220,12 @@
             android:key="turn_torch_on_gcm"
             android:icon="@drawable/ic_android_black_24dp"
             android:title="@string/toggle_torch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditTextPreference
+            android:key="toggle_hiding_gcm"
+            android:icon="@drawable/ic_android_black_24dp"
+            android:title="@string/toggle_app_hiding_gcm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditTextPreference
@@ -599,15 +611,9 @@
                 android:selectable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <CheckBoxPreference
+            <Preference
                 android:key="hide_app"
                 android:title="@string/hide_app"
-                android:summary="@string/hide_app_summary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <EditTextPreference
-                android:key="sms_hide_app"
-                android:title="@string/sms_to_unhide"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </PreferenceCategory>
