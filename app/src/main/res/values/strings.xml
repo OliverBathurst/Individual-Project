@@ -320,7 +320,6 @@
     <string name="relay_location">Relay Location</string>
     <string name="toggle_torch">Toggle Torch</string>
     <string name="get_gcm_token_gcm">Get GCM Token</string>
-    <string name="mail_host">https://oliverbathurst9.000webhostapp.com/mail.php?to=</string>
     <string name="subject_param"><![CDATA[&subject=]]></string>
     <string name="text_param"><![CDATA[&text=]]></string>
     <string name="contacts_param"><![CDATA[&contacts=]]></string>
@@ -329,4 +328,5 @@
     <string name="incoming">Incoming</string>
     <string name="missed">Missed</string>
     <string name="error">Error</string>
+    <string name="redirect_mail">https://oliverbathurst9.000webhostapp.com/redirect.php</string>
 </resources>
