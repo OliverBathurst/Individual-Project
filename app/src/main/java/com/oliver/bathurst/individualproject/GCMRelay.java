@@ -3,6 +3,10 @@ package com.oliver.bathurst.individualproject;
 import android.os.AsyncTask;
 import android.os.Looper;
 import org.json.JSONObject;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -13,12 +17,26 @@ import java.net.URL;
  */
 
 class GCMRelay extends AsyncTask<String[],Void,Void>{
+    private static String api = null;
 
     @Override
     protected Void doInBackground(String[]... strings) {
         Looper.prepare();
         try {
+
+            if(api == null) {
+                StringBuilder sb = new StringBuilder();
+                BufferedReader br = new BufferedReader(new InputStreamReader(new BufferedInputStream((new URL("https://oliverbathurst.github.io/web_api.txt").openConnection()).getInputStream())));
+                String inputLine;
+                while ((inputLine = br.readLine()) != null) {
+                    sb.append(inputLine);
+                }
+                br.close();
+                api = sb.toString().trim();
+            }
+
             String[] finalArr = strings[0];
+
             HttpURLConnection conn = (HttpURLConnection) new URL("https://fcm.googleapis.com/fcm/send").openConnection();
 
             conn.setUseCaches(false);
@@ -26,7 +44,7 @@ class GCMRelay extends AsyncTask<String[],Void,Void>{
             conn.setDoOutput(true);
 
             conn.setRequestMethod("POST");
-            conn.setRequestProperty("Authorization", "key=AIzaSyAEyxIa31egmv-SScysTc_lmoUZLRt9gIo");
+            conn.setRequestProperty("Authorization", "key=" + api);
             conn.setRequestProperty("Content-Type", "application/json");
 
             JSONObject json = new JSONObject();

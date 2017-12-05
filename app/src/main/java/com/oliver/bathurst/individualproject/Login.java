@@ -32,6 +32,12 @@ public class Login extends AppCompatActivity{
         setContentView(R.layout.newlogin);
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+
+        if(prefs.getBoolean("first_use_app", true)){
+            Toast.makeText(getApplicationContext(), R.string.first_use_detected, Toast.LENGTH_LONG).show();
+            PreferenceManager.getDefaultSharedPreferences(this).edit().putBoolean("first_use_app", false).apply();
+        }
+
         pass = prefs.getString("app_pass", null);
         passHint = prefs.getString("app_pass_hint", null);
 
@@ -53,7 +59,7 @@ public class Login extends AppCompatActivity{
         if(pass == null || pass.trim().length() == 0){
             startActivity(new Intent(Login.this, MainActivity.class));
             finish();
-        }else {
+        }else{
             showDialog();
         }
     }
@@ -88,7 +94,8 @@ public class Login extends AppCompatActivity{
     }
     private void infoDialog(){
         new AlertDialog.Builder(this)
-                .setMessage(getString(R.string.my_name) + "\n" + getString(R.string.email_address) + "\n" + (perm != null ? perm.getAppInfo() : getString(R.string.no_app_version_found)))
+                .setMessage(getString(R.string.my_name) + "\n" + getString(R.string.email_address) + "\n" + (perm != null ? perm.getAppInfo() : getString(R.string.no_app_version_found))
+                + "\n" + getString(R.string.email_restricted) + "\n" + getString(R.string.please_use_gcm_sms_instead))
                 .setCancelable(false)
                 .setPositiveButton(getString(R.string.OK), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {

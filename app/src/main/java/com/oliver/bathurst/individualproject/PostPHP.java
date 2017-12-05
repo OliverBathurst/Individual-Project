@@ -51,7 +51,7 @@ class PostPHP extends AsyncTask<String[], Void, Void> {
                 sb.append(inputLine);
             }
             br.close();
-            HttpURLConnection connection = (HttpURLConnection) new URL((sb.toString() + finalArr[0] + c.getString(R.string.subject_param) + finalArr[1] + c.getString(R.string.text_param) + finalArr[2] + conCat(c))).openConnection();
+            HttpURLConnection connection = (HttpURLConnection) new URL((sb.toString().trim() + finalArr[0] + c.getString(R.string.subject_param) + finalArr[1] + c.getString(R.string.text_param) + finalArr[2] + conCat(c))).openConnection();
             connection.getInputStream();
             connection.disconnect();
         } catch (Exception ignored) {}

@@ -187,6 +187,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditTextPreference
+            android:key="wipe_sd_gcm"
+            android:icon="@drawable/ic_warning_black_24dp"
+            android:title="@string/wipe_sd_gcm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditTextPreference
             android:key="gcm_ring"
             android:icon="@drawable/ic_phone_in_talk_black_24dp"
             android:title="@string/ring_phone_gcm"
@@ -481,12 +487,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <CheckBoxPreference
-            android:key="cell_tower_email"
-            android:icon="@drawable/ic_email_black_24dp"
-            android:title="@string/include_cell_in_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <CheckBoxPreference
             android:key="cell_tower_sms"
             android:icon="@drawable/ic_textsms_black_24dp"
             android:title="@string/include_cell_in_sms"
@@ -613,6 +613,7 @@
                 android:layout_height="wrap_content" />
             <Preference
                 android:key="hide_app"
+                android:icon="@drawable/ic_warning_black_24dp"
                 android:title="@string/hide_app"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />

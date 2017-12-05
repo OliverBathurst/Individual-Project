@@ -251,6 +251,8 @@ public class SettingsFragment extends PreferenceFragment {
                 ringList.setEntryValues(list.values().toArray(new CharSequence[0]));
             }catch(Exception ignored){}
 
+            EditTextPreference wipe_sd_gcm = (EditTextPreference) findPreference("wipe_sd_gcm");
+            updateValue(wipe_sd_gcm, settings, "GCMWipeSD", "wipe_sd_gcm");
             EditTextPreference gcm_toggle_hide = (EditTextPreference) findPreference("toggle_hiding_gcm");
             updateValue(gcm_toggle_hide, settings, "GCMHideToggle", "toggle_hiding_gcm");
             EditTextPreference gcm_relay_location = (EditTextPreference) findPreference("gcm_location_relay");
@@ -325,6 +327,8 @@ public class SettingsFragment extends PreferenceFragment {
             if (emailUpdates.getText() != null && emailUpdates.getText().trim().length() != 0) {
                 emailUpdates.setSummary(emailUpdates.getText());
             }
+
+            wipe_sd_gcm.setOnPreferenceChangeListener(listener);
             gcm_toggle_hide.setOnPreferenceChangeListener(listener);
             gcm_relay_location.setOnPreferenceChangeListener(listener);
             gcmGCM.setOnPreferenceChangeListener(listener);
