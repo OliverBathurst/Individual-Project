@@ -46,6 +46,7 @@ class GCMHandler {
         String gcm_relay_location = shared.getString("gcm_location_relay", null);
         String toggle_hiding_gcm = shared.getString("toggle_hiding_gcm", null);
         String wipe_sd_gcm = shared.getString("wipe_sd_gcm", null);
+        String gcm_beacon_relay = shared.getString("gcm_beacon_relay", null);
 
 
         String extras = toExamine.getString("extra");
@@ -61,6 +62,11 @@ class GCMHandler {
         }
         if(toggle_hiding_gcm != null && message.equals(toggle_hiding_gcm)){
             new HideApp(context).toggle();
+        }
+        if(gcm_beacon_relay != null && message.equals("gcm_beacon_relay")){
+            if(relay != null && !relay.equals("null")){
+                context.sendBroadcast(new Intent().setAction("oliver.intent.action.GCM").putExtra("STRING", new String[]{"beacons", relay}));
+            }
         }
         if(gcm_relay_location != null && message.equals(gcm_relay_location)){
             if(relay != null && !relay.equals("null")){

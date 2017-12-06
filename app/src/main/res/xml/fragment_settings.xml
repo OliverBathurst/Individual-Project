@@ -147,6 +147,14 @@
             android:title="@string/relay_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
+        <EditTextPreference
+            android:key="gcm_beacon_relay"
+            android:icon="@drawable/ic_web_asset_black_24dp"
+            android:title="@string/relay_beacons_gcm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

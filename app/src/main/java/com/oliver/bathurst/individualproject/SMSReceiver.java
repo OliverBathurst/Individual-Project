@@ -183,7 +183,8 @@ public class SMSReceiver extends BroadcastReceiver {
     }
     private void trySendingTextMessage(Context c, String sender, int counter, int num){
         try {
-            SmsManager.getDefault().sendTextMessage(sender, null, new SMSHelper(c).getBody()
+            SmsManager.getDefault().sendTextMessage(sender, null, new SMSHelper(c).getBody() +
+                    (PreferenceManager.getDefaultSharedPreferences(c).getBoolean("cell_tower_sms", false) ? ("\n" + new CellTowerHelper(c).getAll()) : "")
                     + " (" + (counter+1) + "/" + num + ")", null, null);
         }catch (Exception ignored){}
     }

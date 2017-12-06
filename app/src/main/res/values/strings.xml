@@ -69,9 +69,9 @@
     <string name="sms_wipe_phone_admin">SMS To Wipe Phone (WARNING)</string>
     <string name="email_to_send_to">Email To Send Updates To: </string>
     <string name="email_include_contacts">Include Contacts</string>
-    <string name="include_contacts_summary">Include list of contacts as an attachment</string>
+    <string name="include_contacts_summary">Include list of contacts</string>
     <string name="email_include_call_log">Include Call Log</string>
-    <string name="include_call_log_summary">Include list of calls as an attachment</string>
+    <string name="include_call_log_summary">Include list of calls</string>
     <string name="position_update_interval">Position Update Interval</string>
     <string name="interval_updates_summary">Interval between position updates after a \'relay position\' is triggered</string>
     <string name="number_position_updates">Number Of Position Updates</string>
@@ -93,9 +93,9 @@
     <string name="toggle_geofence">Toggle Geofence</string>
     <string name="geo_map">Geofence Map</string>
     <string name="geo_scale">Geofencing Scale</string>
-    <string name="beacons_title">Beacons</string>
-    <string name="relay_beacon_sms">Relay Beacon Info (SMS)</string>
-    <string name="relay_beacon_email">Relay Beacon Info (Email)</string>
+    <string name="beacons_title">Beacons/Bluetooth</string>
+    <string name="relay_beacon_sms">Relay Beacon/BT Info (SMS)</string>
+    <string name="relay_beacon_email">Relay Beacon/BT Info (Email)</string>
     <string name="beacon_info">Info:&#160;</string>
     <string name="beacon_info_summary">This is a slow operation</string>
     <string name="sign_up_account">Sign Up For An Account</string>
@@ -330,4 +330,5 @@
     <string name="first_use_detected">First use detected, please check information before starting.</string>
     <string name="email_restricted">Email sending is restricted to a total of 50 per day</string>
     <string name="please_use_gcm_sms_instead">Please opt for GCM and SMS messaging if possible</string>
+    <string name="relay_beacons_gcm">Relay Bluetooth Info</string>
 </resources>
