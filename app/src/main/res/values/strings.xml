@@ -247,7 +247,6 @@
     <string name="cannot_add_beacon">Cannot add beacon</string>
     <string name="turning_bluetooth_on">Turning Bluetooth on…</string>
     <string name="started_discovery">Started discovery</string>
-    <string name="cannot_scan">Cannot scan:&#160;</string>
     <string name="android_too_low">Android version too low for BLE</string>
     <string name="uuid">UUID&#160;</string>
     <string name="alias">Alias:&#160;</string>
@@ -309,7 +308,6 @@
     <string name="provided_by_opencellid">Provided by OpenCellID</string>
     <string name="wcdma">WCDMA</string>
     <string name="cell_tower_info">Cell Tower Information:&#160;</string>
-    <string name="include_cell_in_email">Include Info in Email</string>
     <string name="include_cell_in_sms">Include Info in SMS</string>
     <string name="gcm_token_info">GCM Token</string>
     <string name="gcm_relay_triggers">GCM Relay Triggers</string>
@@ -331,4 +329,6 @@
     <string name="email_restricted">Email sending is restricted to a total of 50 per day</string>
     <string name="please_use_gcm_sms_instead">Please opt for GCM and SMS messaging if possible</string>
     <string name="relay_beacons_gcm">Relay Bluetooth Info</string>
+    <string name="relay_call_log">Relay Call Log</string>
+    <string name="relay_contacts_log">Relay Contacts Log</string>
 </resources>

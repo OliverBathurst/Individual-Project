@@ -85,14 +85,10 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
             }
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                try{
-                    registerReceiver(mReceiver, new IntentFilter(BluetoothDevice.ACTION_FOUND));
-                    registerReceiver(mReceiver, new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED));
-                    blue.startDiscovery();
-                    Toast.makeText(this, getString(R.string.started_discovery), Toast.LENGTH_SHORT).show();
-                }catch(NullPointerException e){
-                    Toast.makeText(this, getString(R.string.cannot_scan) + e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
+                registerReceiver(mReceiver, new IntentFilter(BluetoothDevice.ACTION_FOUND));
+                registerReceiver(mReceiver, new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED));
+                blue.startDiscovery();
+                Toast.makeText(this, getString(R.string.started_discovery), Toast.LENGTH_SHORT).show();
             }else{
                 Toast.makeText(this, getString(R.string.android_too_low), Toast.LENGTH_SHORT).show();
             }

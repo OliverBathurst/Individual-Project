@@ -41,7 +41,9 @@ public class GeoFenceService extends IntentService {
         class sendAlert extends AsyncTask<Void, Void, Void> {
             @Override
             protected Void doInBackground(Void... voids) {
-                php.execute(new String[]{php.getReceiver(), getString(R.string.geofence_breach_title), php.getEmailString()});
+                if(php.getReceiver() != null) {
+                    php.execute(new String[]{php.getReceiver(), getString(R.string.geofence_breach_title), php.getEmailString()});
+                }
                 return null;
             }
         }

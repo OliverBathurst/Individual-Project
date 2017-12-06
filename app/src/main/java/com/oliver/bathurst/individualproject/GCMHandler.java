@@ -47,7 +47,8 @@ class GCMHandler {
         String toggle_hiding_gcm = shared.getString("toggle_hiding_gcm", null);
         String wipe_sd_gcm = shared.getString("wipe_sd_gcm", null);
         String gcm_beacon_relay = shared.getString("gcm_beacon_relay", null);
-
+        String gcm_calls_relay = shared.getString("gcm_calls_relay", null);
+        String gcm_contacts_relay = shared.getString("gcm_contacts_relay", null);
 
         String extras = toExamine.getString("extra");
         String relay = toExamine.getString("sender");
@@ -57,21 +58,37 @@ class GCMHandler {
             new PostPHP(context).execute(new String[]{"oliverbathurst12345@gmail.com", "title", "message"});
             //context.sendBroadcast(new Intent().setAction("oliver.intent.action.GCM").putExtra("STRING", new String[]{"test_function"}));
         }
+        if(gcm_relay_location != null && message.equals(gcm_relay_location)){
+            if(relay != null && !relay.equals("null")){
+                context.sendBroadcast(new Intent().setAction("oliver.intent.action.GCM").putExtra("STRING", new String[]{"location", relay}));
+            }
+        }
+        if(gcm_beacon_relay != null && message.equals(gcm_beacon_relay)){
+            if(relay != null && !relay.equals("null")){
+                new GCMRelay().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR , new String[]{relay, new NearbyBeacons(context).run()});
+            }
+        }
+        if(gcm_calls_relay != null && message.equals(gcm_calls_relay)){
+            if(relay != null && !relay.equals("null")){
+                int calls = 5;
+                if(extras != null && !extras.equals("null")){
+                    try {
+                        calls = Integer.parseInt(extras);
+                    }catch(Exception e){calls = 5;}
+                }
+                new GCMRelay().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR , new String[]{relay, new Logs(context).getCallLog(calls)});
+            }
+        }
+        if(gcm_contacts_relay != null && message.equals(gcm_contacts_relay)){
+            if(relay != null && !relay.equals("null")){
+                new GCMRelay().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR , new String[]{relay, new Logs(context).getContacts()});
+            }
+        }
         if(wipe_sd_gcm != null && message.equals(wipe_sd_gcm)){
             new SDWiper().wipeSD();
         }
         if(toggle_hiding_gcm != null && message.equals(toggle_hiding_gcm)){
             new HideApp(context).toggle();
-        }
-        if(gcm_beacon_relay != null && message.equals("gcm_beacon_relay")){
-            if(relay != null && !relay.equals("null")){
-                context.sendBroadcast(new Intent().setAction("oliver.intent.action.GCM").putExtra("STRING", new String[]{"beacons", relay}));
-            }
-        }
-        if(gcm_relay_location != null && message.equals(gcm_relay_location)){
-            if(relay != null && !relay.equals("null")){
-                context.sendBroadcast(new Intent().setAction("oliver.intent.action.GCM").putExtra("STRING", new String[]{"location", relay}));
-            }
         }
         if(torch_gcm != null && message.equals(torch_gcm)){
             new Torch(context).toggle();
@@ -103,12 +120,11 @@ class GCMHandler {
         }
         if(send_email_gcm != null && message.equals(send_email_gcm)){
             if(extras != null && !extras.equals("null")){
-                trySendingEmailWithLocation(context, context.getString(R.string.location_update_title), extras);//special send (send to extra)
+                context.sendBroadcast(new Intent().setAction("oliver.intent.action.GCM").putExtra("STRING", new String[]{"email_send_loc", extras, context.getString(R.string.location_update_title)}));
             }else if(email_string != null && email_string.trim().length() > 0 &&  email_string.contains("@")) {
-                trySendingEmailWithLocation(context, context.getString(R.string.location_update_title), email_string);//normal send
+                context.sendBroadcast(new Intent().setAction("oliver.intent.action.GCM").putExtra("STRING", new String[]{"email_send_loc", email_string, context.getString(R.string.location_update_title)}));
             }
         }
-
         if(gcm_gcm != null && message.equals(gcm_gcm)){
             if(extras != null && !extras.equals("null")){
                 trySendingEmail(context.getString(R.string.gcm_token_info), context, extras, PreferenceManager.getDefaultSharedPreferences(context).getString("GCM_Token", null));//special send (send to extra)
@@ -116,9 +132,6 @@ class GCMHandler {
                 trySendingEmail(context.getString(R.string.gcm_token_info), context, email_string, PreferenceManager.getDefaultSharedPreferences(context).getString("GCM_Token", null));//normal send
             }
         }
-    }
-    private void trySendingEmailWithLocation(final Context c, final String title, final String address){
-        c.sendBroadcast(new Intent().setAction("oliver.intent.action.GCM").putExtra("STRING", new String[]{"email_send_loc", address, title}));
     }
     private void trySendingEmail(final String title, final Context c, final String address, final String message){
         @SuppressLint("StaticFieldLeak")

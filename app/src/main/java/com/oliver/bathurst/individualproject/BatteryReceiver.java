@@ -25,21 +25,28 @@ public class BatteryReceiver extends BroadcastReceiver {
         PostPHP email = new PostPHP(c);
 
         if(settings.getBoolean("sms_by_email", false)){
-            new EmailReceiver(c, email.getMonitoredUserName().trim(), email.getMonitoredPassword().trim()).getNewEmails();
+            new EmailReceiver(c, getMonitoredUserName(c).trim(), getMonitoredPassword(c).trim()).getNewEmails();
         }
-        try {
-            if(settings.getBoolean("battery_flare", false) && settings.getBoolean("stolen", false)) {
+        if(settings.getBoolean("battery_flare", false) && settings.getBoolean("stolen", false)) {
 
-                float batteryPercentage = ((float) arg1.getIntExtra(BatteryManager.EXTRA_LEVEL, 0) /
-                        (float) arg1.getIntExtra(BatteryManager.EXTRA_SCALE, 0)) * 100;
+            float batteryPercentage = ((float) arg1.getIntExtra(BatteryManager.EXTRA_LEVEL, 0) /
+                    (float) arg1.getIntExtra(BatteryManager.EXTRA_SCALE, 0)) * 100;
 
-                if (batteryPercentage <= settings.getInt("seek_bar_battery",5)) {
-                    if (!hasSent){
-                        sendEmailLowBatteryAlert(c, email.getReceiver(), email);
+            if (batteryPercentage <= settings.getInt("seek_bar_battery",5)) {
+                if (!hasSent){
+                    if(email.getReceiver() != null) {
+                            sendEmailLowBatteryAlert(c, email.getReceiver(), email);
                     }
                 }
             }
-        }catch(Exception ignored){}
+        }
+    }
+    private String getMonitoredUserName(Context c) {
+        return PreferenceManager.getDefaultSharedPreferences(c).getString("gmail_username", null);
+    }
+
+    private String getMonitoredPassword(Context c) {
+        return PreferenceManager.getDefaultSharedPreferences(c).getString("gmail_password", null);
     }
     private void sendEmailLowBatteryAlert(final Context c, final String email, final PostPHP p){
         @SuppressLint("StaticFieldLeak")
