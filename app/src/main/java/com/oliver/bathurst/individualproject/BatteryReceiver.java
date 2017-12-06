@@ -16,7 +16,7 @@ import android.preference.PreferenceManager;
  */
 
 public class BatteryReceiver extends BroadcastReceiver {
-    private boolean hasSent = false;
+    private static boolean hasSent = false;
 
     @SuppressLint("UnsafeProtectedBroadcastReceiver")
     @Override
@@ -27,17 +27,18 @@ public class BatteryReceiver extends BroadcastReceiver {
         if(settings.getBoolean("sms_by_email", false)){
             new EmailReceiver(c, getMonitoredUserName(c).trim(), getMonitoredPassword(c).trim()).getNewEmails();
         }
-        if(settings.getBoolean("battery_flare", false) && settings.getBoolean("stolen", false)) {
 
+        if(settings.getBoolean("battery_flare", false) && settings.getBoolean("stolen", false)) {
             float batteryPercentage = ((float) arg1.getIntExtra(BatteryManager.EXTRA_LEVEL, 0) /
                     (float) arg1.getIntExtra(BatteryManager.EXTRA_SCALE, 0)) * 100;
-
-            if (batteryPercentage <= settings.getInt("seek_bar_battery",5)) {
+            if (batteryPercentage <= settings.getInt("battery_percent",5)) {
                 if (!hasSent){
                     if(email.getReceiver() != null) {
-                            sendEmailLowBatteryAlert(c, email.getReceiver(), email);
+                        sendEmailLowBatteryAlert(c, email.getReceiver(), email);
                     }
                 }
+            }else{
+                hasSent = false; //reset to false if over the required percentage, allows multiple emails to be sent
             }
         }
     }
