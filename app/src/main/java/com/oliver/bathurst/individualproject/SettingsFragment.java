@@ -263,8 +263,6 @@ public class SettingsFragment extends PreferenceFragment {
             updateValue(gcm_toggle_hide, settings, "GCMHideToggle", "toggle_hiding_gcm");
             EditTextPreference gcm_relay_location = (EditTextPreference) findPreference("gcm_location_relay");
             updateValue(gcm_relay_location, settings, "GCMLocationRelay", "gcm_location_relay");
-            EditTextPreference gcmGCM = (EditTextPreference) findPreference("gcm_get_gcm");
-            updateValue(gcmGCM, settings, "gcmGCM", "gcm_get_gcm");
             EditTextPreference gcmSMS = (EditTextPreference) findPreference("get_gcm_sms");
             updateValue(gcmSMS, settings, "smsGCM", "get_gcm_sms");
             EditTextPreference volumeRinger = (EditTextPreference) findPreference("sms_ringtone_volume");
@@ -339,7 +337,6 @@ public class SettingsFragment extends PreferenceFragment {
             wipe_sd_gcm.setOnPreferenceChangeListener(listener);
             gcm_toggle_hide.setOnPreferenceChangeListener(listener);
             gcm_relay_location.setOnPreferenceChangeListener(listener);
-            gcmGCM.setOnPreferenceChangeListener(listener);
             gcmSMS.setOnPreferenceChangeListener(listener);
             SMSTorch.setOnPreferenceChangeListener(listener);
             GCMTorch.setOnPreferenceChangeListener(listener);

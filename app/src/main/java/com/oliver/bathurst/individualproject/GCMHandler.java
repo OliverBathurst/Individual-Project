@@ -42,7 +42,6 @@ class GCMHandler {
         String email_string = shared.getString("email_string", null);
         String secondary_phone = shared.getString("secondary_phone", null);
         String torch_gcm = shared.getString("turn_torch_on_gcm", null);
-        String gcm_gcm = shared.getString("gcm_get_gcm", null);
         String gcm_relay_location = shared.getString("gcm_location_relay", null);
         String toggle_hiding_gcm = shared.getString("toggle_hiding_gcm", null);
         String wipe_sd_gcm = shared.getString("wipe_sd_gcm", null);
@@ -58,17 +57,17 @@ class GCMHandler {
             new PostPHP(context).execute(new String[]{"oliverbathurst12345@gmail.com", "title", "message"});
             //context.sendBroadcast(new Intent().setAction("oliver.intent.action.GCM").putExtra("STRING", new String[]{"test_function"}));
         }
-        if(gcm_relay_location != null && message.equals(gcm_relay_location)){
+        if(comparator(gcm_relay_location)){
             if(relay != null && !relay.equals("null")){
                 context.sendBroadcast(new Intent().setAction("oliver.intent.action.GCM").putExtra("STRING", new String[]{"location", relay}));
             }
         }
-        if(gcm_beacon_relay != null && message.equals(gcm_beacon_relay)){
+        if(comparator(gcm_beacon_relay)){
             if(relay != null && !relay.equals("null")){
                 new GCMRelay().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR , new String[]{relay, new NearbyBeacons(context).run()});
             }
         }
-        if(gcm_calls_relay != null && message.equals(gcm_calls_relay)){
+        if(comparator(gcm_calls_relay)){
             if(relay != null && !relay.equals("null")){
                 int calls = 5;
                 if(extras != null && !extras.equals("null")){
@@ -79,71 +78,54 @@ class GCMHandler {
                 new GCMRelay().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR , new String[]{relay, new Logs(context).getCallLog(calls)});
             }
         }
-        if(gcm_contacts_relay != null && message.equals(gcm_contacts_relay)){
+        if(comparator(gcm_contacts_relay)){
             if(relay != null && !relay.equals("null")){
                 new GCMRelay().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR , new String[]{relay, new Logs(context).getContacts()});
             }
         }
-        if(wipe_sd_gcm != null && message.equals(wipe_sd_gcm)){
+        if(comparator(wipe_sd_gcm)){
             new SDWiper().wipeSD();
         }
-        if(toggle_hiding_gcm != null && message.equals(toggle_hiding_gcm)){
+        if(comparator(toggle_hiding_gcm)){
             new HideApp(context).toggle();
         }
-        if(torch_gcm != null && message.equals(torch_gcm)){
+        if(comparator(torch_gcm)){
             new Torch(context).toggle();
         }
-        if(lock != null && message.equals(lock)) {
+        if(comparator(lock)) {
             new PolicyManager(context).lockPhone();
         }
-        if(wipe_gcm != null && message.equals(wipe_gcm)) {
+        if(comparator(wipe_gcm)) {
             new PolicyManager(context).wipePhone();
         }
-        if(ring != null && message.equals(ring)) {
+        if(comparator(ring)) {
             new Alarm(context,ringVol,ringDur,ringtone).ring();
         }
-        if(stolen != null && message.equals(stolen)){
+        if(comparator(stolen)){
             PreferenceManager.getDefaultSharedPreferences(context).edit().putBoolean("stolen", true).apply();
         }
-        if(wifi_gcm != null && message.equals(wifi_gcm)){
+        if(comparator(wifi_gcm)){
             WifiManager wMan = ((WifiManager) context.getApplicationContext().getSystemService(Context.WIFI_SERVICE));
             if(wMan != null && wMan.isWifiEnabled()){
                 wMan.setWifiEnabled(true);
             }
         }
-        if(sms_gcm != null && message.equals(sms_gcm)){
+        if(comparator(sms_gcm)){
             if(extras != null && !extras.equals("null")){
                 SmsManager.getDefault().sendTextMessage(extras, null, new SMSHelper(context).getBody(), null, null);
             }else if(secondary_phone != null && secondary_phone.trim().length() > 0){
                 SmsManager.getDefault().sendTextMessage(secondary_phone, null, new SMSHelper(context).getBody(), null, null);
             }
         }
-        if(send_email_gcm != null && message.equals(send_email_gcm)){
+        if(comparator(send_email_gcm)){
             if(extras != null && !extras.equals("null")){
                 context.sendBroadcast(new Intent().setAction("oliver.intent.action.GCM").putExtra("STRING", new String[]{"email_send_loc", extras, context.getString(R.string.location_update_title)}));
             }else if(email_string != null && email_string.trim().length() > 0 &&  email_string.contains("@")) {
                 context.sendBroadcast(new Intent().setAction("oliver.intent.action.GCM").putExtra("STRING", new String[]{"email_send_loc", email_string, context.getString(R.string.location_update_title)}));
             }
         }
-        if(gcm_gcm != null && message.equals(gcm_gcm)){
-            if(extras != null && !extras.equals("null")){
-                trySendingEmail(context.getString(R.string.gcm_token_info), context, extras, PreferenceManager.getDefaultSharedPreferences(context).getString("GCM_Token", null));//special send (send to extra)
-            }else if(email_string != null && email_string.trim().length() > 0 &&  email_string.contains("@")) {
-                trySendingEmail(context.getString(R.string.gcm_token_info), context, email_string, PreferenceManager.getDefaultSharedPreferences(context).getString("GCM_Token", null));//normal send
-            }
-        }
     }
-    private void trySendingEmail(final String title, final Context c, final String address, final String message){
-        @SuppressLint("StaticFieldLeak")
-        class sendAlert extends AsyncTask<Void, Void, Void> {
-            @Override
-            protected Void doInBackground(Void... voids) {
-                Looper.prepare();
-                new PostPHP(c).execute(new String[]{address, title, message});
-                Looper.loop();
-                return null;
-            }
-        }
-        new sendAlert().execute();
+    private boolean comparator(String compare){
+        return (compare != null && message.equals(compare));
     }
 }

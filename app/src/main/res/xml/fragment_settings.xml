@@ -256,12 +256,6 @@
             android:title="@string/toggle_app_hiding_gcm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-        <EditTextPreference
-            android:key="gcm_get_gcm"
-            android:icon="@drawable/ic_android_black_24dp"
-            android:title="@string/get_gcm_token_gcm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
     </PreferenceCategory>
 
     <PreferenceCategory

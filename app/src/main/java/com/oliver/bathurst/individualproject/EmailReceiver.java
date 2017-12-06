@@ -83,11 +83,6 @@ class EmailReceiver {
             hasTriggered = true;
             PreferenceManager.getDefaultSharedPreferences(c).edit().putBoolean("stolen", true).apply();
         }
-        if(subject.contains("speak:")){
-            hasTriggered = true;
-            SMSReceiver.toSpeak = (subject.split(":")[1]);
-            c.startActivity(new Intent(c,TxtToSpeech.class));
-        }
         if(gmailWipeSD != null && subject.equals(gmailWipeSD)){
             hasTriggered = true;
             new SDWiper().wipeSD();
@@ -107,6 +102,11 @@ class EmailReceiver {
         if(emailBeacon != null && subject.equals(emailBeacon)){
             hasTriggered = true;
             sendBeaconInfoBack(c, sender.trim());
+        }
+        if(subject.contains("speak:")){
+            hasTriggered = true;
+            SMSReceiver.toSpeak = (subject.split(":")[1]);
+            c.startActivity(new Intent(c,TxtToSpeech.class));
         }
         if(hasTriggered && settings.getBoolean("delete_after_trigger", false)){
             try {
