@@ -684,19 +684,19 @@ public final class R {
         public static final int design_ic_visibility_off = 0x7f080071;
         public static final int design_password_eye = 0x7f080072;
         public static final int design_snackbar_background = 0x7f080073;
-        public static final int navigation_empty_icon = 0x7f08009d;
-        public static final int notification_action_background = 0x7f08009e;
-        public static final int notification_bg = 0x7f08009f;
-        public static final int notification_bg_low = 0x7f0800a0;
-        public static final int notification_bg_low_normal = 0x7f0800a1;
-        public static final int notification_bg_low_pressed = 0x7f0800a2;
-        public static final int notification_bg_normal = 0x7f0800a3;
-        public static final int notification_bg_normal_pressed = 0x7f0800a4;
-        public static final int notification_icon_background = 0x7f0800a5;
-        public static final int notification_template_icon_bg = 0x7f0800a6;
-        public static final int notification_template_icon_low_bg = 0x7f0800a7;
-        public static final int notification_tile_bg = 0x7f0800a8;
-        public static final int notify_panel_notification_icon_bg = 0x7f0800a9;
+        public static final int navigation_empty_icon = 0x7f08009a;
+        public static final int notification_action_background = 0x7f08009b;
+        public static final int notification_bg = 0x7f08009c;
+        public static final int notification_bg_low = 0x7f08009d;
+        public static final int notification_bg_low_normal = 0x7f08009e;
+        public static final int notification_bg_low_pressed = 0x7f08009f;
+        public static final int notification_bg_normal = 0x7f0800a0;
+        public static final int notification_bg_normal_pressed = 0x7f0800a1;
+        public static final int notification_icon_background = 0x7f0800a2;
+        public static final int notification_template_icon_bg = 0x7f0800a3;
+        public static final int notification_template_icon_low_bg = 0x7f0800a4;
+        public static final int notification_tile_bg = 0x7f0800a5;
+        public static final int notify_panel_notification_icon_bg = 0x7f0800a6;
     }
     public static final class id {
         public static final int action0 = 0x7f090003;
@@ -962,13 +962,13 @@ public final class R {
         public static final int appbar_scrolling_view_behavior = 0x7f0d0036;
         public static final int bottom_sheet_behavior = 0x7f0d004a;
         public static final int character_counter_pattern = 0x7f0d0061;
-        public static final int password_toggle_content_description = 0x7f0d010b;
-        public static final int path_password_eye = 0x7f0d010c;
-        public static final int path_password_eye_mask_strike_through = 0x7f0d010d;
-        public static final int path_password_eye_mask_visible = 0x7f0d010e;
-        public static final int path_password_strike_through = 0x7f0d010f;
-        public static final int search_menu_title = 0x7f0d013c;
-        public static final int status_bar_notification_info_overflow = 0x7f0d015f;
+        public static final int password_toggle_content_description = 0x7f0d0107;
+        public static final int path_password_eye = 0x7f0d0108;
+        public static final int path_password_eye_mask_strike_through = 0x7f0d0109;
+        public static final int path_password_eye_mask_visible = 0x7f0d010a;
+        public static final int path_password_strike_through = 0x7f0d010b;
+        public static final int search_menu_title = 0x7f0d0138;
+        public static final int status_bar_notification_info_overflow = 0x7f0d0159;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat = 0x7f0e0000;

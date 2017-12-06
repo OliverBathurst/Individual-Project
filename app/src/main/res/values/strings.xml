@@ -100,8 +100,6 @@
     <string name="beacon_info_summary">This is a slow operation</string>
     <string name="sign_up_account">Sign Up For An Account</string>
     <string name="sign_up_account_summary">Will automatically update the database with the device\'s location at a set interval. Use the web interface to retrieve the data.</string>
-    <string name="show_warnings_toggle">Don\'t Show Warnings On Launch</string>
-    <string name="hide_notifications">Hide Notifications</string>
     <string name="second_phone">Secondary Phone Number (Optional):&#160;</string>
     <string name="hide_app">Toggle Hiding App From Drawer</string>
     <string name="sms_to_unhide">SMS Trigger To Unhide App</string>
@@ -111,8 +109,6 @@
     <string name="get_gcm_token">Get Current GCM Token</string>
     <string name="lock_phone_gcm">Lock Phone</string>
     <string name="backup_shared_prefs">Backup Preferences</string>
-    <string name="enable_loc_server">Enable Local Server</string>
-    <string name="loc_server_summary">For testing purposes</string>
     <string name="add_gcm_web_title">GCM Messaging/Triggers</string>
     <string name="locator_precedence_title">Locator Precedence</string>
     <string name="misc_title">Misc</string>
@@ -213,11 +209,9 @@
     <string name="net_name">Network name:&#160;</string>
     <string name="extra_info">Extra info:&#160;</string>
     <string name="location_alert_title">This is a location alert, your device location is:&#160;</string>
-    <string name="matched_trigger">String matched, performing action</string>
     <string name="gcm_reg_error">GCM registration error</string>
     <string name="your_gcm_token">Your GCM token:&#160;</string>
     <string name="no_gcm_token">No saved GCM token</string>
-    <string name="server_started_on">Server started on:&#160;</string>
     <string name="beacon_device">Device:&#160;</string>
     <string name="est_distance_m">Distance (est.):&#160;</string>
     <string name="gps_value">GPS</string>

@@ -592,24 +592,11 @@
                 android:title="@string/backup_shared_prefs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <CheckBoxPreference
-                android:key="prompt_gps_on_boot"
-                android:icon="@drawable/ic_warning_black_24dp"
-                android:title="@string/show_warnings_toggle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
             <EditTextPreference
                 android:key="secondary_phone"
                 android:icon="@drawable/ic_phone_android_black_24dp"
                 android:inputType="number"
                 android:title="@string/second_phone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <SwitchPreference
-                android:key="local_server"
-                android:icon="@drawable/ic_cloud_upload_black_24dp"
-                android:title="@string/enable_loc_server"
-                android:summary="@string/loc_server_summary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <Preference

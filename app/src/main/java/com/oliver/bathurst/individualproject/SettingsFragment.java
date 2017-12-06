@@ -24,7 +24,6 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
-import android.preference.SwitchPreference;
 import android.support.v4.content.LocalBroadcastManager;
 import android.widget.Toast;
 import java.io.File;
@@ -43,7 +42,6 @@ import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 public class SettingsFragment extends PreferenceFragment {
     private BroadcastReceiver mRegistrationBroadcastReceiver;
     private static final int REQUEST_ENABLE_BT = 23;
-    private Server server = null;
     public SettingsFragment() {}
 
     @Override
@@ -97,15 +95,6 @@ public class SettingsFragment extends PreferenceFragment {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     getDeviceAdmin();
-                    return true;
-                }
-            });
-            ((SwitchPreference) findPreference("local_server")).setChecked(Server.running);
-
-            findPreference("local_server").setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-                @Override
-                public boolean onPreferenceChange(Preference preference, Object newValue) {
-                    startServer(preference);
                     return true;
                 }
             });
@@ -395,17 +384,6 @@ public class SettingsFragment extends PreferenceFragment {
         }else{
             edit.setSummary(getString(R.string.trigger_value) + defValue);
             sh.putString(tag, defValue).apply();
-        }
-    }
-    private void startServer(Preference pref){
-        if (!((SwitchPreference) pref).isChecked()){
-            server = new Server(getActivity());
-            server.start();
-            Toast.makeText(getActivity(), getString(R.string.server_started_on) + server.getIP() + ":" + server.getPort(), Toast.LENGTH_SHORT).show();
-        }else{
-            if(server != null){
-                server.stop();
-            }
         }
     }
     private void actionSharedPref(){
