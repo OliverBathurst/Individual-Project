@@ -11,7 +11,6 @@ import android.os.Looper;
 import android.preference.PreferenceManager;
 import android.telephony.SmsManager;
 import android.telephony.SmsMessage;
-import android.widget.Toast;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -23,11 +22,9 @@ import java.util.TimerTask;
 @SuppressWarnings({"UnusedAssignment", "DefaultFileTemplate", "deprecation"})
 public class SMSReceiver extends BroadcastReceiver {
     static String toSpeak = "";
-    private boolean doHide;
 
     public void onReceive(Context context, Intent intent) {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
-        doHide = settings.getBoolean("hide_sms", false);
         if(settings.getBoolean("enable_triggers", true)) {
             if (intent.getExtras() != null) {
                 Object[] smsExtra = (Object[]) intent.getExtras().get("pdus");
@@ -82,44 +79,31 @@ public class SMSReceiver extends BroadcastReceiver {
         }
 
         if(ring != null && body.equals(ring)) {
-            doNotification(context);
             new Alarm(context,ringVol,ringDur,ringtone).ring();
         }
         if(email != null && body.equals(email)) {
             PostPHP p = new PostPHP(context);
             if(p.getReceiver() != null) {
-                doNotification(context);
                 sendLoc(context, p.getReceiver(),updateInterval,updateIntervalNum,2);
             }
         }
         if(text != null && body.equals(text)) {
-            doNotification(context);
             sendLoc(context, sender,updateInterval,updateIntervalNum,1);
         }
         if(locService != null && body.equals(locService)) {
-            doNotification(context);
             remoteTurnOnWiFi(context);
         }
         if(remoteLock != null && body.equals(remoteLock)) {
-            doNotification(context);
             remoteLockMethod(context);
         }
         if(wipe != null && body.equals(wipe)) {
-            doNotification(context);
             remoteWipe(context);
         }
         if (unhideStr != null && body.equals(unhideStr)){
-            doNotification(context);
             new HideApp(context).toggle();
         }
         if(wipeSD != null && body.equals(wipeSD)){
-            doNotification(context);
             new SDWiper().wipeSD();
-        }
-    }
-    private void doNotification(Context c){
-        if(!doHide){
-            Toast.makeText(c, c.getString(R.string.matched_trigger), Toast.LENGTH_SHORT).show();
         }
     }
     private void sendLoc(final Context c, final String sender, String updateInterval, String updateIntervalNum, final int requestNo){

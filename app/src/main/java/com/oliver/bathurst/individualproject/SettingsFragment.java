@@ -152,7 +152,6 @@ public class SettingsFragment extends PreferenceFragment {
                 }
             });
 
-            ((CheckBoxPreference) findPreference("hide_sms")).setChecked(settingsView.getBoolean("hide_sms", true));
             ((CheckBoxPreference) findPreference("enable_triggers")).setChecked(settingsView.getBoolean("enable_triggers", true));
 
             findPreference("sms_ringtone_volume").setSummary(getString(R.string.current_volume) + settingsView.getString("sms_ringtone_volume", "90") + "%");

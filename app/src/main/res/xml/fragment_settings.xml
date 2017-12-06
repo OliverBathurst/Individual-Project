@@ -598,13 +598,6 @@
                 android:title="@string/show_warnings_toggle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <CheckBoxPreference
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:icon="@drawable/ic_do_not_disturb_on_black_24dp"
-                android:defaultValue="true"
-                android:key="hide_sms"
-                android:title="@string/hide_notifications" />
             <EditTextPreference
                 android:key="secondary_phone"
                 android:icon="@drawable/ic_phone_android_black_24dp"
