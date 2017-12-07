@@ -266,7 +266,6 @@
     <string name="only_over_wifi">Only Update Over Wi-Fi</string>
     <string name="enable_wifi">Enable WiFi</string>
     <string name="send_sms_gcm">Send SMS With Location</string>
-    <string name="send_email_gcm">Send Email With Location</string>
     <string name="cell_tower_activity">Cell Towers</string>
     <string-array name="CMorM">
         <item>CM</item>

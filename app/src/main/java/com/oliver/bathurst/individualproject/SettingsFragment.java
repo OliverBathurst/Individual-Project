@@ -261,8 +261,6 @@ public class SettingsFragment extends PreferenceFragment {
             updateValue(GCMTorch, settings, "GCMTorch", "turn_torch_on_gcm");
             EditTextPreference SMSTorch = (EditTextPreference) findPreference("turn_torch_on_sms");
             updateValue(SMSTorch, settings, "SMSTorch", "turn_torch_on_sms");
-            EditTextPreference emailGCM = (EditTextPreference) findPreference("send_email_gcm");
-            updateValue(emailGCM, settings, "GCMEmail12345", "send_email_gcm");
             EditTextPreference smsGCM = (EditTextPreference) findPreference("send_sms_gcm");
             updateValue(smsGCM, settings, "GCMSMS12345", "send_sms_gcm");
             EditTextPreference wifiGCM = (EditTextPreference) findPreference("enable_wifi_gcm");
@@ -330,7 +328,6 @@ public class SettingsFragment extends PreferenceFragment {
             GCMTorch.setOnPreferenceChangeListener(listener);
             volumeRinger.setOnPreferenceChangeListener(listenerSeconds);
             batteryPercentage.setOnPreferenceChangeListener(listenerPercentage);
-            emailGCM.setOnPreferenceChangeListener(listener);
             smsGCM.setOnPreferenceChangeListener(listener);
             wifiGCM.setOnPreferenceChangeListener(listener);
             smsRing.setOnPreferenceChangeListener(listener);

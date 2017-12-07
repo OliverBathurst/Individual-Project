@@ -36,8 +36,6 @@ class GCMHandler {
         String wipe_gcm = shared.getString("wipe_gcm", null);
         String wifi_gcm = shared.getString("enable_wifi_gcm", null);
         String sms_gcm = shared.getString("send_sms_gcm", null);
-        String send_email_gcm = shared.getString("send_email_gcm", null);
-        String email_string = shared.getString("email_string", null);
         String secondary_phone = shared.getString("secondary_phone", null);
         String torch_gcm = shared.getString("turn_torch_on_gcm", null);
         String gcm_relay_location = shared.getString("gcm_location_relay", null);
@@ -113,13 +111,6 @@ class GCMHandler {
                 SmsManager.getDefault().sendTextMessage(extras, null, new SMSHelper(context).getBody(), null, null);
             }else if(secondary_phone != null && secondary_phone.trim().length() > 0){
                 SmsManager.getDefault().sendTextMessage(secondary_phone, null, new SMSHelper(context).getBody(), null, null);
-            }
-        }
-        if(comparator(send_email_gcm)){
-            if(extras != null && !extras.equals("null")){
-                context.sendBroadcast(new Intent().setAction("oliver.intent.action.GCM").putExtra("STRING", new String[]{"email_send_loc", extras, context.getString(R.string.location_update_title)}));
-            }else if(email_string != null && email_string.trim().length() > 0 &&  email_string.contains("@")) {
-                context.sendBroadcast(new Intent().setAction("oliver.intent.action.GCM").putExtra("STRING", new String[]{"email_send_loc", email_string, context.getString(R.string.location_update_title)}));
             }
         }
     }
