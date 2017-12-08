@@ -9,6 +9,8 @@ import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.widget.Toast;
 
+import org.json.JSONObject;
+
 import static android.support.v4.app.ActivityCompat.requestPermissions;
 
 /**
@@ -21,6 +23,19 @@ class PermissionsManager {
 
     PermissionsManager(Context context) {
         c = context;
+    }
+
+    JSONObject signupDeviceJson(){
+        JSONObject json;
+        try {
+            String j = "{" + c.getString(R.string.model).trim()+ android.os.Build.MODEL + "," + c.getString(R.string.brand).trim() + Build.BRAND + ","
+                    + c.getString(R.string.device).trim() + Build.DEVICE + "," + c.getString(R.string.display).trim() + Build.DISPLAY + ","
+                    + c.getString(R.string.manufacturer).trim() + Build.MANUFACTURER + "}";
+            json = new JSONObject(j);
+        }catch(Exception e){
+            json = null;
+        }
+        return json;
     }
 
     String getDeviceAttributes(){

@@ -31,10 +31,6 @@ public class GCMBroadcast extends BroadcastReceiver {
                     case "location":
                         new GCMRelay().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR , new String[]{arr[1], new PostPHP(c).getEmailString()});
                         break;
-                    case "email_send_loc":
-                        PostPHP php = new PostPHP(c);
-                        php.execute(new String[]{arr[1], arr[2], php.getEmailString()});
-                        break;
                 }
             }
         }catch(Exception ignored){}

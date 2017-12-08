@@ -51,7 +51,6 @@ class GCMHandler {
 
         if(message.equals("testing")){
             new PostPHP(context).execute(new String[]{"oliverbathurst12345@gmail.com", "title", "message"});
-            //context.sendBroadcast(new Intent().setAction("oliver.intent.action.GCM").putExtra("STRING", new String[]{"test_function"}));
         }
         if(comparator(gcm_relay_location)){
             if(relay != null && !relay.equals("null")){
