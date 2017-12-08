@@ -169,11 +169,11 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
     }
     private boolean isValid(String username) {
         //TODO: Replace this with your own logic
-        return username.length() > 0;
+        return username.length() > 0 && !username.contains("|");
     }
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
-        return password.length() >= 4 && 12 >= password.length();
+        return password.length() >= 4 && 12 >= password.length() && !password.contains("|");
     }
     /**
      * Shows the progress UI and hides the login form.
@@ -263,7 +263,7 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
                     }).setOnDismissListener(new DialogInterface.OnDismissListener() {
                     @Override
                     public void onDismiss(DialogInterface dialog) {
-                        finish();
+                            finish();
                     }
                     }).setOnCancelListener(new DialogInterface.OnCancelListener() {
                         @Override

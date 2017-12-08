@@ -36,8 +36,8 @@
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign Up</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="error_invalid_user">This username is invalid</string>
-    <string name="error_incorrect_password">This password is incorrect, must be between 4 and 12 characters</string>
+    <string name="error_invalid_user">This username is invalid, either blank or contains the protected character "|"</string>
+    <string name="error_incorrect_password">This password is incorrect, must be between 4 and 12 characters, cannot contain protected character "|"</string>
     <string name="error_field_required">This field is required</string>
     <string name="permission_rationale">Contacts permissions are needed for providing username completions.</string>
     <string name="admin_enable">Enable Administrator Access</string>
