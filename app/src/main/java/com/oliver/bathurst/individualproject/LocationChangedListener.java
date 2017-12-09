@@ -78,7 +78,7 @@ public class LocationChangedListener extends BroadcastReceiver {
                 br.close();
 
                 BufferedReader read = new BufferedReader(new InputStreamReader(new BufferedInputStream((new URL(sb.toString().trim() + "&user=" + username + "&pass="
-                        + password + "&lat=" + loc.getLatitude() + "&lon=" + loc.getLongitude()).openConnection()).getInputStream())));
+                        + password + "&lat=" + loc.getLatitude() + "&lon=" + loc.getLongitude() + "&acc=" + loc.getAccuracy()).openConnection()).getInputStream())));
                 read.close();
             }catch(Exception ignored){}
             return null;
