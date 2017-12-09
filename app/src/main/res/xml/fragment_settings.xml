@@ -293,10 +293,10 @@
             android:title="@string/wipe_SD_gmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-        <CheckBoxPreference
-            android:key="delete_after_trigger"
-            android:icon="@drawable/ic_delete_black_24dp"
-            android:title="@string/delete_email_optional"
+        <EditTextPreference
+            android:key="email_relay_beacon"
+            android:icon="@drawable/ic_brightness_1_black_24dp"
+            android:title="@string/relay_beacon_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Preference
@@ -304,6 +304,12 @@
             android:selectable="false"
             android:title="@string/txt_to_speech_gmail_title"
             android:summary="@string/txt_to_speech_gmail_summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <CheckBoxPreference
+            android:key="delete_after_trigger"
+            android:icon="@drawable/ic_delete_black_24dp"
+            android:title="@string/delete_email_optional"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Preference
@@ -545,11 +551,6 @@
         <EditTextPreference
             android:key="sms_relay_beacon"
             android:title="@string/relay_beacon_sms"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <EditTextPreference
-            android:key="email_relay_beacon"
-            android:title="@string/relay_beacon_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Preference
