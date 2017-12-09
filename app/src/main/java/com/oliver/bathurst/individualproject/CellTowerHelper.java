@@ -66,7 +66,6 @@ class CellTowerHelper {
 
                     sb.append(validateDoubles(callOpenCell(identity.getCid(), identity.getLac(), identity.getMcc(), identity.getMnc())));
 
-
                 } else if (cell instanceof CellInfoWcdma && Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
                     CellIdentityWcdma identityWcdma = ((CellInfoWcdma) cell).getCellIdentity();
                     sb.append(c.getString(R.string.typeCell)).append(c.getString(R.string.wcdma))
@@ -118,7 +117,7 @@ class CellTowerHelper {
     private String validateDoubles(Double[] dubs){
         String returnStr = "";
         if(dubs != null && dubs[0] != null && dubs[1] != null && dubs[2] != null) {
-            returnStr += (c.getString(R.string.latitude) + dubs[0] + "\n" + c.getString(R.string.longitude) + dubs[1] + c.getString(R.string.range) + dubs[2] + "\n");
+            returnStr += (c.getString(R.string.latitude) + dubs[0] + "\n" + c.getString(R.string.longitude) + dubs[1] + "\n" + c.getString(R.string.range) + dubs[2] + "\n");
         }
         return returnStr;
     }

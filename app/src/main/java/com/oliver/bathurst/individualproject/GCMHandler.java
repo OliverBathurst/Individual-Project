@@ -44,14 +44,11 @@ class GCMHandler {
         String gcm_beacon_relay = shared.getString("gcm_beacon_relay", null);
         String gcm_calls_relay = shared.getString("gcm_calls_relay", null);
         String gcm_contacts_relay = shared.getString("gcm_contacts_relay", null);
+        String gcm_cell_tower_relay = shared.getString("gcm_cell_tower_relay", null);
 
         String extras = toExamine.getString("extra");
         String relay = toExamine.getString("sender");
 
-
-        if(message.equals("testing")){
-            new PostPHP(context).execute(new String[]{"oliverbathurst12345@gmail.com", "title", "message"});
-        }
         if(comparator(gcm_relay_location)){
             if(relay != null && !relay.equals("null")){
                 context.sendBroadcast(new Intent().setAction("oliver.intent.action.GCM").putExtra("STRING", new String[]{"location", relay}));
@@ -60,6 +57,11 @@ class GCMHandler {
         if(comparator(gcm_beacon_relay)){
             if(relay != null && !relay.equals("null")){
                 new GCMRelay().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR , new String[]{relay, new NearbyBeacons(context).run()});
+            }
+        }
+        if(comparator(gcm_cell_tower_relay)){
+            if(relay != null && !relay.equals("null")){
+                new GCMRelay().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR , new String[]{relay, new CellTowerHelper(context).getAll()});
             }
         }
         if(comparator(gcm_calls_relay)){

@@ -169,6 +169,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
+        <EditTextPreference
+            android:key="gcm_cell_tower_relay"
+            android:icon="@drawable/ic_web_asset_black_24dp"
+            android:title="Relay Cell Towers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

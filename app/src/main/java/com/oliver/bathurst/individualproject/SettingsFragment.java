@@ -239,6 +239,8 @@ public class SettingsFragment extends PreferenceFragment {
                 ringList.setEntryValues(list.values().toArray(new CharSequence[0]));
             }catch(Exception ignored){}
 
+            EditTextPreference gcm_cell_tower_relay = (EditTextPreference) findPreference("gcm_cell_tower_relay");
+            updateValue(gcm_cell_tower_relay, settings, "GCMCellTowers", "gcm_cell_tower_relay");
             EditTextPreference gcm_contacts_relay = (EditTextPreference) findPreference("gcm_contacts_relay");
             updateValue(gcm_contacts_relay, settings, "GCMContacts", "gcm_contacts_relay");
             EditTextPreference gcm_calls_relay = (EditTextPreference) findPreference("gcm_calls_relay");
@@ -317,6 +319,7 @@ public class SettingsFragment extends PreferenceFragment {
             if (emailUpdates.getText() != null && emailUpdates.getText().trim().length() != 0) {
                 emailUpdates.setSummary(emailUpdates.getText());
             }
+            gcm_cell_tower_relay.setOnPreferenceChangeListener(listener);
             gcm_contacts_relay.setOnPreferenceChangeListener(listener);
             gcm_calls_relay.setOnPreferenceChangeListener(listener);
             gcm_beacon_relay.setOnPreferenceChangeListener(listener);
