@@ -169,7 +169,7 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
     }
     private boolean isValid(String username) {
         //TODO: Replace this with your own logic
-        return username.length() > 0 && !username.contains("|");
+        return username.length() > 0 && !username.contains("|") && username.length() < 12;
     }
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
