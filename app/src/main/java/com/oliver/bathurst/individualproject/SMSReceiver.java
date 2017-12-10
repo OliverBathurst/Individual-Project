@@ -1,12 +1,10 @@
 package com.oliver.bathurst.individualproject;
 
-import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.wifi.WifiManager;
-import android.os.AsyncTask;
 import android.os.Looper;
 import android.preference.PreferenceManager;
 import android.telephony.SmsManager;
@@ -19,29 +17,39 @@ import java.util.TimerTask;
  * Written by Oliver Bathurst <oliverbathurst12345@gmail.com>
  */
 
+/**
+ * This class listens for incoming texts (SMS) and checks against saved triggers
+ * stored in shared preferences
+ */
+
 @SuppressWarnings({"UnusedAssignment", "DefaultFileTemplate", "deprecation"})
 public class SMSReceiver extends BroadcastReceiver {
-    static String toSpeak = "";
+    private String message;
 
+    /**
+     * onReceive receives intents specified by the action within the intent filter (AndroidManifest.xml)
+     */
     public void onReceive(Context context, Intent intent) {
-        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
-        if(settings.getBoolean("enable_triggers", true)) {
-            if (intent.getExtras() != null) {
-                Object[] smsExtra = (Object[]) intent.getExtras().get("pdus");
+        if(PreferenceManager.getDefaultSharedPreferences(context).getBoolean("enable_triggers", true)) { //check if triggering is enabled
+            if (intent.getExtras() != null) { //check that the intent has extras
+                Object[] smsExtra = (Object[]) intent.getExtras().get("pdus"); //get pdus store
 
-                for (int i = 0; i < (smsExtra != null ? smsExtra.length : 0); ++i) {
-                    SmsMessage sms = SmsMessage.createFromPdu((byte[]) smsExtra[i]);
-                    switchMessage(context, sms.getMessageBody().trim(), sms.getOriginatingAddress().trim());
+                for (int i = 0; i < (smsExtra != null ? smsExtra.length : 0); i++) { //iterate over objects
+                    SmsMessage sms = SmsMessage.createFromPdu((byte[]) smsExtra[i]);//create an SMS variable from the objects byte array
+                    switchMessage(context, sms.getMessageBody().trim(), sms.getOriginatingAddress().trim());//pass the text, sender, and a context to an analyser method
                 }
             }
         }
     }
     /**
-     * uses if statements so can bind a single trigger to multiple actions
+     * This method accesses the shared preferences and retrieves all necessary triggers
+     * uses if statements so the user can bind a single trigger to multiple actions
      */
     private void switchMessage(Context context, String body, String sender){
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
-        String ring = settings.getString("sms_ring", null);
+        this.message = body;
+
+        String ring = settings.getString("sms_ring", null); //get various sms triggers (modifiable in the GUI)
         String email = settings.getString("sms_relay_email", null);
         String text = settings.getString("sms_relay_text", null);
         String locService = settings.getString("sms_loc_services", null);
@@ -59,52 +67,54 @@ public class SMSReceiver extends BroadcastReceiver {
         String smsTorch = settings.getString("turn_torch_on_sms", null);
         String smsGCMToken = settings.getString("get_gcm_sms", null);
 
-
-        if(smsTorch != null && body.equals(smsTorch)){
+        if(validate(smsTorch)){
             new Torch(context).toggle();
         }
-        if(stolen != null && body.equals(stolen)){
+        if(validate(stolen)){
             PreferenceManager.getDefaultSharedPreferences(context).edit().putBoolean("stolen", true).apply();
         }
-        if(smsBeacon != null && body.equals(smsBeacon)){
+        if(validate(smsBeacon)){
             SmsManager.getDefault().sendTextMessage(sender, null, new NearbyBeacons(context).run() , null, null);
         }
-        if(smsGCMToken != null && body.equals(smsGCMToken)){
+        if(validate(smsGCMToken)){
             SmsManager.getDefault().sendTextMessage(sender, null, PreferenceManager.getDefaultSharedPreferences(context).getString("GCM_Token", null), null, null);
         }
-
-        if(body.contains("speak:")){
-            toSpeak = (body.trim().split(":")[1]);
-            context.startActivity(new Intent(context,TxtToSpeech.class));
-        }
-
-        if(ring != null && body.equals(ring)) {
+        if(validate(ring)) {
             new Alarm(context,ringVol,ringDur,ringtone).ring();
         }
-        if(email != null && body.equals(email)) {
+        if(validate(email)) {
             PostPHP p = new PostPHP(context);
             if(p.getReceiver() != null) {
                 sendLoc(context, p.getReceiver(),updateInterval,updateIntervalNum,2);
             }
         }
-        if(text != null && body.equals(text)) {
+        if(validate(text)) {
             sendLoc(context, sender,updateInterval,updateIntervalNum,1);
         }
-        if(locService != null && body.equals(locService)) {
-            remoteTurnOnWiFi(context);
+        if(validate(locService)) {
+            WifiManager wMan = ((WifiManager) context.getApplicationContext().getSystemService(Context.WIFI_SERVICE));
+            if(wMan != null && !wMan.isWifiEnabled()){
+                wMan.setWifiEnabled(true);
+            }
         }
-        if(remoteLock != null && body.equals(remoteLock)) {
-            remoteLockMethod(context);
+        if(validate(remoteLock)) {
+            new PolicyManager(context).lockPhone();
         }
-        if(wipe != null && body.equals(wipe)) {
-            remoteWipe(context);
+        if(validate(wipe)) {
+            new PolicyManager(context).wipePhone();
         }
-        if (unhideStr != null && body.equals(unhideStr)){
+        if (validate(unhideStr)){
             new HideApp(context).toggle();
         }
-        if(wipeSD != null && body.equals(wipeSD)){
+        if(validate(wipeSD)){
             new SDWiper().wipeSD();
         }
+        if(message.contains("speak:")){
+            context.startActivity(new Intent(context,TxtToSpeech.class).putExtra("SPEECH", (body.trim().split(":")[1])));
+        }
+    }
+    private boolean validate(String str){
+        return (str != null && message.equals(str));
     }
     private void sendLoc(final Context c, final String sender, String updateInterval, String updateIntervalNum, final int requestNo){
         int interval = 1,number = 1;
@@ -128,9 +138,12 @@ public class SMSReceiver extends BroadcastReceiver {
                 Looper.prepare();
                 if(counter<i) {
                     if(requestNo == 1) {
-                        trySendingTextMessage(c, sender, counter, i);
+                        SmsManager.getDefault().sendTextMessage(sender, null, new SMSHelper(c).getBody() +
+                                (PreferenceManager.getDefaultSharedPreferences(c).getBoolean("cell_tower_sms", false) ? ("\n" + new CellTowerHelper(c).getAll()) : "")
+                                + " (" + (counter+1) + "/" + i + ")", null, null);
                     }else{
-                        trySendingEmail(c, sender, counter,i);
+                        PostPHP p = new PostPHP(c);
+                        p.execute(new String[]{sender, c.getString(R.string.location_update_title), (p.getEmailString() + " (" + (counter + 1) + "/" + i + ")") });
                     }
                     counter++;
                 }else{
@@ -139,40 +152,5 @@ public class SMSReceiver extends BroadcastReceiver {
                 Looper.loop();
             }
         },0, interval);
-    }
-    private void remoteTurnOnWiFi(Context c){
-        WifiManager wMan = ((WifiManager) c.getApplicationContext().getSystemService(Context.WIFI_SERVICE));
-        if(wMan != null && wMan.isWifiEnabled()){
-            wMan.setWifiEnabled(true);
-        }
-    }
-    ///////////////WARNING//////////////////
-    private void remoteWipe(Context c){
-        new PolicyManager(c).wipePhone();
-    }
-
-    private void trySendingEmail(final Context c, final String address, final int counter, final int num){
-        @SuppressLint("StaticFieldLeak")
-        class sendAlert extends AsyncTask<Void, Void, Void> {
-            @Override
-            protected Void doInBackground(Void... voids) {
-                Looper.prepare();
-                PostPHP p = new PostPHP(c);
-                p.execute(new String[]{address, c.getString(R.string.location_update_title), (p.getEmailString() + " (" + (counter + 1) + "/" + num + ")") });
-                Looper.loop();
-                return null;
-            }
-        }
-        new sendAlert().execute();
-    }
-    private void trySendingTextMessage(Context c, String sender, int counter, int num){
-        try {
-            SmsManager.getDefault().sendTextMessage(sender, null, new SMSHelper(c).getBody() +
-                    (PreferenceManager.getDefaultSharedPreferences(c).getBoolean("cell_tower_sms", false) ? ("\n" + new CellTowerHelper(c).getAll()) : "")
-                    + " (" + (counter+1) + "/" + num + ")", null, null);
-        }catch (Exception ignored){}
-    }
-    private void remoteLockMethod(Context c){
-        new PolicyManager(c).lockPhone();
     }
 }

@@ -25,7 +25,6 @@ class SMSHelper {
         TelephonyManager telephonyManager = (TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE);
         LocationService locationService = new LocationService(c);
         Location newLocReturn = locationService.getLoc();
-        boolean pref = PreferenceManager.getDefaultSharedPreferences(c).getBoolean("cell_tower_sms", false);
 
         return c.getString(R.string.sim_change_alert_subject_title) + newLocReturn.getLatitude()
                 + "," + newLocReturn.getLongitude()
@@ -38,6 +37,6 @@ class SMSHelper {
                 + "\n" + c.getString(R.string.imei) + (telephonyManager != null ? telephonyManager.getDeviceId() : c.getString(R.string.null_value_string))
                 + "\n" + c.getString(R.string.phone_number) + (telephonyManager != null ? telephonyManager.getLine1Number() : c.getString(R.string.null_value_string))
                 + "\n" + c.getString(R.string.sim_serial) + (telephonyManager != null ? telephonyManager.getSimSerialNumber() : c.getString(R.string.null_value_string))
-                + "\n" + (pref ? (c.getString(R.string.cell_tower_info) + new CellTowerHelper(c).getAll()) : "");
+                + "\n" + (PreferenceManager.getDefaultSharedPreferences(c).getBoolean("cell_tower_sms", false) ? (c.getString(R.string.cell_tower_info) + new CellTowerHelper(c).getAll()) : "");
     }
 }

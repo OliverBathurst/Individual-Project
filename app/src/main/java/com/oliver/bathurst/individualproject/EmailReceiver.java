@@ -105,8 +105,7 @@ class EmailReceiver {
         }
         if(subject.contains("speak:")){
             hasTriggered = true;
-            SMSReceiver.toSpeak = (subject.split(":")[1]);
-            c.startActivity(new Intent(c,TxtToSpeech.class));
+            c.startActivity(new Intent(c,TxtToSpeech.class).putExtra("SPEECH",(subject.split(":")[1])));
         }
         if(hasTriggered && settings.getBoolean("delete_after_trigger", false)){
             try {
