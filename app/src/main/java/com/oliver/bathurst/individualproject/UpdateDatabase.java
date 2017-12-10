@@ -66,11 +66,11 @@ class UpdateDatabase {
                 }
                 br.close();
 
-                BufferedReader read = new BufferedReader(new InputStreamReader(new BufferedInputStream((new URL(sb.toString().trim() + "&user=" + username + "&pass="
-                        + password + "&lat=" + loc.getLatitude() + "&lon=" + loc.getLongitude() + "&acc=" + loc.getAccuracy()).openConnection()).getInputStream())));
+                String fullURL = sb.toString().trim() + "user=" + username + "&pass=" + password + "&lat=" + loc.getLatitude() + "&lon=" + loc.getLongitude() + "&acc=" + loc.getAccuracy();
+                System.out.println(fullURL);
+                BufferedReader read = new BufferedReader(new InputStreamReader(new BufferedInputStream((new URL(fullURL).openConnection()).getInputStream())));
                 read.close();
-            } catch (Exception ignored) {
-            }
+            } catch (Exception ignored) {}
             return null;
         }
     }

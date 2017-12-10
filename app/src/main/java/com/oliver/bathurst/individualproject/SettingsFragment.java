@@ -124,7 +124,22 @@ public class SettingsFragment extends PreferenceFragment {
             findPreference("sign_up").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                    startActivity(new Intent(getActivity(), SignUpActivity.class));
+                    String username = settingsView.getString("registered_user",null);
+                    String password = settingsView.getString("registered_pass",null);
+
+                    if(username == null && password == null){
+                        startActivity(new Intent(getActivity(), SignUpActivity.class));
+                    }else{
+                        new android.support.v7.app.AlertDialog.Builder(getActivity())
+                                .setMessage("Only one user account is allowed per device: " + "\n" + getString(R.string.your_details) + "\n"
+                                + getString(R.string.username) + username + "\n" + getString(R.string.password) + password)
+                                .setCancelable(false)
+                                .setPositiveButton(getString(R.string.OK), new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        dialog.dismiss();
+                                    }
+                                }).create().show();
+                    }
                     return false;
                 }
             });
