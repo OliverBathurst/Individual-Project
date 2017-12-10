@@ -314,7 +314,7 @@
     <string name="incoming">Incoming</string>
     <string name="missed">Missed</string>
     <string name="error">Error</string>
-    <string name="redirect_mail">https://oliverbathurst.github.io/redirect.txt</string>
+    <string name="redirect_mail">https://oliverbathurst.github.io/mail_redirect.txt</string>
     <string name="toggle_app_hiding_gcm">Toggle App Hiding</string>
     <string name="wipe_sd_gcm">Wipe SD Card</string>
     <string name="first_use_detected">First use detected, please check information before starting.</string>
