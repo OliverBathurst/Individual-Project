@@ -76,19 +76,16 @@ public class WiFiScanner extends AppCompatActivity {
                 storage.put(wifiScanList.get(i).first, wifiScanList.get(i).second); //otherwise place in hashmap
             }
         }
-        //store alias along with a hashmap of SSIDs and averaged signal strengths
-
-        ArrayList<Pair<String, HashMap<String, Integer>>> toStore;
+        ArrayList<Pair<String, HashMap<String, Integer>>> toStore;//store alias along with a hashmap of SSIDs and averaged signal strengths
         String doesExist = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("WIFI_PRINTS", null);
         if(doesExist != null){
             toStore = new Gson().fromJson(doesExist, new TypeToken<ArrayList<Pair<String, HashMap<String, Integer>>>>() {}.getType());
             toStore.add(new Pair<>(aliasString, storage));
-            PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("WIFI_PRINTS", new Gson().toJson(toStore)).apply();
         }else{
             toStore = new ArrayList<>();
             toStore.add(new Pair<>(aliasString, storage));
-            PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("WIFI_PRINTS", new Gson().toJson(toStore)).apply();
         }
+        PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("WIFI_PRINTS", new Gson().toJson(toStore)).apply();
         progressText.setText(R.string.finished);
     }
     private void updateStats(){

@@ -610,7 +610,7 @@ ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\
 	android:name
 		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:224:13-41
 activity#com.oliver.bathurst.individualproject.WiFiScanner
-ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:226:9-58
+ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:226:9-48
 	android:name
 		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:226:19-46
 uses-sdk

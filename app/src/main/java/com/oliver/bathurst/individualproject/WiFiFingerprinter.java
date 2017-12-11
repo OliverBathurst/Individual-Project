@@ -13,8 +13,12 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Oliver on 11/12/2017.
@@ -23,10 +27,10 @@ import java.util.List;
 
 class WiFiFingerprinter {
     private final Context c;
-    private boolean isFinished = false;
-    private String response;
-    private WifiManager wifiMan;
     private ArrayList<Pair<String, HashMap<String, Integer>>> fromPrefs;
+    private boolean isFinished = false;
+    private WifiManager wifiMan;
+    private String response;
 
     WiFiFingerprinter(Context context){
         this.c = context;
@@ -39,11 +43,39 @@ class WiFiFingerprinter {
     }
 
     private void compare(List<ScanResult> results){
-        HashMap<String, Integer> points = new HashMap<>();
+        final HashMap<String, Integer> points = new HashMap<>();
         for(Pair<String, HashMap<String, Integer>> alias: fromPrefs){
+            int temp = 0;
+            boolean hasFound = false;
             for(ScanResult scanned: results){
-
+                if(alias.second.containsKey(scanned.SSID)){
+                    temp += (alias.second.get(scanned.SSID) - scanned.level);
+                    hasFound = true;
+                }
             }
+            if(hasFound){
+                points.put(alias.first, temp);
+            }
+        }
+        if(points.isEmpty()){
+            response = "No saved access points found";
+            isFinished = true;
+        }else{
+            String currAlias = "";
+            Integer currLowScore = 0;
+
+            Iterator it = points.entrySet().iterator();
+            while (it.hasNext()) {
+                Map.Entry pair = (Map.Entry) it.next();
+                Integer APDifference = (Integer)pair.getValue();
+                if(currLowScore > APDifference){
+                    currAlias = (String) pair.getKey();
+                    currLowScore = APDifference;
+                }
+                it.remove();
+            }
+            response = c.getString(R.string.alias) + currAlias;
+            isFinished = true;
         }
     }
     private void startScan(){
