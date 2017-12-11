@@ -64,6 +64,12 @@ public class WiFiScanner extends AppCompatActivity {
                 }
             }
         });
+        findViewById(R.id.resetAll).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("WIFI_PRINTS", new Gson().toJson(new ArrayList<Pair<String, HashMap<String, Integer>>>())).apply();
+            }
+        });
     }
     private void reduceAndSave(){
         progressText.setText(R.string.reducing_and_saving);
