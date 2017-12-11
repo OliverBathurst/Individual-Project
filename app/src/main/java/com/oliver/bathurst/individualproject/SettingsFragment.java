@@ -120,7 +120,13 @@ public class SettingsFragment extends PreferenceFragment {
                     return false;
                 }
             });
-
+            findPreference("fingerprinting").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    startActivity(new Intent(getActivity(), WiFiScanner.class));
+                    return false;
+                }
+            });
             findPreference("sign_up").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
@@ -254,6 +260,7 @@ public class SettingsFragment extends PreferenceFragment {
                 ringList.setEntryValues(list.values().toArray(new CharSequence[0]));
             }catch(Exception ignored){}
 
+
             EditTextPreference gcm_cell_tower_relay = (EditTextPreference) findPreference("gcm_cell_tower_relay");
             updateValue(gcm_cell_tower_relay, settings, "GCMCellTowers", "gcm_cell_tower_relay");
             EditTextPreference gcm_contacts_relay = (EditTextPreference) findPreference("gcm_contacts_relay");
@@ -330,10 +337,19 @@ public class SettingsFragment extends PreferenceFragment {
                 ringDur.setSummary(getString(R.string.default_ring_dur));
             }
 
+            EditTextPreference fingerScans = (EditTextPreference) findPreference("total_scans");
+            if (fingerScans.getText() != null && fingerScans.getText().trim().length() != 0) {
+                fingerScans.setSummary(getString(R.string.current_value) + fingerScans.getText());
+            }else{
+                fingerScans.setSummary(R.string.current_scans);
+            }
+
             EditTextPreference emailUpdates = (EditTextPreference) findPreference("email_string");
             if (emailUpdates.getText() != null && emailUpdates.getText().trim().length() != 0) {
                 emailUpdates.setSummary(emailUpdates.getText());
             }
+
+            fingerScans.setOnPreferenceChangeListener(simpleList);
             gcm_cell_tower_relay.setOnPreferenceChangeListener(listener);
             gcm_contacts_relay.setOnPreferenceChangeListener(listener);
             gcm_calls_relay.setOnPreferenceChangeListener(listener);

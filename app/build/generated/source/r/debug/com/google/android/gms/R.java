@@ -86,14 +86,14 @@ public final class R {
         public static final int none = 0x7f09007e;
         public static final int normal = 0x7f09007f;
         public static final int radio = 0x7f09008e;
-        public static final int satellite = 0x7f090095;
-        public static final int standard = 0x7f0900bb;
-        public static final int terrain = 0x7f0900c1;
-        public static final int text = 0x7f0900c2;
-        public static final int text2 = 0x7f0900c3;
-        public static final int toolbar = 0x7f0900ce;
-        public static final int wide = 0x7f0900da;
-        public static final int wrap_content = 0x7f0900dd;
+        public static final int satellite = 0x7f090096;
+        public static final int standard = 0x7f0900bc;
+        public static final int terrain = 0x7f0900c2;
+        public static final int text = 0x7f0900c3;
+        public static final int text2 = 0x7f0900c4;
+        public static final int toolbar = 0x7f0900cf;
+        public static final int wide = 0x7f0900db;
+        public static final int wrap_content = 0x7f0900de;
     }
     public static final class integer {
         public static final int google_play_services_version = 0x7f0a0006;
@@ -116,7 +116,7 @@ public final class R {
         public static final int common_open_on_phone = 0x7f0d0073;
         public static final int common_signin_button_text = 0x7f0d0074;
         public static final int common_signin_button_text_long = 0x7f0d0075;
-        public static final int gcm_fallback_notification_channel_label = 0x7f0d00b1;
+        public static final int gcm_fallback_notification_channel_label = 0x7f0d00b4;
     }
     public static final class styleable {
         public static final int[] LoadingImageView = { 0x7f040050, 0x7f04009a, 0x7f04009b };

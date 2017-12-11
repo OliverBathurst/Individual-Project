@@ -22,8 +22,7 @@ import java.util.List;
 import java.util.Locale;
 
 public class WiFiScanner extends AppCompatActivity {
-    private static final int TOTAL_SCANS = 10;
-    private int scans = 0;
+    private int scans = 0, TOTAL_SCANS = 10;
     private String aliasString;
     private TextView alias, progressText;
     private ProgressBar progress;
@@ -36,6 +35,13 @@ public class WiFiScanner extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wi_fi_scanner);
         setTitle(getString(R.string.wifi_scanner_title));
+
+        String scansInt = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("total_scans", "10");
+        try{
+            TOTAL_SCANS = Integer.parseInt(scansInt);
+        }catch(Exception e){
+            TOTAL_SCANS = 10;
+        }
 
         alias = (TextView) findViewById(R.id.aliasWiFi);
         progressText = (TextView) findViewById(R.id.progressUpdate);
@@ -77,7 +83,7 @@ public class WiFiScanner extends AppCompatActivity {
         for(int i = 0; i < wifiScanList.size(); i++){
             Integer temp = storage.get(wifiScanList.get(i).first); //get the value associated with the SSID String key
             if(temp != null) { //if the value associated with the key already exists...
-                storage.put(wifiScanList.get(i).first, ((temp + wifiScanList.get(i).second)/2)); // add the new value to the old one and halve to average, write back to the same key
+                storage.put(wifiScanList.get(i).first, ((temp + wifiScanList.get(i).second)/2)); // add the new value to the old one and halve to average, write back with the same key
             }else{
                 storage.put(wifiScanList.get(i).first, wifiScanList.get(i).second); //otherwise place in hashmap
             }
@@ -85,7 +91,7 @@ public class WiFiScanner extends AppCompatActivity {
         ArrayList<Pair<String, HashMap<String, Integer>>> toStore;//store alias along with a hashmap of SSIDs and averaged signal strengths
         String doesExist = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("WIFI_PRINTS", null);
         if(doesExist != null){
-            toStore = new Gson().fromJson(doesExist, new TypeToken<ArrayList<Pair<String, HashMap<String, Integer>>>>() {}.getType());
+            toStore = new Gson().fromJson(doesExist, new TypeToken<ArrayList<Pair<String, HashMap<String, Integer>>>>() {}.getType()); //an arraylist of pairs, pair contain an alias and a hashmap of APs and signals
             toStore.add(new Pair<>(aliasString, storage));
         }else{
             toStore = new ArrayList<>();

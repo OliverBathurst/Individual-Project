@@ -11,10 +11,7 @@ import android.preference.PreferenceManager;
 import android.util.Pair;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -36,6 +33,7 @@ class WiFiFingerprinter {
         this.c = context;
     }
 
+    @SuppressWarnings("StatementWithEmptyBody")
     String getResults(){
         startScan();
         while (!isFinished){}
@@ -58,7 +56,7 @@ class WiFiFingerprinter {
             }
         }
         if(points.isEmpty()){
-            response = "No saved access points found";
+            response = c.getString(R.string.no_saved_points);
             isFinished = true;
         }else{
             String currAlias = "";

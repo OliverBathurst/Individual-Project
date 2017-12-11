@@ -335,7 +335,7 @@
     <string name="to">to=</string>
     <string name="wifi_alias">Alias</string>
     <string name="fingerprint_button">Fingerprint</string>
-    <string name="wifi_scanner_title">WiFi Scanner</string>
+    <string name="wifi_scanner_title">WiFi Fingerprinter</string>
     <string name="enabling_wifi">Enabling WiFi</string>
     <string name="blank_alias">Alias cannot be blank</string>
     <string name="wifi_not_supported">WiFi not supported</string>
@@ -345,4 +345,10 @@
     <string name="slash">/</string>
     <string name="no_fingerprints_found">No fingerprints found</string>
     <string name="idle">Idle</string>
+    <string name="reset_all_fingerprints">Reset All Fingerprints</string>
+    <string name="no_saved_points">No saved access points found</string>
+    <string name="fingerprints_title">WiFi Fingerprints</string>
+    <string name="fingerprints_summary">Create WiFi fingerprints of rooms</string>
+    <string name="no_scans_fingerprinting">Number of Scans</string>
+    <string name="current_scans">Current: 10 (default)</string>
 </resources>
