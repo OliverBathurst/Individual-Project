@@ -333,4 +333,7 @@
     <string name="register_success">USER_REGISTRATION_SUCCESS</string>
     <string name="update_redirect">https://oliverbathurst.github.io/update_redirect.txt</string>
     <string name="to">to=</string>
+    <string name="wifi_alias">Alias</string>
+    <string name="fingerprint_button">Fingerprint</string>
+    <string name="wifi_scanner_title">WiFi Scanner</string>
 </resources>

@@ -66,11 +66,11 @@
 
     <application
         android:allowBackup="true"
-        android:supportsRtl="true"
         android:fullBackupContent="@xml/backup_descriptor"
         android:icon="@drawable/ic_logo"
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_logo"
+        android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <receiver
@@ -115,7 +115,6 @@
                 <action android:name="android.intent.action.SIM_STATE_CHANGED" />
             </intent-filter>
         </receiver>
-
         <receiver
             android:name=".GCMBroadcast"
             android:enabled="true"
@@ -123,10 +122,10 @@
             tools:ignore="ExportedReceiver">
             <intent-filter android:priority="999">
                 <action android:name="oliver.intent.action.GCM" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
-
         <receiver
             android:name=".BeaconActivity$mReceiver"
             android:enabled="true" />
@@ -138,6 +137,7 @@
             android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
                 <category android:name="com.oliver.bathurst.individualproject" />
             </intent-filter>
         </receiver>
@@ -191,7 +191,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".GeoFencing" />
-
         <activity
             android:name=".TxtToSpeech"
             android:theme="@android:style/Theme.Translucent" />
@@ -224,6 +223,7 @@
         <activity
             android:name=".CellTowerMap"
             android:label="@string/title_activity_cell_tower_map" />
+        <activity android:name=".WiFiScanner"/>
     </application>
 
 </manifest>

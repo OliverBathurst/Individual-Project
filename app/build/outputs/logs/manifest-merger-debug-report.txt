@@ -312,17 +312,17 @@ MERGED from [com.google.firebase:firebase-analytics-impl-license:11.6.2] C:\User
 MERGED from [com.google.firebase:firebase-iid-license:11.6.2] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-11.6.2.aar\c2fc2eae5a2587dbc4f55e1a5ef70f5b\AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-iid-license:11.6.2] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-11.6.2.aar\c2fc2eae5a2587dbc4f55e1a5ef70f5b\AndroidManifest.xml:5:5-20
 	android:supportsRtl
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:69:9-35
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:73:9-35
 	android:label
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:72:9-41
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:71:9-41
 	android:fullBackupContent
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:70:9-59
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:69:9-59
 	tools:ignore
 		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:75:9-48
 	android:roundIcon
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:73:9-46
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:72:9-46
 	android:icon
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:71:9-41
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:70:9-41
 	android:allowBackup
 		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:68:9-35
 	android:theme
@@ -422,47 +422,47 @@ ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\
 	android:name
 		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:115:25-79
 receiver#com.oliver.bathurst.individualproject.GCMBroadcast
-ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:119:9-128:20
+ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:118:9-128:20
 	android:enabled
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:121:13-35
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:120:13-35
 	android:exported
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:122:13-36
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:121:13-36
 	tools:ignore
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:123:13-44
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:122:13-44
 	android:name
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:120:13-41
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:119:13-41
 intent-filter#android.intent.category.DEFAULT+oliver.intent.action.GCM
-ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:124:13-127:29
+ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:123:13-127:29
 	android:priority
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:124:28-50
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:123:28-50
 action#oliver.intent.action.GCM
-ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:125:17-67
+ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:124:17-67
 	android:name
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:125:25-64
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:124:25-64
 category#android.intent.category.DEFAULT
 ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:126:17-76
 	android:name
 		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:126:27-73
 receiver#com.oliver.bathurst.individualproject.BeaconActivity$mReceiver
-ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:130:9-132:38
+ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:129:9-131:38
 	android:enabled
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:132:13-35
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:131:13-35
 	android:name
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:131:13-53
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:130:13-53
 receiver#com.google.android.gms.gcm.GcmReceiver
-ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:135:9-143:20
+ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:134:9-143:20
 	android:exported
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:137:13-36
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:136:13-36
 	android:permission
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:138:13-73
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:137:13-73
 	android:name
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:136:13-66
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:135:13-66
 intent-filter#com.google.android.c2dm.intent.RECEIVE+com.oliver.bathurst.individualproject
-ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:139:13-142:29
+ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:138:13-142:29
 action#com.google.android.c2dm.intent.RECEIVE
-ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:140:17-81
+ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:139:17-81
 	android:name
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:140:25-78
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:139:25-78
 category#com.oliver.bathurst.individualproject
 ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:141:17-82
 	android:name
@@ -548,67 +548,71 @@ ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\
 	android:name
 		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:193:19-45
 activity#com.oliver.bathurst.individualproject.TxtToSpeech
-ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:195:9-197:64
+ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:194:9-196:64
 	android:theme
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:197:13-61
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:196:13-61
 	android:name
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:196:13-40
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:195:13-40
 service#com.oliver.bathurst.individualproject.GeoFenceService
-ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:199:9-203:46
+ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:198:9-202:46
 	android:enabled
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:201:13-35
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:200:13-35
 	android:exported
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:202:13-36
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:201:13-36
 	tools:ignore
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:203:13-43
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:202:13-43
 	android:name
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:200:13-44
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:199:13-44
 service#com.oliver.bathurst.individualproject.TokenRefreshListener
-ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:204:9-57
+ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:203:9-57
 	android:name
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:204:18-54
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:203:18-54
 activity#com.oliver.bathurst.individualproject.BeaconActivity
-ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:206:9-209:59
+ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:205:9-208:59
 	android:label
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:208:13-58
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:207:13-58
 	android:theme
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:209:13-56
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:208:13-56
 	android:name
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:207:13-43
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:206:13-43
 activity#com.oliver.bathurst.individualproject.Reorder
-ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:210:9-213:59
+ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:209:9-212:59
 	android:label
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:212:13-59
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:211:13-59
 	android:theme
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:213:13-56
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:212:13-56
 	android:name
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:211:13-36
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:210:13-36
 activity#com.oliver.bathurst.individualproject.BeaconConfig
-ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:214:9-216:83
+ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:213:9-215:83
 	android:theme
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:216:13-80
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:215:13-80
 	android:name
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:215:13-41
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:214:13-41
 activity#com.oliver.bathurst.individualproject.SignUpActivity
-ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:217:9-219:62
+ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:216:9-218:62
 	android:label
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:219:13-59
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:218:13-59
 	android:name
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:218:13-43
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:217:13-43
 activity#com.oliver.bathurst.individualproject.CellTowers
-ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:220:9-223:59
+ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:219:9-222:59
 	android:label
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:222:13-63
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:221:13-63
 	android:theme
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:223:13-56
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:222:13-56
 	android:name
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:221:13-39
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:220:13-39
 activity#com.oliver.bathurst.individualproject.CellTowerMap
-ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:224:9-226:69
+ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:223:9-225:69
 	android:label
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:226:13-66
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:225:13-66
 	android:name
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:225:13-41
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:224:13-41
+activity#com.oliver.bathurst.individualproject.WiFiScanner
+ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:226:9-58
+	android:name
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:226:19-46
 uses-sdk
 INJECTED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml
