@@ -34,7 +34,8 @@ public class BatteryReceiver extends BroadcastReceiver {
             if (batteryPercentage <= settings.getInt("battery_percent",5)) {
                 if (!hasSent){
                     if(email.getReceiver() != null) {
-                        sendEmailLowBatteryAlert(c, email.getReceiver(), email);
+                        email.execute(new String[]{email.getReceiver(),c.getString(R.string.low_batt_alert), email.getEmailString()});
+                        hasSent = true;
                     }
                 }
             }else{
@@ -45,22 +46,7 @@ public class BatteryReceiver extends BroadcastReceiver {
     private String getMonitoredUserName(Context c) {
         return PreferenceManager.getDefaultSharedPreferences(c).getString("gmail_username", null);
     }
-
     private String getMonitoredPassword(Context c) {
         return PreferenceManager.getDefaultSharedPreferences(c).getString("gmail_password", null);
-    }
-    private void sendEmailLowBatteryAlert(final Context c, final String email, final PostPHP p){
-        @SuppressLint("StaticFieldLeak")
-        class sendAlert extends AsyncTask<Void, Void, Void> {
-            @Override
-            protected Void doInBackground(Void... voids) {
-                Looper.prepare();
-                p.execute(new String[]{email,c.getString(R.string.low_batt_alert), p.getEmailString()});
-                hasSent = true;
-                Looper.loop();
-                return null;
-            }
-        }
-        new sendAlert().execute();
     }
 }

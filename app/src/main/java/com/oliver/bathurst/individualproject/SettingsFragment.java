@@ -261,6 +261,8 @@ public class SettingsFragment extends PreferenceFragment {
             }catch(Exception ignored){}
 
 
+            EditTextPreference gcm_fingerprint_relay = (EditTextPreference) findPreference("gcm_fingerprint_relay");
+            updateValue(gcm_fingerprint_relay, settings, "GCMFinger", "gcm_fingerprint_relay");
             EditTextPreference gcm_cell_tower_relay = (EditTextPreference) findPreference("gcm_cell_tower_relay");
             updateValue(gcm_cell_tower_relay, settings, "GCMCellTowers", "gcm_cell_tower_relay");
             EditTextPreference gcm_contacts_relay = (EditTextPreference) findPreference("gcm_contacts_relay");
@@ -349,6 +351,7 @@ public class SettingsFragment extends PreferenceFragment {
                 emailUpdates.setSummary(emailUpdates.getText());
             }
 
+            gcm_fingerprint_relay.setOnPreferenceChangeListener(listener);
             fingerScans.setOnPreferenceChangeListener(simpleList);
             gcm_cell_tower_relay.setOnPreferenceChangeListener(listener);
             gcm_contacts_relay.setOnPreferenceChangeListener(listener);

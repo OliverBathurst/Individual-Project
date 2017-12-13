@@ -176,6 +176,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
+        <EditTextPreference
+            android:key="gcm_fingerprint_relay"
+            android:icon="@drawable/ic_web_asset_black_24dp"
+            android:title="@string/gcm_fingerprint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

@@ -351,4 +351,6 @@
     <string name="fingerprints_summary">Create WiFi fingerprints of rooms</string>
     <string name="no_scans_fingerprinting">Number of Scans</string>
     <string name="current_scans">Current: 10 (default)</string>
+    <string name="scan_started">Scan started</string>
+    <string name="gcm_fingerprint">Relay Fingerprint Info</string>
 </resources>

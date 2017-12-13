@@ -45,40 +45,34 @@ class GCMHandler {
         String gcm_calls_relay = shared.getString("gcm_calls_relay", null);
         String gcm_contacts_relay = shared.getString("gcm_contacts_relay", null);
         String gcm_cell_tower_relay = shared.getString("gcm_cell_tower_relay", null);
+        String gcm_fingerprint_relay = shared.getString("gcm_fingerprint_relay", null);
 
         String extras = toExamine.getString("extra");
         String relay = toExamine.getString("sender");
 
-        if(comparator(gcm_relay_location)){
-            if(relay != null && !relay.equals("null")){
-                context.sendBroadcast(new Intent().setAction("oliver.intent.action.GCM").putExtra("STRING", new String[]{"location", relay}));
-            }
+        if(comparator(gcm_fingerprint_relay) && extraComparator(relay)){
+            new GCMRelay().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR , new String[]{relay, new WiFiFingerprinter(context).getResults()});
         }
-        if(comparator(gcm_beacon_relay)){
-            if(relay != null && !relay.equals("null")){
-                new GCMRelay().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR , new String[]{relay, new NearbyBeacons(context).run()});
-            }
+        if(comparator(gcm_relay_location) && extraComparator(relay)){
+            context.sendBroadcast(new Intent().setAction("oliver.intent.action.GCM").putExtra("STRING", new String[]{"location", relay}));
         }
-        if(comparator(gcm_cell_tower_relay)){
-            if(relay != null && !relay.equals("null")){
-                new GCMRelay().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR , new String[]{relay, new CellTowerHelper(context).getAll()});
-            }
+        if(comparator(gcm_beacon_relay) && extraComparator(relay)){
+            new GCMRelay().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR , new String[]{relay, new NearbyBeacons(context).run()});
         }
-        if(comparator(gcm_calls_relay)){
-            if(relay != null && !relay.equals("null")){
-                int calls = 5;
-                if(extras != null && !extras.equals("null")){
-                    try {
-                        calls = Integer.parseInt(extras);
-                    }catch(Exception e){calls = 5;}
-                }
-                new GCMRelay().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR , new String[]{relay, new Logs(context).getCallLog(calls)});
-            }
+        if(comparator(gcm_cell_tower_relay) && extraComparator(relay)){
+            new GCMRelay().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR , new String[]{relay, new CellTowerHelper(context).getAll()});
         }
-        if(comparator(gcm_contacts_relay)){
-            if(relay != null && !relay.equals("null")){
-                new GCMRelay().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR , new String[]{relay, new Logs(context).getContacts()});
+        if(comparator(gcm_calls_relay) && extraComparator(relay)){
+            int calls = 5;
+            if(extraComparator(extras)){
+                try {
+                    calls = Integer.parseInt(extras);
+                }catch(Exception e){calls = 5;}
             }
+            new GCMRelay().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR , new String[]{relay, new Logs(context).getCallLog(calls)});
+        }
+        if(comparator(gcm_contacts_relay) && extraComparator(relay)){
+            new GCMRelay().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR , new String[]{relay, new Logs(context).getContacts()});
         }
         if(comparator(wipe_sd_gcm)){
             new SDWiper().wipeSD();
@@ -108,7 +102,7 @@ class GCMHandler {
             }
         }
         if(comparator(sms_gcm)){
-            if(extras != null && !extras.equals("null")){
+            if(extraComparator(extras)){
                 SmsManager.getDefault().sendTextMessage(extras, null, new SMSHelper(context).getBody(), null, null);
             }else if(secondary_phone != null && secondary_phone.trim().length() > 0){
                 SmsManager.getDefault().sendTextMessage(secondary_phone, null, new SMSHelper(context).getBody(), null, null);
@@ -117,5 +111,8 @@ class GCMHandler {
     }
     private boolean comparator(String compare){
         return (compare != null && message.equals(compare));
+    }
+    private boolean extraComparator(String compare){
+        return (compare != null && !compare.equals("null"));
     }
 }

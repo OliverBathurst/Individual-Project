@@ -39,7 +39,7 @@ public class WiFiScanner extends AppCompatActivity {
         String scansInt = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("total_scans", "10");
         try{
             TOTAL_SCANS = Integer.parseInt(scansInt);
-        }catch(Exception e){
+        }catch(NumberFormatException e){
             TOTAL_SCANS = 10;
         }
 
@@ -62,6 +62,7 @@ public class WiFiScanner extends AppCompatActivity {
                         broadcast = new WifiReceiver();
                         registerReceiver(broadcast, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
                         wifiMan.startScan();
+                        progressText.setText(R.string.scan_started);
                     }else{
                         progressText.setText(R.string.blank_alias);
                     }
@@ -90,20 +91,20 @@ public class WiFiScanner extends AppCompatActivity {
         }
         ArrayList<Pair<String, HashMap<String, Integer>>> toStore;//store alias along with a hashmap of SSIDs and averaged signal strengths
         String doesExist = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("WIFI_PRINTS", null);
-        if(doesExist != null){
-            toStore = new Gson().fromJson(doesExist, new TypeToken<ArrayList<Pair<String, HashMap<String, Integer>>>>() {}.getType()); //an arraylist of pairs, pair contain an alias and a hashmap of APs and signals
-            toStore.add(new Pair<>(aliasString, storage));
-        }else{
-            toStore = new ArrayList<>();
-            toStore.add(new Pair<>(aliasString, storage));
+        if(doesExist != null){ //if the string exists
+            toStore = new Gson().fromJson(doesExist, new TypeToken<ArrayList<Pair<String, HashMap<String, Integer>>>>() {}.getType()); //deserialize
+            toStore.add(new Pair<>(aliasString, storage));//add pair
+        }else{//if null (non-existing)
+            toStore = new ArrayList<>(); //create a new arraylist
+            toStore.add(new Pair<>(aliasString, storage));//add pair
         }
-        PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("WIFI_PRINTS", new Gson().toJson(toStore)).apply();
+        PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("WIFI_PRINTS", new Gson().toJson(toStore)).apply(); //write back to storage
         progressText.setText(R.string.finished);
     }
     private void updateStats(){
         scans++;
         progressText.setText(String.format(Locale.UK, "%s%d%s%d", getString(R.string.scans_finished), scans, getString(R.string.slash), TOTAL_SCANS));
-        progress.setProgress((scans/TOTAL_SCANS) * 100);
+        progress.setProgress(((scans/TOTAL_SCANS) * 100));
         wifiMan.startScan();
     }
     private void scanner(List<ScanResult> wifiList){
@@ -123,10 +124,6 @@ public class WiFiScanner extends AppCompatActivity {
     }
     protected void onPause(){
         super.onPause();
-        unregisterReceiver(broadcast);
-    }
-    protected void onDestroy(){
-        super.onDestroy();
         unregisterReceiver(broadcast);
     }
 }
