@@ -41,18 +41,18 @@ class WiFiFingerprinter {
     }
 
     private void compare(List<ScanResult> results){
-        final HashMap<String, Integer> points = new HashMap<>();
-        for(Pair<String, HashMap<String, Integer>> alias: fromPrefs){
-            int temp = 0;
+        final HashMap<String, Integer> points = new HashMap<>(); //store aliases and score
+        for(Pair<String, HashMap<String, Integer>> alias: fromPrefs){ //loop through aliases
+            int temp = 0;//initialise score
             boolean hasFound = false;
-            for(ScanResult scanned: results){
-                if(alias.second.containsKey(scanned.SSID)){
-                    temp += (alias.second.get(scanned.SSID) - scanned.level);
+            for(ScanResult scanned: results){//loop through scan results
+                if(alias.second.containsKey(scanned.SSID)){//if the SSID exists in the alias' map
+                    temp += Math.abs(alias.second.get(scanned.SSID) - scanned.level); //add the difference in signal to the score
                     hasFound = true;
                 }
             }
             if(hasFound){
-                points.put(alias.first, temp);
+                points.put(alias.first, temp); //if at least one matched AP was found, add to score map
             }
         }
         if(points.isEmpty()){
@@ -65,7 +65,7 @@ class WiFiFingerprinter {
             Iterator it = points.entrySet().iterator();
             while (it.hasNext()) {
                 Map.Entry pair = (Map.Entry) it.next();
-                Integer APDifference = (Integer)pair.getValue();
+                Integer APDifference = (Integer) pair.getValue();
                 if(currLowScore > APDifference){
                     currAlias = (String) pair.getKey();
                     currLowScore = APDifference;
@@ -95,7 +95,6 @@ class WiFiFingerprinter {
             isFinished = true;
         }
     }
-
     class WifiReceiver extends BroadcastReceiver {
         public void onReceive(Context c, Intent intent) {
             compare(wifiMan.getScanResults());

@@ -1,11 +1,9 @@
 package com.oliver.bathurst.individualproject;
 
-import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 import android.telephony.SmsManager;
 
@@ -30,29 +28,20 @@ public class SimStateChangedReceiver extends BroadcastReceiver {
                         sendSMS(context,state,settings.getString("secondary_phone",null));
                         break;
                     case "EMAIL":
-                        sendEmail(context, state, new PostPHP(context));
+                        sendEmail(context, new PostPHP(context), state);
                         break;
                     case "BOTH":
                         sendSMS(context,state,settings.getString("secondary_phone",null));
-                        sendEmail(context, state, new PostPHP(context));
+                        sendEmail(context, new PostPHP(context), state);
                         break;
                 }
             }
         }
     }
-    private void sendEmail(final Context c, final String state, final PostPHP php){
-        if(php.getReceiver() != null){
-            try {
-                @SuppressLint("StaticFieldLeak")
-                class sendEmail extends AsyncTask<Void, Void, Void> {
-                    @Override
-                    protected Void doInBackground(Void... voids) {
-                        php.execute(new String[]{php.getReceiver(),c.getString(R.string.sim_change_alert), (php.getEmailString()+ "\n" + c.getString(R.string.sim_state) + state) });
-                        return null;
-                    }
-                }
-                new sendEmail().execute();
-            }catch(Exception ignored){}
+    private void sendEmail(Context c, PostPHP php, String msg){
+        String receiver = php.getReceiver();
+        if(receiver != null) {
+            php.execute(new String[]{receiver, c.getString(R.string.sim_change_alert), (php.getEmailString() + "\n" + c.getString(R.string.sim_state) + msg)});
         }
     }
     private void sendSMS(Context c, String state, String number){

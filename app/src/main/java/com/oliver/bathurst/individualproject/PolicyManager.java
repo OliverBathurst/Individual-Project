@@ -18,17 +18,14 @@ class PolicyManager {
         mDPM = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
         adminComponent = new ComponentName(context, DeviceAdmin.class);
     }
-
     boolean isAdminActive() {
         return mDPM.isAdminActive(adminComponent);
     }
-
     void lockPhone(){
         if(isAdminActive()) {
             mDPM.lockNow();
         }
     }
-    ///////WARNING////////////
     void wipePhone(){
         if(isAdminActive()) {
             mDPM.wipeData(0);

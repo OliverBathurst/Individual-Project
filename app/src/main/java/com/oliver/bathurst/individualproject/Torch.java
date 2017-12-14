@@ -15,7 +15,6 @@ import android.hardware.Camera;
 
 class Torch {
     private static boolean isOn = false, hasFeature = false; //isOn static variable that exists across objects of this class, keeps track of the torch's status
-
     /**
      * Torch constructor simply takes a context and checks camera capabilities
      */

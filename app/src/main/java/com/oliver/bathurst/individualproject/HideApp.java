@@ -2,7 +2,6 @@ package com.oliver.bathurst.individualproject;
 
 import android.content.ComponentName;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 
@@ -19,8 +18,7 @@ class HideApp {
     }
 
     void toggle(){
-        SharedPreferences settings = getDefaultSharedPreferences(c);
-        if(settings.getBoolean("is_app_hidden",false)){
+        if(getStatus()){
             c.getPackageManager().setComponentEnabledSetting(new ComponentName(c, Login.class), PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
             getDefaultSharedPreferences(c).edit().putBoolean("is_app_hidden", false).apply();
         }else{

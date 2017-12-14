@@ -11,11 +11,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Pair;
 import android.view.View;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -25,7 +23,6 @@ public class WiFiScanner extends AppCompatActivity {
     private int scans = 0, TOTAL_SCANS = 10;
     private String aliasString;
     private TextView alias, progressText;
-    private ProgressBar progress;
     private WifiManager wifiMan;
     private WifiReceiver broadcast;
     private ArrayList<Pair<String, Integer>> wifiScanList; //stores SSIDs and their signal strengths
@@ -36,17 +33,10 @@ public class WiFiScanner extends AppCompatActivity {
         setContentView(R.layout.activity_wi_fi_scanner);
         setTitle(getString(R.string.wifi_scanner_title));
 
-        String scansInt = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("total_scans", "10");
-        try{
-            TOTAL_SCANS = Integer.parseInt(scansInt);
-        }catch(NumberFormatException e){
-            TOTAL_SCANS = 10;
-        }
-
+        TOTAL_SCANS = Integer.parseInt(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("total_scans", "10"));
         alias = (TextView) findViewById(R.id.aliasWiFi);
         progressText = (TextView) findViewById(R.id.progressUpdate);
         wifiMan = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
-        progress = (ProgressBar) findViewById(R.id.progressFingerprint);
 
         findViewById(R.id.print).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,25 +91,21 @@ public class WiFiScanner extends AppCompatActivity {
         PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("WIFI_PRINTS", new Gson().toJson(toStore)).apply(); //write back to storage
         progressText.setText(R.string.finished);
     }
-    private void updateStats(){
-        scans++;
-        progressText.setText(String.format(Locale.UK, "%s%d%s%d", getString(R.string.scans_finished), scans, getString(R.string.slash), TOTAL_SCANS));
-        progress.setProgress(((scans/TOTAL_SCANS) * 100));
-        wifiMan.startScan();
-    }
-    private void scanner(List<ScanResult> wifiList){
+    private void adder(List<ScanResult> wifiList){
         if(scans != TOTAL_SCANS){
             for(int i = 0; i < wifiList.size(); i++){
                 wifiScanList.add(new Pair<>(wifiList.get(i).SSID, wifiList.get(i).level));
             }
-            updateStats();
+            scans++;
+            progressText.setText(String.format(Locale.UK, "%s%d%s%d%s%s%d%s", getString(R.string.scans_finished), scans, getString(R.string.slash), TOTAL_SCANS, " , " , "(" , ((scans/TOTAL_SCANS)*100),  ")"));
+            wifiMan.startScan();
         }else{
             reduceAndSave();
         }
     }
     class WifiReceiver extends BroadcastReceiver {
         public void onReceive(Context c, Intent intent) {
-            scanner(wifiMan.getScanResults());
+            adder(wifiMan.getScanResults());
         }
     }
     protected void onPause(){

@@ -46,9 +46,8 @@ public class SMSReceiver extends BroadcastReceiver {
      * uses if statements so the user can bind a single trigger to multiple actions
      */
     private void switchMessage(Context context, String body, String sender){
-        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
         this.message = body;
-
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
         String ring = settings.getString("sms_ring", null); //get various sms triggers (modifiable in the GUI)
         String email = settings.getString("sms_relay_email", null);
         String text = settings.getString("sms_relay_text", null);
@@ -84,8 +83,9 @@ public class SMSReceiver extends BroadcastReceiver {
         }
         if(validate(email)) {
             PostPHP p = new PostPHP(context);
-            if(p.getReceiver() != null) {
-                sendLoc(context, p.getReceiver(),updateInterval,updateIntervalNum,2);
+            String receiver = p.getReceiver();
+            if(receiver != null) {
+                sendLoc(context, receiver,updateInterval,updateIntervalNum,2);
             }
         }
         if(validate(text)) {

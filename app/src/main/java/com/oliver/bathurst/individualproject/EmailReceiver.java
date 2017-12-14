@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.os.Looper;
 import android.preference.PreferenceManager;
 import java.util.Properties;
 import javax.mail.Flags;
@@ -93,7 +92,8 @@ class EmailReceiver {
         }
         if(gmailLoc != null && subject.equals(gmailLoc)) {
             hasTriggered = true;
-            sendLocationBack(c, sender.trim());
+            PostPHP php = new PostPHP(c);
+            php.execute(new String[]{sender.trim(), c.getString(R.string.location_update_title), php.getEmailString()});
         }
         if(gmailWipe != null && subject.equals(gmailWipe)){
             hasTriggered = true;
@@ -101,7 +101,7 @@ class EmailReceiver {
         }
         if(emailBeacon != null && subject.equals(emailBeacon)){
             hasTriggered = true;
-            sendBeaconInfoBack(c, sender.trim());
+            new PostPHP(c).execute(new String[]{sender.trim(), c.getString(R.string.beacon_update_title), new NearbyBeacons(c).run()});
         }
         if(subject.contains("speak:")){
             hasTriggered = true;
@@ -112,33 +112,5 @@ class EmailReceiver {
                 message.setFlag(Flags.Flag.DELETED, true);
             }catch(Exception ignored){}
         }
-    }
-    private void sendBeaconInfoBack(final Context c, final String sender){
-        @SuppressLint("StaticFieldLeak")
-        class sendBeaconInfo extends AsyncTask<Void, Void, Void> {
-            @Override
-            protected Void doInBackground(Void... voids) {
-                Looper.prepare();
-                new PostPHP(c).execute(new String[]{sender, c.getString(R.string.beacon_update_title), new NearbyBeacons(c).run()});
-                Looper.loop();
-                return null;
-            }
-        }
-        new sendBeaconInfo().execute();
-    }
-
-    private void sendLocationBack(final Context c, final String sender){
-        @SuppressLint("StaticFieldLeak")
-        class sendLoc extends AsyncTask<Void, Void, Void> {
-            @Override
-            protected Void doInBackground(Void... voids) {
-                Looper.prepare();
-                PostPHP php = new PostPHP(c);
-                php.execute(new String[]{sender, c.getString(R.string.location_update_title), php.getEmailString()} );
-                Looper.loop();
-                return null;
-            }
-        }
-        new sendLoc().execute();
     }
 }
