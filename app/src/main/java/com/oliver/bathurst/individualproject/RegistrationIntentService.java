@@ -11,6 +11,7 @@ import android.preference.PreferenceManager;
 import android.support.v4.content.LocalBroadcastManager;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.google.android.gms.iid.InstanceID;
+import java.io.IOException;
 
 public class RegistrationIntentService extends IntentService {
     public static final String REGISTRATION_SUCCESS = "RegistrationSuccess", REGISTRATION_ERROR = "RegistrationError";
@@ -27,7 +28,7 @@ public class RegistrationIntentService extends IntentService {
             PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("GCM_Token", token).apply();
             registration = new Intent(REGISTRATION_SUCCESS);
             registration.putExtra("token", token);
-        } catch (Exception e) {
+        } catch (IOException e) {
             registration = new Intent(REGISTRATION_ERROR);
         }
         LocalBroadcastManager.getInstance(this).sendBroadcast(registration);
