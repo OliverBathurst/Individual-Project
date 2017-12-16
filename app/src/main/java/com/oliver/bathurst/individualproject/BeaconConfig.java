@@ -112,8 +112,9 @@ public class BeaconConfig extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             if(BluetoothDevice.ACTION_FOUND.equals(intent.getAction())) {
-                if(globalDeviceName != null && intent.getStringExtra(BluetoothDevice.EXTRA_NAME) != null) {
-                    if (intent.getStringExtra(BluetoothDevice.EXTRA_NAME).equals(globalDeviceName)) {
+                String extraName = intent.getStringExtra(BluetoothDevice.EXTRA_NAME);
+                if(globalDeviceName != null && extraName != null) {
+                    if (extraName.equals(globalDeviceName)) {
                         currentSignal = intent.getShortExtra(BluetoothDevice.EXTRA_RSSI, Short.MIN_VALUE);
                         signal.setText(String.valueOf(currentSignal));
                         BTAdapter.cancelDiscovery();

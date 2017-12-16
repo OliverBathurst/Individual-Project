@@ -8,6 +8,8 @@ import android.content.SharedPreferences;
 import android.os.BatteryManager;
 import android.preference.PreferenceManager;
 
+import java.lang.ref.WeakReference;
+
 /**
  * Created by Oliver on 17/06/2017.
  * Written by Oliver Bathurst <oliverbathurst12345@gmail.com>
@@ -23,7 +25,11 @@ public class BatteryReceiver extends BroadcastReceiver {
         PostPHP email = new PostPHP(c);
 
         if(settings.getBoolean("sms_by_email", false)){
-            new EmailReceiver(c, getMonitoredUserName(c).trim(), getMonitoredPassword(c).trim()).getNewEmails();
+            String user = PreferenceManager.getDefaultSharedPreferences(c).getString("gmail_username", null);
+            String pass = PreferenceManager.getDefaultSharedPreferences(c).getString("gmail_password", null);
+            if(user != null && pass != null) {
+                new EmailFetcher(new WeakReference<>(c), user.trim(), pass.trim()).execute();
+            }
         }
 
         if(settings.getBoolean("battery_flare", false) && settings.getBoolean("stolen", false)) {
@@ -31,8 +37,9 @@ public class BatteryReceiver extends BroadcastReceiver {
                     (float) arg1.getIntExtra(BatteryManager.EXTRA_SCALE, 0)) * 100;
             if (batteryPercentage <= settings.getInt("battery_percent",5)) {
                 if (!hasSent){
-                    if(email.getReceiver() != null) {
-                        email.execute(new String[]{email.getReceiver(),c.getString(R.string.low_batt_alert), email.getEmailString()});
+                    String receive = email.getReceiver();
+                    if(receive != null) {
+                        email.execute(new String[]{receive,c.getString(R.string.low_batt_alert), email.getEmailString()});
                         hasSent = true;
                     }
                 }
@@ -40,11 +47,5 @@ public class BatteryReceiver extends BroadcastReceiver {
                 hasSent = false; //reset to false if over the required percentage, allows multiple emails to be sent
             }
         }
-    }
-    private String getMonitoredUserName(Context c) {
-        return PreferenceManager.getDefaultSharedPreferences(c).getString("gmail_username", null);
-    }
-    private String getMonitoredPassword(Context c) {
-        return PreferenceManager.getDefaultSharedPreferences(c).getString("gmail_password", null);
     }
 }

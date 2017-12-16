@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Find Me</string>
-    <string name="API_GCM">AIzaSyCAssp399FopHK9gKakeSusddib8XcEbLY</string>
     <string name="title_home">Map</string>
     <string name="title_dashboard">Settings</string>
     <string name="title_device">Device</string>
@@ -353,4 +352,5 @@
     <string name="current_scans">Current: 10 (default)</string>
     <string name="scan_started">Scan started</string>
     <string name="gcm_fingerprint">Relay Fingerprint Info</string>
+    <string name="no_phone">Cannot get telephony instance</string>
 </resources>

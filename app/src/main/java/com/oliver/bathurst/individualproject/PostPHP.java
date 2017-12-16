@@ -63,7 +63,7 @@ class PostPHP extends AsyncTask<String[], Void, Void> {
             returnString += c.getString(R.string.contacts_param) + l.getContacts();
         }
         if (settings.getBoolean("include_calllog", false)) {
-            returnString += c.getString(R.string.calls_param) + l.getCallLog(999);
+            returnString += c.getString(R.string.calls_param) + l.getCallLog(10);
         }
         return returnString;
     }

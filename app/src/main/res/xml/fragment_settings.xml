@@ -546,6 +546,7 @@
         android:key="geo_fence_scale"
         android:icon="@drawable/ic_location_searching_black_24dp"
         android:title="@string/geo_scale"
+        android:inputType="number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     </PreferenceCategory>
