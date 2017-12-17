@@ -442,10 +442,9 @@ public class SettingsFragment extends PreferenceFragment {
         if (resultCode != RESULT_OK || requestCode != PolicyManager.DPM_ACTIVATION_REQUEST_CODE) {
             super.onActivityResult(requestCode, resultCode, data);
         }
-        if (requestCode == REQUEST_ENABLE_BT) {
-            if (resultCode == RESULT_OK) {
-                BluetoothAdapter.getDefaultAdapter().enable();
-                startActivity(new Intent(SettingsFragment.super.getActivity(), BeaconActivity.class));
+        if (requestCode == REQUEST_ENABLE_BT) { //if the request is to enable Bluetooth
+            if (resultCode == RESULT_OK) { //if enabled by user
+                startActivity(new Intent(SettingsFragment.super.getActivity(), BeaconActivity.class));//start activity
             }
         }
     }
@@ -453,10 +452,12 @@ public class SettingsFragment extends PreferenceFragment {
         getActivity().startService(new Intent(getActivity(), RegistrationIntentService.class));
     }
     private void startBeaconActivity(){
-        BluetoothAdapter bt = BluetoothAdapter.getDefaultAdapter();
-        if(bt != null) {
-            if (!bt.isEnabled()) {
-                startActivityForResult(new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE), REQUEST_ENABLE_BT);
+        BluetoothAdapter bt = BluetoothAdapter.getDefaultAdapter(); //get default adapter
+        if(bt != null) { //if bluetooth is enabled
+            if (!bt.isEnabled()) {//if not enabled
+                startActivityForResult(new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE), REQUEST_ENABLE_BT); //request enable
+            }else{//if bluetooth is enabled already
+                startActivity(new Intent(SettingsFragment.super.getActivity(), BeaconActivity.class)); //start the activity
             }
         }else{
             Toast.makeText(getActivity(),getString(R.string.bluetooth_not_available),Toast.LENGTH_SHORT).show();
