@@ -85,8 +85,8 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
             }
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                registerReceiver(mReceiver, new IntentFilter(BluetoothDevice.ACTION_FOUND));
                 registerReceiver(mReceiver, new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED));
+                registerReceiver(mReceiver, new IntentFilter(BluetoothDevice.ACTION_FOUND));
                 blue.startDiscovery();
                 Toast.makeText(this, getString(R.string.started_discovery), Toast.LENGTH_SHORT).show();
             }else{
@@ -189,7 +189,7 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
                     }).setPositiveButton(getString(R.string.reset), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
                     try{
-                        PreferenceManager.getDefaultSharedPreferences(getApplication()).edit().putFloat(get.get(selectedIndex).getName(), 1).apply();
+                        PreferenceManager.getDefaultSharedPreferences(getApplication()).edit().putFloat(get.get(selectedIndex).getName(), 0).apply();
                     }catch(Exception e){
                         Snackbar.make(findViewById(R.id.drawer_layout), getString(R.string.cannot_find_at_index) + selectedIndex, Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                     }

@@ -70,7 +70,7 @@ public class BeaconConfig extends AppCompatActivity {
                     try {
                         Float toSave = Float.parseFloat(edit.getText().toString().trim());
                         if(toSave > 0) {
-                            float temp = PreferenceManager.getDefaultSharedPreferences(getApplication()).getFloat(globalDeviceName, 1);
+                            float temp = PreferenceManager.getDefaultSharedPreferences(getApplication()).getFloat(globalDeviceName, 0);
                             if (selectedPosition == 0) {
                                 PreferenceManager.getDefaultSharedPreferences(getApplication()).edit().putFloat(globalDeviceName, (temp + (currentSignal / toSave)) / 2).apply();  //1 cm to dbm
                             } else if (selectedPosition == 1) {
