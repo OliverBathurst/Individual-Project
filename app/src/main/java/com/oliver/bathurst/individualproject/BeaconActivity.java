@@ -37,7 +37,7 @@ import java.util.ArrayList;
 public class BeaconActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private ArrayList<BluetoothDevice> deviceList;
-    private ArrayList<String> names;
+    private ArrayList<String> names, namesInner;
     private BluetoothAdapter blue;
     private int selectedIndex = 0;
 
@@ -51,6 +51,7 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
         setSupportActionBar(toolbar);
 
         deviceList = new ArrayList<>();
+        namesInner = new ArrayList<>();
         names = new ArrayList<>();
         blue = BluetoothAdapter.getDefaultAdapter();
 
@@ -177,12 +178,12 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
     private void resetBeacon(){
         final ArrayList<BluetoothDevice> get = getBTArray();
         if(get != null && get.size() != 0) {
-            ArrayList<String> names = new ArrayList<>();
+            namesInner.clear();
             for (BluetoothDevice bl : get) {
-                names.add(bl.getName());
+                namesInner.add(bl.getName());
             }
             new AlertDialog.Builder(this).setTitle(getString(R.string.beacon_reset))
-                    .setSingleChoiceItems(names.toArray(new CharSequence[names.size()]), 0, new DialogInterface.OnClickListener() {
+                    .setSingleChoiceItems(namesInner.toArray(new CharSequence[namesInner.size()]), 0, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             selectedIndex = which;
                         }
@@ -206,12 +207,12 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
     private void calibrate(){
         final ArrayList<BluetoothDevice> get = getBTArray();
         if(get != null && get.size() != 0) {
-            ArrayList<String> names = new ArrayList<>();
+            namesInner.clear();
             for (BluetoothDevice bl : get) {
-                names.add(bl.getName());
+                namesInner.add(bl.getName());
             }
             new AlertDialog.Builder(this).setTitle(getString(R.string.select_beacon_calibrate))
-                    .setSingleChoiceItems(names.toArray(new CharSequence[names.size()]), 0, new DialogInterface.OnClickListener() {
+                    .setSingleChoiceItems(namesInner.toArray(new CharSequence[namesInner.size()]), 0, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             selectedIndex = which;
                         }
@@ -236,14 +237,14 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
         final ArrayList<BluetoothDevice> bluetoothDevices = getBTArray();
         if (bluetoothDevices != null && bluetoothDevices.size() != 0) {
             try {
-                ArrayList<String> names = new ArrayList<>();
+                namesInner.clear();
                 for (BluetoothDevice bl : bluetoothDevices) {
-                    names.add(bl.getName());
+                    namesInner.add(bl.getName());
                 }
                 final ArrayList<Integer> selected = new ArrayList<>();
 
                 AlertDialog dialog = new AlertDialog.Builder(this).setTitle(getString(R.string.select_beacons_delete))
-                        .setMultiChoiceItems(names.toArray(new CharSequence[names.size()]), null, new DialogInterface.OnMultiChoiceClickListener() {
+                        .setMultiChoiceItems(namesInner.toArray(new CharSequence[namesInner.size()]), null, new DialogInterface.OnMultiChoiceClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int indexSelected, boolean isChecked) {
                                 if (isChecked) {
