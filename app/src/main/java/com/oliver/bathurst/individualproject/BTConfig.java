@@ -49,6 +49,9 @@ public class BTConfig extends AppCompatActivity {
         registerReceiver(receiver, new IntentFilter(BluetoothDevice.ACTION_FOUND));
         registerReceiver(receiver, new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED));
 
+        if(!BTAdapter.isEnabled()){
+            BTAdapter.enable();
+        }
         if(BTAdapter.isDiscovering()){
             BTAdapter.cancelDiscovery();
         }

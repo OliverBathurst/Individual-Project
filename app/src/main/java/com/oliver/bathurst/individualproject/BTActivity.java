@@ -255,7 +255,7 @@ public class BTActivity extends AppCompatActivity implements NavigationView.OnNa
                         }).setPositiveButton(getString(R.string.del), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int id) {
-                                Toast.makeText(getApplicationContext(), getString(R.string.deleting) + selected.size() + getString(R.string.beacons_question), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.deleting) + selected.size() + getString(R.string.beacons_question_mark), Toast.LENGTH_SHORT).show();
                                 for (Integer index : selected) {
                                     try {
                                         bluetoothDevices.remove((int) index);

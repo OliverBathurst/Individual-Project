@@ -443,12 +443,12 @@ category#android.intent.category.DEFAULT
 ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:126:17-76
 	android:name
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:126:27-73
-receiver#com.oliver.bathurst.individualproject.BeaconActivity$mReceiver
+receiver#com.oliver.bathurst.individualproject.BTActivity$mReceiver
 ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:129:9-131:38
 	android:enabled
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:131:13-35
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:130:13-53
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:130:13-49
 receiver#com.google.android.gms.gcm.GcmReceiver
 ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:134:9-143:20
 	android:exported
@@ -567,14 +567,14 @@ service#com.oliver.bathurst.individualproject.TokenRefreshListener
 ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:203:9-57
 	android:name
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:203:18-54
-activity#com.oliver.bathurst.individualproject.BeaconActivity
+activity#com.oliver.bathurst.individualproject.BTActivity
 ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:205:9-208:59
 	android:label
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:207:13-58
 	android:theme
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:208:13-56
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:206:13-43
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:206:13-39
 activity#com.oliver.bathurst.individualproject.Reorder
 ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:209:9-212:59
 	android:label
@@ -583,12 +583,12 @@ ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\Androi
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:212:13-56
 	android:name
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:210:13-36
-activity#com.oliver.bathurst.individualproject.BeaconConfig
+activity#com.oliver.bathurst.individualproject.BTConfig
 ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:213:9-215:83
 	android:theme
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:215:13-80
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:214:13-41
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:214:13-37
 activity#com.oliver.bathurst.individualproject.SignUpActivity
 ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:216:9-218:62
 	android:label
