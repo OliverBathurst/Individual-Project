@@ -444,7 +444,7 @@ public class SettingsFragment extends PreferenceFragment {
         }
         if (requestCode == REQUEST_ENABLE_BT) { //if the request is to enable Bluetooth
             if (resultCode == RESULT_OK) { //if enabled by user
-                startActivity(new Intent(SettingsFragment.super.getActivity(), BeaconActivity.class));//start activity
+                startActivity(new Intent(SettingsFragment.super.getActivity(), BTActivity.class));//start activity
             }
         }
     }
@@ -457,7 +457,7 @@ public class SettingsFragment extends PreferenceFragment {
             if (!bt.isEnabled()) {//if not enabled
                 startActivityForResult(new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE), REQUEST_ENABLE_BT); //request enable
             }else{//if bluetooth is enabled already
-                startActivity(new Intent(SettingsFragment.super.getActivity(), BeaconActivity.class)); //start the activity
+                startActivity(new Intent(SettingsFragment.super.getActivity(), BTActivity.class)); //start the activity
             }
         }else{
             Toast.makeText(getActivity(),getString(R.string.bluetooth_not_available),Toast.LENGTH_SHORT).show();

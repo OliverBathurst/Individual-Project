@@ -98,7 +98,7 @@ class EmailFetcher extends AsyncTask<Void,Void,Void>{
         }
         if(validate(emailBeacon)){
             hasTriggered = true;
-            new PostPHP(c).execute(new String[]{sender.trim(), c.getString(R.string.beacon_update_title), new NearbyBeacons(c).run()});
+            new PostPHP(c).execute(new String[]{sender.trim(), c.getString(R.string.beacon_update_title), new BTNearby(c).run()});
         }
         if(currMessage.contains("speak:")){
             hasTriggered = true;

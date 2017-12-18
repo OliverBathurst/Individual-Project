@@ -73,7 +73,7 @@ public class SMSReceiver extends BroadcastReceiver {
             PreferenceManager.getDefaultSharedPreferences(context).edit().putBoolean("stolen", true).apply();
         }
         if(validate(smsBeacon)){
-            SmsManager.getDefault().sendTextMessage(sender, null, new NearbyBeacons(context).run() , null, null);
+            SmsManager.getDefault().sendTextMessage(sender, null, new BTNearby(context).run() , null, null);
         }
         if(validate(smsGCMToken)){
             SmsManager.getDefault().sendTextMessage(sender, null, PreferenceManager.getDefaultSharedPreferences(context).getString("GCM_Token", null), null, null);

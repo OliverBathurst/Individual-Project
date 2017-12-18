@@ -25,7 +25,7 @@ import com.google.gson.reflect.TypeToken;
  * Written by Oliver Bathurst <oliverbathurst12345@gmail.com>
  */
 
-public class BeaconConfig extends AppCompatActivity {
+public class BTConfig extends AppCompatActivity {
     private final BluetoothAdapter BTAdapter = BluetoothAdapter.getDefaultAdapter();
     private int selectedPosition = 0, currentSignal = 0;
     private TextView signal;

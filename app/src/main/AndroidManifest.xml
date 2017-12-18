@@ -127,7 +127,7 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name=".BeaconActivity$mReceiver"
+            android:name=".BTActivity$mReceiver"
             android:enabled="true" />
 
         <!-- GCM -->
@@ -203,7 +203,7 @@
         <service android:name=".TokenRefreshListener" />
 
         <activity
-            android:name=".BeaconActivity"
+            android:name=".BTActivity"
             android:label="@string/title_activity_beacon"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -211,7 +211,7 @@
             android:label="@string/title_activity_reorder"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".BeaconConfig"
+            android:name=".BTConfig"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
             android:name=".SignUpActivity"

@@ -19,14 +19,14 @@ import java.util.ArrayList;
  * Written by Oliver Bathurst <oliverbathurst12345@gmail.com>
  */
 
-class NearbyBeacons {
+class BTNearby {
     private final ArrayList<Pair<BluetoothDevice, Integer>> deviceList, finalList;
     private final BluetoothAdapter blue;
     private final Context context;
     private boolean isFinished = false;
     private ArrayList<BluetoothDevice> bluetoothArray;
 
-    NearbyBeacons(Context c){
+    BTNearby(Context c){
         this.blue = BluetoothAdapter.getDefaultAdapter();
         this.deviceList = new ArrayList<>();
         this.finalList = new ArrayList<>();

@@ -34,7 +34,7 @@ import java.util.ArrayList;
  * Written by Oliver Bathurst <oliverbathurst12345@gmail.com>
  */
 
-public class BeaconActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class BTActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private ArrayList<BluetoothDevice> deviceList;
     private ArrayList<String> names, namesInner;
@@ -219,7 +219,7 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
                     }).setPositiveButton(getString(R.string.calibrate), new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int whichButton) {
                             try{
-                                startActivity(new Intent(getBaseContext(), BeaconConfig.class).putExtra("BT_DEVICE", new Gson().toJson(get.get(selectedIndex))));
+                                startActivity(new Intent(getBaseContext(), BTConfig.class).putExtra("BT_DEVICE", new Gson().toJson(get.get(selectedIndex))));
                             }catch(Exception e){
                                 Snackbar.make(findViewById(R.id.drawer_layout), getString(R.string.cannot_find_at_index) + selectedIndex, Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                             }
@@ -286,14 +286,14 @@ public class BeaconActivity extends AppCompatActivity implements NavigationView.
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 try {
-                    ArrayList<BluetoothDevice> arrList = new ArrayList<>();
+                    ArrayList<BluetoothDevice> arrList = new ArrayList<>(); //create new arraylist for storage
                     if (PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("BeaconKeys", null) == null) {
-                        arrList.add(bluetoothDevice);
+                        arrList.add(bluetoothDevice); //if no saved-device structure exists, add new device in and serialise arraylist into prefs
                         PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("BeaconKeys", new Gson().toJson(arrList)).apply();
                     } else {
-                        arrList = getBTArray();
-                        if(!arrList.contains(bluetoothDevice)){
-                            arrList.add(bluetoothDevice);
+                        arrList = getBTArray(); //if the structure exists, rebind the arraylist to the deserialized data structure from storage
+                        if(!arrList.contains(bluetoothDevice)){ //if the device doesn't exist in storage...
+                            arrList.add(bluetoothDevice); //add the new device object into the structure and serialise into a JSON object, write back to preferences
                             PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("BeaconKeys", new Gson().toJson(arrList)).apply();
                             Snackbar.make(findViewById(R.id.drawer_layout), getString(R.string.saved), Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                         }else{

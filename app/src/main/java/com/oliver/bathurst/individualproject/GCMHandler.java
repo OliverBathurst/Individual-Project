@@ -57,7 +57,7 @@ class GCMHandler {
             context.sendBroadcast(new Intent().setAction("oliver.intent.action.GCM").putExtra("STRING", new String[]{"location", relay}));
         }
         if(comparator(gcm_beacon_relay) && extraComparator(relay)){
-            new GCMRelay().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR , new String[]{relay, new NearbyBeacons(context).run()});
+            new GCMRelay().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR , new String[]{relay, new BTNearby(context).run()});
         }
         if(comparator(gcm_cell_tower_relay) && extraComparator(relay)){
             new GCMRelay().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR , new String[]{relay, new CellTowerHelper(context).getAll()});
