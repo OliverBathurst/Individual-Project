@@ -6,6 +6,7 @@ package com.oliver.bathurst.individualproject;
  */
 
 import android.os.Bundle;
+
 import com.google.android.gms.gcm.GcmListenerService;
 
 public class GCMReceiverService extends GcmListenerService {

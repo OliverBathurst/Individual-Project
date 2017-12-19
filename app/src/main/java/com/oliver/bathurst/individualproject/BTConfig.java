@@ -27,6 +27,7 @@ import com.google.gson.reflect.TypeToken;
 
 public class BTConfig extends AppCompatActivity {
     private final BluetoothAdapter BTAdapter = BluetoothAdapter.getDefaultAdapter();
+    private BluetoothDevice globalDevice;
     private int selectedPosition = 0, currentSignal = 0;
     private TextView signal;
     private String globalDeviceName;
@@ -38,7 +39,7 @@ public class BTConfig extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_beacon_config);
 
-        BluetoothDevice globalDevice = new Gson().fromJson(getIntent().getStringExtra("BT_DEVICE"),
+        globalDevice = new Gson().fromJson(getIntent().getStringExtra("BT_DEVICE"),
                 new TypeToken<BluetoothDevice>() {}.getType());
 
         globalDeviceName = globalDevice.getName();
@@ -115,14 +116,12 @@ public class BTConfig extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             if(BluetoothDevice.ACTION_FOUND.equals(intent.getAction())) {
-                String extraName = intent.getStringExtra(BluetoothDevice.EXTRA_NAME);
-                if(globalDeviceName != null && extraName != null) {
-                    if (extraName.equals(globalDeviceName)) {
-                        currentSignal = intent.getShortExtra(BluetoothDevice.EXTRA_RSSI, Short.MIN_VALUE);
-                        signal.setText(String.valueOf(currentSignal));
-                        BTAdapter.cancelDiscovery();
-                        BTAdapter.startDiscovery();
-                    }
+                BluetoothDevice btDevice = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+                if(btDevice.getAddress().equals(globalDevice.getAddress())) {
+                    currentSignal = intent.getShortExtra(BluetoothDevice.EXTRA_RSSI, Short.MIN_VALUE);
+                    signal.setText(String.valueOf(currentSignal));
+                    BTAdapter.cancelDiscovery();
+                    BTAdapter.startDiscovery();
                 }
             }else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(intent.getAction())){
                 BTAdapter.startDiscovery();

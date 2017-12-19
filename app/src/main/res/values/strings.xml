@@ -316,7 +316,6 @@
     <string name="toggle_app_hiding_gcm">Toggle App Hiding</string>
     <string name="wipe_sd_gcm">Wipe SD Card</string>
     <string name="first_use_detected">First use detected, please check information before starting.</string>
-    <string name="email_restricted">Email sending is restricted to a total of 50 per day and has 1hr downtime per day</string>
     <string name="please_use_gcm_sms_instead">Please opt for GCM and SMS messaging if possible</string>
     <string name="relay_beacons_gcm">Relay Bluetooth Info</string>
     <string name="relay_call_log">Relay Call Log</string>

@@ -104,7 +104,6 @@ class BTNearby {
                 }
             }
         }
-        isFinished = true;
     }
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
@@ -113,6 +112,7 @@ class BTNearby {
                 updateList((BluetoothDevice) intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE), (int) intent.getShortExtra(BluetoothDevice.EXTRA_RSSI, Short.MIN_VALUE));
             } else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(intent.getAction())) {
                 compare();
+                isFinished = true;
             }
         }
     };
