@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -256,12 +257,15 @@ public class BTActivity extends AppCompatActivity implements NavigationView.OnNa
                             @Override
                             public void onClick(DialogInterface dialog, int id) {
                                 Toast.makeText(getApplicationContext(), getString(R.string.deleting) + selected.size() + getString(R.string.beacons_question_mark), Toast.LENGTH_SHORT).show();
+                                SharedPreferences.Editor edit = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit();
                                 for (Integer index : selected) {
                                     try {
-                                        bluetoothDevices.remove((int) index);
+                                        bluetoothDevices.remove((int)index);
+                                        edit.remove(bluetoothDevices.get(index).getName());
                                     } catch (Exception ignored) {}
                                 }
-                                PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("BeaconKeys", new Gson().toJson(bluetoothDevices)).apply();
+                                edit.putString("BeaconKeys", new Gson().toJson(bluetoothDevices));
+                                edit.apply();
                             }
                         }).setNegativeButton(getString(R.string.cancel_dialog), new DialogInterface.OnClickListener() {
                             @Override
@@ -314,13 +318,19 @@ public class BTActivity extends AppCompatActivity implements NavigationView.OnNa
         builder.create().show();
     }
     private void eraseBeacons(){
-        if(getBTArray() != null && getBTArray().size() != 0) {
+        final ArrayList<BluetoothDevice> bt = getBTArray();
+        if(bt != null && bt.size() != 0) {
             android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(this)
                     .setTitle(getString(R.string.do_you_want_to_delete_all) + getBTArray().size() + getString(R.string.beacons_question_mark));
             builder.setPositiveButton(getString(R.string.delete_all), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("BeaconKeys", new Gson().toJson(new ArrayList<BluetoothDevice>())).apply();
+                    SharedPreferences.Editor edit = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit();
+                    for(BluetoothDevice btDevice: bt){
+                        edit.remove(btDevice.getName()); //remove the Bluetooth dBm/CM readings
+                    }
+                    edit.putString("BeaconKeys", new Gson().toJson(new ArrayList<BluetoothDevice>())).apply();
+                    edit.apply();
                     Snackbar.make(findViewById(R.id.drawer_layout), getString(R.string.deleted_all), Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                 }
             });
