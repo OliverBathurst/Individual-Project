@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.BatteryManager;
 import android.preference.PreferenceManager;
-
 import java.lang.ref.WeakReference;
 
 /**
@@ -22,7 +21,10 @@ public class BatteryReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context c, Intent arg1) {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
-        PostPHP email = new PostPHP(c);
+
+        if(settings.getBoolean("battery_update", false)){
+            new UpdateDatabase(new LocationService(c).getLoc(), c).update();
+        }
 
         if(settings.getBoolean("sms_by_email", false)){
             String user = PreferenceManager.getDefaultSharedPreferences(c).getString("gmail_username", null);
@@ -37,6 +39,7 @@ public class BatteryReceiver extends BroadcastReceiver {
                     (float) arg1.getIntExtra(BatteryManager.EXTRA_SCALE, 0)) * 100;
             if (batteryPercentage <= settings.getInt("battery_percent",5)) {
                 if (!hasSent){
+                    PostPHP email = new PostPHP(c);
                     String receive = email.getReceiver();
                     if(receive != null) {
                         email.execute(new String[]{receive,c.getString(R.string.low_batt_alert), email.getEmailString()});

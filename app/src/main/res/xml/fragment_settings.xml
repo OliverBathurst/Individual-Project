@@ -665,6 +665,12 @@
             android:title="@string/only_over_wifi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+        <CheckBoxPreference
+            android:key="battery_update"
+            android:icon="@drawable/ic_account_circle_black_24dp"
+            android:title="@string/update_on_battery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </PreferenceCategory>
 
 </PreferenceScreen>

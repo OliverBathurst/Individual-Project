@@ -351,4 +351,5 @@
     <string name="scan_started">Scan started</string>
     <string name="gcm_fingerprint">Relay Fingerprint Info</string>
     <string name="no_phone">Cannot get telephony instance</string>
+    <string name="update_on_battery">Update on Battery Level Change</string>
 </resources>
