@@ -101,10 +101,6 @@
             android:exported="true">
             <intent-filter android:priority="999">
                 <action android:name="android.intent.action.BATTERY_CHANGED" />
-                <action android:name="android.intent.action.BATTERY_LOW" />
-                <action android:name="android.intent.action.BATTERY_OKAY" />
-                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
-                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
             </intent-filter>
         </receiver>
         <receiver
@@ -137,7 +133,6 @@
             android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-
                 <category android:name="com.oliver.bathurst.individualproject" />
             </intent-filter>
         </receiver>
