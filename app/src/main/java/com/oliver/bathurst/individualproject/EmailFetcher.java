@@ -45,7 +45,7 @@ class EmailFetcher extends AsyncTask<Void,Void,Void>{
                         currMessageObj = message;
                         currMessageSubject = message.getSubject();
                         currMessageSender = message.getFrom()[0].toString().split("<")[1].split(">")[0];
-                        switchEmailSubject(); //parse sender and email, pass to analyser
+                        analyseEmailSubject(); //start analyser
                     }
                 }
                 inbox.close(false);
@@ -66,7 +66,7 @@ class EmailFetcher extends AsyncTask<Void,Void,Void>{
         return properties;
     }
 
-    private void switchEmailSubject(){
+    private void analyseEmailSubject(){
         try {
             Context c = weakContext.get();
             SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
@@ -80,7 +80,7 @@ class EmailFetcher extends AsyncTask<Void,Void,Void>{
 
             if (validate(stolen)) {
                 hasTriggered = true;
-                PreferenceManager.getDefaultSharedPreferences(c).edit().putBoolean("stolen", true).apply();
+                settings.edit().putBoolean("stolen", true).apply();
             }
             if (validate(gmailWipeSD)) {
                 hasTriggered = true;
