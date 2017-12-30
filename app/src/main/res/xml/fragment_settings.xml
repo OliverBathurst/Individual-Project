@@ -669,13 +669,13 @@
             android:key="status_update"
             android:icon="@drawable/ic_account_circle_black_24dp"
             android:title="@string/update_on_status"
+            android:summary="@string/N_or_up"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <CheckBoxPreference
             android:key="battery_update"
             android:icon="@drawable/ic_account_circle_black_24dp"
             android:title="@string/update_on_battery"
-            android:summary="@string/N_or_up"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </PreferenceCategory>

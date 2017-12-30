@@ -353,5 +353,5 @@
     <string name="no_phone">Cannot get telephony instance</string>
     <string name="update_on_status">Update on Device Status Change</string>
     <string name="update_on_battery">Update on Battery Level Change</string>
-    <string name="N_or_up">Android 7.0 required for full functionality</string>
+    <string name="N_or_up">Android 7.0 or higher required for full functionality</string>
 </resources>
