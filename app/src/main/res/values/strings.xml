@@ -306,8 +306,6 @@
     <string name="get_gcm_token_gcm">Get GCM Token</string>
     <string name="subject_param"><![CDATA[&subject=]]></string>
     <string name="text_param"><![CDATA[&text=]]></string>
-    <string name="contacts_param"><![CDATA[&contacts=]]></string>
-    <string name="calls_param"><![CDATA[&calls=]]></string>
     <string name="outgoing">Outgoing</string>
     <string name="incoming">Incoming</string>
     <string name="missed">Missed</string>

