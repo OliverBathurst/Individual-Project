@@ -289,8 +289,8 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
         private final String mUser, mPassword;
 
         UserSignUpTask(String user, String password) {
-            mUser = user;
-            mPassword = password;
+            mUser = user.trim();
+            mPassword = password.trim();
         }
 
         @Override
