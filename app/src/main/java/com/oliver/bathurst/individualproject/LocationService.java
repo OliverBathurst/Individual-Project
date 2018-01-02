@@ -118,7 +118,6 @@ public class LocationService extends Service implements LocationListener {
                 if (locationManager != null) {
                     locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, MIN_TIME_BW_UPDATES, MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
                     loc =  locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-                    new UpdateDatabase(loc,c).update();
                 }
             }catch(SecurityException ignored){}
         } else {
@@ -134,7 +133,6 @@ public class LocationService extends Service implements LocationListener {
                 if (locationManager != null) {
                     locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME_BW_UPDATES, MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
                     loc = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-                    new UpdateDatabase(loc,c).update();
                 }
             }catch(SecurityException ignored){}
         } else {
@@ -150,7 +148,6 @@ public class LocationService extends Service implements LocationListener {
                 if (locationManager != null) {
                     locationManager.requestLocationUpdates(LocationManager.PASSIVE_PROVIDER, MIN_TIME_BW_UPDATES, MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
                     loc = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
-                    new UpdateDatabase(loc,c).update();
                 }
             }catch(SecurityException ignored){}
         } else {
