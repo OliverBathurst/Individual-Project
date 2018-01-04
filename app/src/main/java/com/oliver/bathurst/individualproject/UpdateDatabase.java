@@ -34,16 +34,18 @@ class UpdateDatabase {
             String user = shared.getString("registered_user", null);
             String pass = shared.getString("registered_pass", null);
 
-            if (shared.getBoolean("only_wifi", false)) { //only update over wifi
-                ConnectivityManager cm = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
-                if (cm != null) {
-                    NetworkInfo wifiNetwork = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-                    if (wifiNetwork != null && wifiNetwork.isConnected()) {
-                        new SendLocationToDB(user, pass).execute();
+            if(user != null && pass != null) {
+                if (shared.getBoolean("only_wifi", false)) { //only update over wifi
+                    ConnectivityManager cm = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
+                    if (cm != null) {
+                        NetworkInfo wifiNetwork = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+                        if (wifiNetwork != null && wifiNetwork.isConnected()) {
+                            new SendLocationToDB(user, pass).execute();
+                        }
                     }
+                } else {
+                    new SendLocationToDB(user, pass).execute();
                 }
-            } else {
-                new SendLocationToDB(user, pass).execute();
             }
         }
     }
