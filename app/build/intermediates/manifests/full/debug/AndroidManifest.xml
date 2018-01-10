@@ -62,7 +62,7 @@
         android:smallScreens="true"
         android:xlargeScreens="true" />
 
-    <!-- Permissions required for GCM -->
+    <!-- Required by older versions of Google Play services to create GCM registration tokens -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
     <uses-feature
@@ -77,6 +77,7 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_logo"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <receiver
             android:name="com.oliver.bathurst.individualproject.DeviceAdmin"
@@ -271,7 +272,7 @@
             </intent-filter>
         </receiver>
         <!--
- FirebaseInstanceIdService performs security checks at runtime,
+             FirebaseInstanceIdService performs security checks at runtime,
              no need for explicit permissions despite exported="true"
         -->
         <service
