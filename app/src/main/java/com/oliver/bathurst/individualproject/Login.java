@@ -95,7 +95,7 @@ public class Login extends AppCompatActivity{
     private void infoDialog(){
         new AlertDialog.Builder(this)
                 .setMessage(getString(R.string.my_name) + "\n" + getString(R.string.email_address) + "\n" + (perm != null ? perm.getAppInfo() : getString(R.string.no_app_version_found))
-                + "\n" + getString(R.string.email_restricted) + "\n" + getString(R.string.please_use_gcm_sms_instead))
+                + "\n" + getString(R.string.please_use_gcm_sms_instead))
                 .setCancelable(false)
                 .setPositiveButton(getString(R.string.OK), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
