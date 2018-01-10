@@ -25,8 +25,9 @@ import com.google.gson.reflect.TypeToken;
  * Written by Oliver Bathurst <oliverbathurst12345@gmail.com>
  */
 
-public class BeaconConfig extends AppCompatActivity {
+public class BTConfig extends AppCompatActivity {
     private final BluetoothAdapter BTAdapter = BluetoothAdapter.getDefaultAdapter();
+    private BluetoothDevice globalDevice;
     private int selectedPosition = 0, currentSignal = 0;
     private TextView signal;
     private String globalDeviceName;
@@ -38,7 +39,7 @@ public class BeaconConfig extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_beacon_config);
 
-        BluetoothDevice globalDevice = new Gson().fromJson(getIntent().getStringExtra("BT_DEVICE"),
+        globalDevice = new Gson().fromJson(getIntent().getStringExtra("BT_DEVICE"),
                 new TypeToken<BluetoothDevice>() {}.getType());
 
         globalDeviceName = globalDevice.getName();
@@ -49,6 +50,9 @@ public class BeaconConfig extends AppCompatActivity {
         registerReceiver(receiver, new IntentFilter(BluetoothDevice.ACTION_FOUND));
         registerReceiver(receiver, new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED));
 
+        if(!BTAdapter.isEnabled()){
+            BTAdapter.enable();
+        }
         if(BTAdapter.isDiscovering()){
             BTAdapter.cancelDiscovery();
         }
@@ -70,7 +74,7 @@ public class BeaconConfig extends AppCompatActivity {
                     try {
                         Float toSave = Float.parseFloat(edit.getText().toString().trim());
                         if(toSave > 0) {
-                            float temp = PreferenceManager.getDefaultSharedPreferences(getApplication()).getFloat(globalDeviceName, 1);
+                            float temp = PreferenceManager.getDefaultSharedPreferences(getApplication()).getFloat(globalDeviceName, 0);
                             if (selectedPosition == 0) {
                                 PreferenceManager.getDefaultSharedPreferences(getApplication()).edit().putFloat(globalDeviceName, (temp + (currentSignal / toSave)) / 2).apply();  //1 cm to dbm
                             } else if (selectedPosition == 1) {
@@ -112,13 +116,12 @@ public class BeaconConfig extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             if(BluetoothDevice.ACTION_FOUND.equals(intent.getAction())) {
-                if(globalDeviceName != null && intent.getStringExtra(BluetoothDevice.EXTRA_NAME) != null) {
-                    if (intent.getStringExtra(BluetoothDevice.EXTRA_NAME).equals(globalDeviceName)) {
-                        currentSignal = intent.getShortExtra(BluetoothDevice.EXTRA_RSSI, Short.MIN_VALUE);
-                        signal.setText(String.valueOf(currentSignal));
-                        BTAdapter.cancelDiscovery();
-                        BTAdapter.startDiscovery();
-                    }
+                BluetoothDevice btDevice = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+                if(btDevice.getAddress().equals(globalDevice.getAddress())) {
+                    currentSignal = intent.getShortExtra(BluetoothDevice.EXTRA_RSSI, Short.MIN_VALUE);
+                    signal.setText(String.valueOf(currentSignal));
+                    BTAdapter.cancelDiscovery();
+                    BTAdapter.startDiscovery();
                 }
             }else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(intent.getAction())){
                 BTAdapter.startDiscovery();

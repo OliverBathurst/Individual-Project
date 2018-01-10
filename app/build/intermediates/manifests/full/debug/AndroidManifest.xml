@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="14"
-        android:targetSdkVersion="25" />
+        android:targetSdkVersion="23" />
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -107,10 +107,15 @@
             android:exported="true" >
             <intent-filter android:priority="999" >
                 <action android:name="android.intent.action.BATTERY_CHANGED" />
-                <action android:name="android.intent.action.BATTERY_LOW" />
-                <action android:name="android.intent.action.BATTERY_OKAY" />
-                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
-                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.oliver.bathurst.individualproject.Updater"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter android:priority="999" >
+                <action android:name="android.net.wifi.STATE_CHANGE" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
         <receiver
@@ -132,7 +137,7 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name="com.oliver.bathurst.individualproject.BeaconActivity$mReceiver"
+            android:name="com.oliver.bathurst.individualproject.BTActivity$mReceiver"
             android:enabled="true" />
 
         <!-- GCM -->
@@ -205,7 +210,7 @@
         <service android:name="com.oliver.bathurst.individualproject.TokenRefreshListener" />
 
         <activity
-            android:name="com.oliver.bathurst.individualproject.BeaconActivity"
+            android:name="com.oliver.bathurst.individualproject.BTActivity"
             android:label="@string/title_activity_beacon"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -213,7 +218,7 @@
             android:label="@string/title_activity_reorder"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.oliver.bathurst.individualproject.BeaconConfig"
+            android:name="com.oliver.bathurst.individualproject.BTConfig"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
             android:name="com.oliver.bathurst.individualproject.SignUpActivity"

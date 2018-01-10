@@ -92,11 +92,9 @@ public class CellTowerMap extends FragmentActivity implements OnMapReadyCallback
     }
     private void validate(int title, Double[] da){
         if(da != null && da[0] != null && da[1] != null && da[2] != null && mMap != null) {
-            try {
-                mMap.addMarker(new MarkerOptions().position(new LatLng(da[0], da[1])).title(String.valueOf(title)));
-                mMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(da[0], da[1])).zoom(15).bearing(0).tilt(45).build()));
-                mMap.addCircle(new CircleOptions().strokeColor(Color.GREEN).fillColor(0x5500ff00).center(new LatLng(da[0], da[1])).radius(da[2]));
-            }catch (Exception ignored){}
+            mMap.addMarker(new MarkerOptions().position(new LatLng(da[0], da[1])).title(String.valueOf(title)));
+            mMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(da[0], da[1])).zoom(15).bearing(0).tilt(45).build()));
+            mMap.addCircle(new CircleOptions().strokeColor(Color.GREEN).fillColor(0x5500ff00).center(new LatLng(da[0], da[1])).radius(da[2]));
         }else{
             Toast.makeText(this, R.string.can_not_get_location, Toast.LENGTH_SHORT).show();
         }

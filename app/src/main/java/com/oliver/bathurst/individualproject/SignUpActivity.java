@@ -168,11 +168,9 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
         }
     }
     private boolean isValid(String username) {
-        //TODO: Replace this with your own logic
         return username.length() > 0 && !username.contains("|") && username.length() < 12;
     }
     private boolean isPasswordValid(String password) {
-        //TODO: Replace this with your own logic
         return password.length() >= 4 && 12 >= password.length() && !password.contains("|");
     }
     /**
@@ -291,8 +289,8 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
         private final String mUser, mPassword;
 
         UserSignUpTask(String user, String password) {
-            mUser = user;
-            mPassword = password;
+            mUser = user.trim();
+            mPassword = password.trim();
         }
 
         @Override
@@ -308,13 +306,13 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
 
                 JSONObject j = new PermissionsManager(getApplicationContext()).signupDeviceJson();
                 BufferedReader read = new BufferedReader(new InputStreamReader(new BufferedInputStream((new URL(sb.toString().trim() + "device=" + (j!=null ? j.toString() : "null device error") + "&user=" + mUser + "&pass=" + mPassword).openConnection()).getInputStream())));
-                sb.setLength(0);
+                StringBuilder sb2 = new StringBuilder();
                 while ((inputLine = read.readLine()) != null) {
-                    sb.append(inputLine);
+                    sb2.append(inputLine);
                 }
                 read.close();
 
-                return sb.toString();
+                return sb2.toString();
             }catch(Exception e){
                 return e.getMessage();
             }

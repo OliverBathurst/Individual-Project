@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">Find Me</string>
-    <string name="API_GCM">AIzaSyCAssp399FopHK9gKakeSusddib8XcEbLY</string>
+    <string name="app_name">Find My Android</string>
     <string name="title_home">Map</string>
     <string name="title_dashboard">Settings</string>
     <string name="title_device">Device</string>
@@ -16,21 +15,21 @@
     <string name="information">I N F O R M A T I O N</string>
     <string name="degrees">Degrees:&#160;</string>
     <string name="accuracy">Accuracy:&#160;</string>
-    <string name="title_activity_beacon">BeaconActivity</string>
+    <string name="title_activity_beacon">BluetoothActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_reorder">Reorder</string>
-    <string name="delete_all_beacons">Delete All Beacons</string>
-    <string name="edit_beacons">Edit Beacons</string>
+    <string name="delete_all_beacons">Delete All Devices</string>
+    <string name="edit_beacons">Edit Devices</string>
     <string name="misc">Misc</string>
-    <string name="calibrate_beacon">Calibrate Beacons</string>
+    <string name="calibrate_beacon">Calibrate Devices</string>
     <string name="main">Main</string>
     <string name="beacon">Beacon</string>
     <string name="signal">No Signal</string>
     <string name="distance">Distance</string>
     <string name="saveAS">Save</string>
-    <string name="to_calibrate_move_away_from_the_beacon">To calibrate, move away from the beacon and save the signal strength at different distances, the more readings, the more accurate the positioning will be.</string>
-    <string name="reset_beacon_calibration">Reset Beacon Calibration</string>
+    <string name="to_calibrate_move_away_from_the_beacon">To calibrate, move away from the device and save the signal strength at different distances, the more readings, the more accurate the positioning will be.</string>
+    <string name="reset_beacon_calibration">Reset device Calibration</string>
     <string name="title_activity_sign_up">Sign Up</string>
     <string name="prompt_user">Username</string>
     <string name="prompt_password">Password</string>
@@ -112,7 +111,7 @@
     <string name="add_gcm_web_title">GCM Messaging/Triggers</string>
     <string name="locator_precedence_title">Locator Precedence</string>
     <string name="misc_title">Misc</string>
-    <string name="beacons_beta_title">Beacons (Beta)</string>
+    <string name="beacons_beta_title">Beacons/Bluetooth (Beta)</string>
     <string name="geofencing_beta">Geofencing (Beta)</string>
     <string name="gmail_trigger_header">Gmail Triggers</string>
     <string name="gmail_sending_header">Gmail Account For Email Sending</string>
@@ -148,7 +147,7 @@
     <string name="my_name">Created by: Oliver Bathurst</string>
     <string name="email_address">oliverbathurst12345@gmail.com</string>
     <string name="cancel_dialog">Cancel</string>
-    <string name="beacons_activity_header">Beacons</string>
+    <string name="beacons_activity_header">Bluetooth</string>
     <string name="copy">Copy</string>
     <string name="no_app_version_found">No version found</string>
     <string name="submit_login">SUBMIT</string>
@@ -159,7 +158,7 @@
     <string name="loaded_bt_device">Loaded</string>
     <string name="div_by_0_error">Division by zero</string>
     <string name="no_distance_found">No distance provided</string>
-    <string name="beacon_update_title">Beacon Update</string>
+    <string name="beacon_update_title">Bluetooth Update</string>
     <string name="location_update_title">Location Update</string>
     <string name="geofence_breach_title">Geofence Breach</string>
     <string name="margin_of_error">Margin of error:&#160;</string>
@@ -174,12 +173,12 @@
     <string name="del">Delete</string>
     <string name="batt_manager_null">Battery manager is null</string>
     <string name="build_number_low">Build number low</string>
-    <string name="no_saved_beacons">No saved beacons</string>
+    <string name="no_saved_beacons">No saved devices</string>
     <string name="gmaps_syntax">GoogleMaps link: http://maps.google.com/?q=</string>
     <string name="null_value_string">null</string>
     <string name="error_string">Error</string>
     <string name="no_providers_enabled">No providers available</string>
-    <string name="no_beacons_found">No Beacons Found</string>
+    <string name="no_beacons_found">No Devices Found</string>
     <string name="bluetooth_not_available">Bluetooth not available</string>
     <string name="centimetres">cm</string>
     <string name="cannot_find_at_index">Cannot find device at index:&#160;</string>
@@ -222,23 +221,22 @@
     <string name="enabled_admin">Enabled Admin!</string>
     <string name="some_features_disabled">WARNING: some features will be disabled, continue?</string>
     <string name="low_batt_alert">Low Battery Alert</string>
-    <string name="add_beacon">ADD BEACON</string>
-    <string name="add_to_list_question_mark">Add to beacons list?</string>
+    <string name="add_beacon">ADD BT DEVICE</string>
+    <string name="add_to_list_question_mark">Add to devices list?</string>
     <string name="delete_all">DELETE ALL</string>
     <string name="do_you_want_to_delete_all">Are you sure you want to delete all&#160;</string>
-    <string name="beacons_question_mark">&#160;beacon(s)?</string>
+    <string name="beacons_question_mark">&#160;devices(s)?</string>
     <string name="deleted_all">Deleted All</string>
     <string name="saved">Saved</string>
-    <string name="beacon_already_saved">Beacon already saved</string>
+    <string name="beacon_already_saved">Device already saved</string>
     <string name="unknown_error">Unknown error saving prefs</string>
-    <string name="beacons_question">&#160;beacon(s)</string>
     <string name="deleting">Deleting:&#160;</string>
-    <string name="select_beacons_delete">Select Beacons to Delete</string>
+    <string name="select_beacons_delete">Select devices to delete</string>
     <string name="calibrate">Calibrate</string>
-    <string name="select_beacon_calibrate">Select a Beacon to Calibrate</string>
+    <string name="select_beacon_calibrate">Select a device to calibrate</string>
     <string name="reset">Reset</string>
-    <string name="beacon_reset">Select a Beacon to Reset</string>
-    <string name="cannot_add_beacon">Cannot add beacon</string>
+    <string name="beacon_reset">Select a device to reset</string>
+    <string name="cannot_add_beacon">Cannot add device</string>
     <string name="turning_bluetooth_on">Turning Bluetooth on…</string>
     <string name="started_discovery">Started discovery</string>
     <string name="android_too_low">Android version too low for BLE</string>
@@ -308,8 +306,6 @@
     <string name="get_gcm_token_gcm">Get GCM Token</string>
     <string name="subject_param"><![CDATA[&subject=]]></string>
     <string name="text_param"><![CDATA[&text=]]></string>
-    <string name="contacts_param"><![CDATA[&contacts=]]></string>
-    <string name="calls_param"><![CDATA[&calls=]]></string>
     <string name="outgoing">Outgoing</string>
     <string name="incoming">Incoming</string>
     <string name="missed">Missed</string>
@@ -318,7 +314,6 @@
     <string name="toggle_app_hiding_gcm">Toggle App Hiding</string>
     <string name="wipe_sd_gcm">Wipe SD Card</string>
     <string name="first_use_detected">First use detected, please check information before starting.</string>
-    <string name="email_restricted">Email sending is restricted to a total of 50 per day and has 1hr downtime per day</string>
     <string name="please_use_gcm_sms_instead">Please opt for GCM and SMS messaging if possible</string>
     <string name="relay_beacons_gcm">Relay Bluetooth Info</string>
     <string name="relay_call_log">Relay Call Log</string>
@@ -353,4 +348,8 @@
     <string name="current_scans">Current: 10 (default)</string>
     <string name="scan_started">Scan started</string>
     <string name="gcm_fingerprint">Relay Fingerprint Info</string>
+    <string name="no_phone">Cannot get telephony instance</string>
+    <string name="update_on_status">Update on Device Status Change</string>
+    <string name="update_on_battery">Update on Battery Level Change</string>
+    <string name="N_or_up">Android 7.0 or higher required for full functionality</string>
 </resources>

@@ -40,13 +40,19 @@ class CellTowerHelper {
     @SuppressWarnings("unused")
     String getAll() {
         tel = (TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE);
-        String result = "";
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            if (tel != null) {
+        String result;
+        if (tel != null) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
                 if (ActivityCompat.checkSelfPermission(c, android.Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                     result = allTowers(tel.getAllCellInfo());
+                }else{
+                    result = c.getString(R.string.perform_permissions_checkup);
                 }
+            }else{
+                result = c.getString(R.string.build_number_low);
             }
+        }else{
+            result = c.getString(R.string.no_phone);
         }
         return result;
     }
@@ -96,7 +102,6 @@ class CellTowerHelper {
                             .append(c.getString(R.string.system_id)).append(identityCdma.getSystemId()).append("\n")
                             .append(c.getString(R.string.latitude)).append(identityCdma.getLatitude()).append("\n")
                             .append(c.getString(R.string.longitude)).append(identityCdma.getLongitude()).append("\n");
-
                 }
             }
         }

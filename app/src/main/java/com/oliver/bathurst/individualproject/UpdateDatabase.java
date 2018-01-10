@@ -28,21 +28,25 @@ class UpdateDatabase {
     }
 
     void update(){
-        SharedPreferences shared = PreferenceManager.getDefaultSharedPreferences(c);
+        if(loc != null) {
+            SharedPreferences shared = PreferenceManager.getDefaultSharedPreferences(c);
 
-        String user = shared.getString("registered_user",null);
-        String pass = shared.getString("registered_pass",null);
+            String user = shared.getString("registered_user", null);
+            String pass = shared.getString("registered_pass", null);
 
-        if(shared.getBoolean("only_wifi", false)){ //only update over wifi
-            ConnectivityManager cm = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
-            if(cm != null){
-                NetworkInfo wifiNetwork = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-                if (wifiNetwork != null && wifiNetwork.isConnected()) {
-                    new SendLocationToDB(user,pass).execute();
+            if(user != null && pass != null) {
+                if (shared.getBoolean("only_wifi", false)) { //only update over wifi
+                    ConnectivityManager cm = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
+                    if (cm != null) {
+                        NetworkInfo wifiNetwork = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+                        if (wifiNetwork != null && wifiNetwork.isConnected()) {
+                            new SendLocationToDB(user, pass).execute();
+                        }
+                    }
+                } else {
+                    new SendLocationToDB(user, pass).execute();
                 }
             }
-        }else{
-            new SendLocationToDB(user,pass).execute();
         }
     }
 
@@ -67,7 +71,6 @@ class UpdateDatabase {
                 br.close();
 
                 String fullURL = sb.toString().trim() + "user=" + username + "&pass=" + password + "&lat=" + loc.getLatitude() + "&lon=" + loc.getLongitude() + "&acc=" + loc.getAccuracy();
-                System.out.println(fullURL);
                 BufferedReader read = new BufferedReader(new InputStreamReader(new BufferedInputStream((new URL(fullURL).openConnection()).getInputStream())));
                 read.close();
             } catch (Exception ignored) {}

@@ -8,7 +8,7 @@ android {
         android.defaultConfig.vectorDrawables.useSupportLibrary = "true"
         minSdkVersion 14
         //noinspection OldTargetApi
-        targetSdkVersion 25
+        targetSdkVersion 23
         versionCode 1
         versionName "v1.0 rv67"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"

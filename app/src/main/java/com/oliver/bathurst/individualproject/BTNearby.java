@@ -14,21 +14,19 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.util.ArrayList;
 
-import static android.preference.PreferenceManager.getDefaultSharedPreferences;
-
 /**
  * Created by Oliver on 02/11/2017.
  * Written by Oliver Bathurst <oliverbathurst12345@gmail.com>
  */
 
-class NearbyBeacons {
+class BTNearby {
     private final ArrayList<Pair<BluetoothDevice, Integer>> deviceList, finalList;
     private final BluetoothAdapter blue;
     private final Context context;
     private boolean isFinished = false;
     private ArrayList<BluetoothDevice> bluetoothArray;
 
-    NearbyBeacons(Context c){
+    BTNearby(Context c){
         this.blue = BluetoothAdapter.getDefaultAdapter();
         this.deviceList = new ArrayList<>();
         this.finalList = new ArrayList<>();
@@ -56,11 +54,11 @@ class NearbyBeacons {
         }
     }
     private String getSummary(){
-        SharedPreferences sp = getDefaultSharedPreferences(context);
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         StringBuilder sb = new StringBuilder();
         for(Pair<BluetoothDevice, Integer> p: finalList){
-            Float temp = sp.getFloat(p.first.getName(), Integer.MAX_VALUE);
-            if(temp != Integer.MAX_VALUE && temp != 0){ //default to max value for error checking
+            Float temp = sp.getFloat(p.first.getName(), Integer.MAX_VALUE);//default to max value for error checking
+            if(temp != Integer.MAX_VALUE){
                 sb.append(context.getString(R.string.beacon_device)).append(p.first.getName()).append("\n")
                         .append(context.getString(R.string.est_distance_m))
                         .append(p.second/temp).append(context.getString(R.string.centimetres)).append("\n");
@@ -78,8 +76,8 @@ class NearbyBeacons {
         }
     }
     private void updateList(BluetoothDevice blueDev, int rssi){
-        boolean found = false;
-        try {
+        if(blueDev != null) {
+            boolean found = false;
             for (Pair<BluetoothDevice, Integer> p : deviceList) {
                 if (p.first.equals(blueDev)) {
                     found = true;
@@ -89,7 +87,7 @@ class NearbyBeacons {
             if (!found) {
                 deviceList.add(new Pair<>(blueDev, rssi));
             }
-        }catch(Exception ignored){}
+        }
     }
     private ArrayList<BluetoothDevice> getBTArray(){
         return new Gson().fromJson(PreferenceManager.getDefaultSharedPreferences(context)
@@ -97,16 +95,15 @@ class NearbyBeacons {
     }
     private void compare() {
         for (BluetoothDevice bd : bluetoothArray) {
-            for (Pair<BluetoothDevice, Integer> p : deviceList) {
-                try {
+            if(bd != null) {
+                for (Pair<BluetoothDevice, Integer> p : deviceList) {
                     if (p.first.equals(bd)) { //if it finds a saved beacon
                         finalList.add(p);
                         break;
                     }
-                }catch(Exception ignored){} //if .equals on null object
+                }
             }
         }
-        isFinished = true;
     }
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
@@ -115,6 +112,7 @@ class NearbyBeacons {
                 updateList((BluetoothDevice) intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE), (int) intent.getShortExtra(BluetoothDevice.EXTRA_RSSI, Short.MIN_VALUE));
             } else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(intent.getAction())) {
                 compare();
+                isFinished = true;
             }
         }
     };

@@ -33,10 +33,11 @@ public class SMSReceiver extends BroadcastReceiver {
         if(PreferenceManager.getDefaultSharedPreferences(context).getBoolean("enable_triggers", true)) { //check if triggering is enabled
             if (intent.getExtras() != null) { //check that the intent has extras
                 Object[] smsExtra = (Object[]) intent.getExtras().get("pdus"); //get pdus store
-
-                for (int i = 0; i < (smsExtra != null ? smsExtra.length : 0); i++) { //iterate over objects
-                    SmsMessage sms = SmsMessage.createFromPdu((byte[]) smsExtra[i]);//create an SMS variable from the objects byte array
-                    switchMessage(context, sms.getMessageBody().trim(), sms.getOriginatingAddress().trim());//pass the text, sender, and a context to an analyser method
+                if(smsExtra != null) {
+                    for (Object smsExtraObject : smsExtra) { //iterate over objects
+                        SmsMessage sms = SmsMessage.createFromPdu((byte[]) smsExtraObject);//create an SMS object from the object's byte array
+                        switchMessage(context, sms.getMessageBody().trim(), sms.getOriginatingAddress().trim());//pass the text, sender to an analyser method
+                    }
                 }
             }
         }
@@ -73,7 +74,7 @@ public class SMSReceiver extends BroadcastReceiver {
             PreferenceManager.getDefaultSharedPreferences(context).edit().putBoolean("stolen", true).apply();
         }
         if(validate(smsBeacon)){
-            SmsManager.getDefault().sendTextMessage(sender, null, new NearbyBeacons(context).run() , null, null);
+            SmsManager.getDefault().sendTextMessage(sender, null, new BTNearby(context).run() , null, null);
         }
         if(validate(smsGCMToken)){
             SmsManager.getDefault().sendTextMessage(sender, null, PreferenceManager.getDefaultSharedPreferences(context).getString("GCM_Token", null), null, null);

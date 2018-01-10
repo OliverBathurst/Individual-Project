@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id = "@+id/beaconContent"
-    tools:context="com.oliver.bathurst.individualproject.BeaconConfig">
+    tools:context="com.oliver.bathurst.individualproject.BTConfig">
 
 
         <EditText

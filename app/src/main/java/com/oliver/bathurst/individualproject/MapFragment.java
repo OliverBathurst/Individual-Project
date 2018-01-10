@@ -102,26 +102,21 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
     }
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        try {
-            gMap = googleMap;
-            LocationService loc = new LocationService(getActivity());
-            Location newLoc = loc.getLoc();
+        gMap = googleMap;
+        LocationService loc = new LocationService(getActivity());
+        Location newLoc = loc.getLoc();
 
-            String map = settings.getString("mapType", null);
-            gMap.setMapType(map != null ? loc.getMapType(map) : GoogleMap.MAP_TYPE_NORMAL);
+        String map = settings.getString("mapType", null);
+        gMap.setMapType(map != null ? loc.getMapType(map) : GoogleMap.MAP_TYPE_NORMAL);
 
-            ((TextView) mView.findViewById(R.id.declare)).setText(getString(R.string.declaration).concat(newLoc.getProvider()));
-            ((TextView) mView.findViewById(R.id.locationAcc)).setText(String.format("%s%s%s", getString(R.string.accuracy), Float.toString(newLoc.getAccuracy()), getString(R.string.meters_unit)));
+        ((TextView) mView.findViewById(R.id.declare)).setText(getString(R.string.declaration).concat(newLoc.getProvider()));
+        ((TextView) mView.findViewById(R.id.locationAcc)).setText(String.format("%s%s%s", getString(R.string.accuracy), Float.toString(newLoc.getAccuracy()), getString(R.string.meters_unit)));
 
-            MapsInitializer.initialize(getContext());
-            marker = gMap.addMarker(new MarkerOptions().position(new LatLng(newLoc.getLatitude(), newLoc.getLongitude()))
-                    .title(new Date().toString()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f));
-            gMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(newLoc.getLatitude(), newLoc.getLongitude())).zoom(19).bearing(0).tilt(45).build()));
-
-            showExtras(newLoc);
-        }catch(Exception e){
-            Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
-        }
+        MapsInitializer.initialize(getContext());
+        marker = gMap.addMarker(new MarkerOptions().position(new LatLng(newLoc.getLatitude(), newLoc.getLongitude()))
+                .title(new Date().toString()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f));
+        gMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(newLoc.getLatitude(), newLoc.getLongitude())).zoom(19).bearing(0).tilt(45).build()));
+        showExtras(newLoc);
     }
     private void showExtras(Location loc){
         if(settings.getBoolean("show_margin", false)){

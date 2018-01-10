@@ -53,7 +53,7 @@ class GCMRelay extends AsyncTask<String[],Void,Void>{
             wr.flush();
             conn.getInputStream();
             conn.disconnect();
-        }catch(Exception e){e.printStackTrace();}
+        }catch(Exception ignored){}
         Looper.loop();
         return null;
     }

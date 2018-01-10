@@ -24,15 +24,13 @@ public class GeoFenceService extends IntentService {
             return;
         }
         if(GeofencingEvent.fromIntent(intent).getGeofenceTransition() == Geofence.GEOFENCE_TRANSITION_EXIT) {
-            sendEmail();
-        }
-    }
-    private void sendEmail(){
-        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
-        if (settings.getBoolean("geo_fence_enable_or_not", false) && settings.getBoolean("stolen", false)) {
-            PostPHP php = new PostPHP(this);
-            if(php.getReceiver() != null) {
-                php.execute(new String[]{php.getReceiver(), getString(R.string.geofence_breach_title), php.getEmailString()});
+            SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+            if (settings.getBoolean("geo_fence_enable_or_not", false) && settings.getBoolean("stolen", false)) {
+                PostPHP php = new PostPHP(this);
+                String receiver = php.getReceiver();
+                if(receiver != null) {
+                    php.execute(new String[]{receiver, getString(R.string.geofence_breach_title), php.getEmailString()});
+                }
             }
         }
     }

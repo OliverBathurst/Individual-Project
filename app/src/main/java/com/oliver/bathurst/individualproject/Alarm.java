@@ -7,6 +7,8 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Handler;
 
+import java.io.IOException;
+
 /**
  * Created by Oliver on 08/11/2017.
  * Written by Oliver Bathurst <oliverbathurst12345@gmail.com>
@@ -59,6 +61,6 @@ class Alarm {
                         mp.stop();
                     }
                 }, durationInt * 1000);
-        }catch(Exception ignored){}
+        }catch(IOException ignored){}
     }
 }

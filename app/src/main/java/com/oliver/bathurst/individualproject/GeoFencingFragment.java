@@ -40,6 +40,7 @@ import java.util.List;
 
 @SuppressWarnings("DefaultFileTemplate")
 public class GeoFencingFragment extends android.support.v4.app.Fragment implements OnMapReadyCallback {
+    private final List<Geofence> myList = new ArrayList<>(1);
     private GeofencingClient mGeofencingClient;
     private View mView;
     private Location loc;
@@ -47,7 +48,6 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
     private GoogleMap gMap;
     private Circle circle,circle_margin;
     private TextView marginOfError;
-    private final List<Geofence> myList = new ArrayList<>(1);
 
     public GeoFencingFragment() {}
 
@@ -87,13 +87,13 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 mRadius = progress;
-                try {
-                    if (circle != null) {
-                        circle.remove();
-                    }
+                if (circle != null) {
+                    circle.remove();
+                }
+                if(gMap != null) {
                     circle = gMap.addCircle(new CircleOptions().strokeColor(Color.GREEN).fillColor(0x5500ff00).center(new LatLng(loc.getLatitude(), loc.getLongitude())).radius(mRadius * scaleFactorInt));
-                    ((TextView) mView.findViewById(R.id.radiusTextView)).setText(getString(R.string.radiuscolon).concat(String.valueOf(mRadius * scaleFactorInt)));
-                } catch (Exception ignored) {}
+                }
+                ((TextView) mView.findViewById(R.id.radiusTextView)).setText(getString(R.string.radiuscolon).concat(String.valueOf(mRadius * scaleFactorInt)));
             }
         });
         (mView.findViewById(R.id.cancel)).setOnClickListener(new View.OnClickListener() {
@@ -106,69 +106,59 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
         (mView.findViewById(R.id.save)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    SharedPreferences.Editor settings = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
-                    settings.putInt("geo_fence_value", (mRadius * scaleFactorInt));
-                    settings.putLong("geo_fence_cordLat", Double.doubleToRawLongBits(loc.getLatitude()));//geofence center latitude
-                    settings.putLong("geo_fence_cordLon", Double.doubleToRawLongBits(loc.getLongitude()));//geofence center longitude
-                    settings.apply();
-                    mGeofencingClient = LocationServices.getGeofencingClient(getActivity());
+                SharedPreferences.Editor settings = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
+                settings.putInt("geo_fence_value", (mRadius * scaleFactorInt));
+                settings.putLong("geo_fence_cordLat", Double.doubleToRawLongBits(loc.getLatitude()));//geofence center latitude
+                settings.putLong("geo_fence_cordLon", Double.doubleToRawLongBits(loc.getLongitude()));//geofence center longitude
+                settings.apply();
+                mGeofencingClient = LocationServices.getGeofencingClient(getActivity());
 
-                    myList.clear();
-                    myList.add(new Geofence.Builder().setRequestId("geoId")
+                myList.clear();
+                myList.add(new Geofence.Builder().setRequestId("geoId")
                             .setCircularRegion(loc.getLatitude(), loc.getLongitude(), (mRadius * scaleFactorInt)) // defining fence region
                             .setExpirationDuration(Geofence.NEVER_EXPIRE)
                             .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_EXIT)
                             .build());
 
-                    GeofencingRequest.Builder builder = new GeofencingRequest.Builder();
-                    builder.setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_EXIT);
-                    builder.addGeofences(myList);
+                GeofencingRequest.Builder builder = new GeofencingRequest.Builder();
+                builder.setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_EXIT);
+                builder.addGeofences(myList);
 
-                    try {
-                        mGeofencingClient.addGeofences(builder.build(), PendingIntent.getService(getActivity(),
+                try {
+                    mGeofencingClient.addGeofences(builder.build(), PendingIntent.getService(getActivity(),
                                 0, new Intent(getActivity(), GeoFenceService.class), PendingIntent.FLAG_UPDATE_CURRENT));
-                    } catch (SecurityException securityException) {
-                        Toast.makeText(getActivity(), securityException.getMessage(), Toast.LENGTH_LONG).show();
-                    }
-                    startActivity(new Intent(getContext(), MainActivity.class));
-
-                }catch(Exception e){
-                    Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(getContext(), MainActivity.class));
+                } catch (SecurityException securityException) {
+                    Toast.makeText(getActivity(), securityException.getMessage(), Toast.LENGTH_LONG).show();
                 }
+                startActivity(new Intent(getContext(), MainActivity.class));
             }
         });
     }
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        try {
-            LocationService locService = new LocationService(getActivity());
-            gMap = googleMap;
-            loc = locService.getLoc();
+        LocationService locService = new LocationService(getActivity());
+        gMap = googleMap;
+        loc = locService.getLoc();
 
-            SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getContext());
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getContext());
 
-            String map = settings.getString("mapType", null);
-            gMap.setMapType(map != null ? locService.getMapType(map) : GoogleMap.MAP_TYPE_NORMAL);
+        String map = settings.getString("mapType", null);
+        gMap.setMapType(map != null ? locService.getMapType(map) : GoogleMap.MAP_TYPE_NORMAL);
 
-            ((TextView) mView.findViewById(R.id.declare)).setText(getString(R.string.declaration).concat(loc.getProvider()));
+        ((TextView) mView.findViewById(R.id.declare)).setText(getString(R.string.declaration).concat(loc.getProvider()));
 
-            if (settings.getBoolean("show_margin", false)) {
-                if (circle_margin != null) {
-                    circle_margin.remove();
-                }
-                circle_margin = googleMap.addCircle(new CircleOptions().strokeColor(Color.RED)
-                        .center(new LatLng(loc.getLatitude(), loc.getLongitude()))
-                        .radius(loc.getAccuracy()));
-                marginOfError.setText(String.valueOf(getString(R.string.margin_of_error) + loc.getAccuracy() + getString(R.string.meters_unit)));
+        if (settings.getBoolean("show_margin", false)) {
+            if (circle_margin != null) {
+                circle_margin.remove();
             }
-            MapsInitializer.initialize(getContext());
-            gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
-                    .title(getString(R.string.device_location) + loc.getLatitude() + loc.getLongitude() + "\n" + new Date()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f));
-            gMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(loc.getLatitude(), loc.getLongitude())).zoom(19).bearing(0).tilt(45).build()));
-        } catch (Exception e) {
-            Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
+            circle_margin = googleMap.addCircle(new CircleOptions().strokeColor(Color.RED)
+                    .center(new LatLng(loc.getLatitude(), loc.getLongitude()))
+                    .radius(loc.getAccuracy()));
+            marginOfError.setText(String.valueOf(getString(R.string.margin_of_error) + loc.getAccuracy() + getString(R.string.meters_unit)));
         }
+        MapsInitializer.initialize(getContext());
+        gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
+                .title(getString(R.string.device_location) + loc.getLatitude() + loc.getLongitude() + "\n" + new Date()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f));
+        gMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(loc.getLatitude(), loc.getLongitude())).zoom(19).bearing(0).tilt(45).build()));
     }
 }

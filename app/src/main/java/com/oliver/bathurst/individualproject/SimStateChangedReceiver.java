@@ -46,9 +46,7 @@ public class SimStateChangedReceiver extends BroadcastReceiver {
     }
     private void sendSMS(Context c, String state, String number){
         if(number != null && number.trim().length() != 0){
-            try {
-                SmsManager.getDefault().sendTextMessage(number.trim(), null, (new SMSHelper(c).getBody()+ "\n" + c.getString(R.string.sim_state) + state), null, null);
-            }catch (Exception ignored){}
+            SmsManager.getDefault().sendTextMessage(number.trim(), null, (new SMSHelper(c).getBody()+ "\n" + c.getString(R.string.sim_state) + state), null, null);
         }
     }
 }
