@@ -96,42 +96,34 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
                 ((TextView) mView.findViewById(R.id.radiusTextView)).setText(getString(R.string.radiuscolon).concat(String.valueOf(mRadius * scaleFactorInt)));
             }
         });
-        (mView.findViewById(R.id.cancel)).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), MainActivity.class));
+        (mView.findViewById(R.id.cancel)).setOnClickListener(v -> startActivity(new Intent(getContext(), MainActivity.class)));
+
+        (mView.findViewById(R.id.save)).setOnClickListener(v -> {
+            SharedPreferences.Editor settings = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
+            settings.putInt("geo_fence_value", (mRadius * scaleFactorInt));
+            settings.putLong("geo_fence_cordLat", Double.doubleToRawLongBits(loc.getLatitude()));//geofence center latitude
+            settings.putLong("geo_fence_cordLon", Double.doubleToRawLongBits(loc.getLongitude()));//geofence center longitude
+            settings.apply();
+            mGeofencingClient = LocationServices.getGeofencingClient(getActivity());
+
+            myList.clear();
+            myList.add(new Geofence.Builder().setRequestId("geoId")
+                        .setCircularRegion(loc.getLatitude(), loc.getLongitude(), (mRadius * scaleFactorInt)) // defining fence region
+                        .setExpirationDuration(Geofence.NEVER_EXPIRE)
+                        .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_EXIT)
+                        .build());
+
+            GeofencingRequest.Builder builder = new GeofencingRequest.Builder();
+            builder.setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_EXIT);
+            builder.addGeofences(myList);
+
+            try {
+                mGeofencingClient.addGeofences(builder.build(), PendingIntent.getService(getActivity(),
+                            0, new Intent(getActivity(), GeoFenceService.class), PendingIntent.FLAG_UPDATE_CURRENT));
+            } catch (SecurityException securityException) {
+                Toast.makeText(getActivity(), securityException.getMessage(), Toast.LENGTH_LONG).show();
             }
-        });
-
-        (mView.findViewById(R.id.save)).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SharedPreferences.Editor settings = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
-                settings.putInt("geo_fence_value", (mRadius * scaleFactorInt));
-                settings.putLong("geo_fence_cordLat", Double.doubleToRawLongBits(loc.getLatitude()));//geofence center latitude
-                settings.putLong("geo_fence_cordLon", Double.doubleToRawLongBits(loc.getLongitude()));//geofence center longitude
-                settings.apply();
-                mGeofencingClient = LocationServices.getGeofencingClient(getActivity());
-
-                myList.clear();
-                myList.add(new Geofence.Builder().setRequestId("geoId")
-                            .setCircularRegion(loc.getLatitude(), loc.getLongitude(), (mRadius * scaleFactorInt)) // defining fence region
-                            .setExpirationDuration(Geofence.NEVER_EXPIRE)
-                            .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_EXIT)
-                            .build());
-
-                GeofencingRequest.Builder builder = new GeofencingRequest.Builder();
-                builder.setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_EXIT);
-                builder.addGeofences(myList);
-
-                try {
-                    mGeofencingClient.addGeofences(builder.build(), PendingIntent.getService(getActivity(),
-                                0, new Intent(getActivity(), GeoFenceService.class), PendingIntent.FLAG_UPDATE_CURRENT));
-                } catch (SecurityException securityException) {
-                    Toast.makeText(getActivity(), securityException.getMessage(), Toast.LENGTH_LONG).show();
-                }
-                startActivity(new Intent(getContext(), MainActivity.class));
-            }
+            startActivity(new Intent(getContext(), MainActivity.class));
         });
     }
     @Override

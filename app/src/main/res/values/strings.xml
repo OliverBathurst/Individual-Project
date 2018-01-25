@@ -334,10 +334,9 @@
     <string name="enabling_wifi">Enabling WiFi</string>
     <string name="blank_alias">Alias cannot be blank</string>
     <string name="wifi_not_supported">WiFi not supported</string>
-    <string name="reducing_and_saving">Reducing and saving…</string>
+    <string name="saving">Saving…</string>
     <string name="finished">Finished</string>
-    <string name="scans_finished">Scans finished:&#160;</string>
-    <string name="slash">/</string>
+    <string name="scans_left">Scans left:&#160;</string>
     <string name="no_fingerprints_found">No fingerprints found</string>
     <string name="idle">Idle</string>
     <string name="reset_all_fingerprints">Reset All Fingerprints</string>

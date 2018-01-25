@@ -6,7 +6,6 @@ import android.media.MediaPlayer;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Handler;
-
 import java.io.IOException;
 
 /**
@@ -55,12 +54,7 @@ class Alarm {
             mp.prepare();
             mp.start();
 
-            new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        mp.stop();
-                    }
-                }, durationInt * 1000);
+            new Handler().postDelayed(mp::stop, durationInt * 1000);
         }catch(IOException ignored){}
     }
 }

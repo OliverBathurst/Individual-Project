@@ -4,7 +4,6 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
-import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
@@ -21,15 +20,12 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import org.json.JSONObject;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -62,23 +58,15 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
         mView = (AutoCompleteTextView) findViewById(R.id.user);
         populateAutoComplete();
         mPasswordView = (EditText) findViewById(R.id.password);
-        mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
-                    attemptSignUp();
-                    return true;
-                }
-                return false;
+        mPasswordView.setOnEditorActionListener((textView, id, keyEvent) -> {
+            if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
+                attemptSignUp();
+                return true;
             }
+            return false;
         });
         Button mSignInButton = (Button) findViewById(R.id.email_sign_in_button);
-        mSignInButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                attemptSignUp();
-            }
-        });
+        mSignInButton.setOnClickListener(view -> attemptSignUp());
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
     }
@@ -99,13 +87,7 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
         }
         if (shouldShowRequestPermissionRationale(READ_CONTACTS)) {
             Snackbar.make(mView, getString(R.string.permission_rationale), Snackbar.LENGTH_INDEFINITE)
-                    .setAction(android.R.string.ok, new View.OnClickListener() {
-                        @Override
-                        @TargetApi(Build.VERSION_CODES.M)
-                        public void onClick(View v) {
-                            requestPermissions(new String[]{READ_CONTACTS}, REQUEST_READ_CONTACTS);
-                        }
-                    });
+                    .setAction(android.R.string.ok, v -> requestPermissions(new String[]{READ_CONTACTS}, REQUEST_READ_CONTACTS));
         } else {
             requestPermissions(new String[]{READ_CONTACTS}, REQUEST_READ_CONTACTS);
         }
@@ -253,31 +235,15 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
                     .setMessage(getString(R.string.reg_success) +"\n"+ getString(R.string.your_details) + "\n" + getString(R.string.username) + mUser
                             +"\n" + getString(R.string.password) + mPassword + "\n" + getString(R.string.write_down))
                     .setCancelable(false)
-                    .setPositiveButton(getString(R.string.OK), new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            dialog.dismiss();
-                            finish();
-                        }
-                    }).setOnDismissListener(new DialogInterface.OnDismissListener() {
-                    @Override
-                    public void onDismiss(DialogInterface dialog) {
-                            finish();
-                    }
-                    }).setOnCancelListener(new DialogInterface.OnCancelListener() {
-                        @Override
-                        public void onCancel(DialogInterface dialog) {
-                            finish();
-                        }
-                    }).create().show();
+                    .setPositiveButton(getString(R.string.OK), (dialog, id) -> {
+                        dialog.dismiss();
+                        finish();
+                    }).setOnDismissListener(dialog -> finish()).setOnCancelListener(dialog -> finish()).create().show();
         } else {
             new AlertDialog.Builder(this)
                     .setMessage(getString(R.string.user_reg_fail) + "\n" + str)
                     .setCancelable(false)
-                    .setPositiveButton(getString(R.string.OK), new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            dialog.dismiss();
-                        }
-                    }).create().show();
+                    .setPositiveButton(getString(R.string.OK), (dialog, id) -> dialog.dismiss()).create().show();
         }
     }
     /**

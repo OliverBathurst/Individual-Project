@@ -8,7 +8,6 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.ComponentName;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
@@ -61,20 +60,15 @@ public class SettingsFragment extends PreferenceFragment {
                             new android.support.v7.app.AlertDialog.Builder(getActivity())
                                     .setMessage(getString(R.string.your_gcm_token) + " \n" + token)
                                     .setCancelable(false)
-                                    .setPositiveButton(getString(R.string.OK), new DialogInterface.OnClickListener() {
-                                        public void onClick(DialogInterface dialog, int id) {
-                                            dialog.dismiss();
+                                    .setPositiveButton(getString(R.string.OK), (dialog, id) -> dialog.dismiss()).setNegativeButton(getString(R.string.copy), (dialog, id) -> {
+                                        ClipboardManager clipboard = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+                                        if(clipboard != null) {
+                                            clipboard.setPrimaryClip(ClipData.newPlainText("token", token));
+                                            Toast.makeText(getActivity(), getString(R.string.token_clipboard), Toast.LENGTH_SHORT).show();
+                                        }else{
+                                            Toast.makeText(getActivity(), getString(R.string.error_clipboard), Toast.LENGTH_SHORT).show();
                                         }
-                                    }).setNegativeButton(getString(R.string.copy), new DialogInterface.OnClickListener() {
-                                        public void onClick(DialogInterface dialog, int id) {
-                                            ClipboardManager clipboard = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
-                                            if(clipboard != null) {
-                                                clipboard.setPrimaryClip(ClipData.newPlainText("token", token));
-                                                Toast.makeText(getActivity(), getString(R.string.token_clipboard), Toast.LENGTH_SHORT).show();
-                                            }else{
-                                                Toast.makeText(getActivity(), getString(R.string.error_clipboard), Toast.LENGTH_SHORT).show();
-                                            }
-                                        }}).create().show();
+                                    }).create().show();
                         } else if (intent.getAction().equals(RegistrationIntentService.REGISTRATION_ERROR)) {
                             Toast.makeText(getActivity(), getString(R.string.gcm_reg_error), Toast.LENGTH_LONG).show();
                         }
@@ -82,84 +76,56 @@ public class SettingsFragment extends PreferenceFragment {
                 }
             };
 
-            (findPreference("hide_app")).setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    HideApp hidden = new HideApp(getActivity());
-                    hidden.toggle();
-                    Toast.makeText(getActivity(), String.valueOf(hidden.getStatus()), Toast.LENGTH_SHORT).show();
-                    return false;
-                }
+            (findPreference("hide_app")).setOnPreferenceClickListener(preference -> {
+                HideApp hidden = new HideApp(getActivity());
+                hidden.toggle();
+                Toast.makeText(getActivity(), String.valueOf(hidden.getStatus()), Toast.LENGTH_SHORT).show();
+                return false;
             });
-            findPreference("grant_device_admin").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    getDeviceAdmin();
-                    return true;
-                }
+            findPreference("grant_device_admin").setOnPreferenceClickListener(preference -> {
+                getDeviceAdmin();
+                return true;
             });
-            findPreference("get_token").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    getCurrentGCM();
-                    return false;
-                }
+            findPreference("get_token").setOnPreferenceClickListener(preference -> {
+                getCurrentGCM();
+                return false;
             });
 
-            findPreference("register").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    registerGCM();
-                    return false;
-                }
+            findPreference("register").setOnPreferenceClickListener(preference -> {
+                registerGCM();
+                return false;
             });
-            findPreference("open_interface").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.my_website))));
-                    return false;
-                }
+            findPreference("open_interface").setOnPreferenceClickListener(preference -> {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.my_website))));
+                return false;
             });
-            findPreference("fingerprinting").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    startActivity(new Intent(getActivity(), WiFiScanner.class));
-                    return false;
-                }
+            findPreference("fingerprinting").setOnPreferenceClickListener(preference -> {
+                startActivity(new Intent(getActivity(), WiFiScanner.class));
+                return false;
             });
-            findPreference("sign_up").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    String username = settingsView.getString("registered_user",null);
-                    String password = settingsView.getString("registered_pass",null);
+            findPreference("sign_up").setOnPreferenceClickListener(preference -> {
+                String username = settingsView.getString("registered_user",null);
+                String password = settingsView.getString("registered_pass",null);
 
-                    if(username == null && password == null){
-                        startActivity(new Intent(getActivity(), SignUpActivity.class));
-                    }else{
-                        new android.support.v7.app.AlertDialog.Builder(getActivity())
-                                .setMessage("Only one user account is allowed per device: " + "\n" + getString(R.string.your_details) + "\n"
-                                + getString(R.string.username) + username + "\n" + getString(R.string.password) + password)
-                                .setCancelable(false)
-                                .setPositiveButton(getString(R.string.OK), new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int id) {
-                                        dialog.dismiss();
-                                    }
-                                }).create().show();
-                    }
-                    return false;
+                if(username == null && password == null){
+                    startActivity(new Intent(getActivity(), SignUpActivity.class));
+                }else{
+                    new android.support.v7.app.AlertDialog.Builder(getActivity())
+                            .setMessage("Only one user account is allowed per device: " + "\n" + getString(R.string.your_details) + "\n"
+                            + getString(R.string.username) + username + "\n" + getString(R.string.password) + password)
+                            .setCancelable(false)
+                            .setPositiveButton(getString(R.string.OK), (dialog, id) -> dialog.dismiss()).create().show();
                 }
+                return false;
             });
 
-            findPreference("cell_towers").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-                        startActivity(new Intent(getActivity(), CellTowers.class));
-                    }else{
-                        Toast.makeText(getActivity(),getString(R.string.build_number_low),Toast.LENGTH_SHORT).show();
-                    }
-                    return false;
+            findPreference("cell_towers").setOnPreferenceClickListener(preference -> {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                    startActivity(new Intent(getActivity(), CellTowers.class));
+                }else{
+                    Toast.makeText(getActivity(),getString(R.string.build_number_low),Toast.LENGTH_SHORT).show();
                 }
+                return false;
             });
 
             ((CheckBoxPreference) findPreference("enable_triggers")).setChecked(settingsView.getBoolean("enable_triggers", true));
@@ -168,84 +134,51 @@ public class SettingsFragment extends PreferenceFragment {
 
             findPreference("battery_percent").setSummary(getString(R.string.current_percentage) + settingsView.getString("battery_percent", "5") + "%");
 
-            findPreference("un-stolen").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    settings.putBoolean("stolen", false).apply();
-                    Toast.makeText(getActivity(), getString(R.string.unflag_device), Toast.LENGTH_SHORT).show();
-                    return false;
-                }
+            findPreference("un-stolen").setOnPreferenceClickListener(preference -> {
+                settings.putBoolean("stolen", false).apply();
+                Toast.makeText(getActivity(), getString(R.string.unflag_device), Toast.LENGTH_SHORT).show();
+                return false;
             });
-            findPreference("backup_shared_pref").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    actionSharedPref();
-                    return false;
-                }
+            findPreference("backup_shared_pref").setOnPreferenceClickListener(preference -> {
+                actionSharedPref();
+                return false;
             });
 
-            findPreference("check_perm").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    new PermissionsManager(getActivity()).permissionsCheckup();
-                    return false;
-                }
+            findPreference("check_perm").setOnPreferenceClickListener(preference -> {
+                new PermissionsManager(getActivity()).permissionsCheckup();
+                return false;
             });
-            findPreference("geo_fence").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    startActivity(new Intent(SettingsFragment.super.getActivity(), GeoFencing.class));
-                    return false;
-                }
+            findPreference("geo_fence").setOnPreferenceClickListener(preference -> {
+                startActivity(new Intent(SettingsFragment.super.getActivity(), GeoFencing.class));
+                return false;
             });
-            findPreference("beacon").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    startBeaconActivity();
-                    return false;
-                }
+            findPreference("beacon").setOnPreferenceClickListener(preference -> {
+                startBeaconActivity();
+                return false;
             });
-            findPreference("sort_loc").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    startActivity(new Intent(SettingsFragment.super.getActivity(), Reorder.class));
-                    return false;
-                }
+            findPreference("sort_loc").setOnPreferenceClickListener(preference -> {
+                startActivity(new Intent(SettingsFragment.super.getActivity(), Reorder.class));
+                return false;
             });
-            Preference.OnPreferenceChangeListener listener = new Preference.OnPreferenceChangeListener() {
-                @Override
-                public boolean onPreferenceChange(Preference preference, Object newValue) {
-                    preference.setSummary(getString(R.string.trigger_value) + newValue.toString());
-                    return true;
-                }
+            Preference.OnPreferenceChangeListener listener = (preference, newValue) -> {
+                preference.setSummary(getString(R.string.trigger_value) + newValue.toString());
+                return true;
             };
-            Preference.OnPreferenceChangeListener simpleList = new Preference.OnPreferenceChangeListener() {
-                @Override
-                public boolean onPreferenceChange(Preference preference, Object newValue) {
-                    preference.setSummary(getString(R.string.current_value) + newValue.toString());
-                    return true;
-                }
+            Preference.OnPreferenceChangeListener simpleList = (preference, newValue) -> {
+                preference.setSummary(getString(R.string.current_value) + newValue.toString());
+                return true;
             };
-            Preference.OnPreferenceChangeListener secondsListener = new Preference.OnPreferenceChangeListener() {
-                @Override
-                public boolean onPreferenceChange(Preference preference, Object newValue) {
-                    preference.setSummary(getString(R.string.current_value) + newValue.toString() + getString(R.string.seconds));
-                    return true;
-                }
+            Preference.OnPreferenceChangeListener secondsListener = (preference, newValue) -> {
+                preference.setSummary(getString(R.string.current_value) + newValue.toString() + getString(R.string.seconds));
+                return true;
             };
-            Preference.OnPreferenceChangeListener listenerSeconds = new Preference.OnPreferenceChangeListener() {
-                @Override
-                public boolean onPreferenceChange(Preference preference, Object newValue) {
-                    preference.setSummary(getString(R.string.current_volume) + newValue.toString() + "%");
-                    return true;
-                }
+            Preference.OnPreferenceChangeListener listenerSeconds = (preference, newValue) -> {
+                preference.setSummary(getString(R.string.current_volume) + newValue.toString() + "%");
+                return true;
             };
-            Preference.OnPreferenceChangeListener listenerPercentage = new Preference.OnPreferenceChangeListener() {
-                @Override
-                public boolean onPreferenceChange(Preference preference, Object newValue) {
-                    preference.setSummary(getString(R.string.current_percentage) + newValue.toString() + "%");
-                    return true;
-                }
+            Preference.OnPreferenceChangeListener listenerPercentage = (preference, newValue) -> {
+                preference.setSummary(getString(R.string.current_percentage) + newValue.toString() + "%");
+                return true;
             };
 
             ListPreference ringList = (ListPreference) findPreference("ringtone_select");
@@ -390,24 +323,17 @@ public class SettingsFragment extends PreferenceFragment {
             emailUpdates.setOnPreferenceChangeListener(simpleList);
             ringDur.setOnPreferenceChangeListener(secondsListener);
 
-            Preference.OnPreferenceClickListener generalInfo = new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                    builder.setMessage("Gmail triggers: once Gmail credentials are entered into the username and password boxes, this app will monitor that inbox for incoming\n" +
-                            "mail every time the battery level changes. On a battery level change, it will attempt to connect to that Gmail account and search for unread emails and scans their subject\n" +
-                            "line for triggers to perform actions. E.g. if a trigger to send the location is &#39;loc12345&#39; then sending that as a subject in an email to the monitored account will trigger that action\n" +
-                            "on a battery change i.e a charger is connected/disconnected, battery level rises/decreases. Additionally, this feature may require you to enable a Gmail setting called 'Enable Access From\n" +
-                            "Less Secure Apps' on the monitored account.")
-                            .setCancelable(false)
-                            .setPositiveButton(getString(R.string.OK), new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int id) {
-                                    dialog.dismiss();
-                                }
-                            });
-                    builder.create().show();
-                    return false;
-                }
+            Preference.OnPreferenceClickListener generalInfo = preference -> {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setMessage("Gmail triggers: once Gmail credentials are entered into the username and password boxes, this app will monitor that inbox for incoming\n" +
+                        "mail every time the battery level changes. On a battery level change, it will attempt to connect to that Gmail account and search for unread emails and scans their subject\n" +
+                        "line for triggers to perform actions. E.g. if a trigger to send the location is &#39;loc12345&#39; then sending that as a subject in an email to the monitored account will trigger that action\n" +
+                        "on a battery change i.e a charger is connected/disconnected, battery level rises/decreases. Additionally, this feature may require you to enable a Gmail setting called 'Enable Access From\n" +
+                        "Less Secure Apps' on the monitored account.")
+                        .setCancelable(false)
+                        .setPositiveButton(getString(R.string.OK), (dialog, id) -> dialog.dismiss());
+                builder.create().show();
+                return false;
             };
             findPreference("general_info").setOnPreferenceClickListener(generalInfo);
         }catch(Exception ignored){}
@@ -468,24 +394,19 @@ public class SettingsFragment extends PreferenceFragment {
         new android.support.v7.app.AlertDialog.Builder(getActivity())
                 .setMessage(getString(R.string.your_gcm_token) + "\n" + (currToken != null ? currToken : getString(R.string.no_gcm_token)))
                 .setCancelable(false)
-                .setPositiveButton(getString(R.string.OK), new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.dismiss();
-                    }
-                }).setNegativeButton(getString(R.string.copy), new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                if(currToken != null) {
-                    ClipboardManager clipboard = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
-                    if (clipboard != null) {
-                        clipboard.setPrimaryClip(ClipData.newPlainText("token", currToken));
-                        Toast.makeText(getActivity(), getString(R.string.token_clipboard), Toast.LENGTH_SHORT).show();
+                .setPositiveButton(getString(R.string.OK), (dialog, id) -> dialog.dismiss()).setNegativeButton(getString(R.string.copy), (dialog, id) -> {
+                    if(currToken != null) {
+                        ClipboardManager clipboard = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+                        if (clipboard != null) {
+                            clipboard.setPrimaryClip(ClipData.newPlainText("token", currToken));
+                            Toast.makeText(getActivity(), getString(R.string.token_clipboard), Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(getActivity(), getString(R.string.error_clipboard), Toast.LENGTH_SHORT).show();
+                        }
                     } else {
                         Toast.makeText(getActivity(), getString(R.string.error_clipboard), Toast.LENGTH_SHORT).show();
                     }
-                } else {
-                    Toast.makeText(getActivity(), getString(R.string.error_clipboard), Toast.LENGTH_SHORT).show();
-                }
-            }}).create().show();
+                }).create().show();
     }
     public void onResume() {
         super.onResume();

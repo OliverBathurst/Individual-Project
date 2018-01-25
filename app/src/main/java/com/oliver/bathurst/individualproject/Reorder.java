@@ -1,6 +1,5 @@
 package com.oliver.bathurst.individualproject;
 
-import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -8,10 +7,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -44,12 +41,9 @@ public class Reorder extends AppCompatActivity {
             bar.hide();
         }
 
-        (findViewById(R.id.fab)).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                saveOrder();
-                Reorder.super.onBackPressed();
-            }
+        (findViewById(R.id.fab)).setOnClickListener(view -> {
+            saveOrder();
+            Reorder.super.onBackPressed();
         });
         order = new ArrayList<>();
         lv = (ListView) findViewById(R.id.list);
@@ -59,40 +53,27 @@ public class Reorder extends AppCompatActivity {
                     settingsView.getString("third", getString(R.string.passive_value)));
         lv.setAdapter(new ArrayAdapter(this, R.layout.list_view, R.id.listviewAdapt, order));
 
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplication(), getString(R.string.selected) + order.get(position), Toast.LENGTH_SHORT).show();
-                selected = position;
+        lv.setOnItemClickListener((parent, view, position, id) -> {
+            Toast.makeText(getApplication(), getString(R.string.selected) + order.get(position), Toast.LENGTH_SHORT).show();
+            selected = position;
+        });
+        (findViewById(R.id.up)).setOnClickListener(v -> {
+            if (selected > 0) {
+                Collections.swap(order, selected, selected -1);
+                selected--;
+                reOrder();
             }
         });
-        (findViewById(R.id.up)).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (selected > 0) {
-                    Collections.swap(order, selected, selected -1);
-                    selected--;
-                    reOrder();
-                }
-            }
-        });
-        (findViewById(R.id.down)).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (selected  < order.size()-1) {
-                    Collections.swap(order, selected, selected + 1);
-                    selected++;
-                    reOrder();
-                }
+        (findViewById(R.id.down)).setOnClickListener(v -> {
+            if (selected  < order.size()-1) {
+                Collections.swap(order, selected, selected + 1);
+                selected++;
+                reOrder();
             }
         });
         new AlertDialog.Builder(this).setTitle(getString(R.string.warning))
                 .setMessage(getString(R.string.locator_precedence_warning))
-                .setPositiveButton(getString(R.string.OK), new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                dialog.dismiss();
-            }
-        }).create().show();
+                .setPositiveButton(getString(R.string.OK), (dialog, id) -> dialog.dismiss()).create().show();
     }
     private void reOrder(){
         lv.setAdapter(new ArrayAdapter(this, R.layout.list_view, R.id.listviewAdapt, order));

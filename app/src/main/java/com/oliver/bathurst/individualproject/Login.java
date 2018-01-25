@@ -1,6 +1,5 @@
 package com.oliver.bathurst.individualproject;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -8,7 +7,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
@@ -41,16 +39,8 @@ public class Login extends AppCompatActivity{
         pass = prefs.getString("app_pass", null);
         passHint = prefs.getString("app_pass_hint", null);
 
-        findViewById(R.id.email_sign_in_button).setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                attemptLogin();
-            }
-        });
-        findViewById(R.id.info_login).setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                infoDialog();
-            }
-        });
+        findViewById(R.id.email_sign_in_button).setOnClickListener(v -> attemptLogin());
+        findViewById(R.id.info_login).setOnClickListener(v -> infoDialog());
 
         perm = new PermissionsManager(this);
         perm.permissionsCheckup();
@@ -69,27 +59,19 @@ public class Login extends AppCompatActivity{
         input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
         builder.setView(input);
 
-        builder.setPositiveButton(getString(R.string.submit_login), new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                if (input.getText().toString().trim().equals(pass)) {
-                    startActivity(new Intent(Login.this, MainActivity.class));
-                    finish();
-                } else {
-                    input.getText().clear();
-                    Toast.makeText(getApplicationContext(), getString(R.string.login_fail_message), Toast.LENGTH_SHORT).show();
-                    if (passHint != null && passHint.trim().length() != 0) {
-                        Toast.makeText(getApplicationContext(), getString(R.string.show_password_hint) + passHint, Toast.LENGTH_LONG).show();
-                    }
+        builder.setPositiveButton(getString(R.string.submit_login), (dialog, which) -> {
+            if (input.getText().toString().trim().equals(pass)) {
+                startActivity(new Intent(Login.this, MainActivity.class));
+                finish();
+            } else {
+                input.getText().clear();
+                Toast.makeText(getApplicationContext(), getString(R.string.login_fail_message), Toast.LENGTH_SHORT).show();
+                if (passHint != null && passHint.trim().length() != 0) {
+                    Toast.makeText(getApplicationContext(), getString(R.string.show_password_hint) + passHint, Toast.LENGTH_LONG).show();
                 }
             }
         });
-        builder.setNegativeButton(getString(R.string.cancel_dialog), new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
+        builder.setNegativeButton(getString(R.string.cancel_dialog), (dialog, which) -> dialog.dismiss());
         builder.create().show();
     }
     private void infoDialog(){
@@ -97,10 +79,6 @@ public class Login extends AppCompatActivity{
                 .setMessage(getString(R.string.my_name) + "\n" + getString(R.string.email_address) + "\n" + (perm != null ? perm.getAppInfo() : getString(R.string.no_app_version_found))
                 + "\n" + getString(R.string.please_use_gcm_sms_instead))
                 .setCancelable(false)
-                .setPositiveButton(getString(R.string.OK), new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.dismiss();
-                    }
-                }).create().show();
+                .setPositiveButton(getString(R.string.OK), (dialog, id) -> dialog.dismiss()).create().show();
     }
 }

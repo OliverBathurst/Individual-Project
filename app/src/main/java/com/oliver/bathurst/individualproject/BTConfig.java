@@ -66,30 +66,27 @@ public class BTConfig extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {}
         });
-        (findViewById(R.id.saveBeacon)).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EditText edit = (EditText) findViewById(R.id.distanceBeacon);
-                if(edit.getText().toString().trim().length() != 0){
-                    try {
-                        Float toSave = Float.parseFloat(edit.getText().toString().trim());
-                        if(toSave > 0) {
-                            float temp = PreferenceManager.getDefaultSharedPreferences(getApplication()).getFloat(globalDeviceName, 0);
-                            if (selectedPosition == 0) {
-                                PreferenceManager.getDefaultSharedPreferences(getApplication()).edit().putFloat(globalDeviceName, (temp + (currentSignal / toSave)) / 2).apply();  //1 cm to dbm
-                            } else if (selectedPosition == 1) {
-                                PreferenceManager.getDefaultSharedPreferences(getApplication()).edit().putFloat(globalDeviceName, (temp + (currentSignal / (toSave * 100))) / 2).apply();  //1 cm to dbm
-                            }
-                        }else{
-                            Snackbar.make(findViewById(R.id.beaconContent), getString(R.string.div_by_0_error), Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+        (findViewById(R.id.saveBeacon)).setOnClickListener(v -> {
+            EditText edit = (EditText) findViewById(R.id.distanceBeacon);
+            if(edit.getText().toString().trim().length() != 0){
+                try {
+                    Float toSave = Float.parseFloat(edit.getText().toString().trim());
+                    if(toSave > 0) {
+                        float temp = PreferenceManager.getDefaultSharedPreferences(getApplication()).getFloat(globalDeviceName, 0);
+                        if (selectedPosition == 0) {
+                            PreferenceManager.getDefaultSharedPreferences(getApplication()).edit().putFloat(globalDeviceName, (temp + (currentSignal / toSave)) / 2).apply();  //1 cm to dbm
+                        } else if (selectedPosition == 1) {
+                            PreferenceManager.getDefaultSharedPreferences(getApplication()).edit().putFloat(globalDeviceName, (temp + (currentSignal / (toSave * 100))) / 2).apply();  //1 cm to dbm
                         }
-                    }catch(Exception e){
-                        Snackbar.make(findViewById(R.id.beaconContent), getString(R.string.failure_parsing), Snackbar.LENGTH_SHORT).setAction("Action", null).show();
-                        edit.setText("");
+                    }else{
+                        Snackbar.make(findViewById(R.id.beaconContent), getString(R.string.div_by_0_error), Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                     }
-                }else{
-                    Snackbar.make(findViewById(R.id.beaconContent), getString(R.string.no_distance_found), Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+                }catch(Exception e){
+                    Snackbar.make(findViewById(R.id.beaconContent), getString(R.string.failure_parsing), Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+                    edit.setText("");
                 }
+            }else{
+                Snackbar.make(findViewById(R.id.beaconContent), getString(R.string.no_distance_found), Snackbar.LENGTH_SHORT).setAction("Action", null).show();
             }
         });
     }
