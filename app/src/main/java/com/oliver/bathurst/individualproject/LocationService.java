@@ -200,7 +200,7 @@ public class LocationService extends Service implements LocationListener {
         }catch(SecurityException e){
             Toast.makeText(getApplicationContext(), c.getString(R.string.sec_exception) + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-        return result;
+        return !result;
     }
     int getMapType(final String mapType){
         switch (mapType.toUpperCase()) {
