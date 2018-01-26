@@ -13,6 +13,10 @@ import java.util.Date;
  * Written by Oliver Bathurst <oliverbathurst12345@gmail.com>
  */
 
+/**
+ * This class returns a large string of identifying information for returning location via SMS
+ */
+
 class SMSHelper {
     private final Context c;
 

@@ -13,11 +13,17 @@ import java.io.IOException;
  * Written by Oliver Bathurst <oliverbathurst12345@gmail.com>
  */
 
+/**
+ * Alarm rings or sounds a user-chosen ringtone
+ */
 class Alarm {
-    private final String duration, ringtone;
+    private final String duration, ringtone;//ringtone and string version of int
     private final Context c;
     private final int volume;
 
+    /**
+     * Initialised with ringtone volume, duration, and ringtone URI string
+     */
     Alarm(Context context, int ringVol, String ringDur, String ringtone){
         this.c = context;
         this.volume = ringVol;
@@ -25,20 +31,21 @@ class Alarm {
         this.ringtone = ringtone;
     }
 
+    /**
+     * Attempt to make sound
+     */
     void ring(){
-        int durationInt;
-        if(duration != null) {
+        int durationInt = 20;
+        if(duration != null) {//if duration exists
             try {
-                durationInt = Integer.parseInt(duration);
+                durationInt = Integer.parseInt(duration);//try parsing into a number
             } catch (NumberFormatException e) {
-                durationInt = 20;
+                durationInt = 20;//default to 20s
             }
-        }else{
-            durationInt = 20;
         }
 
-        Uri ringtoneUri;
-        try{
+        Uri ringtoneUri;//URI of ringtone
+        try{//try parsing URI, else get default alarm ringtone
             ringtoneUri = (ringtone != null && !ringtone.equals("error")) ? Uri.parse(ringtone) : RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
         }catch(Exception e){
             ringtoneUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
@@ -46,15 +53,14 @@ class Alarm {
         AudioManager audMan = ((AudioManager) c.getSystemService(Context.AUDIO_SERVICE));
         if(audMan != null){
             audMan.setStreamVolume(AudioManager.STREAM_MUSIC, volume, 0);
-        }
+        }//get audio service and set volume
         try {
-            final MediaPlayer mp = new MediaPlayer();
-            mp.setDataSource(c, ringtoneUri);
-            mp.setVolume(100, 100);
-            mp.prepare();
-            mp.start();
-
-            new Handler().postDelayed(mp::stop, durationInt * 1000);
+            final MediaPlayer mp = new MediaPlayer();//setup media player for playing
+            mp.setDataSource(c, ringtoneUri);//set source with context and the URI
+            mp.setVolume(100, 100);//set volume to be 100% (100% of the stream volume)
+            mp.prepare();//prepare
+            mp.start();//play
+            new Handler().postDelayed(mp::stop, durationInt * 1000);//stop after (seconds * 1000ms)
         }catch(IOException ignored){}
     }
 }

@@ -10,10 +10,10 @@ import com.google.android.gms.iid.InstanceIDListenerService;
 
 public class TokenRefreshListener extends InstanceIDListenerService {
     /**
-     * When token refresh, start the service to get new token
+     * When token refreshes, start the service to get new token
      */
     @Override
     public void onTokenRefresh() {
-        startService(new Intent(this, RegistrationIntentService.class)); //start registration service
+        startService(new Intent(this, RegistrationIntentService.class));//start registration service
     }
 }

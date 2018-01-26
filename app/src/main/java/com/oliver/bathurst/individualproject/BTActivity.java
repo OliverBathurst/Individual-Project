@@ -32,7 +32,6 @@ import java.util.ArrayList;
  */
 
 public class BTActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
     private ArrayList<BluetoothDevice> deviceList;
     private ArrayList<String> names, namesInner;
     private BluetoothAdapter blue;

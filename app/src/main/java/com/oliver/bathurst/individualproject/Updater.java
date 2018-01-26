@@ -4,9 +4,13 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.preference.PreferenceManager;
-
 /**
  * Created by Oliver on 30/12/2017.
+ * Written by Oliver Bathurst <oliverbathurst12345@gmail.com>
+ */
+
+/**
+ * This class performs an update request upon receipt of a connectivity intent (if below Android 7.0)
  */
 
 @SuppressWarnings("DefaultFileTemplate")
