@@ -25,7 +25,6 @@ import java.io.Serializable;
 import java.util.HashMap;
 
 public class CellTowerMap extends FragmentActivity implements OnMapReadyCallback {
-
     private GoogleMap mMap;
     private HashMap cellTowers;
 
@@ -33,8 +32,7 @@ public class CellTowerMap extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cell_tower_map);
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+        ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMapAsync(this);
 
         Serializable cellTowersReceived = getIntent().getSerializableExtra("CELL_TOWERS");
         if (cellTowersReceived instanceof HashMap) {
@@ -79,15 +77,12 @@ public class CellTowerMap extends FragmentActivity implements OnMapReadyCallback
             }else if (cell instanceof CellInfoCdma){
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
                     CellIdentityCdma  identity = ((CellInfoCdma) cell).getCellIdentity();
-                    addToMap(String.valueOf(getString(R.string.cdma)), identity.getLatitude(), identity.getLongitude());
+                    if(mMap != null) {
+                        mMap.addMarker(new MarkerOptions().position(new LatLng(identity.getLatitude(), identity.getLongitude())).title(getString(R.string.cdma)));
+                        mMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(identity.getLatitude(), identity.getLongitude())).zoom(15).bearing(0).tilt(45).build()));
+                    }
                 }
             }
-        }
-    }
-    private void addToMap(String identity, double lat, double lon){
-        if(mMap != null) {
-            mMap.addMarker(new MarkerOptions().position(new LatLng(lat, lon)).title(identity));
-            mMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(lat, lon)).zoom(15).bearing(0).tilt(45).build()));
         }
     }
     private void validate(int title, Double[] da){

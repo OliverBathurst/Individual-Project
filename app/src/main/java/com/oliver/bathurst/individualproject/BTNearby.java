@@ -57,8 +57,8 @@ class BTNearby {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         StringBuilder sb = new StringBuilder();
         for(Pair<BluetoothDevice, Integer> p: finalList){
-            Float temp = sp.getFloat(p.first.getName(), Integer.MAX_VALUE);//default to max value for error checking
-            if(temp != Integer.MAX_VALUE){
+            Float temp = sp.getFloat(p.first.getName(), Float.MAX_VALUE);//default to max value for error checking
+            if(temp != Float.MAX_VALUE){
                 sb.append(context.getString(R.string.beacon_device)).append(p.first.getName()).append("\n")
                         .append(context.getString(R.string.est_distance_m))
                         .append(p.second/temp).append(context.getString(R.string.centimetres)).append("\n");
@@ -104,6 +104,7 @@ class BTNearby {
                 }
             }
         }
+        isFinished = true;
     }
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
@@ -112,7 +113,6 @@ class BTNearby {
                 updateList(intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE), (int) intent.getShortExtra(BluetoothDevice.EXTRA_RSSI, Short.MIN_VALUE));
             } else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(intent.getAction())) {
                 compare();
-                isFinished = true;
             }
         }
     };

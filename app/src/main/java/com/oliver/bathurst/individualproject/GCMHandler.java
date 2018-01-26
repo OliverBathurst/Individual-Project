@@ -15,13 +15,11 @@ import android.telephony.SmsManager;
  */
 
 class GCMHandler {
-    private final Bundle toExamine;
     private final Context context;
     private final String message, extras, relay;
 
     GCMHandler(String str, Bundle data, Context c){
         this.message = str;
-        this.toExamine = data;
         this.context = c;
         this.extras = data.getString("extra");
         this.relay = data.getString("sender");

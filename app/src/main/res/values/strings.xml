@@ -239,7 +239,6 @@
     <string name="cannot_add_beacon">Cannot add device</string>
     <string name="turning_bluetooth_on">Turning Bluetooth on…</string>
     <string name="started_discovery">Started discovery</string>
-    <string name="android_too_low">Android version too low for BLE</string>
     <string name="uuid">UUID&#160;</string>
     <string name="alias">Alias:&#160;</string>
     <string name="address">Address:&#160;</string>
