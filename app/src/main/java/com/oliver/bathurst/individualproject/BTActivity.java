@@ -79,14 +79,10 @@ public class BTActivity extends AppCompatActivity implements NavigationView.OnNa
                 Snackbar.make(findViewById(R.id.drawer_layout), getString(R.string.turning_bluetooth_on), Snackbar.LENGTH_SHORT).setAction("Action", null).show();
             }
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                registerReceiver(mReceiver, new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED));
-                registerReceiver(mReceiver, new IntentFilter(BluetoothDevice.ACTION_FOUND));
-                blue.startDiscovery();
-                Toast.makeText(this, getString(R.string.started_discovery), Toast.LENGTH_SHORT).show();
-            }else{
-                Toast.makeText(this, getString(R.string.android_too_low), Toast.LENGTH_SHORT).show();
-            }
+            registerReceiver(mReceiver, new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED));
+            registerReceiver(mReceiver, new IntentFilter(BluetoothDevice.ACTION_FOUND));
+            blue.startDiscovery();
+            Toast.makeText(this, getString(R.string.started_discovery), Toast.LENGTH_SHORT).show();
         }else{
             Snackbar.make(findViewById(R.id.drawer_layout), getString(R.string.bluetooth_not_available), Snackbar.LENGTH_SHORT).setAction("Action", null).show();
         }

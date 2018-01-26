@@ -156,7 +156,7 @@
     <string name="show_password_hint">Password hint:&#160;</string>
     <string name="failure_parsing">Failure to parse text</string>
     <string name="loaded_bt_device">Loaded</string>
-    <string name="div_by_0_error">Division by zero</string>
+    <string name="div_by_0_error">Division by zero/input error</string>
     <string name="no_distance_found">No distance provided</string>
     <string name="beacon_update_title">Bluetooth Update</string>
     <string name="location_update_title">Location Update</string>

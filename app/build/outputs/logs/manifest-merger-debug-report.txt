@@ -425,7 +425,7 @@ action#android.intent.action.SIM_STATE_CHANGED
 ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:120:17-82
 	android:name
 		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:120:25-79
-receiver#com.oliver.bathurst.individualproject.GCMBroadcast
+receiver#com.oliver.bathurst.individualproject.GCMBroadcastLocation
 ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:123:9-133:20
 	android:enabled
 		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:125:13-35
@@ -434,7 +434,7 @@ ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\
 	tools:ignore
 		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:127:13-44
 	android:name
-		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:124:13-41
+		ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:124:13-49
 intent-filter#android.intent.category.DEFAULT+oliver.intent.action.GCM
 ADDED from C:\Users\Oliver\AndroidStudioProjects\IndividualProject\app\src\main\AndroidManifest.xml:128:13-132:29
 	android:priority

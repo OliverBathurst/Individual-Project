@@ -72,12 +72,13 @@ public class BTConfig extends AppCompatActivity {
                 try {
                     Float toSave = Float.parseFloat(edit.getText().toString().trim());
                     if(toSave > 0) {
-                        float temp = PreferenceManager.getDefaultSharedPreferences(getApplication()).getFloat(globalDeviceName, 0);
-                        if (selectedPosition == 0) {
-                            PreferenceManager.getDefaultSharedPreferences(getApplication()).edit().putFloat(globalDeviceName, (temp + (currentSignal / toSave)) / 2).apply();  //1 cm to dbm
-                        } else if (selectedPosition == 1) {
-                            PreferenceManager.getDefaultSharedPreferences(getApplication()).edit().putFloat(globalDeviceName, (temp + (currentSignal / (toSave * 100))) / 2).apply();  //1 cm to dbm
-                        }
+                        float temp = PreferenceManager.getDefaultSharedPreferences(getApplication()).getFloat(globalDeviceName, Float.MAX_VALUE);
+                        boolean isDefault = (temp == Float.MAX_VALUE);
+                        int divisor = (isDefault ? 1 : 2);
+                        float tempValue = (isDefault ? 0 : temp);
+
+                        PreferenceManager.getDefaultSharedPreferences(getApplication()).edit().putFloat(globalDeviceName,
+                                (tempValue + (currentSignal / (toSave * (selectedPosition == 0 ? 1 : 100)))) / divisor).apply();  //1 cm to dbm
                     }else{
                         Snackbar.make(findViewById(R.id.beaconContent), getString(R.string.div_by_0_error), Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                     }
@@ -120,7 +121,7 @@ public class BTConfig extends AppCompatActivity {
                     BTAdapter.cancelDiscovery();
                     BTAdapter.startDiscovery();
                 }
-            }else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(intent.getAction())){
+            }else if(BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(intent.getAction())){
                 BTAdapter.startDiscovery();
             }
         }
