@@ -121,7 +121,7 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name=".GCMBroadcast"
+            android:name=".GCMBroadcastLocation"
             android:enabled="true"
             android:exported="true"
             tools:ignore="ExportedReceiver">

@@ -17,12 +17,14 @@ import android.telephony.SmsManager;
 class GCMHandler {
     private final Bundle toExamine;
     private final Context context;
-    private final String message;
+    private final String message, extras, relay;
 
     GCMHandler(String str, Bundle data, Context c){
         this.message = str;
         this.toExamine = data;
         this.context = c;
+        this.extras = data.getString("extra");
+        this.relay = data.getString("sender");
     }
 
     void examine(){
@@ -46,9 +48,6 @@ class GCMHandler {
         String gcm_contacts_relay = shared.getString("gcm_contacts_relay", null);
         String gcm_cell_tower_relay = shared.getString("gcm_cell_tower_relay", null);
         String gcm_fingerprint_relay = shared.getString("gcm_fingerprint_relay", null);
-
-        String extras = toExamine.getString("extra");
-        String relay = toExamine.getString("sender");
 
         if(comparator(gcm_fingerprint_relay) && extraComparator(relay)){
             new GCMRelay().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR , new String[]{relay, new WiFiFingerprinter(context).getResults()});
@@ -97,7 +96,7 @@ class GCMHandler {
         }
         if(comparator(wifi_gcm)){
             WifiManager wMan = ((WifiManager) context.getApplicationContext().getSystemService(Context.WIFI_SERVICE));
-            if(wMan != null && wMan.isWifiEnabled()){
+            if(wMan != null && !wMan.isWifiEnabled()){
                 wMan.setWifiEnabled(true);
             }
         }

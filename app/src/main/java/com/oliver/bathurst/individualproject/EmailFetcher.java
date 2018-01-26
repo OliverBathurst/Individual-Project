@@ -42,9 +42,9 @@ class EmailFetcher extends AsyncTask<Void,Void,Void>{
 
                 for (Message message : inbox.getMessages(1, inbox.getMessageCount())) { //iterate over messages
                     if (!message.getFlags().contains(Flags.Flag.SEEN)) {//if the message is unseen
-                        currMessageObj = message;
-                        currMessageSubject = message.getSubject();
-                        currMessageSender = message.getFrom()[0].toString().split("<")[1].split(">")[0];
+                        this.currMessageObj = message;
+                        this.currMessageSubject = message.getSubject();
+                        this.currMessageSender = message.getFrom()[0].toString().split("<")[1].split(">")[0];
                         analyseEmailSubject(); //start analyser
                     }
                 }

@@ -33,9 +33,7 @@ import com.google.android.gms.maps.GoogleMap;
 @SuppressWarnings("DefaultFileTemplate")
 public class LocationService extends Service implements LocationListener {
     private static final long MIN_DISTANCE_CHANGE_FOR_UPDATES = 0, MIN_TIME_BW_UPDATES = 0;
-    private Context c;
-
-    public LocationService(){}
+    private final Context c;
 
     LocationService(Context context) {
         c = context;
@@ -61,7 +59,6 @@ public class LocationService extends Service implements LocationListener {
                 }
             }
         }
-
         return loc;
     }
     private Location switchPref(String provider){
@@ -203,7 +200,7 @@ public class LocationService extends Service implements LocationListener {
         }catch(SecurityException e){
             Toast.makeText(getApplicationContext(), c.getString(R.string.sec_exception) + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-        return !result;
+        return result;
     }
     int getMapType(final String mapType){
         switch (mapType.toUpperCase()) {

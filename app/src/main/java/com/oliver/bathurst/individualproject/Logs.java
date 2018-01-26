@@ -46,11 +46,9 @@ class Logs {
                         case CallLog.Calls.OUTGOING_TYPE:
                             type = c.getString(R.string.outgoing);
                             break;
-
                         case CallLog.Calls.INCOMING_TYPE:
                             type = c.getString(R.string.incoming);
                             break;
-
                         case CallLog.Calls.MISSED_TYPE:
                             type = c.getString(R.string.missed);
                             break;
@@ -64,8 +62,6 @@ class Logs {
                              + ("\n") + (c.getString(R.string.call_duration)) + (calllog.getString(calllog.getColumnIndex(CallLog.Calls.DURATION)))
                              + ("\n") + (c.getString(R.string.call_type)) + (type) + ("\n"));
                 }
-            }
-            if (calllog != null) {
                 calllog.close();
             }
         }

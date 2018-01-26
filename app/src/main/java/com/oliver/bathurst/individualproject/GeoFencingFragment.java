@@ -99,11 +99,11 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
         (mView.findViewById(R.id.cancel)).setOnClickListener(v -> startActivity(new Intent(getContext(), MainActivity.class)));
 
         (mView.findViewById(R.id.save)).setOnClickListener(v -> {
-            SharedPreferences.Editor settings = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
-            settings.putInt("geo_fence_value", (mRadius * scaleFactorInt));
-            settings.putLong("geo_fence_cordLat", Double.doubleToRawLongBits(loc.getLatitude()));//geofence center latitude
-            settings.putLong("geo_fence_cordLon", Double.doubleToRawLongBits(loc.getLongitude()));//geofence center longitude
-            settings.apply();
+            PreferenceManager.getDefaultSharedPreferences(getContext()).edit()
+                    .putInt("geo_fence_value", (mRadius * scaleFactorInt))
+                    .putLong("geo_fence_cordLat", Double.doubleToRawLongBits(loc.getLatitude()))//geofence center latitude
+                    .putLong("geo_fence_cordLon", Double.doubleToRawLongBits(loc.getLongitude()))//geofence center longitude
+                    .apply();
             mGeofencingClient = LocationServices.getGeofencingClient(getActivity());
 
             myList.clear();
