@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
 import android.preference.PreferenceManager;
@@ -60,7 +61,9 @@ public class WiFiScanner extends AppCompatActivity {
     private void save(){
         progressText.setText(R.string.saving);
         ArrayList<Pair<String, HashMap<String, Integer>>> toStore;//store alias along with a hashmap of SSIDs and averaged signal strengths
-        String doesExist = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("WIFI_PRINTS", null);
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        String doesExist = sharedPreferences.getString("WIFI_PRINTS", null);
+
         if(doesExist != null){ //if the string exists
             toStore = new Gson().fromJson(doesExist, new TypeToken<ArrayList<Pair<String, HashMap<String, Integer>>>>() {}.getType()); //deserialize
             toStore.add(new Pair<>(aliasString, wifiHashMap));//add pair
@@ -68,17 +71,17 @@ public class WiFiScanner extends AppCompatActivity {
             toStore = new ArrayList<>(); //create a new arraylist
             toStore.add(new Pair<>(aliasString, wifiHashMap));//add pair
         }
-        PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("WIFI_PRINTS", new Gson().toJson(toStore)).apply(); //write back to storage
+        sharedPreferences.edit().putString("WIFI_PRINTS", new Gson().toJson(toStore)).apply(); //write back to storage
         progressText.setText(R.string.finished);
     }
     private void adder(List<ScanResult> wifiList){
         if(SCANS != 0){
             for(ScanResult scanResult: wifiList){
-                String SSID = scanResult.SSID;
-                if(wifiHashMap.containsKey(SSID)){//if already in hashmap
-                    wifiHashMap.put(SSID, ((wifiHashMap.get(scanResult.SSID) + scanResult.level) / 2)); //calculate average and overwrite previous value with key
+                Integer RSSI = wifiHashMap.get(scanResult.SSID);
+                if(RSSI != null){//if already in hashmap
+                    wifiHashMap.put(scanResult.SSID, ((RSSI + scanResult.level) / 2)); //calculate average and overwrite previous value with key
                 }else{
-                    wifiHashMap.put(SSID, scanResult.level);//else add it to the list as a new AP
+                    wifiHashMap.put(scanResult.SSID, scanResult.level);//else add it to the list as a new AP
                 }
             }
             SCANS--;

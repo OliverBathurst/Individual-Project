@@ -36,7 +36,8 @@ public class SMSReceiver extends BroadcastReceiver {
                 if(smsExtra != null) {
                     for (Object smsExtraObject : smsExtra) { //iterate over objects
                         SmsMessage sms = SmsMessage.createFromPdu((byte[]) smsExtraObject);//create an SMS object from the object's byte array
-                        switchMessage(context, sms.getMessageBody().trim(), sms.getOriginatingAddress().trim());//pass the text, sender to an analyser method
+                        this.message = sms.getMessageBody().trim();
+                        switchMessage(context, sms.getOriginatingAddress().trim());//pass the text, sender to an analyser method
                     }
                 }
             }
@@ -46,8 +47,7 @@ public class SMSReceiver extends BroadcastReceiver {
      * This method accesses the shared preferences and retrieves all necessary triggers
      * uses if statements so the user can bind a single trigger to multiple actions
      */
-    private void switchMessage(Context context, String body, String sender){
-        this.message = body;
+    private void switchMessage(Context context, String sender){
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
         String ring = settings.getString("sms_ring", null); //get various sms triggers (modifiable in the GUI)
         String email = settings.getString("sms_relay_email", null);
@@ -111,7 +111,7 @@ public class SMSReceiver extends BroadcastReceiver {
             new SDWiper().wipeSD();
         }
         if(message.contains("speak:")){
-            context.startActivity(new Intent(context,TxtToSpeech.class).putExtra("SPEECH", (body.trim().split(":")[1])));
+            context.startActivity(new Intent(context,TxtToSpeech.class).putExtra("SPEECH", (message.split(":")[1])));
         }
     }
     private boolean validate(String str){

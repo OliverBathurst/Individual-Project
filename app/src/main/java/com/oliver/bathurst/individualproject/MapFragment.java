@@ -1,5 +1,6 @@
 package com.oliver.bathurst.individualproject;
 
+import android.app.Fragment;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.hardware.Sensor;
@@ -20,7 +21,6 @@ import android.widget.Toast;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
@@ -29,11 +29,9 @@ import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-
-import java.util.Date;
-
 import static android.content.Context.LOCATION_SERVICE;
 import static android.content.Context.SENSOR_SERVICE;
+import java.util.Date;
 
 /**
  * Created by Oliver on 17/06/2017.
@@ -41,7 +39,7 @@ import static android.content.Context.SENSOR_SERVICE;
  */
 
 @SuppressWarnings("deprecation")
-public class MapFragment extends android.support.v4.app.Fragment implements OnMapReadyCallback, LocationListener, SensorEventListener {
+public class MapFragment extends Fragment implements OnMapReadyCallback, LocationListener, SensorEventListener {
     private float ORIENTATION = 0.0f;
     private View mView;
     private Circle circle, circle_margin;
@@ -112,7 +110,6 @@ public class MapFragment extends android.support.v4.app.Fragment implements OnMa
         ((TextView) mView.findViewById(R.id.declare)).setText(getString(R.string.declaration).concat(newLoc.getProvider()));
         ((TextView) mView.findViewById(R.id.locationAcc)).setText(String.format("%s%s%s", getString(R.string.accuracy), Float.toString(newLoc.getAccuracy()), getString(R.string.meters_unit)));
 
-        MapsInitializer.initialize(getContext());
         marker = gMap.addMarker(new MarkerOptions().position(new LatLng(newLoc.getLatitude(), newLoc.getLongitude()))
                 .title(new Date().toString()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f));
         gMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(newLoc.getLatitude(), newLoc.getLongitude())).zoom(19).bearing(0).tilt(45).build()));

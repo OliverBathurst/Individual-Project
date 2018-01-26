@@ -14,7 +14,8 @@ import com.google.android.gms.iid.InstanceID;
 import java.io.IOException;
 
 public class RegistrationIntentService extends IntentService {
-    public static final String REGISTRATION_SUCCESS = "RegistrationSuccess", REGISTRATION_ERROR = "RegistrationError";
+    public static final String REGISTRATION_SUCCESS = "RegistrationSuccess";
+    private static final String REGISTRATION_ERROR = "RegistrationError";
 
     public RegistrationIntentService() {
         super("");

@@ -55,12 +55,10 @@ class WiFiFingerprinter {
             }
         }
         if(points.isEmpty()){
-            response = c.getString(R.string.no_saved_points);
-            isFinished = true;
+            finish(c.getString(R.string.no_saved_points));
         }else{
             Collections.sort(points, (o1, o2) -> o1.second - o2.second);
-            response = c.getString(R.string.alias) + points.get(points.size()-1).first;
-            isFinished = true;
+            finish(c.getString(R.string.alias) + points.get(points.size()-1).first);
         }
     }
     private void startScan(){
@@ -74,16 +72,13 @@ class WiFiFingerprinter {
                     c.getApplicationContext().registerReceiver(wifiReceiver, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
                     wifiMan.startScan();
                 } else {
-                    response = c.getString(R.string.wifi_not_supported);
-                    isFinished = true;
+                    finish(c.getString(R.string.wifi_not_supported));
                 }
             }else{
-                response = c.getString(R.string.no_fingerprints_found);
-                isFinished = true;
+                finish(c.getString(R.string.no_fingerprints_found));
             }
         }else{
-            response = c.getString(R.string.no_fingerprints_found);
-            isFinished = true;
+            finish(c.getString(R.string.no_fingerprints_found));
         }
     }
     private final BroadcastReceiver wifiReceiver = new BroadcastReceiver() {
@@ -92,4 +87,8 @@ class WiFiFingerprinter {
             compare(wifiMan.getScanResults());
         }
     };
+    private void finish(String endText){
+        response = endText;
+        isFinished = true;
+    }
 }

@@ -69,7 +69,7 @@ public class SettingsFragment extends PreferenceFragment {
                                             Toast.makeText(getActivity(), getString(R.string.error_clipboard), Toast.LENGTH_SHORT).show();
                                         }
                                     }).create().show();
-                        } else if (intent.getAction().equals(RegistrationIntentService.REGISTRATION_ERROR)) {
+                        } else {
                             Toast.makeText(getActivity(), getString(R.string.gcm_reg_error), Toast.LENGTH_LONG).show();
                         }
                     }
@@ -379,7 +379,7 @@ public class SettingsFragment extends PreferenceFragment {
     }
     private void startBeaconActivity(){
         BluetoothAdapter bt = BluetoothAdapter.getDefaultAdapter(); //get default adapter
-        if(bt != null) { //if bluetooth is enabled
+        if(bt != null) { //if bluetooth not available
             if (!bt.isEnabled()) {//if not enabled
                 startActivityForResult(new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE), REQUEST_ENABLE_BT); //request enable
             }else{//if bluetooth is enabled already
@@ -411,7 +411,6 @@ public class SettingsFragment extends PreferenceFragment {
     public void onResume() {
         super.onResume();
         LocalBroadcastManager.getInstance(getActivity()).registerReceiver(mRegistrationBroadcastReceiver, new IntentFilter(RegistrationIntentService.REGISTRATION_SUCCESS));
-        LocalBroadcastManager.getInstance(getActivity()).registerReceiver(mRegistrationBroadcastReceiver, new IntentFilter(RegistrationIntentService.REGISTRATION_ERROR));
     }
     @Override
     public void onPause() {

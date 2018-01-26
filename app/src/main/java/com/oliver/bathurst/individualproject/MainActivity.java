@@ -1,5 +1,6 @@
 package com.oliver.bathurst.individualproject;
 
+import android.app.Fragment;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -28,27 +29,15 @@ public class MainActivity extends AppCompatActivity{
                 while (getFragmentManager().getBackStackEntryCount() > 0) {
                     getFragmentManager().popBackStackImmediate();
                 }
-
                 switch (item.getItemId()) {
                     case R.id.navigation_home:
-                        getSupportFragmentManager().beginTransaction().add(R.id.content, new MapFragment()).commitNow();
-                        item.setChecked(true);
+                        navigate(new MapFragment(), item);
                         return true;
                     case R.id.navigation_dashboard:
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                            getFragmentManager().beginTransaction().add(R.id.content, new SettingsFragment()).commitNow();
-                        }else{
-                            getFragmentManager().beginTransaction().add(R.id.content, new SettingsFragment()).commit();
-                        }
-                        item.setChecked(true);
+                        navigate(new SettingsFragment(), item);
                         return true;
                     case R.id.navigation_device:
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                            getFragmentManager().beginTransaction().add(R.id.content, new DeviceFragment()).commitNow();
-                        }else{
-                            getFragmentManager().beginTransaction().add(R.id.content, new DeviceFragment()).commit();
-                        }
-                        item.setChecked(true);
+                        navigate(new DeviceFragment(), item);
                         return true;
                 }
                 return false;
@@ -56,6 +45,14 @@ public class MainActivity extends AppCompatActivity{
             return false;
         }
     };
+    private void navigate(Fragment f, MenuItem i){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            getFragmentManager().beginTransaction().add(R.id.content, f).commitNow();
+        }else{
+            getFragmentManager().beginTransaction().add(R.id.content, f).commit();
+        }
+        i.setChecked(true);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,8 +60,9 @@ public class MainActivity extends AppCompatActivity{
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
-        ((BottomNavigationView) findViewById(R.id.navigation)).setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         frame = (FrameLayout) findViewById(R.id.content);
-        getSupportFragmentManager().beginTransaction().add(R.id.content, new MapFragment()).commitNow();
+        BottomNavigationView bottomNavigationView = ((BottomNavigationView) findViewById(R.id.navigation));
+        bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        bottomNavigationView.setSelectedItemId(R.id.navigation_dashboard);
     }
 }
