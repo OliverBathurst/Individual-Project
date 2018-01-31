@@ -76,7 +76,7 @@ public class SettingsFragment extends PreferenceFragment {
                 }
             };
 
-            (findPreference("hide_app")).setOnPreferenceClickListener(preference -> {
+            findPreference("hide_app").setOnPreferenceClickListener(preference -> {
                 HideApp hidden = new HideApp(getActivity());
                 hidden.toggle();
                 Toast.makeText(getActivity(), String.valueOf(hidden.getStatus()), Toast.LENGTH_SHORT).show();
@@ -90,9 +90,12 @@ public class SettingsFragment extends PreferenceFragment {
                 getCurrentGCM();
                 return false;
             });
-
             findPreference("register").setOnPreferenceClickListener(preference -> {
                 registerGCM();
+                return false;
+            });
+            findPreference("update_now").setOnPreferenceClickListener(preference -> {
+                new UpdateDatabase(new LocationService(getActivity()).getLoc(), getActivity()).update();
                 return false;
             });
             findPreference("open_interface").setOnPreferenceClickListener(preference -> {

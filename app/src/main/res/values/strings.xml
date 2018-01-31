@@ -350,4 +350,6 @@
     <string name="update_on_status">Update on Device Status Change</string>
     <string name="update_on_battery">Update on Battery Level Change</string>
     <string name="N_or_up">Android 7.0 or higher required for full functionality</string>
+    <string name="location_now">Update Location Now</string>
+    <string name="manual_update_loc">Manually send current location to database</string>
 </resources>

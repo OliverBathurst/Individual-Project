@@ -678,6 +678,13 @@
             android:title="@string/update_on_battery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+        <Preference
+            android:key="update_now"
+            android:icon="@drawable/ic_account_circle_black_24dp"
+            android:title="@string/location_now"
+            android:summary="@string/manual_update_loc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </PreferenceCategory>
 
 </PreferenceScreen>
