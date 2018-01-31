@@ -139,11 +139,11 @@
         <receiver
             android:name="com.oliver.bathurst.individualproject.BTActivity$mReceiver"
             android:enabled="true" />
-
-        <!-- GCM -->
+        <receiver
+            android:name="com.oliver.bathurst.individualproject.BTNearby$mReceiver"
+            android:enabled="true" />
         <receiver
             android:name="com.google.android.gms.gcm.GcmReceiver"
-            android:exported="true"
             android:permission="com.google.android.c2dm.permission.SEND" >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
@@ -154,7 +154,7 @@
 
         <service
             android:name="com.oliver.bathurst.individualproject.GCMReceiverService"
-            android:exported="true" >
+            android:exported="false" >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
             </intent-filter>

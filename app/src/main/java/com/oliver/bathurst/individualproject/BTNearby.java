@@ -7,7 +7,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.preference.PreferenceManager;
 import android.util.Pair;
 import com.google.gson.Gson;
@@ -35,9 +34,6 @@ class BTNearby {
     @SuppressWarnings("StatementWithEmptyBody")
     String run(){
         if(blue != null){
-            if(blue.isDiscovering()) {
-                blue.cancelDiscovery();
-            }
             if (!blue.isEnabled()) {
                 blue.enable();
             }
@@ -67,13 +63,12 @@ class BTNearby {
         return sb.toString().trim().length() != 0 ? sb.toString().trim() : context.getString(R.string.no_beacons_found);
     }
     private void scan(){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            context.getApplicationContext().registerReceiver(mReceiver, new IntentFilter(BluetoothDevice.ACTION_FOUND));
-            context.getApplicationContext().registerReceiver(mReceiver, new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED));
-            blue.startDiscovery();
-        }else{
-            isFinished = true;
+        context.getApplicationContext().registerReceiver(mReceiver, new IntentFilter(BluetoothDevice.ACTION_FOUND));
+        context.getApplicationContext().registerReceiver(mReceiver, new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED));
+        if(blue.isDiscovering()) {
+            blue.cancelDiscovery();
         }
+        blue.startDiscovery();
     }
     private void updateList(BluetoothDevice blueDev, int rssi){
         if(blueDev != null) {
@@ -99,19 +94,21 @@ class BTNearby {
                 for (Pair<BluetoothDevice, Integer> p : deviceList) {
                     if (p.first.equals(bd)) { //if it finds a saved beacon
                         finalList.add(p);
-                        break;
                     }
                 }
             }
         }
+        context.getApplicationContext().unregisterReceiver(mReceiver);
         isFinished = true;
     }
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            if (BluetoothDevice.ACTION_FOUND.equals(intent.getAction()) && blue.isDiscovering()) {
+            if (BluetoothDevice.ACTION_FOUND.equals(intent.getAction())) {
                 updateList(intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE), (int) intent.getShortExtra(BluetoothDevice.EXTRA_RSSI, Short.MIN_VALUE));
+                System.out.println("FOUND DEVICE");
             } else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(intent.getAction())) {
+                System.out.println("COMPARING");
                 compare();
             }
         }
