@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "677342032807",
-    "firebase_url": "https://finalyearp-2c8e9.firebaseio.com",
-    "project_id": "finalyearp-2c8e9",
-    "storage_bucket": "finalyearp-2c8e9.appspot.com"
+    "project_number": "827608726307",
+    "firebase_url": "https://individual-proje-1506098783043.firebaseio.com",
+    "project_id": "individual-proje-1506098783043",
+    "storage_bucket": "individual-proje-1506098783043.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:677342032807:android:857be97c3c142a00",
+        "mobilesdk_app_id": "1:827608726307:android:857be97c3c142a00",
         "android_client_info": {
           "package_name": "com.oliver.bathurst.individualproject"
         }
       },
       "oauth_client": [
         {
-          "client_id": "677342032807-c5opuh5i84en9k61qa14iklruvqq2ori.apps.googleusercontent.com",
+          "client_id": "827608726307-n6kdngdn74oospm1ueldavh6es9jtsri.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB7Y0ELHBz6zXAJiOkf0K-ZcnFzFeop4WA"
+          "current_key": "AIzaSyDvNpwbBOViIX2m9BFq1b51RkIML2O3c2Q"
         }
       ],
       "services": {

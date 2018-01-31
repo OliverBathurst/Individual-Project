@@ -12,7 +12,6 @@ import android.preference.PreferenceManager;
 /**
  * This class performs an update request upon receipt of a connectivity intent (if below Android 7.0)
  */
-
 @SuppressWarnings("DefaultFileTemplate")
 public class Updater extends BroadcastReceiver {
     @Override

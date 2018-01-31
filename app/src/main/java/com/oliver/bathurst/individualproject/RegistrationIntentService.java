@@ -25,13 +25,13 @@ public class RegistrationIntentService extends IntentService {
     protected void onHandleIntent(Intent intent) {
         Intent registration;
         try {
-            String token = InstanceID.getInstance(getApplicationContext()).getToken(getString(R.string.gcm_defaultSenderId), GoogleCloudMessaging.INSTANCE_ID_SCOPE, null);
-            PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("GCM_Token", token).apply();
-            registration = new Intent(REGISTRATION_SUCCESS);
-            registration.putExtra("token", token);
+            String token = InstanceID.getInstance(getApplicationContext()).getToken(getString(R.string.gcm_defaultSenderId), GoogleCloudMessaging.INSTANCE_ID_SCOPE, null);//get a token
+            PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("GCM_Token", token).apply();//save to prefs
+            registration = new Intent(REGISTRATION_SUCCESS);//specify success intent
+            registration.putExtra("token", token);//put token in intent
         } catch (IOException e) {
-            registration = new Intent(REGISTRATION_ERROR);
+            registration = new Intent(REGISTRATION_ERROR);//send error intent
         }
-        LocalBroadcastManager.getInstance(this).sendBroadcast(registration);
+        LocalBroadcastManager.getInstance(this).sendBroadcast(registration);//send broadcast
     }
 }

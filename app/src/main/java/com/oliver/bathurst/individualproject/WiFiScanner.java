@@ -64,29 +64,30 @@ public class WiFiScanner extends AppCompatActivity {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         String doesExist = sharedPreferences.getString("WIFI_PRINTS", null);
 
-        if(doesExist != null){ //if the string exists
+        if(doesExist != null){ //if the structure exists, deserialize
             toStore = new Gson().fromJson(doesExist, new TypeToken<ArrayList<Pair<String, HashMap<String, Integer>>>>() {}.getType()); //deserialize
             toStore.add(new Pair<>(aliasString, wifiHashMap));//add pair
         }else{//if null (non-existing)
             toStore = new ArrayList<>(); //create a new arraylist
             toStore.add(new Pair<>(aliasString, wifiHashMap));//add pair
         }
+        //serialise and save into shared preferences
         sharedPreferences.edit().putString("WIFI_PRINTS", new Gson().toJson(toStore)).apply(); //write back to storage
         progressText.setText(R.string.finished);
     }
     private void adder(List<ScanResult> wifiList){
-        if(SCANS != 0){
-            for(ScanResult scanResult: wifiList){
-                Integer RSSI = wifiHashMap.get(scanResult.SSID);
+        if(SCANS != 0){//if there's scans left
+            for(ScanResult scanResult: wifiList){//iterate over scan results
+                Integer RSSI = wifiHashMap.get(scanResult.SSID);//get current RRSI for that SSID
                 if(RSSI != null){//if already in hashmap
                     wifiHashMap.put(scanResult.SSID, ((RSSI + scanResult.level) / 2)); //calculate average and overwrite previous value with key
                 }else{
                     wifiHashMap.put(scanResult.SSID, scanResult.level);//else add it to the list as a new AP
                 }
             }
-            SCANS--;
+            SCANS--;//decrement scans left
             progressText.setText(String.format(Locale.UK, "%s%d", getString(R.string.scans_left), SCANS));
-            wifiMan.startScan();
+            wifiMan.startScan();//restart scan
         }else{
             save();//finally save
         }

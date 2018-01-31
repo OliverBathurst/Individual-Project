@@ -57,8 +57,8 @@ class WiFiFingerprinter {
         if(points.isEmpty()){
             finish(c.getString(R.string.no_saved_points));
         }else{
-            Collections.sort(points, (o1, o2) -> o1.second - o2.second);
-            finish(c.getString(R.string.alias) + points.get(points.size()-1).first);
+            Collections.sort(points, (o1, o2) -> o1.second - o2.second);//sort ascending
+            finish(c.getString(R.string.alias) + points.get(points.size()-1).first);//pick last entry
         }
     }
     private void startScan(){
