@@ -77,6 +77,7 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_logo"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <receiver
             android:name="com.oliver.bathurst.individualproject.DeviceAdmin"
@@ -154,7 +155,7 @@
         <service
             android:name="com.oliver.bathurst.individualproject.GCMReceiverService"
             android:exported="false" >
-            <intent-filter>
+            <intent-filter android:priority="999" >
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
             </intent-filter>
         </service>

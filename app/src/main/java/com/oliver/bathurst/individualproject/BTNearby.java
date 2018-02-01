@@ -94,6 +94,7 @@ class BTNearby {
                 for (Pair<BluetoothDevice, Integer> p : deviceList) {
                     if (p.first.equals(bd)) { //if it finds a saved beacon
                         finalList.add(p);
+                        break;
                     }
                 }
             }
@@ -106,9 +107,7 @@ class BTNearby {
         public void onReceive(Context context, Intent intent) {
             if (BluetoothDevice.ACTION_FOUND.equals(intent.getAction())) {
                 updateList(intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE), (int) intent.getShortExtra(BluetoothDevice.EXTRA_RSSI, Short.MIN_VALUE));
-                System.out.println("FOUND DEVICE");
             } else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(intent.getAction())) {
-                System.out.println("COMPARING");
                 compare();
             }
         }

@@ -123,11 +123,9 @@
         <receiver
             android:name=".GCMBroadcastLocation"
             android:enabled="true"
-            android:exported="true"
             tools:ignore="ExportedReceiver">
             <intent-filter android:priority="999">
                 <action android:name="oliver.intent.action.GCM" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
@@ -137,7 +135,6 @@
         <receiver
             android:name=".BTNearby$mReceiver"
             android:enabled="true" />
-
         <receiver
             android:name="com.google.android.gms.gcm.GcmReceiver"
             android:permission="com.google.android.c2dm.permission.SEND">
@@ -150,7 +147,7 @@
         <service
             android:name=".GCMReceiverService"
             android:exported="false">
-            <intent-filter>
+            <intent-filter android:priority="999">
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
             </intent-filter>
         </service>
