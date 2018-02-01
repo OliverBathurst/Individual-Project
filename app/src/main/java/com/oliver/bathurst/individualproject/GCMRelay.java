@@ -51,6 +51,7 @@ class GCMRelay extends AsyncTask<String[],Void,Void>{
             OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
             wr.write(json.toString());
             wr.flush();
+            //wr.close();
             conn.getInputStream();
             conn.disconnect();
         }catch(Exception ignored){}
