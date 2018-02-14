@@ -59,61 +59,63 @@ class CellTowerHelper {
 
     private String allTowers(List<CellInfo> list) {
         StringBuilder sb = new StringBuilder();
-        sb.append(c.getString(R.string.cell_tower_info)).append("\n");
-        for (CellInfo cell : list) {
-            if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR1) {
-                if (cell instanceof CellInfoGsm) {
-                    CellIdentityGsm identity = ((CellInfoGsm) cell).getCellIdentity();
-                    sb.append(c.getString(R.string.typeCell)).append(c.getString(R.string.gcm))
-                            .append(c.getString(R.string.CID)).append(identity.getCid()).append("\n")
-                            .append(c.getString(R.string.lac)).append(identity.getLac()).append("\n")
-                            .append(c.getString(R.string.MCC)).append(identity.getMcc()).append("\n")
-                            .append(c.getString(R.string.MNC)).append(identity.getMnc()).append("\n");
+        if(list != null) {
+            sb.append(c.getString(R.string.cell_tower_info)).append("\n");
+            for (CellInfo cell : list) {
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                    if (cell instanceof CellInfoGsm) {
+                        CellIdentityGsm identity = ((CellInfoGsm) cell).getCellIdentity();
+                        sb.append(c.getString(R.string.typeCell)).append(c.getString(R.string.gcm))
+                                .append(c.getString(R.string.CID)).append(identity.getCid()).append("\n")
+                                .append(c.getString(R.string.lac)).append(identity.getLac()).append("\n")
+                                .append(c.getString(R.string.MCC)).append(identity.getMcc()).append("\n")
+                                .append(c.getString(R.string.MNC)).append(identity.getMnc()).append("\n");
 
-                    sb.append(validateDoubles(callOpenCell(identity.getCid(), identity.getLac(), identity.getMcc(), identity.getMnc())));
+                        sb.append(validateDoubles(callOpenCell(identity.getCid(), identity.getLac(), identity.getMcc(), identity.getMnc())));
 
-                } else if (cell instanceof CellInfoWcdma && Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
-                    CellIdentityWcdma identityWcdma = ((CellInfoWcdma) cell).getCellIdentity();
-                    sb.append(c.getString(R.string.typeCell)).append(c.getString(R.string.wcdma))
-                            .append(c.getString(R.string.CID)).append(identityWcdma.getCid()).append("\n")
-                            .append(c.getString(R.string.lac)).append(identityWcdma.getLac()).append("\n")
-                            .append(c.getString(R.string.MCC)).append(identityWcdma.getMcc()).append("\n")
-                            .append(c.getString(R.string.MNC)).append(identityWcdma.getMnc()).append("\n");
+                    } else if (cell instanceof CellInfoWcdma && Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
+                        CellIdentityWcdma identityWcdma = ((CellInfoWcdma) cell).getCellIdentity();
+                        sb.append(c.getString(R.string.typeCell)).append(c.getString(R.string.wcdma))
+                                .append(c.getString(R.string.CID)).append(identityWcdma.getCid()).append("\n")
+                                .append(c.getString(R.string.lac)).append(identityWcdma.getLac()).append("\n")
+                                .append(c.getString(R.string.MCC)).append(identityWcdma.getMcc()).append("\n")
+                                .append(c.getString(R.string.MNC)).append(identityWcdma.getMnc()).append("\n");
 
-                    sb.append(validateDoubles(callOpenCell(identityWcdma.getCid(), identityWcdma.getLac(), identityWcdma.getMcc(), identityWcdma.getMnc())));
-
-
-                } else if (cell instanceof CellInfoLte) {
-                    CellIdentityLte identityLte = ((CellInfoLte) cell).getCellIdentity();
-                    sb.append(c.getString(R.string.typeCell)).append(c.getString(R.string.lte))
-                            .append(c.getString(R.string.CID)).append(identityLte.getCi()).append("\n")
-                            .append(c.getString(R.string.lac)).append(identityLte.getTac()).append("\n")
-                            .append(c.getString(R.string.MCC)).append(identityLte.getMcc()).append("\n")
-                            .append(c.getString(R.string.MNC)).append(identityLte.getMnc()).append("\n");
-
-                    sb.append(validateDoubles(callOpenCell(identityLte.getCi(), identityLte.getTac(), identityLte.getMcc(), identityLte.getMnc())));
+                        sb.append(validateDoubles(callOpenCell(identityWcdma.getCid(), identityWcdma.getLac(), identityWcdma.getMcc(), identityWcdma.getMnc())));
 
 
-                } else if (cell instanceof CellInfoCdma) {
-                    CellIdentityCdma identityCdma = ((CellInfoCdma) cell).getCellIdentity();
-                    sb.append(c.getString(R.string.cdma)).append("\n")
-                            .append(c.getString(R.string.basestation_id)).append(identityCdma.getBasestationId()).append("\n")
-                            .append(c.getString(R.string.network_id)).append(identityCdma.getNetworkId()).append("\n")
-                            .append(c.getString(R.string.system_id)).append(identityCdma.getSystemId()).append("\n")
-                            .append(c.getString(R.string.latitude)).append(identityCdma.getLatitude()).append("\n")
-                            .append(c.getString(R.string.longitude)).append(identityCdma.getLongitude()).append("\n");
+                    } else if (cell instanceof CellInfoLte) {
+                        CellIdentityLte identityLte = ((CellInfoLte) cell).getCellIdentity();
+                        sb.append(c.getString(R.string.typeCell)).append(c.getString(R.string.lte))
+                                .append(c.getString(R.string.CID)).append(identityLte.getCi()).append("\n")
+                                .append(c.getString(R.string.lac)).append(identityLte.getTac()).append("\n")
+                                .append(c.getString(R.string.MCC)).append(identityLte.getMcc()).append("\n")
+                                .append(c.getString(R.string.MNC)).append(identityLte.getMnc()).append("\n");
+
+                        sb.append(validateDoubles(callOpenCell(identityLte.getCi(), identityLte.getTac(), identityLte.getMcc(), identityLte.getMnc())));
+
+
+                    } else if (cell instanceof CellInfoCdma) {
+                        CellIdentityCdma identityCdma = ((CellInfoCdma) cell).getCellIdentity();
+                        sb.append(c.getString(R.string.cdma)).append("\n")
+                                .append(c.getString(R.string.basestation_id)).append(identityCdma.getBasestationId()).append("\n")
+                                .append(c.getString(R.string.network_id)).append(identityCdma.getNetworkId()).append("\n")
+                                .append(c.getString(R.string.system_id)).append(identityCdma.getSystemId()).append("\n")
+                                .append(c.getString(R.string.latitude)).append(identityCdma.getLatitude()).append("\n")
+                                .append(c.getString(R.string.longitude)).append(identityCdma.getLongitude()).append("\n");
+                    }
                 }
             }
-        }
-        if (ActivityCompat.checkSelfPermission(c, android.Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-            List<NeighboringCellInfo> neighboringCells = tel.getNeighboringCellInfo();
-            if(!neighboringCells.isEmpty()){
-                for (NeighboringCellInfo neighboringCellInfo : neighboringCells) {
-                    sb.append(c.getString(R.string.neighbour)).append("\n")
-                            .append(c.getString(R.string.CID)).append(neighboringCellInfo.getCid()).append("\n")
-                            .append(c.getString(R.string.LAC)).append(neighboringCellInfo.getLac()).append("\n")
-                            .append(c.getString(R.string.signalStrength)).append(neighboringCellInfo.getRssi()).append("\n")
-                            .append(c.getString(R.string.typeCell)).append(neighboringCellInfo.getNetworkType()).append("\n\n");
+            if (ActivityCompat.checkSelfPermission(c, android.Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                List<NeighboringCellInfo> neighboringCells = tel.getNeighboringCellInfo();
+                if (!neighboringCells.isEmpty()) {
+                    for (NeighboringCellInfo neighboringCellInfo : neighboringCells) {
+                        sb.append(c.getString(R.string.neighbour)).append("\n")
+                                .append(c.getString(R.string.CID)).append(neighboringCellInfo.getCid()).append("\n")
+                                .append(c.getString(R.string.LAC)).append(neighboringCellInfo.getLac()).append("\n")
+                                .append(c.getString(R.string.signalStrength)).append(neighboringCellInfo.getRssi()).append("\n")
+                                .append(c.getString(R.string.typeCell)).append(neighboringCellInfo.getNetworkType()).append("\n\n");
+                    }
                 }
             }
         }
