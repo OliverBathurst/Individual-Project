@@ -28,6 +28,7 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
+import java.security.SecureRandom;
 import java.util.HashMap;
 import java.util.Map;
 import static android.app.Activity.RESULT_OK;
@@ -41,6 +42,9 @@ import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 public class SettingsFragment extends PreferenceFragment {
     private BroadcastReceiver mRegistrationBroadcastReceiver;
     private static final int REQUEST_ENABLE_BT = 23;
+    private final String[] saltValues = new String[]{"0","1","2","3","4","5","6","7","8","9"};
+    private final SecureRandom randomSaltSelector = new SecureRandom();
+
     public SettingsFragment() {}
 
     @Override
@@ -224,31 +228,31 @@ public class SettingsFragment extends PreferenceFragment {
             EditTextPreference SMSTorch = (EditTextPreference) findPreference("turn_torch_on_sms");
             updateValue(SMSTorch, settings, "SMSTorch", "turn_torch_on_sms");
             EditTextPreference smsGCM = (EditTextPreference) findPreference("send_sms_gcm");
-            updateValue(smsGCM, settings, "GCMSMS12345", "send_sms_gcm");
+            updateValue(smsGCM, settings, "GCMSMS", "send_sms_gcm");
             EditTextPreference wifiGCM = (EditTextPreference) findPreference("enable_wifi_gcm");
-            updateValue(wifiGCM, settings, "GCMWiFi12345", "enable_wifi_gcm");
+            updateValue(wifiGCM, settings, "GCMWiFi", "enable_wifi_gcm");
             EditTextPreference wipeGCM = (EditTextPreference) findPreference("wipe_gcm");
-            updateValue(wipeGCM, settings, "GCMWipe12345", "wipe_gcm");
+            updateValue(wipeGCM, settings, "GCMWipe", "wipe_gcm");
             EditTextPreference stolenGCM = (EditTextPreference) findPreference("sms_stolen_gcm");
             updateValue(stolenGCM, settings, "GCMStolen", "sms_stolen_gcm");
             EditTextPreference lockGCM = (EditTextPreference) findPreference("lock_gcm");
-            updateValue(lockGCM, settings, "lock12345", "lock_gcm");
+            updateValue(lockGCM, settings, "lock", "lock_gcm");
             EditTextPreference ringGCM = (EditTextPreference) findPreference("gcm_ring");
-            updateValue(ringGCM, settings, "ring12345", "gcm_ring");
+            updateValue(ringGCM, settings, "ring", "gcm_ring");
             EditTextPreference emailBeacon = (EditTextPreference) findPreference("email_relay_beacon");
-            updateValue(emailBeacon, settings, "beacon12345", "email_relay_beacon");
+            updateValue(emailBeacon, settings, "beacon", "email_relay_beacon");
             EditTextPreference smsBeacon = (EditTextPreference) findPreference("sms_relay_beacon");
-            updateValue(smsBeacon, settings, "beacon12345", "sms_relay_beacon");
+            updateValue(smsBeacon, settings, "beacon", "sms_relay_beacon");
             EditTextPreference smsRing = (EditTextPreference) findPreference("sms_ring");
-            updateValue(smsRing, settings, "ring12345", "sms_ring");
+            updateValue(smsRing, settings, "ring", "sms_ring");
             EditTextPreference smsStolen = (EditTextPreference) findPreference("sms_stolen");
             updateValue(smsStolen, settings, "stolen", "sms_stolen");
             EditTextPreference emailStolen = (EditTextPreference) findPreference("email_stolen");
             updateValue(emailStolen, settings, "stolen", "email_stolen");
             EditTextPreference smsEmail = (EditTextPreference) findPreference("sms_relay_email");
-            updateValue(smsEmail, settings, "email12345", "sms_relay_email");
+            updateValue(smsEmail, settings, "email", "sms_relay_email");
             EditTextPreference smsText = (EditTextPreference) findPreference("sms_relay_text");
-            updateValue(smsText, settings, "text12345", "sms_relay_text");
+            updateValue(smsText, settings, "text", "sms_relay_text");
             EditTextPreference smsLoc = (EditTextPreference) findPreference("sms_loc_services");
             updateValue(smsLoc, settings, "remoteEnableLocation", "sms_loc_services");
             EditTextPreference smsLock = (EditTextPreference) findPreference("sms_remote_lock");
@@ -345,9 +349,17 @@ public class SettingsFragment extends PreferenceFragment {
         if (edit.getText() != null && edit.getText().trim().length() != 0) {
             edit.setSummary(getString(R.string.trigger_value) + edit.getText());
         }else{
-            edit.setSummary(getString(R.string.trigger_value) + defValue);
-            sh.putString(tag, defValue).apply();
+            String toApply = defValue + randomSalt();//add salt for security
+            edit.setSummary(getString(R.string.trigger_value) + toApply);
+            sh.putString(tag, toApply).apply();
         }
+    }
+    private String randomSalt(){
+        StringBuilder returnVal = new StringBuilder();
+        for(int i = 0; i < 5; i++) {
+            returnVal.append(randomSaltSelector.nextInt(saltValues.length));
+        }
+        return returnVal.toString();
     }
     private void actionSharedPref(){
         try {
