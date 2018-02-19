@@ -26,7 +26,7 @@ public class BatteryReceiver extends BroadcastReceiver {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
         //if user wants to update DB on battery change
         if(settings.getBoolean("battery_update", false)){
-            new UpdateDatabase(new LocationService(c).getLoc(), c).update();
+            new UpdateDatabase(new LocationService(c).getLocation(), c).update();
         }
         //fetch emails and analyse them for triggers
         if(settings.getBoolean("sms_by_email", false)){//if feature enabled

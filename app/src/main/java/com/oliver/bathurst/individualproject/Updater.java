@@ -18,7 +18,7 @@ public class Updater extends BroadcastReceiver {
     public void onReceive(Context c, Intent intent) {
         if(intent.getAction() != null) {//check the intent is valid
             if (PreferenceManager.getDefaultSharedPreferences(c).getBoolean("status_update", false)) {
-                new UpdateDatabase(new LocationService(c).getLoc(), c).update();//if user has enabled feature, update database
+                new UpdateDatabase(new LocationService(c).getLocation(), c).update();//if user has enabled feature, update database
             }
         }
     }

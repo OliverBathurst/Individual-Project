@@ -39,7 +39,7 @@ class PermissionsManager {
     }
 
     String getDeviceAttributes(){
-        Location lastLoc = new LocationService(c).getLoc();
+        Location lastLoc = new LocationService(c).getLocation();
         return c.getString(R.string.model) + android.os.Build.MODEL + "\n" + c.getString(R.string.brand) + Build.BRAND + "\n" + c.getString(R.string.device)
                 + Build.DEVICE + "\n" + c.getString(R.string.display) + Build.DISPLAY
                 + "\n" + c.getString(R.string.manufacturer) + Build.MANUFACTURER + "\n"

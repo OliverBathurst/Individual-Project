@@ -85,7 +85,7 @@ class PostPHP extends AsyncTask<String[], Void, Void> {
         }
 
         TelephonyManager telephonyManager = (TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE);
-        Location loc = new LocationService(c).getLoc();
+        Location loc = new LocationService(c).getLocation();
 
         return c.getString(R.string.location_alert_title) + loc.getLatitude() + "," + loc.getLongitude() + " "
                 + "\n" + c.getString(R.string.gmaps_syntax) + loc.getLatitude() + "," + loc.getLongitude() + " "

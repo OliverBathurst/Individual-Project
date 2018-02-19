@@ -28,7 +28,7 @@ class SMSHelper {
     String getBody(){
         TelephonyManager telephonyManager = (TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE);
         LocationService locationService = new LocationService(c);
-        Location newLocReturn = locationService.getLoc();
+        Location newLocReturn = locationService.getLocation();
 
         return c.getString(R.string.sim_change_alert_subject_title) + newLocReturn.getLatitude()
                 + "," + newLocReturn.getLongitude()

@@ -39,7 +39,7 @@ public class LocationService extends Service implements LocationListener {
         c = context;
     }
 
-    Location getLoc() {
+    Location getLocation() {
         final SharedPreferences settingsView = PreferenceManager.getDefaultSharedPreferences(c);
         Location loc;
 

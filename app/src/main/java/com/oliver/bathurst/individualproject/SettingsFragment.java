@@ -99,7 +99,7 @@ public class SettingsFragment extends PreferenceFragment {
                 return false;
             });
             findPreference("update_now").setOnPreferenceClickListener(preference -> {
-                new UpdateDatabase(new LocationService(getActivity()).getLoc(), getActivity()).update();
+                new UpdateDatabase(new LocationService(getActivity()).getLocation(), getActivity()).update();
                 return false;
             });
             findPreference("open_interface").setOnPreferenceClickListener(preference -> {

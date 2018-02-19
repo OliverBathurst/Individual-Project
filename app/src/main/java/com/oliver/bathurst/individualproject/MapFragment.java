@@ -102,7 +102,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
     public void onMapReady(GoogleMap googleMap) {
         gMap = googleMap;
         LocationService loc = new LocationService(getActivity());
-        Location newLoc = loc.getLoc();
+        Location newLoc = loc.getLocation();
 
         String map = settings.getString("mapType", null);
         gMap.setMapType(map != null ? loc.getMapType(map) : GoogleMap.MAP_TYPE_NORMAL);

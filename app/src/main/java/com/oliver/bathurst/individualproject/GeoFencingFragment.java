@@ -130,7 +130,7 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
     public void onMapReady(GoogleMap googleMap) {
         LocationService locService = new LocationService(getActivity());
         gMap = googleMap;
-        loc = locService.getLoc();
+        loc = locService.getLocation();
 
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getContext());
 
