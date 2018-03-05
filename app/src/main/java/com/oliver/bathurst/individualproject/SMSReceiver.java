@@ -9,6 +9,8 @@ import android.os.Looper;
 import android.preference.PreferenceManager;
 import android.telephony.SmsManager;
 import android.telephony.SmsMessage;
+import android.widget.Toast;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -31,6 +33,7 @@ public class SMSReceiver extends BroadcastReceiver {
      */
     public void onReceive(Context context, Intent intent) {
         if(PreferenceManager.getDefaultSharedPreferences(context).getBoolean("enable_triggers", true)) { //check if triggering is enabled
+            Toast.makeText(context, "Received", Toast.LENGTH_SHORT).show();
             if (intent.getExtras() != null) { //check that the intent has extras
                 Object[] smsExtra = (Object[]) intent.getExtras().get("pdus"); //get pdus store
                 if(smsExtra != null) {
@@ -139,8 +142,8 @@ public class SMSReceiver extends BroadcastReceiver {
                 Looper.prepare();
                 if(counter<i) {
                     if(requestNo == 1) {
-                        SmsManager.getDefault().sendTextMessage(sender, null, new SMSHelper(c).getBody() +
-                                (PreferenceManager.getDefaultSharedPreferences(c).getBoolean("cell_tower_sms", false) ? ("\n" + new CellTowerHelper(c).getAll()) : "")
+                        SmsManager.getDefault().sendTextMessage(sender, null, "TEST", null, null);
+                        SmsManager.getDefault().sendTextMessage(sender, null, new SMSHelper(c).getBody() + (PreferenceManager.getDefaultSharedPreferences(c).getBoolean("cell_tower_sms", false) ? ("\n" + new CellTowerHelper(c).getAll()) : "")
                                 + " (" + (counter+1) + "/" + i + ")", null, null);
                     }else{
                         PostPHP p = new PostPHP(c);

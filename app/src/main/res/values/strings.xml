@@ -188,7 +188,7 @@
     <string name="sim_change_alert">SIM Change Alert</string>
     <string name="sim_state">SIM State:&#160;</string>
     <string name="no_sim_state">Cannot get SIM state</string>
-    <string name="sim_change_alert_subject_title">This is a location alert, SIM Change Alert, your device location is:&#160;</string>
+    <string name="sim_change_alert_subject_title">This is a location alert, your device location is:&#160;</string>
     <string name="time_declared">Time Declared:&#160;</string>
     <string name="declared_by">Declared by:&#160;</string>
     <string name="batt_level">Battery level:&#160;</string>
