@@ -3,7 +3,6 @@ package com.oliver.bathurst.individualproject;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.location.Location;
-import android.preference.PreferenceManager;
 import android.telephony.TelephonyManager;
 import java.text.DateFormat;
 import java.util.Date;
@@ -40,7 +39,6 @@ class SMSHelper {
                 + "\n" + c.getString(R.string.batt_level) + locationService.batteryLife()
                 + "\n" + c.getString(R.string.imei) + (telephonyManager != null ? telephonyManager.getDeviceId() : c.getString(R.string.null_value_string))
                 + "\n" + c.getString(R.string.phone_number) + (telephonyManager != null ? telephonyManager.getLine1Number() : c.getString(R.string.null_value_string))
-                + "\n" + c.getString(R.string.sim_serial) + (telephonyManager != null ? telephonyManager.getSimSerialNumber() : c.getString(R.string.null_value_string))
-                + "\n" + (PreferenceManager.getDefaultSharedPreferences(c).getBoolean("cell_tower_sms", false) ? (c.getString(R.string.cell_tower_info) + new CellTowerHelper(c).getAll()) : "");
+                + "\n" + c.getString(R.string.sim_serial) + (telephonyManager != null ? telephonyManager.getSimSerialNumber() : c.getString(R.string.null_value_string));
     }
 }

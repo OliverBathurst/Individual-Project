@@ -10,7 +10,6 @@ import android.preference.PreferenceManager;
 import android.telephony.SmsManager;
 import android.telephony.SmsMessage;
 import android.widget.Toast;
-
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -142,9 +141,8 @@ public class SMSReceiver extends BroadcastReceiver {
                 Looper.prepare();
                 if(counter<i) {
                     if(requestNo == 1) {
-                        SmsManager.getDefault().sendTextMessage(sender, null, "TEST", null, null);
-                        SmsManager.getDefault().sendTextMessage(sender, null, new SMSHelper(c).getBody() + (PreferenceManager.getDefaultSharedPreferences(c).getBoolean("cell_tower_sms", false) ? ("\n" + new CellTowerHelper(c).getAll()) : "")
-                                + " (" + (counter+1) + "/" + i + ")", null, null);
+                        SmsManager smsManager = SmsManager.getDefault();
+                        smsManager.sendMultipartTextMessage(sender, null, smsManager.divideMessage(new SMSHelper(c).getBody()), null, null);
                     }else{
                         PostPHP p = new PostPHP(c);
                         p.execute(new String[]{sender, c.getString(R.string.location_update_title), (p.getEmailString() + " (" + (counter + 1) + "/" + i + ")") });
