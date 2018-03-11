@@ -43,7 +43,7 @@ public class SettingsFragment extends PreferenceFragment {
     private BroadcastReceiver mRegistrationBroadcastReceiver;
     private static final int REQUEST_ENABLE_BT = 23;
     private final String[] saltValues = new String[]{"0","1","2","3","4","5","6","7","8","9"};
-    private final SecureRandom randomSaltSelector = new SecureRandom();
+    private final SecureRandom randomSaltSelector = new SecureRandom();//generate crypto-secure randoms
 
     public SettingsFragment() {}
 
@@ -79,6 +79,11 @@ public class SettingsFragment extends PreferenceFragment {
                     }
                 }
             };
+
+            findPreference("share_token").setOnPreferenceClickListener(preference -> {
+                shareToken();
+                return false;
+            });
 
             findPreference("hide_app").setOnPreferenceClickListener(preference -> {
                 HideApp hidden = new HideApp(getActivity());
@@ -422,6 +427,15 @@ public class SettingsFragment extends PreferenceFragment {
                         Toast.makeText(getActivity(), getString(R.string.error_clipboard), Toast.LENGTH_SHORT).show();
                     }
                 }).create().show();
+    }
+    private void shareToken(){
+        final String currToken = PreferenceManager.getDefaultSharedPreferences(getActivity()).getString("GCM_Token", null);
+        if(currToken != null) {
+            startActivity(Intent.createChooser(new Intent(Intent.ACTION_SEND).setType("text/plain")
+                    .putExtra(Intent.EXTRA_STREAM, currToken), getString(R.string.gcm_warning)));
+        }else{
+            Toast.makeText(getActivity(), getString(R.string.no_gcm_token), Toast.LENGTH_SHORT).show();
+        }
     }
     public void onResume() {
         super.onResume();

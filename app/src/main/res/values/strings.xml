@@ -352,4 +352,6 @@
     <string name="N_or_up">Android 7.0 or higher required for full functionality</string>
     <string name="location_now">Update Location Now</string>
     <string name="manual_update_loc">Manually send current location to database</string>
+    <string name="share_token_string">Share GCM Token</string>
+    <string name="gcm_warning">Do not share with others</string>
 </resources>

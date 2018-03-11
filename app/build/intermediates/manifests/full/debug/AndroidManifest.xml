@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.oliver.bathurst.individualproject"
     android:versionCode="1"
-    android:versionName="v1.0 rv67" >
+    android:versionName="v1.0 rv191" >
 
     <uses-sdk
         android:minSdkVersion="14"

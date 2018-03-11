@@ -210,6 +210,12 @@
             android:title="@string/get_gcm_token"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+        <Preference
+            android:key="share_token"
+            android:icon="@drawable/ic_code_black_24dp"
+            android:title="@string/share_token_string"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
         <EditTextPreference
             android:key="lock_gcm"
             android:icon="@drawable/ic_lock_black_24dp"
