@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Individual-Project.iml" filepath="$PROJECT_DIR$/Individual-Project.iml" />
       <module fileurl="file://$PROJECT_DIR$/IndividualProject.iml" filepath="$PROJECT_DIR$/IndividualProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/activation/activation.iml" filepath="$PROJECT_DIR$/activation/activation.iml" />
       <module fileurl="file://$PROJECT_DIR$/additionnal/additionnal.iml" filepath="$PROJECT_DIR$/additionnal/additionnal.iml" />

@@ -1,5 +1,6 @@
 package com.oliver.bathurst.individualproject;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -87,6 +88,7 @@ public class CellTowers extends AppCompatActivity implements NavigationView.OnNa
         return false;
     }
 
+    @SuppressLint("NewApi")
     private void updateList(List<CellInfo> cellInfo) {
         Snackbar.make(findViewById(R.id.drawer_layout), R.string.cell_info_updated, Snackbar.LENGTH_LONG).setAction("Action", null).show();
         if (general != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
@@ -156,6 +158,7 @@ public class CellTowers extends AppCompatActivity implements NavigationView.OnNa
             tel.listen(new CellStateListener(), PhoneStateListener.LISTEN_NONE);
         }
     }
+    @SuppressLint("NewApi")
     private void updateUI(){
         if(cells != null && list != null) {
             StringBuilder build = new StringBuilder();

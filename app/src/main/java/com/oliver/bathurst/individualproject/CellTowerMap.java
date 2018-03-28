@@ -1,5 +1,6 @@
 package com.oliver.bathurst.individualproject;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Build;
 import android.support.v4.app.FragmentActivity;
@@ -50,6 +51,7 @@ public class CellTowerMap extends FragmentActivity implements OnMapReadyCallback
             Toast.makeText(this, getString(R.string.error_string), Toast.LENGTH_SHORT).show();
         }
     }
+    @SuppressLint("NewApi")
     private void processMap(){
         CellTowerHelper cth = new CellTowerHelper(this);
         for(Object cell: cellTowers.values()){

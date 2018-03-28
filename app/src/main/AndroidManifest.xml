@@ -182,6 +182,7 @@
             tools:ignore="ExportedService" />
 
         <meta-data
+            tools:replace="android:value"
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyClMYGtvOOMLv68SLv0t1FUQZjPXvwU-fA" />
 

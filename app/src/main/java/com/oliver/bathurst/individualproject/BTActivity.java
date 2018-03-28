@@ -151,14 +151,19 @@ public class BTActivity extends AppCompatActivity implements NavigationView.OnNa
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.View_Beacons) {
-            editBeacons();
-        } else if (id == R.id.Erase_Beacons) {
-            eraseBeacons();
-        } else if (id == R.id.calibrate){
-            calibrate();
-        }else if (id == R.id.Reset_Beacons){
-            resetBeacon();
+        switch (id) {
+            case R.id.View_Beacons:
+                editBeacons();
+                break;
+            case R.id.Erase_Beacons:
+                eraseBeacons();
+                break;
+            case R.id.calibrate:
+                calibrate();
+                break;
+            case R.id.Reset_Beacons:
+                resetBeacon();
+                break;
         }
         ((DrawerLayout) findViewById(R.id.drawer_layout)).closeDrawer(GravityCompat.START);
         return true;
