@@ -1,5 +1,6 @@
 package com.oliver.bathurst.individualproject;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
@@ -57,6 +58,7 @@ class CellTowerHelper {
         return result;
     }
 
+    @SuppressLint("NewApi")
     private String allTowers(List<CellInfo> list) {
         StringBuilder sb = new StringBuilder();
         if(list != null) {
