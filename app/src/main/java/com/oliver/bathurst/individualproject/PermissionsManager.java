@@ -2,15 +2,18 @@ package com.oliver.bathurst.individualproject;
 
 import android.Manifest;
 import android.app.Activity;
+import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
+import android.telephony.TelephonyManager;
 import android.widget.Toast;
 
 import org.json.JSONObject;
 
+import static android.content.Context.TELEPHONY_SERVICE;
 import static android.support.v4.app.ActivityCompat.requestPermissions;
 
 /**
@@ -81,9 +84,6 @@ class PermissionsManager {
     }
     private boolean getSummary(){
         boolean accessFine = ActivityCompat.checkSelfPermission(c, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED;
-        boolean sendSMS = ActivityCompat.checkSelfPermission(c, Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED;
-        boolean readSMS = ActivityCompat.checkSelfPermission(c, Manifest.permission.READ_SMS) == PackageManager.PERMISSION_GRANTED;
-        boolean receiveSMS = ActivityCompat.checkSelfPermission(c, Manifest.permission.RECEIVE_SMS) == PackageManager.PERMISSION_GRANTED;
         boolean accessWIFI = ActivityCompat.checkSelfPermission(c, Manifest.permission.ACCESS_WIFI_STATE) == PackageManager.PERMISSION_GRANTED;
         boolean accessCoarse = ActivityCompat.checkSelfPermission(c, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED;
         boolean accessPhoneState = ActivityCompat.checkSelfPermission(c, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED;
@@ -92,13 +92,32 @@ class PermissionsManager {
         boolean internet = ActivityCompat.checkSelfPermission(c, Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED;
         boolean accessNet = ActivityCompat.checkSelfPermission(c, Manifest.permission.ACCESS_NETWORK_STATE) == PackageManager.PERMISSION_GRANTED;
         boolean readContacts = ActivityCompat.checkSelfPermission(c, Manifest.permission.READ_CONTACTS) == PackageManager.PERMISSION_GRANTED;
-        boolean blue = ActivityCompat.checkSelfPermission(c, Manifest.permission.BLUETOOTH) == PackageManager.PERMISSION_GRANTED;
-        boolean blueAdmin = ActivityCompat.checkSelfPermission(c, Manifest.permission.BLUETOOTH_ADMIN) == PackageManager.PERMISSION_GRANTED;
-        boolean cam = ActivityCompat.checkSelfPermission(c, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED;
-        boolean readCallLog = android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN && ActivityCompat.checkSelfPermission(c, Manifest.permission.READ_CALL_LOG) == PackageManager.PERMISSION_GRANTED;
+
+        boolean blue = true;
+        boolean blueAdmin = true;
+        if (BluetoothAdapter.getDefaultAdapter() != null) {
+            blue = ActivityCompat.checkSelfPermission(c, Manifest.permission.BLUETOOTH) == PackageManager.PERMISSION_GRANTED;
+            blueAdmin = ActivityCompat.checkSelfPermission(c, Manifest.permission.BLUETOOTH_ADMIN) == PackageManager.PERMISSION_GRANTED;
+        }
+
+        boolean cam = true;
+        if (c.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
+            cam = ActivityCompat.checkSelfPermission(c, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED;
+        }
+
+        boolean sendSMS = true;
+        boolean readSMS = true;
+        boolean receiveSMS = true;
+
+        TelephonyManager manager = (TelephonyManager) c.getSystemService(TELEPHONY_SERVICE);
+        if(manager == null || manager.getPhoneType() == TelephonyManager.PHONE_TYPE_NONE){
+            sendSMS = ActivityCompat.checkSelfPermission(c, Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED;
+            readSMS = ActivityCompat.checkSelfPermission(c, Manifest.permission.READ_SMS) == PackageManager.PERMISSION_GRANTED;
+            receiveSMS = ActivityCompat.checkSelfPermission(c, Manifest.permission.RECEIVE_SMS) == PackageManager.PERMISSION_GRANTED;
+        }
 
         if(accessFine && sendSMS && readSMS && receiveSMS && accessWIFI && accessCoarse && accessPhoneState && changeWIFI && writeExtern && internet
-                && accessNet && readContacts && readCallLog && blue && blueAdmin && cam){
+                && accessNet && readContacts && blue && blueAdmin && cam){
             Toast.makeText(c, c.getString(R.string.all_perms_granted), Toast.LENGTH_SHORT).show();
             return true;
         }else{

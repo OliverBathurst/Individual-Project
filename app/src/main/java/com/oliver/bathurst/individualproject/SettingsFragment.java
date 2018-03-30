@@ -287,7 +287,8 @@ public class SettingsFragment extends PreferenceFragment {
 
             findPreference("sms_ringtone_volume").setSummary(getString(R.string.current_volume) + settingsView.getString("sms_ringtone_volume", "90") + "%");
             findPreference("battery_percent").setSummary(getString(R.string.current_percentage) + settingsView.getString("battery_percent", "5") + "%");
-
+            (findPreference("sms_ringtone_volume")).setOnPreferenceChangeListener(listenerPercentage);
+            (findPreference("battery_percent")).setOnPreferenceChangeListener(listenerPercentage);
             gcm_fingerprint_relay.setOnPreferenceChangeListener(listener);
             fingerScans.setOnPreferenceChangeListener(simpleList);
             gcm_cell_tower_relay.setOnPreferenceChangeListener(listener);
@@ -300,8 +301,6 @@ public class SettingsFragment extends PreferenceFragment {
             gcmSMS.setOnPreferenceChangeListener(listener);
             SMSTorch.setOnPreferenceChangeListener(listener);
             GCMTorch.setOnPreferenceChangeListener(listener);
-            (findPreference("sms_ringtone_volume")).setOnPreferenceChangeListener(listenerPercentage);
-            (findPreference("battery_percent")).setOnPreferenceChangeListener(listenerPercentage);
             smsGCM.setOnPreferenceChangeListener(listener);
             wifiGCM.setOnPreferenceChangeListener(listener);
             smsRing.setOnPreferenceChangeListener(listener);
