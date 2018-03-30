@@ -314,7 +314,7 @@
     <string name="wipe_sd_gcm">Wipe SD Card</string>
     <string name="first_use_detected">First use detected, please check information before starting.</string>
     <string name="please_use_gcm_sms_instead">Please opt for GCM and SMS messaging if possible</string>
-    <string name="relay_beacons_gcm">Relay Bluetooth Info</string>
+    <string name="relay_beacons_gcm">Relay Bluetooth FPs</string>
     <string name="relay_call_log">Relay Call Log</string>
     <string name="relay_contacts_log">Relay Contacts Log</string>
     <string name="registration_redirect">https://oliverbathurst.github.io/register_redirect.txt</string>
@@ -345,7 +345,7 @@
     <string name="no_scans_fingerprinting">Number of Scans</string>
     <string name="current_scans">Current: 10 (default)</string>
     <string name="scan_started">Scan started</string>
-    <string name="gcm_fingerprint">Relay Fingerprint Info</string>
+    <string name="gcm_fingerprint">Relay Wi-Fi FPs</string>
     <string name="no_phone">Cannot get telephony instance</string>
     <string name="update_on_status">Update on Device Status Change</string>
     <string name="update_on_battery">Update on Battery Level Change</string>
