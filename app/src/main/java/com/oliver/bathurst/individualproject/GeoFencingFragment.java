@@ -59,10 +59,10 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
 
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        final TextView scaleText = (TextView) mView.findViewById(R.id.scale);
-        marginOfError = (TextView) mView.findViewById(R.id.margin_of_error_geomap);
+        final TextView scaleText = mView.findViewById(R.id.scale);
+        marginOfError = mView.findViewById(R.id.margin_of_error_geomap);
 
-        final MapView mMapView = (MapView) mView.findViewById(R.id.map);
+        final MapView mMapView = mView.findViewById(R.id.map);
         if (mMapView != null) {
             mMapView.onCreate(null);
             mMapView.onResume();

@@ -6,7 +6,6 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
@@ -34,7 +33,7 @@ public class Reorder extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_reorder);
-        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+        setSupportActionBar(findViewById(R.id.toolbar));
 
         ActionBar bar = getSupportActionBar();
         if(bar != null) {
@@ -46,7 +45,7 @@ public class Reorder extends AppCompatActivity {
             Reorder.super.onBackPressed();
         });
         order = new ArrayList<>();
-        lv = (ListView) findViewById(R.id.list);
+        lv = findViewById(R.id.list);
 
         final SharedPreferences settingsView = PreferenceManager.getDefaultSharedPreferences(this);
         Collections.addAll(order, settingsView.getString("first", getString(R.string.gps_value)), settingsView.getString("second", getString(R.string.wifi_value)),

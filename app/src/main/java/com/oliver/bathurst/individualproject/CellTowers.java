@@ -46,13 +46,13 @@ public class CellTowers extends AppCompatActivity implements NavigationView.OnNa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cell_towers);
         setTitle(getString(R.string.cell_tower_activity_title));
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-        list = ((ListView) findViewById(R.id.cell_tower_listview));
+        list = findViewById(R.id.cell_tower_listview);
         ((NavigationView) findViewById(R.id.nav_view)).setNavigationItemSelectedListener(this);
 
         tel = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
@@ -76,7 +76,7 @@ public class CellTowers extends AppCompatActivity implements NavigationView.OnNa
     }
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {

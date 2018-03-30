@@ -33,8 +33,8 @@ public class WiFiScanner extends AppCompatActivity {
         setTitle(getString(R.string.wifi_scanner_title));
 
         SCANS = Integer.parseInt(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("total_scans", "10"));
-        alias = (TextView) findViewById(R.id.aliasWiFi);
-        progressText = (TextView) findViewById(R.id.progressUpdate);
+        alias = findViewById(R.id.aliasWiFi);
+        progressText = findViewById(R.id.progressUpdate);
         wifiMan = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
 
         findViewById(R.id.print).setOnClickListener(v -> {

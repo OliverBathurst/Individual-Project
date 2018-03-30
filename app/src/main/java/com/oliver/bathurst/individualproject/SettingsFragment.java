@@ -142,9 +142,6 @@ public class SettingsFragment extends PreferenceFragment {
 
             ((CheckBoxPreference) findPreference("enable_triggers")).setChecked(settingsView.getBoolean("enable_triggers", true));
 
-            findPreference("sms_ringtone_volume").setSummary(getString(R.string.current_volume) + settingsView.getString("sms_ringtone_volume", "90") + "%");
-
-            findPreference("battery_percent").setSummary(getString(R.string.current_percentage) + settingsView.getString("battery_percent", "5") + "%");
 
             findPreference("un-stolen").setOnPreferenceClickListener(preference -> {
                 settings.putBoolean("stolen", false).apply();
@@ -184,10 +181,6 @@ public class SettingsFragment extends PreferenceFragment {
                 preference.setSummary(getString(R.string.current_value) + newValue.toString() + getString(R.string.seconds));
                 return true;
             };
-            Preference.OnPreferenceChangeListener listenerSeconds = (preference, newValue) -> {
-                preference.setSummary(getString(R.string.current_volume) + newValue.toString() + "%");
-                return true;
-            };
             Preference.OnPreferenceChangeListener listenerPercentage = (preference, newValue) -> {
                 preference.setSummary(getString(R.string.current_percentage) + newValue.toString() + "%");
                 return true;
@@ -224,10 +217,6 @@ public class SettingsFragment extends PreferenceFragment {
             updateValue(gcm_relay_location, settings, "GCMLocationRelay", "gcm_location_relay");
             EditTextPreference gcmSMS = (EditTextPreference) findPreference("get_gcm_sms");
             updateValue(gcmSMS, settings, "smsGCM", "get_gcm_sms");
-            EditTextPreference volumeRinger = (EditTextPreference) findPreference("sms_ringtone_volume");
-            updateValue(volumeRinger, settings, "90", "sms_ringtone_volume");
-            EditTextPreference batteryPercentage = (EditTextPreference) findPreference("battery_percent");
-            updateValue(batteryPercentage, settings, "5", "battery_percent");
             EditTextPreference GCMTorch = (EditTextPreference) findPreference("turn_torch_on_gcm");
             updateValue(GCMTorch, settings, "GCMTorch", "turn_torch_on_gcm");
             EditTextPreference SMSTorch = (EditTextPreference) findPreference("turn_torch_on_sms");
@@ -296,6 +285,9 @@ public class SettingsFragment extends PreferenceFragment {
                 emailUpdates.setSummary(emailUpdates.getText());
             }
 
+            findPreference("sms_ringtone_volume").setSummary(getString(R.string.current_volume) + settingsView.getString("sms_ringtone_volume", "90") + "%");
+            findPreference("battery_percent").setSummary(getString(R.string.current_percentage) + settingsView.getString("battery_percent", "5") + "%");
+
             gcm_fingerprint_relay.setOnPreferenceChangeListener(listener);
             fingerScans.setOnPreferenceChangeListener(simpleList);
             gcm_cell_tower_relay.setOnPreferenceChangeListener(listener);
@@ -308,8 +300,8 @@ public class SettingsFragment extends PreferenceFragment {
             gcmSMS.setOnPreferenceChangeListener(listener);
             SMSTorch.setOnPreferenceChangeListener(listener);
             GCMTorch.setOnPreferenceChangeListener(listener);
-            volumeRinger.setOnPreferenceChangeListener(listenerSeconds);
-            batteryPercentage.setOnPreferenceChangeListener(listenerPercentage);
+            (findPreference("sms_ringtone_volume")).setOnPreferenceChangeListener(listenerPercentage);
+            (findPreference("battery_percent")).setOnPreferenceChangeListener(listenerPercentage);
             smsGCM.setOnPreferenceChangeListener(listener);
             wifiGCM.setOnPreferenceChangeListener(listener);
             smsRing.setOnPreferenceChangeListener(listener);

@@ -55,9 +55,9 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        mView = (AutoCompleteTextView) findViewById(R.id.user);
+        mView = findViewById(R.id.user);
         populateAutoComplete();
-        mPasswordView = (EditText) findViewById(R.id.password);
+        mPasswordView = findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener((textView, id, keyEvent) -> {
             if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
                 attemptSignUp();
@@ -65,7 +65,7 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
             }
             return false;
         });
-        Button mSignInButton = (Button) findViewById(R.id.email_sign_in_button);
+        Button mSignInButton = findViewById(R.id.email_sign_in_button);
         mSignInButton.setOnClickListener(view -> attemptSignUp());
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);

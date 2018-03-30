@@ -22,7 +22,7 @@ class BTNearby {
     private final ArrayList<Pair<BluetoothDevice, Integer>> deviceList, finalList;
     private final BluetoothAdapter blue;
     private final Context context;
-    private boolean isFinished = false;
+    private volatile boolean isFinished = false;
     private ArrayList<BluetoothDevice> bluetoothArray;
 
     BTNearby(Context c){

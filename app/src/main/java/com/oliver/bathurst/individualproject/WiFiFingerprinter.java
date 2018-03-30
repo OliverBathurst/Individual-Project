@@ -24,7 +24,7 @@ import java.util.List;
 class WiFiFingerprinter {
     private ArrayList<Pair<String, HashMap<String, Integer>>> fromPrefs;
     private final Context c;
-    private boolean isFinished = false;
+    private volatile boolean isFinished = false;
     private WifiManager wifiMan;
     private String response;
 

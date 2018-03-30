@@ -60,8 +60,8 @@ public class MainActivity extends AppCompatActivity{
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
-        frame = (FrameLayout) findViewById(R.id.content);
-        BottomNavigationView bottomNavigationView = ((BottomNavigationView) findViewById(R.id.navigation));
+        frame = findViewById(R.id.content);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         bottomNavigationView.setSelectedItemId(R.id.navigation_dashboard);
     }

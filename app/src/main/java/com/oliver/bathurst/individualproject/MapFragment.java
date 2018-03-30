@@ -56,7 +56,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mView =  inflater.inflate(R.layout.fragment_map, container, false);
         settings = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        marginOfError = (TextView) mView.findViewById(R.id.margin_of_error);
+        marginOfError = mView.findViewById(R.id.margin_of_error);
 
         sensorManager = (SensorManager) getActivity().getSystemService(SENSOR_SERVICE);
         if ((sensorManager != null ? sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION) : null) != null) {
@@ -69,7 +69,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
     }
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
-        MapView mMapView = (MapView) mView.findViewById(R.id.map);
+        MapView mMapView = mView.findViewById(R.id.map);
         if(mMapView != null){
             mMapView.onCreate(null);
             mMapView.onResume();

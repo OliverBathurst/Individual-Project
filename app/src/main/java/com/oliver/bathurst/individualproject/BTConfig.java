@@ -43,7 +43,7 @@ public class BTConfig extends AppCompatActivity {
                 new TypeToken<BluetoothDevice>() {}.getType());
 
         globalDeviceName = globalDevice.getName();
-        signal = (TextView) findViewById(R.id.signal);
+        signal = findViewById(R.id.signal);
         ((TextView) findViewById(R.id.beaconName)).setText(globalDeviceName);
 
         Snackbar.make(findViewById(R.id.beaconContent), globalDeviceName + getString(R.string.loaded_bt_device), Snackbar.LENGTH_SHORT).setAction("Action", null).show();
@@ -67,7 +67,7 @@ public class BTConfig extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {}
         });
         (findViewById(R.id.saveBeacon)).setOnClickListener(v -> {
-            EditText edit = (EditText) findViewById(R.id.distanceBeacon);
+            EditText edit = findViewById(R.id.distanceBeacon);
             if(edit.getText().toString().trim().length() != 0){
                 try {
                     Float toSave = Float.parseFloat(edit.getText().toString().trim());
