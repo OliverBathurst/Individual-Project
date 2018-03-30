@@ -143,6 +143,9 @@
             android:name="com.oliver.bathurst.individualproject.BTNearby$mReceiver"
             android:enabled="true" />
         <receiver
+            android:name="com.oliver.bathurst.individualproject.WiFiScanner$wifiReceiver"
+            android:enabled="true" />
+        <receiver
             android:name="com.google.android.gms.gcm.GcmReceiver"
             android:permission="com.google.android.c2dm.permission.SEND" >
             <intent-filter>

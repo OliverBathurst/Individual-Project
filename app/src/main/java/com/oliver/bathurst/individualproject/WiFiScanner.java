@@ -31,6 +31,7 @@ public class WiFiScanner extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wi_fi_scanner);
         setTitle(getString(R.string.wifi_scanner_title));
+        registerReceiver(wifiReceiver, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
 
         SCANS = Integer.parseInt(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("total_scans", "10"));
         alias = findViewById(R.id.aliasWiFi);
@@ -46,7 +47,6 @@ public class WiFiScanner extends AppCompatActivity {
                         wifiMan.setWifiEnabled(true);
                     }
                     wifiHashMap = new HashMap<>();
-                    registerReceiver(wifiReceiver, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
                     wifiMan.startScan();
                     progressText.setText(R.string.scan_started);
                 }else{
@@ -100,6 +100,20 @@ public class WiFiScanner extends AppCompatActivity {
     };
     protected void onPause(){
         super.onPause();
-        unregisterReceiver(wifiReceiver);
+        try {
+            unregisterReceiver(wifiReceiver);
+        } catch (Exception ignored){}
+    }
+    protected void onResume() {
+        super.onResume();
+        try{
+            registerReceiver(wifiReceiver, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
+        } catch (Exception ignored){}
+    }
+    protected void onDestroy() {
+        super.onDestroy();
+        try {
+            unregisterReceiver(wifiReceiver);
+        } catch (Exception ignored){}
     }
 }
