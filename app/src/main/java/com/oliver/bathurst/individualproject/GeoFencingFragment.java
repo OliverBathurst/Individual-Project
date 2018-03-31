@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,6 +33,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by Oliver on 17/06/2017.
@@ -52,12 +54,12 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
     public GeoFencingFragment() {}
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.fragment_geomap, container, false);
         return mView;
     }
 
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         final TextView scaleText = mView.findViewById(R.id.scale);
         marginOfError = mView.findViewById(R.id.margin_of_error_geomap);
@@ -104,7 +106,7 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
                     .putLong("geo_fence_cordLat", Double.doubleToRawLongBits(loc.getLatitude()))//geofence center latitude
                     .putLong("geo_fence_cordLon", Double.doubleToRawLongBits(loc.getLongitude()))//geofence center longitude
                     .apply();
-            mGeofencingClient = LocationServices.getGeofencingClient(getActivity());
+            mGeofencingClient = LocationServices.getGeofencingClient(Objects.requireNonNull(getActivity()));
 
             myList.clear();
             myList.add(new Geofence.Builder().setRequestId("geoId")
@@ -148,7 +150,7 @@ public class GeoFencingFragment extends android.support.v4.app.Fragment implemen
                     .radius(loc.getAccuracy()));
             marginOfError.setText(String.valueOf(getString(R.string.margin_of_error) + loc.getAccuracy() + getString(R.string.meters_unit)));
         }
-        MapsInitializer.initialize(getContext());
+        MapsInitializer.initialize(Objects.requireNonNull(getContext()));
         gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude()))
                 .title(getString(R.string.device_location) + loc.getLatitude() + loc.getLongitude() + "\n" + new Date()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker)).flat(true).anchor(0.5f,0.5f));
         gMap.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder().target(new LatLng(loc.getLatitude(), loc.getLongitude())).zoom(19).bearing(0).tilt(45).build()));

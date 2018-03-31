@@ -89,7 +89,7 @@
         <receiver
             android:name=".SMSReceiver"
             android:enabled="true"
-            android:exported="true"
+            android:exported="false"
             android:permission="android.permission.BROADCAST_SMS">
             <intent-filter android:priority="999">
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
@@ -98,7 +98,7 @@
         <receiver
             android:name=".BatteryReceiver"
             android:enabled="true"
-            android:exported="true">
+            android:exported="false">
             <intent-filter android:priority="999">
                 <action android:name="android.intent.action.BATTERY_CHANGED" />
             </intent-filter>
@@ -106,7 +106,7 @@
         <receiver
             android:name=".Updater"
             android:enabled="true"
-            android:exported="true">
+            android:exported="false">
             <intent-filter android:priority="999">
                 <action android:name="android.net.wifi.STATE_CHANGE"/>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
@@ -115,18 +115,9 @@
         <receiver
             android:name=".SimStateChangedReceiver"
             android:enabled="true"
-            android:exported="true">
+            android:exported="false">
             <intent-filter android:priority="999">
                 <action android:name="android.intent.action.SIM_STATE_CHANGED" />
-            </intent-filter>
-        </receiver>
-        <receiver
-            android:name=".GCMBroadcastLocation"
-            android:enabled="true"
-            tools:ignore="ExportedReceiver">
-            <intent-filter android:priority="999">
-                <action android:name="oliver.intent.action.GCM" />
-                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
         <receiver
@@ -181,8 +172,15 @@
         <service
             android:name=".LocationService"
             android:enabled="true"
-            android:exported="true"
-            tools:ignore="ExportedService" />
+            android:exported="false" />
+
+        <service
+            android:name=".GCMLocationService"
+            android:exported="false">
+            <intent-filter android:priority="999">
+                <action android:name="oliver.intent.action.GCM" />
+            </intent-filter>
+        </service>
 
         <meta-data
             tools:replace="android:value"
@@ -202,8 +200,7 @@
         <service
             android:name=".GeoFenceService"
             android:enabled="true"
-            android:exported="true"
-            tools:ignore="ExportedService" />
+            android:exported="false"/>
         <service android:name=".TokenRefreshListener" />
 
         <activity

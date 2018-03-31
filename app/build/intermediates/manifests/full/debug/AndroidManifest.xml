@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="14"
-        android:targetSdkVersion="26" />
+        android:targetSdkVersion="27" />
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -96,7 +96,7 @@
         <receiver
             android:name="com.oliver.bathurst.individualproject.SMSReceiver"
             android:enabled="true"
-            android:exported="true"
+            android:exported="false"
             android:permission="android.permission.BROADCAST_SMS" >
             <intent-filter android:priority="999" >
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
@@ -105,7 +105,7 @@
         <receiver
             android:name="com.oliver.bathurst.individualproject.BatteryReceiver"
             android:enabled="true"
-            android:exported="true" >
+            android:exported="false" >
             <intent-filter android:priority="999" >
                 <action android:name="android.intent.action.BATTERY_CHANGED" />
             </intent-filter>
@@ -113,7 +113,7 @@
         <receiver
             android:name="com.oliver.bathurst.individualproject.Updater"
             android:enabled="true"
-            android:exported="true" >
+            android:exported="false" >
             <intent-filter android:priority="999" >
                 <action android:name="android.net.wifi.STATE_CHANGE" />
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
@@ -122,18 +122,9 @@
         <receiver
             android:name="com.oliver.bathurst.individualproject.SimStateChangedReceiver"
             android:enabled="true"
-            android:exported="true" >
+            android:exported="false" >
             <intent-filter android:priority="999" >
                 <action android:name="android.intent.action.SIM_STATE_CHANGED" />
-            </intent-filter>
-        </receiver>
-        <receiver
-            android:name="com.oliver.bathurst.individualproject.GCMBroadcastLocation"
-            android:enabled="true" >
-            <intent-filter android:priority="999" >
-                <action android:name="oliver.intent.action.GCM" />
-
-                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
         <receiver
@@ -190,7 +181,14 @@
         <service
             android:name="com.oliver.bathurst.individualproject.LocationService"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="false" />
+        <service
+            android:name="com.oliver.bathurst.individualproject.GCMLocationService"
+            android:exported="false" >
+            <intent-filter android:priority="999" >
+                <action android:name="oliver.intent.action.GCM" />
+            </intent-filter>
+        </service>
 
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
@@ -209,7 +207,7 @@
         <service
             android:name="com.oliver.bathurst.individualproject.GeoFenceService"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="false" />
         <service android:name="com.oliver.bathurst.individualproject.TokenRefreshListener" />
 
         <activity
@@ -235,15 +233,6 @@
             android:label="@string/title_activity_cell_tower_map" />
         <activity android:name="com.oliver.bathurst.individualproject.WiFiScanner" />
 
-        <meta-data
-            android:name="android.support.VERSION"
-            android:value="26.1.0" />
-
-        <activity
-            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-            android:exported="false"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
         <receiver
             android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
             android:enabled="true"
@@ -268,6 +257,11 @@
             android:enabled="true"
             android:exported="false"
             android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <receiver
             android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
@@ -296,10 +290,6 @@
             android:authorities="com.oliver.bathurst.individualproject.firebaseinitprovider"
             android:exported="false"
             android:initOrder="100" />
-
-        <meta-data
-            android:name="android.arch.lifecycle.VERSION"
-            android:value="27.0.0-SNAPSHOT" />
     </application>
 
 </manifest>
