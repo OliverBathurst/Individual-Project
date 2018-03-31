@@ -134,7 +134,7 @@ public class CellTowers extends AppCompatActivity implements NavigationView.OnNa
         ((DrawerLayout) findViewById(R.id.drawer_layout)).closeDrawer(GravityCompat.START);
         return true;
     }
-    public class CellStateListener extends PhoneStateListener {
+    class CellStateListener extends PhoneStateListener {
         public void onCellInfoChanged (List<CellInfo> cellInfo){
             updateList(cellInfo);
             updateUI();

@@ -60,7 +60,7 @@ class UpdateDatabase {
      * This method gets the update URL from hosted text file and posts required parameters in URL
      */
     @SuppressLint("StaticFieldLeak")
-    public class SendLocationToDB extends AsyncTask<Void, Void, Void> {
+    class SendLocationToDB extends AsyncTask<Void, Void, Void> {
         private final String username, password;
 
         SendLocationToDB(String user, String pass){//initialise with user+pass

@@ -25,6 +25,7 @@ class GCMHandler {
         this.relay = data.getString("sender");
     }
 
+    @SuppressWarnings("ConstantConditions")
     void examine(){
         SharedPreferences shared = PreferenceManager.getDefaultSharedPreferences(context);
         int ringVol = shared.getInt("seek_bar_volume", 90);

@@ -251,7 +251,7 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
      * the user.
      */
     @SuppressLint("StaticFieldLeak")
-    public class UserSignUpTask extends AsyncTask<Void, Void, String> {
+    class UserSignUpTask extends AsyncTask<Void, Void, String> {
         private final String mUser, mPassword;
 
         UserSignUpTask(String user, String password) {
