@@ -1,26 +1,26 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:2:1-230:12
-INJECTED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:2:1-230:12
-INJECTED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:2:1-230:12
-INJECTED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:2:1-230:12
-MERGED from [com.google.firebase:firebase-core:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-core-12.0.0.aar\68088fa6124b1b3cce8c7d70489acd3d\AndroidManifest.xml:2:1-6:12
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:2:1-231:12
+INJECTED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:2:1-231:12
+INJECTED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:2:1-231:12
+INJECTED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:2:1-231:12
+MERGED from [com.google.firebase:firebase-core:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-core-12.0.1.aar\24e946a215507930728d55dc50f59c73\AndroidManifest.xml:2:1-6:12
 MERGED from [com.android.support:design:27.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\design-27.1.0.aar\f7318365e9b0ac87227dcca3258d9e80\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:appcompat-v7:27.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.0.aar\89b0f1d50ed94b577256e4024805147b\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:27.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.0.aar\dca6c5f47d3675eb4018cf38d2c15c38\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-vector-drawable:27.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.0.aar\693a7533602b29fc380b1b63081b349e\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:recyclerview-v7:27.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.0.aar\04a861829b57a04e7e4c49f8b3cb0116\AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.android.gms:play-services-gcm:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-gcm-12.0.0.aar\5af4d616970e768358b2c08b3c839e56\AndroidManifest.xml:17:1-28:12
-MERGED from [com.google.android.gms:play-services-maps:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.0.aar\00ff889855069e638e98f0a637421ee6\AndroidManifest.xml:17:1-32:12
-MERGED from [com.google.android.gms:play-services-location:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-location-12.0.0.aar\7321faae8366e6455680be15ce47c8cd\AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:17:1-54:12
-MERGED from [com.google.android.gms:play-services-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-iid-12.0.0.aar\7428565cf40df0cbb3076f13e52ec1f5\AndroidManifest.xml:17:1-28:12
-MERGED from [com.google.android.gms:play-services-base:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.0.aar\ed913e4cd11cb54b46335006495806f5\AndroidManifest.xml:17:1-29:12
-MERGED from [com.google.firebase:firebase-analytics-impl:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.0.aar\ee9434bb54fcff54405fdc8cc2d2aeb6\AndroidManifest.xml:17:1-40:12
-MERGED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:17:1-59:12
-MERGED from [com.google.firebase:firebase-common:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-12.0.0.aar\64d1fd0f85f5b379bb6d716b355da46c\AndroidManifest.xml:2:1-15:12
-MERGED from [com.google.android.gms:play-services-tasks:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-tasks-12.0.0.aar\e36e24a241c4052191005816d6ed92f6\AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-basement:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-12.0.0.aar\697d86b2b2e6a35de4fdc15824f1ce52\AndroidManifest.xml:17:1-28:12
+MERGED from [com.google.android.gms:play-services-gcm:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-gcm-12.0.1.aar\d7e9d495907ab72372409d6324a1a90c\AndroidManifest.xml:17:1-28:12
+MERGED from [com.google.android.gms:play-services-maps:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.1.aar\3051dbb4a0b054ece154ef891d6a04d8\AndroidManifest.xml:17:1-32:12
+MERGED from [com.google.android.gms:play-services-location:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-location-12.0.1.aar\c828b4caf73c17ffefbd688deede4574\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:17:1-54:12
+MERGED from [com.google.android.gms:play-services-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-iid-12.0.1.aar\001b86380ff0bce388fdf5769805b1ab\AndroidManifest.xml:17:1-28:12
+MERGED from [com.google.android.gms:play-services-base:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.1.aar\05fef78f44c0b5b5e12812c98fc0333f\AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.firebase:firebase-analytics-impl:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.1.aar\f72c3e77252adc282e236b6a04f0dd72\AndroidManifest.xml:17:1-40:12
+MERGED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:17:1-59:12
+MERGED from [com.google.firebase:firebase-common:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-12.0.1.aar\9179de68fc04d1126e2e6ea96ba430ad\AndroidManifest.xml:2:1-15:12
+MERGED from [com.google.android.gms:play-services-tasks:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-tasks-12.0.1.aar\79aa3318805ad080cba42c475275f0ba\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-12.0.1.aar\7e85dbc2b6e7101ee81f319b48b46712\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-v4:27.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.0.aar\02cf69e793e12a344d7169d17e973887\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:27.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.0.aar\56c9144b645ddb6ee67aa2e549828372\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-ui:27.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.0.aar\2b00d4999ee6da79d7ce8dd4d0668b7a\AndroidManifest.xml:17:1-22:12
@@ -30,36 +30,36 @@ MERGED from [com.android.support:support-media-compat:27.1.0] C:\Users\Oliver\.g
 MERGED from [com.android.support:support-compat:27.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.0.aar\9ae0758d1686076a3451d606655972fd\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\8dcf5de5f6d8509a556dfeadf2ae3932\AndroidManifest.xml:2:1-11:12
 MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\bcbb82062ef68d6fc74a4e159b86b548\AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.android.gms:play-services-gcm-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-gcm-license-12.0.0.aar\7fd4ede07ce8ef8db79b7d269c71bbc4\AndroidManifest.xml:2:1-8:12
-MERGED from [com.google.android.gms:play-services-maps-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-license-12.0.0.aar\bf34f235afb7ccd46391032bc606050a\AndroidManifest.xml:2:1-8:12
-MERGED from [com.google.android.gms:play-services-location-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-location-license-12.0.0.aar\ef8361566edf8935333e76fa9999377f\AndroidManifest.xml:2:1-8:12
-MERGED from [com.google.firebase:firebase-analytics-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-license-12.0.0.aar\3f6ef556f089b24a51ab857718687e50\AndroidManifest.xml:2:1-8:12
+MERGED from [com.google.android.gms:play-services-gcm-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-gcm-license-12.0.1.aar\9f338166f489920c2fe79c030b222628\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-maps-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-license-12.0.1.aar\7728171124e5f8b00d631b50a2b289df\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-location-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-location-license-12.0.1.aar\ec666f3a6b4aa43fd964089a3e11329a\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-analytics-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-license-12.0.1.aar\32533d9dd08fc3e75efce69ed8189af8\AndroidManifest.xml:17:1-24:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\b789702ed5acd5a85caff24b07515351\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\7ecbc01dd9870016a4aa0fa4b31fb725\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\5843c0653fc7ad8a4627cdfa522a9769\AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.android.gms:play-services-base-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-license-12.0.0.aar\79dc474f211317b5bfea4f42db5fe447\AndroidManifest.xml:2:1-8:12
-MERGED from [com.google.android.gms:play-services-basement-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-12.0.0.aar\e1ea5b5cd695a653fd4c074e26d1f851\AndroidManifest.xml:2:1-8:12
-MERGED from [com.google.android.gms:play-services-iid-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-iid-license-12.0.0.aar\37fe1482e6b6b845e740a9e5d6537087\AndroidManifest.xml:2:1-8:12
-MERGED from [com.google.android.gms:play-services-tasks-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-12.0.0.aar\d14ac51da05dd183bc827f082a68fdfb\AndroidManifest.xml:2:1-8:12
-MERGED from [com.google.firebase:firebase-common-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-license-12.0.0.aar\c584b0ce9ad01baa2413d8ae80922783\AndroidManifest.xml:2:1-8:12
-MERGED from [com.google.firebase:firebase-analytics-impl-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-12.0.0.aar\7fb1513760bf155dfb07211ba95e0a7f\AndroidManifest.xml:2:1-8:12
-MERGED from [com.google.firebase:firebase-iid-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-12.0.0.aar\310a7c60ddddc987d3e0a5f3ef98dc73\AndroidManifest.xml:2:1-8:12
-INJECTED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:2:1-230:12
-INJECTED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:2:1-230:12
-INJECTED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:2:1-230:12
+MERGED from [com.google.android.gms:play-services-base-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-license-12.0.1.aar\bc94fea8c133ba80b5e99d4b2a9ef862\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-basement-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-12.0.1.aar\65ab5aac53b16cfb7caa3a05dbde83b3\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-iid-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-iid-license-12.0.1.aar\dc316c73c07f8c820e7a7659b5e9277b\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-tasks-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-12.0.1.aar\523bf5f7afcdec40c79bae2d9586aa6e\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-common-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-license-12.0.1.aar\33e8070e240ef590711c0c27fee3682e\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-analytics-impl-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-12.0.1.aar\faed8a82df3f0d77c3526f2d8f3fda0b\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-iid-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-12.0.1.aar\34dbf8b82743dc4824776f0493325131\AndroidManifest.xml:17:1-24:12
+INJECTED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:2:1-231:12
+INJECTED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:2:1-231:12
+INJECTED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:2:1-231:12
 	package
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:4:5-52
 		INJECTED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:2:1-230:12
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:2:1-231:12
 		INJECTED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:2:1-230:12
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:2:1-231:12
 		INJECTED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:2:11-69
@@ -87,14 +87,14 @@ ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\Androi
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:11:22-73
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:12:5-79
-MERGED from [com.google.android.gms:play-services-maps:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.0.aar\00ff889855069e638e98f0a637421ee6\AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-maps:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.0.aar\00ff889855069e638e98f0a637421ee6\AndroidManifest.xml:23:5-79
-MERGED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:24:5-79
-MERGED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:24:5-79
-MERGED from [com.google.firebase:firebase-analytics-impl:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.0.aar\ee9434bb54fcff54405fdc8cc2d2aeb6\AndroidManifest.xml:24:5-79
-MERGED from [com.google.firebase:firebase-analytics-impl:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.0.aar\ee9434bb54fcff54405fdc8cc2d2aeb6\AndroidManifest.xml:24:5-79
-MERGED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:22:5-79
-MERGED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-maps:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.1.aar\3051dbb4a0b054ece154ef891d6a04d8\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.1.aar\3051dbb4a0b054ece154ef891d6a04d8\AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-analytics-impl:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.1.aar\f72c3e77252adc282e236b6a04f0dd72\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-analytics-impl:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.1.aar\f72c3e77252adc282e236b6a04f0dd72\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:22:5-79
 	android:name
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:12:22-76
 uses-permission#android.permission.RECEIVE_SMS
@@ -111,18 +111,18 @@ ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\Androi
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:15:22-64
 uses-permission#android.permission.INTERNET
 ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:16:5-67
-MERGED from [com.google.android.gms:play-services-gcm:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-gcm-12.0.0.aar\5af4d616970e768358b2c08b3c839e56\AndroidManifest.xml:24:5-67
-MERGED from [com.google.android.gms:play-services-gcm:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-gcm-12.0.0.aar\5af4d616970e768358b2c08b3c839e56\AndroidManifest.xml:24:5-67
-MERGED from [com.google.android.gms:play-services-maps:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.0.aar\00ff889855069e638e98f0a637421ee6\AndroidManifest.xml:24:5-67
-MERGED from [com.google.android.gms:play-services-maps:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.0.aar\00ff889855069e638e98f0a637421ee6\AndroidManifest.xml:24:5-67
-MERGED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:23:5-67
-MERGED from [com.google.android.gms:play-services-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-iid-12.0.0.aar\7428565cf40df0cbb3076f13e52ec1f5\AndroidManifest.xml:24:5-67
-MERGED from [com.google.android.gms:play-services-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-iid-12.0.0.aar\7428565cf40df0cbb3076f13e52ec1f5\AndroidManifest.xml:24:5-67
-MERGED from [com.google.firebase:firebase-analytics-impl:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.0.aar\ee9434bb54fcff54405fdc8cc2d2aeb6\AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-analytics-impl:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.0.aar\ee9434bb54fcff54405fdc8cc2d2aeb6\AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-gcm:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-gcm-12.0.1.aar\d7e9d495907ab72372409d6324a1a90c\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-gcm:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-gcm-12.0.1.aar\d7e9d495907ab72372409d6324a1a90c\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.1.aar\3051dbb4a0b054ece154ef891d6a04d8\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.1.aar\3051dbb4a0b054ece154ef891d6a04d8\AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-iid-12.0.1.aar\001b86380ff0bce388fdf5769805b1ab\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-iid-12.0.1.aar\001b86380ff0bce388fdf5769805b1ab\AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.1.aar\f72c3e77252adc282e236b6a04f0dd72\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.1.aar\f72c3e77252adc282e236b6a04f0dd72\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:23:5-67
 	android:name
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:16:22-64
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
@@ -135,12 +135,12 @@ ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\Androi
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:18:22-69
 uses-permission#android.permission.WAKE_LOCK
 ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:19:5-68
-MERGED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:25:5-68
-MERGED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:25:5-68
-MERGED from [com.google.firebase:firebase-analytics-impl:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.0.aar\ee9434bb54fcff54405fdc8cc2d2aeb6\AndroidManifest.xml:25:5-68
-MERGED from [com.google.firebase:firebase-analytics-impl:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.0.aar\ee9434bb54fcff54405fdc8cc2d2aeb6\AndroidManifest.xml:25:5-68
-MERGED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:24:5-68
-MERGED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:24:5-68
+MERGED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-analytics-impl:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.1.aar\f72c3e77252adc282e236b6a04f0dd72\AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-analytics-impl:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.1.aar\f72c3e77252adc282e236b6a04f0dd72\AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:24:5-68
+MERGED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:24:5-68
 	android:name
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:19:22-65
 uses-permission#android.permission.BLUETOOTH
@@ -183,14 +183,14 @@ ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\Androi
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:32:9-56
 permission#com.oliver.bathurst.individualproject.permission.C2D_MESSAGE
 ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:35:5-37:47
-MERGED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:28:5-30:47
+MERGED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:28:5-30:47
 	android:protectionLevel
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:37:9-44
 	android:name
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:36:9-84
 uses-permission#com.oliver.bathurst.individualproject.permission.C2D_MESSAGE
 ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:39:5-100
-MERGED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:32:5-79
+MERGED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:32:5-79
 	android:name
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:39:22-97
 uses-feature#android.hardware.camera
@@ -242,55 +242,55 @@ ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\Androi
 	android:anyDensity
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:61:9-34
 application
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:67:5-228:19
-MERGED from [com.google.firebase:firebase-core:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-core-12.0.0.aar\68088fa6124b1b3cce8c7d70489acd3d\AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-core:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-core-12.0.0.aar\68088fa6124b1b3cce8c7d70489acd3d\AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-gcm:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-gcm-12.0.0.aar\5af4d616970e768358b2c08b3c839e56\AndroidManifest.xml:26:5-20
-MERGED from [com.google.android.gms:play-services-gcm:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-gcm-12.0.0.aar\5af4d616970e768358b2c08b3c839e56\AndroidManifest.xml:26:5-20
-MERGED from [com.google.android.gms:play-services-maps:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.0.aar\00ff889855069e638e98f0a637421ee6\AndroidManifest.xml:30:5-20
-MERGED from [com.google.android.gms:play-services-maps:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.0.aar\00ff889855069e638e98f0a637421ee6\AndroidManifest.xml:30:5-20
-MERGED from [com.google.android.gms:play-services-location:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-location-12.0.0.aar\7321faae8366e6455680be15ce47c8cd\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-location:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-location-12.0.0.aar\7321faae8366e6455680be15ce47c8cd\AndroidManifest.xml:7:5-20
-MERGED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:27:5-52:19
-MERGED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:27:5-52:19
-MERGED from [com.google.android.gms:play-services-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-iid-12.0.0.aar\7428565cf40df0cbb3076f13e52ec1f5\AndroidManifest.xml:26:5-20
-MERGED from [com.google.android.gms:play-services-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-iid-12.0.0.aar\7428565cf40df0cbb3076f13e52ec1f5\AndroidManifest.xml:26:5-20
-MERGED from [com.google.android.gms:play-services-base:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.0.aar\ed913e4cd11cb54b46335006495806f5\AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-base:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.0.aar\ed913e4cd11cb54b46335006495806f5\AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.firebase:firebase-analytics-impl:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.0.aar\ee9434bb54fcff54405fdc8cc2d2aeb6\AndroidManifest.xml:27:5-38:19
-MERGED from [com.google.firebase:firebase-analytics-impl:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.0.aar\ee9434bb54fcff54405fdc8cc2d2aeb6\AndroidManifest.xml:27:5-38:19
-MERGED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:34:5-57:19
-MERGED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:34:5-57:19
-MERGED from [com.google.firebase:firebase-common:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-12.0.0.aar\64d1fd0f85f5b379bb6d716b355da46c\AndroidManifest.xml:7:5-13:19
-MERGED from [com.google.firebase:firebase-common:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-12.0.0.aar\64d1fd0f85f5b379bb6d716b355da46c\AndroidManifest.xml:7:5-13:19
-MERGED from [com.google.android.gms:play-services-tasks:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-tasks-12.0.0.aar\e36e24a241c4052191005816d6ed92f6\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-tasks:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-tasks-12.0.0.aar\e36e24a241c4052191005816d6ed92f6\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-basement:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-12.0.0.aar\697d86b2b2e6a35de4fdc15824f1ce52\AndroidManifest.xml:22:5-26:19
-MERGED from [com.google.android.gms:play-services-basement:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-12.0.0.aar\697d86b2b2e6a35de4fdc15824f1ce52\AndroidManifest.xml:22:5-26:19
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:67:5-229:19
+MERGED from [com.google.firebase:firebase-core:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-core-12.0.1.aar\24e946a215507930728d55dc50f59c73\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-core:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-core-12.0.1.aar\24e946a215507930728d55dc50f59c73\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-gcm:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-gcm-12.0.1.aar\d7e9d495907ab72372409d6324a1a90c\AndroidManifest.xml:26:5-20
+MERGED from [com.google.android.gms:play-services-gcm:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-gcm-12.0.1.aar\d7e9d495907ab72372409d6324a1a90c\AndroidManifest.xml:26:5-20
+MERGED from [com.google.android.gms:play-services-maps:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.1.aar\3051dbb4a0b054ece154ef891d6a04d8\AndroidManifest.xml:30:5-20
+MERGED from [com.google.android.gms:play-services-maps:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.1.aar\3051dbb4a0b054ece154ef891d6a04d8\AndroidManifest.xml:30:5-20
+MERGED from [com.google.android.gms:play-services-location:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-location-12.0.1.aar\c828b4caf73c17ffefbd688deede4574\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-location-12.0.1.aar\c828b4caf73c17ffefbd688deede4574\AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:27:5-52:19
+MERGED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:27:5-52:19
+MERGED from [com.google.android.gms:play-services-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-iid-12.0.1.aar\001b86380ff0bce388fdf5769805b1ab\AndroidManifest.xml:26:5-20
+MERGED from [com.google.android.gms:play-services-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-iid-12.0.1.aar\001b86380ff0bce388fdf5769805b1ab\AndroidManifest.xml:26:5-20
+MERGED from [com.google.android.gms:play-services-base:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.1.aar\05fef78f44c0b5b5e12812c98fc0333f\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.1.aar\05fef78f44c0b5b5e12812c98fc0333f\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.firebase:firebase-analytics-impl:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.1.aar\f72c3e77252adc282e236b6a04f0dd72\AndroidManifest.xml:27:5-38:19
+MERGED from [com.google.firebase:firebase-analytics-impl:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.1.aar\f72c3e77252adc282e236b6a04f0dd72\AndroidManifest.xml:27:5-38:19
+MERGED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:34:5-57:19
+MERGED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:34:5-57:19
+MERGED from [com.google.firebase:firebase-common:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-12.0.1.aar\9179de68fc04d1126e2e6ea96ba430ad\AndroidManifest.xml:7:5-13:19
+MERGED from [com.google.firebase:firebase-common:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-12.0.1.aar\9179de68fc04d1126e2e6ea96ba430ad\AndroidManifest.xml:7:5-13:19
+MERGED from [com.google.android.gms:play-services-tasks:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-tasks-12.0.1.aar\79aa3318805ad080cba42c475275f0ba\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-tasks-12.0.1.aar\79aa3318805ad080cba42c475275f0ba\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-12.0.1.aar\7e85dbc2b6e7101ee81f319b48b46712\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-12.0.1.aar\7e85dbc2b6e7101ee81f319b48b46712\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\8dcf5de5f6d8509a556dfeadf2ae3932\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\8dcf5de5f6d8509a556dfeadf2ae3932\AndroidManifest.xml:9:5-20
-MERGED from [com.google.android.gms:play-services-gcm-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-gcm-license-12.0.0.aar\7fd4ede07ce8ef8db79b7d269c71bbc4\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.android.gms:play-services-gcm-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-gcm-license-12.0.0.aar\7fd4ede07ce8ef8db79b7d269c71bbc4\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.android.gms:play-services-maps-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-license-12.0.0.aar\bf34f235afb7ccd46391032bc606050a\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.android.gms:play-services-maps-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-license-12.0.0.aar\bf34f235afb7ccd46391032bc606050a\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.android.gms:play-services-location-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-location-license-12.0.0.aar\ef8361566edf8935333e76fa9999377f\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.android.gms:play-services-location-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-location-license-12.0.0.aar\ef8361566edf8935333e76fa9999377f\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.firebase:firebase-analytics-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-license-12.0.0.aar\3f6ef556f089b24a51ab857718687e50\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.firebase:firebase-analytics-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-license-12.0.0.aar\3f6ef556f089b24a51ab857718687e50\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.android.gms:play-services-base-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-license-12.0.0.aar\79dc474f211317b5bfea4f42db5fe447\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.android.gms:play-services-base-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-license-12.0.0.aar\79dc474f211317b5bfea4f42db5fe447\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.android.gms:play-services-basement-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-12.0.0.aar\e1ea5b5cd695a653fd4c074e26d1f851\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.android.gms:play-services-basement-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-12.0.0.aar\e1ea5b5cd695a653fd4c074e26d1f851\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.android.gms:play-services-iid-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-iid-license-12.0.0.aar\37fe1482e6b6b845e740a9e5d6537087\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.android.gms:play-services-iid-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-iid-license-12.0.0.aar\37fe1482e6b6b845e740a9e5d6537087\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.android.gms:play-services-tasks-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-12.0.0.aar\d14ac51da05dd183bc827f082a68fdfb\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.android.gms:play-services-tasks-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-12.0.0.aar\d14ac51da05dd183bc827f082a68fdfb\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.firebase:firebase-common-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-license-12.0.0.aar\c584b0ce9ad01baa2413d8ae80922783\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.firebase:firebase-common-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-license-12.0.0.aar\c584b0ce9ad01baa2413d8ae80922783\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.firebase:firebase-analytics-impl-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-12.0.0.aar\7fb1513760bf155dfb07211ba95e0a7f\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.firebase:firebase-analytics-impl-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-12.0.0.aar\7fb1513760bf155dfb07211ba95e0a7f\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.firebase:firebase-iid-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-12.0.0.aar\310a7c60ddddc987d3e0a5f3ef98dc73\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.firebase:firebase-iid-license:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-12.0.0.aar\310a7c60ddddc987d3e0a5f3ef98dc73\AndroidManifest.xml:5:5-6:19
+MERGED from [com.google.android.gms:play-services-gcm-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-gcm-license-12.0.1.aar\9f338166f489920c2fe79c030b222628\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-gcm-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-gcm-license-12.0.1.aar\9f338166f489920c2fe79c030b222628\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-maps-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-license-12.0.1.aar\7728171124e5f8b00d631b50a2b289df\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-maps-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-license-12.0.1.aar\7728171124e5f8b00d631b50a2b289df\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-location-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-location-license-12.0.1.aar\ec666f3a6b4aa43fd964089a3e11329a\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-location-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-location-license-12.0.1.aar\ec666f3a6b4aa43fd964089a3e11329a\AndroidManifest.xml:22:5-20
+MERGED from [com.google.firebase:firebase-analytics-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-license-12.0.1.aar\32533d9dd08fc3e75efce69ed8189af8\AndroidManifest.xml:22:5-20
+MERGED from [com.google.firebase:firebase-analytics-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-license-12.0.1.aar\32533d9dd08fc3e75efce69ed8189af8\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-base-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-license-12.0.1.aar\bc94fea8c133ba80b5e99d4b2a9ef862\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-base-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-license-12.0.1.aar\bc94fea8c133ba80b5e99d4b2a9ef862\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-basement-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-12.0.1.aar\65ab5aac53b16cfb7caa3a05dbde83b3\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-basement-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-12.0.1.aar\65ab5aac53b16cfb7caa3a05dbde83b3\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-iid-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-iid-license-12.0.1.aar\dc316c73c07f8c820e7a7659b5e9277b\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-iid-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-iid-license-12.0.1.aar\dc316c73c07f8c820e7a7659b5e9277b\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-tasks-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-12.0.1.aar\523bf5f7afcdec40c79bae2d9586aa6e\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-tasks-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-12.0.1.aar\523bf5f7afcdec40c79bae2d9586aa6e\AndroidManifest.xml:22:5-20
+MERGED from [com.google.firebase:firebase-common-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-license-12.0.1.aar\33e8070e240ef590711c0c27fee3682e\AndroidManifest.xml:22:5-20
+MERGED from [com.google.firebase:firebase-common-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-license-12.0.1.aar\33e8070e240ef590711c0c27fee3682e\AndroidManifest.xml:22:5-20
+MERGED from [com.google.firebase:firebase-analytics-impl-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-12.0.1.aar\faed8a82df3f0d77c3526f2d8f3fda0b\AndroidManifest.xml:22:5-20
+MERGED from [com.google.firebase:firebase-analytics-impl-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-12.0.1.aar\faed8a82df3f0d77c3526f2d8f3fda0b\AndroidManifest.xml:22:5-20
+MERGED from [com.google.firebase:firebase-iid-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-12.0.1.aar\34dbf8b82743dc4824776f0493325131\AndroidManifest.xml:22:5-20
+MERGED from [com.google.firebase:firebase-iid-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-12.0.1.aar\34dbf8b82743dc4824776f0493325131\AndroidManifest.xml:22:5-20
 	android:supportsRtl
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:73:9-35
 	android:label
@@ -370,7 +370,7 @@ ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\Androi
 	android:name
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:103:25-77
 receiver#com.oliver.bathurst.individualproject.Updater
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:106:9-114:20
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:106:9-115:20
 	android:enabled
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:108:13-35
 	android:exported
@@ -378,7 +378,7 @@ ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\Androi
 	android:name
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:107:13-36
 intent-filter#action:name:android.net.conn.CONNECTIVITY_CHANGE+action:name:android.net.wifi.STATE_CHANGE
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:110:13-113:29
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:110:13-114:29
 	android:priority
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:110:28-50
 action#android.net.wifi.STATE_CHANGE
@@ -386,223 +386,225 @@ ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\Androi
 	android:name
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:111:25-69
 action#android.net.conn.CONNECTIVITY_CHANGE
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:112:17-78
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:112:17-113:50
+	tools:ignore
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:113:21-47
 	android:name
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:112:25-76
 receiver#com.oliver.bathurst.individualproject.SimStateChangedReceiver
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:115:9-122:20
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:116:9-123:20
 	android:enabled
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:117:13-35
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:118:13-35
 	android:exported
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:118:13-37
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:119:13-37
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:116:13-52
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:117:13-52
 intent-filter#action:name:android.intent.action.SIM_STATE_CHANGED
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:119:13-121:29
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:120:13-122:29
 	android:priority
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:119:28-50
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:120:28-50
 action#android.intent.action.SIM_STATE_CHANGED
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:120:17-82
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:121:17-82
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:120:25-79
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:121:25-79
 receiver#com.oliver.bathurst.individualproject.BTActivity$mReceiver
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:123:9-125:38
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:124:9-126:38
 	android:enabled
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:125:13-35
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:126:13-35
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:124:13-49
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:125:13-49
 receiver#com.oliver.bathurst.individualproject.BTNearby$mReceiver
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:126:9-128:38
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:127:9-129:38
 	android:enabled
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:128:13-35
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:129:13-35
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:127:13-47
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:128:13-47
 receiver#com.oliver.bathurst.individualproject.WiFiScanner$wifiReceiver
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:129:9-131:38
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:130:9-132:38
 	android:enabled
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:131:13-35
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:132:13-35
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:130:13-53
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:131:13-53
 receiver#com.google.android.gms.gcm.GcmReceiver
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:132:9-139:20
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:133:9-140:20
 	android:permission
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:134:13-73
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:135:13-73
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:133:13-66
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:134:13-66
 intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE+category:name:com.oliver.bathurst.individualproject
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:135:13-138:29
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:136:13-139:29
 action#com.google.android.c2dm.intent.RECEIVE
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:136:17-81
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:137:17-81
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:136:25-78
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:137:25-78
 category#com.oliver.bathurst.individualproject
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:137:17-82
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:138:17-82
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:137:27-79
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:138:27-79
 service#com.oliver.bathurst.individualproject.GCMReceiverService
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:141:9-147:19
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:142:9-148:19
 	android:exported
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:143:13-37
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:144:13-37
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:142:13-47
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:143:13-47
 intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:144:13-146:29
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:145:13-147:29
 	android:priority
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:144:28-50
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:145:28-50
 service#com.oliver.bathurst.individualproject.RegistrationIntentService
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:148:9-154:19
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:149:9-155:19
 	android:exported
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:150:13-37
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:151:13-37
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:149:13-54
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:150:13-54
 intent-filter#action:name:com.google.android.gms.iid.InstanceID
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:151:13-153:29
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:152:13-154:29
 action#com.google.android.gms.iid.InstanceID
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:152:17-80
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:153:17-80
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:152:25-77
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:153:25-77
 meta-data#com.google.android.gms.version
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:156:9-158:69
-MERGED from [com.google.android.gms:play-services-basement:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-12.0.0.aar\697d86b2b2e6a35de4fdc15824f1ce52\AndroidManifest.xml:23:9-25:69
-MERGED from [com.google.android.gms:play-services-basement:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-12.0.0.aar\697d86b2b2e6a35de4fdc15824f1ce52\AndroidManifest.xml:23:9-25:69
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:157:9-159:69
+MERGED from [com.google.android.gms:play-services-basement:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-12.0.1.aar\7e85dbc2b6e7101ee81f319b48b46712\AndroidManifest.xml:23:9-25:69
+MERGED from [com.google.android.gms:play-services-basement:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-12.0.1.aar\7e85dbc2b6e7101ee81f319b48b46712\AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:158:13-66
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:159:13-66
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:157:13-58
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:158:13-58
 activity#com.oliver.bathurst.individualproject.Login
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:160:9-169:20
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:161:9-170:20
 	android:screenOrientation
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:163:13-49
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:164:13-49
 	android:label
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:162:13-45
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:163:13-45
 	android:theme
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:164:13-69
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:165:13-69
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:161:13-34
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:162:13-34
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:165:13-168:29
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:166:13-169:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:166:17-69
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:167:17-69
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:166:25-66
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:167:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:167:17-77
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:168:17-77
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:167:27-74
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:168:27-74
 service#com.oliver.bathurst.individualproject.LocationService
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:172:9-175:40
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:173:9-176:40
 	android:enabled
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:174:13-35
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:175:13-35
 	android:exported
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:175:13-37
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:176:13-37
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:173:13-44
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:174:13-44
 service#com.oliver.bathurst.individualproject.GCMLocationService
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:177:9-183:19
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:178:9-184:19
 	android:exported
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:179:13-37
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:180:13-37
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:178:13-47
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:179:13-47
 intent-filter#action:name:oliver.intent.action.GCM
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:180:13-182:29
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:181:13-183:29
 	android:priority
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:180:28-50
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:181:28-50
 action#oliver.intent.action.GCM
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:181:17-67
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:182:17-67
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:181:25-64
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:182:25-64
 meta-data#com.google.android.maps.v2.API_KEY
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:185:9-188:71
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:186:9-189:71
 	tools:replace
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:186:13-42
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:187:13-42
 	android:value
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:188:13-68
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:189:13-68
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:187:13-62
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:188:13-62
 activity#com.oliver.bathurst.individualproject.MainActivity
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:190:9-194:72
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:191:9-195:72
 	android:screenOrientation
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:193:13-49
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:194:13-49
 	android:label
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:192:13-45
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:193:13-45
 	android:theme
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:194:13-69
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:195:13-69
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:191:13-41
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:192:13-41
 activity#com.oliver.bathurst.individualproject.GeoFencing
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:195:9-48
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:196:9-48
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:195:19-45
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:196:19-45
 activity#com.oliver.bathurst.individualproject.TxtToSpeech
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:196:9-198:64
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:197:9-199:64
 	android:theme
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:198:13-61
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:199:13-61
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:197:13-40
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:198:13-40
 service#com.oliver.bathurst.individualproject.GeoFenceService
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:200:9-203:39
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:201:9-204:39
 	android:enabled
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:202:13-35
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:203:13-35
 	android:exported
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:203:13-37
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:204:13-37
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:201:13-44
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:202:13-44
 service#com.oliver.bathurst.individualproject.TokenRefreshListener
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:204:9-57
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:205:9-57
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:204:18-54
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:205:18-54
 activity#com.oliver.bathurst.individualproject.BTActivity
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:206:9-209:59
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:207:9-210:59
 	android:label
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:208:13-58
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:209:13-58
 	android:theme
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:209:13-56
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:210:13-56
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:207:13-39
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:208:13-39
 activity#com.oliver.bathurst.individualproject.Reorder
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:210:9-213:59
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:211:9-214:59
 	android:label
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:212:13-59
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:213:13-59
 	android:theme
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:213:13-56
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:214:13-56
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:211:13-36
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:212:13-36
 activity#com.oliver.bathurst.individualproject.BTConfig
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:214:9-216:83
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:215:9-217:83
 	android:theme
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:216:13-80
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:217:13-80
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:215:13-37
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:216:13-37
 activity#com.oliver.bathurst.individualproject.SignUpActivity
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:217:9-219:62
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:218:9-220:62
 	android:label
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:219:13-59
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:220:13-59
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:218:13-43
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:219:13-43
 activity#com.oliver.bathurst.individualproject.CellTowers
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:220:9-223:59
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:221:9-224:59
 	android:label
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:222:13-63
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:223:13-63
 	android:theme
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:223:13-56
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:224:13-56
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:221:13-39
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:222:13-39
 activity#com.oliver.bathurst.individualproject.CellTowerMap
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:224:9-226:69
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:225:9-227:69
 	android:label
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:226:13-66
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:227:13-66
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:225:13-41
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:226:13-41
 activity#com.oliver.bathurst.individualproject.WiFiScanner
-ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:227:9-48
+ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:228:9-48
 	android:name
-		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:227:19-46
+		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:228:19-46
 uses-sdk
 INJECTED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml
-MERGED from [com.google.firebase:firebase-core:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-core-12.0.0.aar\68088fa6124b1b3cce8c7d70489acd3d\AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-core:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-core-12.0.0.aar\68088fa6124b1b3cce8c7d70489acd3d\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-core:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-core-12.0.1.aar\24e946a215507930728d55dc50f59c73\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-core:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-core-12.0.1.aar\24e946a215507930728d55dc50f59c73\AndroidManifest.xml:4:5-43
 MERGED from [com.android.support:design:27.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\design-27.1.0.aar\f7318365e9b0ac87227dcca3258d9e80\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design:27.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\design-27.1.0.aar\f7318365e9b0ac87227dcca3258d9e80\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:27.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.0.aar\89b0f1d50ed94b577256e4024805147b\AndroidManifest.xml:20:5-44
@@ -613,28 +615,28 @@ MERGED from [com.android.support:support-vector-drawable:27.1.0] C:\Users\Oliver
 MERGED from [com.android.support:support-vector-drawable:27.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.0.aar\693a7533602b29fc380b1b63081b349e\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:recyclerview-v7:27.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.0.aar\04a861829b57a04e7e4c49f8b3cb0116\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:recyclerview-v7:27.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.0.aar\04a861829b57a04e7e4c49f8b3cb0116\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-gcm:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-gcm-12.0.0.aar\5af4d616970e768358b2c08b3c839e56\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-gcm:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-gcm-12.0.0.aar\5af4d616970e768358b2c08b3c839e56\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-maps:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.0.aar\00ff889855069e638e98f0a637421ee6\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-maps:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.0.aar\00ff889855069e638e98f0a637421ee6\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-location:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-location-12.0.0.aar\7321faae8366e6455680be15ce47c8cd\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-location:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-location-12.0.0.aar\7321faae8366e6455680be15ce47c8cd\AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-iid-12.0.0.aar\7428565cf40df0cbb3076f13e52ec1f5\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-iid-12.0.0.aar\7428565cf40df0cbb3076f13e52ec1f5\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-base:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.0.aar\ed913e4cd11cb54b46335006495806f5\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-base:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.0.aar\ed913e4cd11cb54b46335006495806f5\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-analytics-impl:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.0.aar\ee9434bb54fcff54405fdc8cc2d2aeb6\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-analytics-impl:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.0.aar\ee9434bb54fcff54405fdc8cc2d2aeb6\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-common:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-12.0.0.aar\64d1fd0f85f5b379bb6d716b355da46c\AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-common:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-12.0.0.aar\64d1fd0f85f5b379bb6d716b355da46c\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-tasks:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-tasks-12.0.0.aar\e36e24a241c4052191005816d6ed92f6\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-tasks:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-tasks-12.0.0.aar\e36e24a241c4052191005816d6ed92f6\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-basement:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-12.0.0.aar\697d86b2b2e6a35de4fdc15824f1ce52\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-12.0.0.aar\697d86b2b2e6a35de4fdc15824f1ce52\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-gcm:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-gcm-12.0.1.aar\d7e9d495907ab72372409d6324a1a90c\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-gcm:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-gcm-12.0.1.aar\d7e9d495907ab72372409d6324a1a90c\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.1.aar\3051dbb4a0b054ece154ef891d6a04d8\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.1.aar\3051dbb4a0b054ece154ef891d6a04d8\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-location:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-location-12.0.1.aar\c828b4caf73c17ffefbd688deede4574\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-location-12.0.1.aar\c828b4caf73c17ffefbd688deede4574\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-iid-12.0.1.aar\001b86380ff0bce388fdf5769805b1ab\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-iid-12.0.1.aar\001b86380ff0bce388fdf5769805b1ab\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.1.aar\05fef78f44c0b5b5e12812c98fc0333f\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.1.aar\05fef78f44c0b5b5e12812c98fc0333f\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics-impl:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.1.aar\f72c3e77252adc282e236b6a04f0dd72\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics-impl:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.1.aar\f72c3e77252adc282e236b6a04f0dd72\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-common:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-12.0.1.aar\9179de68fc04d1126e2e6ea96ba430ad\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-12.0.1.aar\9179de68fc04d1126e2e6ea96ba430ad\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-tasks-12.0.1.aar\79aa3318805ad080cba42c475275f0ba\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-tasks-12.0.1.aar\79aa3318805ad080cba42c475275f0ba\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-12.0.1.aar\7e85dbc2b6e7101ee81f319b48b46712\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-12.0.1.aar\7e85dbc2b6e7101ee81f319b48b46712\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:27.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.0.aar\02cf69e793e12a344d7169d17e973887\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:27.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.0.aar\02cf69e793e12a344d7169d17e973887\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:27.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.0.aar\56c9144b645ddb6ee67aa2e549828372\AndroidManifest.xml:20:5-44
@@ -653,12 +655,34 @@ MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Ol
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\8dcf5de5f6d8509a556dfeadf2ae3932\AndroidManifest.xml:5:5-7:41
 MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\bcbb82062ef68d6fc74a4e159b86b548\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\bcbb82062ef68d6fc74a4e159b86b548\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-gcm-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-gcm-license-12.0.1.aar\9f338166f489920c2fe79c030b222628\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-gcm-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-gcm-license-12.0.1.aar\9f338166f489920c2fe79c030b222628\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-license-12.0.1.aar\7728171124e5f8b00d631b50a2b289df\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-license-12.0.1.aar\7728171124e5f8b00d631b50a2b289df\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-location-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-location-license-12.0.1.aar\ec666f3a6b4aa43fd964089a3e11329a\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-location-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-location-license-12.0.1.aar\ec666f3a6b4aa43fd964089a3e11329a\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-license-12.0.1.aar\32533d9dd08fc3e75efce69ed8189af8\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-license-12.0.1.aar\32533d9dd08fc3e75efce69ed8189af8\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\b789702ed5acd5a85caff24b07515351\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\b789702ed5acd5a85caff24b07515351\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\7ecbc01dd9870016a4aa0fa4b31fb725\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\7ecbc01dd9870016a4aa0fa4b31fb725\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\5843c0653fc7ad8a4627cdfa522a9769\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\5843c0653fc7ad8a4627cdfa522a9769\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-license-12.0.1.aar\bc94fea8c133ba80b5e99d4b2a9ef862\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-license-12.0.1.aar\bc94fea8c133ba80b5e99d4b2a9ef862\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-12.0.1.aar\65ab5aac53b16cfb7caa3a05dbde83b3\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-12.0.1.aar\65ab5aac53b16cfb7caa3a05dbde83b3\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-iid-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-iid-license-12.0.1.aar\dc316c73c07f8c820e7a7659b5e9277b\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-iid-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-iid-license-12.0.1.aar\dc316c73c07f8c820e7a7659b5e9277b\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-12.0.1.aar\523bf5f7afcdec40c79bae2d9586aa6e\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-12.0.1.aar\523bf5f7afcdec40c79bae2d9586aa6e\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-common-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-license-12.0.1.aar\33e8070e240ef590711c0c27fee3682e\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-common-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-license-12.0.1.aar\33e8070e240ef590711c0c27fee3682e\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics-impl-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-12.0.1.aar\faed8a82df3f0d77c3526f2d8f3fda0b\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics-impl-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-12.0.1.aar\faed8a82df3f0d77c3526f2d8f3fda0b\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-12.0.1.aar\34dbf8b82743dc4824776f0493325131\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid-license:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-12.0.1.aar\34dbf8b82743dc4824776f0493325131\AndroidManifest.xml:20:5-44
 INJECTED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
@@ -670,114 +694,112 @@ INJECTED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\And
 		ADDED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml
 uses-permission#com.google.android.c2dm.permission.RECEIVE
-ADDED from [com.google.android.gms:play-services-gcm:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-gcm-12.0.0.aar\5af4d616970e768358b2c08b3c839e56\AndroidManifest.xml:23:5-82
-MERGED from [com.google.android.gms:play-services-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-iid-12.0.0.aar\7428565cf40df0cbb3076f13e52ec1f5\AndroidManifest.xml:23:5-82
-MERGED from [com.google.android.gms:play-services-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-iid-12.0.0.aar\7428565cf40df0cbb3076f13e52ec1f5\AndroidManifest.xml:23:5-82
-MERGED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:26:5-82
-MERGED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:26:5-82
+ADDED from [com.google.android.gms:play-services-gcm:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-gcm-12.0.1.aar\d7e9d495907ab72372409d6324a1a90c\AndroidManifest.xml:23:5-82
+MERGED from [com.google.android.gms:play-services-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-iid-12.0.1.aar\001b86380ff0bce388fdf5769805b1ab\AndroidManifest.xml:23:5-82
+MERGED from [com.google.android.gms:play-services-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-iid-12.0.1.aar\001b86380ff0bce388fdf5769805b1ab\AndroidManifest.xml:23:5-82
+MERGED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:26:5-82
+MERGED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:26:5-82
 	android:name
-		ADDED from [com.google.android.gms:play-services-gcm:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-gcm-12.0.0.aar\5af4d616970e768358b2c08b3c839e56\AndroidManifest.xml:23:22-79
+		ADDED from [com.google.android.gms:play-services-gcm:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-gcm-12.0.1.aar\d7e9d495907ab72372409d6324a1a90c\AndroidManifest.xml:23:22-79
 uses-feature#0x00020000
-ADDED from [com.google.android.gms:play-services-maps:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.0.aar\00ff889855069e638e98f0a637421ee6\AndroidManifest.xml:26:5-28:35
+ADDED from [com.google.android.gms:play-services-maps:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.1.aar\3051dbb4a0b054ece154ef891d6a04d8\AndroidManifest.xml:26:5-28:35
 	android:glEsVersion
-		ADDED from [com.google.android.gms:play-services-maps:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.0.aar\00ff889855069e638e98f0a637421ee6\AndroidManifest.xml:27:9-41
+		ADDED from [com.google.android.gms:play-services-maps:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.1.aar\3051dbb4a0b054ece154ef891d6a04d8\AndroidManifest.xml:27:9-41
 	android:required
-		ADDED from [com.google.android.gms:play-services-maps:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.0.aar\00ff889855069e638e98f0a637421ee6\AndroidManifest.xml:28:9-32
+		ADDED from [com.google.android.gms:play-services-maps:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-12.0.1.aar\3051dbb4a0b054ece154ef891d6a04d8\AndroidManifest.xml:28:9-32
 receiver#com.google.android.gms.measurement.AppMeasurementReceiver
-ADDED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:28:9-32:20
-MERGED from [com.google.firebase:firebase-analytics-impl:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.0.aar\ee9434bb54fcff54405fdc8cc2d2aeb6\AndroidManifest.xml:28:9-32:20
-MERGED from [com.google.firebase:firebase-analytics-impl:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.0.aar\ee9434bb54fcff54405fdc8cc2d2aeb6\AndroidManifest.xml:28:9-32:20
+ADDED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:28:9-32:20
+MERGED from [com.google.firebase:firebase-analytics-impl:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.1.aar\f72c3e77252adc282e236b6a04f0dd72\AndroidManifest.xml:28:9-32:20
+MERGED from [com.google.firebase:firebase-analytics-impl:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.1.aar\f72c3e77252adc282e236b6a04f0dd72\AndroidManifest.xml:28:9-32:20
 	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:30:13-35
+		ADDED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:30:13-35
 	android:exported
-		ADDED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:31:13-37
+		ADDED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:31:13-37
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:29:13-85
+		ADDED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:29:13-85
 receiver#com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
-ADDED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:33:9-41:20
+ADDED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:33:9-41:20
 	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:35:13-35
+		ADDED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:35:13-35
 	android:exported
-		ADDED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:36:13-36
+		ADDED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:36:13-36
 	android:permission
-		ADDED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:37:13-69
+		ADDED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:37:13-69
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:34:13-100
+		ADDED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:34:13-100
 intent-filter#action:name:com.android.vending.INSTALL_REFERRER
-ADDED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:38:13-40:29
+ADDED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:38:13-40:29
 action#com.android.vending.INSTALL_REFERRER
-ADDED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:39:17-79
+ADDED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:39:17-79
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:39:25-76
+		ADDED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:39:25-76
 service#com.google.android.gms.measurement.AppMeasurementService
-ADDED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:43:9-46:40
-MERGED from [com.google.firebase:firebase-analytics-impl:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.0.aar\ee9434bb54fcff54405fdc8cc2d2aeb6\AndroidManifest.xml:34:9-37:40
-MERGED from [com.google.firebase:firebase-analytics-impl:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.0.aar\ee9434bb54fcff54405fdc8cc2d2aeb6\AndroidManifest.xml:34:9-37:40
+ADDED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:43:9-46:40
+MERGED from [com.google.firebase:firebase-analytics-impl:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.1.aar\f72c3e77252adc282e236b6a04f0dd72\AndroidManifest.xml:34:9-37:40
+MERGED from [com.google.firebase:firebase-analytics-impl:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-12.0.1.aar\f72c3e77252adc282e236b6a04f0dd72\AndroidManifest.xml:34:9-37:40
 	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:45:13-35
+		ADDED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:45:13-35
 	android:exported
-		ADDED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:46:13-37
+		ADDED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:46:13-37
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:44:13-84
+		ADDED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:44:13-84
 service#com.google.android.gms.measurement.AppMeasurementJobService
-ADDED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:47:9-51:72
+ADDED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:47:9-51:72
 	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:49:13-35
+		ADDED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:49:13-35
 	android:exported
-		ADDED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:50:13-37
+		ADDED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:50:13-37
 	android:permission
-		ADDED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:51:13-69
+		ADDED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:51:13-69
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.0.aar\f2d5acb427ff738f4c7f690b3c1801f1\AndroidManifest.xml:48:13-87
+		ADDED from [com.google.firebase:firebase-analytics:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-analytics-12.0.1.aar\fbd3dbad32230d5cf8f2e257220e2134\AndroidManifest.xml:48:13-87
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.0.aar\ed913e4cd11cb54b46335006495806f5\AndroidManifest.xml:23:9-26:75
+ADDED from [com.google.android.gms:play-services-base:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.1.aar\05fef78f44c0b5b5e12812c98fc0333f\AndroidManifest.xml:23:9-26:75
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.0.aar\ed913e4cd11cb54b46335006495806f5\AndroidManifest.xml:25:13-37
+		ADDED from [com.google.android.gms:play-services-base:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.1.aar\05fef78f44c0b5b5e12812c98fc0333f\AndroidManifest.xml:25:13-37
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.0.aar\ed913e4cd11cb54b46335006495806f5\AndroidManifest.xml:26:13-72
+		ADDED from [com.google.android.gms:play-services-base:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.1.aar\05fef78f44c0b5b5e12812c98fc0333f\AndroidManifest.xml:26:13-72
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.0.aar\ed913e4cd11cb54b46335006495806f5\AndroidManifest.xml:24:13-79
+		ADDED from [com.google.android.gms:play-services-base:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.1.aar\05fef78f44c0b5b5e12812c98fc0333f\AndroidManifest.xml:24:13-79
 permission#${applicationId}.permission.C2D_MESSAGE
-MERGED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:28:5-30:47
+MERGED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:28:5-30:47
 uses-permission#${applicationId}.permission.C2D_MESSAGE
-MERGED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:32:5-79
+MERGED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:32:5-79
 receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
-ADDED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:35:9-44:20
+ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:35:9-44:20
 	android:exported
-		ADDED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:37:13-36
+		ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:37:13-36
 	android:permission
-		ADDED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:38:13-73
+		ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:38:13-73
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:36:13-78
+		ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:36:13-78
 intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE+category:name:${applicationId}
-ADDED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:39:13-43:29
+ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:39:13-43:29
 category#${applicationId}
-ADDED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:42:17-61
+ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:42:17-61
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:42:27-58
+		ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:42:27-58
 service#com.google.firebase.iid.FirebaseInstanceIdService
-ADDED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:50:9-56:19
+ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:50:9-56:19
 	android:exported
-		ADDED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:52:13-36
+		ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:52:13-36
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:51:13-77
+		ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:51:13-77
 intent-filter#action:name:com.google.firebase.INSTANCE_ID_EVENT
-ADDED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:53:13-55:29
+ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:53:13-55:29
 	android:priority
-		ADDED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:53:28-51
+		ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:53:28-51
 action#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:54:17-80
+ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:54:17-80
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.0.aar\582f7dbf0d5a7a199b6db003b3e22345\AndroidManifest.xml:54:25-77
+		ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\760afb1631088165be3efd1a2a071c7e\AndroidManifest.xml:54:25-77
 provider#com.google.firebase.provider.FirebaseInitProvider
-ADDED from [com.google.firebase:firebase-common:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-12.0.0.aar\64d1fd0f85f5b379bb6d716b355da46c\AndroidManifest.xml:8:9-12:39
+ADDED from [com.google.firebase:firebase-common:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-12.0.1.aar\9179de68fc04d1126e2e6ea96ba430ad\AndroidManifest.xml:8:9-12:39
 	android:authorities
-		ADDED from [com.google.firebase:firebase-common:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-12.0.0.aar\64d1fd0f85f5b379bb6d716b355da46c\AndroidManifest.xml:10:13-72
+		ADDED from [com.google.firebase:firebase-common:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-12.0.1.aar\9179de68fc04d1126e2e6ea96ba430ad\AndroidManifest.xml:10:13-72
 	android:exported
-		ADDED from [com.google.firebase:firebase-common:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-12.0.0.aar\64d1fd0f85f5b379bb6d716b355da46c\AndroidManifest.xml:11:13-37
+		ADDED from [com.google.firebase:firebase-common:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-12.0.1.aar\9179de68fc04d1126e2e6ea96ba430ad\AndroidManifest.xml:11:13-37
 	android:initOrder
-		ADDED from [com.google.firebase:firebase-common:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-12.0.0.aar\64d1fd0f85f5b379bb6d716b355da46c\AndroidManifest.xml:12:13-36
+		ADDED from [com.google.firebase:firebase-common:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-12.0.1.aar\9179de68fc04d1126e2e6ea96ba430ad\AndroidManifest.xml:12:13-36
 	android:name
-		ADDED from [com.google.firebase:firebase-common:12.0.0] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-12.0.0.aar\64d1fd0f85f5b379bb6d716b355da46c\AndroidManifest.xml:9:13-77
-uses-permission#android.permission.READ_EXTERNAL_STORAGE
-IMPLIED from C:\Users\Oliver\StudioProjects\Individual-Project\app\src\main\AndroidManifest.xml:2:1-230:12 reason: com.google.android.gms.license requested WRITE_EXTERNAL_STORAGE
+		ADDED from [com.google.firebase:firebase-common:12.0.1] C:\Users\Oliver\.gradle\caches\transforms-1\files-1.1\firebase-common-12.0.1.aar\9179de68fc04d1126e2e6ea96ba430ad\AndroidManifest.xml:9:13-77
