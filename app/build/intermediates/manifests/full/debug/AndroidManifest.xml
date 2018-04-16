@@ -95,7 +95,7 @@
         <receiver
             android:name="com.oliver.bathurst.individualproject.SMSReceiver"
             android:enabled="true"
-            android:exported="false"
+            android:exported="true"
             android:permission="android.permission.BROADCAST_SMS" >
             <intent-filter android:priority="999" >
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
@@ -104,7 +104,7 @@
         <receiver
             android:name="com.oliver.bathurst.individualproject.BatteryReceiver"
             android:enabled="true"
-            android:exported="false" >
+            android:exported="true" >
             <intent-filter android:priority="999" >
                 <action android:name="android.intent.action.BATTERY_CHANGED" />
             </intent-filter>
@@ -112,7 +112,7 @@
         <receiver
             android:name="com.oliver.bathurst.individualproject.Updater"
             android:enabled="true"
-            android:exported="false" >
+            android:exported="true" >
             <intent-filter android:priority="999" >
                 <action android:name="android.net.wifi.STATE_CHANGE" />
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
@@ -121,7 +121,7 @@
         <receiver
             android:name="com.oliver.bathurst.individualproject.SimStateChangedReceiver"
             android:enabled="true"
-            android:exported="false" >
+            android:exported="true" >
             <intent-filter android:priority="999" >
                 <action android:name="android.intent.action.SIM_STATE_CHANGED" />
             </intent-filter>
@@ -147,14 +147,14 @@
 
         <service
             android:name="com.oliver.bathurst.individualproject.GCMReceiverService"
-            android:exported="false" >
+            android:exported="true" >
             <intent-filter android:priority="999" >
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
             </intent-filter>
         </service>
         <service
             android:name="com.oliver.bathurst.individualproject.RegistrationIntentService"
-            android:exported="false" >
+            android:exported="true" >
             <intent-filter>
                 <action android:name="com.google.android.gms.iid.InstanceID" />
             </intent-filter>
@@ -180,10 +180,10 @@
         <service
             android:name="com.oliver.bathurst.individualproject.LocationService"
             android:enabled="true"
-            android:exported="false" />
+            android:exported="true" />
         <service
             android:name="com.oliver.bathurst.individualproject.GCMLocationService"
-            android:exported="false" >
+            android:exported="true" >
             <intent-filter android:priority="999" >
                 <action android:name="oliver.intent.action.GCM" />
             </intent-filter>
@@ -206,7 +206,7 @@
         <service
             android:name="com.oliver.bathurst.individualproject.GeoFenceService"
             android:enabled="true"
-            android:exported="false" />
+            android:permission="" />
         <service android:name="com.oliver.bathurst.individualproject.TokenRefreshListener" />
 
         <activity
